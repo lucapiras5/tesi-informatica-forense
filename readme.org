@@ -5,6 +5,6 @@
 
 [[file:scaletta.org][Scaletta]]
 
-[[file:riassunto-fonti.org][Lista fonti con riassunto]]
+[[file:fonti.org][Fonti e appunti]]
 
-[[file:fonti-da-leggere.org][Fonti da leggere e temi da approfondire]]
+[[file:wip.org][Fonti da leggere, temi da approfondire]]
