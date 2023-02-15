@@ -1,0 +1,179 @@
+#+TITLE: Fonti: appunti
+#+AUTHOR: Luca Piras
+
+* Note
+
+Tutte le fonti contenute su URL che iniziano con https://sciencedirect.com sono disponibili se si accede con l'account unibo.it.
+
+* Carrer 2003: Open Source Digital Forensics Tools: The Legal Argument
+
+- Autori :: Brian Carrer
+- Anno :: 2003
+- Rilevanza ::
+  - Criteri per la valutazione della prova scientifica nell'ordinamento giuridico americano.
+  - Creazione di standard tecnici per la valutazione di applicazioni per la digital forensics.
+  - Necessità della una documentazione degli strumenti, specialmente se closed-source.
+  - Valutazione dell'affidabilità degli strumenti in maniera il più trasparente possibile.
+- URL :: https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=1b5f33f13cf648cb703c20ca18ab551bc962a8a6
+
+** INTRODUCTION
+
+- This paper addresses software that is used for digital forensic analysis ... :: Gli strumenti per la digital forensics analizzano dati digitali al fine di ottenere prove utilizzabili in giudizio, e che quindi devono rispettare degli standard di legalità (1).
+- Digital forensics has existed for as long as computers have stored data ... ::  La DF inizialmente era il dominio delle sole agenzie governative, poi sono state sviluppate dei software di analisi privati, commerciali e proprietarie, e infine sono state sviluppati software per la DF open-source, con funzionalità equivalenti (1).
+
+** DIGITAL FORENSIC ANALYSIS
+
+- In general, the goal of digital forensic analysis is to identify digital evidence ... ::  L'obiettivo della DF è di identificare prove digitali, con un metodo scientifico, per trarre delle conclusioni, e si possono distinguere tre fasi principali (acquisizione, analisi, presentazione) (2).
+- The Acquisition Phase saves the state of a digital system so that it can be later analyzed. :: L'acquisizione salva lo stato del sistema, acquisendo tutti i dati possibili, e modificandoli nella minore misura possibile (2).
+- The Analysis Phase takes the acquired data and examines it ... :: L'analisi cerca elementi a carico, discarico, o elementi che dimostrano che il sistema è stato manomesso in maniera da ostacolare le analisi, si esaminano i contenuti dei file e si ricercano e recuperano file cancellati (2), ed è una fase principalmente tecnica (3).
+- The Presentation Phase though is based entirely on ... :: La presentazione è regolata dalle regole di procedura, ed è la fase in cui sono presentate le conclusioni, in un contesto industriale o processuale (3).
+- In order to be admissible in a United States legal proceeding, scientific ... :: Nel sistema legale americano, la prova scientifica deve superare il c.d. "Test di Daubert" per essere ammessa (3).
+
+** ADMISSIBILITY OF DIGITAL FORENSIC EVIDENCE
+
+- The reliability of scientific evidence, such as the output from a digital forensics tool ... :: L'affidabilità delle prove scientifiche deve essere determinata dal giudice in un'udienza apposita, secondo quattro categorie (3).
+- The Daubert Test is an expansion of the Court’s prior approach ... :: Il test di Frye era la versione precedente, in cui il giudice valutava l'affidabilità sulla base di articoli sottoposti a peer review, che però non esistevano per tutte le discipline (3).
+
+*** Testing
+
+- The testing guideline identifies if a procedure can be tested to ensure it provides accurate ... :: Si devono evitare falsi negativi (tutti gli elementi esistenti nell'immagine devono essere trovati) e falsi positivi (gli strumenti rilevano elementi non esistenti).
+- The National Institute of Standards and Technology (NIST) has a dedicated group ... :: Il NIST ha un gruppo dedicato per sviluppare metodologie di verifica per i vari strumenti forensi (4).
+- In fact, the testing requirements are likely to be ... :: Le applicazioni originali (ad es., il programma che gestisce il filesystem NTFS) devono solo dimostrare che gestiscono correttamente ogni scenario che possono generare, mentre un'applicazione per l'analisi forense deve dimostrare che sono in grado di rilevare ogni condizione, altrimenti sarebbe possibile nascondere informazioni dagli sviluppatori (4--5).
+- Even though a standard testing methodology has not been created, bugs in today’s closed ... :: Quando viene trovato un bug, viene segnalato allo sviluppatore. Le applicazioni open source non sono meno sicure per il solo fatto che il sorgente sia pubblicamente disponibile, perché anche gli strumenti closed-source sono soggetti a bug che possono essere sfruttati (5).
+- ... long-term solution is to have a comprehensive test methodology ... :: È necessario avere una metodologia di test comprensiva per formalizzare il più possibile il comportamento delle applicazioni (5).
+- Having access to a tool’s source code will improve the quality of the testing process ... :: L'accesso al codice sorgente permette di individuare più facilmente i bug con strumenti di code review, si possono sviluppare test specifici per quel programma (5).
+- At a minimum, closed source tools should ... :: Gli strumenti closed-source dovrebbero quanto meno pubblicare informazioni sul loro funzionamento, in modo da poter valutare la funzionalità dell'algoritmo in astratto (5).
+
+*** Error Rates
+
+- The error rate guideline identifies if there is a known error rate of the procedure. :: L'affidabilità della prova scientifica dipende dal tasso di errori del metodo di analisi; gli errori possono derivare da errori di programmazione, o dalla erronea interpretazione della specificazione (specie se non è pubblica) (5).
+# Undefined behavior nella specificazione di C.
+- ... two categories of errors can exist in digital forensic tools ... :: Esistono due tipi di errore, errori dovuti all'implementazione (oggettivamente erronei), ed errori dovuti ad una decisione che non è possibile prendere con certezza ("soggettivamente" erronei) (5).
+- ... calculated for each tool based on the number and severity of bugs ... :: I risultati erronei dovuti ad errori di programmazione sono più difficili da individuare in programmi closed-source, perché non tutti i bug vengono resi pubblici, e la loro conoscenza può portare ad una reputazione negativa per il programma (5--6).
+# Concezione della scienza secondo Popper.
+- Since a formula for calculating an error rate has not been proposed, market share ... :: Utilizzare la quota di mercato di un programma non è un'indicazione della sua qualità, avere una documentazione open-source permette di testare meglio i programmi, ed i programmi open-source non nascondono i loro bug (6).
+# Il fatto che buona parte della popolazione sia fumatrice non è prova del fatto che fumare faccia bene alla salute.
+
+*** Publication
+
+- The publication guideline shows that the procedure has been documented in a public ... :: La procedura deve essere stata pubblicata, e sottoposta alla peer review; prima del test di Daubert la pubblicazione era il criterio fondamentale, e prima della creazione di riviste specializzate, si usavano articoli di giornale, che descrivevano la procedura solo per grandi linee (6).
+- Some file systems have a published detailed ... :: Alcuni filesystem sono documentati con una specificazione pubblica, altri no; se manca la documentazione, è necessario rendere open-source il software, in modo che esso stesso funzioni da "documentazione" (6).
+- The FBI’s forensic journal published a document on the use of digital photography ... :: La FBI richiede di tenere in conto se lo sviluppatore di software per analisi forensi sia disposto a condividere il codice sorgente con le parti processuali, con le dovute garanzie di segretezza per proteggere gli interessi commerciali, in modo che un perito possa analizzarlo per determinare se corrisponde alle procedure riconosciute (7).
+- The publication guideline is very important and the one that is most lacking ... :: La pubblicazione è un fattore importante e sottovalutato, gli strumenti closed-source devono rendere almeno la documentazione open-source, mentre il software open-source può essere analizzato liberamente, ma dovrebbero fornire anche documentazione in altre forme oltre al codice sorgente (7).
+# "The source is the documentation".
+
+*** Acceptance
+
+- The acceptance guideline is a framework for the associated scientific community ... :: Le procedure devono essere pubblicate ed utilizzate in concreto, ed il solo fatto che il software (closed-source) che implementa una procedura ha largo utilizzo non è prova della validità della procedura (7).
+- Open source tools document the procedures they use ... :: Gli strumenti open-source documentano esplicitamente la procedura che usano, permettendo di valutare l'opportunità se utilizzarli o meno (7).
+
+** A BALANCED SOLUTION
+
+- As many of the common digital forensic analysis tools are developed with commercial ... :: Gli strumenti per la digital forensics sono sviluppati per finalità commerciali, e quindi è difficile che rendano il loro codice sorgente disponibile (8).
+- The papers describe two tool categories: extraction and presentation. :: Si può distinguere fra strumenti per l'estrazione (prendono i dati grezzi ed estraggono le informazioni rilevanti) e strumenti per la presentazione (organizzano le informazioni estratte in maniera ordinata); i due ruoli possono essere svolti da strumenti diversi, o dallo stesso strumento (8).
+- If the extraction tools are open source and the investigator has access to the output ... :: È preferibile che gli strumenti di estrazione siano open-source, anche perché idealmente devono seguire procedure standard, mentre gli strumenti per la presentazione possono rimanere closed-source, ed i prodotti si differenziano per interfaccia, funzionalità, etc. (8).
+# Uso di licenze LGPL o MIT per software derivativi closed-source.
+
+* Manson et al. 2007: Is the Open Way a Better Way? Digital Forensics using Open Source Tools 
+
+- Autori :: Dan Manson, Anna Carlin, Steve Ramos, Alain Gyger, Matthew Kaufman, Jeremy Treichelt
+- Anno :: 2007
+- Rilevanza :: Confronto delle funzionalità di sistemi proprietari con un sistema open-source.
+- URL :: https://ieeexplore.ieee.org/document/4076922
+
+- Le funzionalità fra i prodotti proprietari e Autopsy e Sleuthkit sono generalmente equivalenti (sez. 6.2).
+- Sleuthkit/Autopsy è più difficile da utilizzare se non si ha esperienza con un sistema Linux, FTK è più semplice, EnCase è più difficile da utilizzare (sez. 6.3).
+- Per i prodotti commerciali, i vantaggi sono la possibilità di supporto tecnico dedicato, che permette di superare anche carenze nella documentazione, mentre per i prodotti open-source, il supporto tecnico non è dedicato, e la documentazione è riduttiva, perché gli autori presuppongono una certa familiarità con i sistemi Linux (sez. 6.4).
+- NIST ha testato DD per l'acquisizione di immagini forensi due volte (sez. 7).
+- Sarebbe utile creare delle immagini forensi standard, per verificare il funzionamento dei programmi di analisi (sez. 7).
+# Cfr. Carrer 2003, "comprehensive test methodology".
+- La qualità dell'analisi dipende anche dalla stabilità del sistema su cui viene eseguito (se un sistema Windows contiene malware, è meglio analizzarlo con un sistema Linux), e dal supporto per l'hardware (i sistemi Linux non hanno lo stesso supporto dei sistemi Windows) (sez. 7).
+- L'introduzione di interfacce grafiche può aiutare l'adozione di strumenti open-source (sez. 7).
+- Gli strumenti open-source e commerciali offrono gli stessi risultati, ma con diverso grado di laboriosità (sez. 8).
+- I programmi commerciali e open-source non sono in competizione fra di loro, ma piuttosto devono collaborare per convalidare reciprocamente i loro risultati (sez. 8).
+
+* Mercuri 2010: Criminal Defense Challenges in Computer Forensics
+
+- Autori :: Rebecca Mercuri
+- Anno :: 2010
+- Rilevanza ::
+  - Maggiore affidabilità degli strumenti open-source per l'acquisizione dei dati.
+  - Risultati delle analisi del NIST su vari software per l'acquisizione forense.
+- URL :: http://www.notablesoftware.com/Papers/Criminal-Defense-Challenges-in-Computer-Forensics.pdf
+
+- Tradizionalmente si usava DD per fare acquisizioni forensi, ma attualmente si usano formati proprietari, che rendono più difficili le indagini investigative, perché impongono l'uso di strumenti proprietari per la loro utilizzazione, e perché gli strumenti proprietari non sono necessariamente affidabili (135--136).
+- Secondo AccessData gli errori nell'acquisizione sono una statistica irrilevante, ma secondo il NIST si possono verificare vari tipi di anomalie, e che l'uso di software proprietari diversi può portare ad "anomalie" e quindi risultati diversi (136).
+- DD invece produce sempre lo stesso risultato, indipendentemente da vari fattori, il che non implica maggiore sicurezza o affidabilità, ma la maggiore trasparenza è un vantaggio indubbio (136--137).
+- Problemi simili esistono anche per gli altri tipi di software, ed è necessario testarli, e le corti devono valutare i risultati con le dovute cautele (137).
+
+# Nota: i punti sopra riassumono solo la sezione 2.6, le altre sezioni riguardano altre problematiche della prova digitale.
+
+* Kornblum 2004: The Linux Kernel and the Forensic Acquisition of Hard Disks with an Odd Number of Sectors
+
+Jesse D. Kornblum
+2004
+https://www.utica.edu/academic/institutes/ecii/publications/articles/A0B8BE05-BD96-240E-F1BE517A38B48665.pdf
+
+- GNU dd funziona in maniera diversa da FreeBSD dd perché legge un settore in meno, la possibilità di analizzare il codice sorgente del programma e del kernel ha permesso di determinare la fonte del problema, e di risolverlo (1).
+
+* Richard 2014: In lieu of swap: Analyzing compressed RAM in Mac OS X and Linux
+
+Golden G. Richard III, Andrew Case
+2014
+https://www.sciencedirect.com/science/article/pii/S1742287614000541
+
+- /Introduction/:
+  - Le tecniche di digital forensics tradizionali si basavano sull'acquisizione di hard disk spenti, e non copiava i dati contenuti nelle memorie volatili come la RAM, che possono comunque essere utili per le investigazioni (S3).
+  - La live forensics consiste nell'analizzare una macchina accesa, con programmi che vengono eseguiti direttamente sul sistema oggetto di indagine (S3).
+  - La memory analysis consiste in una cattura "statica" della memoria, da poter analizzare in seguito (S4).
+  - Entrambe le tecniche disturbano il sistema, ma la memory analysis è meno invasiva (S4).
+  - Se si cattura la memoria, è utile catturare anche lo swap file, ma è difficile catturare entrambi in modo che siano coerenti fra di loro, e lo swap file può essere compresso (S4).
+- /Memory analysis for modern virtual memory systems/:
+  - /Descrizione di come funziona la memoria virtuale e lo swap/ (S4--S5).
+- /Swap files as a source of evidence/:
+  - /Swap files are a potentially interesting .../ - La memoria swap può contenere sequenze di dati utili, ma data la sua natura "disordinata", è necessario determinare da quale processo quelle sequenze hanno avuto origine (S5).
+  - /Second, unless specific measures are .../ - La memoria swap non è volatile, e non viene ripulita né inizializzata fra vari riavvii del sistema, e questo permette la sua analisi, ma significa anche che si possono trovare dati estranei di due tipi: provenienti da sessioni precedenti e diversi da quella attuale, oppure si trovino dati che non hanno nulla a che fare con lo swap (S5).
+  - /... use of encrypted swap files .../ - I dati di swap possono essere anche protetti da crittografia, per ragioni di sicurezza (S5).
+  - /Assuming that a dump of physical memory .../ - Acquisire le informazioni relative allo swap, ed eventualmente le chiavi crittografiche per decifrarlo, da un sistema live e non virtualizzato è difficile, perché le funzioni di swap continuano mentre il sistema è attivo, e quando l'acquisizione della memoria è terminata, i dati di swap molto probabilmente sono stati già sovrascritti, pertanto è meglio non fidarsi dei risultati dell'analisi della memoria di swap (S5--S6).
+  - /... compressing RAM to reduce memory .../ - La RAM non in uso può essere compressa per evitare di dover ricorrere allo swapping, e l'analisi della RAM compressa è molto più semplice e affidabile, dato che viene catturata allo stesso tempo del resto della RAM (S6).
+- /Analyzing compressed RAM/:
+  - /The Volatility Framework is a portable, open source .../ - Volatility è open-source, ed è sviluppato nel linguaggio di programmazione Python, quindi può essere utilizzato su più sistemi operativi, e permette di analizzare la RAM da più formati (S6--S7).
+  - /Descrizione tecnica di come funziona la RAM compressa in OS X e Linux/ (S7--S10).
+- /Evaluation/:
+  - /... substantial amount of data may be compressed .../ - Le tecniche di compressione della RAM sono largamente utilizzate per evitare lo swap, specie su sistemi con poca RAM, ma anche su sistemi con molta RAM e con un carico di lavoro normale (S10).
+  - /In the tests above, the user was browsing .../ - L'analisi della RAM compressa ha permesso di recuperare dati che erano visibili all'utente (S11).
+  - /One drawback in using the Volatility framework .../ - Lo svantaggio di usare Python è la lentezza nelle operazioni di decompressione, ma il vantaggio è che può essere eseguito su qualsiasi piattaforma (S11).
+- /Related work/:
+  - /... primary framework for integrating new .../ - Dato che Volatility è open-source, le nuove metodologie di analisi della RAM possono essere integrate al suo interno (S11).
+  - /Little formal work exists on swap file analysis .../ - Lo studio dei dati di swap presenta maggiori difficoltà (S11).
+- /Conlusions/:
+  - /... compressed swap in Mac OS X and Linux make much .../ - La compressione della RAM in OS X e Linux permette di mantenere più dati in memoria, e se è possibile decomprimerli, fornisce agli investigatori più informazioni rispetto allo swap su disco (S11).
+- /Future work/:
+  - /... other operating systems, such as Microsoft Windows .../ - La compressione della RAM sarà integrata in Windows, dato il suo successo su OS X e Linux, ma l'analisi di un sistema closed-source presenta difficoltà maggiori (S11).
+  - /... swap on mobile devices is also part of our future .../ - La compressione della RAM viene utilizzata anche su dispositivi Android.
+
+* Ayers 2015: Windows hibernation and memory forensics
+
+- Autori :: Amy L. Ayers
+- Anno :: 2015
+- Rilevanza :: Perché è utile acquisire il file di ibernazione di Windows, uso di Volatility per la sua analisi.
+- Copyright :: Open access, 
+https://www.proquest.com/openview/6234eb4182b6c33c07dc79f7224b5eea/1
+
+- /Memory image is unavailable./ - La RAM potrebbe non essere stata catturata, oppure l'acquisizione potrebbe presentare altri problemi (3).
+- /Hibernation file as a supplement to a memory image./ - Anche se la RAM è stata acquisita, è comunque utile avere un file di ibernazione, perché offre informazioni non presenti nella RAM (4).
+- /Archived hibernation files./ - Se i backup sono attivati, è possibile accedere a più file di ibernazione, che può essere utile per ricostruire una linea temporale (5).
+- /Hiberfil.sys header./ - L'header contiene informazioni utili sui contenuti del file di ibernazione, ma viene azzerato dopo che il sistema viene riacceso, e l'unica traccia che rimane sono le prime quattro lettere, che indicano lo stato del sistema (12--14).
+- /Volatility. Volatility is a widely used memory forensics tool./ - Volatility permette di mostrare informazioni sul formato del file di ibernazione, e di analizzare i dati che contiene anche in assenza dell'header, gli svantaggi includono il fatto che è uno strumento a linea di comando, si basa sull'uso di plugin, e non è tanto efficiente quanto una soluzione tutto-in-uno (30--31).
+- /Negative evidence./ - Comprendere gli esatti contenuti del file di ibernazione è importante, perché l'assenza di elementi nel file non prova necessariamente la loro assenza nella RAM (35).
+- /Hiberfil.sys versus live memory capture./ - L'esatto contenuto del file di ibernazione di Windows non è chiaro, e potrebbe non corrispondere esattamente alla RAM, dato che possono mancare alcune informazioni relative alle connessioni e ad eventuale malware che si rimuove dalla memoria (37--38).
+- /Hibernation slack space./- Il file di ibernazione non è completamente sovrascritto, anche a seguito di una nuova installazione di Windows, e può esistere dello "slack space" al suo interno, che può essere utile per le indagini, se è possibile dimostrare in maniera affidabile la sua origine (38--39).
+- /Hiberfil.sys archives./ - In presenza di backup, possono esistere più versioni del file di ibernazione, che possono essere confrontate fra di loro (41).
+
+* Case e Richard 2017: Memory forensics: The path forward
+
+- Autori :: Andrew Case, Golden G. Richard III
+- Anno :: 2017
+- Rilevanza :: 
+- URL :: https://www.sciencedirect.com/science/article/pii/S1742287616301529
+

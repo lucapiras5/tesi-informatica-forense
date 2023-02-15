@@ -1,0 +1,63 @@
+#+TITLE: Scaletta della tesi
+#+AUTHOR: Luca Piras
+
+* Struttura
+
+** Digital forensics
+
+*** Aspetti storici
+
+- Definizione di informatica forense
+  - Definizione di informatica e di scienze forensi
+- Evoluzione verso la digital forensics
+
+*** Standard tecnici
+
+- Necessità di una formalizzazione e definizione di best practices
+- Standard ISO sulla digital evidence
+
+*** Riconoscimento legale
+
+- Principi generali sul trattamento della prova informatica:
+  - Convenzione di Budapest
+  - Principi generali su come trattare i dati informatici nel codice di procedura penale italiano
+- Natura della prova informatica:
+  - Natura dei dati digitali e della prova informatica secondo la dottrina e la Cassazione
+- Aspetti pratici della prova informatica:
+  - Mezzi di ricerca della prova informatica
+    - Sequestro probatorio, ispezione e perquisizione, intercettazioni
+  - Modalità di assunzione della fonte di prova informatica
+    - Prova documentale, atipica, perizia/consulenza tecnica
+  - Criteri di valutazione della prova informatica
+
+** GNU/Linux e la filosofia FOSS
+
+*** Cos'è GNU/Linux
+
+- GNU/Linux è un sistema operativo:
+  - Definizione di sistema operativo
+  - Esempi principali: Windows, macOS
+  - Componenti: hardware, kernel, software
+  - Analogia fra hardware-corpo umano, kernel-cervello, software-educazione
+- Linux è soltanto un kernel
+  - Si parla di "distribuzioni Linux" perché Linux non è un sistema operativo in sé
+- GNU è il software necessario per avere un sistema operativo funzionante
+  - Esistono distribuzioni Linux senza componenti GNU (Alpine)
+
+*** Licenze open-source
+
+- Natura del codice:
+  - Differenza fra codice sorgente e codice eseguibile
+  - Il codice sorgente è soggetto al diritto d'autore
+- Definizione di software libero:
+  - Prima libertà: eseguire il software
+  - Seconda libertà: studiare il codice sorgente e modificarlo
+  - Terza e quarta libertà: ridistribuire copie, anche modificate
+- GNU GPL, MIT, etc.
+
+** Utilizzazione di sistemi GNU/Linux per la digital forensics
+
+- Considerazioni legali:
+  - Diritto alla difesa: costo nullo
+  - Valutazione delle prove: ispezione del codice sorgente
+- Elementi pratici
