@@ -110,65 +110,87 @@ Tutte le fonti contenute su URL che iniziano con https://sciencedirect.com sono 
 
 * Kornblum 2004: The Linux Kernel and the Forensic Acquisition of Hard Disks with an Odd Number of Sectors
 
-Jesse D. Kornblum
-2004
-https://www.utica.edu/academic/institutes/ecii/publications/articles/A0B8BE05-BD96-240E-F1BE517A38B48665.pdf
+- Autori :: Jesse D. Kornblum
+- Anno :: 2004
+- Rilevanza :: Dimostrazione concreta di come le anomalie negli strumenti open-source vengono individuate e discusse pubblicamente.
+- URL :: https://www.utica.edu/academic/institutes/ecii/publications/articles/A0B8BE05-BD96-240E-F1BE517A38B48665.pdf
 
 - GNU dd funziona in maniera diversa da FreeBSD dd perché legge un settore in meno, la possibilità di analizzare il codice sorgente del programma e del kernel ha permesso di determinare la fonte del problema, e di risolverlo (1).
 
-* Richard 2014: In lieu of swap: Analyzing compressed RAM in Mac OS X and Linux
+* Richard e Case 2014: In lieu of swap: Analyzing compressed RAM in Mac OS X and Linux
 
-Golden G. Richard III, Andrew Case
-2014
-https://www.sciencedirect.com/science/article/pii/S1742287614000541
+- Autori :: Golden G. Richard III, Andrew Case
+- Anno :: 2014
+- Rilevanza ::
+  - Definizione di live forensics, memory analysis.
+  - Spiegazione di come funziona la memoria virtuale e lo swap.
+  - Utilizzazione dello swap e della RAM compressa ai fini delle investigazioni.
+  - Programmi open-source sono portabili su altri sistemi, funzionano da basi su cui impiantare nuove tecniche di analisi.
+- URL :: https://www.sciencedirect.com/science/article/pii/S1742287614000541
 
-- /Introduction/:
-  - Le tecniche di digital forensics tradizionali si basavano sull'acquisizione di hard disk spenti, e non copiava i dati contenuti nelle memorie volatili come la RAM, che possono comunque essere utili per le investigazioni (S3).
-  - La live forensics consiste nell'analizzare una macchina accesa, con programmi che vengono eseguiti direttamente sul sistema oggetto di indagine (S3).
-  - La memory analysis consiste in una cattura "statica" della memoria, da poter analizzare in seguito (S4).
-  - Entrambe le tecniche disturbano il sistema, ma la memory analysis è meno invasiva (S4).
-  - Se si cattura la memoria, è utile catturare anche lo swap file, ma è difficile catturare entrambi in modo che siano coerenti fra di loro, e lo swap file può essere compresso (S4).
-- /Memory analysis for modern virtual memory systems/:
-  - /Descrizione di come funziona la memoria virtuale e lo swap/ (S4--S5).
-- /Swap files as a source of evidence/:
-  - /Swap files are a potentially interesting .../ - La memoria swap può contenere sequenze di dati utili, ma data la sua natura "disordinata", è necessario determinare da quale processo quelle sequenze hanno avuto origine (S5).
-  - /Second, unless specific measures are .../ - La memoria swap non è volatile, e non viene ripulita né inizializzata fra vari riavvii del sistema, e questo permette la sua analisi, ma significa anche che si possono trovare dati estranei di due tipi: provenienti da sessioni precedenti e diversi da quella attuale, oppure si trovino dati che non hanno nulla a che fare con lo swap (S5).
-  - /... use of encrypted swap files .../ - I dati di swap possono essere anche protetti da crittografia, per ragioni di sicurezza (S5).
-  - /Assuming that a dump of physical memory .../ - Acquisire le informazioni relative allo swap, ed eventualmente le chiavi crittografiche per decifrarlo, da un sistema live e non virtualizzato è difficile, perché le funzioni di swap continuano mentre il sistema è attivo, e quando l'acquisizione della memoria è terminata, i dati di swap molto probabilmente sono stati già sovrascritti, pertanto è meglio non fidarsi dei risultati dell'analisi della memoria di swap (S5--S6).
-  - /... compressing RAM to reduce memory .../ - La RAM non in uso può essere compressa per evitare di dover ricorrere allo swapping, e l'analisi della RAM compressa è molto più semplice e affidabile, dato che viene catturata allo stesso tempo del resto della RAM (S6).
-- /Analyzing compressed RAM/:
-  - /The Volatility Framework is a portable, open source .../ - Volatility è open-source, ed è sviluppato nel linguaggio di programmazione Python, quindi può essere utilizzato su più sistemi operativi, e permette di analizzare la RAM da più formati (S6--S7).
-  - /Descrizione tecnica di come funziona la RAM compressa in OS X e Linux/ (S7--S10).
-- /Evaluation/:
-  - /... substantial amount of data may be compressed .../ - Le tecniche di compressione della RAM sono largamente utilizzate per evitare lo swap, specie su sistemi con poca RAM, ma anche su sistemi con molta RAM e con un carico di lavoro normale (S10).
-  - /In the tests above, the user was browsing .../ - L'analisi della RAM compressa ha permesso di recuperare dati che erano visibili all'utente (S11).
-  - /One drawback in using the Volatility framework .../ - Lo svantaggio di usare Python è la lentezza nelle operazioni di decompressione, ma il vantaggio è che può essere eseguito su qualsiasi piattaforma (S11).
-- /Related work/:
-  - /... primary framework for integrating new .../ - Dato che Volatility è open-source, le nuove metodologie di analisi della RAM possono essere integrate al suo interno (S11).
-  - /Little formal work exists on swap file analysis .../ - Lo studio dei dati di swap presenta maggiori difficoltà (S11).
-- /Conlusions/:
-  - /... compressed swap in Mac OS X and Linux make much .../ - La compressione della RAM in OS X e Linux permette di mantenere più dati in memoria, e se è possibile decomprimerli, fornisce agli investigatori più informazioni rispetto allo swap su disco (S11).
-- /Future work/:
-  - /... other operating systems, such as Microsoft Windows .../ - La compressione della RAM sarà integrata in Windows, dato il suo successo su OS X e Linux, ma l'analisi di un sistema closed-source presenta difficoltà maggiori (S11).
-  - /... swap on mobile devices is also part of our future .../ - La compressione della RAM viene utilizzata anche su dispositivi Android.
+** Introduction
+
+- Le tecniche di digital forensics tradizionali si basavano sull'acquisizione di hard disk spenti, e non copiava i dati contenuti nelle memorie volatili come la RAM, che possono comunque essere utili per le investigazioni (S3).
+- La live forensics consiste nell'analizzare una macchina accesa, con programmi che vengono eseguiti direttamente sul sistema oggetto di indagine (S3).
+- La memory analysis consiste in una cattura "statica" della memoria, da poter analizzare in seguito (S4).
+- Entrambe le tecniche disturbano il sistema, ma la memory analysis è meno invasiva (S4).
+- Se si cattura la memoria, è utile catturare anche lo swap file, ma è difficile catturare entrambi in modo che siano coerenti fra di loro, e lo swap file può essere compresso (S4).
+
+** Memory analysis for modern virtual memory systems
+
+- /Descrizione di come funziona la memoria virtuale e lo swap/ (S4--S5).
+
+** Swap files as a source of evidence
+
+- Swap files are a potentially interesting ... :: La memoria swap può contenere sequenze di dati utili, ma data la sua natura "disordinata", è necessario determinare da quale processo quelle sequenze hanno avuto origine (S5).
+- Second, unless specific measures are ... :: La memoria swap non è volatile, e non viene ripulita né inizializzata fra vari riavvii del sistema, e questo permette la sua analisi, ma significa anche che si possono trovare dati estranei di due tipi: provenienti da sessioni precedenti e diversi da quella attuale, oppure si trovino dati che non hanno nulla a che fare con lo swap (S5).
+- ... use of encrypted swap files ... ::  I dati di swap possono essere anche protetti da crittografia, per ragioni di sicurezza (S5).
+- Assuming that a dump of physical memory ... :: Acquisire le informazioni relative allo swap, ed eventualmente le chiavi crittografiche per decifrarlo, da un sistema live e non virtualizzato è difficile, perché le funzioni di swap continuano mentre il sistema è attivo, e quando l'acquisizione della memoria è terminata, i dati di swap molto probabilmente sono stati già sovrascritti, pertanto è meglio non fidarsi dei risultati dell'analisi della memoria di swap (S5--S6).
+- ... compressing RAM to reduce memory ... :: La RAM non in uso può essere compressa per evitare di dover ricorrere allo swapping, e l'analisi della RAM compressa è molto più semplice e affidabile, dato che viene catturata allo stesso tempo del resto della RAM (S6).
+
+** Analyzing compressed RAM
+
+- The Volatility Framework is a portable, open source ... :: Volatility è open-source, ed è sviluppato nel linguaggio di programmazione Python, quindi può essere utilizzato su più sistemi operativi, e permette di analizzare la RAM da più formati (S6--S7).
+- /Descrizione tecnica di come funziona la RAM compressa in OS X e Linux/ (S7--S10).
+
+** Evaluation
+
+- ... substantial amount of data may be compressed ... :: Le tecniche di compressione della RAM sono largamente utilizzate per evitare lo swap, specie su sistemi con poca RAM, ma anche su sistemi con molta RAM e con un carico di lavoro normale (S10).
+- In the tests above, the user was browsing ... :: L'analisi della RAM compressa ha permesso di recuperare dati che erano visibili all'utente (S11).
+- One drawback in using the Volatility framework ... :: Lo svantaggio di usare Python è la lentezza nelle operazioni di decompressione, ma il vantaggio è che può essere eseguito su qualsiasi piattaforma (S11).
+
+** Related work
+
+- ... primary framework for integrating new ... :: Dato che Volatility è open-source, le nuove metodologie di analisi della RAM possono essere integrate al suo interno (S11).
+- Little formal work exists on swap file analysis ... :: Lo studio dei dati di swap presenta maggiori difficoltà (S11).
+
+** Conclusions
+
+- ... compressed swap in Mac OS X and Linux make much ... :: La compressione della RAM in OS X e Linux permette di mantenere più dati in memoria, e se è possibile decomprimerli, fornisce agli investigatori più informazioni rispetto allo swap su disco (S11).
+
+** Future work
+
+- ... other operating systems, such as Microsoft Windows ... :: La compressione della RAM sarà integrata in Windows, dato il suo successo su OS X e Linux, ma l'analisi di un sistema closed-source presenta difficoltà maggiori (S11).
+- ... swap on mobile devices is also part of our future ... :: La compressione della RAM viene utilizzata anche su dispositivi Android.
 
 * Ayers 2015: Windows hibernation and memory forensics
 
 - Autori :: Amy L. Ayers
 - Anno :: 2015
-- Rilevanza :: Perché è utile acquisire il file di ibernazione di Windows, uso di Volatility per la sua analisi.
-- Copyright :: Open access, 
-https://www.proquest.com/openview/6234eb4182b6c33c07dc79f7224b5eea/1
+- Rilevanza ::
+  - Perché è utile acquisire il file di ibernazione di Windows.
+  - Uso di Volatility per la sua analisi.
+- URL :: https://www.proquest.com/openview/6234eb4182b6c33c07dc79f7224b5eea/1
 
-- /Memory image is unavailable./ - La RAM potrebbe non essere stata catturata, oppure l'acquisizione potrebbe presentare altri problemi (3).
-- /Hibernation file as a supplement to a memory image./ - Anche se la RAM è stata acquisita, è comunque utile avere un file di ibernazione, perché offre informazioni non presenti nella RAM (4).
-- /Archived hibernation files./ - Se i backup sono attivati, è possibile accedere a più file di ibernazione, che può essere utile per ricostruire una linea temporale (5).
-- /Hiberfil.sys header./ - L'header contiene informazioni utili sui contenuti del file di ibernazione, ma viene azzerato dopo che il sistema viene riacceso, e l'unica traccia che rimane sono le prime quattro lettere, che indicano lo stato del sistema (12--14).
-- /Volatility. Volatility is a widely used memory forensics tool./ - Volatility permette di mostrare informazioni sul formato del file di ibernazione, e di analizzare i dati che contiene anche in assenza dell'header, gli svantaggi includono il fatto che è uno strumento a linea di comando, si basa sull'uso di plugin, e non è tanto efficiente quanto una soluzione tutto-in-uno (30--31).
-- /Negative evidence./ - Comprendere gli esatti contenuti del file di ibernazione è importante, perché l'assenza di elementi nel file non prova necessariamente la loro assenza nella RAM (35).
-- /Hiberfil.sys versus live memory capture./ - L'esatto contenuto del file di ibernazione di Windows non è chiaro, e potrebbe non corrispondere esattamente alla RAM, dato che possono mancare alcune informazioni relative alle connessioni e ad eventuale malware che si rimuove dalla memoria (37--38).
-- /Hibernation slack space./- Il file di ibernazione non è completamente sovrascritto, anche a seguito di una nuova installazione di Windows, e può esistere dello "slack space" al suo interno, che può essere utile per le indagini, se è possibile dimostrare in maniera affidabile la sua origine (38--39).
-- /Hiberfil.sys archives./ - In presenza di backup, possono esistere più versioni del file di ibernazione, che possono essere confrontate fra di loro (41).
+- Memory image is unavailable. :: La RAM potrebbe non essere stata catturata, oppure l'acquisizione potrebbe presentare altri problemi (3).
+- Hibernation file as a supplement to a memory image. :: Anche se la RAM è stata acquisita, è comunque utile avere un file di ibernazione, perché offre informazioni non presenti nella RAM (4).
+- Archived hibernation files. :: Se i backup sono attivati, è possibile accedere a più file di ibernazione, che può essere utile per ricostruire una linea temporale (5).
+- Hiberfil.sys header. :: L'header contiene informazioni utili sui contenuti del file di ibernazione, ma viene azzerato dopo che il sistema viene riacceso, e l'unica traccia che rimane sono le prime quattro lettere, che indicano lo stato del sistema (12--14).
+- Volatility. Volatility is a widely used memory forensics tool. :: Volatility permette di mostrare informazioni sul formato del file di ibernazione, e di analizzare i dati che contiene anche in assenza dell'header, gli svantaggi includono il fatto che è uno strumento a linea di comando, si basa sull'uso di plugin, e non è tanto efficiente quanto una soluzione tutto-in-uno (30--31).
+- Negative evidence. :: Comprendere gli esatti contenuti del file di ibernazione è importante, perché l'assenza di elementi nel file non prova necessariamente la loro assenza nella RAM (35).
+- Hiberfil.sys versus live memory capture. :: L'esatto contenuto del file di ibernazione di Windows non è chiaro, e potrebbe non corrispondere esattamente alla RAM, dato che possono mancare alcune informazioni relative alle connessioni e ad eventuale malware che si rimuove dalla memoria (37--38).
+- Hibernation slack space. :: Il file di ibernazione non è completamente sovrascritto, anche a seguito di una nuova installazione di Windows, e può esistere dello "slack space" al suo interno, che può essere utile per le indagini, se è possibile dimostrare in maniera affidabile la sua origine (38--39).
+- Hiberfil.sys archives. :: In presenza di backup, possono esistere più versioni del file di ibernazione, che possono essere confrontate fra di loro (41).
 
 * Case e Richard 2017: Memory forensics: The path forward
 
