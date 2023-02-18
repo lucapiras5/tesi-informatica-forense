@@ -192,10 +192,23 @@ Tutte le fonti contenute su URL che iniziano con https://sciencedirect.com sono 
 - Hibernation slack space. :: Il file di ibernazione non è completamente sovrascritto, anche a seguito di una nuova installazione di Windows, e può esistere dello "slack space" al suo interno, che può essere utile per le indagini, se è possibile dimostrare in maniera affidabile la sua origine (38--39).
 - Hiberfil.sys archives. :: In presenza di backup, possono esistere più versioni del file di ibernazione, che possono essere confrontate fra di loro (41).
 
-* Case e Richard 2017: Memory forensics: The path forward
+* Sylve et al. 2017: Modern windows hibernation file analysis
 
-- Autori :: Andrew Case, Golden G. Richard III
+- Autori :: Joe T. Sylve, Vico Marziale, Golden G. Richard III
 - Anno :: 2017
-- Rilevanza :: 
-- URL :: https://www.sciencedirect.com/science/article/pii/S1742287616301529
+- Rilevanza :: Problemi con il file di ibernazione.
+- URL :: https://www.sciencedirect.com/science/article/pii/S1742287616301487
 
+** Windows 7 observations
+
+- Dopo che il sistema viene riavviato, viene sovrascritta solo la prima pagina del file di ibernazione (21).
+
+** Windows 8+ observations
+
+- Dopo che il sistema viene riavviato, il file viene quasi completamente azzerato (21).
+
+** Forensic implications windows 8+
+
+- Il file di ibernazione nelle versioni più recenti di Windows contiene meno informazioni rispetto alle versioni precedenti (22).
+- Se il sistema viene spento da GUI, si usa la modalità di ibernazione ibrida, che contiene meno informazioni (22).
+- Per preservare la maggiore quantità possibile di dati nel file di ibernazione, è necessario usare un comando per spegnere il sistema usando un comando particolare (22).
