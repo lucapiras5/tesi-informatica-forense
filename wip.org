@@ -23,6 +23,9 @@ TDD:
 - On The Evolution of Digital Evidence: Novel Approaches for Cyber Investigation - http://elea.unisa.it/bitstream/handle/10556/1443/tesi%20G.%20De%20Maio.pdf?sequence=1&isAllowed=y
 
 - Live Forensics: http://www.di-srv.unisa.it/~ads/ads/Sicurezza_files/Tesina%20Live%20Forensics.pdf
+
+- RAMAS, analisi della RAM estensibile, prototipo esiste per Linux: https://www.sciencedirect.com/science/article/pii/S0167404818311313
+
 - Volatile Memory Based Forensic Artifacts & Analysis: http://cloud.politala.ac.id/politala/1.%20Jurusan/Teknik%20Informatika/19.%20e-journal/Jurnal%20Internasional%20TI/International%20Journal%20For%20Research%20in%20Applied%20Science%20and%20Engineering%20Technology%20(IJRASET)/2014/Volume%202,%20Issue%20I,%20January%202014/Volatile%20Memory%20Based%20Forensic%20Artifacts%20&.pdf
 
 - SOFTWARE LIBERO E "OPEN SOURCE" - http://www.dvara.net/hk/meo.pdf
