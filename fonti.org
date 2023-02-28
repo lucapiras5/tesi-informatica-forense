@@ -212,3 +212,9 @@ Tutte le fonti contenute su URL che iniziano con https://sciencedirect.com sono 
 - Il file di ibernazione nelle versioni più recenti di Windows contiene meno informazioni rispetto alle versioni precedenti (22).
 - Se il sistema viene spento da GUI, si usa la modalità di ibernazione ibrida, che contiene meno informazioni (22).
 - Per preservare la maggiore quantità possibile di dati nel file di ibernazione, è necessario usare un comando per spegnere il sistema usando un comando particolare (22).
+* TODO Gonzalez-Barahona 2021: A brief history of free, open source software and its communities
+
+- Autori :: Jesus M. Gonzalez-Barahona
+- Anno :: 2021
+- Rilevanza :: Storia del software open-source.
+- URL :: https://ieeexplore.ieee.org/abstract/document/9353517

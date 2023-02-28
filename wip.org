@@ -3,6 +3,10 @@
 
 * Da leggere
 
+- https://tldp.org/HOWTO/Secure-Programs-HOWTO/history.html
+- https://tldp.org/HOWTO/Secure-Programs-HOWTO/open-source-security.html
+- https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=e6cebe521f8d1e10deea138c8314a9945199262b
+
 - Unboxing the digital forensic investigation process: https://www.sciencedirect.com/science/article/pii/S1355030622000144
 - Reliability validation for file system interpretation: https://www.sciencedirect.com/science/article/pii/S2666281721000822
 - Towards reliable digital forensics investigations through measurement science: https://wires.onlinelibrary.wiley.com/doi/epdf/10.1002/wfs2.1367
