@@ -1,31 +1,49 @@
-#+TITLE: Scaletta della tesi
+#+TITLE: Scaletta della tesi -- Apologia per l'utilizzazione di distribuzioni GNU/Linux e software FOSS per la digital forensics
 #+AUTHOR: Luca Piras
+#+LANGUAGE: it
 
-* Introduzione alla tesi
+#+bibliography: orgcite.bib
+# #+cite_export: csl universita-di-bologna-lettere.csl
+#+cite_export: csl
+
+* TODO Introduzione alla tesi
 ** TODO Scelta dell'argomento
-** Struttura della tesi
-*** Prima parte
-- Cos'è Linux e la digital forensics (DF).
-- Definizioni, cenni storici.
-*** Seconda parte
-- Perché usare Linux per la DF.
-- Confronto con il software proprietario.
-- Dimostrazione che Linux è una alternativa valida.
-*** Terza parte
-- Come usare Linux per la DF.
-- Programmi per l'acquisizione e analisi dei dati e presentazione dei risultati.
-* Introduzione a GNU/Linux
-** GNU/Linux e la filosofia FOSS
-- GNU/Linux è un sistema operativo:
-  - Definizione di sistema operativo
-  - Esempi principali: Windows, macOS
-  - Componenti: hardware, kernel, software
-  - Analogia fra hardware-corpo umano, kernel-cervello, software-educazione
-- Linux è soltanto un kernel
-  - Si parla di "distribuzioni Linux" perché Linux non è un sistema operativo in sé
-- GNU è il software necessario per avere un sistema operativo funzionante
-  - Esistono distribuzioni Linux senza componenti GNU (Alpine)
-** Licenze open-source
+** Struttura
+La tesi è divsa in tre parti.
+
+La prima parte fornisce una serie di definizioni, che forniscono le conoscenze di base necessarie per comprendere il resto della discussione.
+
+La seconda parte è la vera e propria apologia, in cui si argomenta come le distribuzioni GNU/Linux e il software /free and open-source/ (FOSS) in teoria sono generalmente preferibili agli strumenti proprietari e closed-source, specie all'interno del mondo giuridico.
+
+La terza parte discute l'uso pratico del software FOSS per la DF, e funzionalità e limitazioni del software rispetto alle loro controparti proprietarie.
+* Definizioni
+** Unix
+- Tutto inizia da Unix, cf. Unix epoch.
+- Linux viene definito un kernel Unix-like (lett. simil-Unix).
+- L'origine di GNU/Linux può essere tracciata ad Unix.
+
+- L'idea di software proprietario si afferma negli anni '70. Precedentemente, il software veniva considerato parte integrante dell'hardware, e venduto insieme [cite:@gonzalez-barahona-2021 75].
+** Distribuzioni GNU/Linux
+Nonostante un affermato uso colloquiale [fn::TODO Neanche Red Hat non è immune da chiamare Linux un sistema operativo. https://www.redhat.com/en/topics/linux/what-is-linux.], non esiste /un/ sistema operativo che si chiami /Linux/.  Linux in sé non è nemmeno un sistema operativo, ma soltanto un suo componente fondamentale [cite:@stallman-2021-linux-and-gnu-it].
+
+Piuttosto, esiste una /famiglia/ di sistema operativi, chiamati collettivamente /distribuzioni Linux/ [fn::Per una una lista delle principali distribuzioni, cf. https://distrowatch.com/dwres.php?resource=major.].
+
+Ogni distribuzione (abbr. /distro/, pl. /distros/) usa il /kernel Linux/, e quasi tutte usano il /sistema operativo GNU/. I due temi saranno approfonditi nelle sezioni successive.
+** GNU
+Le distribuzioni che /non/ usano GNU sono l'eccezione.
+
+Il sistema operativo per smartphone Android, usa Linux [cite:@android-developers-2023-platform-architecture], ma non GNU [cite:@stallman-2011-is-android-really-free-software].
+
+Distribuzioni specificamente progettate per sistemi integrati, come OpenWRT [fn::Cf. https://openwrt.org/start], o comunque genericamente progettate per utilizzare la minore quantità di risorse possibili, come Alpine Linux [fn:: Cf. https://www.alpinelinux.org/about/], che sostituiscono tutti gli applicativi del sistema operativo GNU con un singolo applicativo, chiamato BusyBox [fn:: Cf. https://busybox.net/about.html].
+
+- TODO:
+  - Esistono distribuzioni generiche e distribuzioni specifiche, e molte distribuzioni sono riconducibili ad altre
+  - È possibile creare una distribuzione partendo da zero, se si hanno le conoscenze tecniche necessarie
+** Linux
+Cf. https://www.polimata.eu/digital-life/kernel-spiegazione/
+** TODO FOSS
+- Origine della cultura open-source
+- Licenze open-source
 - Natura del codice:
   - Differenza fra codice sorgente e codice eseguibile
   - Il codice sorgente è soggetto al diritto d'autore
@@ -34,24 +52,16 @@
   - Seconda libertà: studiare il codice sorgente e modificarlo
   - Terza e quarta libertà: ridistribuire copie, anche modificate
 - GNU GPL, MIT, etc.
-* Ragioni a favore di GNU/Linux ed il FOSS
-* Utilizzazione pratica di GNU/Linux
-
-* Digital forensics
-
-*** Aspetti storici
-
+- Distribuzioni Linux pienamente libre, Debian
+- Android non è una distribuzione libre: [cite:@stallman-2011-is-android-really-free-software], e perché: https://source.android.com/docs/setup/about/licenses.
+- Problemi con readline
+- GPL v3 e Tivoization
+** Digital forensics
 - Definizione di informatica forense
-  - Definizione di informatica e di scienze forensi
+- Definizione di informatica e di scienze forensi
 - Evoluzione verso la digital forensics
-
-*** Standard tecnici
-
 - Necessità di una formalizzazione e definizione di best practices
 - Standard ISO sulla digital evidence
-
-*** Riconoscimento legale
-
 - Principi generali sul trattamento della prova informatica:
   - Convenzione di Budapest
   - Principi generali su come trattare i dati informatici nel codice di procedura penale italiano
@@ -62,11 +72,12 @@
     - Sequestro probatorio, ispezione e perquisizione, intercettazioni
   - Modalità di assunzione della fonte di prova informatica
     - Prova documentale, atipica, perizia/consulenza tecnica
-  - Criteri di valutazione della prova informatica
-
-* Utilizzazione di sistemi GNU/Linux per la digital forensics
-
-- Considerazioni legali:
-  - Diritto alla difesa: costo nullo
-  - Valutazione delle prove: ispezione del codice sorgente
-- Elementi pratici
+* Ragioni a favore di GNU/Linux ed il FOSS
+- Per il mondo enterprise (ad es., incident response) non interessa se gli strumenti sono open-source o meno, la cosa più importante è che funzionino
+- Diritto alla difesa: costo nullo
+- Valutazione delle prove: ispezione del codice sorgente
+- Obiezioni:
+  - Il costo degli strumenti enterprise è giustificato dal loro supporto dedicato
+* Utilizzazione pratica di GNU/Linux
+* Bibliografia
+#+print_bibliography:
