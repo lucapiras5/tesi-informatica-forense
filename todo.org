@@ -1,0 +1,28 @@
+* Da leggere Mk. II
+
+** Andrew S. Tanenbaum: The Impact of MINIX
+
+https://ieeexplore.ieee.org/abstract/document/6861925
+
+- Note storiche su Minix e Linux?
+
+** 2.1. History of Unix, Linux, and Open Source / Free Software
+
+https://tldp.org/HOWTO/Secure-Programs-HOWTO/history.html
+
+- http://web.archive.org/web/20010801155417/www.unix-vs-nt.org/kirch
+- Sezioni 2.1.x
+  
+** Presentazioni SANS
+
+https://www.sans.org/presentations/long-live-linux-forensics/
+
+2021 SANS Digital Forensics Survey: Digital Forensic Essentials and Why Foundations Matter -  https://www.sans.org/white-papers/40420/
+
+- Serve registrare un account
+
+** Distinzione fra Linux e Unix
+
+https://www.howtogeek.com/679989/what-are-the-differences-between-linux-and-unix/
+
+

@@ -4,37 +4,65 @@
 
 #+bibliography: orgcite.bib
 # #+cite_export: csl universita-di-bologna-lettere.csl
-#+cite_export: csl
+# #+cite_export: csl
 
-* TODO Introduzione alla tesi
-** TODO Scelta dell'argomento
+* Introduzione alla tesi
+
+** Scelta del titolo
+
+Le apologie[fn:1] erano discorsi pronunciati in difesa di una persona o una fede.[fn:2]
+
+La presente tesi vuole in primo luogo confutare l'opinione che le applicazioni libere e a sorgente aperta siano utili /solo/ ad amatori e dilettanti, mentre i professionisti /devono/ usare solo applicazioni proprietarie.
+
+Inoltre, vuole dimostrare che:
+
+- Nella ricostruzione dei fatti in un processo, le applicazioni proprietarie possano avere più funzionalità rispetto alle applicazioni libere e a sorgente aperta, ma al grave costo di essere intrinsecamente inaffidabili, e di creare risultati potenzialmente non riproducibili.
+- Le applicazioni libere e a sorgente aperta sono maggiormente affidabili, possono produrre risultati riproducibili, e che in molti casi le funzionalità sono equivalenti rispetto alle applicazioni proprietarie.
+
 ** Struttura
+
 La tesi è divsa in tre parti.
 
-La prima parte fornisce una serie di definizioni, che forniscono le conoscenze di base necessarie per comprendere il resto della discussione.
+La prima parte fornisce delle nozioni di base: spiega cosa siano esattamente /GNU/Linux/, le filosofia /free/libre and open-source/, e la /digital forensics/.
 
-La seconda parte è la vera e propria apologia, in cui si argomenta come le distribuzioni GNU/Linux e il software /free and open-source/ (FOSS) in teoria sono generalmente preferibili agli strumenti proprietari e closed-source, specie all'interno del mondo giuridico.
+La seconda parte è la vera e propria apologia: consiste in una serie di argomenti tecnici e giuridici che dimostrano la superiorità teorica del FLOSS rispetto al software proprietario.
 
-La terza parte discute l'uso pratico del software FOSS per la DF, e funzionalità e limitazioni del software rispetto alle loro controparti proprietarie.
+La terza parte entra nel concreto: si discutono quali applicazioni FLOSS vengono usate per la DF, e le relative potenzialità ed i limiti.
+
 * Definizioni
+
 ** Unix
-- Tutto inizia da Unix, cf. Unix epoch.
-- Linux viene definito un kernel Unix-like (lett. simil-Unix).
-- L'origine di GNU/Linux può essere tracciata ad Unix.
+
+- Tutto inizia da Unix:
+  - GNU vuole essere compatibile con i programmi di Unix, e migliorarlo (Stallman 1983).[fn:3]
+  - Linux nasce come un clone di Minix (Torvalds 1991),[fn:4] che a sua volta era un clone di Unix (Tanenbaum 1987, 21).[fn:5]
+  - Persino il tempo viene contato facendo riferimento alla /epoca Unix/.[fn:6]
+- Unix nasce all'inizio degli anni '70, e nel 1972 viene riscritto in C.
+  - Distinzione fra codice sorgente e codice compilato.
+  - Accenno ai linguaggi di scripting (non devono essere interpretati, Volatility è usato per l'analisi della RAM ed è scritto in Python) ed ai linguaggi che usano una rappresentazione intermedia ed una macchina virtuale (Python, Java, ELisp).
+  - /Unix and C are the ultimate computer viruses./ (Gabriel 1991).[fn:14]
 
 - L'idea di software proprietario si afferma negli anni '70. Precedentemente, il software veniva considerato parte integrante dell'hardware, e venduto insieme [cite:@gonzalez-barahona-2021 75].
+
 ** Distribuzioni GNU/Linux
-Nonostante un affermato uso colloquiale [fn::TODO Neanche Red Hat non è immune da chiamare Linux un sistema operativo. https://www.redhat.com/en/topics/linux/what-is-linux.], non esiste /un/ sistema operativo che si chiami /Linux/.  Linux in sé non è nemmeno un sistema operativo, ma soltanto un suo componente fondamentale [cite:@stallman-2021-linux-and-gnu-it].
 
-Piuttosto, esiste una /famiglia/ di sistema operativi, chiamati collettivamente /distribuzioni Linux/ [fn::Per una una lista delle principali distribuzioni, cf. https://distrowatch.com/dwres.php?resource=major.].
+Nonostante un affermato uso colloquiale, diffuso anche fra gli sviluppatori,[fn:7] non esiste /un/ sistema operativo che si chiami /Linux/.  Linux in sé non è nemmeno un sistema operativo, ma soltanto un suo componente fondamentale [cite:@stallman-2021-linux-and-gnu-it].
 
-Ogni distribuzione (abbr. /distro/, pl. /distros/) usa il /kernel Linux/, e quasi tutte usano il /sistema operativo GNU/. I due temi saranno approfonditi nelle sezioni successive.
+Piuttosto, esiste una /famiglia/ di sistema operativi, chiamati collettivamente /distribuzioni Linux/.[fn:8]
+
+Ogni distro[fn:9] usa il /kernel Linux/, e la stragrande maggioranza usa il /sistema operativo GNU/.  Linux e GNU saranno approfonditi nelle sezioni successive.
+
+Intanto, è possibile tracciare delle distinzioni fra le varie distribuzioni:
+
+- Frequenza di aggiornamento ::
+  - Le /point release distro/ vengono aggiornate più raramente. Ad es., Debian rilascia una versione detta /stable/ (stabile) ogni circa 2 anni,[fn:10] e gli aggiornamenti fra una versione e l'altra servono solo a 
+    
 ** GNU
 Le distribuzioni che /non/ usano GNU sono l'eccezione.
 
 Il sistema operativo per smartphone Android, usa Linux [cite:@android-developers-2023-platform-architecture], ma non GNU [cite:@stallman-2011-is-android-really-free-software].
 
-Distribuzioni specificamente progettate per sistemi integrati, come OpenWRT [fn::Cf. https://openwrt.org/start], o comunque genericamente progettate per utilizzare la minore quantità di risorse possibili, come Alpine Linux [fn:: Cf. https://www.alpinelinux.org/about/], che sostituiscono tutti gli applicativi del sistema operativo GNU con un singolo applicativo, chiamato BusyBox [fn:: Cf. https://busybox.net/about.html].
+Distribuzioni specificamente progettate per sistemi integrati, come OpenWRT,[fn:11] o comunque genericamente progettate per utilizzare la minore quantità di risorse possibili, come Alpine Linux,[fn:12] che sostituiscono tutti gli applicativi del sistema operativo GNU con un singolo applicativo, chiamato BusyBox.[fn:13]
 
 - TODO:
   - Esistono distribuzioni generiche e distribuzioni specifiche, e molte distribuzioni sono riconducibili ad altre
@@ -53,8 +81,12 @@ Cf. https://www.polimata.eu/digital-life/kernel-spiegazione/
   - Terza e quarta libertà: ridistribuire copie, anche modificate
 - GNU GPL, MIT, etc.
 - Distribuzioni Linux pienamente libre, Debian
-- Android non è una distribuzione libre: [cite:@stallman-2011-is-android-really-free-software], e perché: https://source.android.com/docs/setup/about/licenses.
-- Problemi con readline
+- Android non è una distribuzione libre (Stallman 2011)[fn:15] ed usa una licenza permissiva per ragioni di convenienza (Android Developers 2022).[fn:16]
+- Il dramma di readline:
+  - https://www.gnu.org/licenses/why-not-lgpl.html
+  - https://github.com/JoshCheek/clisp/blob/master/doc/Why-CLISP-is-under-GPL
+  - https://www.thrysoee.dk/editline/
+  - https://github.com/hanslub42/rlwrap
 - GPL v3 e Tivoization
 ** Digital forensics
 - Definizione di informatica forense
@@ -81,3 +113,35 @@ Cf. https://www.polimata.eu/digital-life/kernel-spiegazione/
 * Utilizzazione pratica di GNU/Linux
 * Bibliografia
 #+print_bibliography:
+
+* Footnotes
+[fn:16] V. https://source.android.com/docs/setup/about/licenses. 
+
+[fn:15] V. https://www.theguardian.com/technology/2011/sep/19/android-free-software-stallman. 
+[fn:14] V. https://dreamsongs.com/WIB.html.
+
+[fn:1] V. https://www.treccani.it/vocabolario/apologia.
+
+[fn:2] Tradizionalmente, il cristianesimo.  Tuttavia, nel mondo GNU/Linux gli utilizzatori più fedeli dell'editor di testo /Emacs/ hanno scherzosamente creato la /Chiesa di Emacs/, presieduta da /San IGNUzio/.  V. https://stallman.org/saint.html.
+
+[fn:3] V. https://www.gnu.org/gnu/initial-announcement.html.
+
+[fn:4] V. https://cdn.kernel.org/pub/linux/kernel/Historic/old-versions/RELNOTES-0.01.
+
+[fn:5] V. https://research.vu.nl/en/publications/a-unix-clone-with-source-code-for-operating-systems-courses.
+
+[fn:6] V. https://unixtime.org/ e https://2038.wtf/.
+
+[fn:7] Red Hat non è immune da chiamare Linux un sistema operativo. https://www.redhat.com/en/topics/linux/what-is-linux.
+
+[fn:8] Per una una panoramica delle principali distribuzioni, cf. https://distrowatch.com/dwres.php?resource=major.
+
+[fn:9] /Distro/, pl. /distros/ è l'abbreviazione colloquiale di /distribution/.
+
+[fn:10] Cf. https://wiki.debian.org/it/DebianReleases
+
+[fn:11] Cf. https://openwrt.org/start
+
+[fn:12] Cf. https://www.alpinelinux.org/about/
+
+[fn:13] Cf. https://busybox.net/about.html
