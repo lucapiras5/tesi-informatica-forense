@@ -56,7 +56,17 @@ Intanto, è possibile tracciare delle distinzioni fra le varie distribuzioni:
 
 - Frequenza di aggiornamento ::
   - Le /point release distro/ vengono aggiornate più raramente. Ad es., Debian rilascia una versione detta /stable/ (stabile) ogni circa 2 anni,[fn:10] e gli aggiornamenti fra una versione e l'altra servono solo a 
-    
+
+:appunti:
+- L'elemento più centrale di una distro è il gestore di pacchetti
+- Debian e Slackware sono le distro più antiche ancora in uso
+- Confronto fra Debian e Arch
+- Kali Linux
+- Debian stable non vuol dire bug-free, ma che i bug sono prevedibili
+- Aggiornamenti costanti sono desiderabili solo per gli strumenti di analisi
+- NixOS e versioni riproducibili
+:end:
+
 ** GNU
 Le distribuzioni che /non/ usano GNU sono l'eccezione.
 
