@@ -5,7 +5,7 @@
 
 Tutte le fonti contenute su URL che iniziano con https://sciencedirect.com sono disponibili se si accede con l'account unibo.it.
 
-* Carrer 2003: Open Source Digital Forensics Tools: The Legal Argument
+* Carrier 2003: Open Source Digital Forensics Tools: The Legal Argument
 
 - Autori :: Brian Carrer
 - Anno :: 2003
@@ -14,7 +14,7 @@ Tutte le fonti contenute su URL che iniziano con https://sciencedirect.com sono 
   - Creazione di standard tecnici per la valutazione di applicazioni per la digital forensics.
   - Necessità della una documentazione degli strumenti, specialmente se closed-source.
   - Valutazione dell'affidabilità degli strumenti in maniera il più trasparente possibile.
-- URL :: https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=1b5f33f13cf648cb703c20ca18ab551bc962a8a6
+- URL :: https://digital-evidence.org/papers/opensrc_legal.pdf (archiviato)
 
 ** INTRODUCTION
 
