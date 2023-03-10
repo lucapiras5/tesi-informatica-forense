@@ -4,6 +4,10 @@
 
 https://www.semanticscholar.org offre suggerimenti per trovare altri articoli.
 
+** Forensic analysis of multiple device BTRFS configurations using The Sleuth Kit
+
+https://www.sciencedirect.com/science/article/pii/S1742287618301993
+
 ** Brian Carrier, e articoli collegati
 
 https://digital-evidence.org/papers/
