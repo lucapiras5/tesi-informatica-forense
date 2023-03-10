@@ -1,5 +1,17 @@
 * Da leggere Mk. II
 
+** Generale
+
+https://www.semanticscholar.org offre suggerimenti per trovare altri articoli.
+
+** Brian Carrier, e articoli collegati
+
+https://digital-evidence.org/papers/
+
+https://www.semanticscholar.org/paper/Open-Source-Digital-Forensics-Tools-The-Legal-1-Carrier/06871f0578f07462c45bb46d0a29cc91de10455d
+
+- Autore di altri articoli sulla DF.
+
 ** Andrew S. Tanenbaum: The Impact of MINIX
 
 https://ieeexplore.ieee.org/abstract/document/6861925
