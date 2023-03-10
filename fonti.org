@@ -126,7 +126,7 @@ Tutte le fonti contenute su URL che iniziano con https://sciencedirect.com sono 
   - Spiegazione di come funziona la memoria virtuale e lo swap.
   - Utilizzazione dello swap e della RAM compressa ai fini delle investigazioni.
   - Programmi open-source sono portabili su altri sistemi, funzionano da basi su cui impiantare nuove tecniche di analisi.
-- URL :: https://www.sciencedirect.com/science/article/pii/S1742287614000541
+- URL :: https://www.sciencedirect.com/science/article/pii/S1742287614000541 (archiviato)
 
 ** Introduction
 
