@@ -180,7 +180,7 @@ Tutte le fonti contenute su URL che iniziano con https://sciencedirect.com sono 
 - Rilevanza ::
   - Perché è utile acquisire il file di ibernazione di Windows.
   - Uso di Volatility per la sua analisi.
-- URL :: https://www.proquest.com/openview/6234eb4182b6c33c07dc79f7224b5eea/1
+- URL :: https://www.proquest.com/openview/6234eb4182b6c33c07dc79f7224b5eea/1 (archiviato come https://www.proquest.com/docview/1676462584)
 
 - Memory image is unavailable. :: La RAM potrebbe non essere stata catturata, oppure l'acquisizione potrebbe presentare altri problemi (3).
 - Hibernation file as a supplement to a memory image. :: Anche se la RAM è stata acquisita, è comunque utile avere un file di ibernazione, perché offre informazioni non presenti nella RAM (4).
