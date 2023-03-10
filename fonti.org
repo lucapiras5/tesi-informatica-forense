@@ -197,7 +197,7 @@ Tutte le fonti contenute su URL che iniziano con https://sciencedirect.com sono 
 - Autori :: Joe T. Sylve, Vico Marziale, Golden G. Richard III
 - Anno :: 2017
 - Rilevanza :: Problemi con il file di ibernazione.
-- URL :: https://www.sciencedirect.com/science/article/pii/S1742287616301487
+- URL :: https://doi.org/10.1016/j.diin.2016.12.003 (archiviato)
 
 ** Windows 7 observations
 
@@ -217,4 +217,4 @@ Tutte le fonti contenute su URL che iniziano con https://sciencedirect.com sono 
 - Autori :: Jesus M. Gonzalez-Barahona
 - Anno :: 2021
 - Rilevanza :: Storia del software open-source.
-- URL :: https://ieeexplore.ieee.org/abstract/document/9353517
+- URL :: https://doi.org/10.1109/MC.2020.3041887 (archiviato)
