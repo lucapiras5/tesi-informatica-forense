@@ -17,6 +17,18 @@ Anche:
 - [[https://www.proquest.com/docview/1552128683/17C633CAA03D4A23PQ/2?accountid=9652][The Basics of Digital Forensics: The Primer for Getting Started in Digital Forensics]]
 - [[https://www.proquest.com/docview/1443838817/17C633CAA03D4A23PQ/3?accountid=9652][Using the presence of anti-reverse-engineering artifacts to detect malware]]
 
+** Digital Investigation vol. 31
+
+https://www.sciencedirect.com/journal/digital-investigation/vol/31/suppl/C
+
+** Reverse engineering of ReFS
+
+https://www.sciencedirect.com/science/article/pii/S1742287619301252
+
+** Identifying suspicious addresses in Bitcoin thefts
+
+https://www.sciencedirect.com/science/article/pii/S1742287619302233
+
 ** Forensic analysis of multiple device BTRFS configurations using The Sleuth Kit
 
 https://www.sciencedirect.com/science/article/pii/S1742287618301993
