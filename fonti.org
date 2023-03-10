@@ -79,7 +79,7 @@ Tutte le fonti contenute su URL che iniziano con https://sciencedirect.com sono 
 - Autori :: Dan Manson, Anna Carlin, Steve Ramos, Alain Gyger, Matthew Kaufman, Jeremy Treichelt
 - Anno :: 2007
 - Rilevanza :: Confronto delle funzionalità di sistemi proprietari con un sistema open-source.
-- URL :: https://ieeexplore.ieee.org/document/4076922
+- URL :: https://ieeexplore.ieee.org/document/4076922 (archiviato)
 
 - Le funzionalità fra i prodotti proprietari e Autopsy e Sleuthkit sono generalmente equivalenti (sez. 6.2).
 - Sleuthkit/Autopsy è più difficile da utilizzare se non si ha esperienza con un sistema Linux, FTK è più semplice, EnCase è più difficile da utilizzare (sez. 6.3).
@@ -99,7 +99,7 @@ Tutte le fonti contenute su URL che iniziano con https://sciencedirect.com sono 
 - Rilevanza ::
   - Maggiore affidabilità degli strumenti open-source per l'acquisizione dei dati.
   - Risultati delle analisi del NIST su vari software per l'acquisizione forense.
-- URL :: http://www.notablesoftware.com/Papers/Criminal-Defense-Challenges-in-Computer-Forensics.pdf
+- URL :: http://www.notablesoftware.com/Papers/Criminal-Defense-Challenges-in-Computer-Forensics.pdf (archiviato)
 
 - Tradizionalmente si usava DD per fare acquisizioni forensi, ma attualmente si usano formati proprietari, che rendono più difficili le indagini investigative, perché impongono l'uso di strumenti proprietari per la loro utilizzazione, e perché gli strumenti proprietari non sono necessariamente affidabili (135--136).
 - Secondo AccessData gli errori nell'acquisizione sono una statistica irrilevante, ma secondo il NIST si possono verificare vari tipi di anomalie, e che l'uso di software proprietari diversi può portare ad "anomalie" e quindi risultati diversi (136).
@@ -113,7 +113,7 @@ Tutte le fonti contenute su URL che iniziano con https://sciencedirect.com sono 
 - Autori :: Jesse D. Kornblum
 - Anno :: 2004
 - Rilevanza :: Dimostrazione concreta di come le anomalie negli strumenti open-source vengono individuate e discusse pubblicamente.
-- URL :: https://www.utica.edu/academic/institutes/ecii/publications/articles/A0B8BE05-BD96-240E-F1BE517A38B48665.pdf
+- URL :: https://www.utica.edu/academic/institutes/ecii/publications/articles/A0B8BE05-BD96-240E-F1BE517A38B48665.pdf (archiviato)
 
 - GNU dd funziona in maniera diversa da FreeBSD dd perché legge un settore in meno, la possibilità di analizzare il codice sorgente del programma e del kernel ha permesso di determinare la fonte del problema, e di risolverlo (1).
 
