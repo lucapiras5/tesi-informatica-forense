@@ -1,0 +1,9 @@
+* Articoli e saggi di Stallman
+
+Vanno bene come fonti dirette, oppure no?
+
+* Siti internet relativi a software, repo Github, etc.
+
+Meglio citarli come fonti, o li metto in una nota con "vedi ..."
+
+Gli articoli che ho letto generalmente citano gli autori e la data.
