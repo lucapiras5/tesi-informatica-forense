@@ -1,0 +1,9 @@
+* Bibliografia
+
+Nota: questa è solo una bozza per la bibliografia della tesi. Per questo motivo, usa un formato semplificato: =autore, anno, titolo, pagina-web=.
+
+- Gabriel, 1991, /Worse Is Better/, https://dreamsongs.com/WIB.html.
+- Gonzalez-Barahona, 2021, /A Brief History of Free, Open Source Software and Its Communities/, https://doi.org/10.1109/MC.2020.3041887.
+- Stallman, 1983, /Initial Announcement/, https://www.gnu.org/gnu/initial-announcement.html.
+- Tanenbaum, 1987, /A Unix Clone with Source Code for Operating Systems Courses/, https://research.vu.nl/en/publications/a-unix-clone-with-source-code-for-operating-systems-courses.
+- Torvalds, 1991, /Notes for linux release 0.01/, https://cdn.kernel.org/pub/linux/kernel/Historic/old-versions/RELNOTES-0.01.
