@@ -10,6 +10,7 @@
 - Sistema pacchetti: sviluppatori, maintainers, utenti finali
 - Compilazione locale: deb-src, AUR, Gentoo
 - Problema del doversi fidare della compilazione fatta dai maintainer e delle patch introdotte per ogni distro (Debian e cdrtools, anche Arch usa molte patch), problema di compilare il software per conto proprio, specie di "incidente probatorio" per compilare il software, sempre meglio di doversi fidare della compilazione di software proprietario (scandalo Intel compiler e GenuineAMD), build riproducibili con firme digitali
+- https://reproducible-builds.org/docs/publications/
 :end:
 
 * Introduzione alla tesi
