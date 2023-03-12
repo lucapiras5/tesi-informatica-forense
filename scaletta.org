@@ -2,10 +2,6 @@
 #+AUTHOR: Luca Piras
 #+LANGUAGE: it
 
-#+bibliography: orgcite.bib
-# #+cite_export: csl universita-di-bologna-lettere.csl
-# #+cite_export: csl
-
 * Introduzione alla tesi
 
 ** Scelta del titolo
@@ -34,97 +30,120 @@ La terza parte entra nel concreto: si discutono quali applicazioni FLOSS vengono
 ** Unix
 
 - Tutto inizia da Unix:
-  - GNU vuole essere compatibile con i programmi di Unix, e migliorarlo (Stallman 1983).[fn:3]
-  - Linux nasce come un clone di Minix (Torvalds 1991),[fn:4] che a sua volta era un clone di Unix (Tanenbaum 1987, 21).[fn:5]
+  - GNU vuole essere compatibile con i programmi di Unix, e migliorarlo.[fn:3]
+  - Linux nasce come un clone di Minix,[fn:4] che a sua volta era un clone di Unix.[fn:5]
   - Persino il tempo viene contato facendo riferimento alla /epoca Unix/.[fn:6]
 - Unix nasce all'inizio degli anni '70, e nel 1972 viene riscritto in C.
   - Distinzione fra codice sorgente e codice compilato.
   - Accenno ai linguaggi di scripting (non devono essere interpretati, Volatility è usato per l'analisi della RAM ed è scritto in Python) ed ai linguaggi che usano una rappresentazione intermedia ed una macchina virtuale (Python, Java, ELisp).
-  - /Unix and C are the ultimate computer viruses./ (Gabriel 1991).[fn:7]
+  - Il fatto che Unix fosse scritto in C ha permesso la sua diffusione: /Unix and C are the ultimate computer viruses./[fn:7]
+- TODO: Come Unix diventa proprietario
 
 ** FLOSS
 
-- L'idea di software proprietario si afferma negli anni '70. Precedentemente, il software veniva considerato parte integrante dell'hardware, e venduto insieme [cite:@gonzalez-barahona-2021 75].
-
-- Perché Stallman crea il software open source?
-- Funzione delle licenze:
-  - Il codice sorgente è soggetto a copyright
-
-- Licenze open-source
-- Natura del codice:
-  - Differenza fra codice sorgente e codice eseguibile
-  - Il codice sorgente è soggetto al diritto d'autore
-- Definizione di software libero:
-  - Prima libertà: eseguire il software
-  - Seconda libertà: studiare il codice sorgente e modificarlo
-  - Terza e quarta libertà: ridistribuire copie, anche modificate
-- GNU GPL, MIT, etc.
-- Distribuzioni Linux pienamente libre, Debian
-- Android non è una distribuzione libre (Stallman 2011)[fn:8] ed usa una licenza permissiva per ragioni di convenienza (Android Developers 2022).[fn:9]
-- Il dramma di readline:
+- Tradizionalmente il codice non valeva molto, veniva considerato parte integrante della macchina, il mercato del software proprietario si afferma solo dopo.[fn:8]
+- Il codice sorgente è soggetto a copyright.[fn:9]
+- Le licenze open-source riconoscono il copyright degli autori, ma permettono la ridistribuzione del codice.
+- Caso eccezionale: SQLite è nel pubblico dominio.[fn:10]
+- Distinzione: software proprietario, source-available, free/libre.
+- Libertà garantite dal software libre.[fn:11]
+- Esistono due modelli di licenze: copyleft e permissive.
+- Vantaggi e svantaggi dei modelli.
+- Licenze copyleft:
+  - Impone la sua perpetuazione.
+  - Varianti: GPL, LGPL, AGPL
+  - GPL v3 e Tivoization
+- Licenze permissive:
+  - Le modifiche possono rimanere proprietarie, ma è difficile continuare ad integrare modifiche proprietarie, è più semplice mandarle upstream.
+- Svantaggi delle licenze permissive:
+  - Stallman crea la GPL
+  - Android non è una distribuzione libre (Stallman 2011)[fn:12] ed usa una licenza permissiva per ragioni di convenienza (Android Developers 2022).[fn:13]
+  - Il sistema operativo per smartphone Android, usa Linux [cite:@android-developers-2023-platform-architecture], ma non GNU [cite:@stallman-2011-is-android-really-free-software].
+- Svantaggi delle licenze copyleft:
   - https://www.gnu.org/licenses/why-not-lgpl.html
   - https://github.com/JoshCheek/clisp/blob/master/doc/Why-CLISP-is-under-GPL
   - https://www.thrysoee.dk/editline/
   - https://github.com/hanslub42/rlwrap
-- GPL v3 e Tivoization
+  - [[https://www.debian.org/vote/2006/vote_001][Debian non considera la GFDL abbastanza libera]]
 
 ** GNU
 
 - GNU nasce prima di Linux
-- Fornisce una serie di programmi strettamente necessari per un sistema operativo
-- In partico
+- Fornisce una serie di programmi strettamente necessari per un sistema operativo, tra cui:
   - Una shell: programma per lanciare altri programmi
   - Un editor di testo: programma per modificare file di testo
   - Un compilatore: programma che converte file di testo in programmi eseguibili
-- GNU è generalmente compatibile con Unix, e segue lo standard POSIX, ma ci sono delle differenze
+- Il resto dei programmi sono stati sviluppati da altri:
+  - Ad es., l'interfaccia grafica X, GTK e Qt, i DE, etc.
+- GNU è generalmente compatibile con Unix, e segue lo standard POSIX, ma ci sono delle differenze (longopts, POSIXLY_CORRECT, Bash non rispetta POSIX, etc.)
 
 Le distribuzioni che /non/ usano GNU sono l'eccezione.
 
-Il sistema operativo per smartphone Android, usa Linux [cite:@android-developers-2023-platform-architecture], ma non GNU [cite:@stallman-2011-is-android-really-free-software].
-
-Distribuzioni specificamente progettate per sistemi integrati, come OpenWRT,[fn:10] o comunque genericamente progettate per utilizzare la minore quantità di risorse possibili, come Alpine Linux,[fn:11] che sostituiscono tutti gli applicativi del sistema operativo GNU con un singolo applicativo, chiamato BusyBox.[fn:12]
-
-- TODO:
-  - Esistono distribuzioni generiche e distribuzioni specifiche, e molte distribuzioni sono riconducibili ad altre
-  - È possibile creare una distribuzione partendo da zero, se si hanno le conoscenze tecniche necessarie
+Distribuzioni specificamente progettate per sistemi integrati, come OpenWRT,[fn:14] o comunque genericamente progettate per utilizzare la minore quantità di risorse possibili, come Alpine Linux,[fn:15] che sostituiscono tutti gli applicativi del sistema operativo GNU con un singolo applicativo, chiamato BusyBox.[fn:16]
 
 ** Linux
 
 Cf. https://www.polimata.eu/digital-life/kernel-spiegazione/
 
+Licenza del kernel: GPL v2, Tivoization
+
+Elementi proprietari nel kernel (binary blobs), versioni del kernel pienamente libre
+
+Tende ad avere maggiore supporto hardware rispetto ai vari  kernel *BSD
+
 ** Distribuzioni GNU/Linux
 
 *** GNU/Linux è una famiglia di distribuzioni
 
-Così come non esiste "un" Unix, ma esistono più sistemi operativi derivati da Unix, non esiste "un" Linux, ma piuttosto, un numero di /distribuzioni Linux/.[fn:13]
+Così come non esiste "un" Unix, ma esistono più sistemi operativi derivati da Unix, non esiste "un" Linux, ma piuttosto, un numero di /distribuzioni Linux/.[fn:17]
 
 Linux in sé non è nemmeno un sistema operativo, ma soltanto un suo componente fondamentale [cite:@stallman-2021-linux-and-gnu-it].
 
-Ogni distro[fn:14] usa il /kernel Linux/, e la stragrande maggioranza usa il /sistema operativo GNU/.  Linux e GNU saranno approfonditi nelle sezioni successive.
+Ogni distro[fn:18] usa il /kernel Linux/, e la stragrande maggioranza usa il /sistema operativo GNU/.
+
+- È possibile creare una distribuzione partendo da zero, se si hanno le conoscenze tecniche necessarie
+- Esistono distribuzioni generiche e distribuzioni specifiche, e molte distribuzioni sono riconducibili ad altre
 
 *** Package manager (gestore dei pacchetti)
 
-Intanto, è possibile tracciare delle distinzioni fra le varie distribuzioni:
+L'elemento più centrale di una distro è il gestore di pacchetti, il software viene installato mediante pacchetti
 
-- Frequenza di aggiornamento ::
-  - Le /point release distro/ vengono aggiornate più raramente. Ad es., Debian rilascia una versione detta /stable/ (stabile) ogni circa 2 anni,[fn:15] e gli aggiornamenti fra una versione e l'altra servono solo a 
+La politica di distribuzione dei pacchetti varia da distro a distro: cosa includere, ogni quanto rilasciare aggiornamenti, etc.
 
-:appunti:
-- L'elemento più centrale di una distro è il gestore di pacchetti
-- Debian e Slackware sono le distro più antiche ancora in uso
-- Confronto fra Debian e Arch
-- Kali Linux
-- Debian stable non vuol dire bug-free, ma che i bug sono prevedibili
-- Aggiornamenti costanti sono desiderabili solo per gli strumenti di analisi
-- NixOS e versioni riproducibili
-:end:
+Il software proprietario può installare repository di terze parti (ad es. Chrome)
+
+*** Arch
+
+Rolling e pragmatica
+
+Aggiornamenti costanti sono desiderabili solo per gli strumenti di analisi
+
+Manjaro: semi-stabile, BlackArch e Arch... distribuzioni orientate verso la sicurezza
+
+*** Debian
+
+Una delle distro più antiche ancora in uso
+
+Fixed-point[fn:19] e DFSG
+
+Aggiornamenti consistono solo di patch per la sicurezza, "stabile" significa che i bug sono conosciuti e "prevedibili"
+
+Ubuntu, Kali
+
+*** Nix
+
+Il meglio dei due mondi
+
+Build pienamente riproducibili (v. anche Guix), configurazione descrittiva
 
 ** Digital forensics
 
 - Definizione di informatica forense
 - Definizione di informatica e di scienze forensi
 - Evoluzione verso la digital forensics
+- Problemi epistemologici nella ricerca della verità
 - Necessità di una formalizzazione e definizione di best practices
+- Crisi della riproducibilità negli studi scientifici
 - Standard ISO sulla digital evidence
 - Principi generali sul trattamento della prova informatica:
   - Convenzione di Budapest
@@ -153,32 +172,43 @@ Intanto, è possibile tracciare delle distinzioni fra le varie distribuzioni:
 
 * Footnotes
 
-[fn:1] V. https://www.treccani.it/vocabolario/apologia.
+[fn:1] Vedi https://www.treccani.it/vocabolario/apologia.
 
 [fn:2] Tradizionalmente, il cristianesimo.  Tuttavia, nel mondo GNU/Linux gli utilizzatori più fedeli dell'editor di testo /Emacs/ hanno scherzosamente creato la /Chiesa di Emacs/, presieduta da /San IGNUzio/.  V. https://stallman.org/saint.html.
 
-[fn:3] V. https://www.gnu.org/gnu/initial-announcement.html.
+[fn:3] Stallman, 1983.
 
-[fn:4] V. https://cdn.kernel.org/pub/linux/kernel/Historic/old-versions/RELNOTES-0.01.
+[fn:4] Torvalds, 1991.
 
-[fn:5] V. https://research.vu.nl/en/publications/a-unix-clone-with-source-code-for-operating-systems-courses.
+[fn:5] Tanenbaum, 1987, p. 21.
 
-[fn:6] V. https://unixtime.org/ e https://2038.wtf/.
+# TODO: serve approfondire il tema dell'Unix epoch?
+[fn:6] Vedi https://unixtime.org/ e https://2038.wtf/.
 
-[fn:7] V. https://dreamsongs.com/WIB.html.
+[fn:7] Gabriel, 1991.
 
-[fn:8] V. https://www.theguardian.com/technology/2011/sep/19/android-free-software-stallman.
+# TODO: articoli sul come il software originariamente non era portatile, ed era maggiormente legato ad una certa architettura.
+[fn:8] Gonzalez-Barahona, 2021, p. 75.
 
-[fn:9] V. https://source.android.com/docs/setup/about/licenses.
+# TODO: articoli sul software come oggetto di diritto d'autore e come proprietà intellettuale.
+[fn:9] Serve una fonte sulla convenzione di Berna.
 
-[fn:10] Cf. https://openwrt.org/start
+[fn:10] Autori di SQLite, n.d. [[https://www.sqlite.org/copyright.html][SQLite Is Public Domain]].
 
-[fn:11] Cf. https://www.alpinelinux.org/about/
+[fn:11] Stallman, 2021. [[https://www.gnu.org/philosophy/free-sw.html][What is Free Software?]].
 
-[fn:12] Cf. https://busybox.net/about.html
+[fn:12] V. https://www.theguardian.com/technology/2011/sep/19/android-free-software-stallman.
 
-[fn:13] Per una una panoramica delle principali distribuzioni, cf. https://distrowatch.com/dwres.php?resource=major.
+[fn:13] V. https://source.android.com/docs/setup/about/licenses.
 
-[fn:14] /Distro/, pl. /distros/ è l'abbreviazione colloquiale di /distribution/.
+[fn:14] Cf. https://openwrt.org/start
 
-[fn:15] Cf. https://wiki.debian.org/it/DebianReleases
+[fn:15] Cf. https://www.alpinelinux.org/about/
+
+[fn:16] Cf. https://busybox.net/about.html
+
+[fn:17] Per una una panoramica delle principali distribuzioni, cf. https://distrowatch.com/dwres.php?resource=major.
+
+[fn:18] /Distro/, pl. /distros/ è l'abbreviazione colloquiale di /distribution/.
+
+[fn:19] Cf. https://wiki.debian.org/it/DebianReleases
