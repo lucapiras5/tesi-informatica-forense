@@ -2,6 +2,13 @@
 #+AUTHOR: Luca Piras
 #+LANGUAGE: it
 
+:da-aggiungere:
+- Licenze che sono considerate libere
+- JSON non veniva considerato un prodotto libero
+- Come vendere prodotti open-source: assistenza
+- Kernel Linux: WSL1 e WSL2
+:end:
+
 * Introduzione alla tesi
 
 ** Scelta del titolo
