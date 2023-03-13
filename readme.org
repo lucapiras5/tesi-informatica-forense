@@ -6,4 +6,4 @@ Rev. 0 -- Note di rilascio
 
 - [[file:domande.org][Domande]]
 - [[file:scaletta.org][Scaletta]]
-- [[File:bibliografia.org][Bibliografia]]
+- [[file:bibliografia.org][Bibliografia]]
