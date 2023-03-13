@@ -1,10 +1,9 @@
 #+TITLE: Tesi di Informatica Forense
 #+AUTHOR: Luca Piras
+#+LANGUAGE: it
 
-- Oggetto :: Uso e vantaggi dei sistemi GNU/Linux e FOSS per attività di digital forensics rispetto ai sistemi closed-source.
+Rev. 0 -- Note di rilascio
 
-[[file:scaletta.org][Scaletta]]
-
-[[file:fonti.org][Fonti e appunti]]
-
-[[file:wip.org][Fonti da leggere, temi da approfondire]]
+- [[file:domande.org][Domande]]
+- [[file:scaletta.org][Scaletta]]
+- [[File:bibliografia.org][Bibliografia]]
