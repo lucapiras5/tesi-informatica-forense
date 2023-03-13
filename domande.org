@@ -1,9 +1,22 @@
-* Articoli e saggi di Stallman
+#+TITLE: Registro dei cambiamenti e delle domande
+#+AUTHOR: Luca Piras
 
-Vanno bene come fonti dirette, oppure no?
+* 2023-03-XX -- revisione 1
 
-* Siti internet relativi a software, repo Github, etc.
+** Cambiamenti
 
-Meglio citarli come fonti, o li metto in una nota con "vedi ..."
+Condivisione della prima bozza.
 
-Gli articoli che ho letto generalmente citano gli autori e la data.
+** Domande
+
+Va bene l'impostazione che ho dato alla tesi?  Ho cercato di motivare ogni argomento introdotto.
+
+Posso fare riferimento a fonti primarie e/o non-accademiche?  Ad es.:
+
+- Fare riferimento direttamente alle pagine della FSF per spiegare il significato di "open source", o per spiegare cosa sia GNU, dato il loro coinvolgimento diretto;
+- Citare articoli scritti da professionisti, ma che non sono pubblicati su riviste?
+
+Come inserire riferimenti a siti internet relativi a software, repository su Github, ecc.?
+
+- Li cito alla stregua di fonti nella bibliografia, come fanno gli articoli che ho letto?
+- Inserisco solamente un collegamento in una nota a piè di pagina che inizia con "Vedi ..."?
