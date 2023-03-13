@@ -2,8 +2,18 @@
 #+AUTHOR: Luca Piras
 #+LANGUAGE: it
 
-Rev. 0 -- Note di rilascio
+* Registro dei cambiamenti
 
-- [[file:domande.org][Domande]]
-- [[file:scaletta.org][Scaletta]]
-- [[file:bibliografia.org][Bibliografia]]
+[[file:registro.org][Registro]] -- lista dei cambiamenti fra le varie revisioni, e delle domande relative ad ogni revisione.
+
+* Scaletta e bibliografia
+
+[[file:scaletta.org][Scaletta]] -- struttura della tesi, le citazioni si riferiscono alla bibliografia sottostante.
+
+[[file:bibliografia.org][Bibliografia]] -- bibliografia provvisoria.
+
+* Link esterni
+
+[[https://git.lucapiras.me/lucapiras5/tesi-fonti-pdf][Fonti in formato PDF]] -- copia delle fonti consultate, in formato PDF.
+
+[[https://git.lucapiras.me/lucapiras5/tesi-informatica-forense][Mirror su git.lucapiras.me]] -- copia di questo repository.
