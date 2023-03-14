@@ -16,6 +16,8 @@
 - Differenza fra "open-source" e "free software", ambiguità di "free software", meglio dire "software libre" per evitare ogni ambiguità
 - Software libre risolve parzialmente il "maintainer hit by a bus problem", ma non è una soluzione completa, perché il mantainer ha una "conoscenza nascosta" di come funiona il programma, che va esplicitata in commenti e documentazione, forking (Neovim)
 - Software libre non è necessariamente gratuito
+- Limitazioni di responsabilità nelle licenze open-source, nei software proprietari: possono essere fatte valere?
+- JSON: esempio di licenza particolare, riprende la licenza MIT ma aggiunge /The Software shall be used for Good, not Evil./
 :end:
 
 * Introduzione alla tesi
