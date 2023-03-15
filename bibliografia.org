@@ -18,6 +18,17 @@ Le fonti sono divise in due sezioni:
 
 * Altre fonti
 
+- Alpine Linux, 2022, /[[https://www.alpinelinux.org/about/][About]]/, TODO.
+- Android Developers, 2022, /[[https://source.android.com/docs/setup/about/licenses][Licenses]]/, TODO.
+- Android Developers, 2023, /[[https://developer.android.com/guide/platform][Platform Architecture]]/, TODO.
+- BusyBox, 2008, /[[https://busybox.net/about.html][BusyBox: The Swiss Army Knife of Embedded Linux]]/, data presa dal copyright.
+- DistroWatch, 2023, /[[https://distrowatch.com/dwres.php?resource=major][Major Distributions]]/, data presa dal copyright.
 - Gabriel, 1991, /[[https://dreamsongs.com/Files/LispGoodNewsBadNews.pdf][Lisp: Good News, Bad News, How to Win Big]]/, saggio in cui si confrontano i linguaggi di programmazione Lisp e C, e l'autore spiega i motivi della rapida e larga adozione di C e Unix.
+- Hans Lub, 2022, /[[https://github.com/hanslub42/rlwrap][rlwrap]]/, TODO.
+- OpenWRT, 2022, /[[https://openwrt.org/start][Welcome to the OpenWrt Project]]/, TODO.
+- SQLite, n.d., /[[https://www.sqlite.org/copyright.html][SQLite Is Public Domain]]/, TODO.
 - Stallman, 1983, /[[https://www.gnu.org/gnu/initial-announcement.html][Initial Announcement]]/, mail scritta da Stallman in cui annuncia la creazione del sistema operativo GNU, una reimplementazione libera di Unix.
+- Stallman, 2011, /[[https://www.theguardian.com/technology/2011/sep/19/android-free-software-stallman][Is Android really free software?]]/, TODO.
+- Stallman, 2021, /[[https://www.gnu.org/gnu/linux-and-gnu.it.html][Linux e il sistema GNU]]/, TODO.
+- Stallman, 2021, /[[https://www.gnu.org/philosophy/free-sw.html][What is Free Software?]]/, TODO.
 - Torvalds, 1991, /[[https://cdn.kernel.org/pub/linux/kernel/Historic/old-versions/RELNOTES-0.01][Notes for linux release 0.01]]/, note di rilascio della prima versione di Linux, in cui Linus spiega le funzioni fondamentali del kernel.

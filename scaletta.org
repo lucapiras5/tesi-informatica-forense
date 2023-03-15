@@ -73,13 +73,12 @@ La terza parte entra nel concreto: si discutono quali applicazioni FLOSS vengono
   - Le modifiche possono rimanere proprietarie, ma è difficile continuare ad integrare modifiche proprietarie, è più semplice mandarle upstream.
 - Svantaggi delle licenze permissive:
   - Stallman crea la GPL
-  - Android non è una distribuzione libre (Stallman 2011)[fn:12] ed usa una licenza permissiva per ragioni di convenienza (Android Developers 2022).[fn:13]
-  - Il sistema operativo per smartphone Android, usa Linux [cite:@android-developers-2023-platform-architecture], ma non GNU [cite:@stallman-2011-is-android-really-free-software].
+  - Android usa Linux,[fn:12] ma non GNU, non può essere considerata una distribuzione libre,[fn:13] ed usa una licenza permissiva per ragioni di convenienza.[fn:14]
 - Svantaggi delle licenze copyleft:
   - https://www.gnu.org/licenses/why-not-lgpl.html
   - https://github.com/JoshCheek/clisp/blob/master/doc/Why-CLISP-is-under-GPL
   - https://www.thrysoee.dk/editline/
-  - https://github.com/hanslub42/rlwrap
+  - rlwrap[fn:15]
   - [[https://www.debian.org/vote/2006/vote_001][Debian non considera la GFDL abbastanza libera]]
 
 ** GNU
@@ -95,7 +94,7 @@ La terza parte entra nel concreto: si discutono quali applicazioni FLOSS vengono
 
 Le distribuzioni che /non/ usano GNU sono l'eccezione.
 
-Distribuzioni specificamente progettate per sistemi integrati, come OpenWRT,[fn:14] o comunque genericamente progettate per utilizzare la minore quantità di risorse possibili, come Alpine Linux,[fn:15] che sostituiscono tutti gli applicativi del sistema operativo GNU con un singolo applicativo, chiamato BusyBox.[fn:16]
+Distribuzioni specificamente progettate per sistemi integrati, come OpenWRT,[fn:16] o comunque genericamente progettate per utilizzare la minore quantità di risorse possibili, come Alpine Linux,[fn:17] che sostituiscono tutti gli applicativi del sistema operativo GNU con un singolo applicativo, chiamato BusyBox.[fn:18]
 
 ** Linux
 
@@ -111,11 +110,11 @@ Tende ad avere maggiore supporto hardware rispetto ai vari  kernel *BSD
 
 *** GNU/Linux è una famiglia di distribuzioni
 
-Così come non esiste "un" Unix, ma esistono più sistemi operativi derivati da Unix, non esiste "un" Linux, ma piuttosto, un numero di /distribuzioni Linux/.[fn:17]
+Così come non esiste "un" Unix, ma esistono più sistemi operativi derivati da Unix, non esiste "un" Linux, ma piuttosto, un numero di /distribuzioni Linux/.[fn:19]
 
-Linux in sé non è nemmeno un sistema operativo, ma soltanto un suo componente fondamentale [cite:@stallman-2021-linux-and-gnu-it].
+Linux in sé non è nemmeno un sistema operativo, ma soltanto un suo componente fondamentale.[fn:20]
 
-Ogni distro[fn:18] usa il /kernel Linux/, e la stragrande maggioranza usa il /sistema operativo GNU/.
+Ogni distro[fn:21] usa il /kernel Linux/, e la stragrande maggioranza usa il /sistema operativo GNU/.
 
 - È possibile creare una distribuzione partendo da zero, se si hanno le conoscenze tecniche necessarie
 - Esistono distribuzioni generiche e distribuzioni specifiche, e molte distribuzioni sono riconducibili ad altre
@@ -140,7 +139,7 @@ Manjaro: semi-stabile, BlackArch e Arch... distribuzioni orientate verso la sicu
 
 Una delle distro più antiche ancora in uso
 
-Fixed-point[fn:19] e DFSG
+Fixed-point[fn:22] e DFSG
 
 Aggiornamenti consistono solo di patch per la sicurezza, "stabile" significa che i bug sono conosciuti e "prevedibili"
 
@@ -190,41 +189,50 @@ Build pienamente riproducibili (v. anche Guix), configurazione descrittiva
 
 [fn:1] Vedi https://www.treccani.it/vocabolario/apologia.
 
-[fn:2] Tradizionalmente, il cristianesimo.  Tuttavia, nel mondo GNU/Linux gli utilizzatori più fedeli dell'editor di testo /Emacs/ hanno scherzosamente creato la /Chiesa di Emacs/, presieduta da /San IGNUzio/.  V. https://stallman.org/saint.html.
+[fn:2] Tradizionalmente, il cristianesimo.  Tuttavia, nel mondo GNU/Linux gli utilizzatori più fedeli dell'editor di testo /Emacs/ hanno scherzosamente creato la /Chiesa di Emacs/, presieduta da /San IGNUzio/.  Vedi https://stallman.org/saint.html.
 
-[fn:3] Stallman, 1983.
+[fn:3] Stallman, /Initial Announcement/.
 
-[fn:4] Torvalds, 1991.
+[fn:4] Torvalds, /Notes for linux/.
 
-[fn:5] Tanenbaum, 1987, p. 21.
+[fn:5] Tanenbaum, /Unix clone/, p. 21.
 
 # TODO: serve approfondire il tema dell'Unix epoch?
+
 [fn:6] Vedi https://unixtime.org/ e https://2038.wtf/.
 
-[fn:7] Gabriel, 1991.
+[fn:7] Gabriel, /Lisp/.
 
 # TODO: articoli sul come il software originariamente non era portatile, ed era maggiormente legato ad una certa architettura.
-[fn:8] Gonzalez-Barahona, 2021, p. 75.
+
+[fn:8] Gonzalez-Barahona, /Brief History/, p. 75.
 
 # TODO: articoli sul software come oggetto di diritto d'autore e come proprietà intellettuale.
+
 [fn:9] Serve una fonte sulla convenzione di Berna.
 
-[fn:10] Autori di SQLite, n.d. [[https://www.sqlite.org/copyright.html][SQLite Is Public Domain]].
+[fn:10] SQLite, /SQLite/.
 
-[fn:11] Stallman, 2021. [[https://www.gnu.org/philosophy/free-sw.html][What is Free Software?]].
+[fn:11] Stallman, /Free Software/.
 
-[fn:12] V. https://www.theguardian.com/technology/2011/sep/19/android-free-software-stallman.
+[fn:12] Android Developers, /Platform Architecture/.
 
-[fn:13] V. https://source.android.com/docs/setup/about/licenses.
+[fn:13] Stallman, /Android/.
 
-[fn:14] Cf. https://openwrt.org/start
+[fn:14] Android Developers, /Licenses/.
 
-[fn:15] Cf. https://www.alpinelinux.org/about/
+[fn:15] Hans Lub, /rlwrap/.
 
-[fn:16] Cf. https://busybox.net/about.html
+[fn:16] OpenWRT, /OpenWRT Project/.
 
-[fn:17] Per una una panoramica delle principali distribuzioni, cf. https://distrowatch.com/dwres.php?resource=major.
+[fn:17] Alpine Linux, /About/.
 
-[fn:18] /Distro/, pl. /distros/ è l'abbreviazione colloquiale di /distribution/.
+[fn:18] BusyBox, /BusyBox/.
 
-[fn:19] Cf. https://wiki.debian.org/it/DebianReleases
+[fn:19] DistroWatch, /Major Distributions/.
+
+[fn:20] Stallman, /Linux/.
+
+[fn:21] /Distro/, pl. /distros/ è l'abbreviazione colloquiale di /distribution/.
+
+[fn:22] Cf. https://wiki.debian.org/it/DebianReleases
