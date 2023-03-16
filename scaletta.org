@@ -2,6 +2,8 @@
 #+AUTHOR: Luca Piras
 #+LANGUAGE: it
 
+#+html_head: <link rel="stylesheet" href="./org.css">
+
 :da-aggiungere:
 - Licenze che sono considerate libere
 - JSON non veniva considerato un prodotto libero
@@ -22,7 +24,7 @@
 
 * Introduzione alla tesi
 
-** Scelta del titolo
+** Oggetto della tesi
 
 Le apologie[fn:1] erano discorsi pronunciati in difesa di una persona o una fede.[fn:2]
 
@@ -33,8 +35,6 @@ Inoltre, vuole dimostrare che:
 - Nella ricostruzione dei fatti in un processo, le applicazioni proprietarie possano avere più funzionalità rispetto alle applicazioni libere e a sorgente aperta, ma al grave costo di essere intrinsecamente inaffidabili, e di creare risultati potenzialmente non riproducibili.
 - Le applicazioni libere e a sorgente aperta sono maggiormente affidabili, possono produrre risultati riproducibili, e che in molti casi le funzionalità sono equivalenti rispetto alle applicazioni proprietarie.
 
-** Struttura
-
 La tesi è divsa in tre parti.
 
 La prima parte fornisce delle nozioni di base: spiega cosa siano esattamente /GNU/Linux/, le filosofia /free/libre and open-source/, e la /digital forensics/.
@@ -43,18 +43,31 @@ La seconda parte è la vera e propria apologia: consiste in una serie di argomen
 
 La terza parte entra nel concreto: si discutono quali applicazioni FLOSS vengono usate per la DF, e le relative potenzialità ed i limiti.
 
+** Anglicismi
+
 * Definizioni
 
 ** Unix
 
-- Tutto inizia da Unix:
-  - GNU vuole essere compatibile con i programmi di Unix, e migliorarlo.[fn:3]
-  - Linux nasce come un clone di Minix,[fn:4] che a sua volta era un clone di Unix.[fn:5]
-  - Persino il tempo viene contato facendo riferimento alla /epoca Unix/.[fn:6]
-- Unix nasce all'inizio degli anni '70, e nel 1972 viene riscritto in C.
-  - Distinzione fra codice sorgente e codice compilato.
+Tutto inizia da Unix.
+
+GNU vuole essere compatibile con i programmi di Unix, e migliorarlo (Stallman, /Initial Announcement/).
+
+Linux nasce come un clone di Minix (Torvalds, /Notes for linux/), che a sua volta era un clone di Unix (Tanenbaum, /Unix clone/, p. 21).
+
+Persino il tempo viene contato facendo riferimento alla /epoca Unix/.[fn:6]
+
+Unix nasce all'inizio degli anni '70.
+
+La prima versione era stata scritta in linguaggio assembly (Spinellis, /Unix history/, p. 1378) e pertanto era strettamente legato all'hardware.
+
+Le edizioni successive sono riscritte in C, e pertanto non sono più legate all'hardware originale (Wheeler, /Secure Programming/, p. 5).[fn:26]
+
+Unix e C si diffondono a vicenda. Il fatto che Unix fosse scritto in C ha permesso la sua diffusione (Gabriel, /Lisp/).
+
+    - Distinzione fra codice sorgente e codice compilato.
   - Accenno ai linguaggi di scripting (non devono essere interpretati, Volatility è usato per l'analisi della RAM ed è scritto in Python) ed ai linguaggi che usano una rappresentazione intermedia ed una macchina virtuale (Python, Java, ELisp).
-  - Il fatto che Unix fosse scritto in C ha permesso la sua diffusione: /Unix and C are the ultimate computer viruses./[fn:7]
+
 - TODO: Come Unix diventa proprietario
 
 ** FLOSS
@@ -78,10 +91,10 @@ La terza parte entra nel concreto: si discutono quali applicazioni FLOSS vengono
   - Android usa Linux,[fn:12] ma non GNU, non può essere considerata una distribuzione libre,[fn:13] ed usa una licenza permissiva per ragioni di convenienza.[fn:14]
 - Svantaggi delle licenze copyleft:
   - https://www.gnu.org/licenses/why-not-lgpl.html
-  - https://github.com/JoshCheek/clisp/blob/master/doc/Why-CLISP-is-under-GPL
-  - https://www.thrysoee.dk/editline/
-  - rlwrap[fn:15]
-  - [[https://www.debian.org/vote/2006/vote_001][Debian non considera la GFDL abbastanza libera]]
+  - CLISP usava readline, e l'autore è stato costretto a cambiare la licenza.[fn:15]
+  - editline[fn:16]
+  - rlwrap[fn:17]
+  - Debian non considera la GFDL abbastanza libera[fn:18]
 
 ** GNU
 
@@ -96,9 +109,13 @@ La terza parte entra nel concreto: si discutono quali applicazioni FLOSS vengono
 
 Le distribuzioni che /non/ usano GNU sono l'eccezione.
 
-Distribuzioni specificamente progettate per sistemi integrati, come OpenWRT,[fn:16] o comunque genericamente progettate per utilizzare la minore quantità di risorse possibili, come Alpine Linux,[fn:17] che sostituiscono tutti gli applicativi del sistema operativo GNU con un singolo applicativo, chiamato BusyBox.[fn:18]
+Distribuzioni specificamente progettate per sistemi integrati, come OpenWRT,[fn:19] o comunque genericamente progettate per utilizzare la minore quantità di risorse possibili, come Alpine Linux,[fn:20] che sostituiscono tutti gli applicativi del sistema operativo GNU con un singolo applicativo, chiamato BusyBox.[fn:21]
 
 ** Linux
+
+wheeleer-2015, p. 6, sez. 2.1.2 e 2.1.3
+
+Linux non è un discendente di Unix, ma lo imita intenzionalmente.[fn:28]
 
 Cf. https://www.polimata.eu/digital-life/kernel-spiegazione/
 
@@ -112,11 +129,11 @@ Tende ad avere maggiore supporto hardware rispetto ai vari  kernel *BSD
 
 *** GNU/Linux è una famiglia di distribuzioni
 
-Così come non esiste "un" Unix, ma esistono più sistemi operativi derivati da Unix, non esiste "un" Linux, ma piuttosto, un numero di /distribuzioni Linux/.[fn:19]
+Così come non esiste "un" Unix, ma esistono più sistemi operativi derivati da Unix, non esiste "un" Linux, ma piuttosto, un numero di /distribuzioni Linux/.[fn:22]
 
-Linux in sé non è nemmeno un sistema operativo, ma soltanto un suo componente fondamentale.[fn:20]
+Linux in sé non è nemmeno un sistema operativo, ma soltanto un suo componente fondamentale.[fn:23]
 
-Ogni distro[fn:21] usa il /kernel Linux/, e la stragrande maggioranza usa il /sistema operativo GNU/.
+Ogni distro[fn:24] usa il /kernel Linux/, e la stragrande maggioranza usa il /sistema operativo GNU/.
 
 - È possibile creare una distribuzione partendo da zero, se si hanno le conoscenze tecniche necessarie
 - Esistono distribuzioni generiche e distribuzioni specifiche, e molte distribuzioni sono riconducibili ad altre
@@ -141,7 +158,7 @@ Manjaro: semi-stabile, BlackArch e Arch... distribuzioni orientate verso la sicu
 
 Una delle distro più antiche ancora in uso
 
-Fixed-point[fn:22] e DFSG
+Fixed-point[fn:25] e DFSG
 
 Aggiornamenti consistono solo di patch per la sicurezza, "stabile" significa che i bug sono conosciuti e "prevedibili"
 
@@ -175,11 +192,16 @@ Build pienamente riproducibili (v. anche Guix), configurazione descrittiva
 
 * Ragioni a favore di GNU/Linux ed il FOSS
 
+
 - Per il mondo enterprise (ad es., incident response) non interessa se gli strumenti sono open-source o meno, la cosa più importante è che funzionino
 - Diritto alla difesa: costo nullo
 - Valutazione delle prove: ispezione del codice sorgente
 - Obiezioni:
   - Il costo degli strumenti enterprise è giustificato dal loro supporto dedicato
+
+** Maggiore affidabilità
+
+GNU è più affidabile di Unix: Miller 1995, p. 2--3. https://www.researchgate.net/profile/Barton-Miller/publication/239340401_A_Re-examination_of_the_Reliability_of_UNIX_Utilities_and_Services/links/565dae3608aefe619b2679b5/A-Re-examination-of-the-Reliability-of-UNIX-Utilities-and-Services.pdf
 
 * Utilizzazione pratica di GNU/Linux
 
@@ -188,22 +210,15 @@ Build pienamente riproducibili (v. anche Guix), configurazione descrittiva
 #+print_bibliography:
 
 * Footnotes
+[fn:28] Wheeler, /Secure Programming/, p. 7. 
 
 [fn:1] Vedi https://www.treccani.it/vocabolario/apologia.
 
 [fn:2] Tradizionalmente, il cristianesimo.  Tuttavia, nel mondo GNU/Linux gli utilizzatori più fedeli dell'editor di testo /Emacs/ hanno scherzosamente creato la /Chiesa di Emacs/, presieduta da /San IGNUzio/.  Vedi https://stallman.org/saint.html.
 
-[fn:3] Stallman, /Initial Announcement/.
-
-[fn:4] Torvalds, /Notes for linux/.
-
-[fn:5] Tanenbaum, /Unix clone/, p. 21.
-
 # TODO: serve approfondire il tema dell'Unix epoch?
 
 [fn:6] Vedi https://unixtime.org/ e https://2038.wtf/.
-
-[fn:7] Gabriel, /Lisp/.
 
 # TODO: articoli sul come il software originariamente non era portatile, ed era maggiormente legato ad una certa architettura.
 
@@ -223,18 +238,24 @@ Build pienamente riproducibili (v. anche Guix), configurazione descrittiva
 
 [fn:14] Android Developers, /Licenses/.
 
-[fn:15] Hans Lub, /rlwrap/.
+[fn:15] Stallman e Haible, /Why-CLISP-is-under-GPL/.
 
-[fn:16] OpenWRT, /OpenWRT Project/.
+[fn:16] Thrysoee, /Editline Library/.
 
-[fn:17] Alpine Linux, /About/.
+[fn:17] Lub, /rlwrap/.
 
-[fn:18] BusyBox, /BusyBox/.
+[fn:18] Debian, /General Resolution/.
 
-[fn:19] DistroWatch, /Major Distributions/.
+[fn:19] OpenWRT, /OpenWRT Project/.
 
-[fn:20] Stallman, /Linux/.
+[fn:20] Alpine Linux, /About/.
 
-[fn:21] /Distro/, pl. /distros/ è l'abbreviazione colloquiale di /distribution/.
+[fn:21] BusyBox, /BusyBox/.
 
-[fn:22] Cf. https://wiki.debian.org/it/DebianReleases
+[fn:22] DistroWatch, /Major Distributions/.
+
+[fn:23] Stallman, /Linux/.
+
+[fn:24] /Distro/, pl. /distros/ è l'abbreviazione colloquiale di /distribution/.
+
+[fn:25] Cf. https://wiki.debian.org/it/DebianReleases

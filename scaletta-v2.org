@@ -1,0 +1,63 @@
+* Scaletta
+** Introduzione
+*** Oggetto della tesi
+Uso di sistemi operativi GNU/Linux e software open-source per attività di digital forensics.
+*** Struttura della tesi
+- Prima parte: introduzione a GNU/Linux, il software open-source, e la digital forensics.
+- Seconda parte: discussione dei vantaggi teorici che derivano dall'uso di sistemi GNU/Linux e software open-source, confronto con i sistemi proprietari.
+- Terza parte: esempi concreti di programmi utilizzati nella digital forensics.
+** Parte I -- Definizioni
+*** Unix
+- Sia GNU che Linux si ispirano ad Unix, è utile parlarne brevemente.
+- Unix viene sviluppato negli anni '70, originariamente in assembly (Spinellis, /Unix History/).
+- Successivamente, viene riscritto nel linguaggio di programmazione C, il che permette la sua diffusione (Gabriel, /Lisp/).
+- Originariamente Unix era sviluppato da ingegnieri in ambito accademico, ed era open-source.
+- Successivamente diventa un sistema proprietario e a sorgente chiuso (Tanenbaum, /Unix Clone/).
+- Attualmente esistono vari discendenti di Unix: varie versioni proprietarie, ed i sistemi operativi BSD.
+*** GNU
+- Il progetto GNU nasce come una reimplementazione libera e non proprietaria dei programmi Unix (Stallman, /Initial Announcement/).
+- I programmi GNU sono generralmente compatibili con le rispettive versioni su Unix e BSD.
+- Talvolta introducono funzioni aggiuntive (ad es., longopts, bashisms), o si comportano in maniera diversa.
+
+GNU è alla base di quasi tutte le distribuzioni Linux, ed offre una serie di componenti essenziali: la libreria C, una shell (programma per eseguire altri programmi), editor di testo, compilatore, programmi per la manipolazione dei file, etc.
+
+Alcune distribuzioni Linux non usano componenti GNU, e altri componenti essenziali delle distribuzioni Linux (come il programma di init, il sistema a finestre, gli ambienti desktop, etc) non fanno parte di GNU.
+
+Il progetto GNU aveva iniziato a sviluppare un loro kernel (Hurd), ma sucessivamente adottano Linux.
+*** Linux
+Linux è un kernel, il programma che permette al software di comunicare con l'harware.
+
+Allo stesso modo di GNU, Linux non discende direttamente da Unix, ma si ispira ad esso.
+
+Più precisamente, si ispira a Minix (Torvalds, /Notes for linux/), che a sua volta era una reimplementazione libera di Unix, creata a fini educativi (Tanenbaum, /Unix clone/).
+
+Allo stesso modo di GNU, Linux è sempre stato open-source fin dalla prima versione.
+
+Tuttavia, per cercare di avere il maggior supporto hardware possibile, include al suo interno del firmware proprietario, a sorgente chiuso, e non ispezionabile.
+
+Esistono versioni del kernel dette "libre", che contengono soltanto codice libero.
+*** FLOSS (free, libre, open-source software)
+Tradizionalmente non esisteva l'idea di "software proprietario", ed il software veniva venduto insieme all'hardware, ed il codice sorgente veniva condiviso liberamente.  Successivamente, si inizia ad affermare un mercato per il software, che viene venduto in maniera indipendente dall'hardware (Gonzalez-Barahona, /Brief History/).
+
+- La FSF ha definito le quattro libertà del software.
+- Open-source non va confuso con source-available, e free software non va confuso con disponibile solo gratuitamente.
+
+# All'opposto del software proprietario si trova il "software libero", variamente chiamato come "open-source" , "free software", e "libre software".
+
+# A causa della convenzione di Berna, il software, inteso come codice sorgente, è automaticamente soggetto al diritto d'autore.
+
+# Il termine "open-source", nella sua accezione più restrittiva di "source-available", significa solo che il codice sorgente è pubblicamente disponibile, ma l'autore conserva tutti i diritti riguardo il suo utilizzo.  È come un libro in una libreria pubblica: può essere letto, ma senza l'espresso consenso dell'autore non può essere fotocopiato, o usato come base per altre opere.
+
+# Anche il termine "free software" può essere fuorviante, perché in inglese "free" significa sia "gratuito", che "libero da vincoli" (nel caso specifico, i vincoli legali del diritto d'autore).  Un programma gratuito (freeware) può essere non-free se l'autore ne vieta la redistribuzione. Il software libero può essere venduto ...
+
+- Salvo casi eccezionali, come SQLite (pubblico dominio) o JSON (BSD con clausola moralista), generalmente esistono due modelli di licenze.
+- Le licenze copyleft impongono che le eventuali modifiche devono essere distribuite a loro volta con una licenza copyleft.
+- Le licenze permissive permettono che le modifiche possano rimanere private.
+- Le licenze copyleft possono scoraggiare l'adozione di un programma, non solo da compagnie con segreti industriali (ad es., Google con Android, Golang), ma anche privati.
+*** Pacchetti software
+- Il software su Linux viene distribuito in forma di pacchetti, tutte le distribuzioni hanno un gestore di pacchetti, ed un archivio ufficiale di pacchetti.
+- Ogni distribuzione Linux presenta delle particolarità (sistema di init, libreria C, organizzazione del filesystem), e chi mantiene una distribuzione si preoccupa anche di adattare il software alle peculiarità di quella distribuzione.
+- Ad es., un database.
+- Distinzione fra distribuzioni puriste/pragmatiche, e fixed-point/rolling.
+- Distribuzioni declarative e riproducibili (Nix, Guix).
+*** Digital forensics
