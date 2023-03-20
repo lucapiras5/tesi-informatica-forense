@@ -81,6 +81,9 @@ di digital forensics.
 - Le licenze copyleft possono scoraggiare l'adozione di un programma,
   non solo da compagnie con segreti industriali (ad es., Google con
   Android, Golang), ma anche privati.
+- Licenze per la documentazione (CC e GFDL), importanza della
+  documentazione libera, differenza con le licenze per il codice
+- Licenze approvate dalla FSF
 ** Compilazione
 - File sorgente: file di testo, scritto in un linguaggio di
   programmazione
