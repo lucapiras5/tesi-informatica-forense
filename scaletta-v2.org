@@ -1,63 +1,249 @@
-* Scaletta
-** Introduzione
-*** Oggetto della tesi
-Uso di sistemi operativi GNU/Linux e software open-source per attività di digital forensics.
-*** Struttura della tesi
-- Prima parte: introduzione a GNU/Linux, il software open-source, e la digital forensics.
-- Seconda parte: discussione dei vantaggi teorici che derivano dall'uso di sistemi GNU/Linux e software open-source, confronto con i sistemi proprietari.
-- Terza parte: esempi concreti di programmi utilizzati nella digital forensics.
-** Parte I -- Definizioni
-*** Unix
-- Sia GNU che Linux si ispirano ad Unix, è utile parlarne brevemente.
-- Unix viene sviluppato negli anni '70, originariamente in assembly (Spinellis, /Unix History/).
-- Successivamente, viene riscritto nel linguaggio di programmazione C, il che permette la sua diffusione (Gabriel, /Lisp/).
-- Originariamente Unix era sviluppato da ingegnieri in ambito accademico, ed era open-source.
-- Successivamente diventa un sistema proprietario e a sorgente chiuso (Tanenbaum, /Unix Clone/).
-- Attualmente esistono vari discendenti di Unix: varie versioni proprietarie, ed i sistemi operativi BSD.
-*** GNU
-- Il progetto GNU nasce come una reimplementazione libera e non proprietaria dei programmi Unix (Stallman, /Initial Announcement/).
-- I programmi GNU sono generralmente compatibili con le rispettive versioni su Unix e BSD.
-- Talvolta introducono funzioni aggiuntive (ad es., longopts, bashisms), o si comportano in maniera diversa.
+#+html_head: <link rel="stylesheet" href="./org.css">
 
-GNU è alla base di quasi tutte le distribuzioni Linux, ed offre una serie di componenti essenziali: la libreria C, una shell (programma per eseguire altri programmi), editor di testo, compilatore, programmi per la manipolazione dei file, etc.
+* Introduzione
+** Oggetto della tesi
+Uso di sistemi operativi GNU/Linux e software open-source per attività
+di digital forensics.
+** Struttura della tesi
+- Prima parte: introduzione a GNU/Linux, il software open-source, e la
+  digital forensics.
+- Seconda parte: discussione dei vantaggi teorici che derivano
+  dall'uso di sistemi GNU/Linux e software open-source, confronto con
+  i sistemi proprietari.
+- Terza parte: esempi concreti di programmi utilizzati nella digital
+  forensics.
+* Parte I -- Questioni preliminari
+** Unix
+- Unix inizia ad essere sviluppato negli anni '70.
+- La prima versione era in codice assembler per la macchina su cui era
+  stato sviluppato.
+- Successivamente, viene riscritto nel linguaggio di programmazione C.
+- Questo permette di eseguire Unix su qualsiasi macchina per cui
+  esistesse un compilatore C.
+- Le prime versioni di Unix costituivano un progetto di ricerca, ed il
+  codice veniva liberamente diffuso.
+- Successivamente Unix diventa un sistema proprietario e a sorgente
+  chiuso.
+- Attualmente esistono numerose varianti di Unix, tra cui AIX (IBM),
+  HP-UX (HP), OS X e macOS (Apple), ed i vari \*BSD (FreeBSD, OpenBSD
+  e NetBSD).
+** GNU
+- Il progetto GNU nasce come una reimplementazione libera e non
+  proprietaria dei programmi Unix (Stallman, /Initial Announcement/).
+- I programmi GNU sono generalmente compatibili con le rispettive
+  versioni su Unix e BSD.
+- Talvolta introducono funzioni aggiuntive (ad es., longopts,
+  bashisms), o si comportano in maniera diversa.
+- GNU info al posto di POSIX man
 
-Alcune distribuzioni Linux non usano componenti GNU, e altri componenti essenziali delle distribuzioni Linux (come il programma di init, il sistema a finestre, gli ambienti desktop, etc) non fanno parte di GNU.
+GNU è alla base di quasi tutte le distribuzioni Linux, ed offre una
+serie di componenti essenziali: la libreria C, una shell (programma
+per eseguire altri programmi), editor di testo, compilatore, programmi
+per la manipolazione dei file, etc.
 
-Il progetto GNU aveva iniziato a sviluppare un loro kernel (Hurd), ma sucessivamente adottano Linux.
-*** Linux
-Linux è un kernel, il programma che permette al software di comunicare con l'harware.
+Alcune distribuzioni Linux non usano componenti GNU, e altri
+componenti essenziali delle distribuzioni Linux (come il programma di
+init, il sistema a finestre, gli ambienti desktop, etc) non fanno
+parte di GNU.
 
-Allo stesso modo di GNU, Linux non discende direttamente da Unix, ma si ispira ad esso.
+Il progetto GNU aveva iniziato a sviluppare un loro kernel (Hurd), ma
+sucessivamente adottano Linux.
+** Linux
+Linux è un kernel, il programma che permette al software di comunicare
+con l'harware.
 
-Più precisamente, si ispira a Minix (Torvalds, /Notes for linux/), che a sua volta era una reimplementazione libera di Unix, creata a fini educativi (Tanenbaum, /Unix clone/).
+Allo stesso modo di GNU, Linux non discende direttamente da Unix, ma
+si ispira ad esso.
 
-Allo stesso modo di GNU, Linux è sempre stato open-source fin dalla prima versione.
+Più precisamente, si ispira a Minix (Torvalds, /Notes for linux/), che
+a sua volta era una reimplementazione libera di Unix, creata a fini
+educativi (Tanenbaum, /Unix clone/).
 
-Tuttavia, per cercare di avere il maggior supporto hardware possibile, include al suo interno del firmware proprietario, a sorgente chiuso, e non ispezionabile.
+Allo stesso modo di GNU, Linux è sempre stato open-source fin dalla
+prima versione.
 
-Esistono versioni del kernel dette "libre", che contengono soltanto codice libero.
-*** FLOSS (free, libre, open-source software)
-Tradizionalmente non esisteva l'idea di "software proprietario", ed il software veniva venduto insieme all'hardware, ed il codice sorgente veniva condiviso liberamente.  Successivamente, si inizia ad affermare un mercato per il software, che viene venduto in maniera indipendente dall'hardware (Gonzalez-Barahona, /Brief History/).
+Tuttavia, per cercare di avere il maggior supporto hardware possibile,
+include al suo interno del firmware proprietario, a sorgente chiuso, e
+non ispezionabile.
+
+Esistono versioni del kernel dette "libre", che contengono soltanto
+codice libero.
+** Pacchetti software
+- Il software su Linux viene distribuito in forma di pacchetti, tutte
+  le distribuzioni hanno un gestore di pacchetti, ed un archivio
+  ufficiale di pacchetti.
+- Ogni distribuzione Linux presenta delle particolarità (sistema di
+  init, libreria C, organizzazione del filesystem), e chi mantiene una
+  distribuzione si preoccupa anche di adattare il software alle
+  peculiarità di quella distribuzione.
+- Ad es., un database.
+- Distinzione fra distribuzioni puriste/pragmatiche, e
+  fixed-point/rolling.
+- Distribuzioni declarative e riproducibili (Nix, Guix).
+
+** Free, libre, open-source software
+- Rilevanza: la filosofia free/open-source è alla base dei progetti
+  GNU, Linux, e molte altre applicazioni.
+
+- Successivamente, si inizia ad affermare un mercato per il software,
+  che viene venduto in maniera indipendente dall'hardware.
+- Il software può essere soggetto sia a brevetti, sia
+
+
+- "Free software"
+- 
+- Tradizionalmente il software veniva venduto insieme all'hardware.
+- L'idea di software proprietario inizia ad affermarsi intorno agli
+  anni '80.
 
 - La FSF ha definito le quattro libertà del software.
-- Open-source non va confuso con source-available, e free software non va confuso con disponibile solo gratuitamente.
+- Open-source non va confuso con source-available, e free software non
+  va confuso con disponibile solo gratuitamente.
 
-# All'opposto del software proprietario si trova il "software libero", variamente chiamato come "open-source" , "free software", e "libre software".
+# All'opposto del software proprietario si trova il "software libero",
+# variamente chiamato come "open-source" , "free software", e "libre
+# software".
 
-# A causa della convenzione di Berna, il software, inteso come codice sorgente, è automaticamente soggetto al diritto d'autore.
+# A causa della convenzione di Berna, il software, inteso come codice
+# sorgente, è automaticamente soggetto al diritto d'autore.
 
-# Il termine "open-source", nella sua accezione più restrittiva di "source-available", significa solo che il codice sorgente è pubblicamente disponibile, ma l'autore conserva tutti i diritti riguardo il suo utilizzo.  È come un libro in una libreria pubblica: può essere letto, ma senza l'espresso consenso dell'autore non può essere fotocopiato, o usato come base per altre opere.
+# Il termine "open-source", nella sua accezione più restrittiva di
+# "source-available", significa solo che il codice sorgente è
+# pubblicamente disponibile, ma l'autore conserva tutti i diritti
+# riguardo il suo utilizzo.  È come un libro in una libreria pubblica:
+# può essere letto, ma senza l'espresso consenso dell'autore non può
+# essere fotocopiato, o usato come base per altre opere.
 
-# Anche il termine "free software" può essere fuorviante, perché in inglese "free" significa sia "gratuito", che "libero da vincoli" (nel caso specifico, i vincoli legali del diritto d'autore).  Un programma gratuito (freeware) può essere non-free se l'autore ne vieta la redistribuzione. Il software libero può essere venduto ...
+# Anche il termine "free software" può essere fuorviante, perché in
+# inglese "free" significa sia "gratuito", che "libero da vincoli"
+# (nel caso specifico, i vincoli legali del diritto d'autore).  Un
+# programma gratuito (freeware) può essere non-free se l'autore ne
+# vieta la redistribuzione. Il software libero può essere venduto ...
 
-- Salvo casi eccezionali, come SQLite (pubblico dominio) o JSON (BSD con clausola moralista), generalmente esistono due modelli di licenze.
-- Le licenze copyleft impongono che le eventuali modifiche devono essere distribuite a loro volta con una licenza copyleft.
-- Le licenze permissive permettono che le modifiche possano rimanere private.
-- Le licenze copyleft possono scoraggiare l'adozione di un programma, non solo da compagnie con segreti industriali (ad es., Google con Android, Golang), ma anche privati.
-*** Pacchetti software
-- Il software su Linux viene distribuito in forma di pacchetti, tutte le distribuzioni hanno un gestore di pacchetti, ed un archivio ufficiale di pacchetti.
-- Ogni distribuzione Linux presenta delle particolarità (sistema di init, libreria C, organizzazione del filesystem), e chi mantiene una distribuzione si preoccupa anche di adattare il software alle peculiarità di quella distribuzione.
-- Ad es., un database.
-- Distinzione fra distribuzioni puriste/pragmatiche, e fixed-point/rolling.
-- Distribuzioni declarative e riproducibili (Nix, Guix).
-*** Digital forensics
+- Salvo casi eccezionali, come SQLite (pubblico dominio) o JSON (BSD
+  con clausola moralista), generalmente esistono due modelli di
+  licenze.
+- Le licenze copyleft impongono che le eventuali modifiche devono
+  essere distribuite a loro volta con una licenza copyleft.
+- Le licenze permissive permettono che le modifiche possano rimanere
+  private.
+- Le licenze copyleft possono scoraggiare l'adozione di un programma,
+  non solo da compagnie con segreti industriali (ad es., Google con
+  Android, Golang), ma anche privati.
+- File sorgente: file di testo, scritto in un linguaggio di
+  programmazione
+- Linguaggio di programmazione: linguaggio artificiale, con un proprio
+  vocabolario, sintassi, etc.; 
+- Quando si parla di software si deve distinguere fra codice sorgente,
+  e codice compilato.
+
+- Consiste in una rappresentazione "astratta" del programma,
+  comprensibile per un essere umano, ma non per una macchina.
+- Per essere eseguito, il codice sorgente deve essere compilato in un
+  file in formato binario, contenente istruzioni comprensibili ad un
+  certo processore.
+- La compilazione è un processo irreversibile; dato un programma
+  compilato, è praticamente impossibile risalire al codice sorgente
+  originale.
+- Il codice sorgente può contenere commenti, che sono utili per
+  documentare il codice per i programmatori, ma inutili per la
+  macchina.
+- Inoltre, il codice contiene la definizione di funzioni (codice che
+  manipola i dati in memoria) e strutture di dati.
+- Con la compilazione, i commmenti vengono eliminati, e le funzioni e
+  strutture di dati sono sostituite da riferimenti anonimi ad
+  inidirizzi di memoria.
+- (Esempio di codice compilato su https://godbolt.org/)
+*** Definizione legale di codice
+- Per una software house, il codice sorgente può essere considerato
+  una forma di segreto industriale.
+- Ossia, il valore non è tanto nel programma compilato ed eseguibile
+  in sé, che può essere meccanicamente riprodotto un numero infiito di
+  volte, ma nel codice sorgente utilizzato per generare quel
+  programma.
+- Pertanto, può esistere un incentivo a mantenere il codice sorgente
+  segreto.
+- Inoltre, il codice può rappresentare l'implementazione di un
+  brevetto (ad es., il formato MP3).
+- Infine, il codice è coperto dal diritto d'autore, perché è un'opera
+  intellettuale.
+*** Reverse engineering
+- Supponendo che esiste un programma compilato, e non si abbia accesso al
+  codice sorgente, si possono usare le tecniche di reverse engineering.
+- La reverse engineering è stata dichiarata un'applicazione della
+  dottrina del fair use nella giurisprudenza statunitense.
+- Consiste nell'operazione opposta alla compilazione, la
+  decompilazione, e studio 
+- In alcuni casi, è possibile ricostruire un codice sorgente che, se
+  compilato, produce una copia esatta del programma originale.
+- L'analisi del codice è complicata dai compilatori moderni (che
+  tendono ad introdurre numerose ottimizzazioni), e gli strumenti che
+  ostacolano la reverse engineering.
+** Software proprietario
+** Free software
+- Il software può essere distinto in libero (se rispetta una serie di
+  requisiti), e proprietario (altrimenti).
+- La nozione di "software libero" ha un valore quasi costituzionale.
+- La "libertà" si riferisce alla libertà di parola ("free as in speech").
+- Inoltre, le libertà sono espresse in positivo, ma consistono in
+  limitazioni al potere dell'autore del software.
+- Più militante, movimento filosofico e sociale, FSF e GPL.
+- Questione del costo
+** Open source
+- Ideologia pragmatica, usata da compagnie.
+** Digital forensics
+* Parte II - Vantaggi di GNU/Linux e del FOSS
+** Stabilità: meno bug rispetto agli strumenti proprietari
+- Software sviluppato da "volontari" non è intrinsecamente meno
+  stabile di software sviluppato da professionisti, passione
+  vs. lavoro, software open-source è sviluppato anche da
+  professionisti (Red Hat contribuisce al kernel Linux, GNOME).
+- Studio sulla minore quantità di bug rispetto agli strumenti
+  proprietari.
+** Trasparenza: possibilità di analisi del codice sorgente
+- Discussione pubblica di bug, mailing list, test e CI/CD.
+- Tutti possono leggere il codice, usare strumenti di analisi/QA, e
+  contribuire a rendere il codice più sicuro.
+- Tutti possono contribuire alla documentazione del codice.
+** Riproducibilità: dell'ambiente e strumenti di analisi
+- Creazione di un'immagine del sistema usato per l'analisi, permessa
+  dalle licenze.
+- Creare un'immagine di Windows potrebbe creare problemi di copyright,
+  Windows non funziona correttamente e disattiva la licenza se cambia
+  l'hardware.
+- Reproducible builds, version locking.
+** Privacy e sicurezza
+- Windows raccoglie numerosi dati, video Youtube se Windows sia spyware.
+- Ungoogled Chromium, fork di OSS che non rispetta la privacy.
+** GNU/Linux
+- Applicazioni utili per la DF (hashing, ricerca di stringhe) sono già
+  preinstallate, oppure facilmente installabili.
+- Problema di doversi fidare di chi prepara i pacchetti, ma lo stesso
+  problema esiste con Windows.
+- Tutto viene considerato un file, anche i dischi (/dev/sdX), e quindi
+  operazioni come la clonazione, ricerca di stringhe, etc. possono
+  essere eseguite direttamente.
+- Shell script per eliminare operazioni ripetitive, SSH per accedere a
+  sistemi da remoto, etc.
+- Uso di Git per la gestione di casi: catena di custodia con firme
+  digitali, log delle operazioni compiute.
+** Svantaggi di GNU/Linux
+Supporto hardware mancante: probabilmente dovuto alla scarsa quota di
+mercato, o al timore della cultura hacker (PS3 rimuove il sistema
+Linux per evitare homebrew), reverse-engineering (Nouveau, NTFS-3G).
+
+Supporto software: NTFS, ma il problema si pone anche con il software
+closed-source
+
+Le varie distro sono una specie di "Wild West", e gli standard
+esistenti (LSB, XDG, etc.) non vengono sempre adottati; i sistemi BSD
+sono molto più coesivi (cf. BSD).
+
+Molti programmi non hanno un' interfaccia grafica, od il loro uso non
+è intuitivo, e richiede la lettura di manuali di riferimento.
+
+Tuttavia, si possono sviluppare GUI, molti programmi con
+un'interfaccia grafica non sono particolarmente intuitivi o
+auto-esplicativi (discoverable) e richiedono la lettura di un manuale
+per essere utilizzati, le interfacce testuali sono universali e
+/scriptable/.
