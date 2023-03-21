@@ -137,6 +137,9 @@ di digital forensics.
 - Attualmente esistono numerose varianti di Unix, tra cui AIX (IBM),
   HP-UX (HP), OS X e macOS (Apple), ed i vari \*BSD (FreeBSD, OpenBSD
   e NetBSD).
+- Filosofia Unix: tanti programmi specializzati (do one thing and do
+  it well), testo e interfacce testuali (text is a universal
+  interface, pipes), da ingegneri per ingegneri (manpages).
 ** GNU
 - Il progetto GNU nasce come una reimplementazione libera e non
   proprietaria dei programmi Unix (Stallman, /Initial Announcement/).
