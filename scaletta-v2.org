@@ -211,6 +211,7 @@ codice libero.
 - Esiste uno stretto legame fra la distribuzione, il suo gestore
   dei pacchetti, ed i pacchetti ufficiali per quella distribuzione.
 ** Distribuzioni fixed-point e distribuzioni rolling
+- Dependency hell, versioni delle librerie
 - Il modello fixed point (Debian/Ubuntu/Kali Linux) è maggiormente riproducibile
   (i pacchetti non cambiano fino al rilascio di una nuova versione del
   sistema), ma i pacchetti non includono le ultime versioni.
