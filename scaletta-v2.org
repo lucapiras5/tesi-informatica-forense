@@ -84,6 +84,8 @@ di digital forensics.
 - Licenze per la documentazione (CC e GFDL), importanza della
   documentazione libera, differenza con le licenze per il codice
 - Licenze approvate dalla FSF
+- Github Copilot: problemi con le licenze open-source:
+  https://opensource.stackexchange.com/a/13861
 ** Compilazione
 - File sorgente: file di testo, scritto in un linguaggio di
   programmazione
