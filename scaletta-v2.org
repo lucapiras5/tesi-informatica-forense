@@ -316,3 +316,8 @@ per essere utilizzati, le interfacce testuali sono universali e
 ** Volatility -- analisi della RAM
 ** Autopsy -- analisi di un disco
 ** Wireshark -- analisi del traffico di rete
+** TBD -- documentazione operazioni, report interattivo
+- Ricercare se sia possibile/utile utilizzare Jupyter Notebooks o Org
+  Babel per generare un report interattivo
+- Org e Git per documentare le operazioni mano a mano che vengono
+  compiute, con firma digitale
