@@ -276,6 +276,11 @@ codice libero.
   Windows non funziona correttamente e disattiva la licenza se cambia
   l'hardware.
 - Reproducible builds, version locking.
+- Codice sorgente e future-proofing (architettura hardware diversa (da
+  x86 ad ARM, o un sistema operativo diverso, da DOS a Windows), il
+  programa può essere ricompilato da sorgente e continuare a
+  funzionare, mentre invece con un programma proprietario si devono
+  trovare emulatori o hardware apposito).
 ** Privacy e sicurezza
 - Windows raccoglie numerosi dati, video Youtube se Windows sia spyware.
 - Ungoogled Chromium, fork di OSS che non rispetta la privacy.
