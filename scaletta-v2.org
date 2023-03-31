@@ -1,5 +1,7 @@
 #+html_head: <link rel="stylesheet" href="./org.css">
 
+#+LANGUAGE: it
+
 * Introduzione
 ** Oggetto della tesi
 Uso di sistemi operativi GNU/Linux e software open-source per attività
