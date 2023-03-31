@@ -21,9 +21,10 @@ di digital forensics, e vantaggi che ne derivano.
 ** Prova digitale e prova scientifica
 ** Standard tecnici e legali
 * Software libero (FOSS)
-** Cosa si intende per software
+** La natura del software
 *** Programmazione
 - Per utilizzare un computer, è necessario programmarlo, ossia fornirgli delle istruzioni da eseguire.
+- Per meglio apprezzare l'importanza del software libero, è necessario comprendere cosa si intende per "software", e come i programmi vengono eseguiti da un computer.
 *** Linguaggio naturale
 I computer non sono (ancora) in grado di comprendere il linguaggio naturale, perché è troppo astratto e ambiguo.
 
