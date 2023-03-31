@@ -59,6 +59,43 @@ La conversione da codice assembly a codice macchina è eseguita da un programma 
   "astratta" del programma, legg
 - Se si ha accesso al codice sorgente, si può
 - Il programma eseguibile è un file binario,
+*** Compilazione
+- File sorgente: file di testo, scritto in un linguaggio di
+  programmazione
+- Linguaggio di programmazione: linguaggio artificiale, con un proprio
+  vocabolario, sintassi, etc.;
+- Quando si parla di software si deve distinguere fra codice sorgente,
+  e codice compilato.
+
+- Consiste in una rappresentazione "astratta" del programma,
+  comprensibile per un essere umano, ma non per una macchina.
+- Per essere eseguito, il codice sorgente deve essere compilato in un
+  file in formato binario, contenente istruzioni comprensibili ad un
+  certo processore.
+- La compilazione è un processo irreversibile; dato un programma
+  compilato, è praticamente impossibile risalire al codice sorgente
+  originale.
+- Il codice sorgente può contenere commenti, che sono utili per
+  documentare il codice per i programmatori, ma inutili per la
+  macchina.
+- Inoltre, il codice contiene la definizione di funzioni (codice che
+  manipola i dati in memoria) e strutture di dati.
+- Con la compilazione, i commmenti vengono eliminati, e le funzioni e
+  strutture di dati sono sostituite da riferimenti anonimi ad
+  inidirizzi di memoria.
+- (Esempio di codice compilato su https://godbolt.org/)
+*** Reverse engineering
+- Supponendo che esiste un programma compilato, e non si abbia accesso al
+  codice sorgente, si possono usare le tecniche di reverse engineering.
+- La reverse engineering è stata dichiarata un'applicazione della
+  dottrina del fair use nella giurisprudenza statunitense.
+- Consiste nell'operazione opposta alla compilazione, la
+  decompilazione, e studio
+- In alcuni casi, è possibile ricostruire un codice sorgente che, se
+  compilato, produce una copia esatta del programma originale.
+- L'analisi del codice è complicata dai compilatori moderni (che
+  tendono ad introdurre numerose ottimizzazioni), e gli strumenti che
+  ostacolano la reverse engineering.
 ** Software proprietario
 - I sistemi operativi per computer e per smartphone più diffusi sono
   tutti proprietari, e conseguentemente, anche il software disponibile
@@ -141,43 +178,6 @@ La conversione da codice assembly a codice macchina è eseguita da un programma 
 - Licenze approvate dalla FSF
 - Github Copilot: problemi con le licenze open-source:
   https://opensource.stackexchange.com/a/13861
-** Compilazione
-- File sorgente: file di testo, scritto in un linguaggio di
-  programmazione
-- Linguaggio di programmazione: linguaggio artificiale, con un proprio
-  vocabolario, sintassi, etc.;
-- Quando si parla di software si deve distinguere fra codice sorgente,
-  e codice compilato.
-
-- Consiste in una rappresentazione "astratta" del programma,
-  comprensibile per un essere umano, ma non per una macchina.
-- Per essere eseguito, il codice sorgente deve essere compilato in un
-  file in formato binario, contenente istruzioni comprensibili ad un
-  certo processore.
-- La compilazione è un processo irreversibile; dato un programma
-  compilato, è praticamente impossibile risalire al codice sorgente
-  originale.
-- Il codice sorgente può contenere commenti, che sono utili per
-  documentare il codice per i programmatori, ma inutili per la
-  macchina.
-- Inoltre, il codice contiene la definizione di funzioni (codice che
-  manipola i dati in memoria) e strutture di dati.
-- Con la compilazione, i commmenti vengono eliminati, e le funzioni e
-  strutture di dati sono sostituite da riferimenti anonimi ad
-  inidirizzi di memoria.
-- (Esempio di codice compilato su https://godbolt.org/)
-** Reverse engineering
-- Supponendo che esiste un programma compilato, e non si abbia accesso al
-  codice sorgente, si possono usare le tecniche di reverse engineering.
-- La reverse engineering è stata dichiarata un'applicazione della
-  dottrina del fair use nella giurisprudenza statunitense.
-- Consiste nell'operazione opposta alla compilazione, la
-  decompilazione, e studio
-- In alcuni casi, è possibile ricostruire un codice sorgente che, se
-  compilato, produce una copia esatta del programma originale.
-- L'analisi del codice è complicata dai compilatori moderni (che
-  tendono ad introdurre numerose ottimizzazioni), e gli strumenti che
-  ostacolano la reverse engineering.
 * GNU/Linux
 ** Introduzione
 ** Unix
