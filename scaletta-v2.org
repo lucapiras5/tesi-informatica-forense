@@ -3,20 +3,66 @@
 * Introduzione
 ** Oggetto della tesi
 Uso di sistemi operativi GNU/Linux e software open-source per attività
-di digital forensics.
+di digital forensics, e vantaggi che ne derivano.
 ** Struttura della tesi
-- Prima parte: introduzione alla digital forensics, a GNU/Linux, al software open-source.
+- Prima parte: introduzione alla digital forensics, a GNU/Linux, al
+  software open-source.
 - Seconda parte: discussione dei vantaggi teorici che derivano
   dall'uso di sistemi GNU/Linux e software open-source, confronto con
   i sistemi proprietari.
 - Terza parte: esempi concreti di programmi utilizzati nella digital
   forensics.
+* Abbreviazioni, anglicismi, termini tecnici
+
 * Digital forensics (DF)
 ** Introduzione storica alla digital forensics
 ** Prova digitale e prova scientifica
 ** Standard tecnici e legali
 * Software libero (FOSS)
+** Cosa si intende per software
+*** Programmazione
+- Per utilizzare un computer, è necessario programmarlo, ossia fornirgli delle istruzioni da eseguire.
+*** Linguaggio naturale
+- I computer non sono (ancora) in grado di comprendere il linguaggio naturale, perché è troppo astratto e ambiguo.
+- Ad es., anche le norme di legge, che possono essere considerate un linguaggio di programmazione, non sono sempre chiare nel loro significato.
+- Natural language processing -- branca dell'informatica che studia l'analisi del linguaggio naturale da parte dei computer.
+- Language models -- intelligenze artificiali che generano testo in un linguaggio naturale.
+- Chinese Room argument -- un'intelligenza artificiale non ha la capacità di "comprendere" cosa sta leggendo, può solo "ripetere" quanto ha imparato.
+- Turing test -- un'intelligenza artificiale supera il test di Turing se le sue risposte sono indistinguibili da quelle di un essere umano.
+- ChatGPT -- intelligenza artificiale
+*** Linguaggio macchina
+- I computer comprendono solo una serie ristretta di istruzioni estremamente concrete.
+- Turing machine: modello teorico di computer, può eseguire solo alcune istruzioni.
+- ISA -- Instruction Set Architecture, l'insieme di istruzioni che un processore può eseguire.
+- CISC/RISC -- Complex/Reduced Instruction Set Computers, due filosofie diverse per definire una ISA.
+- Differenza tra ISA, e implementazione concreta nei processori -- errata, Pentium FDIV bug
+- ISA/processori più diffusi: x86, ARM.
+- Estensioni alla ISA: FPU, SIMD
+- Esempi di istruzioni in assembly, ed in binario
+- Opcode e microcode
+*** Linguaggi di programmazione
+- Il compromesso fra linguaggio naturale e istruzioni per i computer sono i linguaggi di programmazione: un linguaggio più rigoroso e formale del linguaggio naturale, ma
+- Quando si parla genericamente di "software", ci si può riferire a due nozioni: software come programma eseguibile, o software come codice sorgente.
+- Chi utilizza il software è interessato solo al programma eseguibile, mentre chi sviluppa il software è interessato anche al codice sorgente.
+- Il codice sorgente sono semplici file di testo, scritti in un certo
+  linguaggio di programmazione, che contengono istruzioni .
+  Contengono istruzioni legge e contengono una rappresentazione
+  "astratta" del programma, legg
+- Se si ha accesso al codice sorgente, si può
+- Il programma eseguibile è un file binario,
 ** Software proprietario
+- I sistemi operativi per computer e per smartphone più diffusi sono
+  tutti proprietari, e conseguentemente, anche il software disponibile
+  per questi sistemi operativi tende ad essere proprietario.
+- Per "proprietario" si intende un sistema che presenta delle
+  limitazioni sia legali, sia tecniche.
+- Ad es., il software non può essere ridistribuito perché coperto dal
+  diritto d'autore, il software è coperto da brevetti, il codice
+  sorgente o la documentazione relativa alle caratteristiche tecniche
+  del software sono considerate segreti industriali e quindi non sono
+  pubblicamente disponibili, etc.
+-
+
 - Successivamente, si inizia ad affermare un mercato per il software,
   che viene venduto in maniera indipendente dall'hardware.
 - Il software può essere soggetto sia a brevetti, sia
@@ -90,7 +136,7 @@ di digital forensics.
 - File sorgente: file di testo, scritto in un linguaggio di
   programmazione
 - Linguaggio di programmazione: linguaggio artificiale, con un proprio
-  vocabolario, sintassi, etc.; 
+  vocabolario, sintassi, etc.;
 - Quando si parla di software si deve distinguere fra codice sorgente,
   e codice compilato.
 
@@ -117,7 +163,7 @@ di digital forensics.
 - La reverse engineering è stata dichiarata un'applicazione della
   dottrina del fair use nella giurisprudenza statunitense.
 - Consiste nell'operazione opposta alla compilazione, la
-  decompilazione, e studio 
+  decompilazione, e studio
 - In alcuni casi, è possibile ricostruire un codice sorgente che, se
   compilato, produce una copia esatta del programma originale.
 - L'analisi del codice è complicata dai compilatori moderni (che
@@ -197,7 +243,7 @@ codice libero.
 # inizializzazione), il primo processo che viene avviato dopo
 # l'accensione del sistema, ed è responsabile per l'avvio di altri
 # processi.
-# 
+#
 # Esistono tre principali sistemi di init: SystemD, OpenRC, e Runit, #
 # e ciascuno di essi usa file diversi, in posizioni diverse, e con #
 # contenuti diversi, per avviare un processo.
@@ -247,7 +293,7 @@ codice libero.
 #   diventano "obsoleti" rispetto alla versione offerta dagli
 #   sviluppatori, che potrebbe includere funzionalità nuove e correzioni
 #   di bug significativi ("stabile" non significa "privo di bug").
-# - Pertanto, il modello stabile porta a sistemi riproducibili, ma che potrebbero difettare 
+# - Pertanto, il modello stabile porta a sistemi riproducibili, ma che potrebbero difettare
 # *** Modello rolling
 # - Il modello rolling (lett. rotolante, nel senso metaforico di non
 #   fermarsi) risolve il problema dell'obsolecenza eliminando l'idea di
