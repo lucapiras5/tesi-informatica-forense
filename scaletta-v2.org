@@ -23,13 +23,17 @@ di digital forensics, e vantaggi che ne derivano.
 *** Programmazione
 - Per utilizzare un computer, è necessario programmarlo, ossia fornirgli delle istruzioni da eseguire.
 *** Linguaggio naturale
-- I computer non sono (ancora) in grado di comprendere il linguaggio naturale, perché è troppo astratto e ambiguo.
-- Ad es., anche le norme di legge, che possono essere considerate un linguaggio di programmazione, non sono sempre chiare nel loro significato.
-- Natural language processing -- branca dell'informatica che studia l'analisi del linguaggio naturale da parte dei computer.
-- Language models -- intelligenze artificiali che generano testo in un linguaggio naturale.
-- Chinese Room argument -- un'intelligenza artificiale non ha la capacità di "comprendere" cosa sta leggendo, può solo "ripetere" quanto ha imparato.
-- Turing test -- un'intelligenza artificiale supera il test di Turing se le sue risposte sono indistinguibili da quelle di un essere umano.
-- ChatGPT -- intelligenza artificiale
+I computer non sono (ancora) in grado di comprendere il linguaggio naturale, perché è troppo astratto e ambiguo.
+
+Ad es., anche le norme di legge, che possono essere considerate una sorta di linguaggio di programmazione, non sono sempre chiare nel loro significato.
+
+Approfondimenti:
+
+- [[https://en.wikipedia.org/wiki/Natural_language_processing][Natural language processing]]: /The goal is a computer capable of "understanding" the contents of documents, including the contextual nuances of the language within them./
+- [[https://en.wikipedia.org/wiki/Large_language_model][Large Language Models]]: /Language models with sufficient training and parameter counts are found to capture much of the syntax and semantics of human language./ 
+- [[https://en.wikipedia.org/wiki/Turing_test][Turing test]]: /The Turing test [...] is a test of a machine's ability to exhibit intelligent behaviour equivalent to, or indistinguishable from, that of a human./ 
+- [[https://en.wikipedia.org/wiki/Chinese_room][Chinese Room Argument]]: /A digital computer executing a program cannot have a "mind", "understanding", or "consciousness", regardless of how intelligently or human-like the program may make the computer behave./
+- [[https://en.wikipedia.org/wiki/ChatGPT][ChatGPT]] -- /ChatGPT [...] garnered attention for its detailed responses and articulate answers across many domains of knowledge. Its uneven factual accuracy, however, has been identified as a significant drawback./
 *** Linguaggio macchina
 - I computer comprendono solo una serie ristretta di istruzioni estremamente concrete.
 - Turing machine: modello teorico di computer, può eseguire solo alcune istruzioni.
