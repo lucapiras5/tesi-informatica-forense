@@ -37,16 +37,18 @@ Approfondimenti:
 - [[https://en.wikipedia.org/wiki/Chinese_room][Chinese Room Argument]]: /A digital computer executing a program cannot have a "mind", "understanding", or "consciousness", regardless of how intelligently or human-like the program may make the computer behave./
 - [[https://en.wikipedia.org/wiki/ChatGPT][ChatGPT]] -- /ChatGPT [...] garnered attention for its detailed responses and articulate answers across many domains of knowledge. Its uneven factual accuracy, however, has been identified as a significant drawback./
 *** Linguaggio macchina
-- I computer comprendono solo una serie ristretta di istruzioni estremamente concrete.
-- Turing machine: modello teorico di computer, può eseguire solo alcune istruzioni.
-- ISA -- Instruction Set Architecture, l'insieme di istruzioni che un processore può eseguire.
-- CISC/RISC -- Complex/Reduced Instruction Set Computers, due filosofie diverse per definire una ISA.
-- Differenza tra ISA, e implementazione concreta nei processori -- errata, Pentium FDIV bug
-- ISA/processori più diffusi: x86, ARM.
-- Estensioni alla ISA: FPU, SIMD
-- Esempi di istruzioni in assembly, ed in binario
-- Opcode e microcode
-*** Linguaggi di programmazione
+Un processore comprende solo una serie limitata di istruzioni, chiamato ISA ([[https://en.wikipedia.org/wiki/Instruction_set_architecture][Instruction Set Architecture]]).
+
+Le ISA sono una specificazione tecnica, che serve come standard per coordinare chi produce l'hardware (processori), e chi scrive il software (in particolare, i compilatori, di cui si parlerà in seguito).
+
+Le ISA prevedono solo le istruzioni più basilari: leggere e scrivere uno o pochi byte ad un certo indirizzo di memoria, compiere operazioni artimetiche, confrontare dei valori, saltare ad un certo indirizzo di memoria e continuare l'esecuzione, ritornare all'indirizzo di memoria precedente.
+
+In ultimo luogo, le istruzioni sono lette da un processore, e quindi devono essere codificate in binario.  Tuttavia, dato che sarebbe impossibile per un essere umano memorizzare come ogni istruzione viene codificata, si introduce una prima astrazione, il linguaggio assembly.
+
+Le due rappresentazioni sono equivalenti ed intercambiabili: =mov    eax,0x8= corrisponde al codice binario =10111000 00001000=, ed entrambe significano "inserisci il numero 8 nel registro eax", ma la prima versione è molto più leggibile della seconda.
+
+La conversione da codice assembly a codice macchina è eseguita da un programma detto assembler.
+*** Linguaggio di programmazione
 - Il compromesso fra linguaggio naturale e istruzioni per i computer sono i linguaggi di programmazione: un linguaggio più rigoroso e formale del linguaggio naturale, ma
 - Quando si parla genericamente di "software", ci si può riferire a due nozioni: software come programma eseguibile, o software come codice sorgente.
 - Chi utilizza il software è interessato solo al programma eseguibile, mentre chi sviluppa il software è interessato anche al codice sorgente.
