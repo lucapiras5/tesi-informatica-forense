@@ -84,18 +84,6 @@ La conversione da codice assembly a codice macchina è eseguita da un programma 
   strutture di dati sono sostituite da riferimenti anonimi ad
   inidirizzi di memoria.
 - (Esempio di codice compilato su https://godbolt.org/)
-*** Reverse engineering
-- Supponendo che esiste un programma compilato, e non si abbia accesso al
-  codice sorgente, si possono usare le tecniche di reverse engineering.
-- La reverse engineering è stata dichiarata un'applicazione della
-  dottrina del fair use nella giurisprudenza statunitense.
-- Consiste nell'operazione opposta alla compilazione, la
-  decompilazione, e studio
-- In alcuni casi, è possibile ricostruire un codice sorgente che, se
-  compilato, produce una copia esatta del programma originale.
-- L'analisi del codice è complicata dai compilatori moderni (che
-  tendono ad introdurre numerose ottimizzazioni), e gli strumenti che
-  ostacolano la reverse engineering.
 ** Software proprietario
 - I sistemi operativi per computer e per smartphone più diffusi sono
   tutti proprietari, e conseguentemente, anche il software disponibile
@@ -178,6 +166,19 @@ La conversione da codice assembly a codice macchina è eseguita da un programma 
 - Licenze approvate dalla FSF
 - Github Copilot: problemi con le licenze open-source:
   https://opensource.stackexchange.com/a/13861
+** Reverse engineering
+- Supponendo che esiste un programma compilato, e non si abbia accesso al
+  codice sorgente, si possono usare le tecniche di reverse engineering.
+- La reverse engineering è stata dichiarata un'applicazione della
+  dottrina del fair use nella giurisprudenza statunitense.
+- Consiste nell'operazione opposta alla compilazione, la
+  decompilazione, e studio
+- In alcuni casi, è possibile ricostruire un codice sorgente che, se
+  compilato, produce una copia esatta del programma originale.
+- L'analisi del codice è complicata dai compilatori moderni (che
+  tendono ad introdurre numerose ottimizzazioni), e gli strumenti che
+  ostacolano la reverse engineering.
+
 * GNU/Linux
 ** Introduzione
 ** Unix
