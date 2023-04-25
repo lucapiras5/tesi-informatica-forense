@@ -192,12 +192,7 @@ Build pienamente riproducibili (v. anche Guix), configurazione descrittiva
 
 * Ragioni a favore di GNU/Linux ed il FOSS
 
-
-- Per il mondo enterprise (ad es., incident response) non interessa se gli strumenti sono open-source o meno, la cosa più importante è che funzionino
-- Diritto alla difesa: costo nullo
 - Valutazione delle prove: ispezione del codice sorgente
-- Obiezioni:
-  - Il costo degli strumenti enterprise è giustificato dal loro supporto dedicato
 
 ** Maggiore affidabilità
 

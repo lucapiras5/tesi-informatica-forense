@@ -193,7 +193,7 @@ La conversione da codice assembly a codice macchina è eseguita da un programma 
 - Successivamente Unix diventa un sistema proprietario e a sorgente
   chiuso.
 - Attualmente esistono numerose varianti di Unix, tra cui AIX (IBM),
-  HP-UX (HP), OS X e macOS (Apple), ed i vari \*BSD (FreeBSD, OpenBSD
+  HP-UX (HP), OS X e macOS (Apple), ed i vari BSD (FreeBSD, OpenBSD
   e NetBSD).
 - Filosofia Unix: tanti programmi specializzati (do one thing and do
   it well), testo e interfacce testuali (text is a universal
@@ -313,14 +313,20 @@ codice libero.
 ** Pacchetti binari e pacchetti sorgente
 - Generalmente le distribuzioni offrono
 * Vantaggi dell'uso di FOSS per la DF
+** Costi ed efficienza
+- Diritto alla difesa: costo nullo
+- ZFS, file system specializzati per la conservazione dei dati
 ** Stabilità: meno bug rispetto agli strumenti proprietari
 - Software sviluppato da "volontari" non è intrinsecamente meno
   stabile di software sviluppato da professionisti, passione
   vs. lavoro, software open-source è sviluppato anche da
   professionisti (Red Hat contribuisce al kernel Linux, GNOME).
+- Le patch sono revisionate (ma scandalo del kernel Linux che ha accettato patch insicure, paranoia degli sviluppatori OpenBSD che non implementano BT e hyperthreading).
 - Studio sulla minore quantità di bug rispetto agli strumenti
   proprietari.
-** Trasparenza: possibilità di analisi del codice sorgente
+** Trasparenza: 
+- Possibilità di analisi del codice sorgente, maggiore affidabilità rispetto alla "scatola nera" del codice proprietario compilato/offuscato
+- PA come "casa di vetro"
 - Discussione pubblica di bug, mailing list, test e CI/CD.
 - Tutti possono leggere il codice, usare strumenti di analisi/QA, e
   contribuire a rendere il codice più sicuro.
@@ -353,9 +359,13 @@ codice libero.
 - Uso di Git per la gestione di casi: catena di custodia con firme
   digitali, log delle operazioni compiute.
 ** Svantaggi di GNU/Linux
+Per il mondo enterprise (ad es., incident response) non interessa se gli strumenti sono open-source o meno, la cosa più importante è che funzionino.
+
 Supporto hardware mancante: probabilmente dovuto alla scarsa quota di
 mercato, o al timore della cultura hacker (PS3 rimuove il sistema
 Linux per evitare homebrew), reverse-engineering (Nouveau, NTFS-3G).
+
+Il costo degli strumenti enterprise è giustificato dal loro supporto dedicato
 
 Supporto software: NTFS, ma il problema si pone anche con il software
 closed-source
