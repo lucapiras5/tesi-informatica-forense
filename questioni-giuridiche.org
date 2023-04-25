@@ -1,0 +1,40 @@
+#+TITLE: Questioni giuridiche
+
+* Standard tecnici/legali della DF
+
+* Software proprietario, open source
+
+- Brevetti
+- Diritto d'autore
+  - EULA
+- Licenze open-source
+
+* Reverse engineering
+
+- Sega v. Accolade, etc.
+- Google v. Oracle: API
+- Source code leak di Windows XP, ReactOS, clean room reimplementation
+- EU law: interoperability, copyright forte
+- https://www.eff.org/issues/coders/reverse-engineering-faq
+- https://www.eff.org/wp/unintended-consequences-16-years-under-dmca
+- DMCA: software al servizio del copyright (invece che copyright al servizio del software), limitazioni alla reverse engineering, DeCSS
+
+* Giusto processo
+
+- Gratuito patrocinio
+- Diritto alla difesa: analisi del codice sorgente, riproducibilità dei risultati
+- Segreto processuale, privacy per i dati acquisiti
+
+* Aspetti pratici
+
+- Acquisizione di dischi:
+  - Documenti anonimi
+- Acquisizione di RAM:
+  - Come inquadrarla
+- Analisi del traffico di rete:
+  - Non è intercettazione
+- Bitcoin:
+  - Definizione legale
+  - Analisi del wallet
+- Report interattivi:
+  - Riproducibilità nel futuro
