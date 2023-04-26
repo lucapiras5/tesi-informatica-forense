@@ -4,7 +4,7 @@
 
 * Software proprietario, open source
 
-- Brevetti
+- Brevetti: MP3, codifica video
 - Diritto d'autore
   - EULA
 - Licenze open-source
@@ -31,27 +31,43 @@
 - Sega fa causa ad Accolade per violazione di copyright, ma in appello la corte rigetta gli argomenti di Sega.
 - La quantità di materiale protetto dal diritto d'autore di Sega che è stato copiato per aggirare il sistema di protezione è minimo, circa 20-25 byte.
 - Il fatto che Accolade abbia aggirato il sistema di protezione non ha danneggiato le vendite dei giochi di Sega.
-- La quantità di lavoro che rientra 
+- La quantità di lavoro necessaria per sviluppare il sistema di protezione è irrilevante (dottrina "sweat of the brow").
 - In generale, il reverse engineering è ammesso se è l'unico modo per accedere alle idee e procedure espresse in un programma per computer.
 
 Conclusione: è possibile copiare piccole parti di un sistema proprietario se è strettamente necessario per il reverse engineering, se il reverse engieering è fatto a fini scientifici il mercato originale del prodotto non viene danneggiato, il costo sostenuto per sviluppare il prodotto non implica copyright.
 
 ** DMCA e DeCSS
 
+- DMCA riduce possibilità di fare reverse engineering
+- DeCSS: libertà di espressione del codice sorgente v. algoritmi.
+
 ** ReactOS e leak del codice sorgente di Windows XP
 
-** 
+** Oracle v. Google
+
+Le API non sono protette da copyright, e rientrano nel fair use.  Pertanto, è possibile utilizzare i nomi delle funzioni di dati e strutture senza incorrere in violazione di copyright.
+
+- Harvard Law Review: [[https://harvardlawreview.org/print/vol-135/google-llc-v-oracle-america-inc/][Google LLC v. Oracle America, Inc.]]
+- EFF: [[https://www.eff.org/cases/oracle-v-google][Oracle v. Google]]
+
+** Diritto europeo
+
+- LWN: [[https://lwn.net/Articles/134642/][Software, reverse engineering and the law]]
+- Gerrish: [[https://www.gerrishlegal.com/blog/2020/04/16/2020-4-7-reverse-engineering-when-can-users-lawfully-decompile-software][Reverse Engineering: When Can Users Lawfully Decompile Software?]]
+- Vidstrom: [[https://www.vidstromlabs.com/blog/the-legal-boundaries-of-reverse-engineering-in-the-eu/][The legal boundaries of reverse engineering in the EU]]
+- YJOLT: [[https://yjolt.org/reverse-engineering-informational-privacy-law][Reverse Engineering Informational Privacy Law]]
+- Bird & Bird: [[https://www.twobirds.com/en/insights/2020/germany/vertraglicher-ausschluss-von-reverse-engineering][Contractual Prohibition of Reverse Engineering under the New German Trade Secrets Act - a Practical Guide]]
+- ScienceDirect: [[https://www.sciencedirect.com/science/article/pii/S0267364922000693][Legal and technical questions of file system reverse engineering]]
 
 - Google v. Oracle: API
 - Source code leak di Windows XP, ReactOS, clean room reimplementation
 - EU law: interoperability, copyright forte
 - https://www.eff.org/issues/coders/reverse-engineering-faq
 - https://www.eff.org/wp/unintended-consequences-16-years-under-dmca
-- DMCA: software al servizio del copyright (invece che copyright al servizio del software), limitazioni alla reverse engineering, DeCSS
 
-* Giusto processo
+* Giusto processo, diritto alla difesa
 
-- Gratuito patrocinio
+- Gratuito patrocinio: costo della consulenza ...
 - Diritto alla difesa: analisi del codice sorgente, riproducibilità dei risultati
 - Segreto processuale, privacy per i dati acquisiti
 
@@ -62,9 +78,12 @@ Conclusione: è possibile copiare piccole parti di un sistema proprietario se è
 - Acquisizione di RAM:
   - Come inquadrarla
 - Analisi del traffico di rete:
-  - Non è intercettazione
+  - Confronto con intercettazione e sequestro di corrispondenza
 - Bitcoin:
   - Definizione legale
-  - Analisi del wallet
+  - Analisi del wallet, blockchain in locale
+- OSINT:
+  - Ammissibilità di fonti pubbliche
+  - Modalità di acquisizione, richieste legali
 - Report interattivi:
   - Riproducibilità nel futuro
