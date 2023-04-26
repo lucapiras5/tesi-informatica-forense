@@ -11,7 +11,37 @@
 
 * Reverse engineering
 
-- Sega v. Accolade, etc.
+** Atari v. Nintendo
+
+- Nintendo sviluppa il 10NES, un chip di protezione per evitare l'uso di cartucce non ufficiali sulla loro console.
+- Atari vuole creare un clone del 10NES, in modo da aggirare il sistema di protezione proprietario della Nintendo e vendere cartucce non autorizzate.
+- Atari chiede una copia del codice sorgente del 10NES all'ufficio del copyright con un falso pretesto, e riesce a creare un clone.
+- Nintendo fa causa ad Atari per violazione del diritto d'autore.
+- In appello, la Corte determina che il reverse engineering di per sé rientra nel fair use, e non è una violazione del diritto d'autore.
+- Tuttavia, dato che Atari ha ottenuto il codice sorgente sotto false pretese, non può invocare il fair use.
+
+[[https://en.wikipedia.org/wiki/Atari_Games_Corp._v._Nintendo_of_America_Inc.][Wikipedia: Atari Games Corp. v. Nintendo of America Inc.]]
+
+[[https://digitalcommons.du.edu/cgi/viewcontent.cgi?article=2288&context=dlr][Computer Copyright Protection Narrows as Video Game Giants Battle in Atari v. Nintendo]]
+
+** Sega v. Accolade
+
+- Sega introduce un sistema di protezione che richiede la presenza di una sequenza di byte all'interno della cartuccia.
+- Accolade usa il reverse engineering per trovare questa sequenza di byte, e pubblicare videogiochi senza ottenere una licenza dalla Sega.
+- Sega fa causa ad Accolade per violazione di copyright, ma in appello la corte rigetta gli argomenti di Sega.
+- La quantità di materiale protetto dal diritto d'autore di Sega che è stato copiato per aggirare il sistema di protezione è minimo, circa 20-25 byte.
+- Il fatto che Accolade abbia aggirato il sistema di protezione non ha danneggiato le vendite dei giochi di Sega.
+- La quantità di lavoro che rientra 
+- In generale, il reverse engineering è ammesso se è l'unico modo per accedere alle idee e procedure espresse in un programma per computer.
+
+Conclusione: è possibile copiare piccole parti di un sistema proprietario se è strettamente necessario per il reverse engineering, se il reverse engieering è fatto a fini scientifici il mercato originale del prodotto non viene danneggiato, il costo sostenuto per sviluppare il prodotto non implica copyright.
+
+** DMCA e DeCSS
+
+** ReactOS e leak del codice sorgente di Windows XP
+
+** 
+
 - Google v. Oracle: API
 - Source code leak di Windows XP, ReactOS, clean room reimplementation
 - EU law: interoperability, copyright forte
