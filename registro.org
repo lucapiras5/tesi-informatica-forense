@@ -9,12 +9,15 @@ Condivisione della prima bozza.
 
 ** Domande
 
-Va bene l'impostazione che ho dato alla tesi?  Ho cercato di motivare ogni argomento introdotto.
+Va bene l'impostazione che ho dato alla tesi?  Ho cercato di motivare ogni argomento introdotto.  Troppi dettagli su come funziona Linux, è meglio cambiare o ridefinire l'oggetto della tesi?
 
 Posso fare riferimento a fonti primarie e/o non-accademiche?  Ad es.:
 
+- Fare riferimento direttamente alla documentazione del kernel Linux per spiegare cos'è un kernel;
 - Fare riferimento direttamente alle pagine della FSF per spiegare il significato di "open source", o per spiegare cosa sia GNU, dato il loro coinvolgimento diretto;
-- Citare articoli scritti da professionisti, ma che non sono pubblicati su riviste?
+- Citare articoli scritti da professionisti, ma che non sono pubblicati su riviste;
+
+Posso usare idee originali? Ad es., Git per la catena di custodia.
 
 Come inserire riferimenti a siti internet relativi a software, repository su Github, ecc.?
 

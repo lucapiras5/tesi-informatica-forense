@@ -1,5 +1,11 @@
 #+TITLE: Questioni giuridiche
 
+* Da fare
+
+- Cercare linee guida italiane sul software testing.
+- Modificare la scaletta in modo da considerare GNU/Linux parte del software, e aggiungere sezioni sul "software per produrre software", come compilatori, e "software per eseguire software" (come Linux), per dettagliare perché devono essere anche loro software libero (più elementi liberi ci sono, più è astrattamente affidabile il risultato).
+- Fonti sull'uso di distribuzioni Linux su computer del governo.
+
 * Standard tecnici/legali della DF
 
 * Software proprietario, open source
