@@ -1,0 +1,96 @@
+#+TITLE: Scaletta
+#+AUTHOR: Luca Piras
+
+* Oggetto della tesi
+- Come il free open-source software (FOSS) può beneficiare le discipline della information security (infosec) e digital forensics (DF).
+* Open source
+- Definizione di software proprietario, libero, vantaggi e svantaggi del software open-source.
+- Collegamenti legali: diritto d'autore (licenze open-source, reverse engineering).
+** Software proprietario
+- Il suo uso è regolato da limitazioni tecniche e/o legali, come brevetti e segreti industriali.
+- Il diritto d'autore regola il digital rights management (cf. Digital Millennium Copyright Act negli Stati Uniti, Information Society Directive nell'UE), che impedisce l'uso, copia, modifica e analisi del programma.
+** Software libero e licenze open-source
+- Software che garantisce all'utente le facoltà che sono negate dal software proprietario, per mezzo del diritto d'autore.
+- Il software libero è comunque soggetto al diritto d'autore, ma viene distribuito con delle licenze che non limitano, ma garantiscono implicitamente o espressamente, le libertà dell'utente.
+- Il punto fondamentale è la disponibilità del codice sorgente (v. sez. succ.), che permette di studiare il funzionamento del programma.
+- Le licenze open-source permettono anche la modifica e ridistribuzione del codice sorgente.
+- Le licenze "copyleft" (GPL) impongono che ogni opera software derivata usi a sua volta una licenza copyleft, "obbligando" l'autore del software a garantire le libertà degli utilizzatori.
+- Le licenze "permissive" (MIT) richiedono solo di citare l'autore originale se viene usato il suo codice, e le opere software derivate possono anche rimanere proprietarie (le modifiche non devono essere rilasciate al pubblico).
+** Codice sorgente, compilazione
+- Il codice sorgente deve essere compilato in codice macchina affinché possa essere eseguito da un computer.
+- La compilazione è una trasformazione irreversibile, e non è possibile risalire al codice sorgente originale partendo dal codice macchina.
+- La compilazione è un passo necessario, e anche il software libero deve essere compilato (da cui l'importanza di distribuire il codice sorgente), ma è utile per il software proprietario, perché "nasconde" come il software funziona.
+** Reverse engineering
+- Se si è in presenza di software proprietario, e si deve cercare di capire come funziona, si possono usare tecniche di reverse engineering (RE).
+- Ad es., il formato NTFS di Windows per salvare i dati su disco non è documentato in maniera pubblica.  In questo caso, la RE studia come il software si comporta (così come la scienza studia i fenomeni naturali) per documentare in via "induttiva" il suo funzionamento.
+- La RE entra in tensione con il diritto d'autore, brevetti, etc., anche se si sta agendo per fini legittimi (utilizzare quella conoscenza per una perizia all'interno di un processo).
+- Potrebbe essere necessario copiare dati come chiavi segrete, che sono protette da copyright (cfr. SEGA, le chiavi crittografiche per i DVD), la RE stessa consiste nell'aggirare sistemi digitali di protezione dei diritti (vietato dal DMCA e dalla Information Society Directive), la documentazione prodotta al seguito della RE potrebbe essere considerata violazione di diritto d'autore, etc.
+- Serve che i giudici riconoscano delle eccezioni al diritto d'autore come il "fair use" quando il RE è a fini educativi o informativi.
+** Vantaggi del software libero
+- Possibilità di studiare il codice sorgente: non ci si deve fidare di come funziona il software proprietario, e se il suo funzionamento corrisponde a quanto promesso dagli sviluppatori, ma si può ispezionare il codice sorgente, e compilarlo di persona.
+  - Se il codice sorgente di un progetto open-source viene compromesso, si può notare subito, perché in linea teorica chiunque può controllare quali modifiche sono state aggiunte.
+- Network effect: dato che può essere usato senza limitazioni, e tutti possono contribuire al suo sviluppo, il software viene diffuso e migliorato rapidamente.
+  - Per "tutti" si intende che in linea teorica, chiunque abbia le capacità tecniche può contribuire al progetto.
+  - Spetta agli sviluppatori del progetto controllare che le modifiche proposte siano in buona fede, non siano dannose, siano state testate, siano coerenti con lo scopo del progetto, etc.
+  - Se esistono disaccordi su come continuare lo sviluppo del software, la natura delle licenze open-source permette di fare un "fork", per cui la parte che è in disaccordo può continuare in autonomia, e i due progetti possono continuare a condividere codice fra di loro.
+- Maggiore stabilità: il software viene eseguito da un grande numero di persone, su un grande numero di piattaforme, il che permette di trovare e risolvere errori di programmazione (che potrebbero riguardare solo una piattaforma particolare) più velocemente.
+- Codice vale come documentazione: specie nel caso in cui il software open-source re-implementa delle funzionalità che sono presenti solo nel software proprietario, il software open-source diventa di fatto anche quasi una "specifica tecnica" per il software proprietario.
+  - Ad es., NTFS-3G per il formato NTFS, Volatility per il formato del file di ibernazione della RAM di Windows, etc.)
+- Convenienza per i progetti proprietari: anche i progetti proprietari possono beneficiare dal diventare (parzialmente) open-source.
+  - Spesso il software proprietario viene modificato dai suoi utilizzatori per aggiungere nuove funzionalità, o per correggere bug.  Apportare questi miglioramenti sarebbe molto più semplice se il software fosse open-source.
+  - È possibile rendere open-source anche solo parte del progetto, e lasciare la parte del progetto in cui risiede il vantaggio competitivo del progetto closed-source.
+  - Ad es., vari programmi offrono una "community edition" gratuita, ed una "enterprise edition" a pagamento; Google Chrome è proprietario, ma Google offre anche Chromium: sono essenzialmente lo stesso browser, con l'unica differenza che Chromium non è integrato con i servizi proprietari di Google.
+** Svantaggi del software libero
+- Mancanza di supporto dalle grandi aziende:
+  - Le grandi aziende potrebbero non volere (per non rivelare i loro segreti industriali) o non potere (per ragioni legali di proprietà intellettuale) offrire software open-source.
+  - Ad es., mentre Intel e AMD offrono driver open source per le loro schede video, in modo che possano essere utilizzate su Linux, Nvidia ha tradizionalmente fornito solo driver closed-source, ed ostacolato l'uso dei loro prodotti con Linux.
+- Finanziamenti:
+  - Spesso, ma non sempre, il software open-source è sviluppato da volontari.  Questo non vuol dire che la qualità del codice sia minore, gli sviluppatori sono pur sempre professionisti, o comunque hanno esperienza tecnica, ma significa che gli sviluppatori non possono dedicare la loro piena attenzione al progetto.
+  - Il problema può essere risolto vendendo assistenza tecnica per il prodotto open-source (ad es., servizi di consulenze, offrendo di sviluppare certe funzionalità in cambio di una retribuzione), oppure vendendo il software open-source come un servizio (SaaS), oppure offrendo il software con due licenze (se il programma open-source viene usato in un progetto proprietario si usa una licenza commerciale in modo che gli sviluppatori siano retribuiti, ma se viene usato in un altro progetto open-source, viene offerto con una normale licenza open-source).
+* GNU/Linux
+- Il software è l'ultimo anello nella catena di un computer, ed è preceduto dal sistema operativo e dall'hardware.  La catena è affidabile solo quanto il suo anello più debole.
+- È possibile eseguire un programma open-source anche su un sistema operativo proprietario come Windows, ma ci si deve fidare di una "scatola nera", di cui non si conosce l'esatto funzionamento.
+- GNU/Linux è un intero sistema operativo open-source, il che permette di portare tutti i vantaggi del software open-source su due anelli della catena.
+** Introduzione a GNU/Linux
+- Linux: Unix, Minix, Linux.
+- GNU: rapporto con Unix, con Linux.
+** Gestione dei pacchetti
+- A differenza di Windows, non esiste una versione "standard" di GNU/Linux, ma per la natura del software open-source, esistono numerose distribuzioni.
+- Gli sviluppatori upstream (a monte) distribuiscono il codice sorgente, indicando di quali librerie il loro programma ha bisogno per funzionare (c.d. dependencies).
+- Chi gestisce le distribuzioni GNU/Linux downstream (a monte) riceve il codice sorgente, e lo adatta alle peculiarità della propria distribuzione, e produce un "pacchetto" che contiene le istruzioni per installare il software.
+- Successivamente, il software viene installato dagli utenti finali con il gestore di pacchetti della propria distribuzione.
+- Modelli di distribuzione:
+- Fixed-point: l'intero sistema viene aggiornato semi-periodicamente, il software è stabile ma obsoleto.
+- Rolling: ogni componente del sistema viene aggiornato appena è disponibile una nuova versione, il software è sempre aggiornato, ma potrebbe essere instabile.
+- Functional:
+  - Il sistema viene aggiornato appena è disponibile una nuova versione, ma le versioni precedenti rimangono comunque disponibili, e si può tornare ad utilizzarle in qualsiasi momento.
+  - Questo permette di avere un sistema pienamente riproducibile.
+- Pacchetti binari, pacchetti sorgente:
+- Le distribuzioni normalmente offrono pacchetti già compilati (binari), così che possano essere utilizzati subito.  Questo implica doversi fidare degli sviluppatori upstream.
+- Volendo (alcune distribuzioni lo fanno di default) è possibile scaricare un pacchetto sorgente, in modo da ispezionare i suoi contenuti (in particolare, le modifiche che sono state apportate per adeguare il software alla distribuzione) prima di compilarlo ed utilizzarlo.
+** Reproducibile builds
+- In ogni caso, rimane sempre possibile scaricare il software open-source direttamente dallo sviluppatore upstream, e compilarlo ed installarlo manualmente.
+- In particolare, per esigenze di sicurezza e riproducibilità, si può configurare l'insieme di strumenti usati per sviluppare e compilare software, in modo da garantire la riproducibilità del software compilato.
+- Per riproducibilità si intende che lo sviluppatore e l'utente finale possono confermare di ottenere lo stesso, identico file eseguibile, per eliminare ogni dubbio riguardo l'affidabilità ed autenticità del codice sorgente.
+* Information security (sicurezza informatica)
+- Garantire l'integrità e confidenzialità delle informazioni.
+- Collegamenti legali: regolamenti sulla privacy, data breach, leggi che regolano la crittografia, leggi che autorizzano o richiedono l'uso di misure di sicurezza informatiche (firme digitali).
+- Collegamenti alla DF: la DF interviene dopo che le misure di sicurezza sono state violate per capire cosa sia successo, e quali dati sono stati compromessi, le tecniche di sicurezza dei dati ostacolano l'analisi forense (ad es., crittografia dell'intero disco, captatori informatici che usano vulnerabilità dei dispositivi, etc...)
+** Crittografia
+- La crittografia di sua natura deve essere "open-source" in modo che sia gli algoritmi, sia il codice sorgente che li implementa, sia soggetto a peer-review.
+- La crittografia viene largamente usata per proteggere le informazioni (sia in transito, sia salvate su disco), e per dimostare la propria identità (le firme digitali richieste dalla PA, utilizzate dagli sviluppatori nelle reproducibile builds).
+- Gli algoritmi crittografici sono importanti anche per l'hash dei dati per la digital forensics.
+- Regolamentazione della crittografia per limitarne l'efficacia da parte dei governi, per semplificare le operazioni di surveillance.
+** Uso di Linux e FOSS per garantire/provare la sicurezza di sistemi informatici
+- Blue team: operazioni di sicurezza informatica dedicate a costruire sistemi sicuri, e difendersi da attacchi esterni.
+- In linea teorica, i sistemi Linux offrono maggiore sicurezza, ma la maggiore parte dei casi di data breach è dovuta a errori umani, o all'insider threat.
+- Red team: operazioni di hacking etico ed autorizzato, per provare la sicurezza dei sistemi informatici.
+- Esistono distribuzioni GNU/Linux dedicate all'ethical hacking, come Kali Linux ed altre.
+- Le caratteristiche del software open-source sono utili per gli strumenti dedicati a valutare la sicurezza di un sistema informatico:
+  - L'effetto rete e la concentrazioen di conoscenza permette di  costruire più rapidamente delle sequenze di test che verificano se un sistema è vulnerabile ad un certo tipo di attacchi informatici.
+  - Il costo nullo e la facilità di distribuzione permette di rendere il processo disponibile a tutti, in modo che gli sviluppatori possano aumentare la sicurezza dei propri sistemi.
+* Digital forensics (informatica forense)
+** Obiettivi:
+- Garantire la conservazione della prova digitale dal momento dell'acquisizione in poi.
+- Interpretare i dati, e riscostruire le dinamiche che hanno portato a quell'assetto
+- In particolare, capire se i dati sono stati manipolati prima o dopo l'acquisizione, e se accidentalmente o di proposito
