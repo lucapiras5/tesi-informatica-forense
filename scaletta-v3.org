@@ -1,51 +1,39 @@
 #+TITLE: Scaletta
 #+AUTHOR: Luca Piras
 
-* Introduzione
+* Oggetto della tesi
 
-** Oggetto della tesi
+Come il free open-source software (FOSS) può beneficiare le discipline della information security (InfoSec) e digital forensics (DF).
 
-- Come il free open-source software (FOSS) può beneficiare le discipline della information security (InfoSec) e digital forensics (DF).
+* Struttura
 
-** Struttura
+** Introduzione al FOSS e GNU/Linux
 
-*FOSS.*
+- Definizione di software proprietario, di software libero (free open-source software, FOSS).
+- Discussione delle licenze open-source, e dell'uso del diritto d'autore per garantire che il software rimanga libero per le licenze copyleft.
+- Importanza del codice sorgente, irreversibilità della trasformazione in codice macchina.
+- Unit testing/test-driven development come modalità di sviluppo e valutazione del funzionamento del software.
+- Reverse engineering per studiare e re-implementare il software proprietario, problemi legali.
+- Reproducibile builds per garantire la corretta compilazione del codice sorgente, riproducibilità e affidabilità del codice macchina.
+- GNU/Linux come sistema operativo completamente FOSS, di cui si conosce l'esatto funzionamento, uso come "solide fondamenta" per costruire sistemi di sicurezza informatica e digital forensics, che a loro volta usano software FOSS.
 
-- Definizione dei due modelli per il software: proprietario, o free, open-source software (FOSS).
-- Questioni legali relative ai due modelli.
+** Sicurezza informatica
 
-
-
-- Problema della compilazione del codice sorgente (collegamento con la reverse-engineering).
-- Problema della riproducibilità del codice macchina a partire dal codice sorgente (reproducibile builds).
-
-*Problemi legati alla verifica del funzionamento dei programmi.*
-
-- Problema della verifica del funzionamento del software (test-driven development).
-
-- Vantaggi e svantaggi tecnici dei due modelli.
-- Interazioni fra software proprietario, FOSS, sicurezza informatica e DF in alcuni campi specifici: reverse engineering, test-driven development, reproducibile builds.
-
-*GNU/Linux.*
-
-- Problema fondamentale dell'informatica: hardware e software tendono ad essere "scatole nere" di cui non si conosce l'esatto funzionamento, e pertanto sono intrinsecamente inaffidabili.
-- GNU/Linux come sistema operativo completamente FOSS, di cui si conosce l'esatto funzionamento.
-- Linux come "fondamenta affidabili" su cui costruire sistemi per la InfoSec e DF, che a loro volta fanno uso di programmi FOSS.
-
-*Sicurezza informatica.*
-
-- Obiettivi della sicurezza informatica (information security, InfoSec), rapporto con la DF.
+- Obiettivi della sicurezza informatica, rapporto con la DF.
 - Integrità e confidenzialità delle informazioni (crittografia).
-- Strumenti per valutare la sicurezza di software, anche se proprietario.
-- Strumenti per certificare la sicurezza di software, anche se proprietario.
-- Uso di GNU/Linux e altri componenti FOSS per creare server sicuri.
+- Uso di GNU/Linux su server, vantaggi offerti dal FOSS.
+- Uso di GNU/Linux e altri componenti FOSS per l'ethical hacking, "democratizzazione" della sicurezza informatica.
+- Osservazioni sulla certificazione di sistemi proprietari, opportunità di usare le licenze open-source.
+- Analisi del malware mediante strumenti FOSS.
+- Accenni all'OSINT, alla responsible disclosure.
 
-*DF.*
+** Informatica forense
 
-- Obiettivi dell'informatica forense (digital forensics, DF), rapporto con la sicurezza informatica.
-- Riferimenti normativi e tecnici per il trattamento (acquisizione) e valutazione (all'interno di un processo) della prova informatica.
+- Obiettivi dell'informatica forense.
+- Riferimenti normativi e tecnici per il trattamento (acquisizione), valutazione (all'interno di un processo) della prova informatica.
+- Rapporto con la sicurezza informatica.
 - Vantaggi specifici che offre il FOSS per la DF rispetto al software proprietario, da un punto di vista tecnico (conoscibilità dei metodi di analisi, riproducibilità dei risultati) e legale (rispetto del giusto processo)
-- Esempi di attività tipiche e tispettivi software FOSS utilizzabili per la DF.
+- Esempi di attività tipiche e rispettivi software FOSS utilizzabili per la DF.
 
 * Software proprietario
 
@@ -99,26 +87,26 @@ In generale, è necessario garantire che il programma si comporti correttamente,
 
 ** Definizione
 
-Per /unit testing/ si intende scrivere un test per verificare il funzionamento di una parte (/unit/) del programma.  Generalmente, i test sono scritti per verificare il funzionamento di parti del codice sorgente.
+*Unit testing*.  Per /unit testing/ si intende scrivere un test per verificare il funzionamento di una parte (/unit/) del programma.  Generalmente, i test sono scritti per verificare il funzionamento di parti del codice sorgente.
 
 È possibile verificare anche il funzionamento di codice macchina proprietario, già compilato.  Tuttavia, in questo caso i test sono eseguiti in maniera meno efficiente, e se falliscono, non è possibile ispezionare il codice sorgente per capire cosa abbia causato l'errore.
 
 In generale, si prepara una specificazione tecnica (cosa ci si aspetta dal programma), una lista di /unit tests/ (una serie di "obbligazioni di risultato", che definiscono un "contratto" che il software deve rispettare), e se il software supera tutti i test, si può dire che è conforme alla specifica tecnica.
 
-I test sono utili anche per prevenire le regressioni del software: dopo che un bug viene corretto, si scrive un test che controlla che quel bug non si ripeta, anche se il software viene modificato in seguito.
+*Regressioni*.  I test sono utili anche per prevenire le regressioni del software: dopo che un bug viene corretto, si scrive un test che controlla che quel bug non si ripeta, anche se il software viene modificato in seguito.
 
-La /test-driven development/ è una filosofia di sviluppo in cui si scrivono prima i test, in modo da definire in anticipo come si vuole che il programma si comporti, per un dato input;  e successivamente, si scrive il codice che soddisfa i test, in modo che:
+*TDD*.  La /test-driven development/ è una filosofia di sviluppo in cui si scrivono prima i test, in modo da definire in anticipo come si vuole che il programma si comporti, per un dato input;  e successivamente, si scrive il codice che soddisfa i test, in modo che:
 
 - L'applicazione contiene solo il codice strettamente necessario per il suo funzionamento, secondo quanto specificato dai test;
 - Tutto il codice contenuto nell'applicazione è "affidabile", nel senso che esistono test che dimostrano il suo corretto comportamento per una serie di input.
 
 ** Sicurezza informatica
 
-Oltre all'uso "normale" dei test, nell'ambito della sicurezza informatica si possono sviluppare serie di test per verificare in maniera meccanica se un'applicazione o un sistema è vulnerabile ad una serie di attacchi informatici tipici (/cross-site scripting/, /cross-site request forgery/, /SQL injection/, /directory traversal attack/, etc.).
+*End-to-end testing*.  Oltre ai "normale" /unit test/, nell'ambito della sicurezza informatica si possono sviluppare serie di test per simulare le interazioni che un utente reale compie con l'applicazione, per verificare in maniera meccanica se un'applicazione o un sistema è vulnerabile ad una serie di attacchi informatici tipici (/cross-site scripting/, /cross-site request forgery/, /SQL injection/, /directory traversal attack/, etc.).
 
 Dato che questi test non riguardano il codice sorgente, ma interagiscono con l'applicazione così come lo farebbe un utente normale, è possibile utilizzarli anche con software proprietario.
 
-Gli schemi di certificazione per la sicurezza informatica di un sistema proprietario possono includere una serie di test.  È importante che il codice sorgente del programma che esegue questo tipo di test sia reso pubblico:
+*Schemi di certificazione e FOSS*.  Gli schemi di certificazione per la sicurezza informatica di un sistema proprietario possono includere una serie di test.  È importante che il codice sorgente del programma che esegue questo tipo di test sia reso pubblico:
 
 - Si garantisce una peer-review diffusa, ed il pubblico può contribuire aggiungendo o migliorando i test esistenti.
 - Se anche il codice sorgente del programma usato per verificare un sistema è proprietario, non ci sono elementi pubblicamente conoscibili, e si è obbligati a fidarsi di due "scatole nere".  Se almeno l'elemento che compie la verifica è conoscibile, si può porre maggiore fiducia nell'altro.
@@ -352,11 +340,9 @@ Le distribuzioni normalmente offrono pacchetti già compilati (binari), così ch
 
 Volendo (alcune distribuzioni lo fanno di default) è possibile scaricare un pacchetto sorgente, in modo da ispezionare i suoi contenuti (in particolare, le modifiche che sono state apportate per adeguare il software alla distribuzione) prima di compilarlo ed utilizzarlo.
 
-* Information security (sicurezza informatica)
+* Sicurezza informatica
 
-** Introduzione
-
-*Obiettivi della sicurezza informatica:*
+** Obiettivi della sicurezza informatica
 
 - Garantire l'integrità (evitare modifiche indesiderate) e confidenzialità (evitare accessi indesiderati) delle informazioni.
 - Creare sistemi sicuri, che non siano vulnerabili ad attacchi informatici.
@@ -364,17 +350,18 @@ Volendo (alcune distribuzioni lo fanno di default) è possibile scaricare un pac
 - Certificare i sistemi secondo degli standard riconosciuti in maniera più o meno formale.
 - Monitorare i nuovi rischi, e aggiornare i sistemi di conseguenza.
 
-*Collegamenti legali:*
+** Collegamenti legali
 
 - Regolamenti che impongono l'uso di misure di sicurezza informatiche (ad es., firme digitali).
 - Leggi che regolano la riservatezza delle comunicazioni, dei dati personali.
 - Leggi che impongono la presenza di figure specializzate per la sicurezza informatica (ad es., Data Protection Officer).
 - Leggi che sanzionano i data breach, e altri crimini informatici.
 
-*Collegamenti con l'informatica forense:*
+** Collegamenti con l'informatica forense
 
-- Da un punto di vista collaborativo, l'informatica forense interviene dopo che le misure di sicurezza sono state violate, per ricostruire cosa sia successo, e quali dati sono stati compromessi, raccogliere tracce utili per le investigazioni e prove informatiche per un eventuale processo o procedimento.
-- Da un punto di vista antagonistico, le tecniche di sicurezza dei dati ostacolano l'analisi forense.  Ad es., crittografia dell'intero disco, captatori informatici che usano vulnerabilità dei dispositivi, etc...).
+*Da un punto di vista collaborativo*.  L'informatica forense interviene dopo che le misure di sicurezza sono state violate, per ricostruire cosa sia successo, e quali dati sono stati compromessi, raccogliere tracce utili per le investigazioni e prove informatiche per un eventuale processo o procedimento.
+
+*Da un punto di vista antagonistico*.  Le tecniche di sicurezza dei dati ostacolano l'analisi forense.  Ad es., crittografia dell'intero disco, captatori informatici che usano vulnerabilità dei dispositivi, etc...).
 
 ** Crittografia
 
