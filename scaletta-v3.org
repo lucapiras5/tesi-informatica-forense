@@ -353,27 +353,109 @@ Le distribuzioni normalmente offrono pacchetti già compilati (binari), così ch
 Volendo (alcune distribuzioni lo fanno di default) è possibile scaricare un pacchetto sorgente, in modo da ispezionare i suoi contenuti (in particolare, le modifiche che sono state apportate per adeguare il software alla distribuzione) prima di compilarlo ed utilizzarlo.
 
 * Information security (sicurezza informatica)
-- Obiettivi: garantire l'integrità (evitare modifiche indesiderate) e confidenzialità (evitare accessi indesiderati) delle informazioni.
-- Collegamenti legali: regolamenti sulla privacy, data breach, leggi che regolano la crittografia, leggi che autorizzano o richiedono l'uso di misure di sicurezza informatiche (firme digitali).
-- Collegamenti alla DF: la DF interviene dopo che le misure di sicurezza sono state violate per capire cosa sia successo, e quali dati sono stati compromessi, le tecniche di sicurezza dei dati ostacolano l'analisi forense (ad es., crittografia dell'intero disco, captatori informatici che usano vulnerabilità dei dispositivi, etc...)
-** Crittografia
-- La crittografia di sua natura deve essere "open-source", in modo che sia gli algoritmi, sia il codice sorgente che li implementa, sia soggetto a peer-review.
-- Qualsiasi sistema crittografico che non sia pubblicamente discusso è intrisecamente inaffidabile, ed anche i sistemi pubblicamente disponibili devono essere considerati insicuri fino a prova contraria.
-- La crittografia viene largamente usata per proteggere le informazioni (sia in transito, sia salvate su disco), e per dimostare la propria identità (le firme digitali richieste dalla PA, utilizzate dagli sviluppatori nelle reproducibile builds).
-- Gli algoritmi crittografici sono importanti anche per l'hash dei dati per la digital forensics.
-- Regolamentazione della crittografia per limitarne l'efficacia da parte dei governi, così da non limitare le operazioni di surveillance.
-** Penetration testing
-- L'open-source aiuta a prevenire la "security through obscurity", dove un sistema è considerato sicuro solo perché i meccanismi del suo funzionamento non sono noti al pubblico.
-- L'hacking etico ed autorizzato, dette anche operazioni di "red team" (contrapposto al "blue team", che prepara il sistema da difendere) serve a provare la sicurezza dei sistemi informatici.
-- Si usano le stesse tecniche che sarebbero usate da un cybercriminale, in modo da prevenire eventuali attacchi.
-- Esistono distribuzioni GNU/Linux dedicate all'ethical hacking, come Kali Linux ed altre.
-- Le caratteristiche del software open-source sono utili per gli strumenti dedicati a valutare la sicurezza di un sistema informatico.
-- L'effetto rete e la concentrazione di conoscenza permette di costruire più rapidamente delle sequenze di test che verificano se un sistema è vulnerabile ad un certo tipo di attacchi informatici.
-- Anche se il software di cui si deve provare la sicurezza rimane proprietario, è importante che il software che esegue quelle sequenze di test sia open-source, in modo da permettere una sorta di "peer-review" del loro contenuto, il loro continuo aggiornamento mano a mano che vengono scoperte nuove vulnerabilità.
-- Il costo nullo e la facilità di distribuzione rendono questi strumenti disponibili a chiunque abbia il tempo e le conoscenze tecniche per impararli ad utilizzare, e più persone "bene intenzionate" hanno la capacità di verificare se un sistema sia sicuro o meno, e più è probabile che eventuali vulnerabilità nel sistema siano risolte prima che vengano abusate da criminali.
-- Esempi di progetti open-source per la sicurezza come Metasploit, American Fuzzy Lop, etc.
 
-** Analisi del malware con Ghidra
+** Introduzione
+
+*Obiettivi della sicurezza informatica:*
+
+- Garantire l'integrità (evitare modifiche indesiderate) e confidenzialità (evitare accessi indesiderati) delle informazioni.
+- Creare sistemi sicuri, che non siano vulnerabili ad attacchi informatici.
+- Verificare la sicurezza dei sistemi, con tecniche di ethical hacking, con cui si simula un attacco informatico.
+- Certificare i sistemi secondo degli standard riconosciuti in maniera più o meno formale.
+- Monitorare i nuovi rischi, e aggiornare i sistemi di conseguenza.
+
+*Collegamenti legali:*
+
+- Regolamenti che impongono l'uso di misure di sicurezza informatiche (ad es., firme digitali).
+- Leggi che regolano la riservatezza delle comunicazioni, dei dati personali.
+- Leggi che impongono la presenza di figure specializzate per la sicurezza informatica (ad es., Data Protection Officer).
+- Leggi che sanzionano i data breach, e altri crimini informatici.
+
+*Collegamenti con l'informatica forense:*
+
+- Da un punto di vista collaborativo, l'informatica forense interviene dopo che le misure di sicurezza sono state violate, per ricostruire cosa sia successo, e quali dati sono stati compromessi, raccogliere tracce utili per le investigazioni e prove informatiche per un eventuale processo o procedimento.
+- Da un punto di vista antagonistico, le tecniche di sicurezza dei dati ostacolano l'analisi forense.  Ad es., crittografia dell'intero disco, captatori informatici che usano vulnerabilità dei dispositivi, etc...).
+
+** Crittografia
+
+*Rilevanza.*  La crittografia fornisce gli strumenti fondamentali per tutta una serie di operazioni:
+
+- Algoritmi di hash crittografici: per verificare l'integrità dei dati (differenza con hash non crittografici e checksum).
+- Crittografia simmetrica: limita l'accesso ai dati a solo chi ha la chiave, per la confidenzialità di informazioni in transito o salvate su disco.
+- Crittografia asimmetrica: per lo scambio di chiavi crittografiche simmetriche, per le firme digitali.
+
+*Crittografia e FOSS*.  La crittografia di sua natura deve essere "open-source", in modo che sia gli algoritmi, sia il codice sorgente che li implementa, sia soggetto a peer-review.  Qualsiasi sistema crittografico che non sia pubblicamente discusso è intrinsecamente inaffidabile, ed anche i sistemi pubblicamente disponibili devono essere considerati insicuri fino a prova contraria.
+
+*Crittografia e digital forensics*.  Esiste una tensione fra garantire il diritto alla riservatezza, e quindi non limitare l'uso della crittografia, e l'esigenza di investigare reati, che sarebbe frustrata se fosse impossibile accedere a tutte le comunicazioni.
+
+** Distribuzioni GNU/Linux per server
+
+*Rilevanza*.  GNU/Linux è largamente usato come un sistema operativo per server (l'uso su sistemi "desktop", ossia portatili e fissi, è ancora quasi l'eccezione).  Esistono distribuzioni Linux e modifiche al sistema specializzate per l'uso su server.
+
+Il software installabile su un server Linux è a sua volta FOSS, con tutti i vantaggi e le garanzie che ne conseguono.
+
+*Confronto con sistemi proprietari*.  Generalmente la fonte principale di problemi è l'errore umano, e non tanto se il software è proprietario o libero.  Tuttavia, è comunque preferibile usare un sistema libero, dato che si ha una migliore cognizione di quali sono i suoi limiti, rispetto ad un sistema proprietario, dove chi vende il sistema ha un incentivo a nascondere i suoi difetti.
+
+** Ethical hacking (Kali Linux)
+
+*Rilevanza*.  Sia che si usi un server GNU/Linux con solo FOSS, o un server completamente proprietario, è comunque necessario verificare che il server sia configurato correttamente, e possa resistere ad un attacco informatico.  L'ethical hacking consiste nel simulare un attacco informatico, usando le stesse tecniche che sarebbero usate in un vero attacco, per individuare i punti deboli del sistema.
+
+*Democratizzazione della sicurezza informatica*.  Esistono distribuzioni GNU/Linux e strumenti FOSS specializzati per l'ethical hacking (ad es., Kali Linux).
+
+Il FOSS ha un effetto "democratizzante" per la sicurezza informatica:
+
+- L'effetto rete significa che il software per l'ethical hacking viene migliorato in qualità e quantità, si creano più strumenti, più completi e sofisticati.
+- L'esistenza di una comunità di esperti che documentano come usare gli strumenti in maniera accessibile al pubblico, ed il costo nullo per ottenerli, significa che chiunque ha tempo e volontà di imparare ad usarli, può farlo.
+
+Il fatto che questo tipo di conoscenza diventi pubblica non è un male: i malintenzionati continueranno comunque ad attaccare i sistemi vulnerabili, ma più sviluppatori e persone bene intenzionate sanno come verificare la sicurezza di un sistema, più velocemente i c.d. /low-hanging fruit/ (sistemi insicuri che potrebbero essere facilmente attaccati) possono essere messi in sicurezza.
+
+Più in generale, si crea una "cultura della sicurezza", che invece di reagire ad un attacco dopo che è già successo, cerca di difendersi e prevenirli prima che accadano.
+
+Esempi di progetti open-source per la sicurezza:
+
+- Metasploit (elenco di vulnerabilità).
+- American Fuzzy Lop (/input sanitization/, robustezza del sistema).
+
+** Certificazione del sistema (ENISA)
+
+*Rilevanza.*  Un conto è mettere in sicurezza un sistema (in maniera "soggettiva"), un altro conto è certificare in maniera "oggettiva" che un sistema presenta dei determinati requisiti di sicurezza.
+
+La definizione dei contenuti della certificazione e della procedura rientra nella discrezione dei governi (ad es., ENISA a livello europeo nel contesto del Cybersecurity Act) o privati, ed esce dalle competenze del FOSS.
+
+*Importanza del FOSS per la certificazione*.  Tuttavia, il software-certificante (il software che sarà usato per accertare che il sistema-certificando presenta i requisiti) dovrebbe essere FOSS.  Nell'ipotesi peggiore, il sistema-certificando è proprietario, e quindi si può solo verificare "se" funziona, e non anche il "come" funziona.
+
+A questo punto, ci si deve fidare interamente del software-certificante, perché non si può verificare "perché" un determinato test è stato superato o meno, dal punto di vista del software-certificando, perché è una "scatola nera".
+
+Se non si conosce neanche l'esatto funzionamento del software-certificante, si cade in una situazione in cui il fatto se un test è stato passato o meno non genera alcuna conoscenza utile.  Presupporre il perfetto funzionamento di entrambe i sistemi sarebbe irragionevole, a quel punto non avrebbe senso fare una certificazione.
+
+Pertanto, se i sistemi possono contenere errori di programmazione, come si fa a determinare se un errore è stato commesso, e da chi, se non si può fare altro che doversi fidare di entrambi?
+
+Questo ragionamento si applica in particolare se le certificazioni sono conferite, o hanno rilevanza per, la pubblica amministrazione, data la rilevanza del principio della transparenza dell'azione amministrativa.  Se la PA certifica un programma, o usa un programma con una data certificazione, per dare una "legittimazione" a quell'operazione, è necessaria la trasparenza riguardo le modalità di certificazione.
+
+** Analisi del malware (Ghidra)
+
+*Rilevanza.*  Se un attacco informatico ha avuto successo, ed è risultato nell'installazione di malware sul computer, è utile analizzarlo, per capire:
+
+- Per quanto interessa la sicurezza informatica, quali bug e vulnerabilità (probabilmente fino a quel momento non conosciute) sono state sfruttate per l'attacco.
+- Per quanto interessa l'informatica forense, quali tracce ed effetti il malware produce su un sistema, per ricostruire se, quando, ed in che modo il malware ha influenzato i dati.  In termini legali di responsabilità, si tratta di rilevare:
+  - La condotta (l'avvenuta intrusione e/o installazione del malware);
+  - L'effetto (i dati informatici che sono stati letti, trasformati o distrutti durante l'attacco o dal malware);
+  - Il nesso causale (provare che quella condotta ha portato a quegli eventi, e/o escludere altre spiegazioni).
+
+*Ghidra*.  È uno strumento che è stato reso FOSS nel 2019 dalla National Security Agency americana.  Serve per la decompilazione e RE del software, e può essere usato per analizzare il funzionamento del malware.
+
+** Open Source Intelligence, responsible disclosure
+
+*Rilevanza*.  Per fini di prevenzione, è utile monitorare la discussione pubblica sulla sicurezza informatica.  Si possono usare strumenti FOSS per analizzare l'open-source intelligence, ed estrarre gli argomenti più discussi.
+
+Ad es., se si sta parlando di un aumento di data breach in una certa zona geografica, per certi settori industriali, o se si è scoperto una nuova vulnerabilità in una certa versione del software, verificare se i propri sistemi sono a rischio.
+
+*Responsible disclosure*.  Linee-guida su come segnalare l'aver trovato una vulnerabilità all'interno di un programma, che può portare ad un attacco informatico.  Si devono bilanciare vari elementi:
+
+- Avvisare gli sviluppatori il prima possibile, in modo che possano identificare e rimuovere la vulnerabilità, e pubblicare un aggiornamento per il software.
+- Avvisare il pubblico il prima possibile appena l'aggiornamento è disponibile, in modo che possano difendersi da eventuali attacchi.
+- Evitare che passi troppo tempo, perché la vulnerabilità scoperta da un ricercatore che agisce in buona fede potrebbe essere stata già scoperta e sfruttata da un criminale.
+- Da un lato, rendere pubblica il funzionamento della vulnerabilità, in modo che il codice che è affetto da vizi analoghi possa essere corretto a sua volta; dall'altro, mantenere il segreto, specie per il software proprietario, per evitare di esporre al pubblico codice che dovrebbe rimanere confidenziale, anche per ragioni di sicurezza.
 
 * Digital forensics (informatica forense)
 ** Obiettivi
