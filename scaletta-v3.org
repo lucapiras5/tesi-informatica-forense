@@ -457,55 +457,130 @@ Ad es., se si sta parlando di un aumento di data breach in una certa zona geogra
 - Evitare che passi troppo tempo, perché la vulnerabilità scoperta da un ricercatore che agisce in buona fede potrebbe essere stata già scoperta e sfruttata da un criminale.
 - Da un lato, rendere pubblica il funzionamento della vulnerabilità, in modo che il codice che è affetto da vizi analoghi possa essere corretto a sua volta; dall'altro, mantenere il segreto, specie per il software proprietario, per evitare di esporre al pubblico codice che dovrebbe rimanere confidenziale, anche per ragioni di sicurezza.
 
-* Digital forensics (informatica forense)
+* Informatica forense
+
 ** Obiettivi
-- Garantire la conservazione della prova digitale dal momento dell'acquisizione in poi.
-- Interpretare i dati, e riscostruire le dinamiche che hanno portato a quell'assetto
-- In particolare, capire se i dati sono stati manipolati prima o dopo l'acquisizione, e se accidentalmente o di proposito.
+
+Si possono dividere le attività di informatica forense in tre tipi:
+
+- Individuazione, acquisizione e conservazione della prova digitale.
+- Analisi della prova digitale, ricostruzione delle dinamiche che hanno portato a quell'assetto, individuazione di alterazioni intenzionali.
+- Presentazione dei risultati.
+
+*Acquisizione*.  È la fase che beneficia maggiormente dal software open-source, data la sua natura tendenzialmente irripetibile.  I dati digitali, ed i supporti su cui sono conservati, sono fragili.  È meglio limitare il più possibile il numero di volte in cui si deve acquisire un supporto.
+
+*Analisi*.  L'uso di software open-source è preferibile, ma non strettamente necessaria.  Il software open-source è maggiormente vicino all'ideale del giusto processo, dato che la difesa è messa in condizione di conoscere esattamente il funzionamento del software, e può meglio contestare anche gli aspetti strettamente tecnici, come gli algoritmi usati, etc.
+
+In presenza di software proprietario, la difesa può solo difendersi in maniera più generica, e cercare di screditare i risultati del software proprietario con software open-source, argomentando che è un risultato maggiormente affidabile, perché il codice sorgente funziona come se fosse una "motivazione" dettagliata del risultato raggiunto.
+
+*Presentazione*.  La presentazione è una fase puramente cosmetica, in cui si illustrano i risultati, e l'uso di software FOSS o meno è di scarsa rilevanza.
+
 ** Collegamenti legali
+
 - Codice penale: regola i reati contro sistemi informatici, ma l'informatica forense può essere utilizzata per raccogliere informazioni da sistemi informatici anche dopo il compimento di reati tradizionali.
 - Codice di procedura penale: detta i principi generali su come trattare le prove informatiche.
 - Standard tecnici: formalizzano le procedure necessarie per garantire la corretta acquisizione e conservazione della prova digitale.
 - Giurisprudenza sulla prova scientifica: come la prova scientifica in generale, e la digital evidence in particolare, devono essere valutate dal giudice, commenti sulle sentenze che trattano di aspetti tecnici della DF.
+
 ** Differenze con la sicurezza informatica
-- La sicurezza informatica ha natura preventiva, serve ad evitare che i sistemi siano colpiti da attacchi, e non si interessa in maniera particolare di "come" funziona il software, ma solo se il software sia sicuro o meno.
-- L'informatica forense interviene durante o dopo un attacco informatico, e serve a raccogliere elementi utili per capire come l'attacco ha avuto inizio, quali dati sono stati sottratti o distrutti, e altri elementi utili per le indagini penali.
-- Dato che l'informatica forense deve essere in grado di rilevare le tracce dell'evento, e ricostruire la dinamica dei fatti, per questa disciplina è necessario sapere "come" il software funzioni, quali informazioni produca, ecc.
-- Inoltre, mentre la cybersecurity è esclusivamente legata alla protezione di un sistema informatico come oggetto di attacchi, le tecniche di informatica forense possono essere utilizzate anche per reati non informatici.
-** Vantaggi del software open-source
-- Pieno rispetto del diritto di difesa e del principio del contraddittorio:
-  - Se vengono usati strumenti open-source, l'imputato può difendersi meglio, perché può conoscere come funziona il programma.
-- Piena riproducibilità dei risultati:
-  - Dato che il software open source è liberamente ridistribuibile, è possibile depositare una copia degli strumenti che sono stati utilizzati, o anche dell'intero sistema operativo che è stato utilizzato per svolgere l'analisi, compresi i risultati stessi, senza violare il diritto d'autore.
-  - In ogni caso, è sempre possibile ricompilare la esatta versione del programma che era stata utilizzata al momento dell'analisi.
-- Costi minori e maggiore efficienza:
-  - Non si devono pagare licenze per software proprietario, ed il sistema operativo può essere ottimato per le operazioni di digital forensics.
-  - Inoltre, per i programmi che usano la linea di comando, si possono usare i c.d. shell script per automatizzare le operazioni ripetitive
-- Maggiore affidabilità:
-  - "Open-source" non significa che chiunque può contribuire al progetto, o che gli sviluppatori non siano professionisti o non abbiano conoscenze tecniche.
-  - È stato dimostrato che il software open-source tende ad avere meno bug, proprio perché ci sono meno barriere al suo utilizzo e sviluppo.
-  - Inoltre, gli sviluppatori non hanno nessun incentivo commerciale a nascondere i difetti del loro programma.
-- Maggiore privacy e sicurezza:
-  - È ben noto che Windows raccoglie e invia grandi quantità di dati alla Microsoft, ed è probabile che anche il software proprietario includa questo tipo di misure.
-  - Viceversa, GNU/Linux ed i programmi open-source non hanno nessun incentivo commerciale a sottrarre dati dagli utenti.
-** Acquisizione di dischi
-- Collegamenti legali: sequestro di file, quanti dati acquisire (in teoria il minimo indispensabile, ma è necessario acquisire l'intero disco per poter compiere un'analisi completa), conservazione sicura dei dati dopo la loro acquisizione.
-- Il kernel Linux può essere compilato in modo che tutti i dispositivi siano montati in sola lettura.
-- GNU dd è maggiormente affidabile rispetto al suo equivalente UNIX.
-** Acquisizione di dati da fonti che non siano un disco
-- Collegamenti legali: acquisizione di file da servizi senza bisogno di rogatoria internazionale.
-- Nei casi in cui non sia possibile acquisire un disco con la copia forense, è necessario copiare i singoli file, cercando di preservare quanti più metadati possibile, e disturbando gli altri dati il meno possibile.
-- Ad es., acquisizioni di dati da smartphone, da servizi di backup personale come Dropbox o Google Drive, da servizi di data storage come Amazon Web Services, da servizi proprietari come Google Takeout.
-** Acquisizione di dati dalla RAM e file di ibernazione
-- Collegamenti legali: inaffidabilità intrinseca di questi dati, utilizzabili al più come elemento indiziario.
-- Difficoltà tecniche: acquisire la RAM mentre il sistema è acceso va a modificarla, si deve acquisire anche la memoria virtuale salvata su disco/file di swap per avere un'acquisizione completa,  i formati sono proprietari e non documentati, le tecniche di analisi non sono particolarmente raffinate.
-** Analisi di un disco
-- Collegamenti legali: applicazione delle categorie tradizionali ai dati digitali.
-- Autopsy: operazioni che è possibile compiere, confronti con software proprietario.
-- Programmi per il data carving, la creazione di timeline.
+
+*Sicurezza informatica*.  Ha natura preventiva, e serve ad evitare che i sistemi siano colpiti da attacchi, e non si interessa in maniera particolare di "come" funziona il software, ma solo se il software sia sicuro o meno.
+
+*Informatica forense*.  Interviene durante o dopo un attacco informatico, e serve a raccogliere elementi utili per capire come l'attacco ha avuto inizio, quali dati sono stati sottratti o distrutti, e altri elementi utili per le indagini penali.
+
+Dato che l'informatica forense deve essere in grado di rilevare le tracce dell'evento, e ricostruire la dinamica dei fatti, per questa disciplina è necessario sapere "come" il software funzioni, quali informazioni produca, ecc.
+
+Inoltre, mentre la cybersecurity è esclusivamente legata alla protezione di un sistema informatico come oggetto di attacchi, le tecniche di informatica forense possono essere utilizzate anche per reati non informatici.
+
+** Vantaggi del FOSS per l'informatica forense
+
+*Diritto di difesa e principio del contraddittorio*.  Se vengono usati strumenti open-source, l'imputato può difendersi meglio, perché può conoscere come funziona il programma.
+
+*Piena riproducibilità dei risultati*.  Dato che il software open source è liberamente ridistribuibile, è possibile depositare una copia degli strumenti che sono stati utilizzati, o anche dell'intero sistema operativo che è stato utilizzato per svolgere l'analisi, compresi i risultati stessi, senza violare il diritto d'autore.
+
+In ogni caso, è sempre possibile ricompilare la esatta versione del programma che era stata utilizzata al momento dell'analisi.
+
+*Costi minori e maggiore efficienza*.  Non si devono pagare licenze per software proprietario, ed il sistema operativo può essere ottimato per le operazioni di digital forensics.
+
+Inoltre, per i programmi che usano la linea di comando, si possono usare i c.d. shell script per automatizzare le operazioni ripetitive.
+
+*Maggiore affidabilità*.  "Open-source" non significa che chiunque può contribuire al progetto, o che gli sviluppatori non siano professionisti o non abbiano conoscenze tecniche.
+
+È stato dimostrato che il software open-source tende ad avere meno bug, proprio perché ci sono meno barriere al suo utilizzo e sviluppo.
+
+Inoltre, gli sviluppatori non hanno nessun incentivo commerciale a nascondere i difetti del loro programma.
+
+*Maggiore privacy e sicurezza*.  È ben noto che Windows raccoglie e invia grandi quantità di dati alla Microsoft, ed è probabile che anche il software proprietario includa questo tipo di misure.
+
+Viceversa, GNU/Linux ed i programmi open-source non hanno nessun incentivo commerciale a sottrarre dati dagli utenti.
+
+** Acquisizione forense di dischi
+
+*Collegamenti legali*:
+
+- Giurisprudenza sul sequestro del supporto, sul sequestro di file.
+- Quantità di dati da acquisire (in teoria il minimo indispensabile, ma è necessario acquisire l'intero disco per poter compiere un'analisi completa).
+- Altre norme applicabili per le prove (ad es., conservazione presso custode).
+
+*Linux*.  Il kernel Linux può essere compilato in modo che tutti i dispositivi siano montati in sola lettura.
+
+*GNU dd*.  È maggiormente affidabile rispetto al suo equivalente UNIX.
+
+** Acquisizione logica di file
+
+*Collegamenti legali*: acquisizione di file da servizi online, anche se si trovano all'estero, senza bisogno di usare una rogatoria internazionale.
+
+*Aquisizione logica*.  Nei casi in cui non sia possibile acquisire l'intero supporto con la copia forense, è necessario copiare i singoli file che sono disponibili, cercando di preservare quanti più metadati possibile, e disturbando gli altri dati il meno possibile.
+
+Ad es., acquisizioni di dati da smartphone, da servizi di backup personale come Dropbox o Google Drive, da servizi di data storage come Amazon Web Services, da servizi proprietari come Google Takeout.
+
+*Rclone*.  Software FOSS, permette di acquisire dati da numerosi servizi online.  L'ordine 
+ideale delle operazioni è di usare gli strumenti di copia ufficiali prima, dato che è meno probabile che possano influenzare negativamente i dati.
+
+** Acquisizione dalla RAM e del file di ibernazione
+
+*Collegamenti legali*.  La RAM ed il file di ibernazione sono intrinsecamente inaffidabili, al più possono valere come indizi, la loro gravità e precisione va valutata caso per caso.
+
+*Difficoltà tecniche*.  Acquisire la RAM mentre il sistema è acceso va a modificarla, si deve acquisire anche la memoria virtuale salvata su disco/file di swap per avere un'acquisizione completa, i formati sono proprietari e non documentati, le tecniche di analisi non sono particolarmente raffinate.
+
+*Volatility*.  Framework per l'acquisizione dei 
+
+** Analisi del disco
+
+*Collegamenti legali*.  Natura legale delle operazioni di analisi, difficoltà di applicazione delle categorie tradizionali (ispezione, perquisizione) ai dati digitali.
+
+*Autopsy*.  Operazioni che è possibile compiere, confronti con software proprietario.
+
+*Data carving*.  Recupero di file cancellati o parzialmente sovrascritti.
+
+*Timeline*.  Programmi che ricostruiscono l'evoluzione del contenuto del disco su una linea temporale, utili per dimostrare per quanto tempo un file è esistito, quando è stato aperto l'ultima volta, etc.
+
 ** Acquisizione di siti internet
-- Collegamenti legali: differenza con l'intercettazione come disciplinata dal c.p.p.
-- Uso di Wireshark per l'acquisizione forense di siti web.
+
+*Collegamenti legali*.  Necessità di "intercettare" il traffico che viene prodotto dal browser per eliminare la protezione HTTPS, differenza con l'intercettazione propriamente detta, come disciplinata dal c.p.p.
+
+*Wireshark*.  Acquisizione forense di siti web.
+
 ** Sequestro di Bitcoin
-- Collegamenti legali: definizione legale di Bitcoin e criptovalute.
-- Le applicazioni per la gestione dei Bitcoin sono generalmente open-source, quindi è più facile sapere dove il wallet viene salvato, in quale formato, e quali altre informazioni utili per le indagini sono generate dal software (ad es., la lista delle transazioni, etc.)
+
+*Collegamenti legali*.  Definizione legale di Bitcoin e criptovalute, equiparazione ad un bene con valore economico ai fini del sequestro.
+
+*Cryptowallet*.  Le applicazioni per la gestione dei Bitcoin sono generalmente open-source, quindi è più facile sapere dove il wallet viene salvato, in quale formato, e quali altre informazioni utili per le indagini sono generate dal software (ad es., la lista delle transazioni, etc.)
+
+** Conservazione dei dati (backup incrementale, filesystem resilienti)
+
+*Collegamenti legali*.  I dati informatici possono essere considerati al pari di beni deperibili, e si devono usare disposizioni per garantire la loro conservazione.
+
+*Sistemi di backup*.  Dopo aver acquisito l'immagine del disco è bene inserirla in un programma di backup incrementale (ad es., Borg, Restic), che provvederà a calcolare l'hash della copia forense, comprimerla, e criptarla, per garantire l'integrità e riservatezza dei dati.
+
+Periodicamente, si può procedere alla verifica del backup utilizzando un solo comando.  Se è necessario aprire l'immagine, si può estrarre il contenuto del backup, ed il software verificherà che non si siano verificati errori.
+
+*Filesystem resilienti*.  È bene conservare il backup che contiene la copia su filesystem open-source, studiati appositamente per prevenire la perdita di dati, come ZFS.  Sono supportati nativamente da Linux.
+
+** Riproducibilità dell'analisi
+
+*Collegamenti legali*.  Così come il codice di procedura penale chiede la conservazione della prova digitale, si dovrebbe anche richiedere la conservazione integra degli strumenti digitali utilizzati per l'analisi della prova.
+
+*Shell script*.  Generalmente i programmi su GNU/Linux sono a riga di comando.  Questo permette di raccogliere i comandi necessari per eseguire un'analisi all'interno di un file di testo, che se eseguito, ripeterà automaticamente tutti i passi.
+
+Dato che i sistemi GNU/Linux possono essere riprodotti senza problemi di copyright, è possibile copiare insieme il sistema operativo, le fonti (immagini forensi, acquisizione della RAM, traffico di Wireshark, etc.), ed i comandi necessari per estrarre dalle fonti le informazioni utili, e avere un archivio autosufficiente, che contiene tutti gli elementi necessari un'analisi riproducibile nel futuro, mediante l'esecuzione di uno o pochi comandi.
