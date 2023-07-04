@@ -295,26 +295,63 @@ Ad es., vari programmi offrono una "community edition" gratuita, ed una "enterpr
 
 * GNU/Linux
 
-- Il software è l'ultimo anello nella catena di un computer, ed è preceduto dal sistema operativo e dall'hardware.  La catena è affidabile solo quanto il suo anello più debole.
-- È possibile eseguire un programma open-source anche su un sistema operativo proprietario come Windows, ma ci si deve fidare di una "scatola nera", di cui non si conosce l'esatto funzionamento.
-- GNU/Linux è un intero sistema operativo open-source, il che permette di portare tutti i vantaggi del software open-source su due anelli della catena.
+** Introduzione
+
+Il software è l'ultimo anello nella catena di un computer, ed è preceduto dal sistema operativo e dall'hardware.  La catena è affidabile solo quanto il suo anello più debole.
+
+È possibile eseguire un programma open-source anche su un sistema operativo proprietario come Windows, ma ci si deve fidare di una "scatola nera", di cui non si conosce l'esatto funzionamento.
+
+GNU/Linux è un intero sistema operativo open-source, il che permette di portare tutti i vantaggi del software open-source su due anelli della catena, sistema operativo e software.
+
+In un mondo ideale, anche l'hardware e firmware dovrebbero essere completamente open-source, ma attualmente questo è possibile solo in casi particolari e limitati.
+
 ** Introduzione a GNU/Linux
-- Linux: Unix, Minix, Linux.
-- GNU: rapporto con Unix, con Linux.
+
+Linux:
+
+- È un kernel, la parte fondamentale del sistema operativo.
+- Rapporto fra Unix, Minix, Linux.
+
+Progetto GNU:
+
+- È il software che fa da complemento al kernel, include gli strumenti a riga di comando necessari per un sistema operativo, tra cui editor di testo (Emacs), compilatore (GCC), shell per eseguire comandi (Bash), insieme ad altri.
+- Rapporto con Unix, con Linux.
+
 ** Gestione dei pacchetti
-- A differenza di Windows, non esiste una versione "standard" di GNU/Linux, ma per la natura del software open-source, esistono numerose distribuzioni.
-- Gli sviluppatori upstream (a monte) distribuiscono il codice sorgente, indicando di quali librerie il loro programma ha bisogno per funzionare (c.d. dependencies).
-- Chi gestisce le distribuzioni GNU/Linux downstream (a monte) riceve il codice sorgente, e lo adatta alle peculiarità della propria distribuzione, e produce un "pacchetto" che contiene le istruzioni per installare il software.
-- Successivamente, il software viene installato dagli utenti finali con il gestore di pacchetti della propria distribuzione.
-- Modelli di distribuzione:
-- Fixed-point: l'intero sistema viene aggiornato semi-periodicamente, il software è stabile ma obsoleto.
-- Rolling: ogni componente del sistema viene aggiornato appena è disponibile una nuova versione, il software è sempre aggiornato, ma potrebbe essere instabile.
-- Functional:
-  - Il sistema viene aggiornato appena è disponibile una nuova versione, ma le versioni precedenti rimangono comunque disponibili, e si può tornare ad utilizzarle in qualsiasi momento.
-  - Questo permette di avere un sistema pienamente riproducibile.
-- Pacchetti binari, pacchetti sorgente:
-- Le distribuzioni normalmente offrono pacchetti già compilati (binari), così che possano essere utilizzati subito.  Questo implica doversi fidare degli sviluppatori upstream.
-- Volendo (alcune distribuzioni lo fanno di default) è possibile scaricare un pacchetto sorgente, in modo da ispezionare i suoi contenuti (in particolare, le modifiche che sono state apportate per adeguare il software alla distribuzione) prima di compilarlo ed utilizzarlo.
+
+A differenza di Windows, non esiste una versione "standard" di GNU/Linux, ma per la natura del software open-source, esistono numerose distribuzioni.
+
+Gli sviluppatori upstream (a monte) distribuiscono il codice sorgente, indicando di quali librerie il loro programma ha bisogno per funzionare (c.d. dependencies).
+
+Chi gestisce le distribuzioni GNU/Linux downstream (a monte) riceve il codice sorgente, e lo adatta alle peculiarità della propria distribuzione, e produce un "pacchetto" che contiene le istruzioni per installare il software.
+
+Successivamente, il software viene installato dagli utenti finali con il gestore di pacchetti della propria distribuzione.
+
+** Modelli di distribuzione
+
+Fixed-point:
+
+- L'intero sistema viene aggiornato semi-periodicamente, con delle versioni "fisse".
+- Il software è stabile, e continua a funzionare sempre allo stesso modo fino al prossimo aggiornamento dell'intero sistema.
+- Si sacrifica un sistema aggiornato per un sistema riproducibile.
+
+Rolling:
+
+- Ogni componente del sistema viene aggiornato appena è disponibile una nuova versione, non esiste una versione "fissa" del sistema, perché tutto è in continuo aggiornamento.
+- Il software è sempre aggiornato all'ultima versione, ma ogni volta che si aggiorna un componente, si possono introdurre delle /breaking changes/ (cambiamenti che richiedono un intervento manuale).
+- Si sacrifica un sistema riproducibile per un sistema aggiornato.
+
+Functional:
+
+- Le componenti del sistema vengono aggiornate appena è disponibile una nuova versione, ma le versioni precedenti rimangono comunque disponibili, e si può tornare ad utilizzarle in qualsiasi momento.
+- Questo permette di avere un sistema aggiornato, e pienamente riproducibile.
+
+** Pacchetti binari, pacchetti sorgente
+
+Le distribuzioni normalmente offrono pacchetti già compilati (binari), così che possano essere utilizzati subito.  Questo implica doversi fidare degli sviluppatori upstream.
+
+Volendo (alcune distribuzioni lo fanno di default) è possibile scaricare un pacchetto sorgente, in modo da ispezionare i suoi contenuti (in particolare, le modifiche che sono state apportate per adeguare il software alla distribuzione) prima di compilarlo ed utilizzarlo.
+
 * Information security (sicurezza informatica)
 - Obiettivi: garantire l'integrità (evitare modifiche indesiderate) e confidenzialità (evitare accessi indesiderati) delle informazioni.
 - Collegamenti legali: regolamenti sulla privacy, data breach, leggi che regolano la crittografia, leggi che autorizzano o richiedono l'uso di misure di sicurezza informatiche (firme digitali).
