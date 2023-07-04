@@ -12,8 +12,19 @@
 *FOSS.*
 
 - Definizione dei due modelli per il software: proprietario, o free, open-source software (FOSS).
-- Natura e problemi legali dei due modelli.
-- Vantaggi e problemi tecnici dei due modelli.
+- Questioni legali relative ai due modelli.
+
+
+
+- Problema della compilazione del codice sorgente (collegamento con la reverse-engineering).
+- Problema della riproducibilità del codice macchina a partire dal codice sorgente (reproducibile builds).
+
+*Problemi legati alla verifica del funzionamento dei programmi.*
+
+- Problema della verifica del funzionamento del software (test-driven development).
+
+- Vantaggi e svantaggi tecnici dei due modelli.
+- Interazioni fra software proprietario, FOSS, sicurezza informatica e DF in alcuni campi specifici: reverse engineering, test-driven development, reproducibile builds.
 
 *GNU/Linux.*
 
@@ -36,20 +47,15 @@
 - Vantaggi specifici che offre il FOSS per la DF rispetto al software proprietario, da un punto di vista tecnico (conoscibilità dei metodi di analisi, riproducibilità dei risultati) e legale (rispetto del giusto processo)
 - Esempi di attività tipiche e tispettivi software FOSS utilizzabili per la DF.
 
-* FOSS
+* Software proprietario
 
-** Collegamenti legali
-
-- Diritto d'autore, proprietà intellettuale.
-- Tensione fra diritto d'autore e reverse-engineering.
-
-** Software proprietario
+*Rilevanza.*  Per comprendere l'utilità del software libero, è necessario prima definire cosa si intende per software non libero (proprietario).
 
 *Protezione legale per il software.*  Il software può essere protetto dal diritto d'autore, da brevetti, come segreto industriale, da contratti che vincolano l'utilizzatore finale (EULA).
 
 *DMCA, Information Society Directive.*  Il diritto d'autore regola la gestione dei diritti digitale mediante software (digital rights management, DRM), si prevede il divieto di interferire con questo software.
 
-** Software libero e licenze open-source
+* Software libero e licenze open-source
 
 *Libertà fondamentali.*  Il software libero invece di vincoli prevede una serie di libertà per gli utilizzatori, che vengono garantite con gli strumenti del diritto d'autore.
 
@@ -63,7 +69,7 @@
 
 # Varie versioni della licenza MIT
 
-** Codice sorgente, compilazione
+* Codice sorgente, compilazione
 
 *Codice sorgente, codice macchina.*  I computer possono eseguire solo codice macchina, ma per un programmatore umano è difficile ragionare e scrivere in codice macchina.  Con l'aumentare della complessità dei processori, diventò possibile, se non necessario, sviluppare i linguaggi di programmazione, che introducono una serie di astrazioni rispetto al codice macchina (variabili, funzioni, strutture di dati, ecc...)
 
@@ -77,7 +83,7 @@ I linguaggi di programmazione devono essere convertiti in codice macchina, e la 
 
 # Debug symbols, obfuscation
 
-*Compilazione è necessaria.*  La compilazione è "utile" per chi crea software proprietario e vuole nascondere il codice sorgente originale, ma è un "male necessario" anche per il software libero, che altrimenti non potrebbe essere eseguito.
+*Compilazione è necessaria.*  La compilazione è "utile" per chi crea software proprietario e non vuole rendere il codice sorgente originale disponibile, ma è un "male necessario" anche per il software libero, che altrimenti non potrebbe essere eseguito.
 
 *Programmi interpretati.*  Nel caso dei programmi interpretati, solo un programma detto "interprete" è compilato, ed la sua funzione è di leggere il codice sorgente, e convertirlo in codice macchina sul momento, senza doverlo compilare.  In questo caso, non si perde nessuna informazione, ma il costo è che l'esecuzione del programma è molto più lenta rispetto ad un linguaggio compilato.
 
@@ -85,17 +91,55 @@ I linguaggi di programmazione devono essere convertiti in codice macchina, e la 
 
 *Conversione in bytecode.*  I programmi convertiti in bytecode vengono prima "compilati" in un codice macchina particolare, creato ad-hoc per quel linguaggio, detto bytecode.  Successivamente, il bytecode viene interpretato da un secondo programma.  L'esecuzione del codice è più veloce rispetto ai programmi interpretati, e rispetto ai programmi compilati, è più facile recuperare informazioni come il nome delle variabili, funzioni, ecc.
 
-** Reverse engineering
+* Unit testing, Test-driven development
 
-*** Definizione di RE
+** Rilevanza
+
+In generale, è necessario garantire che il programma si comporti correttamente, mediante l'esecuzione automatica di test, che rappresentano una "lista di controllo" per come il programma si deve comportare (quali output deve produrre), dati certi input.
+
+** Definizione
+
+Per /unit testing/ si intende scrivere un test per verificare il funzionamento di una parte (/unit/) del programma.  Generalmente, i test sono scritti per verificare il funzionamento di parti del codice sorgente.
+
+È possibile verificare anche il funzionamento di codice macchina proprietario, già compilato.  Tuttavia, in questo caso i test sono eseguiti in maniera meno efficiente, e se falliscono, non è possibile ispezionare il codice sorgente per capire cosa abbia causato l'errore.
+
+In generale, si prepara una specificazione tecnica (cosa ci si aspetta dal programma), una lista di /unit tests/ (una serie di "obbligazioni di risultato", che definiscono un "contratto" che il software deve rispettare), e se il software supera tutti i test, si può dire che è conforme alla specifica tecnica.
+
+I test sono utili anche per prevenire le regressioni del software: dopo che un bug viene corretto, si scrive un test che controlla che quel bug non si ripeta, anche se il software viene modificato in seguito.
+
+La /test-driven development/ è una filosofia di sviluppo in cui si scrivono prima i test, in modo da definire in anticipo come si vuole che il programma si comporti, per un dato input;  e successivamente, si scrive il codice che soddisfa i test, in modo che:
+
+- L'applicazione contiene solo il codice strettamente necessario per il suo funzionamento, secondo quanto specificato dai test;
+- Tutto il codice contenuto nell'applicazione è "affidabile", nel senso che esistono test che dimostrano il suo corretto comportamento per una serie di input.
+
+** Sicurezza informatica
+
+Oltre all'uso "normale" dei test, nell'ambito della sicurezza informatica si possono sviluppare serie di test per verificare in maniera meccanica se un'applicazione o un sistema è vulnerabile ad una serie di attacchi informatici tipici (/cross-site scripting/, /cross-site request forgery/, /SQL injection/, /directory traversal attack/, etc.).
+
+Dato che questi test non riguardano il codice sorgente, ma interagiscono con l'applicazione così come lo farebbe un utente normale, è possibile utilizzarli anche con software proprietario.
+
+Gli schemi di certificazione per la sicurezza informatica di un sistema proprietario possono includere una serie di test.  È importante che il codice sorgente del programma che esegue questo tipo di test sia reso pubblico:
+
+- Si garantisce una peer-review diffusa, ed il pubblico può contribuire aggiungendo o migliorando i test esistenti.
+- Se anche il codice sorgente del programma usato per verificare un sistema è proprietario, non ci sono elementi pubblicamente conoscibili, e si è obbligati a fidarsi di due "scatole nere".  Se almeno l'elemento che compie la verifica è conoscibile, si può porre maggiore fiducia nell'altro.
+
+** Informatica forense
+
+Lo stesso ragionamento fatto per il software proprietario si applica anche qui.  Inoltre, nel caso di software FOSS, distribuire programmi e test insieme permette di sapere quali funzioni sono disponibili, in quali condizioni vengono messe alla prova, quali risultati ci si aspetta di ottenere.
+
+I test sono fondamentali per l'informatica forense, dato che dimostrano che anche se il programma viene modificato o ristrutturato, continua a produrre gli stessi risultati a parità di input.  Se un test fallisce, è possibile determinare in quale parte del codice sorgente è contenuto l'errore.  Avere piena fiducia nel corretto funzionamento del codice sorgente significa avere piena fiducia nei risultati che vengono prodotti dal codice macchina, una volta che viene compilato.
+
+* Reverse engineering
+
+** Rilevanza della RE
+
+Quando non si è in possesso del codice sorgente per un determinato programma, per studiare il suo funzionamento, ed eventualmente creare una re-implementazione FOSS di quel sistema o software, è necessario usare tecniche di reverse engineering.
+
+** Definizione di RE
 
 La reverse engineering (RE) viene usata per cercare di ricostruire il funzionamento di un programma compilato o convertito in bytecode, specie nel caso di programmi compilati.  La RE studia come il software si comporta (così come la scienza studia i fenomeni naturali) per documentare in via "induttiva" il suo funzionamento.
 
-*** Rilevanza della RE
-
-La RE qui interessa nel senso di analizzare il funzionamento di un sistema o software proprietario, documentarlo, ed eventualmente creare una re-implementazione FOSS di quel sistema o software.
-
-*** Sicurezza informatica
+** Sicurezza informatica
 
 Per quanto riguarda la sicurezza informatica, la RE può essere usata per:
 
@@ -104,13 +148,13 @@ Per quanto riguarda la sicurezza informatica, la RE può essere usata per:
 
 # Caso di ransomware disabilitato.
 
-*** Informatica forense
+** Informatica forense
 
 - Documentare formati proprietari (ad es., il filesystem NTFS di Windows, in modo che possa essere letto anche su sistemi Linux).
 - Riprodurre un software proprietario, in maniera da creare un programma che funziona esattamente allo stesso modo, ma il cui codice sorgente è libero (ad es., un programma che permette di leggere e scrivere su dischi formattati con NTFS).
 - Documentare il funzionamento di un sistema operativo o programma, per capire dove trovare le tracce sono prodotte dal loro utilizzo, quali informazioni si possono ricavare da queste tracce, e capire se queste tracce sono state alterate (accidentalmente o volontariamente).
 
-*** Limiti legali alla RE
+** Limiti legali alla RE
 
 Anche quando si agisce per fini pubblici (ad es., al servizio di un procedimento o processo penale), la RE entra in tensione con il diritto d'autore.
 
@@ -123,52 +167,51 @@ Art. 6 della European Software Directive: la RE è ammessa solo per fini di inte
 
 La legge ed i giudici devono riconoscere delle eccezioni e limitazioni al diritto d'autore come il "fair use" americano, quando la RE è a fini educativi o informativi.
 
-** Test-driven development
+* Reproducibile builds
 
-*** Definizione di TDD
+** Rilevanza
 
-La test-driven development è una filosofia di programmazione, in cui si enfatizza la necessità di definire degli /unit test/ (test di unità), con cui si verifica il corretto funzionamento di ogni componente del software.  I test definiscono un "contratto" che il software deve rispettare, una serie di "obbligazioni di risultato".
+Se del codice sorgente o macchina proviene direttamente dagli sviluppatori originali, è affidabile.
 
-La TDD non è una tecnica esclusiva del FOSS, ma è utile che anche se un'applicazione è proprietaria, almeno la metodologia di test sia resa open-source, in modo da dimostrare concretamente la sua affidabilità.
+Se il codice passa per soggetti terzi (ad es., viene ridistribuito come /mirror/, diffuso su un /content delivery network/, trasformato in un pacchetto installabile), che non sono gli sviluppatori originali, diventa "inaffidabile", perché questi soggetti potrebbero introdurre cambiamenti, all'insaputa degli sviluppatori originali.
 
-I test sono scritti in un linguaggio di programmazione, e utilizzano le funzioni già definite nel programma principale.  È possibile scrivere test anche per programmi proprietari; è più difficile e meno efficiente rispetto a scrivere test per programmi open-source, ma è comunque possibile.
+Per ristabilire la fiducia, diventa necessario dimostrare la paternità (ossia, che un determinato sviluppatore ha scritto o approvato delle modifiche) ed integrità (ossia, che il codice non è stato modificato da errori di trasmissione, o manomesso da terzi) dei dati.
 
-# definisce come quali risultati ci si aspettano per un determinato input dal programma, si scrivono i relativi test che verificano quei risultati, e poi si scrive la quantità minima di codice necessaria per superare tutti i test.
+Nel caso del codice macchina proprietario, si può solo applicare una firma digitale al codice macchina che viene rilasciato, e verificare la firma con l'autore del software.  
 
-*** Rilevanza
+Nel caso di codice sorgente, oltre ad applicare una firma digitale al codice sorgente, si può anche allegare un /build script/ (programma per compilare il software) con delle impostazioni che garantiscono che il codice macchina prodotto rimane lo stesso, a parità di codice sorgente, anche in caso di più compilazioni.
 
-Permete di stabilire uno "standard" a cui il software deve corrispondere in forma di test, di eseguire automaticamente i test, e di verificare quali non sono stati superati.
+Nel secondo caso, gli utilizzatori finali possono verificare che il codice macchina prodotto dal compilatore corrisponde esattamente al codice macchina che gli sviluppatori originali hanno ottenuto, con maggiori garanzie riguardo il fatto che il programma si comporta esattamente come gli sviluppatori volevano.
 
-Permette di garantire che il programma si comporta in maniera corretta per una serie di input (riproducibilità del comportamento), continua a mantenere lo stesso comportamento anche se viene modificato (/refactoring/), ed evitare regressioni di bug che sono stati già risolti.
+** Sicurezza informatica
 
-*** Sicurezza informatica
+Si presuppone che gli sviluppatori originali abbiano interesse a produrre codice sicuro, e che se il codice viene ridistribuito, terzi possono avere interesse ad aggiungere modifiche che lo rendono vulnerabile.
 
-Contro il programma possono essere eseguiti test che verificano se il programma è vulnerabile contro certi tipi di attacchi informatici standard (XSS, CSRF, SQLi, etc...).  Gli schemi di certificazione per la sicurezza informatica possono essere sviluppate come una serie di test, che possono essere eseguiti anche con riferimento ad un programma proprietario.
+Verificare che il codice macchina che è stato scaricato, o che è stato compilato di persona, corrisponde al codice macchina che gli sviluppatori hanno ottenuto indica che quel programma è "affidabile", nel senso che non ci sono state manomissioni di terzi.
 
-*** Informatica forense
+** Informatica forense
 
-Abbinare programmi e test aumenta la fiducia nel fatto che il software funzioni correttamente, e di sapere esattamente quali funzionalità sono disponibili, e quali risultati ci si aspetta da quelle funzioni.  Si elimina un margine di incertezza: il software non è una scatola nera di cui non si conosce il funzionamento, ma oltre a poter ispezionare come funziona, si può verificare meccanicamente che funzioni correttamente.
+Per l'informatica forense il problema principale non è che il codice sia "sicuro" rispetto ad attacchi di terzi, ma che si comporti in maniera "prevedibile", che nulla sia rimesso al caso.
 
-** Reproducibile builds
+Anche in questo caso, le reproducible builds sono utili, perché se il programma viene ricompilato su più sistemi, si garantisce che si ottiene sempre lo stesso codice macchina, e quindi una garanzia molto maggiore che lo stesso codice sorgente si comporti sempre nello stesso modo anche dopo essere stato compilato.
 
-*** Definizione
+* Confronto tra software proprietario e FOSS
 
-Sono una serie di tecniche che permettono di produrre sempre lo stesso codice macchina, partendo dallo stesso codice sorgente, per esigenze di sicurezza (integrità) e riproducibilità.
+** Introduzione
 
-Includono:
+Chiarita la distinzione fra software proprietario e open-source, ed esplorate alcune tematiche relative all'importanza del codice sorgente, è necessario approfondire 
 
-- L'uso di firme digitali per il codice sorgente per dimostrare la paternità (un determinato sviluppatore ha scritto o approvato delle modifiche) ed integrità (il codice non è stato modificato da errori di trasmissione, o manomesso da terzi) del codice.
-- L'uso di determinate impostazioni per la compilazione, per garantire che il codice macchina prodotto sia sempre lo stesso, e non vari da compilazione a compilazione, in modo da associare ad una certa versione del codice sorgente, un certo codice macchina.
+** Vantaggi del software proprietario del software libero
+*** Mancanza di supporto dalle grandi aziende
+- Le grandi aziende potrebbero non volere (per non rivelare i loro segreti industriali) o non potere (per ragioni legali di proprietà intellettuale) offrire software open-source.
+- Ad es., mentre Intel e AMD offrono driver open source per le loro schede video, in modo che possano essere utilizzate su Linux, Nvidia ha tradizionalmente fornito solo driver closed-source, ed ostacolato l'uso dei loro prodotti con Linux.
+*** Finanziamenti
+- Spesso, ma non sempre, il software open-source è sviluppato da volontari.  Questo non vuol dire che la qualità del codice sia minore, gli sviluppatori sono pur sempre professionisti, o comunque hanno esperienza tecnica, ma significa che gli sviluppatori non possono dedicare la loro piena attenzione al progetto.
+- Il problema può essere risolto vendendo assistenza tecnica per il prodotto open-source (ad es., servizi di consulenze, offrendo di sviluppare certe funzionalità in cambio di una retribuzione), oppure vendendo il software open-source come un servizio (SaaS), oppure offrendo il software con due licenze (se il programma open-source viene usato in un progetto proprietario si usa una licenza commerciale in modo che gli sviluppatori siano retribuiti, ma se viene usato in un altro progetto open-source, viene offerto con una normale licenza open-source).
+*** Difficoltà di uso:
+- Spesso il software libero è meno "user-friendly" rispetto al software commerciale per Windows/OS X, può non avere intefacce grafiche, o può richiedere che l'utilizzatore abbia una minima dimestichezza con GNU/Linux o la riga di comando.
+- In ogni caso, anche il software proprietario è comunque complesso e non immediatamente intuitivo da un punto di vista tecnico, ed in ogni caso, è sempre possibile sviluppare interfacce grafiche per programmi a linea di comando.
 
-*** Sicurezza informatica
-
-L'assunto fondamentale è che il codice scritto, firmato digitalmente e compilato dagli sviluppatori sia affidabile.  Ossia, non sia stato manomesso da terzi, e non siano state introdotte modifiche che rendono quel codice non sicuro.
-
-Se è possibile ricompilare lo stesso codice sulla propria macchina, o verificare che il codice macchina compilato da terzi corrisponde a quanto pubblicato dagli sviluppatori, si può essere certi che anche la copia ricevuta sia affidabile.
-
-*** Informatica forense
-
-Per l'informatica forense il problema principale è la riproducibilità del software, che è per definizione l'obiettivo delle riproducibile builds.
 
 ** Vantaggi del software libero
 *** Decentralizzazione del processo di sviluppo:
@@ -199,17 +242,6 @@ Per l'informatica forense il problema principale è la riproducibilità del soft
 - Spesso il software proprietario viene modificato dai suoi utilizzatori per aggiungere nuove funzionalità, o per correggere bug.  Apportare questi miglioramenti sarebbe molto più semplice se il software fosse open-source.
 - È possibile rendere open-source anche solo parte del progetto, e lasciare la parte del progetto in cui risiede il vantaggio competitivo del progetto closed-source.
 - Ad es., vari programmi offrono una "community edition" gratuita, ed una "enterprise edition" a pagamento; Google Chrome è proprietario, ma Google offre anche Chromium: sono essenzialmente lo stesso browser, con l'unica differenza che Chromium non è integrato con i servizi proprietari di Google.
-** Svantaggi del software libero
-*** Mancanza di supporto dalle grandi aziende
-- Le grandi aziende potrebbero non volere (per non rivelare i loro segreti industriali) o non potere (per ragioni legali di proprietà intellettuale) offrire software open-source.
-- Ad es., mentre Intel e AMD offrono driver open source per le loro schede video, in modo che possano essere utilizzate su Linux, Nvidia ha tradizionalmente fornito solo driver closed-source, ed ostacolato l'uso dei loro prodotti con Linux.
-*** Finanziamenti
-- Spesso, ma non sempre, il software open-source è sviluppato da volontari.  Questo non vuol dire che la qualità del codice sia minore, gli sviluppatori sono pur sempre professionisti, o comunque hanno esperienza tecnica, ma significa che gli sviluppatori non possono dedicare la loro piena attenzione al progetto.
-- Il problema può essere risolto vendendo assistenza tecnica per il prodotto open-source (ad es., servizi di consulenze, offrendo di sviluppare certe funzionalità in cambio di una retribuzione), oppure vendendo il software open-source come un servizio (SaaS), oppure offrendo il software con due licenze (se il programma open-source viene usato in un progetto proprietario si usa una licenza commerciale in modo che gli sviluppatori siano retribuiti, ma se viene usato in un altro progetto open-source, viene offerto con una normale licenza open-source).
-*** Difficoltà di uso:
-- Spesso il software libero è meno "user-friendly" rispetto al software commerciale per Windows/OS X, può non avere intefacce grafiche, o può richiedere che l'utilizzatore abbia una minima dimestichezza con GNU/Linux o la riga di comando.
-- In ogni caso, anche il software proprietario è comunque complesso e non immediatamente intuitivo da un punto di vista tecnico, ed in ogni caso, è sempre possibile sviluppare interfacce grafiche per programmi a linea di comando.
-
 * GNU/Linux
 - Il software è l'ultimo anello nella catena di un computer, ed è preceduto dal sistema operativo e dall'hardware.  La catena è affidabile solo quanto il suo anello più debole.
 - È possibile eseguire un programma open-source anche su un sistema operativo proprietario come Windows, ma ci si deve fidare di una "scatola nera", di cui non si conosce l'esatto funzionamento.
@@ -251,6 +283,9 @@ Per l'informatica forense il problema principale è la riproducibilità del soft
 - Anche se il software di cui si deve provare la sicurezza rimane proprietario, è importante che il software che esegue quelle sequenze di test sia open-source, in modo da permettere una sorta di "peer-review" del loro contenuto, il loro continuo aggiornamento mano a mano che vengono scoperte nuove vulnerabilità.
 - Il costo nullo e la facilità di distribuzione rendono questi strumenti disponibili a chiunque abbia il tempo e le conoscenze tecniche per impararli ad utilizzare, e più persone "bene intenzionate" hanno la capacità di verificare se un sistema sia sicuro o meno, e più è probabile che eventuali vulnerabilità nel sistema siano risolte prima che vengano abusate da criminali.
 - Esempi di progetti open-source per la sicurezza come Metasploit, American Fuzzy Lop, etc.
+
+** Analisi del malware con Ghidra
+
 * Digital forensics (informatica forense)
 ** Obiettivi
 - Garantire la conservazione della prova digitale dal momento dell'acquisizione in poi.
