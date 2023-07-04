@@ -199,50 +199,102 @@ Anche in questo caso, le reproducible builds sono utili, perché se il programma
 
 ** Introduzione
 
-Chiarita la distinzione fra software proprietario e open-source, ed esplorate alcune tematiche relative all'importanza del codice sorgente, è necessario approfondire 
+Nelle parti precedenti si è chiarita la distinzione fra software proprietario e open-source, ed sono state esplorate alcune tematiche relative all'importanza della disponibilità del codice sorgente.
 
-** Vantaggi del software proprietario del software libero
-*** Mancanza di supporto dalle grandi aziende
-- Le grandi aziende potrebbero non volere (per non rivelare i loro segreti industriali) o non potere (per ragioni legali di proprietà intellettuale) offrire software open-source.
-- Ad es., mentre Intel e AMD offrono driver open source per le loro schede video, in modo che possano essere utilizzate su Linux, Nvidia ha tradizionalmente fornito solo driver closed-source, ed ostacolato l'uso dei loro prodotti con Linux.
-*** Finanziamenti
-- Spesso, ma non sempre, il software open-source è sviluppato da volontari.  Questo non vuol dire che la qualità del codice sia minore, gli sviluppatori sono pur sempre professionisti, o comunque hanno esperienza tecnica, ma significa che gli sviluppatori non possono dedicare la loro piena attenzione al progetto.
-- Il problema può essere risolto vendendo assistenza tecnica per il prodotto open-source (ad es., servizi di consulenze, offrendo di sviluppare certe funzionalità in cambio di una retribuzione), oppure vendendo il software open-source come un servizio (SaaS), oppure offrendo il software con due licenze (se il programma open-source viene usato in un progetto proprietario si usa una licenza commerciale in modo che gli sviluppatori siano retribuiti, ma se viene usato in un altro progetto open-source, viene offerto con una normale licenza open-source).
-*** Difficoltà di uso:
-- Spesso il software libero è meno "user-friendly" rispetto al software commerciale per Windows/OS X, può non avere intefacce grafiche, o può richiedere che l'utilizzatore abbia una minima dimestichezza con GNU/Linux o la riga di comando.
-- In ogni caso, anche il software proprietario è comunque complesso e non immediatamente intuitivo da un punto di vista tecnico, ed in ogni caso, è sempre possibile sviluppare interfacce grafiche per programmi a linea di comando.
+In questa sezione, si confronta il software libero e proprietario, e si intende dimostrare che, per quanto riguarda la sicurezza informatica è preferibile, e per quanto riguarda l'informatica forense, è quasi necessario, usare il software libero.
 
+** Vantaggi del software proprietario sul software libero
+
+Il software proprietario presenta alcuni vantaggi, ma che sono legati ad incentivi quasi esclusivamente economici.
+
+*** Uso da parte delle grandi aziende
+
+Le grandi aziende potrebbero non volere (per non rivelare i loro segreti industriali) o non potere (per ragioni legali di proprietà intellettuale) offrire software libero.
+
+Ad es., mentre Intel e AMD offrono driver open source per le loro schede video, in modo che possano essere utilizzate su Linux, Nvidia ha tradizionalmente fornito solo driver closed-source, ed ostacolato l'uso dei loro prodotti con Linux.
+
+*** Maggiori finanziamenti
+
+Spesso, ma non sempre, il software open-source è sviluppato da volontari.  Questo non vuol dire che la qualità del codice sia minore, gli sviluppatori sono pur sempre professionisti, o comunque hanno esperienza tecnica, ma significa che gli sviluppatori non possono dedicare la loro piena attenzione al progetto.
+
+Il problema può essere risolto vendendo assistenza tecnica per il prodotto open-source (ad es., servizi di consulenze, offrendo di sviluppare certe funzionalità in cambio di una retribuzione), oppure vendendo il software open-source come un servizio (SaaS), oppure offrendo il software con due licenze (se il programma open-source viene usato in un progetto proprietario si usa una licenza commerciale in modo che gli sviluppatori siano retribuiti, ma se viene usato in un altro progetto open-source, viene offerto con una normale licenza open-source).
+
+*** Migliore esperienza per l'utente finale
+
+Spesso il software libero è meno "user-friendly" rispetto al software commerciale per Windows/OS X, può non avere intefacce grafiche, o può richiedere che l'utilizzatore abbia una minima dimestichezza con GNU/Linux o la riga di comando.
+
+In ogni caso, anche il software proprietario è comunque complesso e non immediatamente intuitivo da un punto di vista tecnico, ed in ogni caso, è sempre possibile sviluppare interfacce grafiche per programmi a linea di comando.
 
 ** Vantaggi del software libero
-*** Decentralizzazione del processo di sviluppo:
-- Non si annulla, ma si riduce significativamente il c.d. "maintainer hit by a bus problem".
-- Nel caso del software proprietario, il suo sviluppo dipende esclusivamente da una sola persona o compagnia, e se venissero a mancare per qualsiasi motivo, il software smetterebbe di essere sviluppato.
-- Il software open source è sviluppato da un grande numero di persone, e chiunque può continuare lo sviluppo se qualcosa succede allo sviluppatore principale.
-*** Conservazione del codice:
-- Il fatto che il codice è liberamente condivisibile significa anche che tutti possono facilmente acquisirne una copia.
-- Pertanto, è sempre possibile avere accesso ad una specifica versione del software, a fini di riproducibilità.
-*** Possibilità di studiare il codice sorgente:
-- Non ci si deve fidare di come funziona il software proprietario, e se il suo funzionamento corrisponde a quanto promesso dagli sviluppatori, ma si può ispezionare il codice sorgente, e compilarlo di persona.
-- Se il codice sorgente di un progetto open-source viene compromesso, si può notare subito, perché in linea teorica chiunque può controllare quali modifiche sono state aggiunte.
-*** Possibilità di studiare i test del codice sorgente:
-- La metodologia di sviluppo "Test-Driven Development" richiede che gli sviluppatori scrivano test per verificare che il software corrisponda alle specifiche tecniche richieste, e che versioni successive non siano soggette a bug già risolti in precedenza (c.d. "regressioni").
-- Questa metodologia può essere usata anche nel software proprietario, ma nel caso del software open-source, c'è maggiore trasparenza: tutti possono verificare di persona quali test sono stati eseguiti, se i test sono stati superati, e suggerire altri test.
-*** Network effect:
-- Dato che può essere usato senza limitazioni, e tutti possono contribuire al suo sviluppo, il software viene diffuso e migliorato rapidamente.
-- Per "tutti" si intende che in linea teorica, chiunque abbia le capacità tecniche può contribuire al progetto.
-- Spetta agli sviluppatori del progetto controllare che le modifiche proposte siano in buona fede, non siano dannose, siano state testate, siano coerenti con lo scopo del progetto, etc.
-- Se esistono disaccordi su come continuare lo sviluppo del software, la natura delle licenze open-source permette di fare un "fork", per cui la parte che è in disaccordo può continuare in autonomia, e i due progetti possono continuare a condividere codice fra di loro.
+
+Il software libero offre numerosi vantaggi, qualitativamente più importanti della mera consistenza economica dell'azienda che sviluppa il software.
+
+*** Decentralizzazione, effetto rete, conservazione del software
+
+Nel caso del software proprietario:
+
+- Il suo sviluppo dipende esclusivamente da una sola persona o compagnia, e se venissero a mancare per qualsiasi motivo, il software smetterebbe di essere sviluppato (c.d. /maintainer hit by a bus problem/).
+- Contribuire al progetto può essere difficile o impossibile.
+- Le versioni precedenti del software potrebbero diventare perse, e se non vengono rimesse in circolazione dallo stesso sviluppatore, l'unico modo per ottenere una copia sarebbe violare il diritto d'autore.
+- Anche se le versioni precedenti sono disponibili, potrebbero non funzionare su versioni più recenti del sistema operativo.
+
+Il software libero non soffre di questi problemi.
+
+Il software open source è sviluppato in maniera trasparente, e anche nel caso in cui ci sia uno o pochi sviluppatori principali, il fatto che il codice è disponibile al pubblico significa che gli utilizzatori di quel software possono continuare lo sviluppo.
+
+Dato che "tutti" possono contribuire al suo sviluppo, il software viene diffuso e migliorato rapidamente: gli sviluppatori si appoggiano ad un progetto già maturo, invece di dover sviluppare individualmente una soluzione da zero.
+
+Per "tutti" si intende che in linea teorica, chiunque abbia le capacità tecniche può contribuire al progetto. Spetta agli sviluppatori del progetto controllare che le modifiche proposte siano in buona fede, non siano dannose, siano state testate, siano coerenti con lo scopo del progetto, etc.
+
+Se esistono disaccordi irreconciliabili su come continuare lo sviluppo del software, la natura delle licenze open-source permette di creare un /fork/ (bivio), per cui la parte che è in disaccordo può continuare in autonomia, e i due progetti possono continuare a condividere codice fra di loro.
+
+Dato che il codice sorgente è liberamente disponibile e riproducibile, anche se il progetto non viene più aggiornato, archivi delle versioni precedenti continueranno ad esistere e circolare, ed è quasi impossibile che un programma diventi perso.
+
+Inoltre, il codice può essere sempre ricompilato da sorgente, e continuare a funzionare su versioni successive dello stesso sistema operativo.  Pertanto, il software libero è pienamente riproducibile, anche nel senso di "continuare a funzionare".
+
 - Maggiore stabilità:
 - Il software viene eseguito da un grande numero di persone, su un grande numero di piattaforme, il che permette di trovare e risolvere errori di programmazione (che potrebbero riguardare solo una piattaforma particolare) più velocemente.
-*** Il codice è documentazione:
-- Specie nel caso in cui il software open-source re-implementa delle funzionalità che sono presenti solo nel software proprietario mediante tecniche di reverse-engineering, il software open-source diventa di fatto anche quasi una "specifica tecnica" che documenta pubblicamente il funzionamento del software proprietario, in mancanza di una documentazione tecnica ufficiale rilasciata dallo sviluppatore.
-- Ad es., NTFS-3G per il formato NTFS, Volatility per il formato del file di ibernazione della RAM di Windows, Wine per l'esecuzione di programmi Windows su Linux, etc.)
-*** Convenienza per i progetti proprietari:
-- Anche i progetti proprietari possono beneficiare dal diventare (parzialmente) open-source.
-- Spesso il software proprietario viene modificato dai suoi utilizzatori per aggiungere nuove funzionalità, o per correggere bug.  Apportare questi miglioramenti sarebbe molto più semplice se il software fosse open-source.
-- È possibile rendere open-source anche solo parte del progetto, e lasciare la parte del progetto in cui risiede il vantaggio competitivo del progetto closed-source.
-- Ad es., vari programmi offrono una "community edition" gratuita, ed una "enterprise edition" a pagamento; Google Chrome è proprietario, ma Google offre anche Chromium: sono essenzialmente lo stesso browser, con l'unica differenza che Chromium non è integrato con i servizi proprietari di Google.
+
+*** Possibilità di studiare il codice sorgente, i suoi test, maggiore affidabilità
+
+Con il software proprietario è necessario fidarsi del fatto che il programma funzioni effettivamente come promette di funzionare.
+
+Con il software libero, è possibile ispezionare il codice sorgente, leggere i test, eseguire i test per controllare che il programma funzioni correttamente, ricompilare il programma di persona, etc.
+
+Il controllo diffuso sul codice sorgente ha due vantaggi:
+
+- Se il codice sorgente di un progetto open-source viene compromesso, si può notare subito, perché in linea teorica chiunque può controllare quali modifiche sono state aggiunte.
+  # Modifica backdoor in PHP.
+- Tutti possono individuare bug, correggerli, ed eseguire strumenti di controllo di qualità del codice per trovare ulteriori problemi, e suggerire miglioramenti, a vantaggio di tutti gli altri utilizzatori di quel programma.
+
+*** Possibilità di modificare il codice sorgente
+
+I sistemi proprietari vengono offerti in configurazioni standard, e può essere difficile o estremamente costoso richiedere una configurazione che corrisponde alle proprie esigenze.
+
+Viceversa, il software libero può essere configurato prima della compilazione in maniera da adeguarlo alle proprie esigenze.
+
+Per la sicurezza informatica, può essere utile escludere funzionalità che non sono utilizzate, perché meno codice viene eseguito, e minore è la "superficie" di software esposta ad attacchi.
+
+Per l'informatica forense, si possono escludere funzionalità come montare un disco in modalità scrittura, richiedere che i dischi siano sempre montati in sola lettura, ed ottimizzare la velocità di trasferimento dei dati, per rendere più veloce l'analisi di dati, ed evitare di modificare la prova digitale che si sta leggendo.
+
+*** Il codice vale come documentazione tecnica
+
+Specie nel caso in cui il software open-source re-implementa delle funzionalità che sono presenti solo nel software proprietario mediante tecniche di reverse-engineering, il software open-source diventa di fatto anche quasi una "specifica tecnica" che documenta pubblicamente il funzionamento del software proprietario, in mancanza di una documentazione tecnica ufficiale rilasciata dallo sviluppatore.
+
+Ad es., NTFS-3G per il formato NTFS, Volatility per il formato del file di ibernazione della RAM di Windows, Wine per l'esecuzione di programmi Windows su Linux, etc.)
+
+*** Convenienza per i progetti proprietari
+
+Anche i progetti proprietari possono beneficiare dal diventare (parzialmente) open-source.
+
+Spesso il software proprietario viene modificato dai suoi utilizzatori per aggiungere nuove funzionalità, o per correggere bug.  Apportare questi miglioramenti sarebbe molto più semplice se il software fosse open-source.
+
+È possibile rendere open-source anche solo parte del progetto, e lasciare la parte del progetto in cui risiede il vantaggio competitivo del progetto closed-source.
+
+Ad es., vari programmi offrono una "community edition" gratuita, ed una "enterprise edition" a pagamento; Google Chrome è proprietario, ma Google offre anche Chromium: sono essenzialmente lo stesso browser, con l'unica differenza che Chromium non è integrato con i servizi proprietari di Google.
+
 * GNU/Linux
+
 - Il software è l'ultimo anello nella catena di un computer, ed è preceduto dal sistema operativo e dall'hardware.  La catena è affidabile solo quanto il suo anello più debole.
 - È possibile eseguire un programma open-source anche su un sistema operativo proprietario come Windows, ma ci si deve fidare di una "scatola nera", di cui non si conosce l'esatto funzionamento.
 - GNU/Linux è un intero sistema operativo open-source, il che permette di portare tutti i vantaggi del software open-source su due anelli della catena.
