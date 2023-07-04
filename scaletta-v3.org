@@ -2,46 +2,117 @@
 #+AUTHOR: Luca Piras
 
 * Introduzione
+
 ** Oggetto della tesi
-- Come il free open-source software (FOSS) può beneficiare le discipline della information security (infosec) e digital forensics (DF).
+
+- Come il free open-source software (FOSS) può beneficiare le discipline della information security (InfoSec) e digital forensics (DF).
+
 ** Struttura
-- Il primo capitolo è dedicato alla definizione della nozione di open-source, e dei vantaggi e problemi che comporta.
-- Il secondo capitolo è dedicato al sistema operativo GNU/Linux, composto esclusivamente da software open-source.
 
-* Open source
+*FOSS.*
 
-** Riassunto
+- Definizione dei due modelli per il software: proprietario, o free, open-source software (FOSS).
+- Natura e problemi legali dei due modelli.
+- Vantaggi e problemi tecnici dei due modelli.
 
-Definizione di software proprietario, libero, vantaggi e svantaggi del software open-source.
+*GNU/Linux.*
 
-**Collegamenti legali.** Diritto d'autore (licenze open-source, reverse engineering).
+- Problema fondamentale dell'informatica: hardware e software tendono ad essere "scatole nere" di cui non si conosce l'esatto funzionamento, e pertanto sono intrinsecamente inaffidabili.
+- GNU/Linux come sistema operativo completamente FOSS, di cui si conosce l'esatto funzionamento.
+- Linux come "fondamenta affidabili" su cui costruire sistemi per la InfoSec e DF, che a loro volta fanno uso di programmi FOSS.
+
+*Sicurezza informatica.*
+
+- Obiettivi della sicurezza informatica (information security, InfoSec), rapporto con la DF.
+- Integrità e confidenzialità delle informazioni (crittografia).
+- Strumenti per valutare la sicurezza di software, anche se proprietario.
+- Strumenti per certificare la sicurezza di software, anche se proprietario.
+- Uso di GNU/Linux e altri componenti FOSS per creare server sicuri.
+
+*DF.*
+
+- Obiettivi dell'informatica forense (digital forensics, DF), rapporto con la sicurezza informatica.
+- Riferimenti normativi e tecnici per il trattamento (acquisizione) e valutazione (all'interno di un processo) della prova informatica.
+- Vantaggi specifici che offre il FOSS per la DF rispetto al software proprietario, da un punto di vista tecnico (conoscibilità dei metodi di analisi, riproducibilità dei risultati) e legale (rispetto del giusto processo)
+- Esempi di attività tipiche e tispettivi software FOSS utilizzabili per la DF.
+
+* FOSS
+
+** Collegamenti legali
+
+- Diritto d'autore, proprietà intellettuale.
+- Tensione fra diritto d'autore e reverse-engineering.
 
 ** Software proprietario
 
-*Limitazioni tecniche e/o legali.*  Lo sviluppo ed uso del software proprietario è soggetto a vincoli come brevetti, segreti industriali, e EULA (contratti per l'utilizzatore finale).
+*Protezione legale per il software.*  Il software può essere protetto dal diritto d'autore, da brevetti, come segreto industriale, da contratti che vincolano l'utilizzatore finale (EULA).
 
-*DMCA, Information Society Directive.*  Il diritto d'autore regola il digital rights management, che impedisce l'uso, copia, modifica e analisi del programma.
+*DMCA, Information Society Directive.*  Il diritto d'autore regola la gestione dei diritti digitale mediante software (digital rights management, DRM), si prevede il divieto di interferire con questo software.
 
 ** Software libero e licenze open-source
 
-*Libertà garantite mediante il diritto d'autore*.
+*Libertà fondamentali.*  Il software libero invece di vincoli prevede una serie di libertà per gli utilizzatori, che vengono garantite con gli strumenti del diritto d'autore.
 
-- Software che garantisce all'utente le facoltà che sono negate dal software proprietario, per mezzo del diritto d'autore.
-- Il software libero è comunque soggetto al diritto d'autore, ma viene distribuito con delle licenze che non limitano, ma garantiscono implicitamente o espressamente, le libertà dell'utente.
-- Il punto fondamentale è la disponibilità del codice sorgente (v. sez. succ.), che permette di studiare il funzionamento del programma.
-- Le licenze open-source permettono anche la modifica e ridistribuzione del codice sorgente.
-- Le licenze "copyleft" (GPL) impongono che ogni opera software derivata usi a sua volta una licenza copyleft, "obbligando" l'autore del software a garantire le libertà degli utilizzatori.
-- Le licenze "permissive" (MIT) richiedono solo di citare l'autore originale se viene usato il suo codice, e le opere software derivate possono anche rimanere proprietarie (le modifiche non devono essere rilasciate al pubblico).
+*Licenze libere.*  Garantiscono la possibilità di studiare il funzionamento del programma, modificarlo, ridistribuirlo, ed eseguirlo per qualsiasi motivo.
+
+*Licenze copyleft.*  Eventuali modifiche al programma devono essere ridistribuite con la stessa licenza copyleft, il codice sorgente (v. sez. succ.) deve essere sempre disponibile, la licenza obbliga il rispetto delle libertà.
+
+# Tivoization (GPLv3), Affero GPL, LGPL
+
+*Licenze permissive.*  L'uso del codice richiede di citare gli autori, ma eventuali modifiche non devono essere rilasciate al pubblico (ossia, possono rimanere proprietarie).
+
+# Varie versioni della licenza MIT
+
 ** Codice sorgente, compilazione
-- Il codice sorgente deve essere compilato in codice macchina affinché possa essere eseguito da un computer.
-- La compilazione è una trasformazione irreversibile, e non è possibile risalire al codice sorgente originale partendo dal codice macchina.
-- La compilazione è un passo necessario, e anche il software libero deve essere compilato (da cui l'importanza di distribuire il codice sorgente), ma è utile per il software proprietario, perché "nasconde" come il software funziona.
+
+*Codice sorgente, codice macchina.*  I computer possono eseguire solo codice macchina, ma per un programmatore umano è difficile ragionare e scrivere in codice macchina.  Con l'aumentare della complessità dei processori, diventò possibile, se non necessario, sviluppare i linguaggi di programmazione, che introducono una serie di astrazioni rispetto al codice macchina (variabili, funzioni, strutture di dati, ecc...)
+
+# Maggiore sicurezza, DRY, maggiore corrispondenza fra algoritmo e programma, etc.
+
+I linguaggi di programmazione devono essere convertiti in codice macchina, e la conversione può avvenire in tre modi diversi.  Si distingue fra linguaggi di programmazione compilati, interpretati, e convertiti in bytecode.
+
+# Linguaggi interpretati, bytecode.
+
+*Compilazione è irreversibile.*  La compilazione è la trasformazione definitiva da linguaggio di programmazione a codice macchina, ed è di fatto irreversibile.  È difficile capire le operazioni che un codice macchina sta compiendo (non sono presenti commenti, i nomi delle variabili e delle funzioni sono convertiti in indirizzi di memoria e serve studiare il codice istruzione per istruzione), ed è quasi impossibile ritornare al codice sorgente originale.
+
+# Debug symbols, obfuscation
+
+*Compilazione è necessaria.*  La compilazione è "utile" per chi crea software proprietario e vuole nascondere il codice sorgente originale, ma è un "male necessario" anche per il software libero, che altrimenti non potrebbe essere eseguito.
+
+*Programmi interpretati.*  Nel caso dei programmi interpretati, solo un programma detto "interprete" è compilato, ed la sua funzione è di leggere il codice sorgente, e convertirlo in codice macchina sul momento, senza doverlo compilare.  In questo caso, non si perde nessuna informazione, ma il costo è che l'esecuzione del programma è molto più lenta rispetto ad un linguaggio compilato.
+
+# Compilazione bytecode, JIT, minifier per offuscare.
+
+*Conversione in bytecode.*  I programmi convertiti in bytecode vengono prima "compilati" in un codice macchina particolare, creato ad-hoc per quel linguaggio, detto bytecode.  Successivamente, il bytecode viene interpretato da un secondo programma.  L'esecuzione del codice è più veloce rispetto ai programmi interpretati, e rispetto ai programmi compilati, è più facile recuperare informazioni come il nome delle variabili, funzioni, ecc.
+
 ** Reverse engineering
-- Se si è in presenza di software proprietario, e si deve cercare di capire come funziona, si possono usare tecniche di reverse engineering (RE).
-- Ad es., il formato NTFS di Windows per salvare i dati su disco non è documentato in maniera pubblica.  In questo caso, la RE studia come il software si comporta (così come la scienza studia i fenomeni naturali) per documentare in via "induttiva" il suo funzionamento.
-- La RE entra in tensione con il diritto d'autore, brevetti, etc., anche se si sta agendo per fini legittimi (utilizzare quella conoscenza per una perizia all'interno di un processo).
-- Potrebbe essere necessario copiare dati come chiavi segrete, che sono protette da copyright (cfr. SEGA, le chiavi crittografiche per i DVD), la RE stessa consiste nell'aggirare sistemi digitali di protezione dei diritti (vietato dal DMCA e dalla Information Society Directive), la documentazione prodotta al seguito della RE potrebbe essere considerata violazione di diritto d'autore, etc.
-- Serve che i giudici riconoscano delle eccezioni al diritto d'autore come il "fair use" quando il RE è a fini educativi o informativi.
+
+*Definizione di RE.*  La reverse engineering (RE) viene usata per cercare di ricostruire il funzionamento di un programma compilato o convertito in bytecode, specie nel caso di programmi compilati.  La RE studia come il software si comporta (così come la scienza studia i fenomeni naturali) per documentare in via "induttiva" il suo funzionamento.
+
+*RE e sicurezza informatica.*  Può essere usata per vari scopi.  Per quanto riguarda la sicurezza informatica:
+
+- Rimuovere sistemi di protezione (ad es., aggirare i sistemi di sicurezza di un dispositivo per estrarre dati, installare un captatore informatico...)
+- Studiare malware (ad es., capire come un malware infetta un computer, che effetti provoca, come rimuoverlo...)
+
+# Caso di ransomware disabilitato.
+
+Per quanto riguarda l'informatica forense:
+
+- Documentare formati proprietari (ad es., il filesystem NTFS di Windows, in modo che possa essere letto anche su sistemi Linux).
+- Riprodurre un software proprietario, in maniera da creare un programma che funziona esattamente allo stesso modo, ma il cui codice sorgente è libero (ad es., un programma che permette di leggere e scrivere su dischi formattati con NTFS).
+- Documentare il funzionamento di un sistema operativo o programma, per capire dove trovare le tracce sono prodotte dal loro utilizzo, quali informazioni si possono ricavare da queste tracce, e capire se queste tracce sono state alterate (accidentalmente o volontariamente).
+
+*Limiti legali alla RE.*  Anche quando si agisce per fini pubblici (ad es., al servizio di un procedimento o processo penale), la RE entra in tensione con il diritto d'autore.
+
+- Aggirare sistemi di protezione per i dati può essere espressamente vietato dalla legge.  Ad es., aggirare gli schemi DRM è una violazione del DMCA e della Information Society Directive.
+- Il software o documentazione prodotti a seguito della RE potrebbe essere considerata una violazione del diritto d'autore, perché potrebbe essere necessario copiare dei dati dal software proprietario (ad es., chiavi crittografiche), o perché riproduce la stessa struttura del programma (interfacce software/API come in Google v. Oracle, /substantial similarity/).
+  # Cfr. le chiavi SEGA, le chiavi dei DVD e Blu-Ray.
+
+Art. 6 della European Software Directive: la RE è amessa solo per fini di interoperabilità, non per creare programmi che hanno sostanzialmente la stessa funzione.
+# https://lwn.net/Articles/134642/
+
+La legge ed i giudici devono riconoscere delle eccezioni e limitazioni al diritto d'autore come il "fair use" americano, quando la RE è a fini educativi o informativi.
+
 ** Vantaggi del software libero
 *** Decentralizzazione del processo di sviluppo:
 - Non si annulla, ma si riduce significativamente il c.d. "maintainer hit by a bus problem".
@@ -80,7 +151,7 @@ Definizione di software proprietario, libero, vantaggi e svantaggi del software 
 - Il problema può essere risolto vendendo assistenza tecnica per il prodotto open-source (ad es., servizi di consulenze, offrendo di sviluppare certe funzionalità in cambio di una retribuzione), oppure vendendo il software open-source come un servizio (SaaS), oppure offrendo il software con due licenze (se il programma open-source viene usato in un progetto proprietario si usa una licenza commerciale in modo che gli sviluppatori siano retribuiti, ma se viene usato in un altro progetto open-source, viene offerto con una normale licenza open-source).
 *** Difficoltà di uso:
 - Spesso il software libero è meno "user-friendly" rispetto al software commerciale per Windows/OS X, può non avere intefacce grafiche, o può richiedere che l'utilizzatore abbia una minima dimestichezza con GNU/Linux o la riga di comando.
-- In verità, anche il software proprietario è comunque complesso e non immediatamente intuitivo da un punto di vista tecnico, ed in ogni caso, è sempre possibile sviluppare interfacce grafiche per programmi a linea di comando.
+- In ogni caso, anche il software proprietario è comunque complesso e non immediatamente intuitivo da un punto di vista tecnico, ed in ogni caso, è sempre possibile sviluppare interfacce grafiche per programmi a linea di comando.
 * GNU/Linux
 - Il software è l'ultimo anello nella catena di un computer, ed è preceduto dal sistema operativo e dall'hardware.  La catena è affidabile solo quanto il suo anello più debole.
 - È possibile eseguire un programma open-source anche su un sistema operativo proprietario come Windows, ma ci si deve fidare di una "scatola nera", di cui non si conosce l'esatto funzionamento.
@@ -107,7 +178,7 @@ Definizione di software proprietario, libero, vantaggi e svantaggi del software 
 - In particolare, per esigenze di sicurezza e riproducibilità, si può configurare l'insieme di strumenti usati per sviluppare e compilare software, in modo da garantire la riproducibilità del software compilato.
 - Per riproducibilità si intende che lo sviluppatore e l'utente finale possono confermare di ottenere lo stesso, identico file eseguibile, per eliminare ogni dubbio riguardo l'affidabilità ed autenticità del codice sorgente.
 * Information security (sicurezza informatica)
-- Obiettivi: garantire l'integrità e confidenzialità delle informazioni.
+- Obiettivi: garantire l'integrità (evitare modifiche indesiderate) e confidenzialità (evitare accessi indesiderati) delle informazioni.
 - Collegamenti legali: regolamenti sulla privacy, data breach, leggi che regolano la crittografia, leggi che autorizzano o richiedono l'uso di misure di sicurezza informatiche (firme digitali).
 - Collegamenti alla DF: la DF interviene dopo che le misure di sicurezza sono state violate per capire cosa sia successo, e quali dati sono stati compromessi, le tecniche di sicurezza dei dati ostacolano l'analisi forense (ad es., crittografia dell'intero disco, captatori informatici che usano vulnerabilità dei dispositivi, etc...)
 ** Crittografia
@@ -172,8 +243,8 @@ Definizione di software proprietario, libero, vantaggi e svantaggi del software 
 - Collegamenti legali: applicazione delle categorie tradizionali ai dati digitali.
 - Autopsy: operazioni che è possibile compiere, confronti con software proprietario.
 - Programmi per il data carving, la creazione di timeline.
-** Analisi del traffico di rete
-- Collegamenti legali: differenza con l'intercettazione propriamente detta.
+** Acquisizione di siti internet
+- Collegamenti legali: differenza con l'intercettazione come disciplinata dal c.p.p.
 - Uso di Wireshark per l'acquisizione forense di siti web.
 ** Sequestro di Bitcoin
 - Collegamenti legali: definizione legale di Bitcoin e criptovalute.
