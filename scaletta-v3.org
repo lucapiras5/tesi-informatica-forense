@@ -87,31 +87,88 @@ I linguaggi di programmazione devono essere convertiti in codice macchina, e la 
 
 ** Reverse engineering
 
-*Definizione di RE.*  La reverse engineering (RE) viene usata per cercare di ricostruire il funzionamento di un programma compilato o convertito in bytecode, specie nel caso di programmi compilati.  La RE studia come il software si comporta (così come la scienza studia i fenomeni naturali) per documentare in via "induttiva" il suo funzionamento.
+*** Definizione di RE
 
-*RE e sicurezza informatica.*  Può essere usata per vari scopi.  Per quanto riguarda la sicurezza informatica:
+La reverse engineering (RE) viene usata per cercare di ricostruire il funzionamento di un programma compilato o convertito in bytecode, specie nel caso di programmi compilati.  La RE studia come il software si comporta (così come la scienza studia i fenomeni naturali) per documentare in via "induttiva" il suo funzionamento.
+
+*** Rilevanza della RE
+
+La RE qui interessa nel senso di analizzare il funzionamento di un sistema o software proprietario, documentarlo, ed eventualmente creare una re-implementazione FOSS di quel sistema o software.
+
+*** Sicurezza informatica
+
+Per quanto riguarda la sicurezza informatica, la RE può essere usata per:
 
 - Rimuovere sistemi di protezione (ad es., aggirare i sistemi di sicurezza di un dispositivo per estrarre dati, installare un captatore informatico...)
 - Studiare malware (ad es., capire come un malware infetta un computer, che effetti provoca, come rimuoverlo...)
 
 # Caso di ransomware disabilitato.
 
-Per quanto riguarda l'informatica forense:
+*** Informatica forense
 
 - Documentare formati proprietari (ad es., il filesystem NTFS di Windows, in modo che possa essere letto anche su sistemi Linux).
 - Riprodurre un software proprietario, in maniera da creare un programma che funziona esattamente allo stesso modo, ma il cui codice sorgente è libero (ad es., un programma che permette di leggere e scrivere su dischi formattati con NTFS).
 - Documentare il funzionamento di un sistema operativo o programma, per capire dove trovare le tracce sono prodotte dal loro utilizzo, quali informazioni si possono ricavare da queste tracce, e capire se queste tracce sono state alterate (accidentalmente o volontariamente).
 
-*Limiti legali alla RE.*  Anche quando si agisce per fini pubblici (ad es., al servizio di un procedimento o processo penale), la RE entra in tensione con il diritto d'autore.
+*** Limiti legali alla RE
+
+Anche quando si agisce per fini pubblici (ad es., al servizio di un procedimento o processo penale), la RE entra in tensione con il diritto d'autore.
 
 - Aggirare sistemi di protezione per i dati può essere espressamente vietato dalla legge.  Ad es., aggirare gli schemi DRM è una violazione del DMCA e della Information Society Directive.
 - Il software o documentazione prodotti a seguito della RE potrebbe essere considerata una violazione del diritto d'autore, perché potrebbe essere necessario copiare dei dati dal software proprietario (ad es., chiavi crittografiche), o perché riproduce la stessa struttura del programma (interfacce software/API come in Google v. Oracle, /substantial similarity/).
   # Cfr. le chiavi SEGA, le chiavi dei DVD e Blu-Ray.
 
-Art. 6 della European Software Directive: la RE è amessa solo per fini di interoperabilità, non per creare programmi che hanno sostanzialmente la stessa funzione.
+Art. 6 della European Software Directive: la RE è ammessa solo per fini di interoperabilità, non per creare programmi che hanno sostanzialmente la stessa funzione.
 # https://lwn.net/Articles/134642/
 
 La legge ed i giudici devono riconoscere delle eccezioni e limitazioni al diritto d'autore come il "fair use" americano, quando la RE è a fini educativi o informativi.
+
+** Test-driven development
+
+*** Definizione di TDD
+
+La test-driven development è una filosofia di programmazione, in cui si enfatizza la necessità di definire degli /unit test/ (test di unità), con cui si verifica il corretto funzionamento di ogni componente del software.  I test definiscono un "contratto" che il software deve rispettare, una serie di "obbligazioni di risultato".
+
+La TDD non è una tecnica esclusiva del FOSS, ma è utile che anche se un'applicazione è proprietaria, almeno la metodologia di test sia resa open-source, in modo da dimostrare concretamente la sua affidabilità.
+
+I test sono scritti in un linguaggio di programmazione, e utilizzano le funzioni già definite nel programma principale.  È possibile scrivere test anche per programmi proprietari; è più difficile e meno efficiente rispetto a scrivere test per programmi open-source, ma è comunque possibile.
+
+# definisce come quali risultati ci si aspettano per un determinato input dal programma, si scrivono i relativi test che verificano quei risultati, e poi si scrive la quantità minima di codice necessaria per superare tutti i test.
+
+*** Rilevanza
+
+Permete di stabilire uno "standard" a cui il software deve corrispondere in forma di test, di eseguire automaticamente i test, e di verificare quali non sono stati superati.
+
+Permette di garantire che il programma si comporta in maniera corretta per una serie di input (riproducibilità del comportamento), continua a mantenere lo stesso comportamento anche se viene modificato (/refactoring/), ed evitare regressioni di bug che sono stati già risolti.
+
+*** Sicurezza informatica
+
+Contro il programma possono essere eseguiti test che verificano se il programma è vulnerabile contro certi tipi di attacchi informatici standard (XSS, CSRF, SQLi, etc...).  Gli schemi di certificazione per la sicurezza informatica possono essere sviluppate come una serie di test, che possono essere eseguiti anche con riferimento ad un programma proprietario.
+
+*** Informatica forense
+
+Abbinare programmi e test aumenta la fiducia nel fatto che il software funzioni correttamente, e di sapere esattamente quali funzionalità sono disponibili, e quali risultati ci si aspetta da quelle funzioni.  Si elimina un margine di incertezza: il software non è una scatola nera di cui non si conosce il funzionamento, ma oltre a poter ispezionare come funziona, si può verificare meccanicamente che funzioni correttamente.
+
+** Reproducibile builds
+
+*** Definizione
+
+Sono una serie di tecniche che permettono di produrre sempre lo stesso codice macchina, partendo dallo stesso codice sorgente, per esigenze di sicurezza (integrità) e riproducibilità.
+
+Includono:
+
+- L'uso di firme digitali per il codice sorgente per dimostrare la paternità (un determinato sviluppatore ha scritto o approvato delle modifiche) ed integrità (il codice non è stato modificato da errori di trasmissione, o manomesso da terzi) del codice.
+- L'uso di determinate impostazioni per la compilazione, per garantire che il codice macchina prodotto sia sempre lo stesso, e non vari da compilazione a compilazione, in modo da associare ad una certa versione del codice sorgente, un certo codice macchina.
+
+*** Sicurezza informatica
+
+L'assunto fondamentale è che il codice scritto, firmato digitalmente e compilato dagli sviluppatori sia affidabile.  Ossia, non sia stato manomesso da terzi, e non siano state introdotte modifiche che rendono quel codice non sicuro.
+
+Se è possibile ricompilare lo stesso codice sulla propria macchina, o verificare che il codice macchina compilato da terzi corrisponde a quanto pubblicato dagli sviluppatori, si può essere certi che anche la copia ricevuta sia affidabile.
+
+*** Informatica forense
+
+Per l'informatica forense il problema principale è la riproducibilità del software, che è per definizione l'obiettivo delle riproducibile builds.
 
 ** Vantaggi del software libero
 *** Decentralizzazione del processo di sviluppo:
@@ -152,6 +209,7 @@ La legge ed i giudici devono riconoscere delle eccezioni e limitazioni al diritt
 *** Difficoltà di uso:
 - Spesso il software libero è meno "user-friendly" rispetto al software commerciale per Windows/OS X, può non avere intefacce grafiche, o può richiedere che l'utilizzatore abbia una minima dimestichezza con GNU/Linux o la riga di comando.
 - In ogni caso, anche il software proprietario è comunque complesso e non immediatamente intuitivo da un punto di vista tecnico, ed in ogni caso, è sempre possibile sviluppare interfacce grafiche per programmi a linea di comando.
+
 * GNU/Linux
 - Il software è l'ultimo anello nella catena di un computer, ed è preceduto dal sistema operativo e dall'hardware.  La catena è affidabile solo quanto il suo anello più debole.
 - È possibile eseguire un programma open-source anche su un sistema operativo proprietario come Windows, ma ci si deve fidare di una "scatola nera", di cui non si conosce l'esatto funzionamento.
@@ -173,10 +231,6 @@ La legge ed i giudici devono riconoscere delle eccezioni e limitazioni al diritt
 - Pacchetti binari, pacchetti sorgente:
 - Le distribuzioni normalmente offrono pacchetti già compilati (binari), così che possano essere utilizzati subito.  Questo implica doversi fidare degli sviluppatori upstream.
 - Volendo (alcune distribuzioni lo fanno di default) è possibile scaricare un pacchetto sorgente, in modo da ispezionare i suoi contenuti (in particolare, le modifiche che sono state apportate per adeguare il software alla distribuzione) prima di compilarlo ed utilizzarlo.
-** Reproducibile builds
-- In ogni caso, rimane sempre possibile scaricare il software open-source direttamente dallo sviluppatore upstream, e compilarlo ed installarlo manualmente.
-- In particolare, per esigenze di sicurezza e riproducibilità, si può configurare l'insieme di strumenti usati per sviluppare e compilare software, in modo da garantire la riproducibilità del software compilato.
-- Per riproducibilità si intende che lo sviluppatore e l'utente finale possono confermare di ottenere lo stesso, identico file eseguibile, per eliminare ogni dubbio riguardo l'affidabilità ed autenticità del codice sorgente.
 * Information security (sicurezza informatica)
 - Obiettivi: garantire l'integrità (evitare modifiche indesiderate) e confidenzialità (evitare accessi indesiderati) delle informazioni.
 - Collegamenti legali: regolamenti sulla privacy, data breach, leggi che regolano la crittografia, leggi che autorizzano o richiedono l'uso di misure di sicurezza informatiche (firme digitali).
