@@ -1,4 +1,4 @@
-#+TITLE: Scaletta
+#+TITLE: Scaletta - Tesi di Informatica Forense
 #+AUTHOR: Luca Piras
 
 * Oggetto della tesi
@@ -125,7 +125,7 @@ Quando non si è in possesso del codice sorgente per un determinato programma, p
 
 ** Definizione di RE
 
-La reverse engineering (RE) viene usata per cercare di ricostruire il funzionamento di un programma compilato o convertito in bytecode, specie nel caso di programmi compilati.  La RE studia come il software si comporta (così come la scienza studia i fenomeni naturali) per documentare in via "induttiva" il suo funzionamento.
+La reverse engineering (RE) viene usata per cercare di ricostruire il funzionamento di un programma compilato o convertito in bytecode.  La RE studia come il software si comporta (così come la scienza studia i fenomeni naturali) per documentare in via "induttiva" il suo funzionamento.
 
 ** Sicurezza informatica
 
@@ -167,7 +167,7 @@ Per ristabilire la fiducia, diventa necessario dimostrare la paternità (ossia, 
 
 Nel caso del codice macchina proprietario, si può solo applicare una firma digitale al codice macchina che viene rilasciato, e verificare la firma con l'autore del software.  
 
-Nel caso di codice sorgente, oltre ad applicare una firma digitale al codice sorgente, si può anche allegare un /build script/ (programma per compilare il software) con delle impostazioni che garantiscono che il codice macchina prodotto rimane lo stesso, a parità di codice sorgente, anche in caso di più compilazioni.
+Nel caso di codice sorgente, oltre ad applicare una firma digitale al codice sorgente, si può anche allegare un /build script/ (programma per compilare il software) con delle impostazioni che garantiscono che il codice macchina prodotto rimane lo stesso, a parità di codice sorgente, indipendentemente dalle impostazioni e caratteristiche della macchina su cui viene compilato.
 
 Nel secondo caso, gli utilizzatori finali possono verificare che il codice macchina prodotto dal compilatore corrisponde esattamente al codice macchina che gli sviluppatori originali hanno ottenuto, con maggiori garanzie riguardo il fatto che il programma si comporta esattamente come gli sviluppatori volevano.
 
@@ -193,7 +193,7 @@ In questa sezione, si confronta il software libero e proprietario, e si intende 
 
 ** Vantaggi del software proprietario sul software libero
 
-Il software proprietario presenta alcuni vantaggi, ma che sono legati ad incentivi quasi esclusivamente economici.
+Il software proprietario presenta alcuni vantaggi, che però hanno natura e rilevanza quasi esclusivamente economica.
 
 *** Uso da parte delle grandi aziende
 
@@ -209,7 +209,7 @@ Il problema può essere risolto vendendo assistenza tecnica per il prodotto open
 
 *** Migliore esperienza per l'utente finale
 
-Spesso il software libero è meno "user-friendly" rispetto al software commerciale per Windows/OS X, può non avere intefacce grafiche, o può richiedere che l'utilizzatore abbia una minima dimestichezza con GNU/Linux o la riga di comando.
+Spesso il software libero è meno "user-friendly" rispetto al software commerciale per Windows/OS X, può non avere interfacce grafiche, o può richiedere che l'utilizzatore abbia una minima dimestichezza con GNU/Linux o la riga di comando.
 
 In ogni caso, anche il software proprietario è comunque complesso e non immediatamente intuitivo da un punto di vista tecnico, ed in ogni caso, è sempre possibile sviluppare interfacce grafiche per programmi a linea di comando.
 
@@ -222,7 +222,7 @@ Il software libero offre numerosi vantaggi, qualitativamente più importanti del
 Nel caso del software proprietario:
 
 - Il suo sviluppo dipende esclusivamente da una sola persona o compagnia, e se venissero a mancare per qualsiasi motivo, il software smetterebbe di essere sviluppato (c.d. /maintainer hit by a bus problem/).
-- Contribuire al progetto può essere difficile o impossibile.
+- Contribuire al progetto come soggetti esterni può essere difficile o impossibile.
 - Le versioni precedenti del software potrebbero diventare perse, e se non vengono rimesse in circolazione dallo stesso sviluppatore, l'unico modo per ottenere una copia sarebbe violare il diritto d'autore.
 - Anche se le versioni precedenti sono disponibili, potrebbero non funzionare su versioni più recenti del sistema operativo.
 
@@ -238,7 +238,7 @@ Se esistono disaccordi irreconciliabili su come continuare lo sviluppo del softw
 
 Dato che il codice sorgente è liberamente disponibile e riproducibile, anche se il progetto non viene più aggiornato, archivi delle versioni precedenti continueranno ad esistere e circolare, ed è quasi impossibile che un programma diventi perso.
 
-Inoltre, il codice può essere sempre ricompilato da sorgente, e continuare a funzionare su versioni successive dello stesso sistema operativo.  Pertanto, il software libero è pienamente riproducibile, anche nel senso di "continuare a funzionare".
+Inoltre, il codice può essere sempre ricompilato da sorgente, e continuare a funzionare su versioni successive dello stesso sistema operativo.  Pertanto, il software libero è pienamente riproducibile, anche nel senso di "continuare a riprodurre gli stessi risultati anche nel futuro".
 
 - Maggiore stabilità:
 - Il software viene eseguito da un grande numero di persone, su un grande numero di piattaforme, il che permette di trovare e risolvere errori di programmazione (che potrebbero riguardare solo una piattaforma particolare) più velocemente.
@@ -257,7 +257,7 @@ Il controllo diffuso sul codice sorgente ha due vantaggi:
 
 *** Possibilità di modificare il codice sorgente
 
-I sistemi proprietari vengono offerti in configurazioni standard, e può essere difficile o estremamente costoso richiedere una configurazione che corrisponde alle proprie esigenze.
+I sistemi proprietari vengono offerti in configurazioni standard, e può essere difficile o estremamente costoso richiedere una configurazione che corrisponda alle proprie esigenze.
 
 Viceversa, il software libero può essere configurato prima della compilazione in maniera da adeguarlo alle proprie esigenze.
 
@@ -417,7 +417,7 @@ Se non si conosce neanche l'esatto funzionamento del software-certificante, si c
 
 Pertanto, se i sistemi possono contenere errori di programmazione, come si fa a determinare se un errore è stato commesso, e da chi, se non si può fare altro che doversi fidare di entrambi?
 
-Questo ragionamento si applica in particolare se le certificazioni sono conferite, o hanno rilevanza per, la pubblica amministrazione, data la rilevanza del principio della transparenza dell'azione amministrativa.  Se la PA certifica un programma, o usa un programma con una data certificazione, per dare una "legittimazione" a quell'operazione, è necessaria la trasparenza riguardo le modalità di certificazione.
+Questo ragionamento si applica in particolare se le certificazioni sono conferite, o hanno rilevanza per, la pubblica amministrazione, data la rilevanza del principio della trasparenza dell'azione amministrativa.  Se la PA certifica un programma, o usa un programma con una data certificazione, per dare una "legittimazione" a quell'operazione, è necessaria la trasparenza riguardo le modalità di certificazione.
 
 ** Analisi del malware (Ghidra)
 
@@ -467,7 +467,7 @@ In presenza di software proprietario, la difesa può solo difendersi in maniera 
 - Codice penale: regola i reati contro sistemi informatici, ma l'informatica forense può essere utilizzata per raccogliere informazioni da sistemi informatici anche dopo il compimento di reati tradizionali.
 - Codice di procedura penale: detta i principi generali su come trattare le prove informatiche.
 - Standard tecnici: formalizzano le procedure necessarie per garantire la corretta acquisizione e conservazione della prova digitale.
-- Giurisprudenza sulla prova scientifica: come la prova scientifica in generale, e la digital evidence in particolare, devono essere valutate dal giudice, commenti sulle sentenze che trattano di aspetti tecnici della DF.
+- Giurisprudenza sulla prova scientifica: come la prova scientifica in generale, e la digital evidence in particolare, devono essere valutate dal giudice, commenti sulle sentenze che trattano di aspetti tecnici della informatica forense.
 
 ** Differenze con la sicurezza informatica
 
@@ -477,7 +477,7 @@ In presenza di software proprietario, la difesa può solo difendersi in maniera 
 
 Dato che l'informatica forense deve essere in grado di rilevare le tracce dell'evento, e ricostruire la dinamica dei fatti, per questa disciplina è necessario sapere "come" il software funzioni, quali informazioni produca, ecc.
 
-Inoltre, mentre la cybersecurity è esclusivamente legata alla protezione di un sistema informatico come oggetto di attacchi, le tecniche di informatica forense possono essere utilizzate anche per reati non informatici.
+Inoltre, mentre la cybersecurity è esclusivamente legata alla protezione di un sistema informatico come oggetto di attacchi, le tecniche di informatica forense possono essere utilizzate oltre che per i reati informatici (commessi /contro/ un computer), anche per raccogliere informazioni utili per investigare reati tradizionali, commessi contro altre persone /per mezzo/ di un computer, o comunque, altre informazioni utili).
 
 ** Vantaggi del FOSS per l'informatica forense
 
@@ -487,7 +487,7 @@ Inoltre, mentre la cybersecurity è esclusivamente legata alla protezione di un 
 
 In ogni caso, è sempre possibile ricompilare la esatta versione del programma che era stata utilizzata al momento dell'analisi.
 
-*Costi minori e maggiore efficienza*.  Non si devono pagare licenze per software proprietario, ed il sistema operativo può essere ottimato per le operazioni di digital forensics.
+*Costi minori e maggiore efficienza*.  Non si devono pagare licenze per software proprietario, ed il sistema operativo può essere ottimizzato per le operazioni di digital forensics.
 
 Inoltre, per i programmi che usano la linea di comando, si possono usare i c.d. shell script per automatizzare le operazioni ripetitive.
 
@@ -517,7 +517,7 @@ Viceversa, GNU/Linux ed i programmi open-source non hanno nessun incentivo comme
 
 *Collegamenti legali*: acquisizione di file da servizi online, anche se si trovano all'estero, senza bisogno di usare una rogatoria internazionale.
 
-*Aquisizione logica*.  Nei casi in cui non sia possibile acquisire l'intero supporto con la copia forense, è necessario copiare i singoli file che sono disponibili, cercando di preservare quanti più metadati possibile, e disturbando gli altri dati il meno possibile.
+*Acquisizione logica*.  Nei casi in cui non sia possibile acquisire l'intero supporto con la copia forense, è necessario copiare i singoli file che sono disponibili, cercando di preservare quanti più metadati possibile, e disturbando gli altri dati il meno possibile.
 
 Ad es., acquisizioni di dati da smartphone, da servizi di backup personale come Dropbox o Google Drive, da servizi di data storage come Amazon Web Services, da servizi proprietari come Google Takeout.
 
@@ -530,7 +530,7 @@ ideale delle operazioni è di usare gli strumenti di copia ufficiali prima, dato
 
 *Difficoltà tecniche*.  Acquisire la RAM mentre il sistema è acceso va a modificarla, si deve acquisire anche la memoria virtuale salvata su disco/file di swap per avere un'acquisizione completa, i formati sono proprietari e non documentati, le tecniche di analisi non sono particolarmente raffinate.
 
-*Volatility*.  Framework per l'acquisizione dei 
+*Volatility*.  Framework per l'acquisizione della memoria RAM e del file di ibernazione.
 
 ** Analisi del disco
 
