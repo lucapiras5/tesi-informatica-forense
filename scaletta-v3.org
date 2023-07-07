@@ -350,7 +350,7 @@ Volendo (alcune distribuzioni lo fanno di default) è possibile scaricare un pac
 - Certificare i sistemi secondo degli standard riconosciuti in maniera più o meno formale.
 - Monitorare i nuovi rischi, e aggiornare i sistemi di conseguenza.
 
-** Collegamenti legali
+** Collegamenti giuridici
 
 - Regolamenti che impongono l'uso di misure di sicurezza informatiche (ad es., firme digitali).
 - Leggi che regolano la riservatezza delle comunicazioni, dei dati personali.
@@ -462,7 +462,7 @@ In presenza di software proprietario, la difesa può solo difendersi in maniera 
 
 *Presentazione*.  La presentazione è una fase puramente cosmetica, in cui si illustrano i risultati, e l'uso di software FOSS o meno è di scarsa rilevanza.
 
-** Collegamenti legali
+** Collegamenti giuridici
 
 - Codice penale: regola i reati contro sistemi informatici, ma l'informatica forense può essere utilizzata per raccogliere informazioni da sistemi informatici anche dopo il compimento di reati tradizionali.
 - Codice di procedura penale: detta i principi generali su come trattare le prove informatiche.
@@ -503,7 +503,7 @@ Viceversa, GNU/Linux ed i programmi open-source non hanno nessun incentivo comme
 
 ** Acquisizione forense di dischi
 
-*Collegamenti legali*:
+*Collegamenti giuridici*:
 
 - Giurisprudenza sul sequestro del supporto, sul sequestro di file.
 - Quantità di dati da acquisire (in teoria il minimo indispensabile, ma è necessario acquisire l'intero disco per poter compiere un'analisi completa).
@@ -515,7 +515,7 @@ Viceversa, GNU/Linux ed i programmi open-source non hanno nessun incentivo comme
 
 ** Acquisizione logica di file
 
-*Collegamenti legali*: acquisizione di file da servizi online, anche se si trovano all'estero, senza bisogno di usare una rogatoria internazionale.
+*Collegamenti giuridici*: acquisizione di file da servizi online, anche se si trovano all'estero, senza bisogno di usare una rogatoria internazionale.
 
 *Acquisizione logica*.  Nei casi in cui non sia possibile acquisire l'intero supporto con la copia forense, è necessario copiare i singoli file che sono disponibili, cercando di preservare quanti più metadati possibile, e disturbando gli altri dati il meno possibile.
 
@@ -526,7 +526,7 @@ ideale delle operazioni è di usare gli strumenti di copia ufficiali prima, dato
 
 ** Acquisizione dalla RAM e del file di ibernazione
 
-*Collegamenti legali*.  La RAM ed il file di ibernazione sono intrinsecamente inaffidabili, al più possono valere come indizi, la loro gravità e precisione va valutata caso per caso.
+*Collegamenti giuridici*.  La RAM ed il file di ibernazione sono intrinsecamente inaffidabili, al più possono valere come indizi, la loro gravità e precisione va valutata caso per caso.
 
 *Difficoltà tecniche*.  Acquisire la RAM mentre il sistema è acceso va a modificarla, si deve acquisire anche la memoria virtuale salvata su disco/file di swap per avere un'acquisizione completa, i formati sono proprietari e non documentati, le tecniche di analisi non sono particolarmente raffinate.
 
@@ -534,7 +534,7 @@ ideale delle operazioni è di usare gli strumenti di copia ufficiali prima, dato
 
 ** Analisi del disco
 
-*Collegamenti legali*.  Natura legale delle operazioni di analisi, difficoltà di applicazione delle categorie tradizionali (ispezione, perquisizione) ai dati digitali.
+*Collegamenti giuridici*.  Natura legale delle operazioni di analisi, difficoltà di applicazione delle categorie tradizionali (ispezione, perquisizione) ai dati digitali.
 
 *Autopsy*.  Operazioni che è possibile compiere, confronti con software proprietario.
 
@@ -544,19 +544,19 @@ ideale delle operazioni è di usare gli strumenti di copia ufficiali prima, dato
 
 ** Acquisizione di siti internet
 
-*Collegamenti legali*.  Necessità di "intercettare" il traffico che viene prodotto dal browser per eliminare la protezione HTTPS, differenza con l'intercettazione propriamente detta, come disciplinata dal c.p.p.
+*Collegamenti giuridici*.  Necessità di "intercettare" il traffico che viene prodotto dal browser per eliminare la protezione HTTPS, differenza con l'intercettazione propriamente detta, come disciplinata dal c.p.p.
 
 *Wireshark*.  Acquisizione forense di siti web.
 
 ** Sequestro di Bitcoin
 
-*Collegamenti legali*.  Definizione legale di Bitcoin e criptovalute, equiparazione ad un bene con valore economico ai fini del sequestro.
+*Collegamenti giuridici*.  Definizione legale di Bitcoin e criptovalute, equiparazione ad un bene con valore economico ai fini del sequestro.
 
 *Cryptowallet*.  Le applicazioni per la gestione dei Bitcoin sono generalmente open-source, quindi è più facile sapere dove il wallet viene salvato, in quale formato, e quali altre informazioni utili per le indagini sono generate dal software (ad es., la lista delle transazioni, etc.)
 
 ** Conservazione dei dati (backup incrementale, filesystem resilienti)
 
-*Collegamenti legali*.  I dati informatici possono essere considerati al pari di beni deperibili, e si devono usare disposizioni per garantire la loro conservazione.
+*Collegamenti giuridici*.  I dati informatici possono essere considerati al pari di beni deperibili, e si devono usare disposizioni per garantire la loro conservazione.
 
 *Sistemi di backup*.  Dopo aver acquisito l'immagine del disco è bene inserirla in un programma di backup incrementale (ad es., Borg, Restic), che provvederà a calcolare l'hash della copia forense, comprimerla, e criptarla, per garantire l'integrità e riservatezza dei dati.
 
@@ -566,7 +566,7 @@ Periodicamente, si può procedere alla verifica del backup utilizzando un solo c
 
 ** Riproducibilità dell'analisi
 
-*Collegamenti legali*.  Così come il codice di procedura penale chiede la conservazione della prova digitale, si dovrebbe anche richiedere la conservazione integra degli strumenti digitali utilizzati per l'analisi della prova.
+*Collegamenti giuridici*.  Così come il codice di procedura penale chiede la conservazione della prova digitale, si dovrebbe anche richiedere la conservazione integra degli strumenti digitali utilizzati per l'analisi della prova.
 
 *Shell script*.  Generalmente i programmi su GNU/Linux sono a riga di comando.  Questo permette di raccogliere i comandi necessari per eseguire un'analisi all'interno di un file di testo, che se eseguito, ripeterà automaticamente tutti i passi.
 
