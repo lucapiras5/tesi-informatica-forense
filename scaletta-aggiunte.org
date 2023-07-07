@@ -1,0 +1,11 @@
+* Packages
+
+Control what software is allowed (DFSG), harmonize software with system (init scripts, create users, etc., risk of breaking things with a manual install), signatures in packages (chain of trust?)
+
+* TUI
+
+Unix (text streams are the universal interface), GUI (usability guidelines for mouse, minimum size for items formula, keyboard navigation and autocompletion, historical TTYs and video of one printing on paper)
+
+* Cathedral/bazaar
+
+Methods in FOSS communities, issues with each (examples of projects)
