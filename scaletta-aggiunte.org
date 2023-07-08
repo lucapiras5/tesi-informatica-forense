@@ -9,3 +9,28 @@ Unix (text streams are the universal interface), GUI (usability guidelines for m
 * Cathedral/bazaar
 
 Methods in FOSS communities, issues with each (examples of projects)
+
+* Documentazione
+
+- Importanza della documentazione in generale:
+  - Software proprietario: la documentazione è l'unica /source of truth/ su come funziona e come usare il programma
+  - FOSS: la documentazione serve anche a giustificare le scelte che sono state fatte, a livello di architettura del software (come è strutturato), e per documentare eventuali /workaround/, bugfix, etc.
+  - Accenno a https://diataxis.fr, distinzione fra i vari tipi di documentazione (tutorial, manuali, /reference guides/)
+  - FOSS tradizionalmente includeva solo le /reference guides/, che sono utili solo se si sa già cosa si sta cercando, attualmente la comunità si è ampliata ed esistono molti più tutorial
+  - Ad es., per quanto riguarda gli editor di testo:
+    - Vim include vimtutor, un /user manual/ ed un /reference manual/, ed anche aiuto su come usare i manuali stessi
+    - Emacs è detto /self-documenting/, permette di ispezionare il codice sorgente e modificarlo durante l'esecuzione del programma stesso, le funzioni e variabili sono documentate, il sistema di aiuto spiega come usarlo, e include i manuali anche per gli altri componenti del sistema
+- Importanza di mantenere codice e documentazione sincronizzati
+  - "Bug" della documentazione: se la documentazione è poco chiara, o se il codice non si comporta come previsto dalla documentazione
+- Licenze per la documentazione:
+  - Diverse dalle licenze per il codice
+  - Si deve scegliere una licenza, altrimenti la documentazione è proprietaria (per la convenzione di Berna)
+  - Creative commons (copyleft se si usa la clausola SA), GFDL (problemi con Debian, la considera non-free)
+- Modalità di documentazione:
+  - Commenti
+  - Documentazione funzioni e strutture di dati, /literate programming/ di Knuth
+  - Documentazione separata (tutorial, guide alla struttura del programma, linee-guida per contribuire)
+- Lettura della documentazione:
+  - Manpages, relativi software
+  - Texinfo, relativi software
+  - Generazione documentazione in file HTML (Sphinx, Doxygen, etc.)
