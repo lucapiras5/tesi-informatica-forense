@@ -67,6 +67,7 @@ Responsabilità per il software
 - SSH: amministrare un server remoto
 - Pacchetti: aggiornamenti per la sicurezza
 - fail2ban, UFW: firewall, blocco IP con cattiva reputazione
+- Security audit di software (ad es., gocryptfs, restic), definizione del /threat model/
 
 * "Formalizzazione" e procedimentalizzazione delle buone pratiche di sviluppo del software
 
