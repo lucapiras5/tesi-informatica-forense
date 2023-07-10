@@ -50,7 +50,7 @@ GitHub arctic vault
 - Definizione oggetto informatica forense e sicurezza informatica (requisiti, limiti discipline, interazioni)
 - Discussione FOSS disponibile per le discipline (questioni giuridiche, tecniche)
 - Definizione FOSS, discussione vantaggi (difficile distinguere le due)
-- Sistemi a supporto del software FOSS (documentazione tecnica libera - tensione legale con segreti industriali, VCS, CI, compilatori FOSS e confronto con proprietari, etc...)
+- Sistemi a supporto del software FOSS (documentazione tecnica libera - tensione legale con segreti industriali, dati necessari per l'uso del software liberi - ad es., driver, etc., VCS, CI, compilatori FOSS e confronto con proprietari, etc...) - analogie con il diritto amministrativo (pubblicità dei dati, procedimento che serve a garantire un livello di qualità e figure responsabili per il raggiungimento degli obiettivi più critici)
 - Sistemi operativi FOSS (GNU/Linux, vantaggi)
 - Hardware FOSS (RISC, smartphone libre, Pinebook...)
 
@@ -61,3 +61,16 @@ Cercare fondazioni/advocacy per il FOSS, attività di promozione e lobbying anch
 Giurisprudenza amministrativa sugli algoritmi
 
 Responsabilità per il software
+
+* Sicurezza informatica
+
+- SSH: amministrare un server remoto
+- Pacchetti: aggiornamenti per la sicurezza
+- fail2ban, UFW: firewall, blocco IP con cattiva reputazione
+
+* "Formalizzazione" e procedimentalizzazione delle buone pratiche di sviluppo del software
+
+- Ossia, documentazione, test e CI, static analysis, fuzzying, etc.
+- Cercare richiami in regolamenti governativi, ordinanze, raccomandazioni, etc.
+- Se non ci sono richiami, evidenziare la necessità e opportunità che lo sviluppo del software sia regolato da un "procedimento" che serve a garantire e legittimare la sua affidabilità, come l'attività amministrativa
+- Creazione di figure specifiche, responsabili per le materie più delicate (ad es., il team per la sicurezza di Debian)
