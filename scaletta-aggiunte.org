@@ -34,3 +34,30 @@ Methods in FOSS communities, issues with each (examples of projects)
   - Manpages, relativi software
   - Texinfo, relativi software
   - Generazione documentazione in file HTML (Sphinx, Doxygen, etc.)
+
+* Curiosità
+
+Open source vs proprietary in LLMs: https://youtube.com/watch?v=9JEMNy4sgkY
+
+Printable compiled code: https://youtube.com/watch?v=LA_DrBwkiJA
+
+CI, Git open-source e self-hosted
+
+GitHub arctic vault
+
+* Nuovo ordine
+
+- Definizione oggetto informatica forense e sicurezza informatica (requisiti, limiti discipline, interazioni)
+- Discussione FOSS disponibile per le discipline (questioni giuridiche, tecniche)
+- Definizione FOSS, discussione vantaggi (difficile distinguere le due)
+- Sistemi a supporto del software FOSS (documentazione tecnica libera - tensione legale con segreti industriali, VCS, CI, compilatori FOSS e confronto con proprietari, etc...)
+- Sistemi operativi FOSS (GNU/Linux, vantaggi)
+- Hardware FOSS (RISC, smartphone libre, Pinebook...)
+
+* Da ricercare
+
+Cercare fondazioni/advocacy per il FOSS, attività di promozione e lobbying anche legale, adozione da parte dei governi
+
+Giurisprudenza amministrativa sugli algoritmi
+
+Responsabilità per il software
