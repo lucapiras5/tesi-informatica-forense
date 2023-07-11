@@ -68,6 +68,9 @@ Responsabilità per il software
 - Pacchetti: aggiornamenti per la sicurezza
 - fail2ban, UFW: firewall, blocco IP con cattiva reputazione
 - Security audit di software (ad es., gocryptfs, restic), definizione del /threat model/
+- Limiti dell'open source: 0day/vulnerabilità e /responsible disclosure/ (rischio che siano sfruttate, vanno comunicate in privato, /bug bounties/ per incentivare la loro comunicazione agli sviluppatori), malware open-source (RE è utile, ma fornire il sorgente può semplificare il lavoro dei malware developer, cf. virus Mirai)
+- Crittografia: branca della sicurezza informatica che i governi regolano espressamente, perché ostacola le indagini (uso di comunicazioni private da parte di cyber-criminali e terroristi, ma errore umano, Silk Road, metadati su Twitter)
+- Fuzzing: /untrusted, unsanitized input/, si applica anche alla digital forensics (ma più per garantire che il programma sia robusto anche in presenza di dati inaspettati o corrotti, /anti-forensics/, più che per evitare danni da exploit, anche se in teoria è possibile, come /stagefright/, etc.)
 
 * "Formalizzazione" e procedimentalizzazione delle buone pratiche di sviluppo del software
 
