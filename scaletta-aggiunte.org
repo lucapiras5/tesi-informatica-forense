@@ -78,3 +78,12 @@ Responsabilità per il software
 - Cercare richiami in regolamenti governativi, ordinanze, raccomandazioni, etc.
 - Se non ci sono richiami, evidenziare la necessità e opportunità che lo sviluppo del software sia regolato da un "procedimento" che serve a garantire e legittimare la sua affidabilità, come l'attività amministrativa
 - Creazione di figure specifiche, responsabili per le materie più delicate (ad es., il team per la sicurezza di Debian)
+
+* Evoluzione del software proprietario
+
+Perché i programmi erano open-source:
+
+- Le macchine erano programmate manualmente (come un abaco)
+- Le macchine servivano ad uno scopo specifico, o avevano una ROM limitata, non c'è grande margine di espressione creativa
+- I protrammatori scrivevsni direttamente in codice macchina (ad es NASA), non esistevano compilatori
+- I computer erano usati per progetti di ricerca, prima che per scopi commerciali (cf. il personal computer negli uffici di imprese, vs. ricercatori)
