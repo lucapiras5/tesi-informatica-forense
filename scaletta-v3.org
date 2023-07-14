@@ -7,6 +7,16 @@ Come il free open-source software (FOSS) può beneficiare le discipline della in
 
 * Struttura
 
+** Introduzione al FOSS e GNU/Linux
+
+- Definizione di software proprietario, di software libero (free open-source software, FOSS).
+- Discussione delle licenze open-source, e dell'uso del diritto d'autore per garantire che il software rimanga libero per le licenze copyleft.
+- Importanza del codice sorgente, irreversibilità della trasformazione in codice macchina.
+- Unit testing/test-driven development come modalità di sviluppo e valutazione del funzionamento del software.
+- Reverse engineering per studiare e re-implementare il software proprietario, problemi legali.
+- Reproducibile builds per garantire la corretta compilazione del codice sorgente, riproducibilità e affidabilità del codice macchina.
+- GNU/Linux come sistema operativo completamente FOSS, di cui si conosce l'esatto funzionamento, uso come "solide fondamenta" per costruire sistemi di sicurezza informatica e digital forensics, che a loro volta usano software FOSS.
+
 ** Sicurezza informatica
 
 - Obiettivi della sicurezza informatica, rapporto con la DF.
@@ -24,26 +34,6 @@ Come il free open-source software (FOSS) può beneficiare le discipline della in
 - Rapporto con la sicurezza informatica.
 - Vantaggi specifici che offre il FOSS per la DF rispetto al software proprietario, da un punto di vista tecnico (conoscibilità dei metodi di analisi, riproducibilità dei risultati) e legale (rispetto del giusto processo)
 - Esempi di attività tipiche e rispettivi software FOSS utilizzabili per la DF.
-
-** Introduzione al FOSS e GNU/Linux
-
-- Definizione di software proprietario, di software libero (free open-source software, FOSS).
-- Discussione delle licenze open-source, e dell'uso del diritto d'autore per garantire che il software rimanga libero per le licenze copyleft.
-- Importanza del codice sorgente, irreversibilità della trasformazione in codice macchina.
-- Unit testing/test-driven development come modalità di sviluppo e valutazione del funzionamento del software.
-- Reverse engineering per studiare e re-implementare il software proprietario, problemi legali.
-- Reproducibile builds per garantire la corretta compilazione del codice sorgente, riproducibilità e affidabilità del codice macchina.
-- GNU/Linux come sistema operativo completamente FOSS, di cui si conosce l'esatto funzionamento, uso come "solide fondamenta" per costruire sistemi di sicurezza informatica e digital forensics, che a loro volta usano software FOSS.
-
-** Hardware libero
-
-- Importanza dell'hardware libero.
-- Esempi.
-
-** Conclusione
-
-- Utilità pratica e valore aggiunto del FOSS.
-- Prospettive future.
 
 * Software proprietario
 
