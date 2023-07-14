@@ -1,7 +1,14 @@
 ## Emacs
 
 *~
+
+## Exports
+
 *.html
+*.odt
+*.pdf
+
+# ---
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
