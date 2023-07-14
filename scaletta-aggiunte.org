@@ -1,3 +1,11 @@
+* (Da discutere all'incontro)
+
+- Protezione legale del software: diritto d'autore, brevetti, segreto industriale: opportuno approfondire?
+- Responsabilità da danno causato da software: opportuno approfondire?
+- Organizzazione nel FOSS: analogia con il diritto amministrativo, organi e procedimenti.
+- Accenno ai version control system.
+- Cybersecurity: definizione europea, cybersecurity certification, linee guida dell'AgID sul software sicuro.
+
 * Packages
 
 Control what software is allowed (DFSG), harmonize software with system (init scripts, create users, etc., risk of breaking things with a manual install), signatures in packages (chain of trust?)
@@ -6,34 +14,12 @@ Control what software is allowed (DFSG), harmonize software with system (init sc
 
 Unix (text streams are the universal interface), GUI (usability guidelines for mouse, minimum size for items formula, keyboard navigation and autocompletion, historical TTYs and video of one printing on paper)
 
-* Cathedral/bazaar
-
-Methods in FOSS communities, issues with each (examples of projects)
-
 * Documentazione
 
-- Importanza della documentazione in generale:
-  - Software proprietario: la documentazione è l'unica /source of truth/ su come funziona e come usare il programma
-  - FOSS: la documentazione serve anche a giustificare le scelte che sono state fatte, a livello di architettura del software (come è strutturato), e per documentare eventuali /workaround/, bugfix, etc.
-  - Accenno a https://diataxis.fr, distinzione fra i vari tipi di documentazione (tutorial, manuali, /reference guides/)
   - FOSS tradizionalmente includeva solo le /reference guides/, che sono utili solo se si sa già cosa si sta cercando, attualmente la comunità si è ampliata ed esistono molti più tutorial
   - Ad es., per quanto riguarda gli editor di testo:
     - Vim include vimtutor, un /user manual/ ed un /reference manual/, ed anche aiuto su come usare i manuali stessi
     - Emacs è detto /self-documenting/, permette di ispezionare il codice sorgente e modificarlo durante l'esecuzione del programma stesso, le funzioni e variabili sono documentate, il sistema di aiuto spiega come usarlo, e include i manuali anche per gli altri componenti del sistema
-- Importanza di mantenere codice e documentazione sincronizzati
-  - "Bug" della documentazione: se la documentazione è poco chiara, o se il codice non si comporta come previsto dalla documentazione
-- Licenze per la documentazione:
-  - Diverse dalle licenze per il codice
-  - Si deve scegliere una licenza, altrimenti la documentazione è proprietaria (per la convenzione di Berna)
-  - Creative commons (copyleft se si usa la clausola SA), GFDL (problemi con Debian, la considera non-free)
-- Modalità di documentazione:
-  - Commenti
-  - Documentazione funzioni e strutture di dati, /literate programming/ di Knuth
-  - Documentazione separata (tutorial, guide alla struttura del programma, linee-guida per contribuire)
-- Lettura della documentazione:
-  - Manpages, relativi software
-  - Texinfo, relativi software
-  - Generazione documentazione in file HTML (Sphinx, Doxygen, etc.)
 
 * Curiosità
 
@@ -54,30 +40,15 @@ GitHub arctic vault
 - Sistemi operativi FOSS (GNU/Linux, vantaggi)
 - Hardware FOSS (RISC, smartphone libre, Pinebook...)
 
-* Da ricercare
-
-Cercare fondazioni/advocacy per il FOSS, attività di promozione e lobbying anche legale, adozione da parte dei governi
-
-Giurisprudenza amministrativa sugli algoritmi
-
-Responsabilità per il software
-
 * Sicurezza informatica
 
 - SSH: amministrare un server remoto
 - Pacchetti: aggiornamenti per la sicurezza
 - fail2ban, UFW: firewall, blocco IP con cattiva reputazione
 - Security audit di software (ad es., gocryptfs, restic), definizione del /threat model/
-- Limiti dell'open source: 0day/vulnerabilità e /responsible disclosure/ (rischio che siano sfruttate, vanno comunicate in privato, /bug bounties/ per incentivare la loro comunicazione agli sviluppatori), malware open-source (RE è utile, ma fornire il sorgente può semplificare il lavoro dei malware developer, cf. virus Mirai)
+
 - Crittografia: branca della sicurezza informatica che i governi regolano espressamente, perché ostacola le indagini (uso di comunicazioni private da parte di cyber-criminali e terroristi, ma errore umano, Silk Road, metadati su Twitter)
 - Fuzzing: /untrusted, unsanitized input/, si applica anche alla digital forensics (ma più per garantire che il programma sia robusto anche in presenza di dati inaspettati o corrotti, /anti-forensics/, più che per evitare danni da exploit, anche se in teoria è possibile, come /stagefright/, etc.)
-
-* "Formalizzazione" e procedimentalizzazione delle buone pratiche di sviluppo del software
-
-- Ossia, documentazione, test e CI, static analysis, fuzzying, etc.
-- Cercare richiami in regolamenti governativi, ordinanze, raccomandazioni, etc.
-- Se non ci sono richiami, evidenziare la necessità e opportunità che lo sviluppo del software sia regolato da un "procedimento" che serve a garantire e legittimare la sua affidabilità, come l'attività amministrativa
-- Creazione di figure specifiche, responsabili per le materie più delicate (ad es., il team per la sicurezza di Debian)
 
 * Evoluzione del software proprietario
 

@@ -1,0 +1,412 @@
+#+TITLE: Scaletta - Tesi di informatica forense
+#+AUTHOR: Luca Piras
+#+LANGUAGE: it
+
+* 1. FOSS
+** Introduzione
+- Il capitolo è dedicato all'analisi del fenomeno del software open-source in generale, partendo dall'assunto che la persona media non sappia cosa sia l'open source, e in cosa si differenzia dal software proprietario.
+- Al termine del capitolo si riassumono le caratteristiche del software open-source che sono utili per le discipline dell'informatica forense e della cybersicurezza.
+** Software proprietario
+*** Rilevanza
+- Il software proprietario si contrappone al software libero, e rappresenta il modello "tipico" di sviluppo del software.  Il problema fondamentale del software proprietario è la difficoltà di capire esattamente come funzioni, dato che spesso il codice sorgente non è disponibile, o non può essere ridistribuito al pubblico.
+*** Nascita del software proprietario
+- Software tradizionalmente era "libero" e "open-source", per vari fattori, il software non era considerato un prodotto da vendere, ma parte integrante dell'hardware.
+- Successivamente inizia ad evolversi il software come prodotto a sé stante, con un valore economico proprio.
+- Diventa necessario proteggere il software proprietario, si applicano le categorie tipiche del diritto intellettuale.
+*** Diritto d'autore
+- Analogia fra software-codice macchina e fotografia (entrambi hanno natura quasi meccanica, ma ci sono scelte creative riguardo la struttura dei programmi/la composizione della foto, pertanto si può applicare il copyright)
+- Software come oggetto del diritto d'autore, software come strumento per il /copyright enforcement/ (DRM, sistemi di rilevazione della violazione di copyright).
+- Applicabilità alle /API/: Google v. Oracle, la reimplementazione delle interfacce di programmazione rientra nel /fair use/.
+*** Brevetti
+- Confronto fra la possibilità di concedere brevetti per il software negli Stati Uniti ed in Europa.
+- In linea generale, in Europa le /software patents/ sono vietate.
+*** Segreto industriale
+- Definizione a livello europeo di segreto industriale, possibilità di protezione del software.
+*** Contratti per l'utilizzatore finale (EULA)
+- Imposizione di limiti e divieti di vario tipo all'uso del software.
+- Clausole di recesso unilaterale per violazione dei termini di servizio.
+** Software libero
+*** Rilevanza
+- Il software libero supera il problema del software proprietario, perché l'accesso al codice sorgente, e la possibilità di studiarlo, è un valore garantito espressamente.
+*** Definizione di software libero
+- Definizione delle quattro libertà fondamentali secondo la FSF.
+- Le licenze libere usano gli strumenti del diritto intellettuale per garantire le libertà degli utenti, invece di limitarle.
+- Le caratteristiche intrinseche del software (in particolare, il fatto che è interattivo, e che viene usato come strumento) richiedono licenze particolari, rispetto al resto delle altre opere soggette al diritto d'autore.
+- Distinzione fra /free software/, /open-source/, /libre software/.
+** Licenze per il software libero
+*** Rilevanza
+- A differenza del software proprietario, il software open-source usa la proprietà intellettuale per garantire la massima espansione dei diritti degli utenti, invece di restringerli.
+*** Licenze ad-hoc
+- Lista della FSF di una serie di licenze, e se sono libere e compatibili con la GPL. https://www.gnu.org/licenses/license-list.html
+- Si preferisce l'uso di licenze standard (cf. identificativi SPDX), rispetto a licenze ad-hoc, che possono essere non libere, o generare incertezze interpretative.
+*** GPL
+- Licenze copyleft, impongono che il software derivato usi la stessa licenza, richiedono la pubblicazione del codice sorgente e modifiche.
+- Nozione espansiva di software derivato (cf. CLISP e GNU readline).
+- Utilizzata per ragioni più idealiste (garantire la libertà del software ad ogni costo) che pragmatiche.
+- GPLv2: usata dal kernel Linux, programmi GNU.
+- GPLv3: serve ad evitare la c.d. /Tivoization/.
+- AGPL: per i servizi su internet, dove il codice risede sul server, e gli utilizzatori ricevono solo una pagina web, chi gestisce il server deve mettere il codice sorgente a disposizione degli utenti.
+- Red Hat Enterprise Linux recentemente ha limitato l'accesso al codice sorgente solo a chi acquista una licenza, legalità di ridistribuire il codice sorgente dopo averlo acquisito. https://www.theregister.com/2023/06/23/red_hat_centos_move/
+*** LGPL
+- Licenza permissive, per le librerie che sono riutilizzate da altri programmi.
+- Cf. glibc (implementazione della libreria standard del linguaggio C creata per il sistema GNU).
+*** MIT
+- Licenza permissive, non richiede che le modifiche siano rese pubbliche.
+- Largamente utilizzata per favorire l'adozione di progetti open-source, specie da grandi imprese, perché pone meno vincoli rispetto alla GPL (cf. /anti-GPL sentiment/, /dependency hell/).
+- Esistono numerose varianti.
+- Utilizzate dai progetti BSD, X window system, Golang...
+*** Limitazione di responsabilità
+- Elemento comune a tutte le licenze open-source.
+- Responsabilità serve per garantire se
+- Giurisprudenza sulla responsabilità, e sul danno da software, specie nel caso di perizie.
+*** Violazione delle licenze
+- Giurisprudenza americana, italiana.
+- Casi a cui ha partecipato la FSF, dato che richiede l'assegnamento del copyright.
+** Licenze per la documentazione
+*** Rilevanza
+- Anche la documentazione deve essere distribuita con una licenza libera.  Si usano licenze diverse rispetto a quelle per il codice.
+*** Documentazione
+- È necessaria per ogni programma, anche quelli proprietari.
+- Per il software proprietario, la documentazione è l'unico punto di riferimento per come usare il programma, e quali caratteristiche e qualifiche tecniche possiede.
+- Per il software libero, anche il codice sorgente (cf. /literate programming/ di Knuth), ed i documenti di progettazione interni sono disponibili al pubblico.
+- Nel software libero, la documentazione serve anche a spiegare e legittimare le scelte tecniche discrezionali che sono state fatte (giustificare il design del programma, documentare /workaround/, segnalare codice problematico, ecc.).
+- Si parla di "bug nella documentazione" se codice e documentazione si comportano in maniera diversa, o se la documentazione non è chiara.
+- Vari tipi di documentazione tecnica: manuali per l'utente, manuali di riferimento, tutorial. Cf. https://diataxis.fr
+- Modalità di generazione (generazione automatica dai commenti, scrittura manuale) e lettura della documentazione (/manpages/, /texinfo/, Doxygen, Sphinx...).
+- È necessario scegliere una licenza per la documentazione, altrimenti per la convenzione di Berna tutti i diritti rimangono riservati.
+*** GFDL
+- Equivalente della GPL per la documentazione del software.
+- Viene considerata una licenza non libera da Debian perché permette l'uso di parti immutabili (/invariant sections/).
+*** Creative Commons
+- Utilizzabile per le opere protette da diritto d'autore in generale.
+- Vari tipi delle licenze CC, loro riconoscimento da parte della giurisprudenza.
+- È copyleft o meno a seconda se si includa la clausola /share-alike/.
+** Licenze per altre opere legate al software libero
+*** Rilevanza
+- Spesso il software richiede opere aggiuntive fornite da terze parti rispetto agli sviluppatori, come basi di dati o plug-in.  Seguono alcune osservazioni riguardo il fatto che anche questi componenti dovrebbero essere forniti con una licenza libera, se sono destinati all'utilizzo con software open-source.
+*** Dataset
+- Spesso i programmi hanno bisogno di dati forniti da soggetti terzi per funzionare.
+- Ad es., un database di hash di virus o di file pedopornografici, ecc...
+- Si pone il problema se la licenza di questi database sia sufficientemente "aperta" oppure no, e quante limitazioni vengono poste al suo uso e ridistribuzione, con o senza modifiche.
+- Ad es., i modelli per le intelligenze artificiali spesso vietano il loro uso commerciale.
+- Se il software è libero, ma ha bisogno di dati forniti da soggetti di terze parti, e questi dati sono sostanzialmente proprietari, si va a frustrare nella pratica la libertà del software.
+*** Estensioni di terze parti
+- Spesso i programmi possono essere estesi con plugin (funzionalità aggiuntive) forniti da soggetti terzi.
+- Idealmente, i plugin dovrebbero essere a loro volta software libero, ma non è strettamente necessario, dato che non sono parte del programma principale.
+- Se si vuole includere il plugin insieme al programma principale, si potrebbero creare problemi di compatibilità fra licenze, a seconda di come il plugin viene integrato (differenza tra unire il codice del plugin a quello del programma principale, e mantenerli separati, ma distribuirli insieme).
+** /Governance/ dei progetti open-source
+*** Rilevanza
+- Il fatto che il software libero sia gratuito ed open-source non significa che sia di scarsa qualità, e che chiunque possa "vandalizzare" il codice sorgente, come succede su Wikipedia.
+- Non sempre i programmatori sono volontari o dilettanti, il codice open-source può essere scritto anche da programmatori professionisti, che per una varietà di motivi decidono di renderlo open-source.
+- Esistono delle procedure che garantiscono la stabilità e qualità del codice: tutti possono proporre modifiche al codice, ma non tutte le modifiche sono accettate.
+- Il software proprietario ha "incentivi perversi" ad essere sviluppato nella maniera più economica possibile, anche a scapito della qualità, e nascondere i difetti, mentre il codice open-source ha l'incentivo opposto, di raggiungere la massima qualità possibile, e di mantenere una buona reputazione.
+*** Chi sviluppa codice open-source
+- Imprese o enti che utilizzano già il software open-source a fini commerciali, e contribuiscono codice, correzioni di bug, ecc.  Ad es., Red Hat, che vende Red Hat Enterprise Linux, contribuisce allo sviluppo del kernel Linux.
+- Imprese o enti che sviluppano un prodotto inizialmente proprietario, ma successivamente lo rendono interamente o in parte software libero.  Ad es., Ghidra della NSA.
+- Imprese che sviluppano un prodotto open-source fin dall'inizio, e si finanziano vendendo supporto tecnico per il prodotto. Ad es., MySQL.
+- Volontari che creano e mantengono software open-source senza scopo di lucro, e possono essere finanziati da donazioni private, sponsor, ecc.  Ad es., Stallman ed il sistema GNU.
+- Nei primi tre casi si tratta di programmatori professionali, solo nell'ultimo caso si può parlare di programmatori dilettanti.
+*** Come si contribuisce ai progetti open-source
+- Distinzione fra le filosofie /cathedral/ (sviluppo centralizzato) e /bazaar/ (decentralizzato) di E. S. Raymond.
+- Ogni progetto ha una pagina di riferimento ufficiale, che può essere aggiornata solo da un numero ristretto di sviluppatori.
+- Le /patches/ (modifiche) possono essere suggerite da chiunque, ma devono essere manualmente approvate dagli sviluppatori, prima che siano incluse nella distribuzione ufficiale.
+- L'approvazione consiste nella /code review/, con cui si verifica che le contribuzioni siano pertinenti al progetto, siano utili (introducono nuove funzionalità, risolvono bug, ecc.), e non dannose. Per l'ultimo punto, cf. delle patch al kernel Linux che introducevano intenzionalmente bug: https://www.toptal.com/linux/university-of-minnesota-linux-open-source-security e https://linuxreviews.org/images/d/d9/OpenSourceInsecurity.pdf
+- In caso di disaccordi sulla gestione del progetto si possono creare dei /fork/ (bivi), e creare un secondo progetto sulla base del primo (ad es., Neovim come /fork/ bazaar di Vim, sviluppato da una sola persona).
+*** Organi e procedimenti
+- Nei progetti più complessi esiste una organizzazione interna e procedimentale analoga a quella del diritto amministrativo.
+- Così come nel diritto amministrativo, la trasparenza, la definizione di procedimenti e la nomina di responsabili è utile per "legittimare" l'uso del software libero, organizzare il lavoro, garantire il rispetto di standard qualitativi, e fornire all'utilizzatore finale un punto di contatto.
+- Ad es., il progetto Debian ha una costituzione. https://www.debian.org/devel/constitution
+- Inoltre, pubblica una lista dei membri che appartengono al progetto, e dei vari organi che la compongono. https://www.debian.org/intro/organization
+- Il /Technical Committee/ risolve le dispute su materie tecniche. https://www.debian.org/devel/tech-ctte
+- Il /Security Team/ è responsabile per la gestione di bug che possono compromettere la sicurezza del sistema operativo.
+- Il rilascio di una nuova versione di Debian prevede una serie di passaggi, che servono a garantire la stabilità del sistema e del software. https://www.debian.org/doc/manuals/debian-faq/ftparchives#frozen
+*** Incentivi nel software proprietario e nel software open-source
+- L'incentivo a sviluppare software proprietario è il profitto, e pertanto c'è un incentivo a minimizzare i costi ed i tempi di sviluppo, anche a scapito della qualità e stabilità del software.
+- Inoltre, c'è l'ulteriore incentivo a nascondere o minimizzare la gravità dei difetti del software, ed esagerare i pregi, per aumentare le vendite.
+- In generale, il software open-source è condizionato in misura molto minore dagli interessi economici, e piuttosto è motivato da avere una buona reputazione.
+- La pressione a minimizzare il tempo di sviluppo è minore, perché non si può parlare di concorrenza di mercato nel software open-source.  Rimane se è sviluppato da sviluppatori professionisti, ma è controbilanciato dal fatto che la /community/ intorno al software può contribuire ulteriori funzionalità o correggere bug, dato che è nel loro interesse che il software funzioni secondo le loro esigenze, e correttamente.
+- L'incentivo a nascondere i difetti o esagerare i pregi non esiste, dato che il codice sorgente è ispezionabile da tutti.
+
+** /Advocacy/ privata e pubblica
+*** Rilevanza
+- L'uso e sviluppo del software open-source sono sostenuti da enti privati e pubblici.  In particolare, si pone il tema dell'uso del software open-source all'interno delle pubbliche amministrazioni.
+*** Enti privati
+- Free Software Foundation: strettamente collegata al progetto GNU. https://www.fsf.org/about/
+- Open Source Initiative: attività di advocacy per l'open source in generale, mantiene una lista di licenze approvate. https://opensource.org/licenses/
+- Linux Foundation: supporta lo sviluppo del kernel Linux, offre servizi di certificazione.
+*** Enti pubblici
+- Adozione del software libero da parte dei governi a livello organizzativo, per sostituire sistemi proprietari.
+- Adozione di software libero per l'attività governativa, specie se deve essere utilizzato per un provvedimento, per ragioni di trasparenza e legittimazione dell'attività amministrativa.
+- Incentivi finanziari per lo sviluppo del software libero.
+*** PA italiana e software libero
+- Commissione Meo sull'open source.
+- Giurisprudenza amministrativa sull'esaminabilità degli algoritmi.
+** Sistemi di controllo della versione
+*** Rilevanza
+- I sistemi di controllo della versione sono uno strumento fondamentale per lo sviluppo del software.  Per fare un'analogia con il sistema giuridico, hanno la stessa funzione dei verbali delle udienze.
+- Permettono di creare e mantenere un archivio storico delle versioni precedenti del programma, e quindi di garantire la piena riproducibilità dell'analisi, usando la stessa versione, anche a distanza di tempo.
+*** Definizione
+- I sistemi di controllo della versione (/version control system/, /VCS/) permettono di tenere traccia delle modifiche (/commit/) che sono state apportate dal codice sorgente.
+- In particolare, si registra l'autore della modifica, il momento in cui viene registrata, un commento che spiega quali cambiamenti sono stati apportati e perché.
+- VCS centralizzati (SVN), decentralizzati (Git).
+- Serve come copia di backup del codice, permette di annullare le modifiche e visualizzare versioni precedenti.
+- Permette la collaborazione fra più sviluppatori (/merge/, /conflict resolution/).
+- Mantiene traccia delle modifiche apportate al progetto (ogni modifica è identificata da un hash univoco), le versioni precedenti possono essere recuperate in qualsiasi momento.
+- Permette di controllare l'integrità del codice (dato che le versioni sono identificate da hash), e di garantire la autenticità/paternità delle modifiche, se i /commit/ sono firmati dall'autore con firma digitale.
+- Quando si parla di bug/vulnerabilità, si fa riferimento al /commit/ che lo ha introdotto, ed il /commit/ che lo ha risolto.
+- Possono essere integrati con sistemi di /continuous integration/, per eseguire i testi in maniera automatica.
+** Verifica del funzionamento del software
+*** Rilevanza
+- La verifica automatica del corretto funzionamento del software è necessaria per potersi fidare dei risultati che il software produce.
+- Si controlla sia che il software fornisca i risultati corretti, in maniera costante, dati input "normali" o validi (riguarda maggiormente l'informatica forense), sia che il software non si comporti in maniera anomala dati input "anomali" (questo secondo aspetto riguarda in maggiore misura la cybersicurezza).
+*** Definizione
+- /V. scaletta precedente per dettagli./
+- Importanza del /testing/: verifica del funzionamento rispetto ad una specifica, evitare regressioni.
+- Tipi di test: /unit test/, /end to end testing/...
+- Cercare richiami al /software testing/ in fonti secondarie, specie se regolano attività rischiose; se mancano richiami, evidenziare la loro necessità ed opportunità.
+- Linee guida per lo sviluppo di software sicuro dell'AgID evidenziano alcune vulnerabilità tipiche del software, si possono creare strumenti che verificano in maniera automatica la presenza di queste vulnerabilità. https://www.agid.gov.it/sites/default/files/repository_files/documentazione/linee_guida_per_lo_sviluppo_sicuro_di_codice_v1.0.pdf
+** Codice sorgente e compilazione
+*** Rilevanza
+- Una breve introduzione alla nozione di compilazione serve per spiegare perché è difficile studiare come funzioni il software proprietario, e di conseguenza, l'importanza della /reverse-engineering/.
+*** Contenuti
+- /V. scaletta precedente per dettagli./
+- Differenza tra codice sorgente, codice macchina.
+- Nozione di compilazione, irreversibilità dell'operazione.
+- Linguaggi compilati, interpretati, bytecode.
+- Utilità della compilazione per il software proprietario (tecniche di /obfuscation/)
+- Necessità della compilazione anche per il software libero.
+** Reverse-engineering
+*** Rilevanza
+- La /reverse-engineering/ è un'operazione necessaria per studiare il funzionamento del software proprietario, in particolare per fini di interoperabilità.
+*** Contenuti
+- /V. scaletta precedente per dettagli./
+- Tensione fra RE e proprietà intellettuale (diritto d'autore, brevetti, segreto industriale).
+- Bilanciamento fra interessi contrastanti (ammessa come fair use negli USA, per fini di interoperabilità nella European Software Directive).
+- RE e documentazione di sistemi e formati proprietari.
+- RE e sistemi di protezione dei dati: divieto di aggirarli (diritto d'autore), potenziale reato informatico se non autorizzato (misure di protezione di sistemi informatici).
+- RE e malware: studio del funzionamento di software dannoso, a fini preventivi e di /incident response/.
+- [V. scaletta precedente per dettagli.]
+** Reproducible builds
+*** Rilevanza
+- Argomento collegato alla compilazione, ai sistemi di controllo della versione, e alla verifica del funzionamento.  Servono a garantire la riproducibilità esatta del codice macchina, e conseguentemente, anche del suo funzionamento.
+*** Contenuti
+- Problema della distribuzione del software, possibilità di modifiche al codice sorgente e binario da parte di terzi.
+- Uso di firme digitali e altre tecniche per garantire la piena riproducibilità dell'operazione di compilazione.
+- https://reproducible-builds.org/docs/publications/
+
+** COMMENT Vantaggi del software proprietario
+- [V. scaletta precedente.]
+
+  # Inserire qui il punto sul finanziamento del software open-source.
+*** Finanziamento del software libero
+**** Rilevanza
+- Il problema fondamentale del software libero è che non è in grado di generare gli stessi profitti, o attirare gli stessi investimenti, del software proprietario, perché è basato su una logica collaborativa e di condivisione, piuttosto che competitiva e di segretezza.
+**** Supporto tecnico a pagamento
+- Software libero (/free software/) non significa necessariamente gratuito.
+- Si può chiedere il pagamento di un prezzo per ottenere una copia del software, ma si deve fornire anche il codice sorgente, e non si può limitare la sua ridistribuzione.
+- Gli sviluppatori non devono necessariamente lavorare /pro bono/, o sperare in finanziamenti di privati o /sponsorship/ da parte di imprese.
+- Possono essere dipendenti di un'impresa che sviluppa software open source, e guadagnare vendendo il supporto tecnico per il software.
+**** Dual licensing
+- Possono fornire essere pagati per aggiungere funzioni specifiche al programma, anche usando uno schema /dual licensing/ per cui se il loro software è usato per scopi commerciali, richiedono il pagamento periodico di una somma a titolo di compensazione.
+
+
+
+** COMMENT Vantaggi del FOSS
+- [V. scaletta precedente.]
+
+  # Spostarlo nella sezione sull'informatica forense. Riprendere i punti elencati in questa sezione, e come rilevano per l'informatica forense.
+
+** COMMENT Bilanciamento tra FOSS e cybersecurity
+- /Responsible disclosure/: se viene scoperta una vulnerabilità, deve essere comunicata in privato agli sviluppatori, per evitare che siano sfruttate.  Almeno temporaneamente, è necessario un momento di segretezza, che contrasta con l'impostazione normalmente trasparente del software libero.  I /bug bounties/ funzionano come un incentivo legale a comunicare le vulnerabilità, piuttosto che utilizzarle.
+- Malware open-source: sviluppare malware open-source a fini educativi, o fornire il sorgente sorgente a seguito di un /leak/, può semplificare il lavoro dei malware developer. Cf. il virus Mirai.
+* 2. Informatica forense
+
+[ Sezione ripresa dalla scaletta precedente, senza modifiche. ]
+
+** Definizione
+- Definizione di informatica forense, standard di riferimento.
+
+** Obiettivi
+
+Si possono dividere le attività di informatica forense in tre tipi:
+
+- Individuazione, acquisizione e conservazione della prova digitale.
+- Analisi della prova digitale, ricostruzione delle dinamiche che hanno portato a quell'assetto, individuazione di alterazioni intenzionali.
+- Presentazione dei risultati.
+
+*Acquisizione*.  È la fase che beneficia maggiormente dal software open-source, data la sua natura tendenzialmente irripetibile.  I dati digitali, ed i supporti su cui sono conservati, sono fragili.  È meglio limitare il più possibile il numero di volte in cui si deve acquisire un supporto.
+
+*Analisi*.  L'uso di software open-source è preferibile, ma non strettamente necessaria.  Il software open-source è maggiormente vicino all'ideale del giusto processo, dato che la difesa è messa in condizione di conoscere esattamente il funzionamento del software, e può meglio contestare anche gli aspetti strettamente tecnici, come gli algoritmi usati, ecc.
+
+In presenza di software proprietario, la difesa può solo difendersi in maniera più generica, e cercare di screditare i risultati del software proprietario con software open-source, argomentando che è un risultato maggiormente affidabile, perché il codice sorgente funziona come se fosse una "motivazione" dettagliata del risultato raggiunto.
+
+*Presentazione*.  La presentazione è una fase puramente cosmetica, in cui si illustrano i risultati, e l'uso di software FOSS o meno è di scarsa rilevanza.
+
+** Collegamenti giuridici
+
+- Codice penale: regola i reati contro sistemi informatici, ma l'informatica forense può essere utilizzata per raccogliere informazioni da sistemi informatici anche dopo il compimento di reati tradizionali.
+- Codice di procedura penale: detta i principi generali su come trattare le prove informatiche.
+- Standard tecnici: formalizzano le procedure necessarie per garantire la corretta acquisizione e conservazione della prova digitale.
+- Giurisprudenza sulla prova scientifica: come la prova scientifica in generale, e la digital evidence in particolare, devono essere valutate dal giudice, commenti sulle sentenze che trattano di aspetti tecnici della informatica forense.
+
+** Differenze con la sicurezza informatica
+
+*Sicurezza informatica*.  Ha natura preventiva, e serve ad evitare che i sistemi siano colpiti da attacchi, e non si interessa in maniera particolare di "come" funziona il software, ma solo se il software sia sicuro o meno.
+
+*Informatica forense*.  Interviene durante o dopo un attacco informatico, e serve a raccogliere elementi utili per capire come l'attacco ha avuto inizio, quali dati sono stati sottratti o distrutti, e altri elementi utili per le indagini penali.
+
+Dato che l'informatica forense deve essere in grado di rilevare le tracce dell'evento, e ricostruire la dinamica dei fatti, per questa disciplina è necessario sapere "come" il software funzioni, quali informazioni produca, ecc.
+
+Inoltre, mentre la cybersecurity è esclusivamente legata alla protezione di un sistema informatico come oggetto di attacchi, le tecniche di informatica forense possono essere utilizzate oltre che per i reati informatici (commessi /contro/ un computer), anche per raccogliere informazioni utili per investigare reati tradizionali, commessi contro altre persone /per mezzo/ di un computer, o comunque, altre informazioni utili).
+
+** Vantaggi del FOSS per l'informatica forense
+
+*Diritto di difesa e principio del contraddittorio*.  Se vengono usati strumenti open-source, l'imputato può difendersi meglio, perché può conoscere come funziona il programma.
+
+*Piena riproducibilità dei risultati*.  Dato che il software open source è liberamente ridistribuibile, è possibile depositare una copia degli strumenti che sono stati utilizzati, o anche dell'intero sistema operativo che è stato utilizzato per svolgere l'analisi, compresi i risultati stessi, senza violare il diritto d'autore.
+
+In ogni caso, è sempre possibile ricompilare la esatta versione del programma che era stata utilizzata al momento dell'analisi.
+
+*Costi minori e maggiore efficienza*.  Non si devono pagare licenze per software proprietario, ed il sistema operativo può essere ottimizzato per le operazioni di digital forensics.
+
+Inoltre, per i programmi che usano la linea di comando, si possono usare i c.d. shell script per automatizzare le operazioni ripetitive.
+
+*Maggiore affidabilità*.  "Open-source" non significa che chiunque può contribuire al progetto, o che gli sviluppatori non siano professionisti o non abbiano conoscenze tecniche.
+
+È stato dimostrato che il software open-source tende ad avere meno bug, proprio perché ci sono meno barriere al suo utilizzo e sviluppo.
+
+Inoltre, gli sviluppatori non hanno nessun incentivo commerciale a nascondere i difetti del loro programma.
+
+*Maggiore privacy e sicurezza*.  È ben noto che Windows raccoglie e invia grandi quantità di dati alla Microsoft, ed è probabile che anche il software proprietario includa questo tipo di misure.
+
+Viceversa, GNU/Linux ed i programmi open-source non hanno nessun incentivo commerciale a sottrarre dati dagli utenti.
+
+** Acquisizione forense di dischi
+
+*Collegamenti giuridici*:
+
+- Giurisprudenza sul sequestro del supporto, sul sequestro di file.
+- Quantità di dati da acquisire (in teoria il minimo indispensabile, ma è necessario acquisire l'intero disco per poter compiere un'analisi completa).
+- Altre norme applicabili per le prove (ad es., conservazione presso custode).
+
+*Linux*.  Il kernel Linux può essere compilato in modo che tutti i dispositivi siano montati in sola lettura.
+
+*GNU dd*.  È maggiormente affidabile rispetto al suo equivalente UNIX.
+
+** TODO Mobile forensics
+
+*Collegamenti giuridici*: acquisizione di file da servizi online, anche se si trovano all'estero, senza bisogno di usare una rogatoria internazionale.
+
+*Acquisizione logica*.  Nei casi in cui non sia possibile acquisire l'intero supporto con la copia forense, è necessario copiare i singoli file che sono disponibili, cercando di preservare quanti più metadati possibile, e disturbando gli altri dati il meno possibile.
+
+Ad es., acquisizioni di dati da smartphone, da servizi di backup personale come Dropbox o Google Drive, da servizi di data storage come Amazon Web Services, da servizi proprietari come Google Takeout.
+
+** TODO Cloud forensics
+
+*Rclone*.  Software FOSS, permette di acquisire dati da numerosi servizi online.  L'ordine
+ideale delle operazioni è di usare gli strumenti di copia ufficiali prima, dato che è meno probabile che possano influenzare negativamente i dati.
+
+** Memory forensics
+
+*Collegamenti giuridici*.  La RAM ed il file di ibernazione sono intrinsecamente inaffidabili, al più possono valere come indizi, la loro gravità e precisione va valutata caso per caso.
+
+*Difficoltà tecniche*.  Acquisire la RAM mentre il sistema è acceso va a modificarla, si deve acquisire anche la memoria virtuale salvata su disco/file di swap per avere un'acquisizione completa, i formati sono proprietari e non documentati, le tecniche di analisi non sono particolarmente raffinate.
+
+*Volatility*.  Framework per l'acquisizione della memoria RAM e del file di ibernazione.
+
+** Acquisizione di siti internet
+
+*Collegamenti giuridici*.  Necessità di "intercettare" il traffico che viene prodotto dal browser per eliminare la protezione HTTPS, differenza con l'intercettazione propriamente detta, come disciplinata dal c.p.p.
+
+*Wireshark*.  Acquisizione forense di siti web.
+** TODO Captatatore
+** Analisi del disco
+
+*Collegamenti giuridici*.  Natura legale delle operazioni di analisi, difficoltà di applicazione delle categorie tradizionali (ispezione, perquisizione) ai dati digitali.
+
+*Autopsy*.  Operazioni che è possibile compiere, confronti con software proprietario.
+
+*Data carving*.  Recupero di file cancellati o parzialmente sovrascritti.
+
+*Timeline*.  Programmi che ricostruiscono l'evoluzione del contenuto del disco su una linea temporale, utili per dimostrare per quanto tempo un file è esistito, quando è stato aperto l'ultima volta, ecc.
+
+** Conservazione dei dati (backup incrementale, filesystem resilienti)
+
+*Collegamenti giuridici*.  I dati informatici possono essere considerati al pari di beni deperibili, e si devono usare disposizioni per garantire la loro conservazione.
+
+*Sistemi di backup*.  Dopo aver acquisito l'immagine del disco è bene inserirla in un programma di backup incrementale (ad es., Borg, Restic), che provvederà a calcolare l'hash della copia forense, comprimerla, e criptarla, per garantire l'integrità e riservatezza dei dati.
+
+Periodicamente, si può procedere alla verifica del backup utilizzando un solo comando.  Se è necessario aprire l'immagine, si può estrarre il contenuto del backup, ed il software verificherà che non si siano verificati errori.
+
+*Filesystem resilienti*.  È bene conservare il backup che contiene la copia su filesystem open-source, studiati appositamente per prevenire la perdita di dati, come ZFS.  Sono supportati nativamente da Linux.
+
+** Riproducibilità dell'analisi
+
+*Collegamenti giuridici*.  Così come il codice di procedura penale chiede la conservazione della prova digitale, si dovrebbe anche richiedere la conservazione integra degli strumenti digitali utilizzati per l'analisi della prova.
+
+*Shell script*.  Generalmente i programmi su GNU/Linux sono a riga di comando.  Questo permette di raccogliere i comandi necessari per eseguire un'analisi all'interno di un file di testo, che se eseguito, ripeterà automaticamente tutti i passi.
+
+Dato che i sistemi GNU/Linux possono essere riprodotti senza problemi di copyright, è possibile copiare insieme il sistema operativo, le fonti (immagini forensi, acquisizione della RAM, traffico di Wireshark, ecc.), ed i comandi necessari per estrarre dalle fonti le informazioni utili, e avere un archivio autosufficiente, che contiene tutti gli elementi necessari un'analisi riproducibile nel futuro, mediante l'esecuzione di uno o pochi comandi.
+* 3. Cybersecurity
+** Definizione
+- Nozione di cybersecurity: finalizzata alla protezione delle persone, la sicurezza dei dati è solo un mezzo e non il fine ultimo.
+- Cybersecurity intesa come processo, come status, come diritto. https://www.sciencedirect.com/science/article/pii/S0267364922000012
+- Report ENISA. https://www.enisa.europa.eu/publications/definition-of-cybersecurity
+** Crittografia
+- Rilevanza: fornisce strumenti fondamentali per l'informatica forense, la cybersicurezza, e le buone pratiche per lo sviluppo del software open-source, come /hash/, firme digitali, è fondamentale per la sicurezza delle comunicazioni (protocollo HTTPS).
+- Standard crittografici riconosciuti dal SOG-IS. https://www.sogis.eu/documents/cc/crypto/SOGIS-Agreed-Cryptographic-Mechanisms-1.3.pdf
+- Implementazioni FOSS degli algoritmi crittografici indicati, tra cui /hash functions/, /disk encryption/, /digital signature/, /TLS/.
+- Rapporto tra crittografia e digital forensics.
+** European Cybersecurity Act
+- Cf. http://eur-lex.europa.eu/eli/reg/2019/881/oj
+- Creazione dell'ENISA.
+- Istituzione di una certificazione per la cybersicurezza.
+** TODO Candidate EUCC Scheme
+- Cf. https://www.enisa.europa.eu/publications/cybersecurity-certification-eucc-candidate-scheme-v1-1.1
+- Scopo
+- /Assurance levels/
+
+** Consultazione pubblica sul Candidate EUCC Scheme
+- Cf. https://www.enisa.europa.eu/publications/enisa-report-public_consultation-on-the-draft-candidate-eucc-scheme
+** TODO Uso del FOSS per la certificazione
+- Margini di uso del FOSS.
+
+[ Sezione ripresa dalla scaletta precedente, senza modifiche. ]
+
+*Rilevanza.*  Un conto è mettere in sicurezza un sistema (in maniera "soggettiva"), un altro conto è certificare in maniera "oggettiva" che un sistema presenta dei determinati requisiti di sicurezza.
+
+La definizione dei contenuti della certificazione e della procedura rientra nella discrezione dei governi (ad es., ENISA a livello europeo nel contesto del Cybersecurity Act) o privati, ed esce dalle competenze del FOSS.
+
+*Importanza del FOSS per la certificazione*.  Tuttavia, il software-certificante (il software che sarà usato per accertare che il sistema-certificando presenta i requisiti) dovrebbe essere FOSS.  Nell'ipotesi peggiore, il sistema-certificando è proprietario, e quindi si può solo verificare "se" funziona, e non anche il "come" funziona.
+
+A questo punto, ci si deve fidare interamente del software-certificante, perché non si può verificare "perché" un determinato test è stato superato o meno, dal punto di vista del software-certificando, perché è una "scatola nera".
+
+Se non si conosce neanche l'esatto funzionamento del software-certificante, si cade in una situazione in cui il fatto se un test è stato passato o meno non genera alcuna conoscenza utile.  Presupporre il perfetto funzionamento di entrambe i sistemi sarebbe irragionevole, a quel punto non avrebbe senso fare una certificazione.
+
+Pertanto, se i sistemi possono contenere errori di programmazione, come si fa a determinare se un errore è stato commesso, e da chi, se non si può fare altro che doversi fidare di entrambi?
+
+Questo ragionamento si applica in particolare se le certificazioni sono conferite, o hanno rilevanza per, la pubblica amministrazione, data la rilevanza del principio della trasparenza dell'azione amministrativa.  Se la PA certifica un programma, o usa un programma con una data certificazione, per dare una "legittimazione" a quell'operazione, è necessaria la trasparenza riguardo le modalità di certificazione.
+* 4. GNU/Linux
+** Perché usare GNU/Linux
+- Presenta tutti i vantaggi del FOSS, dato che il kernel Linux ed il sistema operativo GNU sono software completamente open-source, largamente utilizzati nella pratica.
+- Li estende anche al sistema operativo, eliminando una "scatola nera" ed un margine di incertezza dall'analisi.
+** Introduzione storica
+- Rapporto fra Unix, GNU e Linux.
+** Gestione dei pacchetti
+- Non esiste una distribuzione "standard" di Linux, ma ogni distribuzione mantiene un archivio di pacchetti che possono essere installati.
+- Modelli di distribuzione: fixed-point, rolling, functional (bilanciamento fra aggiornamenti e stabilità, intesa come prevedibilità del funzionamento del programma).
+- Integrità e paternità dei pacchetti, controllati con /hash/ e firme digitali.
+- Pacchetti binari e pacchetti sorgente.
+- Problema delle patch introdotte dagli sviluppatori della distribuzione (ad es., Debian), problema di doversi fidare delle compilazione fatta da terzi per i pacchetti binari.
+** Distribuzioni Linux per la cybersecurity
+- Kali Linux.
+** Distribuzioni Linux per l'informatica forense
+- DEFT, Kaine, Tsurugi, FIT.
+- Chiedere informazioni agli sviluppatori.
+** COMMENT Hardware open-source
+- Vantaggi: eliminare un'ulteriore scatola nera, avere la piena conoscibilità dell'intero sistema che si usa per l'analisi.
+- RISC-V.
+
+* Conclusione
+- Dimostrazione dell'utilità e vantaggi che il software libero offre, rispetto al software proprietario.
+- Prospettive future per un maggiore uso del software libero.
