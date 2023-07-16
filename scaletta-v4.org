@@ -153,20 +153,24 @@
 - In generale, il software open-source è condizionato in misura molto minore dagli interessi economici, e piuttosto è motivato da avere una buona reputazione.
 - La pressione a minimizzare il tempo di sviluppo è minore, perché non si può parlare di concorrenza di mercato nel software open-source.  Rimane se è sviluppato da sviluppatori professionisti, ma è controbilanciato dal fatto che la /community/ intorno al software può contribuire ulteriori funzionalità o correggere bug, dato che è nel loro interesse che il software funzioni secondo le loro esigenze, e correttamente.
 - L'incentivo a nascondere i difetti o esagerare i pregi non esiste, dato che il codice sorgente è ispezionabile da tutti.
-** /Advocacy/ privata e pubblica
+** Adozione del FOSS da parte della PA
 *** Rilevanza
-- L'uso e sviluppo del software open-source sono sostenuti da enti privati e pubblici.  In particolare, si pone il tema dell'uso del software open-source all'interno delle pubbliche amministrazioni.
-*** Enti privati
+- Il software open-source è particolarmente adatto a garantire i principi fondamentali del diritto amministrativo a seguito della trasformazione digitale, grazie al fatto che si può analizzare il funzionamento del codice sorgente.
+- La disponibilità del codice sorgente è analogo all'obbligo di motivazione del un provvedimento, e specie nel caso in cui un provvedimento sia stato adottato sulla base di un algoritmo, il codice sorgente va ad integrarne la motivazione, ed è soggetto al sindacato del giudice.
+*** COMMENT Enti privati
 - Free Software Foundation: strettamente collegata al progetto GNU. https://www.fsf.org/about/
 - Open Source Initiative: attività di advocacy per l'open source in generale, mantiene una lista di licenze approvate. https://opensource.org/licenses/
 - Linux Foundation: supporta lo sviluppo del kernel Linux, offre servizi di certificazione.
-*** Enti pubblici
+*** Rapporto fra PA e FOSS
 - Adozione del software libero da parte dei governi a livello organizzativo, per sostituire sistemi proprietari.
 - Adozione di software libero per l'attività governativa, specie se deve essere utilizzato per un provvedimento, per ragioni di trasparenza e legittimazione dell'attività amministrativa.
 - Incentivi finanziari per lo sviluppo del software libero.
-*** PA italiana e software libero
-- Commissione Meo sull'open source.
-- Giurisprudenza amministrativa sull'esaminabilità degli algoritmi.
+*** Commissione Meo
+- /Indagine conoscitiva sul software a codice sorgente aperto nella Pubblica Amministrazione/. http://www.interlex.it/testi/pdf/indag_os.pdf
+*** Giurisprudenza amministrativa sull'esaminabilità degli algoritmi
+- Progressiva espansione della possibilità di usare algoritmi (varie sentenze). https://www.ildirittoamministrativo.it/provvedimento-amministrativo-adottato-mediante-algoritmo-ruolo-intelligenza-artificiale-processo-decisionale-della-PA-ANNA-LAURA-RUM/ted771
+- Enunciazione dei principi di conoscibilità, comprensibilità, non-discriminazione algoritmica (Consiglio di Stato del 04.04.2020, n. 881). https://www.irpa.eu/focus-sentenze-g-a-su-decisioni-algoritmiche-lalgoritmo-non-docet/
+- Se si usa un algoritmo completamente automatizzato, è necessaria la possibilità del controllo del risultato da parte del giudice (Tar Napoli, sez. VII, 14 novembre 2022, n. 7003). https://www.diritto.it/quando-lalgoritmo-informatico-e-applicato-nel-procedimento-amministrativo/
 ** Sistemi di controllo della versione
 *** Rilevanza
 - I sistemi di controllo della versione sono uno strumento fondamentale per lo sviluppo del software.  Per fare un'analogia con il sistema giuridico, hanno la stessa funzione dei verbali delle udienze.
