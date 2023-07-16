@@ -2,7 +2,34 @@
 #+AUTHOR: Luca Piras
 #+LANGUAGE: it
 
-* 1. FOSS
+* Introduzione
+** Argomento della tesi
+- Uso del FOSS per la digital forensics e la cybersecurity.
+- In particolare, benefici che derivano dalla ispezionabilità e riproducibilità del FOSS.
+** Struttura
+*** FOSS
+- Discussione del fenomeno del free, open-source software (FOSS) in generale, per non dare nulla di scontato, partendo dall'assunto che la persona media non sia a conoscenza di cosa sia, e come funzioni.
+- Ispezionabilità: il codice sorgente è liberamente leggibile, e specie nel caso delle licenze copyleft, è obbligatorio fornire una copia del codice sorgente e di eventuali modifiche insieme al codice compilato.
+- Riproducibilità intesa come ridistribuzione: le licenze libere permettono e garantiscono la piena ridistribuzione del codice e della documentazione.
+- Riproducibilità intesa come garanzia del funzionamento del software costante e prevedibile: le tecniche di /testing/ e le /reproducibile builds/ garantiscono che il software continui a funzionare correttamente, e che la compilazione dello stesso codice sorgente risulti sempre nello stesso codice macchina, riducendo il rischio di bug che derivano da come il software è compilato.
+*** Informatica forense
+- Definizione dell'oggetto dell'informatica forense.
+- Prova informatica e giusta prova: l'ispezionabilità del codice sorgente permette un contraddittorio più fruttuoso sulle effettive capacità dello strumento, e dà maggiori garanzie per la difesa.
+- Prova informatica e prova scientifica: crisi della riproducibilità nella ricerca scientifica, le caratteristiche intrinseche del software open-source permettono di "congelare" l'esatta versione dello strumento che ha compiuto l'analisi, e di ridistribuirla insieme ai dati oggetto di analisi, e di verificare il corretto funzionamento del software, in modo che la procedura di analisi sia sempre riproducibile, anche a distanza di tempo.
+- Attività tipiche di informatica forense: relative questioni giuridiche, e software open-source disponibile.
+*** Cybersicurezza
+- Definizione di cybersicurezza.
+- Discussione del /Cybersecurity Act/, e al /Candidate EUCC Scheme/.
+- Opportunità di usare software open-source: la ispezionabilità del programma e della metodologia e la possibilità di riprodurre i risultati danno maggiore legittimità alla certificazione, rispondono al principio della trasparenza, permettono un controllo diffuso.
+- Discussione degli svantaggi che possono derivare da una certificazione di sicurezza aperta.
+*** GNU/Linux
+- Problema della "sequenza di scatole nere" fra hardware e software, utilità di usare un sistema operativo basato interamente sul free software.
+- Caratteristiche dei sistemi operativi Linux, e in particolare di come garantire la integrità e riproducibilità del sistema e del software installato.
+- Discussione delle distribuzioni Linux specifiche per le attività di informatica forense e cybersecurity.
+*** Conclusione
+- Riassunto del perché è opportuno usare il software open-source.
+- Discussione dei limiti attuali, e di prospettive future.
+* FOSS
 ** Introduzione
 - Il capitolo è dedicato all'analisi del fenomeno del software open-source in generale, partendo dall'assunto che la persona media non sappia cosa sia l'open source, e in cosa si differenzia dal software proprietario.
 - Al termine del capitolo si riassumono le caratteristiche del software open-source che sono utili per le discipline dell'informatica forense e della cybersicurezza.
@@ -126,7 +153,6 @@
 - In generale, il software open-source è condizionato in misura molto minore dagli interessi economici, e piuttosto è motivato da avere una buona reputazione.
 - La pressione a minimizzare il tempo di sviluppo è minore, perché non si può parlare di concorrenza di mercato nel software open-source.  Rimane se è sviluppato da sviluppatori professionisti, ma è controbilanciato dal fatto che la /community/ intorno al software può contribuire ulteriori funzionalità o correggere bug, dato che è nel loro interesse che il software funzioni secondo le loro esigenze, e correttamente.
 - L'incentivo a nascondere i difetti o esagerare i pregi non esiste, dato che il codice sorgente è ispezionabile da tutti.
-
 ** /Advocacy/ privata e pubblica
 *** Rilevanza
 - L'uso e sviluppo del software open-source sono sostenuti da enti privati e pubblici.  In particolare, si pone il tema dell'uso del software open-source all'interno delle pubbliche amministrazioni.
@@ -219,7 +245,7 @@
 ** COMMENT Bilanciamento tra FOSS e cybersecurity
 - /Responsible disclosure/: se viene scoperta una vulnerabilità, deve essere comunicata in privato agli sviluppatori, per evitare che siano sfruttate.  Almeno temporaneamente, è necessario un momento di segretezza, che contrasta con l'impostazione normalmente trasparente del software libero.  I /bug bounties/ funzionano come un incentivo legale a comunicare le vulnerabilità, piuttosto che utilizzarle.
 - Malware open-source: sviluppare malware open-source a fini educativi, o fornire il sorgente sorgente a seguito di un /leak/, può semplificare il lavoro dei malware developer. Cf. il virus Mirai.
-* 2. Informatica forense
+* Informatica forense
 
 [ Sezione ripresa dalla scaletta precedente, senza modifiche. ]
 
@@ -347,7 +373,7 @@ Periodicamente, si può procedere alla verifica del backup utilizzando un solo c
 *Shell script*.  Generalmente i programmi su GNU/Linux sono a riga di comando.  Questo permette di raccogliere i comandi necessari per eseguire un'analisi all'interno di un file di testo, che se eseguito, ripeterà automaticamente tutti i passi.
 
 Dato che i sistemi GNU/Linux possono essere riprodotti senza problemi di copyright, è possibile copiare insieme il sistema operativo, le fonti (immagini forensi, acquisizione della RAM, traffico di Wireshark, ecc.), ed i comandi necessari per estrarre dalle fonti le informazioni utili, e avere un archivio autosufficiente, che contiene tutti gli elementi necessari un'analisi riproducibile nel futuro, mediante l'esecuzione di uno o pochi comandi.
-* 3. Cybersecurity
+* Cybersecurity
 ** Definizione
 - Nozione di cybersecurity: finalizzata alla protezione delle persone, la sicurezza dei dati è solo un mezzo e non il fine ultimo.
 - Cybersecurity intesa come processo, come status, come diritto. https://www.sciencedirect.com/science/article/pii/S0267364922000012
@@ -386,7 +412,7 @@ Se non si conosce neanche l'esatto funzionamento del software-certificante, si c
 Pertanto, se i sistemi possono contenere errori di programmazione, come si fa a determinare se un errore è stato commesso, e da chi, se non si può fare altro che doversi fidare di entrambi?
 
 Questo ragionamento si applica in particolare se le certificazioni sono conferite, o hanno rilevanza per, la pubblica amministrazione, data la rilevanza del principio della trasparenza dell'azione amministrativa.  Se la PA certifica un programma, o usa un programma con una data certificazione, per dare una "legittimazione" a quell'operazione, è necessaria la trasparenza riguardo le modalità di certificazione.
-* 4. GNU/Linux
+* GNU/Linux
 ** Perché usare GNU/Linux
 - Presenta tutti i vantaggi del FOSS, dato che il kernel Linux ed il sistema operativo GNU sono software completamente open-source, largamente utilizzati nella pratica.
 - Li estende anche al sistema operativo, eliminando una "scatola nera" ed un margine di incertezza dall'analisi.
