@@ -14,8 +14,8 @@
 - Riproducibilità intesa come garanzia del funzionamento del software costante e prevedibile: le tecniche di /testing/ e le /reproducibile builds/ garantiscono che il software continui a funzionare correttamente, e che la compilazione dello stesso codice sorgente risulti sempre nello stesso codice macchina, riducendo il rischio di bug che derivano da come il software è compilato.
 *** Informatica forense
 - Definizione dell'oggetto dell'informatica forense.
-- Prova informatica e giusta prova: l'ispezionabilità del codice sorgente permette un contraddittorio più fruttuoso sulle effettive capacità dello strumento, e dà maggiori garanzie per la difesa.
-- Prova informatica e prova scientifica: crisi della riproducibilità nella ricerca scientifica, le caratteristiche intrinseche del software open-source permettono di "congelare" l'esatta versione dello strumento che ha compiuto l'analisi, e di ridistribuirla insieme ai dati oggetto di analisi, e di verificare il corretto funzionamento del software, in modo che la procedura di analisi sia sempre riproducibile, anche a distanza di tempo.
+- Prova digitale e giusta prova: l'ispezionabilità del codice sorgente permette un contraddittorio più fruttuoso sulle effettive capacità dello strumento, e dà maggiori garanzie per la difesa.
+- Prova digitale e prova scientifica: crisi della riproducibilità nella ricerca scientifica, le caratteristiche intrinseche del software open-source permettono di "congelare" l'esatta versione dello strumento che ha compiuto l'analisi, e di ridistribuirla insieme ai dati oggetto di analisi, e di verificare il corretto funzionamento del software, in modo che la procedura di analisi sia sempre riproducibile, anche a distanza di tempo.
 - Attività tipiche di informatica forense: relative questioni giuridiche, e software open-source disponibile.
 *** Cybersicurezza
 - Definizione di cybersicurezza.
@@ -254,12 +254,8 @@
 - Malware open-source: sviluppare malware open-source a fini educativi, o fornire il sorgente sorgente a seguito di un /leak/, può semplificare il lavoro dei malware developer. Cf. il virus Mirai.
 * Informatica forense
 
-[ Sezione ripresa dalla scaletta precedente, senza modifiche. ]
-
 ** Definizione
-- Definizione di informatica forense, standard di riferimento.
-
-** Obiettivi
+*Rilevanza.* Definire in maniera teorica in che cosa consiste l'informatica forense e la prova digitale.
 
 Si possono dividere le attività di informatica forense in tre tipi:
 
