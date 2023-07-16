@@ -174,7 +174,8 @@
 ** Sistemi di controllo della versione
 *** Rilevanza
 - I sistemi di controllo della versione sono uno strumento fondamentale per lo sviluppo del software.  Per fare un'analogia con il sistema giuridico, hanno la stessa funzione dei verbali delle udienze.
-- Permettono di creare e mantenere un archivio storico delle versioni precedenti del programma, e quindi di garantire la piena riproducibilità dell'analisi, usando la stessa versione, anche a distanza di tempo.
+- Permettono di creare e mantenere un archivio storico delle versioni precedenti del programma, e di garantire la paternità ed integrità delle modifiche.
+- È sempre possibile estrarre una specifica versione precedente dall'archivio, anche a distanza di tempo, per ripetere la stessa analisi.  Inoltre, agevolano la diffusione capillare del codice sorgente (ogni sviluppatore ha una copia completa del codice), e la sua sincronizzazione con la distribuzione ufficiale.
 *** Definizione
 - I sistemi di controllo della versione (/version control system/, /VCS/) permettono di tenere traccia delle modifiche (/commit/) che sono state apportate dal codice sorgente.
 - In particolare, si registra l'autore della modifica, il momento in cui viene registrata, un commento che spiega quali cambiamenti sono stati apportati e perché.
@@ -189,6 +190,7 @@
 *** Rilevanza
 - La verifica automatica del corretto funzionamento del software è necessaria per potersi fidare dei risultati che il software produce.
 - Si controlla sia che il software fornisca i risultati corretti, in maniera costante, dati input "normali" o validi (riguarda maggiormente l'informatica forense), sia che il software non si comporti in maniera anomala dati input "anomali" (questo secondo aspetto riguarda in maggiore misura la cybersicurezza).
+- È un tema strettamente collegato all'uso dei sistemi di controllo della versione (il codice ed i relativi test vengono registrati nello stesso archivio, i sistemi di /continuous integration/ permettono di eseguire automaticamente i test dopo la creazione di un /commit/).
 *** Definizione
 - /V. scaletta precedente per dettagli./
 - Importanza del /testing/: verifica del funzionamento rispetto ad una specifica, evitare regressioni.
@@ -197,7 +199,8 @@
 - Linee guida per lo sviluppo di software sicuro dell'AgID evidenziano alcune vulnerabilità tipiche del software, si possono creare strumenti che verificano in maniera automatica la presenza di queste vulnerabilità. https://www.agid.gov.it/sites/default/files/repository_files/documentazione/linee_guida_per_lo_sviluppo_sicuro_di_codice_v1.0.pdf
 ** Codice sorgente e compilazione
 *** Rilevanza
-- Una breve introduzione alla nozione di compilazione serve per spiegare perché è difficile studiare come funzioni il software proprietario, e di conseguenza, l'importanza della /reverse-engineering/.
+- Spiegare in cosa consiste la compilazione permette di comprendere a pieno perché il software proprietario è distribuito solo in forma compilata, e perché è così importante garantire l'accesso al codice sorgente per il software libero.
+- Serve come introduzione teorica per il capitolo successivo, in cui si discute della nozione e utilità tecnica della /reverse-engineering/, e dei problemi legali che comporta.
 *** Contenuti
 - /V. scaletta precedente per dettagli./
 - Differenza tra codice sorgente, codice macchina.
@@ -207,7 +210,7 @@
 - Necessità della compilazione anche per il software libero.
 ** Reverse-engineering
 *** Rilevanza
-- La /reverse-engineering/ è un'operazione necessaria per studiare il funzionamento del software proprietario, in particolare per fini di interoperabilità.
+- La /reverse-engineering/ è un'operazione necessaria per studiare il funzionamento del software proprietario, che viene distribuito solo in formato compilato, in particolare per fini di interoperabilità.
 *** Contenuti
 - /V. scaletta precedente per dettagli./
 - Tensione fra RE e proprietà intellettuale (diritto d'autore, brevetti, segreto industriale).
