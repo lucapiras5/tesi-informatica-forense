@@ -379,7 +379,7 @@
 - Se vengono scoperte nuove vulnerabilità, che potrebbero compromettere la certificazione di sicurezza, si prevede l'uso obbligatorio di un meccanismo chiamato /maintenance activities/.
 - Ipotetico uso di FOSS: se gli strumenti usati per la certificazione sono pubblici, i produttori del software possono usare loro stessi gli strumenti di certificazione per rilevare immediatamente se sono a rischio, e provvedere di conseguenza.
 - Inoltre, gli sviluppatori che vogliono richiedere una certificazione hanno sempre a disposizione l'ultima versione dei test che saranno eseguiti nei confronti del loro programma.  Questo permette di aumentare in maniera immediata la qualità del software.
-*** /Rules related to handling vulnerabilities (pag. 51)
+*** /Rules related to handling vulnerabilities/ (pag. 51)
 - Regole per la /responsible disclosure/ delle vulnerabilità.
 - È uno dei casi in cui la piena trasparenza è controproducente, perché fornire i dettagli di una vulnerabilità al pubblico significa fornirla anche ad attaccanti che non ne erano a conoscenza.
 - È meglio contattare in maniera confidenziale gli sviluppatori, e poi eventualmente pubblicare i risultati (cf. /embargo period/, pag. 53).
