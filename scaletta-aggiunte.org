@@ -10,22 +10,6 @@
 
 Elemento comune: riproducibilità (del codice, della certificazione, dell'analisi)
 
-Certificazione: rilasciate da agenzia nazionale cybersicurezza, hanno una valenza governativa, devono essere soggette ai principi della trasparenza e controllo diffuso
-
-Definire quali strumenti (esatta versione) sono stati usati e operazioni sono state eseguite, e verificare che i risultati siano riproducibili: legittima la certificazione, permette un controllo diffuso, in caso di mancata riproducibilità si può investigare perché ciò non è successo (ed eventualmente correggere bug nel test/programma, o renderli più robusti)
-
-Se gli strumenti e il know-how non sono limitati ai tecnici, ma diventano di dominio pubblico, si legittima in misura maggiore la certificazione, e si crea una cultura della sicurezza che in maniera virtuosa alza la qualità del software e rende più consapevoli gli operatori dei rischi
-
-* Rischi certificazioni aperte
-
-Rischi: abuso degli strumenti (improbabile, i malintenzionati sono una minoranza), eccesso di fiducia nella sicurezza (realistico, il meme del "military grade encryption"), certificazioni fai-da-te
-
-Forniscono agli attaccanti informazioni utili (sanno già quali attacchi non utilizzare), ma anche i ricercatori per la cybersecurity avranno a disposizione le stesse informazioni, e potranno cercare di anticipare gli attaccanti, segnalando miglioramenti per la certificazione
-
-In ogni caso, è bene rendere pubbliche le informazioni relative a come eseguire un attacco e quali sistemi sono vulnerabili, perché probabilmente sono già conosciute e sfruttate da malintenzionati (0day)
-
-Imprese preferiscono rischiare piuttosto che pagare per avere una certificazione di sicurezza (cf. Ford che preferiva pagare risarcimenti piuttosto che creare macchine sicure): qualificazione attività su internet come attività pericolose, serve mettere in atto tutte le misure necessarie per evitare danni, sanzioni amministrative per data breach (se dovuti a colpa, scarsa attenzione alla sicurezza, mancanza di misure preventive, ecc.) che incoraggiano la messa in sicurezza dei sistemi
-
 * Packages
 
 Control what software is allowed (DFSG), harmonize software with system (init scripts, create users, etc., risk of breaking things with a manual install), signatures in packages (chain of trust?)
@@ -36,10 +20,10 @@ Unix (text streams are the universal interface), GUI (usability guidelines for m
 
 * Documentazione
 
-  - FOSS tradizionalmente includeva solo le /reference guides/, che sono utili solo se si sa già cosa si sta cercando, attualmente la comunità si è ampliata ed esistono molti più tutorial
-  - Ad es., per quanto riguarda gli editor di testo:
-    - Vim include vimtutor, un /user manual/ ed un /reference manual/, ed anche aiuto su come usare i manuali stessi
-    - Emacs è detto /self-documenting/, permette di ispezionare il codice sorgente e modificarlo durante l'esecuzione del programma stesso, le funzioni e variabili sono documentate, il sistema di aiuto spiega come usarlo, e include i manuali anche per gli altri componenti del sistema
+- FOSS tradizionalmente includeva solo le /reference guides/, che sono utili solo se si sa già cosa si sta cercando, attualmente la comunità si è ampliata ed esistono molti più tutorial
+- Ad es., per quanto riguarda gli editor di testo:
+  - Vim include vimtutor, un /user manual/ ed un /reference manual/, ed anche aiuto su come usare i manuali stessi
+  - Emacs è detto /self-documenting/, permette di ispezionare il codice sorgente e modificarlo durante l'esecuzione del programma stesso, le funzioni e variabili sono documentate, il sistema di aiuto spiega come usarlo, e include i manuali anche per gli altri componenti del sistema
 
 * Curiosità
 
@@ -58,17 +42,13 @@ GitHub arctic vault
 - Definizione FOSS, discussione vantaggi (difficile distinguere le due)
 - Sistemi a supporto del software FOSS (documentazione tecnica libera - tensione legale con segreti industriali, dati necessari per l'uso del software liberi - ad es., driver, etc., VCS, CI, compilatori FOSS e confronto con proprietari, etc...) - analogie con il diritto amministrativo (pubblicità dei dati, procedimento che serve a garantire un livello di qualità e figure responsabili per il raggiungimento degli obiettivi più critici)
 - Sistemi operativi FOSS (GNU/Linux, vantaggi)
-- Hardware FOSS (RISC, smartphone libre, Pinebook...)
 
 * Sicurezza informatica
 
-- SSH: amministrare un server remoto
 - Pacchetti: aggiornamenti per la sicurezza
-- fail2ban, UFW: firewall, blocco IP con cattiva reputazione
 - Security audit di software (ad es., gocryptfs, restic), definizione del /threat model/
 
 - Crittografia: branca della sicurezza informatica che i governi regolano espressamente, perché ostacola le indagini (uso di comunicazioni private da parte di cyber-criminali e terroristi, ma errore umano, Silk Road, metadati su Twitter)
-- Fuzzing: /untrusted, unsanitized input/, si applica anche alla digital forensics (ma più per garantire che il programma sia robusto anche in presenza di dati inaspettati o corrotti, /anti-forensics/, più che per evitare danni da exploit, anche se in teoria è possibile, come /stagefright/, etc.)
 
 * Evoluzione del software proprietario
 
