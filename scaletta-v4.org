@@ -415,18 +415,32 @@
 - Gli sviluppatori vengono a conoscenza delle vulnerabilità più comuni, ottengono strumenti e conoscenze per verificar la loro presenza di persona, senza pagare costosi /code audit/, e anche il software non certificato diventa comunque più sicuro, perché segue comunque (anche se magari solo in parte) le /best practices/ che vengono aggiornate e rese liberamente disponibili al pubblico.
 ** Rischi di una certificazione aperta
 *** Abuso degli strumenti
-- (improbabile, i malintenzionati sono una minoranza), eccesso di fiducia nella sicurezza (realistico, il meme del "military grade encryption")
+- Argomento a sfavore della cultura della sicurezza: democratizzare gli strumenti usati per la sicurezza informatica significa anche insegnare alla persona media quali vulnerabilità sfruttare in un sistema informatico.
+- Analogia con il reato di possesso ingiustificato di strumenti per aprire serrature codice penale (art. 707 c.p.).
+- Parte dal presupposto discutibile che la persona media sarebbe disposta a commettere un reato, o che la persona media non è a conoscenza dei reati informatici esistono, due presupposti che sono abbastanza irragionevoli.
 *** Informazioni utili per gli attaccanti
-Forniscono agli attaccanti informazioni utili (sanno già quali attacchi non utilizzare), ma anche i ricercatori per la cybersecurity avranno a disposizione le stesse informazioni, e potranno cercare di anticipare gli attaccanti, segnalando miglioramenti per la certificazione
-
-In ogni caso, è bene rendere pubbliche le informazioni relative a come eseguire un attacco e quali sistemi sono vulnerabili, perché probabilmente sono già conosciute e sfruttate da malintenzionati (0day)
-*** Eccesso di fiducia
-*** Incentivo perverso per le imprese
-Imprese preferiscono rischiare piuttosto che pagare per avere una certificazione di sicurezza (cf. Ford che preferiva pagare risarcimenti piuttosto che creare macchine sicure): qualificazione attività su internet come attività pericolose, serve mettere in atto tutte le misure necessarie per evitare danni, sanzioni amministrative per data breach (se dovuti a colpa, scarsa attenzione alla sicurezza, mancanza di misure preventive, ecc.) che incoraggiano la messa in sicurezza dei sistemi
-
+- Argomento più ragionevole: una certificazione completamente aperta, che indica in maniera puntuale e dettagliata a quale tipo di attacchi un sistema può resistere, equivale ad invitare potenziali attaccanti a usare solo attacchi non già compresi nella certificazione.
+- Rimane il fatto che i ricercatori della cybersicurezza hanno accesso alle stesse informazioni, e possono cercare di anticipare le mosse degli attaccanti, e trovare vulnerabilità prima che siano sfruttate.
+- È bene partire dal presupposto che se una vulnerabilità esiste, sarà comunque trovata da un attaccante, indipendentemente dalla pubblicazione di informazioni; pertanto, è nel proprio interesse fornire quante più informazioni possibili ai propri "alleati".
+- In ogni caso, per un attaccante è più facile cercare un sistema poco sicuro (/low-hanging fruit/) che impegnarsi ad entrare in un sistema più sicuro.
+- È per questo motivo che è necessario innalzare il livello medio della sicurezza il prima possibile, ed eliminare i sistemi più deboli e facilmente attaccabili.
+*** Eccesso di fiducia nella sicurezza
+- Altro argomento ragionevole: la democratizzazione degli strumenti per la cybersecurity può portare ad un eccesso di fiducia nella sicurezza.
+- Cf. l'espressione /military-grade encryption/, termine di marketing per indicare l'algoritmo di crittografia standard AES-256, largamente usato dai "civili" per le normali connessioni HTTPS su internet. Cf. https://blog.winzip.com/military-grade-encryption/ e https://crypto.stackexchange.com/a/95611 e https://crypto.stackexchange.com/a/62513
+- Le autocertificazioni sono vietate, ma si potrebbe comunque pubblicizzare il proprio prodotto con un vago riferimento agli "standard di sicurezza europei", dopo che la certificazione europea diventa largamente conosciuta dal pubblico.
+*** Incentivo perverso per le imprese a non ottenere la certificazione
+- Caso patologico: le imprese potrebbero preferire non pagare per ottenere una certificazione di sicurezza, e al più accontentarsi di un più economico approccio fai-da-te.
+- Cf. il caso della Ford Pinto, per cui la Ford trovava più economico pagare risarcimenti, che mettere in sicurezza il proprio prodotto. https://www.tortmuseum.org/ford-pinto/
+- È necessario creare incentivi affinché le imprese più a rischio si mettano in sicurezza.
+- Ad es., qualificare alcune attività su internet (specie se trattano di dati sensibili) come attività pericolose (art. 2050 c.c., richiedere una certificazione di sicurezza per esonerare l'impresa da responsabilità).
+- Ad es., imporre sanzioni amministrative a seguito di eventi come data breach, ed escludere la colpa solo in presenza di misure di sicurezza che erano ragionevolmente idonee, ecc.
+- Problema: la certificazione diventerebbe in buona sostanza un'autorizzazione amministrativa obbligatoria per svolgere certe attività, potrebbe contrastare con i principi del diritto europeo sul libero mercato
+- D'altro canto, la sempre maggiore dipendenza da sistemi informatici giustifica la necessità di renderli sicuri, anche sacrificando in parte altri valori.
 ** Consultazione pubblica sul Candidate EUCC Scheme
 - Cf. https://www.enisa.europa.eu/publications/enisa-report-public_consultation-on-the-draft-candidate-eucc-scheme
 - Alcuni soggetti hanno deciso di non utilizzare lo schema europeo perché usavano già altri schemi.
+- Ipotetico uso di FOSS: l'UE si potrebbe distinguere per l'adozione di uno schema che incoraggia l'uso del FOSS per la sicurezza, e come spiegato, questo porterebbe ad un effetto positivo di democratizzazione e creazione di una cultura della sicurezza, che smetterebbe di essere dominio di pochi, e diventerebbe, a vantaggio di tutti, di dominio pubblico.
+- Gli esperti della cybersicurezza non saranno sostituiti dal "volgo", ma raggiungeranno il loro obiettivo, di rendere i sistemi più sicuri, in maniera più efficace.
 * GNU/Linux
 ** Perché usare GNU/Linux
 - Presenta tutti i vantaggi del FOSS, dato che il kernel Linux ed il sistema operativo GNU sono software completamente open-source, largamente utilizzati nella pratica.
