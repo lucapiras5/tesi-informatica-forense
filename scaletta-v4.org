@@ -8,22 +8,23 @@
 :END:
 ** Argomento della tesi
 - Uso del FOSS per la digital forensics e la cybersecurity.
-- In particolare, benefici che derivano dalla ispezionabilità e riproducibilità del FOSS.
+- In particolare, benefici e vantaggi che derivano dalla ispezionabilità e riproducibilità del FOSS.
 ** Struttura
 *** FOSS
 - Discussione del fenomeno del free, open-source software (FOSS) in generale, per non dare nulla di scontato, partendo dall'assunto che la persona media non sia a conoscenza di cosa sia, e come funzioni.
+- Discussione di come si contribuisce ai progetti open-source, per sfatare il mito che i progetti open-source sono scritti solo da dilettanti e non anche da professionisti e grandi imprese, o che un prodotto vale solo quanto costa, e se un prodotto è gratuito vuol dire che non è di buona qualità.
 - Ispezionabilità: il codice sorgente è liberamente leggibile, e specie nel caso delle licenze copyleft, è obbligatorio fornire una copia del codice sorgente e di eventuali modifiche insieme al codice compilato.
 - Riproducibilità intesa come ridistribuzione: le licenze libere permettono e garantiscono la piena ridistribuzione del codice e della documentazione.
-- Riproducibilità intesa come garanzia del funzionamento del software costante e prevedibile: le tecniche di /testing/ e le /reproducibile builds/ garantiscono che il software continui a funzionare correttamente, e che la compilazione dello stesso codice sorgente risulti sempre nello stesso codice macchina, riducendo il rischio di bug che derivano da come il software è compilato.
+- Riproducibilità intesa come garanzia del funzionamento del software in maniera costante e prevedibile: le tecniche di /testing/ e le /reproducible builds/ garantiscono che il software continui a funzionare correttamente, e che la compilazione dello stesso codice sorgente risulti sempre nello stesso codice macchina, riducendo il rischio di bug che derivano da come il software è compilato.
 *** Informatica forense
-- Definizione dell'oggetto dell'informatica forense.
+- Definizione dell'oggetto dell'informatica forense, rapporto con la cybersicurezza.
 - Prova digitale e giusta prova: l'ispezionabilità del codice sorgente permette un contraddittorio più fruttuoso sulle effettive capacità dello strumento, e dà maggiori garanzie per la difesa.
 - Prova digitale e prova scientifica: crisi della riproducibilità nella ricerca scientifica, le caratteristiche intrinseche del software open-source permettono di "congelare" l'esatta versione dello strumento che ha compiuto l'analisi, e di ridistribuirla insieme ai dati oggetto di analisi, e di verificare il corretto funzionamento del software, in modo che la procedura di analisi sia sempre riproducibile, anche a distanza di tempo.
-- Attività tipiche di informatica forense: relative questioni giuridiche, e software open-source disponibile.
+- Attività tipiche di informatica forense: relative questioni giuridiche, e software open-source disponibile per svolgerle.
 *** Cybersicurezza
 - Definizione di cybersicurezza.
 - Discussione del /Cybersecurity Act/, e al /Candidate EUCC Scheme/.
-- Opportunità di usare software open-source: la ispezionabilità del programma e della metodologia e la possibilità di riprodurre i risultati danno maggiore legittimità alla certificazione, rispondono al principio della trasparenza, permettono un controllo diffuso.
+- Opportunità di usare software open-source: la ispezionabilità del programma e della metodologia e la possibilità di riprodurre i risultati danno maggiore legittimità alla certificazione, rispondono al principio della trasparenza dell'azione amministrativa, permettono un controllo diffuso, permettono di diffondere know-how tecnico al pubblico per aumentare il livello di sicurezza del software in generale.
 - Discussione degli svantaggi che possono derivare da una certificazione di sicurezza aperta.
 *** GNU/Linux
 - Problema della "sequenza di scatole nere" fra hardware e software, utilità di usare un sistema operativo basato interamente sul free software.
@@ -77,11 +78,11 @@
 - Volontari che creano e mantengono software open-source senza scopo di lucro, e possono essere finanziati da donazioni private, sponsor, ecc.  Ad es., Stallman ed il sistema GNU.
 - Nei primi tre casi si tratta di programmatori professionali, solo nell'ultimo caso si può parlare di programmatori dilettanti.
 *** Come si contribuisce ai progetti open-source
-- Distinzione fra le filosofie /cathedral/ (sviluppo centralizzato) e /bazaar/ (decentralizzato) di E. S. Raymond.
+- Distinzione fra le filosofie /cattedrale/ (sviluppo centralizzato) e /bazar/ (decentralizzato) di E. S. Raymond.
 - Ogni progetto ha una pagina di riferimento ufficiale, che può essere aggiornata solo da un numero ristretto di sviluppatori.
 - Le /patches/ (modifiche) possono essere suggerite da chiunque, ma devono essere manualmente approvate dagli sviluppatori, prima che siano incluse nella distribuzione ufficiale.
 - L'approvazione consiste nella /code review/, con cui si verifica che le contribuzioni siano pertinenti al progetto, siano utili (introducono nuove funzionalità, risolvono bug, ecc.), e non dannose. Per l'ultimo punto, cf. delle patch al kernel Linux che introducevano intenzionalmente bug: https://www.toptal.com/linux/university-of-minnesota-linux-open-source-security e https://linuxreviews.org/images/d/d9/OpenSourceInsecurity.pdf
-- In caso di disaccordi sulla gestione del progetto si possono creare dei /fork/ (bivi), e creare un secondo progetto sulla base del primo (ad es., Neovim come /fork/ bazaar di Vim, sviluppato da una sola persona).
+- In caso di disaccordi sulla gestione del progetto si possono creare dei /fork/ (bivi), e creare un secondo progetto sulla base del primo (ad es., Neovim come /fork/ bazar di Vim, sviluppato da una sola persona).
 *** Organi e procedimenti
 - Nei progetti più complessi esiste una organizzazione interna e procedimentale analoga a quella del diritto amministrativo.
 - Così come nel diritto amministrativo, la trasparenza, la definizione di procedimenti e la nomina di responsabili è utile per "legittimare" l'uso del software libero, organizzare il lavoro, garantire il rispetto di standard qualitativi, e fornire all'utilizzatore finale un punto di contatto.
@@ -133,7 +134,7 @@
 - Utilizzata per ragioni più idealiste (garantire la libertà del software ad ogni costo) che pragmatiche.
 - GPLv2: usata dal kernel Linux, programmi GNU.
 - GPLv3: serve ad evitare la c.d. /Tivoization/.
-- AGPL: per i servizi su internet, dove il codice risede sul server, e gli utilizzatori ricevono solo una pagina web, chi gestisce il server deve mettere il codice sorgente a disposizione degli utenti.
+- AGPL: per i servizi su internet, dove il codice risiede sul server, e gli utilizzatori ricevono solo una pagina web, chi gestisce il server deve mettere il codice sorgente a disposizione degli utenti.
 - Red Hat Enterprise Linux recentemente ha limitato l'accesso al codice sorgente solo a chi acquista una licenza, legalità di ridistribuire il codice sorgente dopo averlo acquisito. https://www.theregister.com/2023/06/23/red_hat_centos_move/
 **** LGPL
 - Licenza permissive, per le librerie che sono riutilizzate da altri programmi.
@@ -182,7 +183,7 @@
 - Spesso i programmi possono essere estesi con plugin (funzionalità aggiuntive) forniti da soggetti terzi.
 - Idealmente, i plugin dovrebbero essere a loro volta software libero, ma non è strettamente necessario, dato che non sono parte del programma principale.
 - Se si vuole includere il plugin insieme al programma principale, si potrebbero creare problemi di compatibilità fra licenze, a seconda di come il plugin viene integrato (differenza tra unire il codice del plugin a quello del programma principale, e mantenerli separati, ma distribuirli insieme).
-** Garanzie di riproducibilità del software open-souce
+** Garanzie di riproducibilità del software open-source
 *** Sistemi di controllo della versione
 **** Rilevanza
 - I sistemi di controllo della versione sono uno strumento fondamentale per lo sviluppo del software.  Per fare un'analogia con il sistema giuridico, hanno la stessa funzione dei verbali delle udienze.
@@ -208,7 +209,7 @@
 - Importanza del /testing/: verifica del funzionamento rispetto ad una specifica, evitare regressioni.
 - Tipi di test: /unit test/, /end to end testing/...
 - Cercare richiami al /software testing/ in fonti secondarie, specie se regolano attività rischiose; se mancano richiami, evidenziare la loro necessità ed opportunità.
-- Linee guida per lo sviluppo di software sicuro dell'AgID evidenziano alcune vulnerabilità tipiche del software, si possono creare strumenti che verificano in maniera automatica la presenza di queste vulnerabilità. https://www.agid.gov.it/sites/default/files/repository_files/documentazione/linee_guida_per_lo_sviluppo_sicuro_di_codice_v1.0.pdf
+# - Linee guida per lo sviluppo di software sicuro dell'AgID evidenziano alcune vulnerabilità tipiche del software, si possono creare strumenti che verificano in maniera automatica la presenza di queste vulnerabilità. https://www.agid.gov.it/sites/default/files/repository_files/documentazione/linee_guida_per_lo_sviluppo_sicuro_di_codice_v1.0.pdf
 *** Reproducible builds
 **** Rilevanza
 - Argomento collegato alla compilazione, ai sistemi di controllo della versione, e alla verifica del funzionamento.  Servono a garantire la riproducibilità esatta del codice macchina, e conseguentemente, anche del suo funzionamento.
@@ -295,7 +296,7 @@
 *** Prova digitale e principio del contraddittorio
 - *Importanza dell'uso del software open-source per realizzare nella maggiore misura possibile il principio del contraddittorio, contenuto nel principio del giusto processo.*
 - Permette un sindacato più profondo da parte del perito e delle parti, che entra nel "merito" di come funziona concretamente il software open-source, e non si ferma ad un sindacato "formale", l'unico possibile con uno strumento proprietario.
-- In particolare, se l'accusa usa prove ottenute con un software proprietario, la difesa può ripetere l'analisi e addurre prove a discarico usando software libero, argomentare che il loro risultato è qualitativamente più affidabile, perché *gli strumenti open-source sono sottoposti ad una /peer review/ costante da parte di esperti (dimostrabile facendo riferimento alle pubblicazioni accademiche; gli strumenti FOSS non sono necessariamente sviluppati da programmatori dilettanti, o semplci appassionati; esistono "incentivi perversi" nel software proprietario a trascurare e minimizzare gli errori di programmazione)*, e ingenerare un ragionevole dubbio nel giudice.
+- In particolare, se l'accusa usa prove ottenute con un software proprietario, la difesa può ripetere l'analisi e addurre prove a discarico usando software libero, argomentare che il loro risultato è qualitativamente più affidabile, perché *gli strumenti open-source sono sottoposti ad una /peer review/ costante da parte di esperti (dimostrabile facendo riferimento alle pubblicazioni accademiche; gli strumenti FOSS non sono necessariamente sviluppati da programmatori dilettanti, o semplici appassionati; esistono "incentivi perversi" nel software proprietario a trascurare e minimizzare gli errori di programmazione)*, e ingenerare un ragionevole dubbio nel giudice.
 - *L'uso di strumenti open-source produce un'analisi intrinsecamente ripetibile nel tempo (il codice può essere ridistribuito liberamente insieme ai dati oggetto di analisi, si può sempre verificare il corretto funzionamento del software con le tecniche di /testing/ e /reproducible builds/); e anche nel caso patologico di analisi sullo stesso dato, ma che producono risultati diversi, è possibile cercare di capire il motivo della divergenza analizzando il codice sorgente.  Il software proprietario non offre queste stesse garanzie.*
 *** Altri vantaggi del FOSS per la digital forensics
 - Esistono altri vantaggi, di natura più tecnica che legale, che vale prendere in considerazione.
@@ -312,7 +313,7 @@
 - Distribuzioni Linux per informatica forense: modificano kernel per montare i dispositivi in sola lettura, eliminano una possibile causa di modifiche accidentali ai dati (v. ultimo capitolo).
 *** Mobile forensics
 - Cf. https://github.com/den4uk/andriller ed il modulo Android in Autopsy
-- Questioni giuridiche legate all'applicazione del sequestro di corrispodenza all'acquisizione di messaggi non aperti, come e-mail scaricate ma non lette, o messaggi di WhatsApp.
+- Questioni giuridiche legate all'applicazione del sequestro di corrispondenza all'acquisizione di messaggi non aperti, come e-mail scaricate ma non lette, o messaggi di WhatsApp.
 - Difficoltà di estrarre il supporto che contiene i dati (c.d. /chip-off/).
 - Acquisizione di backup dei dati del telefono fatti su computer o /cloud/.
 - Acquisizione logica dei singoli file mediante /live forensics/.
