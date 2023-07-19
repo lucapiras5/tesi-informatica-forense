@@ -1,6 +1,8 @@
 #+TITLE: Scaletta - Tesi di informatica forense
 #+AUTHOR: Luca Piras
 #+LANGUAGE: it
+#+LATEX_CLASS_OPTIONS: [book,12pt]
+#+LATEX_HEADER: \usepackage{mathptmx}\usepackage{geometry}\geometry{a4paper,top=40mm,bottom=40mm,left=3.25cm,right=3.25cm}
 
 * Introduzione
 :PROPERTIES:
