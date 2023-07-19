@@ -56,5 +56,22 @@ Perché i programmi erano open-source:
 
 - Le macchine erano programmate manualmente (come un abaco)
 - Le macchine servivano ad uno scopo specifico, o avevano una ROM limitata, non c'è grande margine di espressione creativa
-- I protrammatori scrivevsni direttamente in codice macchina (ad es NASA), non esistevano compilatori
+- I programmatori scrivevano direttamente in codice macchina (ad es NASA), non esistevano compilatori
 - I computer erano usati per progetti di ricerca, prima che per scopi commerciali (cf. il personal computer negli uffici di imprese, vs. ricercatori)
+
+* Considerazioni su RE
+
+RE, decompilazione, ricompilazione:
+
+- Caso peggiore: codice sorgente è violazione di copyright con un passo in più, basta solo ricompilare e si ottiene lo stesso hash
+- Caso meno peggiore: codice sorgente è presunto sostanzialmente identico all'originale, dato che compila nello stesso codice macchina, è improbabile che due implementazioni diverse producono lo stesso codice, salvo casi più semplici, c'è rischio di danni alla concorrenza (ad es., decompilazione SM64, Nintendo offre la versione HD, c'è ancora interesse e non si potrebbe neppure argomentare che è "abandonware")
+- Caso migliore: compilazione si considera violazione di copyright, codice è ridistribuibile ma solo per finalità educative, il rischio per la concorrenza esiste solo se compilato *e* distribuito al pubblico, si ammettono compilazioni "personali"
+- Problema della licenza per il codice decompilato (GPL vieta limiti all'uso, ma la giurisprudenza potrebbe includere dei limiti; sorta di dual-licensing clandestino e non volito dagli sviluppatori originali; prevarrebbe il diritto nazionale)
+
+RE di singole parti a fini di interoperabilità va ammesso, ma in maniera non restrittiva (eufemismo per "estensiva")
+
+* Considerazioni su copyright e database
+
+Utilità modelli di intelligenza artificiale se gli hashsets non bastano
+
+Hashsets/modelli: copyright? (Feist negli USA, diritto Europeo sui database in Italia)
