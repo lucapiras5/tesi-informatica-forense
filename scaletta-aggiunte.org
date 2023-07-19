@@ -4,7 +4,6 @@
 - Responsabilità da danno causato da software: opportuno approfondire?
 - Organizzazione nel FOSS: analogia con il diritto amministrativo, organi e procedimenti.
 - Accenno ai version control system.
-- Cybersecurity: definizione europea, cybersecurity certification, linee guida dell'AgID sul software sicuro.
 
 * Nuovo tema comune
 
@@ -75,3 +74,11 @@ RE di singole parti a fini di interoperabilità va ammesso, ma in maniera non re
 Utilità modelli di intelligenza artificiale se gli hashsets non bastano
 
 Hashsets/modelli: copyright? (Feist negli USA, diritto Europeo sui database in Italia)
+
+* Captatori e cybersecurity
+
+Captatori: tipico software closed-source, devono essere soggetti a test, i test dovrebbero essere aperti.
+
+Tentativo di cercare di certificare i captatori, non riuscito.
+
+Riferimento alla certificazione ENISA, o altre certificazioni adeguate per lo scopo.
