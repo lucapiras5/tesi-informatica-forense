@@ -1,3 +1,10 @@
+* Nuove idee
+
+- Opportunità di abbandonare la cybersecurity, e ridurla ad un accenno
+- Giurisprudenza in cui l'oggetto del processo non è l'acquisizione di dati digitali, ma l'uso di strumenti informatici (ad es., per l'ingegneria civile, nel campo medico, ecc.), e si considera se gli algoritmi contenuti nello strumento sono conoscibili o meno
+- Esempi di reverse-engineering: Nouveau?
+- Github Copilot e le licenze open-source
+
 * (Da discutere all'incontro)
 
 - Protezione legale del software: diritto d'autore, brevetti, segreto industriale: opportuno approfondire?
