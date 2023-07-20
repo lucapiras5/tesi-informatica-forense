@@ -1,3 +1,24 @@
+* Da approfondire
+
+- *Origine informatica forense in Italia*.
+- *Informatica forense come disciplina scientifica:*
+  - Distinzione fra riproducibilità e ripetibilità degli esperimenti.
+- *Captatore:*
+  - Esempio tipico di software che deve essere closed-source.
+  - Cattura informazioni in tempo reale, rende impossibile verificare la correttezza del processo di cattura (acquisizione come fase dell'informatica forense che beneficia in maggiore misura dell'uso di software open-source).
+  - Dottrina contro l'uso del captatore, compromesso (si può usare il captatore, ma chiedere standard elevati di verifica del suo funzionamento).
+- Catene di custodia con Git (Merkle tree?): uso di firme digitali come pseudo-marche temporali, leggere il CAD per le specifiche tecniche.
+- *Software open-source:*
+  - Anche se gratuito, c'è comunque un elemento commerciale (i tecnici saranno comunque pagati per installarlo e mantenerlo).
+  - Presenta costi operativi minori rispetto al software commerciale, evita il /lock-in/.
+- *Computer come scatole nere:*
+  - Citazione di Gammarota.
+  - Anche se le specifiche tecniche dell'hardware sono pubbliche, c'è comunque il rischio di /errata/ non documentati.
+- *Natura del software open-source:*
+  - Licenza come contratto fra le parti, software come opera soggetta al diritto d'autore, concezione americana e europea/italiana.
+  - Qualificazione legale e conseguenze in caso di violazione della licenza.
+- *Diritto penale garantista.*
+
 * Nuove idee
 
 - Opportunità di abbandonare la cybersecurity, e ridurla ad un accenno
