@@ -1,0 +1,108 @@
+* Cybersecurity
+** Definizione
+- Nozione di cybersecurity: finalizzata alla protezione delle persone, la sicurezza dei dati è solo un mezzo e non il fine ultimo.
+- Cybersecurity intesa come processo, come status, come diritto.[fn:3]
+- Report ENISA sulle definizioni di cybersecurity.[fn:4]
+** European Cybersecurity Act
+- Testo integrale.[fn:2]
+- Prevede la creazione dell'ENISA e l'istituzione di una certificazione per la cybersicurezza.
+** Candidate EUCC Scheme
+*** Introduzione
+- Testo integrale.[fn:1]
+- L'intento è di commentare lo schema di certificazione, evidenziando in quale aree l'uso di strumenti FOSS potrebbe essere opportuno (punti "Ipotetico uso di FOSS").
+*** Scopo dello schema (pag. 11)
+- Definire due livelli di sicurezza (sostanziale, elevato) per tutti gli strumenti informatici legati alla sicurezza, per aumentare e certificare il livello di sicurezza dei prodotti.
+*** /Assurance levels/ (pag. 16)
+- Livelli minimi di sicurezza che devono essere garantiti, considerando vari fattori.
+- Ipotetico uso di FOSS: verificare per i vari tipi di vulnerabilità quali strumenti FOSS possono essere usati per provare la loro presenza.  Ad es., se le vulnerabilità 
+- *Da approfondire:* confronto con  NIST, 
+*** Divieto di autocertificazione (pag. 22)
+- Se gli strumenti usati per la certificazione fossero open-source, ci sarebbe la tentazione di auto-certificarsi, per ridurre i costi.
+- Questa sezione esclude opportunamente questa possibilità per i due livelli coperti dalla certificazione (è ammessa solo per un livello inferiore).
+*** /Rules for monitoring compliance/ (pag. 37)
+- Si prevede un controllo da parte delle agenzie per la cybersicurezza sul processo di certificazione (37).
+- Ipotetico uso di FOSS: giustificato dal fatto che vengono coinvolte delle agenzie governative nel processo di certificazione, e dato che c'è l'esercizio di un potere di controllo, esiste anche l'interesse alla trasparenza dei controlli, ed il controllo diffuso da parte del pubblico sull'operato del governo (v. /infra/,  sezione sul /peer assessment/, e lett. f, che riguarda le denunce da parte di persone fisiche e giuridiche relativi ai certificati).
+*** /Conditions for issuing [...] certificates/ (pag. 42--43)
+- Condizioni per concedere un certificato.
+- Se vengono scoperte nuove vulnerabilità, che potrebbero compromettere la certificazione di sicurezza, si prevede l'uso obbligatorio di un meccanismo chiamato /maintenance activities/.
+- Ipotetico uso di FOSS: se gli strumenti usati per la certificazione sono pubblici, i produttori del software possono usare loro stessi gli strumenti di certificazione per rilevare immediatamente se sono a rischio, e provvedere di conseguenza.
+- Inoltre, gli sviluppatori che vogliono richiedere una certificazione hanno sempre a disposizione l'ultima versione dei test che saranno eseguiti nei confronti del loro programma.  Questo permette di aumentare in maniera immediata la qualità del software.
+*** /Rules related to handling vulnerabilities/ (pag. 51)
+- Regole per la /responsible disclosure/ delle vulnerabilità.
+- È uno dei casi in cui la piena trasparenza è controproducente, perché fornire i dettagli di una vulnerabilità al pubblico significa fornirla anche ad attaccanti che non ne erano a conoscenza.
+- È meglio contattare in maniera confidenziale gli sviluppatori, e poi eventualmente pubblicare i risultati (cf. /embargo period/, pag. 53).
+*** /Retention of records/ (pag. 55)
+- Gli organismi che compiono la certificazione devono tenere traccia delle operazioni compiute per un determinato periodo di tempo.
+- Ipotetico uso di FOSS: gli organismi potrebbero specificare quale versione degli strumenti FOSS di verifica è stata utilizzata, quale versione del programma è stata utilizzata, e quali operazioni sono state compiute, in dettaglio.
+- Se il programma supera la certificazione, non c'è nessun problema nel rendere queste informazioni pubbliche, dato che è stato provato che il programma resiste a quel tipo di attacchi.
+*** /Peer assessment/ (pag. 66)
+- Si prevede un controllo reciproco fra gli organismi certificanti, in modo da garantire un elevato livello di qualità.
+- Ipotetico uso di FOSS: i risultati di questo controllo di qualità reciproco potrebbero essere estesi al pubblico, in modo che tutti, compresi gli sviluppatori che vogliono certificare il loro prodotto nel futuro, possano beneficiare dello sviluppo continuo delle /best practices/.
+- Potrebbe anche consistere nel rilascio al pubblico di strumenti sviluppati in-house, che implementano nuove tecniche.
+- L'incentivo a rendere il software open-source è che la /community/ degli utilizzatori continuano a sviluppare e fare manutenzione del software gratuitamente.
+- D'altro canto, dato che è vietato auto-certificarsi, gli organismi certificanti hanno un'entrata assicurata, dovuta all'obbligo di doversi rivolgere a loro per ottenere la certificazione.
+- Alcuni progetti open-source, tra cui Autopsy, seguono questo modello, per cui il software è fornito gratuitamente, ma il supporto tecnico specifico è fornito a pagamento.
+*** COMMENT /User access management/ (pag. 106)
+*** COMMENT Network access control (109)
+- SSH: amministrare un server remoto
+- fail2ban, UFW: firewall, blocco IP con cattiva reputazione
+*** COMMENT Correct processing (pag. 113)
+- Fuzzing: /untrusted, unsanitized input/, si applica anche alla digital forensics (ma più per garantire che il programma sia robusto anche in presenza di dati inaspettati o corrotti, /anti-forensics/, più che per evitare danni da exploit, anche se in teoria è possibile, come /stagefright/, etc.)
+** Vantaggi di una certificazione aperta
+*** Legittimazione della certificazione
+- Il modo migliore per legittimare la certificazione e fornirgli credibilità è rendere il processo il più trasparente possibile, ed evitare ad ogni costo l'idea della /security through obscurity/.
+- Una certificazione-"scatola nera" è di dubbia utilità, perché non è dato sapere quali passi siano stati seguiti per ottenerla, è come se in un provvedimento amministrativo mancasse la motivazione.
+- Viceversa, se gli strumenti e le modalità sono distribuiti ed aggiornati in maniera aperta, sono soggetti ad una /peer review/ diffusa, ecc., la certificazione ha un valore non solo formale, ma anche sostanziale, dato che è pienamente comprovabile che i livelli di sicurezza certificati sono raggiunti in pratica.
+*** Scoperta di nuove vulnerabilità nel software o bug test
+- La distribuzione al pubblico della esatta configurazione degli strumenti usati, e della metodologia usata, permette ai ricercatori di sicurezza di provare a riprodurre quel risultato.
+- Nel caso in cui il risultato positivo non sia riproducibile, ed il programma risulti vulnerabile, nasce l'opportunità di investigare il motivo per cui ciò sia successo.
+- La mancata riproduzione del risultato può essere in ultima analisi ricondotta a una delle due parti: o c'è un bug nel software oggetto della certificazione, o c'è un bug negli strumenti usati per condurre la certificazione.
+- A questo punto è fondamentale che se il software o sistema oggetto di certificazione è proprietario, allora almeno i test siano open-source, così che è diventa possibile investigare, anche in maniera diffusa, se il motivo per cui il risultato non è riproducibile è dovuto ad un malfunzionamento dei test su una piattaforma diversa da quella usata per la certificazione.
+- In ogni caso, avere trovato un problema è un fatto positivo, perché permette di risolverlo prima che quella potenziale vulnerabilità sia oggetto di attacchi, e permettere di rendere il software o i test più robusti.
+*** Creazione di una "cultura della sicurezza"
+- Se gli strumenti e il know-how non sono limitati ai tecnici, ma diventano di dominio pubblico, mediante la loro pubblicazione come software FOSS, si crea una cultura della sicurezza.
+- Gli sviluppatori vengono a conoscenza delle vulnerabilità più comuni, ottengono strumenti e conoscenze per verificar la loro presenza di persona, senza pagare costosi /code audit/, e anche il software non certificato diventa comunque più sicuro, perché segue comunque (anche se magari solo in parte) le /best practices/ che vengono aggiornate e rese liberamente disponibili al pubblico.
+** Rischi di una certificazione aperta
+*** Abuso degli strumenti
+- Argomento a sfavore della cultura della sicurezza: democratizzare gli strumenti usati per la sicurezza informatica significa anche insegnare alla persona media quali vulnerabilità sfruttare in un sistema informatico.
+- Analogia con il reato di possesso ingiustificato di strumenti per aprire serrature codice penale (art. 707 c.p.).
+- Parte dal presupposto discutibile che la persona media sarebbe disposta a commettere un reato, o che la persona media non è a conoscenza dei reati informatici esistono, due presupposti che sono abbastanza irragionevoli.
+*** Informazioni utili per gli attaccanti
+- Argomento più ragionevole: una certificazione completamente aperta, che indica in maniera puntuale e dettagliata a quale tipo di attacchi un sistema può resistere, equivale ad invitare potenziali attaccanti a usare solo attacchi non già compresi nella certificazione.
+- Rimane il fatto che i ricercatori della cybersicurezza hanno accesso alle stesse informazioni, e possono cercare di anticipare le mosse degli attaccanti, e trovare vulnerabilità prima che siano sfruttate.
+- È bene partire dal presupposto che se una vulnerabilità esiste, sarà comunque trovata da un attaccante, indipendentemente dalla pubblicazione di informazioni; pertanto, è nel proprio interesse fornire quante più informazioni possibili ai propri "alleati".
+- In ogni caso, per un attaccante è più facile cercare un sistema poco sicuro (/low-hanging fruit/) che impegnarsi ad entrare in un sistema più sicuro.
+- È per questo motivo che è necessario innalzare il livello medio della sicurezza il prima possibile, ed eliminare i sistemi più deboli e facilmente attaccabili.
+*** Eccesso di fiducia nella sicurezza
+- Altro argomento ragionevole: la democratizzazione degli strumenti per la cybersecurity può portare ad un eccesso di fiducia nella sicurezza.
+- Cf. l'espressione /military-grade encryption/, termine di marketing per indicare l'algoritmo di crittografia standard AES-256, largamente usato dai "civili" per le normali connessioni HTTPS su internet.[fn:5]
+- Le autocertificazioni sono vietate, ma si potrebbe comunque pubblicizzare il proprio prodotto con un vago riferimento agli "standard di sicurezza europei", dopo che la certificazione europea diventa largamente conosciuta dal pubblico.
+*** Incentivo perverso per le imprese a non ottenere la certificazione
+- Caso patologico: le imprese potrebbero preferire non pagare per ottenere una certificazione di sicurezza, e al più accontentarsi di un più economico approccio fai-da-te.
+- Cf. il caso della Ford Pinto, per cui la Ford trovava più economico pagare risarcimenti, che mettere in sicurezza il proprio prodotto.[fn:6]
+- È necessario creare incentivi affinché le imprese più a rischio si mettano in sicurezza.
+- Ad es., qualificare alcune attività su internet (specie se trattano di dati sensibili) come attività pericolose (art. 2050 c.c., richiedere una certificazione di sicurezza per esonerare l'impresa da responsabilità).
+- Ad es., imporre sanzioni amministrative a seguito di eventi come data breach, ed escludere la colpa solo in presenza di misure di sicurezza che erano ragionevolmente idonee, ecc.
+- Problema: la certificazione diventerebbe in buona sostanza un'autorizzazione amministrativa obbligatoria per svolgere certe attività, potrebbe contrastare con i principi del diritto europeo sul libero mercato
+- D'altro canto, la sempre maggiore dipendenza da sistemi informatici giustifica la necessità di renderli sicuri, anche sacrificando in parte altri valori.
+** Consultazione pubblica sul Candidate EUCC Scheme
+- Testo integrale.[fn:7]
+- Alcuni soggetti hanno deciso di non utilizzare lo schema europeo perché usavano già altri schemi.
+- Ipotetico uso di FOSS: l'UE si potrebbe distinguere per l'adozione di uno schema che incoraggia l'uso del FOSS per la sicurezza, e come spiegato, questo porterebbe ad un effetto positivo di democratizzazione e creazione di una cultura della sicurezza, che smetterebbe di essere dominio di pochi, e diventerebbe, a vantaggio di tutti, di dominio pubblico.
+- Gli esperti della cybersicurezza non saranno sostituiti dal "volgo", ma raggiungeranno il loro obiettivo, di rendere i sistemi più sicuri, in maniera più efficace.
+
+* Footnotes
+
+[fn:3] Papakonstantinou, 2022: https://www.sciencedirect.com/science/article/pii/S0267364922000012
+
+[fn:4] ENISA, 2015: https://www.enisa.europa.eu/publications/definition-of-cybersecurity
+
+[fn:2] V. http://eur-lex.europa.eu/eli/reg/2019/881/oj
+
+[fn:1] ENISA, 2021, /Candidate Scheme/: https://www.enisa.europa.eu/publications/cybersecurity-certification-eucc-candidate-scheme-v1-1.1
+
+[fn:5] Cf. https://blog.winzip.com/military-grade-encryption/ e https://crypto.stackexchange.com/a/95611 e https://crypto.stackexchange.com/a/62513
+
+[fn:6] V. https://www.tortmuseum.org/ford-pinto/
+
+[fn:7] ENISA, 2021, /Public Consultation/: https://www.enisa.europa.eu/publications/enisa-report-public_consultation-on-the-draft-candidate-eucc-scheme
