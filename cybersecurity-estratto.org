@@ -17,7 +17,7 @@ Successivamente, dato che a seguito di alcuni incontri era stata evidenziata l'o
 Tuttavia, successivamente ho deciso che la nuova impostazione non era ideale, per vari motivi:
 
 - *La tesi rischia di diventare dispersiva.* Credo che sia meglio trattare due argomenti in maniera approfondita (FOSS e informatica forense), che aggiungerne un terzo, che penso non sarei in grado di trattare allo stesso modo degli altri due.
-- *Preferirei concentrarmi su argomenti con cui sono più familiare.*  Non ho esperienze dirette con la cybersicurezza, e non ho seguito in precedenza corsi sull'argomento. 
+- *Preferirei concentrarmi su argomenti con cui sono più familiare.*  Non ho esperienze dirette con la cybersicurezza, e non ho seguito in precedenza corsi sull'argomento.
 - *Il documento dell'ENISA non offre molti appigli.*
   - Leggendo la proposta dello schema di certificazione dell'ENISA, il software open-source viene menzionato solo due volte, ed in entrambi i casi, non per il fine di incoraggiare l'adozione all'interno dei laboratori che svolgono le attività di certificazione.
   - Naturalmente, potrei criticare il fatto che non viene menzionata la necessità di rendere pubblici gli strumenti e le modalità di verifica (sia per legittimare l'attività svolta, sia per permettere un controllo diffuso da parte dei ricercatori di cybersicurezza).  Le considerazioni che svolgo si muovono in quest'ultima direzione, ma molto probabilmente peccano di idealismo, dovuto al fatto che non ho avuto esperienze diretta con il mondo della cybersicurezza.

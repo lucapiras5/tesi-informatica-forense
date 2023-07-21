@@ -14,8 +14,8 @@
 - Definire due livelli di sicurezza (sostanziale, elevato) per tutti gli strumenti informatici legati alla sicurezza, per aumentare e certificare il livello di sicurezza dei prodotti.
 *** /Assurance levels/ (pag. 16)
 - Livelli minimi di sicurezza che devono essere garantiti, considerando vari fattori.
-- Ipotetico uso di FOSS: verificare per i vari tipi di vulnerabilità quali strumenti FOSS possono essere usati per provare la loro presenza.  Ad es., se le vulnerabilità 
-- *Da approfondire:* confronto con  NIST, 
+- Ipotetico uso di FOSS: verificare per i vari tipi di vulnerabilità quali strumenti FOSS possono essere usati per provare la loro presenza.  Ad es., ad es, OWASP Zap può individuare automaticamente una serie di vulnerabilità.[fn:8]
+- *Da approfondire:* confronto con NIST.
 *** Divieto di autocertificazione (pag. 22)
 - Se gli strumenti usati per la certificazione fossero open-source, ci sarebbe la tentazione di auto-certificarsi, per ridurre i costi.
 - Questa sezione esclude opportunamente questa possibilità per i due livelli coperti dalla certificazione (è ammessa solo per un livello inferiore).
@@ -92,6 +92,7 @@
 - Gli esperti della cybersicurezza non saranno sostituiti dal "volgo", ma raggiungeranno il loro obiettivo, di rendere i sistemi più sicuri, in maniera più efficace.
 
 * Footnotes
+[fn:8] Cf. https://www.zaproxy.org/docs/guides/zapping-the-top-10-2021/
 
 [fn:3] Papakonstantinou, 2022: https://www.sciencedirect.com/science/article/pii/S0267364922000012
 

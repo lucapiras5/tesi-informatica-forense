@@ -353,7 +353,7 @@
 - Serve a ricostruire l'evoluzione del contenuto del disco, utile per dimostrare per quanto tempo un file è esistito, quando è stato aperto l'ultima volta, ecc.
 
 #+INCLUDE: cybersecurity.org :minlevel 1
-  
+
 * GNU/Linux
 ** Perché usare GNU/Linux
 - Presenta tutti i vantaggi del FOSS, dato che il kernel Linux ed il sistema operativo GNU sono software completamente open-source, largamente utilizzati nella pratica.
