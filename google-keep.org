@@ -1,6 +1,20 @@
-- Reflections on trusting trust -- https://dl.acm.org/doi/10.1145/358198.358210 -- ispezionabilità dei compilatori, supply chain attack
-- Dual licensing e spirito della GPL, advertising clause nella licenza BSD e incompatibilità con GPL, Debian the usa GnuTLS anche se è codice meno affidabile
-- Citare manifesto GNU (cf. Emacs), contiene chiarimenti su come funziona il software open source
+/Reflections on trusting trust/:
+
+- https://dl.acm.org/doi/10.1145/358198.358210
+- Ispezionabilità dei compilatori, supply chain attack
+- Se il software è proprietario, il giudice può solo fidarsi/non fidarsi in maniera assoluta del suo corretto funzionamento, è quasi una prova legale
+- Se il software è open source, diventa possibile valutare la probabilità che il software sia stato compromesso (ad es., valutare il compilatore, le dipendenze usate dal programma, ecc.), e quindi il giudice può valutare l'affidabilità in maniera più precisa
+
+GPL:
+
+- Dual licensing e spirito della GPL
+- Advertising clause nella licenza BSD e incompatibilità con GPL
+- Debian che usa GnuTLS anche se è codice meno affidabile
+
+Manifesto GNU:
+
+- Cf. Emacs
+- Contiene chiarimenti su come funziona il software open source
 
 Direttiva database: https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=CELEX:31996L0009:EN:HTML#d1e626-20-1
 
