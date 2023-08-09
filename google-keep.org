@@ -22,6 +22,7 @@ Licenze libere:
 
 - https://dl.acm.org/doi/10.1145/358198.358210
 - Ispezionabilità dei compilatori, supply chain attack
+- https://www.theregister.com/2023/02/05/supply_chain_security_efforts/
 - Se il software è proprietario, il giudice può solo fidarsi/non fidarsi in maniera assoluta del suo corretto funzionamento, è quasi una prova legale
 - Se il software è open source, diventa possibile valutare la probabilità che il software sia stato compromesso (ad es., valutare il compilatore/programma che interpreta lo script/VM, le dipendenze usate dal programma, ecc.), e quindi il giudice può valutare l'affidabilità in maniera più precisa
 
@@ -124,4 +125,3 @@ Questionnaire:
 - Why they created a distro, from scratch or using another distro?
 - What changes were made to the kernel? How (patches, compile-time configuration)? Were they contributed back (FOSS as a collaborative effort)? Are they adequately documented, even at a high level?
 - What software was included? How was it pre-installed? Was any custom software written?
-
