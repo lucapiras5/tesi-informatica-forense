@@ -3,7 +3,7 @@
 - https://dl.acm.org/doi/10.1145/358198.358210
 - Ispezionabilità dei compilatori, supply chain attack
 - Se il software è proprietario, il giudice può solo fidarsi/non fidarsi in maniera assoluta del suo corretto funzionamento, è quasi una prova legale
-- Se il software è open source, diventa possibile valutare la probabilità che il software sia stato compromesso (ad es., valutare il compilatore, le dipendenze usate dal programma, ecc.), e quindi il giudice può valutare l'affidabilità in maniera più precisa
+- Se il software è open source, diventa possibile valutare la probabilità che il software sia stato compromesso (ad es., valutare il compilatore/programma che interpreta lo script/VM, le dipendenze usate dal programma, ecc.), e quindi il giudice può valutare l'affidabilità in maniera più precisa
 
 GPL:
 
