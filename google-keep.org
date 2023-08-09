@@ -7,8 +7,9 @@
 
 GPL:
 
+- Strong/weak copyleft (linking)
 - Dual licensing e spirito della GPL
-- Advertising clause nella licenza BSD e incompatibilità con GPL
+- Advertising clause nella licenza BSD e incompatibilità con GPL: https://www.gnu.org/licenses/bsd.en.html
 - Debian che usa GnuTLS anche se è codice meno affidabile
 
 Manifesto GNU:
@@ -20,11 +21,12 @@ Direttiva database: https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=CELEX
 
 - AFL++
 - Virtualizzazione per usare strumenti di analisi già contenuti nel sistema, se il formato è proprietario o gli strumenti open-source sono incompleti (analisi live, ma ripetibile; problemi con la hardware detection anti-pirateria)
-- Uso di linguaggi dichiarativi/funzionali invece che imperativi, minore performance ma anche meno bug (off by one, ecc), affidabilità come invarianza (funzioni pure - stesso input, stesso output), affidabilità come robustezza (controlli automatici per i tipi) -- preferire linguaggi di scripting o linguaggi compilati moderni e con GC o garanzie di memory-safety (Go, Rust), usare i systems programming languages solo se strettamente necessario (operazioni di basso livello)
+- Uso di linguaggi dichiarativi/funzionali invece che imperativi, minore performance ma anche meno bug (off by one, ecc), affidabilità come invarianza (funzioni pure - stesso input, stesso output), affidabilità come robustezza (controlli automatici per i tipi) -- preferire linguaggi di scripting o linguaggi compilati moderni e con GC o garanzie di memory-safety (Go, Rust), usare i system programming languages solo se strettamente necessario (operazioni di basso livello che possono essere compiute solo da un linguaggio di basso livello)
+- Maggior parte dei bug deriva da bug di accesso alla memoria.
 
 - Citare tesi di dottorato (Gammarota, Ferrazzano, etc.)
 - Scrivere contribuzioni su temi utili
-- Auto ricerca: copyright (contatti), revenge porn, legalità scraping, modalità monetizzazione
+- Aiuto ricerca: copyright (contatti), revenge porn, legalità scraping, modalità monetizzazione
 
 - Lorenzo Pescatore -- barra tool, servizi offerti
 - Roberto Arcella -- 
