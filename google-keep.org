@@ -1,3 +1,23 @@
+Reproducible builds: Golang/Rust, static builds
+
+/Our software dependency problem/: https://research.swtch.com/deps
+
+Licenze libere:
+
+- Restrizioni per uso commerciale:
+  - /Floodgap free software license/: https://legal.fedoraproject.narkive.com/PYuxMaoR/fedora-list-floodgap-free-software-license-ok-for-fedora
+  - CC-BY-NC: https://www.gnu.org/licenses/license-list.html#CC-BY-NC
+  - /Defining Noncommercial/: https://wiki.creativecommons.org/wiki/Defining_Noncommercial
+  - https://wiki.creativecommons.org/wiki/NC_ND_discussion
+  - https://creativecommons.org/2012/08/29/ongoing-discussions-noncommercial-and-noderivatives/
+  - https://creativecommons.org/2012/12/17/next-steps-noncommercial-and-noderivatives-discussion/
+- /Free Cultural Works/:
+  - https://freedomdefined.org/Definition
+  - https://freedomdefined.org/History
+- Licenze approvate da Debian:
+  - https://wiki.debian.org/DebianFreeSoftwareGuidelines
+  - https://wiki.debian.org/DFSGLicenses
+
 /Reflections on trusting trust/:
 
 - https://dl.acm.org/doi/10.1145/358198.358210
