@@ -1,4 +1,14 @@
-Reproducible builds: Golang/Rust, static builds
+Reproducible builds:
+
+- Golang/Rust, static builds by default
+- Hermetic builds: https://bazel.build/basics/hermeticity
+- https://medium.com/@tglawless/isolated-hermetic-and-reproducible-builds-dace1f46d793
+
+Vendoring:
+
+- https://www.activestate.com/blog/outsourced-dependency-vendoring/
+- https://codeengineered.com/blog/2015/go-should-i-vendor/
+- https://gist.github.com/datagrok/8577287
 
 /Our software dependency problem/: https://research.swtch.com/deps
 
