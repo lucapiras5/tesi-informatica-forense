@@ -1,3 +1,8 @@
+Copyright sul software:
+
+- https://mjg59.dreamwidth.org/10437.html?thread=307653#cmt307653, e altri commenti nello stesso link.
+- https://www.osnews.com/story/22618/busybox-author-bruce-perens-on-the-gpl-lawsuit/
+
 Busybox ed enforcement della GPL:
 
 - https://torquemag.io/2013/03/busybox/
@@ -5,12 +10,15 @@ Busybox ed enforcement della GPL:
 - https://busybox.net/license
 - https://heathermeeker.com/2010/01/06/songbird-to-be-shipped-with-philips-mp3-players/
   - Seguito da: https://heathermeeker.com/2010/01/11/bruce-perens-on-the-busybox-case/
+- https://grsecurity.net/setting_the_record_straight_on_oss_v_perens_part2
 
 Conversione del software da proprietario ad open-source:
 
 - https://en.wikipedia.org/wiki/UNIX_System_Laboratories,_Inc._v._Berkeley_Software_Design,_Inc.
 - https://web.archive.org/web/20110515142741/http://perens.com/blog/d/2009/12/15/23/
 - https://busybox.net/~landley/forensics.txt
+- https://grsecurity.net/setting_the_record_straight_on_oss_v_perens_part2
+
 
 Copyright con più persone che lavorano allo stesso codice:
 
