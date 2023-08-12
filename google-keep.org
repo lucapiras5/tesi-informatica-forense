@@ -1,5 +1,20 @@
+Busybox ed enforcement della GPL:
+
+- https://torquemag.io/2013/03/busybox/
+- https://www.lexology.com/library/detail.aspx?g=a3d48bb1-7298-4963-8b44-1d0ef16eb015
+- https://busybox.net/license
+- https://heathermeeker.com/2010/01/06/songbird-to-be-shipped-with-philips-mp3-players/
+  - Seguito da: https://heathermeeker.com/2010/01/11/bruce-perens-on-the-busybox-case/
+
+Conversione del software da proprietario ad open-source:
+
+- https://en.wikipedia.org/wiki/UNIX_System_Laboratories,_Inc._v._Berkeley_Software_Design,_Inc.
+- https://web.archive.org/web/20110515142741/http://perens.com/blog/d/2009/12/15/23/
+- https://busybox.net/~landley/forensics.txt
+
 Copyright con più persone che lavorano allo stesso codice:
 
+- https://heathermeeker.com/2010/01/11/bruce-perens-on-the-busybox-case/ -- /the question of whether open source programs are joint works or multiple works of authorship [...] FSF generally takes the position that GPL covers an entire program as a single copyrightable work/.
 - Contributor license agreement.
 - Importanza dell'uso di strumenti di version control (ad es., git blame) per determinare chi ha scritto cosa.
 - Copyright notices:
