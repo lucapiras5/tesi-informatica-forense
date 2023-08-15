@@ -23,11 +23,6 @@
 - Prova digitale e giusta prova: l'ispezionabilità del codice sorgente permette un contraddittorio più fruttuoso sulle effettive capacità dello strumento, e dà maggiori garanzie per la difesa.
 - Prova digitale e prova scientifica: crisi della riproducibilità nella ricerca scientifica, le caratteristiche intrinseche del software open-source permettono di "congelare" l'esatta versione dello strumento che ha compiuto l'analisi, e di ridistribuirla insieme ai dati oggetto di analisi, e di verificare il corretto funzionamento del software, in modo che la procedura di analisi sia sempre riproducibile, anche a distanza di tempo.
 - Attività tipiche di informatica forense: relative questioni giuridiche, e software open-source disponibile per svolgerle.
-*** Cybersicurezza
-- Definizione di cybersicurezza.
-- Discussione del /Cybersecurity Act/, e al /Candidate EUCC Scheme/.
-- Opportunità di usare software open-source: la ispezionabilità del programma e della metodologia e la possibilità di riprodurre i risultati danno maggiore legittimità alla certificazione, rispondono al principio della trasparenza dell'azione amministrativa, permettono un controllo diffuso, permettono di diffondere know-how tecnico al pubblico per aumentare il livello di sicurezza del software in generale.
-- Discussione degli svantaggi che possono derivare da una certificazione di sicurezza aperta.
 *** GNU/Linux
 - Problema della "sequenza di scatole nere" fra hardware e software, utilità di usare un sistema operativo basato interamente sul free software.
 - Caratteristiche dei sistemi operativi Linux, e in particolare di come garantire la integrità e riproducibilità del sistema e del software installato.
