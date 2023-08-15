@@ -1,0 +1,7 @@
+#+TITLE: Scaletta (v5)
+#+AUTHOR: Luca Piras
+
+* Informatica forense
+* Licenze open source
+* Buone tecniche di programmazione
+* FOSS per l'informatica forense
