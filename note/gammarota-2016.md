@@ -88,4 +88,40 @@
 
 # 3. Postulati tecnici dell'informatica forense [45]
 
-- 
+- Dato, informazione, bit: usati nella normativa, ma non definiti con precisione [45]
+- Dato (rappresentazione originaria, non interpretato), informazione (dato o dati sottoposti ad interpretazione, acquistano significato per chi li interpreta e per lo scopo a cui sono destinati, strettamente legata al contesto in cui viene usata) [46--47]
+- Bit: minima quantità di dato rappresentabile da un sistema informatico [47]
+- Stringa: sequenza di bit [48]
+- Codice: regole con cui si dà significato a sequenze di bit [48]
+- Codifica: operazione con cui il dato è trasformato in sequenze di bit [48]
+- File: stringa contenente dati in una particolare codifica [48]
+- Tecniche di codifica:
+  - Testo: ASCII, Unicode [48--50]
+  - Immagini [51], suoni [51--52], video [52]
+
+# 3.2.2. Natura fisica e dimensione dei bit [52]
+
+- Problema della materialità o meno dei bit, la corretta applicazione di norme richiede di definire se sono materiali o meno [52]
+- Modalità di **memorizzazione** dei bit, **memorie primarie e secondarie**  [53--54]
+  - NOTE: fonti sul funzionamento dei registri e RAM per il processore
+- **Trasmissione** dei bit [55--56]
+- Bit teletrasmessi sono sempre immateriali [56]
+- Bit salvati su memorie secondarie sono materiali perché memorizzati in maniera duratura, su memorie secondarie sono dematerializzati [57]
+- **Caratteristiche dei dati digitali** [57--58]:
+  - Necessità di una memoria in cui vengano memorizzati, anche se solo temporaneamente
+  - Si può creare un numero illimitato di copie perfettamente identiche
+  - Le memorie primarie sono volatili e richiedono alimentazione continua
+  - Le memorie secondarie possono deteriorarsi e danneggiare i dati o diventare illeggibili
+  - I dati sono modificabili in maniera quasi anonima, è difficile determinare chi o cosa abbia modificato un determinato bit, dato che sono già l'unità minima
+- Caratteristiche sono i principi fondanti della digital/network forensics, servono per verificare l'adeguatezza dell'impostazione giurisprudenziale [58--59]
+
+# 3.2.4. Natura giuridica dei bit [59]
+
+- "L'approfondimento delle caratteristiche fisiche del dato digitale e delle sue componenti, i bit, costituisce il principio e il fondamento di una corretta comprensione del fenomeno informatico quale presupposto indefettibile per la sua corretta qualificazione giuridica." [59]
+- Argomenti contro la materialità dei bit, diritti su beni immateriali, reati che hanno come oggetto un programma informatico [59--61]
+
+# 3.3. Rilevanza dell'integrità dei bit ai fini delle indagini
+
+- **Obiettivo dei principi dell'informatica forense: preservare l'integrità delle sequenze di bit, in modo che le informazioni siano attendibili per tutte le parti** [61]
+- Esempi delle conseguenze derivanti dal variare anche un singolo bit [61--63]
+- Variazioni modificano il senso dell'informazione [63]
