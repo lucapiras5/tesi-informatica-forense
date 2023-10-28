@@ -10,7 +10,137 @@ papersize: a4
 fontsize: 12pt
 ---
 
-# Codice sorgente e codice macchina
+# Codice macchina
+
+Prima di discutere gli aspetti legali del software, è necessario operare una distinzione tecnica, tra il software inteso come codice macchina, ed il software inteso come codice sorgente.
+
+Normalmente, quando si parla di software, in realtà si sta parlando di **codice macchina**, ossia istruzioni che possono essere direttamente eseguite da un calcolatore.
+
+Per semplificare la loro progettazione e contenere i costi, i processori possono eseguire solo un gruppo limitato di operazioni particolarmente semplici.
+La specificazione tecnica che definisce quali sono queste istruzioni, e quali effetti hanno una volta eseguite, è chiamato ***instruction set architecture*** (ISA).
+
+Lo scopo principale dell'ISA è di **coordinare chi sviluppa l'hardware e chi sviluppa il software**.
+
+Dal punto di vista della forma e funzione, si può fare un'**analogia tra le ISA e le direttive europee** (TFUE, art. 288, n.3):
+
+> La direttiva vincola lo Stato membro cui è rivolta per quanto riguarda il risultato da raggiungere, salva restando la competenza degli organi nazionali in merito alla forma e ai mezzi.
+
+Naturalmente, le ISA non sono un vincolo giuridico sovranazionale, ma uno **standard tecnico astratto**.
+La loro creazione è libera, e la loro adozione è puramente volontaria.
+Chiunque è libero di creare una nuova ISA, e proteggerla con brevetti.
+
+Ad esempio, una delle motivazioni che spinsero la Intel a sviluppare la nuova ISA *IA64* era il fatto che "aveva lentamente perso la sua egemonia" sulla loro ISA *x86*
+[@history_of_modern_64_bit_computing, 6].
+Infatti, varie compagnie, tra cui la AMD, avevano ottenuto il diritto di produrre processori compatibili con quelli della Intel
+[@history_of_modern_64_bit_computing, 3, *AMD gained rights to manufacture Intel x86 processors*].
+
+L'obiettivo era di creare una nuova ISA, restringere e mantenere l'accesso alla loro nuova proprietà intellettuale, ed  usare la loro posizione dominante sul mercato per incoraggiarne, se non costringerne, l'adozione
+[@history_of_modern_64_bit_computing, 6].
+
+La nuova IA64 era profondamente diversa dalla x86, e **non era interoperabile o retrocompatibile**.
+Da un lato, ripartire da capo, invece di continuare ad estendere la ISA già esistente in maniera retrocompatibile (come era stato già fatto in passato), avrebbe ostacolato i concorrenti della Intel:
+
+- Da un **punto di vista legale**, la novità assoluta della nuova architettura rappresenterebbe un punto a favore della protezione intellettuale: i brevetti richiedono la novità dell'invenzione, ed il diritto d'autore richiede la creatività.
+- Da un **punto di vista economico**, i concorrenti, che sarebbero costretti a loro volta a ripartire da zero, e quindi incorrere in costi maggiori, non potendo continuare a sfruttare l'esperienza ed i processi produttivi precedenti.
+
+Tuttavia, questo significava anche che tutto il software scritto per x86 non avrebbe funzionato nella nuova architettura.
+
+gli autoveicoli.
+Esistono numerosi produttori di automobili, modelli di veicoli, e tecniche di produzione, più o meno sofisticate.
+Tuttavia:
+
+- Chi produce veicoli deve rispettare una serie di standard, che definiscono le funzionalità minime del veicolo.
+  Indipendentemente che si tratti di un'auto di lusso o un'utilitaria, se gli standard non sono rispettati, il veicolo non sarà autorizzato a circolare su strada.
+- Anche chi guida veicoli è intessato a conoscere quali sono le loro funzionalità minime, in modo da sapere come usarli.
+
+
+Una volta che tutti i veicoli tendono ad avere le stesse funzionalità, sia a causa degli standard, sia per l'"inerzia" dovuta alle aspettative ed abitudini dei guidatori, chi impara a guidare in un veicolo successivamente può facilmente usare qualsiasi veicolo.
+
+- Nel tempo, gli standard diventano sentieri battuti, da cui diventa costoso discostarsi, 
+Allo stesso modo:
+
+- Esistono moltissimi modelli di processori, con vari livelli di complessità tecnica, performance, e costo.
+  Tuttavia, un processore è utile solo quanto il software che può eseguire.
+  Chi produce un processore pubblica la documentazione tecnica relativa al suo funzionamento.
+- 
+
+Allo stesso modo, i processori vengono omologati nei confronti dell'ISA. Questo ha due implicazioni per chi produce hardware.
+
+La prima è che si possono 
+- Si può migliorare l'hardware senza perdere la compatibilità con il software
+- Più produttori possono sviluppare lo stesso hardware
+- 
+La prima è una **maggiore interoperabilità **. kbk
+
+Chi produce l'hardware deve garantire che il funzionamento del prodotto sia coerente con lo standard definito dall'ISA, indipendentemente dagli esatti dettagli pratici e tecnici riguardo il funzionamento del processore.
+
+La prima è la **maggiore interoperabilità del software**.
+
+La seconda è la **
+che si può sperimentare con soluzioni tecniche alternative, più performanti o più economiche,
+
+La seconda è che più imprese possono sviluppare 
+
+
+in modo da garantire l'interoperabilità dello stesso software, in maniera indipendente dall'hardware.
+
+Ad es., la Intel sviluppò il processore 8086, e la AMD
+
+sia la Intel che la AMD producono processori che implementano una ISA chiamata x86-64.
+Lo stesso software può essere eseguito su entrambi i processori, senza differenze di funzionalità.
+
+Le ISA possono essere considerate una obbligazione di risultato: è irrilevante come   è una specificazione astratta, nel senso che specifica solo il risultato da raggiungere, ma non impone una determinata soluzione tecnica. Pertanto, la s
+
+Ad es.:
+
+- I primi processori 
+
+Nel 1978, la Intel introduce il processore *8086*, con registri a 16 bit.
+
+Nel 1985, la Intel rilascia il primo processore con registri a 32-bit, l'*Intel386* [@intel_64_software_developer_manual_vol_1, 2-1]. Il nuovo processore 
+
+Negli anni '90, la Intel inizia a lavorare ad *IA64*, una architettura con registri a 64-bit, chiamata IA64. La nuovoa
+
+Nel 2003, la AMD crea un'estensione a 64-bit all'architettura Intel chiamata rilascia Opteron, il primo processore a 64-bit [@history_of_modern_64_bit_computing, 14], c
+
+
+La dimensione dei registri è importante: mentre è possibile 
+
+I processori hanno una piccola quantità di memoria al loro interno, utilizzata per   
+- Come il processore accede alla memoria RAM.
+
+quali istruzioni sono disponibili. Tipicamente, includono:
+
+- Istruzioni per trasferire dati. I processori contengono una piccola quantità di memoria al loro interno, divisa in una serie "registri".
+- Istruzioni per operazioni aritmetiche. I processori operano su dati in forma binaria, 
+- Istruzioni logiche, come
+
+In ultimo luogo, le istruzioni sono lette da un processore, e quindi devono essere codificate in binario.  Tuttavia, dato che sarebbe impossibile per un essere umano memorizzare come ogni istruzione viene codificata, si introduce una prima astrazione, il linguaggio assembly.
+
+Le due rappresentazioni sono equivalenti ed intercambiabili: =mov    eax,0x8= corrisponde al codice binario =10111000 00001000=, ed entrambe significano "inserisci il numero 8 nel registro eax", ma la prima versione è molto più leggibile della seconda.
+
+La conversione da codice assembly a codice macchina è eseguita da un programma detto assembler.
+
+Il codice sorgente consiste in un compromesso 
+- Il compromesso fra linguaggio naturale e istruzioni per i computer sono i linguaggi di programmazione: un linguaggio più rigoroso e formale del linguaggio naturale, ma
+- Quando si parla genericamente di "software", ci si può riferire a due nozioni: software come programma eseguibile, o software come codice sorgente.
+- Chi utilizza il software è interessato solo al programma eseguibile, mentre chi sviluppa il software è interessato anche al codice sorgente.
+- Il codice sorgente sono semplici file di testo, scritti in un certo
+  linguaggio di programmazione, che contengono istruzioni .
+  Contengono istruzioni legge e contengono una rappresentazione
+  "astratta" del programma, legg
+- Se si ha accesso al codice sorgente, si può
+- Il programma eseguibile è un file binario,
+
+Il codice sorgente interessa principalmente a chi sviluppa software, e non all'utilizzatore finale. Questi ultimi sono interessati ad 
+
+Nel linguaggio comune, quando si parla di software, generalmente ci si riferisce ad un programma che può essere eseguito su un computer. 
+
+# Codice sorgente
+
+Tradizionalmente, e fino agli anni '60, il software veniva venduto insieme all'hardware, e se ne incoraggiava la libera condivisione. È solo negli anni '70 che il software inizia ad essere venduto in maniera indipendente. [@gonzalez_barahona_2021, 75]
+
+Veniva fornito in aggiunta all'harwdare, ma non
 
 Per capire l'importanza del codice sorgente, 
 
@@ -24,10 +154,6 @@ La qualificazione dei programmi per elaboratore come opere letterarie è stata r
 
 Nel linguaggio comune, quando si parla di software, in realtà ci si riferisce al **codice macchina**.
 
-I processori all'interno di computer, smartphone e altri dispositivi comprendono solo una serie limitata di istruzioni, chiamato *instruction set architecture* (ISA).
-Le ISA consistono in una specificazione tecnica, che serve a coordinare chi produce i componenti hardware (processori), e chi scrive il software destinato ad essere eseguito su quell'hardware (in particolare, i compilatori, di cui si parlerà in seguito).
-Per semplificare la progettazione dei processori, e contenere i costi, le ISA contengono una serie limitata di operazioni a basso livello di astrazione.
-
 In altre parole, le istruzioni per i processori
 
 Per "basso livell
@@ -36,25 +162,7 @@ In primo luogo, si deve considerare la memoria.  I processori hanno una piccola 
 
 
 Le ISA conten solo le istruzioni più basilari: leggere e scrivere uno o pochi byte ad un certo indirizzo di memoria, compiere operazioni artimetiche, confrontare dei valori, saltare ad un certo indirizzo di memoria e continuare l'esecuzione, ritornare all'indirizzo di memoria precedente.
-
-([[https://en.wikipedia.org/wiki/Instruction_set_architecture][Instruction Set Architecture]]).
-I processori ossono eseguire soltanto quello che viene chiamato *codice macchina*, che consiste in una serie di istruzioni a basso livello di astrazione; ossia, le operazioni che possono essere eseguite sono particolarmente semplici.
-
-In ultimo luogo, le istruzioni sono lette da un processore, e quindi devono essere codificate in binario.  Tuttavia, dato che sarebbe impossibile per un essere umano memorizzare come ogni istruzione viene codificata, si introduce una prima astrazione, il linguaggio assembly.
-
-Le due rappresentazioni sono equivalenti ed intercambiabili: =mov    eax,0x8= corrisponde al codice binario =10111000 00001000=, ed entrambe significano "inserisci il numero 8 nel registro eax", ma la prima versione è molto più leggibile della seconda.
-
-La conversione da codice assembly a codice macchina è eseguita da un programma detto assembler.
 *** Linguaggio di programmazione
-- Il compromesso fra linguaggio naturale e istruzioni per i computer sono i linguaggi di programmazione: un linguaggio più rigoroso e formale del linguaggio naturale, ma
-- Quando si parla genericamente di "software", ci si può riferire a due nozioni: software come programma eseguibile, o software come codice sorgente.
-- Chi utilizza il software è interessato solo al programma eseguibile, mentre chi sviluppa il software è interessato anche al codice sorgente.
-- Il codice sorgente sono semplici file di testo, scritti in un certo
-  linguaggio di programmazione, che contengono istruzioni .
-  Contengono istruzioni legge e contengono una rappresentazione
-  "astratta" del programma, legg
-- Se si ha accesso al codice sorgente, si può
-- Il programma eseguibile è un file binario,
 *** Compilazione
 - File sorgente: file di testo, scritto in un linguaggio di
   programmazione

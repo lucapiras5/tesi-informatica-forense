@@ -125,3 +125,84 @@
 - **Obiettivo dei principi dell'informatica forense: preservare l'integrità delle sequenze di bit, in modo che le informazioni siano attendibili per tutte le parti** [61]
 - Esempi delle conseguenze derivanti dal variare anche un singolo bit [61--63]
 - Variazioni modificano il senso dell'informazione [63]
+
+# 4. Processo penale e prova informatica [65]
+
+# 4.1. Questioni terminologiche [65]
+
+- **"Prova" può avere più significati** [65]:
+  - Fonte di prova: qualsiasi cosa o persona che può fornire elementi conoscitivi utili, ad es., testimone [65]
+  - Mezzo di prova: strumento con cui si acquisisce un elemento di prova per la decisione, ad es., testimonianza [66]
+  - Elemento di prova: elemento conoscitivo ottenuto, ma non ancora valutato dal giudice [66]
+  - Risultato probatorio: elemento conoscitivo valutato dal giudice, che ha determinato la sua credibilità e attendibilità [66]
+- **Definizione di prova**: processo logico da cui si parte da un fatto noto, e si ricava la dimostrazione del fatto da provare [66]
+- TODO: **Oggetto di prova**: elementi costitutivi del reato, elementi da cui deriva l'applicazione di norme processuali [66--67]
+- TODO: Costituzione di parte civile [67]
+- Distinzione fra **prova e indizio**, indizio come prova logica, fatti gravi, precisi e concordanti [67]
+- **Mezzi di prova**: strumenti processuali per acquisire una prova [68]
+  - Regolati espressamente dal codice
+  - Mezzi di prova atipici: idoneità ad assicurare l'accertamento dei fatti, divieto di pregiudicare la libertà morale della persona, giudice valuta le modalità di assunzione in contraddittorio con le parti
+- **Mezzi di ricerca della prova**: attività con cui si acquisisce un **mezzo di prova pre-esistente nel processo** [68]
+- **Valutazione del giudice**: necessaria per far diventare gli indizi ed i mezzi di prova delle prove propriamente dette [68]
+- Codice non conosceva le categorie del **"mezzo di prova informatico", della "prova digitale", o della "prova documentale informatica**" [68--69]
+- Nel 2015 viene introdotto l'art. 234-bis ("Documenti e dati informatici"), e si può parlare a livello formale di **mezzo di prova documentale informatico** nell'ordinamento italiano [69]
+- **"Prova digitale"**: concetto ripreso dal sistema di common law, non si adatta al sistema italiano, che conosce **più "manifestazioni" del dato digitale**, ad es., prova documentale, prova documentale acquisibile all'estero, oggetto di corrispondenza digitale sequestrabile, prodotto dell'intercettazione di flussi telefonici o informatici, etc. [69]
+- **Fino alla sua valutazione, il dato informatico è solo un mezzo di prova, non una "prova informatica"** [69]
+
+# 4.2. Prova informatica come prova scientifica [69]
+
+- "Prova informatica": rientra nella categoria della prova scientifica [69--70]
+- "Prova scientifica": espressione atecnica [70]:
+  - Nell'ordinamento italiano, la "prova" ha una definizione specifica
+  - La "prova scientifica" non è menzionata in maniera specifica, e non esiste una contrapposizione fra "prova informatica" e "prova analogica"
+  - La distinzione tra analogica/informatica riguarda solo le modalità di rappresentazione e incorporamento del documento
+- **Nella prova informatica, l'aggettivo "scientifico" si riferisce alle modalità di trattamento dei dati informatici, in modo da garantire la loro integrità** [70]
+- Pertanto, rilevano i principi, linee guida, protocolli, standard, best practices per il trattamento dei dati per fini processuali [70]
+
+# 4.3. L. 547/93 sui reati informatici [71]
+
+- Reati informatici: introdotti per la prima volta nel 1993, introduzione di nuove fattispecie che riguardano aggressioni fatte contro o mediante strumenti informatici [71]
+- *Elenco dei reati informatici* [71--72]
+- Unica norma introdotta nel c.p.p.: intercettazione di flussi telematici (art. 266-bis) [72]
+- Osservazioni: [72]
+  - Non incide sul regime della prova, non menziona la nozione di prove digitali
+  - Dimostra la scarsa comprensione dei nuovi fenomeni digitali, si adeguano gli strumenti tradizionali, anche se non necessariamente sono simili
+
+# 4.4. L. 48/2008 e le nuove procedure ad oggetto informatico [71]
+
+- L. n. 48/2008: ratifica la Convenzione di Budapest, modifica il codice di procedura penale [72]
+- Riprende tendenza a modificare le norme pre-esistenti, invece di introdurne di nuove [72]
+- Riforma: solo parziale ed inadeguata, specie per le questioni difensive [72]
+- Convenzione di Budapest richiedeva l'attuazione del principio di affidabilità della prova digitale, il legislatore non ha aggiunto norme rilevanti in merito [72]
+- Art. 14 Convenzione di Budapest impone uso del regime della digital evidence per i reati indicati, per i reati commessi con sistema informatico, e per le prove raccolte in forma elettronica [72--73]
+- TODO: art. 1 Convenzione: definisce dato informatico, definizione non ripresa dal legislatore italiano [73--74]
+- **Convenzione di Budapest: impone l'adozione di tecniche per il trattamento dei dati, senza riferimento a tecniche precise, ma richiedendo la corretta gestione del dato** [74]
+- **Dati informatici: definiti all'art. 1, lett. b**, ma non ripresa dal legislatore italiano [74--75]
+- Rileva solo la corretta rappresentazione dei fatti in modalità informatica dal punto di vista formale, e non la loro corrispondenza alla realtà sostanziale [75]
+  - TODO: leggere la Convenzione di Budapest per verificare
+- Convenzione di Budapest: non richiede l'uso di strumenti specifici, ma ne impone comunque l'utilizzo, l'uso di strumenti sia legali sia tecnici è sotto-inteso [76--77]
+- L'importante è il perseguimento delle finalità indicate dalla Convenzione con strumenti scientifici [77]
+- Il legislatore italiano non ha tipizzato l'uso di tecniche specifiche [78]
+
+# 4.5. Atti ad iniziativa della PG e mezzi di prova ad oggetto informatico [78]
+
+- L. 48/2008 ha integrato il c.p.p. con varie norme relative al trattamento dei dati informatici:
+  - Atti ad iniziativa della PG
+  - Norme sulle indagini e sui mezzi di ricerca della prova
+  - *Elenco delle norme modificate* [78--79]
+
+# 4.5.1. Atti ad iniziativa della polizia giudiziaria [80]
+
+- **Perquisizione di sistemi informatici** [80--81]:
+  - Serve la flagranza di reato, ed i requisiti generali per le perquisizioni [80]
+  - Procede la PG, se sussistono fondati motivi [81]
+  - La perquisizione ha per oggetto sistemi informatici e telematici [81]
+  - Si ricercano dati informatici (le altre espressioni sono sinonimo dei dati) [81]
+  - I dati devono essere **occultati** [81]
+  - Si devono usare tecniche per assicurare la conservazione dei dati, ed impedire l'alterazione [81]
+  - Si possono rimuovere misure di sicurezza, ma nel caso di misure di protezione informatiche, si andrebbero a modificare i dati; è necessario eseguire una copia dei dati prima di svolgere altre operazioni [81]
+  - **È importante utilizzare software open-source, anche se proprietario, per garantire la verificabilità tecnico-scientifica dei trattamenti** [81--82]
+
+# 5. Questione delle best practice in informatica forense [105]
+
+
