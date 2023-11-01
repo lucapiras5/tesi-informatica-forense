@@ -19,6 +19,17 @@ fontsize: 12pt
 
 # Informatica forense, software libero
 
+L'informatica forense è una disciplina che presenta alcune peculiarità:
+
+- La sua novità, anche della scienza a cui fa riferimento, non si è ancora completamente assestata
+- La continua e rapida evoluzione, evoluzione guidata più dall'industria privata che dal mondo accademico
+- La complessità degli aspetti tecnici, che sfuggono anche alle generazioni nate dopo la rivoluzione digitale
+- Una generale mancanza di *computer literacy*
+- Il fatto che le analogie fra il mondo digitale con il mondo non-digitale sono imperfette
+- La resistenza ad adeguarsi ai nuovi schemi
+
+Si può fare un paragone con la storia della medicina, e la storia di Semmelweis [@Kadar2019].
+
 ## Importanza delle definizioni
 
 Spesso le leggi si aprono con un articolo in cui si cerca di dare la migliore definizione possibile dei termini che saranno usati nel resto del testo.
