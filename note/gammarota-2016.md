@@ -202,7 +202,9 @@
   - Si devono usare tecniche per assicurare la conservazione dei dati, ed impedire l'alterazione [81]
   - Si possono rimuovere misure di sicurezza, ma nel caso di misure di protezione informatiche, si andrebbero a modificare i dati; è necessario eseguire una copia dei dati prima di svolgere altre operazioni [81]
   - **È importante utilizzare software open-source, anche se proprietario, per garantire la verificabilità tecnico-scientifica dei trattamenti** [81--82]
+- **Acquisizione di plichi o di corrispondenza**:
+  - Co. 3, menziona la "forma elettronica" e l'inoltro per via telematica, rinvia ai requisiti del sequestro, richiede l'urgenza per limitare il diritto costituzionalmente garantito [82]
+  - Se il PM non dispone il sequestro entro 48 ore, la PG inoltra gli elementi al PM, **deve usare le modalità dell'informatica forense** per garantire la conservazione dei dati [83]
 
 # 5. Questione delle best practice in informatica forense [105]
-
 
