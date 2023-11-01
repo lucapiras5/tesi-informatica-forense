@@ -1,6 +1,9 @@
 ---
+citation-style: universita-di-bologna-lettere.csl
+links-as-notes: true
 documentclass: book
 lang: it
+toc: true
 geometry:
 - top=4cm
 - bottom=4cm
@@ -75,12 +78,41 @@ Nell'essere costretto a motivare la sua scelta, il giudice:
 - Oppure, sceglie l'opzione "più conveniente", che permette di concludere il procedimento con un sicuro risparmio di tempo o risorse, ma con un altrettanto certo danno ad altri valori, come il diritto alla difesa delle parti, l'acquisizione di tutti gli elementi utili per la decisione, e cosi via.
 
 <!-- TODO
+- differenza fra information science/computer science in inglese
+
+- fonti su ProQuest:
+  - https://www.proquest.com/docview/1301245471/fulltextPDF/E77F439D34842E1PQ/1?accountid=9652
+  - https://www.proquest.com/docview/195307350/43FBF6957D14713PQ/2?accountid=9652
+  - https://www.proquest.com/docview/197238093/fulltextPDF/7E64339FF8FC4500PQ/1?accountid=9652
+  - https://www.proquest.com/docview/216718724/AF041DAB72FF47D1PQ/5?accountid=9652
+- "dato digitale", e "prova informatica"
+- rischi di interpretazione liberale delle norme: stampa di file con firma del notaio (v. Gammarota) (procedura che assicura la conformità dell'originale), sequestro dell'intero dispositivo senza restituirlo (immodificabilità), art. 354
+- mezzo di rappresentazione: più livelli (supporto, filesystem e relativi metadati, file)
+- come la prova scientifica entra nel processo: perito e consulenti
 - rilevanza pratica delle definizioni: norme in bianco, Canestrari2017, 120 ss.
 - informatica forense come disciplina altamente tecnica, servono definizioni precise
 - nascita del termine informatica, Bolognesi1999
+
+Riferimenti:
+
+- introduzione del processo telematico: https://trasformazionedigitale.bit4id.com/e-government/processo-telematico-italia/
 -->
 
+## Canestrari2017
+
 Le definizioni hanno una rilevanza pratica significativa.
+La Costituzione afferma il principio della riserva di legge:
+[^Art. 25, co. 2, Cost.]
+
+> Nessuno può essere punito se non in forza di una legge che sia entrata in vigore prima del fatto commesso.
+
+L'articolo tutela la libertà 
+Per legge, si intende:
+
+- Le "leggi in senso formale", promulgate secondo la procedura prevista dalla Costituzione.^[Articoli 70--74.]
+- I decreti legislativi, che vengono emanati dal Governo su delega del Parlamento,^[Art. 77, co. 1]
+il quale deve indicare l'oggetto della delega, ed i principi e criteri a cui il Governo si deve attenere.^[Art. 76, co. 1]
+- I decreti-legge
 
 In primo luogo, il linguaggio naturale è per sua natura impreciso: si può solo cercare 
 
