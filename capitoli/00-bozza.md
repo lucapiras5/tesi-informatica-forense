@@ -1,4 +1,7 @@
 ---
+title: Tesi di Informatica Forense
+author: Luca Piras
+year: 2023
 citation-style: universita-di-bologna-lettere.csl
 links-as-notes: true
 documentclass: book
@@ -10,7 +13,7 @@ geometry:
 - left=3.25cm
 - right=3.25cm
 numbersections: true
-fontfamily: dejavu
+fontfamily: charter
 indent: true
 linestretch: 1.5
 papersize: a4
@@ -321,6 +324,8 @@ I "programmi per elaboratore" sono oggetto di tutela giuridica.
 
 L'art. 10 dell'Accordo TRIPs (ratificato in Italia con l. 747/1994) prevede che i programmi per elaboratore, sia come codice sorgente, sia come codice oggetto, sono protetti come opere letterarie, ai sensi della Convenzione di Berna.
 
+> I programmi per elaboratore, in codice sorgente o in codice oggetto, sono protetti come opere letterarie ai sensi della Convenzione di Berna (1971).^[All. 1C., art. 10, co. 1, L. 747/1994.]
+
 La qualificazione dei programmi per elaboratore come opere letterarie è stata ripresa dalla Direttiva 2009/24 CE, [@direttiva_2009_24, art. 1] che però non ribadisce la distinzione fra codice sorgente e codice oggetto.
 
 Nel linguaggio comune, quando si parla di software, in realtà ci si riferisce al **codice macchina**.
@@ -380,5 +385,26 @@ I linguaggi di programmazione devono essere convertiti in codice macchina, e la 
 ## Compilazione bytecode, JIT, minifier per offuscare.
 
 *Conversione in bytecode.*  I programmi convertiti in bytecode vengono prima "compilati" in un codice macchina particolare, creato ad-hoc per quel linguaggio, detto bytecode.  Successivamente, il bytecode viene interpretato da un secondo programma.  L'esecuzione del codice è più veloce rispetto ai programmi interpretati, e rispetto ai programmi compilati, è più facile recuperare informazioni come il nome delle variabili, funzioni, ecc.
+
+# Testi delle leggi {-}
+
+<!-- La numerazione delle note a piè di pagina non è ripristinata dopo un capitolo non numerato: 
+https://tex.stackexchange.com/questions/53529/how-to-reset-footnote-numbering-at-chapter-and-at-frontmatter-chapters
+
+Ripristina manualmente il numero delle note a piè di pagina in LaTeX: https://tex.stackexchange.com/a/359707 -->
+
+\setcounter{footnote}{0}
+
+## Leggi {-}
+
+- L. 747/1994 --- [*Ratifica ed esecuzione degli atti concernenti i risultati dei negoziati dell'Uruguay Round, adottati a Marrakech il 15 aprile 1994.*](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1994-12-29;747)
+
+## Trattati internazionali {-}
+
+- Convenzione di Budapest --- [*ETS 185 -- Cybercrime (Convention).*](https://rm.coe.int/1680081561)
+
+## Direttive europee {-}
+
+- Direttiva 2009/24 --- [*Direttiva 2009/24/CE del Parlamento europeo e del Consiglio, del 23 aprile 2009, relativa alla tutela giuridica dei programmi per elaboratore.*](http://data.europa.eu/eli/dir/2009/24/oj/ita)
 
 # Bibliografia
