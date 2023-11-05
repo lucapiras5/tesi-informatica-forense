@@ -20,6 +20,22 @@ papersize: a4
 fontsize: 12pt
 ---
 
+Origine del fenomeno dell'informatica forense [@Gammarota, 11--13]
+
+Diffusione dell'informatica nell'America latina [@Gammarota, 13]
+
+Origine del termine "informatica forense" [@Gammarota2016, 5]
+
+Definizione di informatica forense negli Stati Uniti [@Gammarota, 16--17], in Italia [@Gammarota2016, 26--27]
+
+Esatta definizione di "informatica" e "dato digitale":
+
+- Origine del termine informatica in italiano
+- Distinzione fra information science e computer science in inglese
+- Informatica non richiede modalità digitali (ricerca binaria in un dizionario, algoritmo A-star su un puzzle), dato digitale non presuppone la conoscenza dell'informatica (così come non serve un diploma in ingegneria elettrica per creare una radio, non serve sapere come funziona un computer per poterlo utilizzare, ma cfr. Unix, con pagine del manuale scritte come bug report, UNIX haters handbook, 53 ss., "collect bug reports")
+
+----
+
 # Informatica forense, software libero
 
 L'informatica forense è una disciplina che presenta alcune peculiarità:
