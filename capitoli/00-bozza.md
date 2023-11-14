@@ -1,26 +1,63 @@
----
-title: Tesi di Informatica Forense
-author: Luca Piras
-year: 2023
-citation-style: universita-di-bologna-lettere.csl
-links-as-notes: true
-documentclass: book
-lang: it
-toc: true
-geometry:
-- top=4cm
-- bottom=4cm
-- left=3.25cm
-- right=3.25cm
-numbersections: true
-fontfamily: charter
-indent: true
-linestretch: 1.5
-papersize: a4
-fontsize: 12pt
----
+# Definizioni
 
-Origine del fenomeno dell'informatica forense [@Gammarota, 11--13]
+## Informatica forense
+
+In primo luogo è necessario definire in maniera precisa l'oggetto dell'informatica forense, e l'ambito entro cui opera.
+
+Da un punto di vista storico, l'informatica forense nasce ed inizia a svilupparsi negli Stati Uniti, per due motivi.
+
+Il primo era il fatto che gli Stati Uniti erano -- e sono tutt'ora -- all'avanguardia per quanto riguarda l'innovazione informatica:
+
+- I *personal computer*[^personal-computer] furono sviluppati e standardizzati da IBM ed Apple;
+- Il mercato dei processori e schede grafiche è quasi interamente controllato da Intel, AMD e Nvidia;
+- I principali sistemi operativi (Windows, macOS e GNU) sono stati inizialmente sviluppati rispettivamente da Microsoft, Apple, e da Richard Stallman (fondatore della Free Software Foundation);
+- Il linguaggio di programmazione C[^personal-computer] è stato originariamente sviluppato all'interno di Bell Labs, e successivamente standardizzato dall'ANSI.
+
+[^personal-computer]: Computer pensati per l'uso domestico.
+
+L'aforisma "fatta la legge, trovato l'inganno" può essere adattato in "fatta la tecnologia, trovato il reato": se la popolazione ha a disposizione nuove tecnologie, i criminali troveranno il modo di abusarle, e si renderà necessario un intervento legale.
+
+Il primo era il fa
+
+A partire dagli anni '70, i sistemi informatici iniziano a diffondersi all'interno della società a livello sempre più capillare, e soprattutto, iniziano ad essere collegati fra di loro.
+
+
+
+Questo sviluppo tecnologico comporta tre conseguenze per il diritto penale:
+
+- *Computer crimes*:[^computer-crimes] Il funzionamento dei sistemi informatici, e l'integrità dei programmi e dati conservati al loro interno, diventa oggetto di tutela specifica da parte del diritto penale.
+- 
+
+Vengono introdotti nuovi reati, o vengono modificate le definizioni dei reati esistenti, in modo da proteggere il funzionamento dei sistemi informatici, e l'integrità dei dati digitali.
+[@Gammarota, 11--13]
+
+[^computer-crimes]: Reati informatici.
+
+Il progressivo sviluppo e diffusione degli strumenti informatici a 
+
+Le definizioni precedenti consistevano generalmente in una lista di operazioni tecniche tipiche dell'informatica forense.
+Ad esempio, "ricerca", "identificazione", "estrazione", "documentazione", "protezione", "analisi", "interpretazione" dei dati digitali [@Gammarota2016, 16--17, 26].
+
+Tuttavia, stabilire un elenco di operazioni tipiche è controproducente:
+
+- In primo luogo, sembra suggerire che solo quanto sia espressamente indicato sia rilevante per la disciplina.
+- Non tutte le definizioni usano tutti i termini, quindi si potrebbe concludere che ci sia disaccordo sull'ambito di utilizzazione e le finalità dell'informatica forense.
+- Usare formule come "&hellip; e simili" per indicare che la lista non è limitata ai soli casi indicati ha lo stesso effetto, produce comunque incertezza, e rimette all'interprete il compito di capire l'esatto ambito della disciplina.
+
+Piuttosto di cercare di definire minuziosamente ed induttivamente "cosa faccia" l'informatica forense, è più opportuno definire "cosa sia" l'informatica forense, seguendo un ragionamento deduttivo.
+Questo ha due benefici:
+
+- In primo luogo, facendo riferimento all'informatica in generale, qualsiasi 
+- È preferibile dare alla disciplina il maggiore campo di applicazione possibile 
+L'informatica forense è definita come la disciplina che
+"studia le norme giuridiche ed le tecniche informatiche per il trattamento dei dati digitali a fini processuali"
+[@Gammarota2016, 26--27].
+
+
+
+
+Leggi scientifiche [@Marinucci2020, 242].
+
 
 Diffusione dell'informatica nell'America latina [@Gammarota, 13]
 

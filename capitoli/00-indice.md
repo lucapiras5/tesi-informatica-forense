@@ -1,4 +1,4 @@
-- Premessa: materia nuova, tecnica
+- Premessa: materia nuova, tecnica, ed in continua evoluzione, necessità di un inquadramento preciso
 - Informatica
 - Informatica forense
 - 
