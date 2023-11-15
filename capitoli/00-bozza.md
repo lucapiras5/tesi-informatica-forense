@@ -1,5 +1,32 @@
 # Definizioni
 
+## Reati informatici
+
+### Stati Uniti
+
+Negli Stati Uniti, la prima legge sui reati informatici viene approvata in Florida nel 1978 [@Nugent1991, 4].
+
+I reati informatici venivano puniti anche in precedenza, per vari motivi [@Nugent1991, 2--4]:
+
+- I sistemi informatici erano lo strumento usato per compiere altri reati.
+- Le corti riuscivano ad applicare le nozioni tradizionali anche ai reati commessi contro sistemi informatici.
+- I *prosecutors*^[Figura equivalente al pubblico ministero negli Stati Uniti.] riuscivano a qualificare i fatti all'interno di altre figure di reato a condotta libera, come il *mail fraud* o *wire fraud*.^[Truffe commesse per posta, o con sistemi di telecomunicazione.]
+
+In alcuni casi, tuttavia, la mancanza di leggi specifiche riguardo i reati informatici impedì di punire alcune condotte criminose, perché le corti preferirono usare un'interpretazione letterale della legge @[Nugent1991, 3--4].
+
+----
+
+Negli Stati Uniti, si opera una tripartizione terminologica:
+
+I *computer crimes*^[Trad.: reati informatici.] propriamente detti sono accomunati dal fatto che la condotta criminosa presuppone l'esistenza di un sistema informatico.
+Ad esempio, l'accesso abusivo a sistema informatico (art. 615-*ter* c.p.) viene considerato come una sorta di equivalente digitale della violazione di domicilio (art. 614 c.p.).
+
+I *computer-related crimes*^[Trad.: reati collegati a sistemi informatici.] sono reati che vengono facilitati, o possono essere commessi per mezzo di sistemi informatici, ma 
+
+In questi casi, il 
+
+dove il bene giuridico protetto è  corretto funzionamento di un sistema informatico, e l'integrità dei dati che contiene.
+
 ## Informatica forense
 
 In primo luogo è necessario definire in maniera precisa l'oggetto dell'informatica forense, e l'ambito entro cui opera.
