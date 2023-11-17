@@ -20,8 +20,6 @@ Viceversa, lo *sviluppo tecnologico può ampliare l'area dei comportamenti penal
 *Le nuove tecnologie forniscono nuove opportunità per compiere reati già tipizzati.*
 In questo caso, la condotta concreta dell'agente può essere ricondotta alla fattispecie astratta descritta da un reato già esistente, ed il legislatore non deve apportare modifiche.
 
-Ad esempio, la truffa (art. 640 c.p.) richiede l'uso di "artifizi o raggiri".
-Su internet esistono servizi che permettono di clonare il timbro vocale di una persona, e sono stati già usati per compiere truffe telefoniche [@Kohli2023].
 
 *Il legislatore introduce nuovi reati che possono essere compiuti solo usando le nuove tecnologie, ma non introduce nuovi beni giuridici.*
 In questo caso, nonostante il fatto che il reato possa essere compiuto esclusivamente con la nuova tecnologia, i beni giuridici protetti rimangono quelli "tradizionali".

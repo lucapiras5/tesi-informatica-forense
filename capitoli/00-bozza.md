@@ -2,17 +2,77 @@
 
 ## Reati informatici
 
-### Stati Uniti
+Prima di definire cosa sia l'informatica forense, è utile concentrarsi sul fenomeno che più di tutti ha **incentivato il suo sviluppo**, i reati informatici.
 
-Negli Stati Uniti, la prima legge sui reati informatici viene approvata in Florida nel 1978 [@Nugent1991, 4].
+### Pericolosità dei sistemi informatici
 
-I reati informatici venivano puniti anche in precedenza, per vari motivi [@Nugent1991, 2--4]:
+A partire dalla seconda metà del ventesimo secolo, le tecnologie informatiche si sono sviluppate e sono diventate una parte essenziale della società moderna.
+Tuttavia, la diffusione della tecnologia comportava anche il suo abuso ed uso da parte dei criminali [@Gammarota2016, 11].
+
+I **sistemi informatici** permettono alla condotta di singolo individuo -- purché dotato delle conoscenze tecniche necessarie -- di **causare danni enormi**.
+
+Ad esempio, nel 1988, nel corso di un solo giorno, il *Morris worm* riuscì a diffondersi sul 10% dei sistemi informatici allora collegati ad internet, ed ostacolò il loro corretto funzionamento [@FBI_MorrisWorm; @Nugent1991, 1].
+
+Nel campo della protezione dei diritti d'autore, basta che un singolo soggetto riesca ad aggirare le misure di protezione di un programma, in modo che possa essere eseguito anche senza acquistare una licenza, e distribuisca questa versione modificata al pubblico, per generare un numero potenzialmente illimitato di vendite perse.^[La rimozione delle misure di sicurezza viene colloquialmente chiamata *cracking*, o "craccare" in italiano. Esistono siti che elencano quale gruppo pirata ha craccato quale software, e quali software sono in attesa di essere craccati. Ad esempio, <https://crackwatcher.com>.]
+
+Ancora, l'uso di tecnologie *peer-to-peer* permette a chiunque non solo di acquisire materiale pedo-pornografico, ma anche di ridistribuirlo automaticamente ad un numero potenzialmente illimitato di persone [@Ferrazzano2014, 99 ss.]
+
+### Creazione dei reati informatici
+
+Date queste premesse, l'intervento del diritto penale era inevitabile.
+La prima legge sui reati informatici negli Stati Uniti fu approvata in Florida nel 1978, e nel corso di poco più di un decennio, quasi tutti gli Stati seguirono l'esempio, e si dotarono di proprie leggi [@Nugent1991, 4].
+
+
+Negli Stati Uniti, i reati informatici venivano puniti anche prima , per vari motivi [@Nugent1991, 2--4]:
 
 - I sistemi informatici erano lo strumento usato per compiere altri reati.
 - Le corti riuscivano ad applicare le nozioni tradizionali anche ai reati commessi contro sistemi informatici.
 - I *prosecutors*^[Figura equivalente al pubblico ministero negli Stati Uniti.] riuscivano a qualificare i fatti all'interno di altre figure di reato a condotta libera, come il *mail fraud* o *wire fraud*.^[Truffe commesse per posta, o con sistemi di telecomunicazione.]
 
+
+L'espressione "reato informatico" può essere intesa in due modi.
+
+Nel caso dei **reati informatici "propri"**, il sistema informatico è l'oggetto ed il bene giuridico protetto dal reato, ed è impossibile prescindere dalla sua presenza.
+
+Il sistema informatico può essere l'**unico bene rilevante per il reato**.
+
+Ad esempio, nella serie di reati dedicati al danneggiamento di dati, programmi e sistemi informatici pubblici e privati,^[
+Artt. 635-*bis* a 635-*quinquies* c.p.]
+rileva il solo fatto che siano stati danneggiati dei dati digitali.
+
+In altri casi, l'offesa al sistema informatico si unisce all'**offesa di altri beni giuridici**.
+
+Ad esempio, il *ransomware* è un tipo di *malware* che cripta i file dell'utente, rendendoli inaccessibili, e chiede il pagamento di un riscatto per decrittarli.
+Questa condotta può essere qualificata come una frode informatica,^[Art. 640-*ter* c.p.] fattispecie che richiede l'alterazione del funzionamento di un sistema informatico con lo scopo di procurare un profitto.
+Il danno al patrimonio della persona si aggiunge al danno causato al corretto funzionamento del sistema informatico [@Bartoli2021, 335].
+
+Nel caso dei **reati informatici "impropri"**, il sistema informatico è soltanto lo strumento usato per compiere il reato, ed il bene -- o beni -- giuridici protetti dalla fattispecie non includono il sistema informatico.
+
+Ad esempio, gli sviluppi più recenti nelle intelligenze artificiali permette di generare dei *deepfake* vocali estraendo il timbro vocale di una persona, ed applicandolo ad un'altra registrazione, mediante un processo chiamato *voice conversion* [@Feffer2023].
+
+Su internet si può trovare il software necessario, guide su come utilizzarlo [Ad esempio, @SociallyIneptWeeb_AICoverGen],
+raccolte di modelli del timbro vocale di cantanti [@QuickWick_MusicAIVoices],
+servizi a pagamento che offrono un'interfaccia facile da usare.^[Basta cercare termini come "AI services voice cloning from recording".]
+
+La truffa^[Art. 640 c.p.] protegge il patrimonio della vittima e la sua libertà di autodeterminazione [@Bartoli2021, 296], e fra i vari requisiti, richiede l'uso di "artifizi o raggiri".
+L'uso di questo tipo di tecnologie può sicuramente integrare quest'ultimo requisito, e casi di truffe telefoniche sono già successi negli Stati Uniti [@Kohli2023].
+
+In ogni caso, la distinzione fra reati contro, o per mezzo di, sistemi informatici serve solo a fini illustrativi, e non comporta conseguenze pratiche per quanto riguarda il diritto penale sostanziale.
+
+Le conseguenze pratiche 
+
+Nella pratica, quello che rileva è se ai fini della prova del fatto, serva o meno acquisire dati digitali.
+e non ha rilevanza pratica.
+
+
+
+
+
+
+### Stati Uniti
+
 In alcuni casi, tuttavia, la mancanza di leggi specifiche riguardo i reati informatici impedì di punire alcune condotte criminose, perché le corti preferirono usare un'interpretazione letterale della legge @[Nugent1991, 3--4].
+
 
 ----
 
