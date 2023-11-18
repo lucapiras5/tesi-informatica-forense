@@ -2,7 +2,7 @@
 
 ## Reati informatici
 
-Prima di definire cosa sia l'informatica forense, è utile concentrarsi sul fenomeno che più di tutti ha **incentivato il suo sviluppo**, i reati informatici.
+Prima di definire cosa sia l'informatica forense, è utile introdurre brevemente il fenomeno che ha **richiesto ed incentivato il suo sviluppo**, i reati informatici.
 
 ### Pericolosità dei sistemi informatici
 
@@ -11,26 +11,46 @@ Tuttavia, la diffusione della tecnologia comportava anche il suo abuso ed uso da
 
 I **sistemi informatici** permettono alla condotta di singolo individuo -- purché dotato delle conoscenze tecniche necessarie -- di **causare danni enormi**.
 
-Ad esempio, nel 1988, nel corso di un solo giorno, il *Morris worm* riuscì a diffondersi sul 10% dei sistemi informatici allora collegati ad internet, ed ostacolò il loro corretto funzionamento [@FBI_MorrisWorm; @Nugent1991, 1].
+Ad esempio, nel 1988, il *Morris worm* riuscì a disturbare ed interrompere il funzionamento dei sistemi informatici allora collegati su internet [@Nugent1991, 1].
 
 Nel campo della protezione dei diritti d'autore, basta che un singolo soggetto riesca ad aggirare le misure di protezione di un programma, in modo che possa essere eseguito anche senza acquistare una licenza, e distribuisca questa versione modificata al pubblico, per generare un numero potenzialmente illimitato di vendite perse.^[La rimozione delle misure di sicurezza viene colloquialmente chiamata *cracking*, o "craccare" in italiano. Esistono siti che elencano quale gruppo pirata ha craccato quale software, e quali software sono in attesa di essere craccati. Ad esempio, <https://crackwatcher.com>.]
 
 Ancora, l'uso di tecnologie *peer-to-peer* permette a chiunque non solo di acquisire materiale pedo-pornografico, ma anche di ridistribuirlo automaticamente ad un numero potenzialmente illimitato di persone [@Ferrazzano2014, 99 ss.]
 
-### Creazione dei reati informatici
+### Reati informatici negli Stati Uniti
 
 Date queste premesse, l'intervento del diritto penale era inevitabile.
-La prima legge sui reati informatici negli Stati Uniti fu approvata in Florida nel 1978, e nel corso di poco più di un decennio, quasi tutti gli Stati seguirono l'esempio, e si dotarono di proprie leggi [@Nugent1991, 4].
 
+Negli Stati Uniti, la mancanza di leggi che punissero in maniera specifica i reati informatici, e la natura immateriale dei dati digitali inizialmente non furono di ostacolo per il sistema giudizario.
 
-Negli Stati Uniti, i reati informatici venivano puniti anche prima , per vari motivi [@Nugent1991, 2--4]:
+I *prosecutors* (pubblici ministeri) potevano qualificare il fatto commesso mediante un sistema informatico all'interno dei reati tradizionali, come *fraud* (truffa telematica), *larceny* (furto), o *embezzlement* (appropriazione indebita o peculato).
 
-- I sistemi informatici erano lo strumento usato per compiere altri reati.
-- Le corti riuscivano ad applicare le nozioni tradizionali anche ai reati commessi contro sistemi informatici.
-- I *prosecutors*^[Figura equivalente al pubblico ministero negli Stati Uniti.] riuscivano a qualificare i fatti all'interno di altre figure di reato a condotta libera, come il *mail fraud* o *wire fraud*.^[Truffe commesse per posta, o con sistemi di telecomunicazione.]
+Le corti affermavano che nonostante i dati digitali avessero natura intangibile ed immateriale, avevano comunque un valore economico, e quindi si legittimava l'intervento del diritto penale [@Nugent1991, 2].
 
+Tuttavia, in alcuni casi, le corti argomentarono che se il legislatore voleva proteggere i sistemi informatici ed i dati digitali, avrebbe dovuto farlo in maniera espressa.
 
-L'espressione "reato informatico" può essere intesa in due modi.
+Un'interpretazione estensiva delle leggi penali avrebbe violato il principio del *due process of law* (giusto processo), perché l'imputato non avrebbe potuto sapere in anticipo che il fatto sarebbe stato considerato un reato, e/o il principio della separazione dei poteri, perché i giudici avrebero creato una nuova ipotesi di incriminazione, non espressamente prevista dal legislatore.
+
+Per superare questi problemi, gli Stati iniziarono a dotarsi di leggi sui reati informatici.
+La prima fu approvata in Florida nel 1978, e nel corso di poco più di un decennio, quasi tutti gli altri Stati si dotarono di proprie leggi [@Nugent1991, 2--4].
+
+### Reati informatici in Italia
+
+In Italia, la prima disciplina riguardo i reati informatici viene introdotta con la L. n. 547/1993.
+Estende una serie di reati tradizionali, introducendo riferimenti ai sistemi informatici e telematici, i programmi informatici ed i dati digitali [@Gammarota2016, 71].
+
+A titolo esemplificativo:
+
+- La violenza sulle cose (art. 1) ed il danneggiamento (art. 9) possono riguardare anche sistemi informatici, o i dati in essi contenuti.
+- Gli impianti di pbublica utilità includono anche sistemi informaticie telematici (art. 2).
+- In tema di falsità, i documenti digitali devono essere trattati allo stesso modo degli atti pubblici e scritti privati (art. 3).
+- L'accesso abusivo a sistema informatico è analogo alla violazione di domicilio (art. 4).
+- La sottrazione o violazione di corrispondenza e l'intercettazione di comunicazioni includono anche le comunicazioni telematiche (artt. 5 e 6).
+- La frode informatica (art. 10) è analoga alla truffa.
+
+### Reati informatici propri ed impropri
+
+L'espressione "reato informatico" può essere intesa in due modi [@Gammarota2016, 29].
 
 Nel caso dei **reati informatici "propri"**, il sistema informatico è l'oggetto ed il bene giuridico protetto dal reato, ed è impossibile prescindere dalla sua presenza.
 
@@ -57,35 +77,180 @@ servizi a pagamento che offrono un'interfaccia facile da usare.^[Basta cercare t
 La truffa^[Art. 640 c.p.] protegge il patrimonio della vittima e la sua libertà di autodeterminazione [@Bartoli2021, 296], e fra i vari requisiti, richiede l'uso di "artifizi o raggiri".
 L'uso di questo tipo di tecnologie può sicuramente integrare quest'ultimo requisito, e casi di truffe telefoniche sono già successi negli Stati Uniti [@Kohli2023].
 
-In ogni caso, la distinzione fra reati contro, o per mezzo di, sistemi informatici serve solo a fini illustrativi, e non comporta conseguenze pratiche per quanto riguarda il diritto penale sostanziale.
+In ogni caso, la distinzione fra reati contro, o per mezzo di, sistemi informatici è puramente teorica, e non ha rilevanza pratica.
 
-Le conseguenze pratiche 
+## Dati digitali
 
-Nella pratica, quello che rileva è se ai fini della prova del fatto, serva o meno acquisire dati digitali.
-e non ha rilevanza pratica.
+Quello che invece ha rilevanza pratica è il **trattamento dei dati digitali**.
+
+Facendo un'analogia con la procedura penale, non importa se il reato informatico sia proprio o improprio, e quindi che rispettivamente, il sistema informatico sia una sorta di "persona offesa dal reato", o di "autore del reato", oppure se il sistema informatico non sia stato coinvolto nel reato, ma contenga al suo interno solo elementi che possono rilevare per la ricostruzione del fatto storico nel processo, come una sorta di "persona informata sui fatti" [@Gammarota2016, 29].
+
+Se l'autorità giudiziaria deve valutare dei dati digitali ai fini di una decisione, **non può prescindere dal tenere in conto le loro caratteristiche particolari**.
+
+<!--
+TODO: Concezione erronea, i dati digitali sono sempre affidabili
+-->
+
+### Bit
+
+**L'unità fondamentale del dato digitale è il bit**, che può assumere due valori, convenzionalmente indicati con 0 ed 1 [@Gammarota2016, 47].
+
+La caratteristica più critica dei bit è che **"sono" memoria, ma "non hanno" memoria**.
+
+Un bit "sa" solo quale è il suo stato attuale (ossia, 0 o 1), ma non "si ricorda" gli stati precedenti, né quali operazioni lo hanno portato ad assumere il valore attuale.
+
+Un bit è un "atomo", nel vero senso della parola.
+I bit non sono stati scoperti dalla scienza, così come furono scoperti gli atomi.
+Piuttosto, è più appropriato dire che siano stati "inventati".
+
+Non arriverà mai il giorno in cui scopriremo che in realtà, i bit sono composti da componenti più piccoli.
+Il bit, per definizione, è assolutamente indivisibile, e già l'unità minima.
+
+### TODO Codifica binaria
+
+### Supporti materiali
+
+Nella pratica, i bit hanno una **natura particolare**.
+
+Da un lato, i bit (come tali) non possono essere toccati con mano, e non formano oggetto di percezione sensoriale diretta.
+Ciò potrebbe far pensare che abbiano **natura immateriale**, o che siano un puro concetto, un'idea astratta, un *corpus mysticum*.
+
+Questa interpretazione era stata sostenuta da:
+
+- Alcune corti, che negavano la protezione del diritto d'autore ai programmi informatici distribuiti in forma di codice macchina,^[La differenza fra codice macchina e codice sorgente sarà oggetto di discussione *infra*.] perché il codice macchina era destinato ad essere eseguito dal calcolatore, e non poteva essere percepito da un essere umano, a differenza del codice sorgente [@Blomqvist2014, 88].
+- Gli imputati in reati informatici negli Stati Uniti, che affermavano che fosse impossibile rubare dati digitali, o appropriarsi indebitamente di risorse come lo spazio su disco o l'uso del processore, perché sono risorse intangibili ed immateriali [@Nugent1991, 2].
+
+Tuttavia, è un'**interpretazione erronea**.
+È vero che i bit non possono essere percepiti e manipolati se non con l'uso di sistemi e programmi informatici, ma questo non significa che esistono esclusivamente nella mente o immaginazione delle persone.
+
+Piuttosto, i bit **necessitano sempre di una dimensione fisica**, un *corpus mechanicum*.
+Indipendentemente dalla tecnologia usata, la loro conservazione e trasmissione comporta sempre una qualche modifica nel mondo materiale.
+
+Certamente, in alcuni casi, la loro esistenza può essere particolarmente effimera, ma un'esistenza materiale di breve durata è cosa diversa dall'essere completamente immateriale:
+
+- Le **memorie primarie** (registri e cache del processore, RAM) hanno tempi di accesso rapidi, ma possono conservare i loro contenuti solo fino a quando continuano ad essere alimentate. In altre parole, quando il sistema viene spento, il loro contenuto si disperde, e non viene conservato.
+- I bit in transito su una **rete** (cablata o senza fili) "esistono" come un flusso di dati solo per la durata della trasmissione. In altre parole, se il risultato della trasmissione non viene memorizzato, non potrà essere recuperato.
+
+La loro esistenza diventa **tendenzialmente permanente** solo quando vengono conservati sulle **memorie secondarie** (supporti ottici, *hard disk*, *solid state drives*&hellip;), che hanno tempi di accesso più lenti, ma continuano a conservare i dati anche se non sono alimentate
+
+L'avverbio "tendenzialmente" allude al fenomeno del *bit rot*, la "putrefazione" dei bit.
+A riprova della natura materiale -- seppure sempre intangibile, e talvolta effimera -- dei bit, se il supporto materiale si degrada nel tempo, anche i bit contenuti in esso ne risentono
+[@Gammarota2016, 52--57].
+
+Nel caso più grave, l'intero supporto diventa illeggibile, ed i dati in esso contenuti devono essere recuperati con tecniche specializzate.
+
+Nei casi meno gravi, solo parti del supporto diventano illeggibili o corrotte.
+Se il supporto materiale è in grado di rilevare l'errore, segnalerà all'utente l'errore di lettura.
+Si immagini il caso di un libro: se una pagina viene strappata, le restanti rimangono comunque leggibili.
+
+Nei casi di corruzione più lievi ed insidiosi, l'errore non viene rilevato, ma i singoli bit diventano comunque alterati.
+Si immagini la falsificazione delle cifre: è possibile trasformare un 3 in un 8, uno 0 in un 6 o 9. L'analogia non è perfetta, perché è un caso di modificazione volontaria piuttosto che accidentale, ma il principio è lo stesso.
+
+### Esperimento mentale -- Fragilità dei bit
+
+Il *bit rot* del supporto materiale su cui si trovano i bit è solo una delle cause che può portare alla loro modificazione.
+Naturalmente, si deve considerare anche l'intervento umano.
+
+Se si volesse **tenere traccia delle modificazioni** di un singolo bit, servirebbe:
+
+- Altra memoria, e quindi altri bit.
+- Un sistema di codifica che permette di descrivere l'evento che ha modificato quel bit come una sequenza di bit.
+- Un sistema che monitora costantemente quel singolo bit, e aggiorna la sua cronistoria.
+
+TODO: il sistema è interamente contenuto nel supporto materiale.
+
+I primi due requisiti possono essere soddisfatti con facilità, ma il terzo è un **ostacolo insormontabile**.
+
+La capacità dei supporti informatici moderni viene misurata in centinaia di gigabyte, dove "giga-" è un prefisso che significa "miliardi di", e "byte" significa "otto bit".
+
+In altre parole, servirebbe monitorare costantemente, e contemporaneamente, migliaia di miliardi di bit.
+Anche con la tecnologia moderna, 
+
+Poi, servirebbe un multiplo di quella quantità di dati, per poter tenere traccia delle modifiche.
+Supponiamo una stima estremamente conservativa, per cui 
+
+Ancora, anche il registro delle modifiche dovrebbe tenere traccia di sé stesso, richiedendo altri bit che a loro volta dovrebbero essere monitorati&hellip;
+
+Ma anche supponendo che sia possibile tenere traccia di una quantità di dati che cresce in maniera illimitata, e a velocità esponenziale, ci sarebbe un altro problema, ancora più fondamentale.
+
+Il sistema di monitoraggio può determinare con certezza oggettiva solo i seguenti elementi:
+
+- Dove, nel senso di all'interno di quale file, o quale posizione nel disco, si trova il bit che è stato modificato.
+- Quando è stato modificato.
+- Come, nel senso di quale valore aveva prima, e quale valore ha adesso.
+
+Tuttavia, **è estremamente difficile determinare perché il bit è stato modificato**.
+
+Per "perché" si intende qualsiasi causa che può portare alla modificazione del bit:
+
+- Un evento naturale: il deterioramento del supporto materiale, un raggio cosmico, un errore di lettura o scrittura da parte del supporto&hellip; possono modificare in maniera imprevedibile il bit.
+- Un errore di programmazione: anche supponendo che sia possibile rilevare tutte le cause naturali di modifica dei bit, il sistema non può sapere se una modifica ad un certo bit sia dovuta ad un programma che sta malfunzionando; decidere se un determinato risultato sia voluto o meno è qualcosa che solo un essere umano può fare.
+
+Infine, è difficile sapere **chi** abbia modificato il bit.
+
+Anche supponendo che sia i supporti che i programmi siano perfetti -- e quindi che ogni modifica possa essere ricondotta esclusivamente al dolo o colpa di un essere umano -- il sistema non è in grado di determinare l'identità della persona che ha causato quella modifica.
+
+Ad esempio, supponiamo che il sistema imputi una modifica all'utente "Alice".^[Alice e Bob (in italiano, Roberto) sono nomi fittizi, l'equivalente di Tizio e Caio, nel campo della crittografia.]
+Si possono ipotizzare i seguenti scenari:
+
+- La modifica è stata effettivamente realizzata da Alice.
+- Alice ha lasciato il computer momentaneamente incustodito, non si è disconnessa, e la modifica è stata fatta da Roberto.
+- Alice ha volontariamente condiviso le sue credenziali di accesso con Roberto.
+
+Naturalmente, è astrattamente possibile immaginare un sistema che estragga una traccia biologica dalla persona che lo sta utilizzando.
+Ma anche ignorando le difficoltà legali e tecniche, rimarrebbe comunque il problema della piena affidabilità di un tale sistema.
+
+### Fragilità dei bit
+
+Riassumendo, i **bit**, e quindi i **dati digitali** in generale, sono **estremamente fragili**. È estremamente facile modificarli, anche senza volerlo, ed estremamente difficile capire come si sia arrivati a questa situazione.
+
+Questo **non** significa che i dati digitali siano **intrinsecamente inaffidabili**, e quindi non possano mai fornire informazioni utili all'interno di un processo.
+Piuttosto, significa che se devono essere utilizzati per prendere una decisione, bisogna **valutare** non solo i dati, ma anche -- e forse soprattutto -- il **rispetto delle tecniche** che sono state utilizzate per il loro trattamento.
+
+Questo significa che i bit sono estremamente fragili [@Gammarota2016, 58].
+
+### Codifica digitale
+
+Tutti i dati digitali sono rappresentati com
+
+In primo luogo, è utile operare una distinzione fra tre concetti: mezzo di rappresentazione, dati e informazioni.
+
+Il **mezzo di rappresentazione** è il metodo con cui i dati vengono conservati o trasmessi, e comporta sempre una modifica della realtà materiale.
+
+L'evoluzione tecnologica ha permesso la creazione di mezzi di rappresentazione sempre più sofisticati, ma il principio fondamentale rimane lo stesso: permettere la conservazione e trasmissione di dati.
 
 
+Ad esempio:
+
+- Per quanto riguarda la conservazione dei dati, si è passati dalle tavolette di argilla, alla stampa, alle moderne memorie di massa.
+- Per la trasmissione dei dati a distanza, si è passato dai segnali di fumo, al telegrafo, alla fibra ottica.
+
+Indipendentemente dal mezzo usato, l'obiettivo rimane lo stesso: conservare dei dati nel tempo, o trasmetterli a distanza.
+
+La prima parte può essere confrontata alla definizione di prova documentale (c.p.p, art. 234, co. 1):
+
+> È consentita l'acquisizione di scritti o di altri documenti che rappresentano fatti, persone o cose mediante la fotografia, la cinematografia, la fonografia o qualsiasi altro mezzo.
 
 
+Il **dato** è quanto viene conservato o trasmesso con la modalità di rappresentazione.
 
 
-### Stati Uniti
+La Convenzione di Budapest sulla criminalità informatica definisce i *computer data* (dati informatici) come [@ConvenzioneBudapest2001, art. 1, lett. a]:
 
-In alcuni casi, tuttavia, la mancanza di leggi specifiche riguardo i reati informatici impedì di punire alcune condotte criminose, perché le corti preferirono usare un'interpretazione letterale della legge @[Nugent1991, 3--4].
+> [A]ny representation of facts, information or concepts in a form suitable for processing in a computer system, including a program suitable to cause a computer system to perform a function;
 
 
-----
+In entrambi i casi, si ha una "rappresentazione" di informazioni.
 
-Negli Stati Uniti, si opera una tripartizione terminologica:
+- Ormai l'informatizzazione sta raggiungendo anche la giustizia, con il processo telematico
+- Le informazioni digitali rilevano all'interno di processi
 
-I *computer crimes*^[Trad.: reati informatici.] propriamente detti sono accomunati dal fatto che la condotta criminosa presuppone l'esistenza di un sistema informatico.
-Ad esempio, l'accesso abusivo a sistema informatico (art. 615-*ter* c.p.) viene considerato come una sorta di equivalente digitale della violazione di domicilio (art. 614 c.p.).
+- Natura particolare dei dati, fragilità
+- Necessità di applicare cautele particolari ai dati
 
-I *computer-related crimes*^[Trad.: reati collegati a sistemi informatici.] sono reati che vengono facilitati, o possono essere commessi per mezzo di sistemi informatici, ma 
+### Supporto materiale
 
-In questi casi, il 
-
-dove il bene giuridico protetto è  corretto funzionamento di un sistema informatico, e l'integrità dei dati che contiene.
+### 
 
 ## Informatica forense
 
@@ -112,13 +277,6 @@ A partire dagli anni '70, i sistemi informatici iniziano a diffondersi all'inter
 
 Questo sviluppo tecnologico comporta tre conseguenze per il diritto penale:
 
-- *Computer crimes*:[^computer-crimes] Il funzionamento dei sistemi informatici, e l'integrità dei programmi e dati conservati al loro interno, diventa oggetto di tutela specifica da parte del diritto penale.
-- 
-
-Vengono introdotti nuovi reati, o vengono modificate le definizioni dei reati esistenti, in modo da proteggere il funzionamento dei sistemi informatici, e l'integrità dei dati digitali.
-[@Gammarota, 11--13]
-
-[^computer-crimes]: Reati informatici.
 
 Il progressivo sviluppo e diffusione degli strumenti informatici a 
 
@@ -282,43 +440,7 @@ In primo luogo, va osservato che la sua nascita è estremamente recente.
 Si inizia a parlare di **informatica** nella seconda metà del ventesimo secolo, nel 1957 in Germania, e nel 1962 in Francia
 [@Bolognesi1999, 916--917].
 
-## Dato, informazione, mezzo di rap&shy;pre&shy;sen&shy;tazione
 
-In primo luogo, è utile operare una distinzione fra tre concetti: mezzo di rappresentazione, dati e informazioni.
-
-Il **mezzo di rappresentazione** è il metodo con cui i dati vengono conservati o trasmessi, e comporta sempre una modifica della realtà materiale.
-
-L'evoluzione tecnologica ha permesso la creazione di mezzi di rappresentazione sempre più sofisticati, ma il principio fondamentale rimane lo stesso: permettere la conservazione e trasmissione di dati.
-
-
-Ad esempio:
-
-- Per quanto riguarda la conservazione dei dati, si è passati dalle tavolette di argilla, alla stampa, alle moderne memorie di massa.
-- Per la trasmissione dei dati a distanza, si è passato dai segnali di fumo, al telegrafo, alla fibra ottica.
-
-Indipendentemente dal mezzo usato, l'obiettivo rimane lo stesso: conservare dei dati nel tempo, o trasmetterli a distanza.
-
-La prima parte può essere confrontata alla definizione di prova documentale (c.p.p, art. 234, co. 1):
-
-> È consentita l'acquisizione di scritti o di altri documenti che rappresentano fatti, persone o cose mediante la fotografia, la cinematografia, la fonografia o qualsiasi altro mezzo.
-
-
-Il **dato** è quanto viene conservato o trasmesso con la modalità di rappresentazione.
-
-
-La Convenzione di Budapest sulla criminalità informatica definisce i *computer data* (dati informatici) come [@ConvenzioneBudapest2001, art. 1, lett. a]:
-
-> [A]ny representation of facts, information or concepts in a form suitable for processing in a computer system, including a program suitable to cause a computer system to perform a function;
-
-
-In entrambi i casi, si ha una "rappresentazione" di informazioni.
-
-- Informatizzazione della società, a livello internazionale e nazionale
-- Ormai l'informatizzazione sta raggiungendo anche la giustizia, con il processo telematico
-- Le informazioni digitali rilevano all'interno di processi
-
-- Natura particolare dei dati, fragilità
-- Necessità di applicare cautele particolari ai dati
 
 ## Informatica forense, prova digitale
 
