@@ -67,6 +67,7 @@ Si inizia a parlare di **informatica** nella seconda metà del ventesimo secolo,
 
 ### Peculiarità dell'informatica forense
 
+
 L'informatica forense è una disciplina che presenta alcune peculiarità:
 
 - La sua novità, anche della scienza a cui fa riferimento, non si è ancora completamente assestata

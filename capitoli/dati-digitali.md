@@ -1,14 +1,25 @@
 ## Dati digitali
 
-Quello che invece ha rilevanza pratica è il **trattamento dei dati digitali**.
+### Rilevanza per le investigazioni penali
 
-Facendo un'analogia con la procedura penale, non importa se il reato informatico sia proprio o improprio, e quindi che rispettivamente, il sistema informatico sia una sorta di "persona offesa dal reato", o di "autore del reato", oppure se il sistema informatico non sia stato coinvolto nel reato, ma contenga al suo interno solo elementi che possono rilevare per la ricostruzione del fatto storico nel processo, come una sorta di "persona informata sui fatti" [@Gammarota2016, 29].
+Il problema più importante non è tanto la qualificazione dei reati.
+È sicuramente utile che i reati informatici siano previsti in maniera specifica dal legislatore, per escludere ogni dubbio in merito alla loro esistenza, e cercare di delimitare l'area del penalmente rilevante.
 
-Se l'autorità giudiziaria deve valutare dei dati digitali ai fini di una decisione, **non può prescindere dal tenere in conto le loro caratteristiche particolari**.
+Tuttavia, la questione più importante è l'**uso dei dati digitali all'interno di un procedimento** [@Gammarota2016, 29].
 
-<!--
-TODO: Concezione erronea, i dati digitali sono sempre affidabili
--->
+Nei casi di **reato informatico proprio**, è **impossibile** prescindere dal dato digitale, poiché l'oggetto materiale è un sistema informatico.
+L'unico modo per dimostare la sua alterazione è considerare i dati in esso contenuti.
+
+Nei casi di **reato informatico improprio**, è **difficile**, ma non impossibile, prescindere dal dato digitale.
+Sicuramente sarebbe utile poter esaminare lo strumento con cui è stato compiuto il reato, ma in linea teorica, il fatto può essere provato o contestato anche in altri modi.
+
+In **tutti gli altri casi di reato**, può essere **utile, ma non necessario**, utilizzare i dati digitali contenuti in sistemi informatici.
+Se si decide di acquisirli, bisogna tenere a mente la **fragilità** dei dati digitali.
+
+Il tema sarà oggetto di analisi più approfondita in un capitolo successivo, ma al momento, è necessario e sufficiente anticipare che tendenzialmente, **qualsiasi operazione** si possa compiere su un sistema informatico porta alla **modificazione dei contenuti** del sistema stesso, anche se potrebbe sembrare a prima vista non invasiva.
+
+Si può fare un'analogia con la disciplina dell'esame e della testimonianza.
+Così come il giudice è tenuto a valutare con rigore l'affidabilità delle deposizioni dell'**imputato** (nel caso dei reati informatici propri e non, il sistema informatico ha partecipato alla realizzazione del fatto), e del **testimone** (negli altri casi, il sistema informato può riferire dati utili), perché la memoria delle persone è labile, così deve applicare lo stesso rigore quando valuta una **prova informatica**, perché i dati informatici sono fragili.
 
 ### Bit
 
@@ -19,13 +30,34 @@ La caratteristica più critica dei bit è che **"sono" memoria, ma "non hanno" m
 Un bit "sa" solo quale è il suo stato attuale (ossia, 0 o 1), ma non "si ricorda" gli stati precedenti, né quali operazioni lo hanno portato ad assumere il valore attuale.
 
 Un bit è un "atomo", nel vero senso della parola.
-I bit non sono stati scoperti dalla scienza, così come furono scoperti gli atomi.
-Piuttosto, è più appropriato dire che siano stati "inventati".
+Nel campo delle scienza naturali, il modello dell'atomo fu rivistato più volte, si scoprì che in realtà quello che veniva chiamato "atomo" era composto da particelle subatomiche, e poteva essere soggetto al processo di fissione nucleare.
 
-Non arriverà mai il giorno in cui scopriremo che in realtà, i bit sono composti da componenti più piccoli.
-Il bit, per definizione, è assolutamente indivisibile, e già l'unità minima.
+Piuttosto, i bit hanno una natura più "artificiale", non sono stati scoperti.
+Sono, per definizione assiomatica, l'unita minima con cui rappresentare dati digitali.^[Per una discussione sulla natura dell'informatica come scienza, v. sez. \ref{informatica}.]
 
-### TODO Codifica binaria
+### Codifica binaria
+
+Un singolo bit non è particolarmente utile, dato che può rappresentare solo due valori.
+Una sequenza di bit invece è più utile, perché può rappresentare un valore numerico intero.
+
+Una sequenza di otto bit è chiamata un "byte". Un byte può rappresentare 256 possibili valori.
+Laddove il bit è l'unità fondamentale dell'informazione, il byte è l'unità fondamentale della computazione e archiviazione.
+Quasi tutte le operazioni considerano uno o più byte (generalmente, una potenza di due).
+Per modificare i singoli bit all'interno di un byte laddove necessario, si usano tecniche dette di *bit manipulation*.
+
+La rappresentazione di dati in forma binaria è concettualmente semplice.
+Dato che una sequenza di bit può essere interpreta come un valore numerico, questo numero a sua volta può essere interprato come un **valore ordinale** (una valore o quantità), o un **valore cardinale** (una posizione).
+
+La **rappresentazione del testo** è una codifica puramente cardinale: ad ogni valore numerico viene assegnata una corrispondente lettera.
+È bene notare che la codifica è puramente arbitaria: ognuno è libero di determinare quali lettere corrispondono a quali valori.
+Naturalmente, esistono delle codifiche standard, adottate quasi universalmente, ma se si apre un testo con una codifica diversa da quello con cui era stato salvato, il risultato sarà illegibile.
+
+Invece, la rappresentazione di suoni ed immagini è una codifica puramente ordinale: il suono viene campionato più volte, e si salva una sequenza della serie di intensità misurate, mentre per le immagini si salva l'intensità dei colori primari che compongono ogni pixel.
+
+Le **tecniche di compressione** combinano l'uso di codifica cardinale (creando una tabella di sequenze che si ripetono all'interno della serie di bit da compriere, e sostiutendo quelle sequenze con un riferimento alla loro posizione nella tabella) e codifica ordinale (la tabella contiene i valori originali).
+
+Anticipando un tema che sarà approfondito in seguito,^[V. sez. \ref{codice-macchina}.] anche il **codice macchina** combina una codifica cardinale ed ordinale.
+Le istruzioni che un processore può eseguire sono tipizzate in una tabella, e quindi sono interpretate secondo lo schema cardinale, ma i valori su cui operano non possono essere predeterminati, e quindi sono interpretati come valori ordinali.
 
 ### Supporti materiali
 
@@ -36,7 +68,7 @@ Ciò potrebbe far pensare che abbiano **natura immateriale**, o che siano un pur
 
 Questa interpretazione era stata sostenuta da:
 
-- Alcune corti, che negavano la protezione del diritto d'autore ai programmi informatici distribuiti in forma di codice macchina,^[La differenza fra codice macchina e codice sorgente sarà oggetto di discussione *infra*.] perché il codice macchina era destinato ad essere eseguito dal calcolatore, e non poteva essere percepito da un essere umano, a differenza del codice sorgente [@Blomqvist2014, 88].
+- Alcune corti, che negavano la protezione del diritto d'autore ai programmi informatici distribuiti in forma di codice macchina,^[Sulla differenza fra codice macchina e codice sorgente, v. sez. \ref{codice-macchina} e ss.] perché il codice macchina era destinato ad essere eseguito dal calcolatore, e non poteva essere percepito da un essere umano, a differenza del codice sorgente [@Blomqvist2014, 88].
 - Gli imputati in reati informatici negli Stati Uniti, che affermavano che fosse impossibile rubare dati digitali, o appropriarsi indebitamente di risorse come lo spazio su disco o l'uso del processore, perché sono risorse intangibili ed immateriali [@Nugent1991, 2].
 
 Tuttavia, è un'**interpretazione erronea**.
@@ -50,7 +82,9 @@ Certamente, in alcuni casi, la loro esistenza può essere particolarmente effime
 - Le **memorie primarie** (registri e cache del processore, RAM) hanno tempi di accesso rapidi, ma possono conservare i loro contenuti solo fino a quando continuano ad essere alimentate. In altre parole, quando il sistema viene spento, il loro contenuto si disperde, e non viene conservato.
 - I bit in transito su una **rete** (cablata o senza fili) "esistono" come un flusso di dati solo per la durata della trasmissione. In altre parole, se il risultato della trasmissione non viene memorizzato, non potrà essere recuperato.
 
-La loro esistenza diventa **tendenzialmente permanente** solo quando vengono conservati sulle **memorie secondarie** (supporti ottici, *hard disk*, *solid state drives*&hellip;), che hanno tempi di accesso più lenti, ma continuano a conservare i dati anche se non sono alimentate
+La loro esistenza diventa **tendenzialmente permanente** solo quando vengono conservati sulle **memorie secondarie** (supporti ottici, *hard disk*, *solid state drives*&hellip;), che hanno tempi di accesso più lenti, ma continuano a conservare i dati anche se non sono alimentate.
+
+### TODO Cause di modifica dei bit
 
 L'avverbio "tendenzialmente" allude al fenomeno del *bit rot*, la "putrefazione" dei bit.
 A riprova della natura materiale -- seppure sempre intangibile, e talvolta effimera -- dei bit, se il supporto materiale si degrada nel tempo, anche i bit contenuti in esso ne risentono
@@ -65,28 +99,40 @@ Si immagini il caso di un libro: se una pagina viene strappata, le restanti rima
 Nei casi di corruzione più lievi ed insidiosi, l'errore non viene rilevato, ma i singoli bit diventano comunque alterati.
 Si immagini la falsificazione delle cifre: è possibile trasformare un 3 in un 8, uno 0 in un 6 o 9. L'analogia non è perfetta, perché è un caso di modificazione volontaria piuttosto che accidentale, ma il principio è lo stesso.
 
-### Esperimento mentale -- Fragilità dei bit
+Il problema fondamentale è che i cambiamenti non lasciano traccia, quando il bit cambia, non ricorda i valori precedenti.
+Le fonti dei cambiamenti sono numerose:
 
-Il *bit rot* del supporto materiale su cui si trovano i bit è solo una delle cause che può portare alla loro modificazione.
-Naturalmente, si deve considerare anche l'intervento umano.
+- Come già indicato, eventi naturali, imprevedibili ed inevitabili che colpiscono il supporto materiale.
+- Gli errori di programmazione, che producono modifiche non richieste o desiderate ai dati, ma è difficile prevedere la loro presenza in anticipo.
+- I processi che continuano a funzionare *in background* (anche se non sono immediatamente visibili all'utente), senza l'intervento dell'utente, e causando la modifica di una grande quantità di file.
+- Operazioni che agiscono su più file, come ad esempio, una ricerca, che comporta l'apertura di numerosissimi file, e molto probabilmente, la creazione o aggiornamento di altri file (ad esempio, la cronologia di ricerca).
+- Le operazioni che agiscono su un singolo file, come la sua apertura, che altera le informazioni relative a quel file, come la sua data di ultima apertura.
 
-Se si volesse **tenere traccia delle modificazioni** di un singolo bit, servirebbe:
+Questo significa che tutte le **operazioni che toccano la fonte di prova "originale", che abbia la natura di sistema informatico** devono essere considerate **irripetibili** ai sensi dell'art. 117 disp. att. c.p.p. [@Gammarota2016, 148--151]. <!-- TODO: controllare questa citazione -->
+
+### Dimostrazione delle caratteristiche dei bit
+
+Per poter **tenere traccia delle modificazioni** di un singolo bit, servirebbe:
 
 - Altra memoria, e quindi altri bit.
 - Un sistema di codifica che permette di descrivere l'evento che ha modificato quel bit come una sequenza di bit.
 - Un sistema che monitora costantemente quel singolo bit, e aggiorna la sua cronistoria.
 
-TODO: il sistema è interamente contenuto nel supporto materiale.
-
 I primi due requisiti possono essere soddisfatti con facilità, ma il terzo è un **ostacolo insormontabile**.
 
-La capacità dei supporti informatici moderni viene misurata in centinaia di gigabyte, dove "giga-" è un prefisso che significa "miliardi di", e "byte" significa "otto bit".
+In primo luogo, rileva l'impossibilità di monitorare l'enorme mole di dati contenuta nelle memorie secondarie.
+La capacità dei supporti informatici moderni viene misurata in centinaia di gigabyte, dove "giga-" è un prefisso che significa "miliardi di".
 
 In altre parole, servirebbe monitorare costantemente, e contemporaneamente, migliaia di miliardi di bit.
-Anche con la tecnologia moderna, 
+Anche con la tecnologia moderna, questo risultato sarebbe difficilmente raggiungibile.
 
-Poi, servirebbe un multiplo di quella quantità di dati, per poter tenere traccia delle modifiche.
-Supponiamo una stima estremamente conservativa, per cui 
+Controllare contemporaneamente ogni bit sarebbe impossibile.
+Se si procede per blocchi di memoria, il sistema di monitoraggio è imperfetto, perché nell'intervallo fra due scansioni, un bit sarebbe potuto cambiare più volte, senza che il sistema se ne sia accorto.
+
+In ogni caso, sarebbe necessario dedicare quante più risorse computazionali al controllo della memoria, in modo che il controllo sia il più efficiente possibile, a scapito dell'effettiva utilizzazione del calcolatore.
+
+Ancora, servirebbe un multiplo della quantità di dati tenuta sotto osservazione per poter tenere traccia delle modifiche.
+Supponiamo una stima estremamente conservativa, per cui bastino 100 bit di memoria, per ogni bit.
 
 Ancora, anche il registro delle modifiche dovrebbe tenere traccia di sé stesso, richiedendo altri bit che a loro volta dovrebbero essere monitorati&hellip;
 
@@ -119,52 +165,9 @@ Si possono ipotizzare i seguenti scenari:
 Naturalmente, è astrattamente possibile immaginare un sistema che estragga una traccia biologica dalla persona che lo sta utilizzando.
 Ma anche ignorando le difficoltà legali e tecniche, rimarrebbe comunque il problema della piena affidabilità di un tale sistema.
 
-### Fragilità dei bit
+### Affidabilità dei bit
 
 Riassumendo, i **bit**, e quindi i **dati digitali** in generale, sono **estremamente fragili**. È estremamente facile modificarli, anche senza volerlo, ed estremamente difficile capire come si sia arrivati a questa situazione.
 
 Questo **non** significa che i dati digitali siano **intrinsecamente inaffidabili**, e quindi non possano mai fornire informazioni utili all'interno di un processo.
 Piuttosto, significa che se devono essere utilizzati per prendere una decisione, bisogna **valutare** non solo i dati, ma anche -- e forse soprattutto -- il **rispetto delle tecniche** che sono state utilizzate per il loro trattamento.
-
-Questo significa che i bit sono estremamente fragili [@Gammarota2016, 58].
-
-### Codifica digitale
-
-Tutti i dati digitali sono rappresentati com
-
-In primo luogo, è utile operare una distinzione fra tre concetti: mezzo di rappresentazione, dati e informazioni.
-
-Il **mezzo di rappresentazione** è il metodo con cui i dati vengono conservati o trasmessi, e comporta sempre una modifica della realtà materiale.
-
-L'evoluzione tecnologica ha permesso la creazione di mezzi di rappresentazione sempre più sofisticati, ma il principio fondamentale rimane lo stesso: permettere la conservazione e trasmissione di dati.
-
-
-Ad esempio:
-
-- Per quanto riguarda la conservazione dei dati, si è passati dalle tavolette di argilla, alla stampa, alle moderne memorie di massa.
-- Per la trasmissione dei dati a distanza, si è passato dai segnali di fumo, al telegrafo, alla fibra ottica.
-
-Indipendentemente dal mezzo usato, l'obiettivo rimane lo stesso: conservare dei dati nel tempo, o trasmetterli a distanza.
-
-La prima parte può essere confrontata alla definizione di prova documentale (c.p.p, art. 234, co. 1):
-
-> È consentita l'acquisizione di scritti o di altri documenti che rappresentano fatti, persone o cose mediante la fotografia, la cinematografia, la fonografia o qualsiasi altro mezzo.
-
-
-Il **dato** è quanto viene conservato o trasmesso con la modalità di rappresentazione.
-
-
-La Convenzione di Budapest sulla criminalità informatica definisce i *computer data* (dati informatici) come [@ConvenzioneBudapest2001, art. 1, lett. a]:
-
-> [A]ny representation of facts, information or concepts in a form suitable for processing in a computer system, including a program suitable to cause a computer system to perform a function;
-
-
-In entrambi i casi, si ha una "rappresentazione" di informazioni.
-
-- Ormai l'informatizzazione sta raggiungendo anche la giustizia, con il processo telematico
-- Le informazioni digitali rilevano all'interno di processi
-
-- Natura particolare dei dati, fragilità
-- Necessità di applicare cautele particolari ai dati
-
-### Supporto materiale

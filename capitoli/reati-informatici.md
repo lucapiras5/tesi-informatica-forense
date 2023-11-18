@@ -68,11 +68,11 @@ Nel caso dei **reati informatici "impropri"**, il sistema informatico è soltant
 
 Ad esempio, gli sviluppi più recenti nelle intelligenze artificiali permette di generare dei *deepfake* vocali estraendo il timbro vocale di una persona, ed applicandolo ad un'altra registrazione, mediante un processo chiamato *voice conversion* [@Feffer2023].
 
-Su internet si può trovare il software necessario, guide su come utilizzarlo [Ad esempio, @SociallyIneptWeeb_AICoverGen],
-raccolte di modelli del timbro vocale di cantanti [@QuickWick_MusicAIVoices],
-servizi a pagamento che offrono un'interfaccia facile da usare.^[Basta cercare termini come "AI services voice cloning from recording".]
+Su internet si può trovare il software necessario, guide su come utilizzarlo^[Ad esempio, v. *AICoverGen*: <https://github.com/SociallyIneptWeeb/AICoverGen>.],
+raccolte di modelli del timbro vocale di cantanti^[Ad esempio, v. <https://huggingface.co/QuickWick/Music-AI-Voices>.],
+servizi a pagamento che offrono un'interfaccia facile da usare.^[Basta cercare termini come "AI services voice cloning from recording" per trovare numerosi risultati]
 
-La truffa^[Art. 640 c.p.] protegge il patrimonio della vittima e la sua libertà di autodeterminazione [@Bartoli2021, 296], e fra i vari requisiti, richiede l'uso di "artifizi o raggiri".
+La truffa (art. 640 c.p.) protegge il patrimonio della vittima e la sua libertà di autodeterminazione [@Bartoli2021, 296], e fra i vari requisiti, richiede l'uso di "artifizi o raggiri".
 L'uso di questo tipo di tecnologie può sicuramente integrare quest'ultimo requisito, e casi di truffe telefoniche sono già successi negli Stati Uniti [@Kohli2023].
 
 In ogni caso, la distinzione fra reati contro, o per mezzo di, sistemi informatici è puramente teorica, e non ha rilevanza pratica.
