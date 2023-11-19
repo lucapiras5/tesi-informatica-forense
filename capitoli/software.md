@@ -1,5 +1,56 @@
 ## Software
+
+### Diversi significati di software
+
+- programma per calcolatore, sequenza di istruzioni
+- software come codice macchina o come codice sorgente
+- include anche i componenti del sistema operativo
+- firmware
+
 ### Codice macchina
+
+- più semplice da spiegare
+- istruzioni di basso livello, indicano direttamente alla macchina cosa fare
+- non leggibili da parte del programmatore
+- natura puramente materiale, analoghe al giudizio di esecuzione
+- strettamente legato ad un processore, ogni processore ha un set di istruzioni particolare
+
+### Codice assembler
+
+- natura intermedia fra codice sorgente e codice macchina
+- leggibile dal programmatore, ma corrisponde in maniera diretta ad istruzioni per la macchina
+- richiede un assembler
+- l'unica astrazione è il fatto che può essere letto, e le macro
+
+### Codice sorgente
+
+- file di testo
+- descrizione astratta del programma, il processore non può utilizzarla diversamente
+- possono contenere commenti
+- linguaggi di programmazione di basso livello: assembler, C, ecc, gestione della memoria manuale, paradigma imperativo
+- linguaggi di alto livello: gestione automatica della memoria, paradigma descrittivo (al massimo livello con SQL)
+
+### Compilazione
+
+#### Verso codice macchina
+
+- codice sorgente viene trasformato in codice macchina in maniera permanente
+
+#### Verso bytecode
+
+#### Verso altro codice sorgente
+
+- Conversione in un altro linguaggio di programmazione
+
+### Interpretazione
+
+- JIT
+
+### Offuscamento
+
+- tecniche usate dalle misure di protezione
+
+### TODO Codice macchina
 
 Prima di discutere gli aspetti legali del software, è necessario operare una distinzione tecnica, tra il software inteso come codice macchina, ed il software inteso come codice sorgente.
 
@@ -124,7 +175,7 @@ Il codice sorgente interessa principalmente a chi sviluppa software, e non all'u
 
 Nel linguaggio comune, quando si parla di software, generalmente ci si riferisce ad un programma che può essere eseguito su un computer. 
 
-### Codice sorgente
+### TODO Codice sorgente
 
 Tradizionalmente, e fino agli anni '60, il software veniva venduto insieme all'hardware, e se ne incoraggiava la libera condivisione. È solo negli anni '70 che il software inizia ad essere venduto in maniera indipendente. [@gonzalez_barahona_2021, 75]
 
@@ -132,7 +183,7 @@ Veniva fornito in aggiunta all'harwdare, ma non
 
 Per capire l'importanza del codice sorgente, 
 
-### Software e copyright
+### TODO Software e copyright
 
 I "programmi per elaboratore" sono oggetto di tutela giuridica.
 
@@ -196,8 +247,6 @@ I linguaggi di programmazione devono essere convertiti in codice macchina, e la 
 
 *Programmi interpretati.*  Nel caso dei programmi interpretati, solo un programma detto "interprete" è compilato, ed la sua funzione è di leggere il codice sorgente, e convertirlo in codice macchina sul momento, senza doverlo compilare.  In questo caso, non si perde nessuna informazione, ma il costo è che l'esecuzione del programma è molto più lenta rispetto ad un linguaggio compilato.
 
-### Compilazione bytecode, JIT, minifier per offuscare.
+### TODO Compilazione bytecode, JIT, minifier per offuscare.
 
 *Conversione in bytecode.*  I programmi convertiti in bytecode vengono prima "compilati" in un codice macchina particolare, creato ad-hoc per quel linguaggio, detto bytecode.  Successivamente, il bytecode viene interpretato da un secondo programma.  L'esecuzione del codice è più veloce rispetto ai programmi interpretati, e rispetto ai programmi compilati, è più facile recuperare informazioni come il nome delle variabili, funzioni, ecc.
-
-

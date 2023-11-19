@@ -1,5 +1,27 @@
 ## Informatica forense
 
+### Origine storica dell'informatica forense
+
+- sviluppo tecnologico, reati, cultura processuale, sviluppo di servizi da parte di agenzie governative
+- varie definzioni specifiche 
+
+### Campo di applicazione contemporaneo
+
+- definizione onni-comprensiva: trattamento di qualsiasi dato digitale per qualsiasi fine processuale secondo criteri scientifici
+- campi di applicazione processuali: inizialmente legata a procedura penale, ma applicabile anche ad altri campi (specie processo telematico)
+
+### Informatica come scienza di riferimento
+
+- dubbio se l'informatica può essere effettivamente chiamata una scienza
+- sistemi informatici come "fenomeni naturali"
+
+### Sviluppo dell'informatica forense
+
+#### Fase libera di ricerca
+#### Formalizzazione dei risultati in best practices
+
+----
+
 In primo luogo è necessario definire in maniera precisa l'oggetto dell'informatica forense, e l'ambito entro cui opera.
 
 Da un punto di vista storico, l'informatica forense nasce ed inizia a svilupparsi negli Stati Uniti, per due motivi.
