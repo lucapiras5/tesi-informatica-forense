@@ -40,7 +40,8 @@
 
 #### Verso altro codice sorgente
 
-- Conversione in un altro linguaggio di programmazione
+- Transpilazione: conversione in un altro linguaggio di programmazione
+- Generazione di codice: da un modello
 
 ### Interpretazione
 

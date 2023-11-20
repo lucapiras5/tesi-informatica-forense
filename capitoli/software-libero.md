@@ -36,7 +36,7 @@
 
 - necessità di documentare il software
 
-## Sostenibilità economica
+## Sostenibilità economica del software libero
 
 - privati che distribuiscono codice libero, o che rendono parte del loro codice libero
 - sostenibilità economica
