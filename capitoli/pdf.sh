@@ -5,6 +5,7 @@ inputs="prologo.md \
 	sistema-operativo-libero.md \
 	buone-pratiche-procedimento-penale.md \
 	conclusioni.md \
+	note-legali.md \
 	bibliografia.md"
 
 pandoc -s --citeproc --bibliography citations.bib --from markdown+inline_notes -o out.pdf $inputs

@@ -20,3 +20,6 @@ papersize: a4
 fontsize: 12pt
 ---
 
+# Ringraziamenti {-}
+
+...
