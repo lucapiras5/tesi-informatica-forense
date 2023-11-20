@@ -6,6 +6,7 @@ inputs="prologo.md \
 	buone-pratiche-procedimento-penale.md \
 	conclusioni.md \
 	note-legali.md \
+	appendice-leggi.md \
 	bibliografia.md"
 
 pandoc -s --citeproc --bibliography citations.bib --from markdown+inline_notes -o out.pdf $inputs

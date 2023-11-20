@@ -1,4 +1,4 @@
-# Testi delle leggi {-}
+# Normative citate {-}
 
 <!-- La numerazione delle note a piè di pagina non è ripristinata dopo un capitolo non numerato: 
 https://tex.stackexchange.com/questions/53529/how-to-reset-footnote-numbering-at-chapter-and-at-frontmatter-chapters

@@ -18,8 +18,11 @@ indent: true
 linestretch: 1.5
 papersize: a4
 fontsize: 12pt
----
+header-includes: \pagestyle{plain}
+...
 
 # Ringraziamenti {-}
 
 ...
+
+# Introduzione {-}

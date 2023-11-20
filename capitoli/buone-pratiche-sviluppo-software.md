@@ -1,4 +1,4 @@
-# Sviluppo del software
+# Sviluppo di software scientifico
 
 ## Introduzione
 
