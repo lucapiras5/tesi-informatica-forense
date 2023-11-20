@@ -1,15 +1,9 @@
 inputs="prologo.md \
-	01-concetti-fondamentali.md \
-	importanza-delle-definizioni.md \
-	reati-informatici.md \
-	dati-digitali.md \
-	informatica-forense.md \
 	prova-scientifica.md \
-	software.md \
 	software-libero.md \
 	buone-pratiche-sviluppo-software.md \
-	buone-pratiche-procedimento-penale.md \
 	sistema-operativo-libero.md \
+	buone-pratiche-procedimento-penale.md \
 	conclusioni.md \
 	bibliografia.md"
 
