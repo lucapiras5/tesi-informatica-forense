@@ -1,5 +1,5 @@
 ---
-title: Tesi di Informatica Forense
+title: Sull'uso del software libero nell'informatica forense, per garantire un approccio scientifico ai dati digitali
 author: Luca Piras
 year: 2023
 citation-style: universita-di-bologna-lettere.csl
@@ -20,6 +20,10 @@ papersize: a4
 fontsize: 12pt
 header-includes: \pagestyle{plain}
 ...
+
+\newcommand{\Omissis}{[\dots\unkern]}
+\newcommand{\VediRef}[1]{\footnote{V. sez. \ref{#1}.}}
+\newcommand{\VediAdEsempioUrl}[1]{\footnote{V., ad es., \url{#1}.}}
 
 # Ringraziamenti {-}
 
