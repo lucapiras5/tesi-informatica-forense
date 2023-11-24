@@ -38,6 +38,7 @@
 ## Documentazione del codice
 
 - diataxis.fr
+- non serve sapere come funziona un computer per poterlo utilizzare, ma cfr. Unix, con pagine del manuale scritte come bug report, UNIX haters handbook, 53 ss., "collect bug reports"), mancata documentazione del codice per proteggere i segreti industriali?
 
 ### README
 

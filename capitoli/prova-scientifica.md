@@ -93,9 +93,10 @@ Ad esempio, gli atti irripetibili compiuti dalla PG e dal PM, ed i verbali degli
 La loro natura irripetibile rende imprescindibile il ricorso alle tecniche dell'informatica forense, in modo da garantire una corretta trattazione del dato.
 
 Invece di cercare di enumerare tutte le attività tipiche possibili, si compie un generico rinvio alle "tecniche informatiche in senso ampio \Omissis{} purché finalizzate al trattamento dei dati digitali per trarne informazioni utili alla ricostruzione dei fatti processualmente rilevanti" [@Gammarota2016, 27].
+
 Questo evita il problema di cercare di essere il più esaustivi possibili nella definizione, o di doverla aggiornare periodicamente per tenerla al passo con le nuove prassi o le innovazioni tecniche.
 
-Le *best practices* (migliori pratiche) in tema di *digital evidence* che vengono codificate a livello internazionale negli standard ISO/IEC [@Gammarota2016, 27--28] non sono propriamente norme giuridiche, perché la loro adozione è volontaria.
+Le *best practices* (migliori pratiche) in tema di *digital evidence* che vengono raccolte e codificate a livello internazionale negli standard ISO/IEC [@Gammarota2016, 27--28] non sono propriamente norme giuridiche, perché la loro adozione è volontaria.
 Piuttosto, data la loro natura principalmente tecnica, possono essere ricondotte all'interno delle "tecniche informatiche".
 
 Nel definire l'oggetto dell'informatica forense, non si parla di "prova informatica", ma in maniera estremamente generica, di "dati digitali a fini processuali".
@@ -106,39 +107,133 @@ Tuttavia, esistono situazioni in cui il giudice deve prendere una decisione, ma 
 Ad esempio, nel caso delle misure cautelari nel processo penale, il giudice decide sulla base di "gravi indizi di colpevolezza" (art. 273 co. 1 c.p.p.), che vengono presentati unilateralmente dal PM---all'imputato è concesso difendersi solo in un momento successivo, con l'interrogatorio di garanzia (art. 294 co. 1 c.p.p.).
 
 Il solo fatto che si richiedano "indizi", e non "prove", non deve far pensare che non si debbano applicare i principi dell'informatica forense.
-Anzi, proprio per il fatto che si richiedono "gravi indizi", e quindi quasi una prova anticipata della colpevolezza [@Grevi2020, 336--337], diventa necessario trattare correttamente i dati digitali su cui si fonda la richiesta.
+Anzi, proprio per il fatto che si richiedono "gravi indizi", e quindi quasi una prova anticipata della colpevolezza [@Conso2020, 336--337], diventa necessario trattare correttamente i dati digitali su cui si fonda la richiesta.
 
 In ultimo, l'espressione "a fini processuali" evita che la scienza rimanga fine a sé stessa---il fine che gli viene impartito è di rispondere alle esigenze e ai meccanismi del processo, e di rispettare le garanzie processuali [@Renzetti2015, 399].
 
 Le tecniche di trattamento dei dati previste dall'informatica forense saranno fondamentali per il processo telematico, dove non solo alcune prove, ma tutti gli atti che compongono il processo, esistono come dati digitali.
 
-## TODO Informatica come scienza di riferimento
+## Informatica come scienza
 
-- dubbio se l'informatica può essere effettivamente chiamata una scienza
-- sistemi informatici come "fenomeni naturali"
+### Sistematica della scienza
 
-Esatta definizione di "informatica" e "dato digitale":
+Tipicamente, le scienze vengono divise in due famiglie:
 
-- Origine del termine informatica in italiano
-- Informatica non richiede modalità digitali (ricerca binaria in un dizionario, algoritmo A-star su un puzzle), dato digitale non presuppone la conoscenza dell'informatica (così come non serve un diploma in ingegneria elettrica per creare una radio, non serve sapere come funziona un computer per poterlo utilizzare, ma cfr. Unix, con pagine del manuale scritte come bug report, UNIX haters handbook, 53 ss., "collect bug reports")
+- Le scienze naturali, che osservano i fenomeni naturali, creano ipotesi scientifiche con natura fattuale, provano a confutarle confrontandole con la realtà materiale, e sviluppano modelli modelli teorici e leggi scientifiche che possono essere usati per fare previsioni [@McPherson2001, 242--243].
+- Le scienze sociali, che studiano gli esseri umani e le loro interazioni sociali, e producono interpretazioni che al più possono essere oggetto di discussione, ma non di confutazione [@Montuschi2008, 5].
 
+In entrambi i casi, le scienze possono assumere rilevanza forense.
 
-L'**informatica forense** è una disciplina che presenta varie particolarità.
+### Scienze naturali forensi
 
-In primo luogo, va osservato che la sua nascita è estremamente recente.
-Si inizia a parlare di **informatica** nella seconda metà del ventesimo secolo, nel 1957 in Germania, e nel 1962 in Francia
-[@Bolognesi1999, 916--917].
+Le scienze naturali forensi[^scienze-naturali-forensi] sono utili per:
 
-## Sviluppo dell'informatica forense
+- Acquisire i fatti, mediante le loro tecniche di analisi della realtà materiale. Si pensi alla disciplina espressamente prevista per il prelievo coattivo di campioni biologici (art. 224-*bis* c.p.p.).
+- Valutare gli elementi di prova, ed in particolare dimostrare il nesso causale fra la condotta e l'evento nel reato, mediante l'uso di leggi scientifiche, derivate dall'osservazione della realtà materiale, ed arrivare ad un risultato probatorio [@Gammarota2016, 66].
 
-### Fase libera di ricerca
-### Formalizzazione dei risultati in best practices
-## Peculiarità dell'informatica forense
+Per quanto riguarda la dimostrazione del nesso causale, le leggi scientifiche sono espresse nella forma "data la situazione *X*, deriva *sempre/nella quasi totalità dei casi/nella maggioranza dei casi* la conseguenza *Y*".
+Solitamente le leggi scientifiche non sono assolute, ma sono leggi statistiche, con un inevitabile margine di errore.
 
+Quando un giudice applica una legge scientifica al caso concreto, deve valutare che sia adeguata, che sia il più affidabile possibile, e valutare sempre la presenza di spiegazioni causali alternative.
+
+Le leggi scientifiche che presentano un grado di affidabilità minore possono essere utilizzate solo quando le spiegazioni causali alternative siano completamente assenti [@Marinucci2020, 242--245].
+Questa logica può essere riassunta con l'aforisma "eliminato l'impossibile, ciò che resta, per improbabile che sia, deve essere la verità".
+
+[^scienze-naturali-forensi]: Ad esempio, medicina legale, tossicologia forense, balistica forense &hellip;
+
+### Scienze sociali forensi
+
+Anche le scienze sociali possono offrire un prezioso contributo all'attività giuridica.
+Ad esempio:
+
+- La criminologia è utile per svolgere le indagini in maniera più efficiente ed efficace.
+- La vittimologia permette ai soggetti che partecipano al processo di interagire con i soggetti vulnerabili nel miglior modo possibile---si pensi alla norma che permette di utilizzare l'incidente probatorio per assumere la testimonianza "[i]n gni caso, quando la persona offesa versa in condizione di particolare vulnerabilità".^[Art. 392 co. 1-*bis* c.p.p.]
+- La psicologia può aiutare a dimostare il dolo [@Marinucci2020, 388], o valutare in maniera più "scientifica" e meno "intuitiva" le circostanze che determinano la quantità di pena che il giudice deve applicare. Ad esempio, i "motivi a delinquere", il "carattere del reo", la condotta e vita prima, durante e dopo il reato, e le "condizioni di vita individuale, familiare e sociale".^[Art. 133 c.p.]
+
+### Affinità fra informatica e matematica
+
+Adesso, si pone il problema di definire che tipo di scienza sia l'informatica. Da un lato, si può sicuramente escludere che sia una scienza sociale. Può essere usata dalle scienze sociali per analizzare grandi quantità di dati,[^analyics] ma interessa principalmente come strumento, non come scienza.
+
+[^analyics]: Si pensi al settore della *data analytics*, che analizza enormi quantità di dati grezzi relativi ad utenti di siti internet per studiare---ed eventualmente, manipolare---fenomeni sociali (ad esempio, a quali temi gli utenti sono interessati, e come incentivarli ad acquistare determinati prodotti), e la relativa regolazione da parte del diritto, che cerca di regolare l'utilizzazione dei dati personali resi disponibili dagli utenti su internet, con strumenti come la GDPR.
+
+Da un altro, si può escludere anche che sia una scienza naturale. L'oggetto dello studio dell'informatica è l'elaborazione automatica delle informazioni,^[V. <https://www.treccani.it/enciclopedia/informatica/>.] e non l'informazione come fenomeno naturale.
+
+La fisica cerca di elaborare modelli teorici che spiegano come sia possibile parlare di "informazione".
+Ad esempio, si può dire che un libro stampato contenga informazioni perché gli atomi che lo compongono tendono a rimanere nella stessa posizione.
+A loro volta, la posizione degli atomi all'interno della realtà materiale è una forma di informazione, perché è un dato percepibile e misurabile.
+
+L'informatica, invece, è puramente teorica.
+
+Il suo obiettivo non è tanto di spiegare "come" l'informazione esiste. Il "come" l'informazione esiste può condizionare lo sviluppo dell'informatica, specie quando si passa all'implementazione pratica delle costruzioni teoriche dell'informatica,[^macchina-di-turing] ma in ogni caso, il vero cuore della disciplina è "cosa" si può fare con l'informazione.
+
+[^macchina-di-turing]: Ad esempio, la Macchina di Turing è un modello di calcolatore che memorizza i dati su un nastro di lunghezza infinita. I computer che utilizziamo ogni giorno sono una mera imitazione dell'ideale platonico della Macchina di Turing, perché dispongoono di una quantità di memoria limitata.
+
+Da questo punto di vista, è analoga alla matematica, che normalmente non viene descritta come una "scienza" in senso proprio, termine normalmente riservato per le scienze naturali, ma come una "scienza" in senso lato, ossia un insieme di conoscenze organizzate.[^matematica-scienze-naturali]
+
+[^matematica-scienze-naturali]: È l'opinione di @Bilaniuk1996 In ultima analisi, tutte le scienze naturali sono fondate sulla matematica. La sociologia si fonda sulla psicologia, che si fonda sulla biologia, che si fonda sulla chimica, che si fonda sulla fisica, che per ultima si fonda direttamente sulla matematica, che può essere definita la scienza più "pura", perché non studia né gli esseri umani, né la natura materiale, ma fenomeni completamente astratti. V. *Purity* di R. Munroe: <https://xkcd.com/435/>.
+
+La matematica non si preoccupa di spiegare "come" esistano i concetti astratti di numeri, i punti, le rette&hellip;^[In verità, si può discutere da un punto di vista filosofico se la matematica sia "scoperta", come un qualsiasi altro fenomeno naturale, seppure estremamente astratto, e quindi se la realtà materiale ponga dei limiti invalicabili a quanto può essere scoperto nella matematica---oppure, se sia "inventata", e quindi qualsiasi assioma, per quanto a prima vista "innaturale", possa comunque essere studiato, anche solo a livello teorico.]
+Piuttosto, dà per scontato che questi concetti esistano, seppur in maniera astratta, e mediante ragionamenti deduttivi, queste verità assiomatiche producono "teoremi". Un teorema non è un'ipotesi che aspetta di essere confutata,[^congettura-di-goldbach] ma è una proposizione logica che aspetta di essere provata.[^teorema-di-euclide]
+L'esempio meglio conosciuto delle potenzialità del ragionamento deduttivo sono gli *Elementi* di Euclide, dove partendo da un numero limitato di elementi, si costruisce una serie di derivazioni logiche che permettono di dimostrare sempre più risultati.
+
+[^congettura-di-goldbach]: Nella matematica l'equivalente delle "ipotesi" scientifiche sono le "congetture", Ad esempio, la congettura di Goldbach è formulata come "ogni numero pari maggiore di 2 può essere scritto come somma di due numeri primi, anche uguali". Basterebbe trovare un singolo numero non esprimibile come la somma di due numeri primi per confutare la congettura usando il metodo induttivo. 
+
+[^teorema-di-euclide]: Ad esempio, il teorema di Euclide dimostra in maniera deduttiva che i numeri primi sono infiniti. Ottenere lo stesso risultato in maniera induttiva sarebbe impossibile, perché indipendentemente da quanto tempo sia trascorso dall'ultimo numero primo, non è possibile escludere a priori che fra gli infiniti numeri rimanenti non ci siano altri numeri primi.]
+
+Allo stesso modo, l'informatica definisce una serie di concetti fondamentali. Ad esempio:
+
+- Il bit è l'unità minima di informazione---può assumere solo due valori, 0 o 1.
+- La memoria è un sequenza di bit---può essere immaginata come una linea dei numeri.
+- Le variabili sono una serie di bit all'interno della memoria---possono essere immaginati come un segmento all'interno della linea dei numeri.
+- Un puntatore è una variabile, il cui valore è un riferimento ad un indirizzo di memoria---può essere immaginato come un indirizzo di un edificio, un'informazione che permette di arrivare ad un certo luogo.
+- I bit possono essere confrontati e manipolati per mezzo degli operatori booleani.^[Gli operatori *and*, *or*, *not* &hellip; (e, o, non &hellip;)]
+- Le operazioni artimetiche possono essere effettuate combinando insieme vari operatori booleani.
+
+E così via, fino alla definizione di costruzioni teoriche sempre più complesse, come il controllo di flusso, le *subroutine* (funzioni o programmi), l'esecuzione in parallelo &hellip;
+
+Ancora, laddove le scienze naturali producono teorie che cercano di spiegare un fenomeno, l'informatica produce algoritmi---sequenze di istruzioni che non hanno un contenuto definitorio o conoscitivo, ma solamente imperativo.
+L'informatica può sicuramente essere usata per svolgere l'attività di ricerca nelle scienze naturali, ma ha sostanzialmente la stessa funzione della matematica: aiuta nella ricerca, formalizza i risultati, ma non è propriamente una "scienza".
+
+### Informatica forense e dati digitali come fenomeni naturali
+
+Tuttavia, quanto detto finora non esclude la possibilità di affermare che l'informatica---in particolare l'informatica forense, come forma applicata dell'informatica---possa avere la natura di una "scienza naturale".
+
+Un sistema informatico---espressione qui intesa come la combinazione di *hardware*, la parte tangibile, e dati digitali, che includono anche il *software*---può benissimo essere considerato un "fenomeno naturale".
+
+L'*hardware* ed i supporti materiali su cui i dati digitali sono memorizzati sono soggetti ai fenomeni naturali. Ad esempio, uno studio della IBM stimò che ogni mese, per ogni 256 MB di RAM, si verifica un *bit flip*, ossia, un bit nella memoria vienee invertito, perché il supporto è stato colpito da una particella ionizzante [@Long2022].
+
+Il *software*---l'insieme di dati digitali che costituiscono il sistema operativo e programmi installati---a sua volta può essere considerato un "fenomeno naturale" perché la sua modalità di funzionamento non è immediatamente apparente.
+
+Se il software è proprietario, e non si ha accesso al codice sorgente, si possono usare le stesse tecniche usate dagli scienziati che studiano un fenomeno naturale:
+
+- Si osserva il software ed si interagisce con esso (si forniscono determinati input, si svolgono certe azioni),
+- Si documentano le operazioni svolte ed i risultati osservati.
+- Si formulano delle ipotesi di leggi che descrivono il funzionamento del fenomeno ("data la sequenza di azioni *X*, il programma produce i cambiamenti *Y*"). La formulazione delle ipotesi è libera, e non segue schemi formali, ma è possibile formulare nuove ipotesi iterando su quelle già sviluppate [@Blachowicz2009, 321--323].
+- Si sviluppa un esperimento che può essere riprodotto e ripetuto anche da altri scienziati.
+- Si sottopongono le ipotesi a verificazione mediante l'esperimento, e si documentano i risultati. La fase di verificazione è delicata. Il solo fatto che i risultati osservati confermano l'ipotesi oggetto di esame non è sufficiente a dimostre che l'ipotesi sia valida,[^fallacia-affermare-conseguente] perché serve anche dimostrare che i risultati non siano dovuti a cause alternative [@Blachowicz2009, 325].
+- Eventualmente, si arriva alla creazione di una serie di massime di esperienza che sono state dimostrate empiricamente.
+
+Se il software è libero, ed è possible prendere visione del codice sorgente, rimane comunque un margine di incertezza. Così come un modello scientifico può essere sempre confutato da un fenomeno che non è in grado di spiegare, così un software può contenere un *bug* (errore di programmazione). Sulla base del codice ci si aspetta il risultato *X*, ma per qualche motivo, quando viene eseguito produce il risultato *Y*. I bug vengono risolti con tecniche di *debugging*, che sono interamente basate sul metodo scientifico.[^debugging]
+
+Anche i *dati digitali* diversi dal software possono essere considerati "fenomeni naturali".
+
+Nei casi in cui l'informatica forense opera come l'equivalente digitale di una autopsia, si deve partire dall'assunto che i dati non possono essere presi *sic et simpliciter* per buoni. Esistono numerose cause---naturali, incolpevoli, colpevoli e volontarie---di modificazione dei dati. Nel corso delle investigazioni, è opportuno accompagnare ogni conclusione che viene tratta sulla base dei dati con un giudizio sulla sua certezza, che tenga conto degli elementi che dispongono a favore o contro quella conclusione.
+
+Più in generale, anche se i dati fossero sempre autentici, si pone comunque il problema della loro corretta interpretazione. Studiare il funzionamento di un programma permette di determinare *a priori* quali effetti produce sui dati digitali, ed *a posteriori*, considerati dei dati digitali, se siano stati oggetto di modificazione da parte di quel programma. Tuttavia, come visto, un programma potrebbe contenere bug che causano comportamenti inaspettati, e viceversa, si potrebbero ipotizzare decorsi causali diversi, dove le modifiche che sono astrattamente riconducibili ad un certo programma o motivo, potrebbero essere dovute ad altri programmi o motivi.
+
+[^fallacia-affermare-conseguente]: È la fallacia logica di affermare il conseguente: "Se *A*, *B*; *B*; pertanto, *A*", ma questo ignora il fatto che *B* potrebbe avere altre cause oltre che *A*. Per fare un esempio pratico: "Se nei programmi ci sono bug, si arresteranno in maniera inaspettata. Windows si è arrestato inaspettatamente, pertanto Windows deve avere un bug". Tuttavia, se Windows si arresta anche quando esegue istruzioni estremamente semplici, come impostare un valore a 0, si inizano a sospettare altre cause per l'arresto inaspettato, tra cui l'instabilità dell'hardware dovuta ad *overclocking* (la sovralimentazione di un processore al fine di aumentare le prestazioni, al costo di sacrificare il suo corretto funzionamento). V. @Chen2005
+[^debugging]: Un bug viene rilevato (osservazione), si documentano le azioni che lo causano (documentazione), si formula un ipotesi riguardo a quali istruzioni nel codice possano causare quel bug (formulazione di ipotesi), si apportano le modifiche necessarie al codice per vedere se il bug continua a presentarsi (verifica dell'ipotesi), e si continuano a formulare e verificare altre ipotesi fino a quando il bug viene corretto. È buona pratica documentare, dove possibile e ragionevole, la causa del bug, in modo da evitare una *regression* (situazione dove lo stesso bug che era stato già risolto si ripresenta nel futuro), ed evitare di commettere lo stesso errore in futuro in altre parti del codice.
+
+In conclusione, anche se la sua natura astratta, deduttiva[^informatica-antichi-greci] ed esatta rende l'informatica di per sé è una disciplina affine alla matematica,[^numeri-causali] quando si passa al mondo pratico, e si devono analizzare dei dati digitali a fini processuali, l'informatica forense può essere considerata a pieno titolo una scienza naturale. Le sue valutazioni, pur essendo ispirate da una "scienza esatta", non possono che essere espresse in termini di probabilità, data la presenza di margini di incertezza ineliminabili nell'oggetto della materia.
+
+[^informatica-antichi-greci]: Gli antichi greci molto probabilmente avrebbero considerato l'informatica una vera scienza, data la loro preferenza per le spiegazioni basate sulla logica ed il metodo deduttivo, piuttosto che le osservazioni empiriche ed il metodo deduttivo. V. @Blachowicz2009, 315--316.
+[^numeri-causali]: Basta pensare al fatto che i computer sono incapaci di generare valori casuali. Nell'informatica si parla di *PRNG* (*pseudo-random number generator*, generatore di numeri pseudo-casuali). Esistono algoritmi---ad esempio, il *Mersenne Twister* è il PRNG di default nelle librerie di molti linguaggi di programmazione---che permettono di ricombinare una sequenza di bit iniziale chiamata *seed* (seme) in maniera da generare (metaforicamente, far germogliare il seme in) una nuova serie di bit, che per un osservatore umano appaiono casuali. Tuttavia, se l'osservatore è un computer, è possibile sviluppare un algoritmo che può risalire al *seed*, e quindi prevedere anche i valori che saranno generati nel futuro---da qui il nome "pseudo-causale", perché i risultati sono potenzialmente prevedibili. I *CSPRNG* (*cryptographically-secure PRNG*, PRNG crittograficamente sicuro) sono PRNG con maggiori garanzie di robustezza (anche conoscendo gli output precedenti, il prossimo output non deve essere prevedibile, e dovrebbe essere impossibile risalire al *seed*). Tuttavia, anche i CSPRNG richiedono un *seed*, ed il miglior *seed* è un singolo valore "realmente casuale", che può essere ottenuto solo all'esterno del computer (ad esempio, misurando la temperatura della stanza, il movimento del mouse dell'utente, ecc &hellip;).
+
+## TODO Peculiarità dell'informatica forense
 
 L'informatica forense è una disciplina che presenta alcune peculiarità:
 
-- La sua novità, anche della scienza a cui fa riferimento, non si è ancora completamente assestata
+- La sua novità, anche della scienza a cui fa riferimento, non si è ancora completamente assestata---si inizia a parlare di **informatica** nella seconda metà del ventesimo secolo, nel 1957 in Germania, e nel 1962 in Francia [@Bolognesi1999, 916--917].
 - La continua e rapida evoluzione, evoluzione guidata più dall'industria privata che dal mondo accademico
 - La complessità degli aspetti tecnici, che sfuggono anche alle generazioni nate dopo la rivoluzione digitale
 - Una generale mancanza di *computer literacy*
