@@ -13,7 +13,7 @@ geometry:
 - left=3.25cm
 - right=3.25cm
 numbersections: true
-fontfamily: charter
+fontfamily: libertine
 indent: true
 linestretch: 1.5
 papersize: a4
@@ -24,11 +24,3 @@ header-includes: \pagestyle{plain}
 \newcommand{\Omissis}{[\dots\unkern]}
 \newcommand{\VediRef}[1]{\footnote{V. sez. \ref{#1}.}}
 \newcommand{\VediAdEsempioUrl}[1]{\footnote{V., ad es., \url{#1}.}}
-
-# Ringraziamenti {-}
-
-...
-
-# Introduzione {-}
-
-...

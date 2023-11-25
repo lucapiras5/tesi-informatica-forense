@@ -9,6 +9,7 @@ Ripristina manualmente il numero delle note a piè di pagina in LaTeX: https://t
 
 ## Leggi {-}
 
+- L. 89/1913 --- [Legge 16 febbraio 1913, n. 89, sull'ordinamento del notariato e degli archivi notarili.](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1913-02-16;89)
 - L. 747/1994 --- [*Ratifica ed esecuzione degli atti concernenti i risultati dei negoziati dell'Uruguay Round, adottati a Marrakech il 15 aprile 1994.*](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1994-12-29;747)
 
 ## Trattati internazionali {-}

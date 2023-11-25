@@ -1,11 +1,13 @@
 inputs="prologo.md \
+	note-legali.md \
+	ringraziamenti.md \
+	introduzione.md \
 	prova-scientifica.md \
 	software-libero.md \
 	buone-pratiche-sviluppo-software.md \
 	sistema-operativo-libero.md \
 	buone-pratiche-procedimento-penale.md \
 	conclusioni.md \
-	note-legali.md \
 	appendice-leggi.md \
 	bibliografia.md"
 

@@ -170,7 +170,7 @@ Il suo obiettivo non è tanto di spiegare "come" l'informazione esiste. Il "come
 
 Da questo punto di vista, è analoga alla matematica, che normalmente non viene descritta come una "scienza" in senso proprio, termine normalmente riservato per le scienze naturali, ma come una "scienza" in senso lato, ossia un insieme di conoscenze organizzate.[^matematica-scienze-naturali]
 
-[^matematica-scienze-naturali]: È l'opinione di @Bilaniuk1996 In ultima analisi, tutte le scienze naturali sono fondate sulla matematica. La sociologia si fonda sulla psicologia, che si fonda sulla biologia, che si fonda sulla chimica, che si fonda sulla fisica, che per ultima si fonda direttamente sulla matematica, che può essere definita la scienza più "pura", perché non studia né gli esseri umani, né la natura materiale, ma fenomeni completamente astratti. V. *Purity* di R. Munroe: <https://xkcd.com/435/>.
+[^matematica-scienze-naturali]: È l'opinione di @Bilaniuk1996 In ultima analisi, tutte le scienze naturali sono fondate sulla matematica. La sociologia si fonda sulla psicologia, che si fonda sulla biologia, che si fonda sulla chimica, che si fonda sulla fisica, che per ultima si fonda direttamente sulla matematica, che può essere definita la scienza più "pura", perché non studia né gli esseri umani, né la natura materiale, ma fenomeni completamente astratti. V. *Purity* (R. Munroe, n.d., xkcd) <https://xkcd.com/435/>.
 
 La matematica non si preoccupa di spiegare "come" esistano i concetti astratti di numeri, i punti, le rette&hellip;^[In verità, si può discutere da un punto di vista filosofico se la matematica sia "scoperta", come un qualsiasi altro fenomeno naturale, seppure estremamente astratto, e quindi se la realtà materiale ponga dei limiti invalicabili a quanto può essere scoperto nella matematica---oppure, se sia "inventata", e quindi qualsiasi assioma, per quanto a prima vista "innaturale", possa comunque essere studiato, anche solo a livello teorico.]
 Piuttosto, dà per scontato che questi concetti esistano, seppur in maniera astratta, e mediante ragionamenti deduttivi, queste verità assiomatiche producono "teoremi". Un teorema non è un'ipotesi che aspetta di essere confutata,[^congettura-di-goldbach] ma è una proposizione logica che aspetta di essere provata.[^teorema-di-euclide]
@@ -210,45 +210,99 @@ Se il software è proprietario, e non si ha accesso al codice sorgente, si posso
 - Si documentano le operazioni svolte ed i risultati osservati.
 - Si formulano delle ipotesi di leggi che descrivono il funzionamento del fenomeno ("data la sequenza di azioni *X*, il programma produce i cambiamenti *Y*"). La formulazione delle ipotesi è libera, e non segue schemi formali, ma è possibile formulare nuove ipotesi iterando su quelle già sviluppate [@Blachowicz2009, 321--323].
 - Si sviluppa un esperimento che può essere riprodotto e ripetuto anche da altri scienziati.
-- Si sottopongono le ipotesi a verificazione mediante l'esperimento, e si documentano i risultati. La fase di verificazione è delicata. Il solo fatto che i risultati osservati confermano l'ipotesi oggetto di esame non è sufficiente a dimostre che l'ipotesi sia valida,[^fallacia-affermare-conseguente] perché serve anche dimostrare che i risultati non siano dovuti a cause alternative [@Blachowicz2009, 325].
-- Eventualmente, si arriva alla creazione di una serie di massime di esperienza che sono state dimostrate empiricamente.
+- Si sottopongono le ipotesi a verificazione mediante l'esperimento, e si documentano i risultati. La fase di verificazione è particolarmente delicata. Il solo fatto che i risultati osservati confermano l'ipotesi oggetto di esame non è sufficiente a dimostre che l'ipotesi sia valida,[^fallacia-affermare-conseguente] perché serve anche dimostrare che i risultati non siano dovuti a cause alternative [@Blachowicz2009, 325].
+- Le ipotesi e l'esperimento vengono raffinati, in modo da cercare di creare un esperimento controllato---un esperimento dove l'unico elemento che cambia è la variabile che viene studiata. Nell'informatica, si parla di *minimum reproducibile example* (minimo esempio riproducibile), il numero minimo di azioni necessarie per riprodurre un certo fenomeno.
+- Eventualmente, si arriva alla creazione di una serie di massime di esperienza, che sono state comprovate empiricamente.
 
 Se il software è libero, ed è possible prendere visione del codice sorgente, rimane comunque un margine di incertezza. Così come un modello scientifico può essere sempre confutato da un fenomeno che non è in grado di spiegare, così un software può contenere un *bug* (errore di programmazione). Sulla base del codice ci si aspetta il risultato *X*, ma per qualche motivo, quando viene eseguito produce il risultato *Y*. I bug vengono risolti con tecniche di *debugging*, che sono interamente basate sul metodo scientifico.[^debugging]
 
 Anche i *dati digitali* diversi dal software possono essere considerati "fenomeni naturali".
 
-Nei casi in cui l'informatica forense opera come l'equivalente digitale di una autopsia, si deve partire dall'assunto che i dati non possono essere presi *sic et simpliciter* per buoni. Esistono numerose cause---naturali, incolpevoli, colpevoli e volontarie---di modificazione dei dati. Nel corso delle investigazioni, è opportuno accompagnare ogni conclusione che viene tratta sulla base dei dati con un giudizio sulla sua certezza, che tenga conto degli elementi che dispongono a favore o contro quella conclusione.
+Nei casi in cui l'informatica forense opera come l'equivalente digitale di una autopsia, si deve partire dall'assunto che i dati non possono essere presi *sic et simpliciter* per buoni. Esistono numerose cause---naturali, incolpevoli, colpevoli e volontarie---di modificazione dei dati. Nel corso delle investigazioni, è opportuno accompagnare ogni conclusione che viene tratta sulla base dei dati con un giudizio sulla sua certezza, che tenga conto degli elementi che sono a favore di, o contari a, quella conclusione.
 
-Più in generale, anche se i dati fossero sempre autentici, si pone comunque il problema della loro corretta interpretazione. Studiare il funzionamento di un programma permette di determinare *a priori* quali effetti produce sui dati digitali, ed *a posteriori*, considerati dei dati digitali, se siano stati oggetto di modificazione da parte di quel programma. Tuttavia, come visto, un programma potrebbe contenere bug che causano comportamenti inaspettati, e viceversa, si potrebbero ipotizzare decorsi causali diversi, dove le modifiche che sono astrattamente riconducibili ad un certo programma o motivo, potrebbero essere dovute ad altri programmi o motivi.
+Più in generale, si pone sempre il problema della corretta interpretazione dei dati. Studiare il funzionamento di un programma permette *a priori*, di determinare quali effetti produce sui dati digitali, e viceversa, *a posteriori*, determinare se lo stato dei digitali possa essere stato causato da quel programma. Tuttavia, come visto, un programma potrebbe contenere bug che causano comportamenti inaspettati ed imprevedibili, e viceversa, si potrebbero ipotizzare decorsi causali diversi, dove le modifiche che sono astrattamente riconducibili ad un certo programma o motivo, potrebbero essere dovute ad altri programmi o motivi.
 
 [^fallacia-affermare-conseguente]: È la fallacia logica di affermare il conseguente: "Se *A*, *B*; *B*; pertanto, *A*", ma questo ignora il fatto che *B* potrebbe avere altre cause oltre che *A*. Per fare un esempio pratico: "Se nei programmi ci sono bug, si arresteranno in maniera inaspettata. Windows si è arrestato inaspettatamente, pertanto Windows deve avere un bug". Tuttavia, se Windows si arresta anche quando esegue istruzioni estremamente semplici, come impostare un valore a 0, si inizano a sospettare altre cause per l'arresto inaspettato, tra cui l'instabilità dell'hardware dovuta ad *overclocking* (la sovralimentazione di un processore al fine di aumentare le prestazioni, al costo di sacrificare il suo corretto funzionamento). V. @Chen2005
 [^debugging]: Un bug viene rilevato (osservazione), si documentano le azioni che lo causano (documentazione), si formula un ipotesi riguardo a quali istruzioni nel codice possano causare quel bug (formulazione di ipotesi), si apportano le modifiche necessarie al codice per vedere se il bug continua a presentarsi (verifica dell'ipotesi), e si continuano a formulare e verificare altre ipotesi fino a quando il bug viene corretto. È buona pratica documentare, dove possibile e ragionevole, la causa del bug, in modo da evitare una *regression* (situazione dove lo stesso bug che era stato già risolto si ripresenta nel futuro), ed evitare di commettere lo stesso errore in futuro in altre parti del codice.
 
-In conclusione, anche se la sua natura astratta, deduttiva[^informatica-antichi-greci] ed esatta rende l'informatica di per sé è una disciplina affine alla matematica,[^numeri-causali] quando si passa al mondo pratico, e si devono analizzare dei dati digitali a fini processuali, l'informatica forense può essere considerata a pieno titolo una scienza naturale. Le sue valutazioni, pur essendo ispirate da una "scienza esatta", non possono che essere espresse in termini di probabilità, data la presenza di margini di incertezza ineliminabili nell'oggetto della materia.
+In conclusione, anche se la sua natura astratta, deduttiva ed esatta rende l'informatica di per sé è una disciplina affine alla matematica,[^numeri-causali] quando si passa al mondo pratico, e si devono analizzare dei dati digitali a fini processuali, l'informatica forense può essere considerata a pieno titolo una scienza naturale. Le sue valutazioni, pur essendo ispirate da una "scienza esatta", non possono che essere espresse in termini di probabilità, data la presenza di margini di incertezza ineliminabili nell'oggetto della materia.
 
-[^informatica-antichi-greci]: Gli antichi greci molto probabilmente avrebbero considerato l'informatica una vera scienza, data la loro preferenza per le spiegazioni basate sulla logica ed il metodo deduttivo, piuttosto che le osservazioni empiriche ed il metodo deduttivo. V. @Blachowicz2009, 315--316.
-[^numeri-causali]: Basta pensare al fatto che i computer sono incapaci di generare valori casuali. Nell'informatica si parla di *PRNG* (*pseudo-random number generator*, generatore di numeri pseudo-casuali). Esistono algoritmi---ad esempio, il *Mersenne Twister* è il PRNG di default nelle librerie di molti linguaggi di programmazione---che permettono di ricombinare una sequenza di bit iniziale chiamata *seed* (seme) in maniera da generare (metaforicamente, far germogliare il seme in) una nuova serie di bit, che per un osservatore umano appaiono casuali. Tuttavia, se l'osservatore è un computer, è possibile sviluppare un algoritmo che può risalire al *seed*, e quindi prevedere anche i valori che saranno generati nel futuro---da qui il nome "pseudo-causale", perché i risultati sono potenzialmente prevedibili. I *CSPRNG* (*cryptographically-secure PRNG*, PRNG crittograficamente sicuro) sono PRNG con maggiori garanzie di robustezza (anche conoscendo gli output precedenti, il prossimo output non deve essere prevedibile, e dovrebbe essere impossibile risalire al *seed*). Tuttavia, anche i CSPRNG richiedono un *seed*, ed il miglior *seed* è un singolo valore "realmente casuale", che può essere ottenuto solo all'esterno del computer (ad esempio, misurando la temperatura della stanza, il movimento del mouse dell'utente, ecc &hellip;).
-
-## TODO Peculiarità dell'informatica forense
-
-L'informatica forense è una disciplina che presenta alcune peculiarità:
-
-- La sua novità, anche della scienza a cui fa riferimento, non si è ancora completamente assestata---si inizia a parlare di **informatica** nella seconda metà del ventesimo secolo, nel 1957 in Germania, e nel 1962 in Francia [@Bolognesi1999, 916--917].
-- La continua e rapida evoluzione, evoluzione guidata più dall'industria privata che dal mondo accademico
-- La complessità degli aspetti tecnici, che sfuggono anche alle generazioni nate dopo la rivoluzione digitale
-- Una generale mancanza di *computer literacy*
-- Il fatto che le analogie fra il mondo digitale con il mondo non-digitale sono imperfette
-- La resistenza ad adeguarsi ai nuovi schemi
-
-Si può fare un paragone con la storia della medicina, e la storia di Semmelweis [@Kadar2019].
-
-## Elementi di prova digitali
-
-- "prova scientifica" non si riferisce ad un particolare tipo di prova, ma al fatto che vengono usate conoscenze tecniche
-- "prova informatica" e "dati digitali"
-- escludere l'uso della prova atipica, usare periti e consulenti
+[^numeri-causali]: Basta pensare al fatto che i computer sono incapaci di generare valori casuali. Nell'informatica si parla di *PRNG* (*pseudo-random number generator*, generatore di numeri pseudo-casuali). Il *Mersenne Twister* è il PRNG di default nelle librerie di molti linguaggi di programmazione, e permette di ricombinare una sequenza di bit iniziale chiamata *seed* (seme) in modo da generare (metaforicamente, far germogliare il seme in) una nuova serie di bit, che ad un osservatore umano sembrano casuali. Tuttavia, se si ottiene un sufficiente numero di output, diventa possibile calcolare lo stato interno del PRNG, e quindi prevedere i valori che saranno generati nel futuro. Il nome "pseudo-causale" deriva dal fatto che i risultati sono potenzialmente prevedibili. Un *CSPRNG* (*cryptographically-secure PRNG*, PRNG crittograficamente sicuro) presentano maggiori garanzie di robustezza (si deve dimostrare che anche conoscendo gli output precedenti, il prossimo output sia statisticamente imprevedibile, e che in ogni caso, sia impossibile risalire al *seed*). Il miglior *seed* per un (CS)PRNG è un singolo valore "realmente casuale", che può essere ottenuto soltanto facendo riferimento ad un elemento che si trovi all'esterno (ad esempio, misurando la temperatura della stanza, il movimento del mouse dell'utente, ecc &hellip;).
 
 ## Dati digitali
+### Novità della disciplina
+
+È opportuno evidenziare le ulteriori particolarità che l'informatica forense presenta rispetto alle altre discipline forensi, al fine di garantire un suo uso consapevole.
+
+In primo luogo, l'informatica è una scienza particolarmente giovane. Il termine stesso "informatica" viene coniato come neologismo per la prima volta in Germania, tra il 1955 ed il 1957, come *Informatik-System*, nella registrazione di un brevetto per un sistema automatizzato per l'amministrazione aziendale, e successivamente, nel 1962 in Francia (*informatique*), e nel 1966 in Russia (*informatika*) [@Bolognesi1999, 915--917].
+
+La prima menzione di "computer sciences" (al plurale) risale al 1959, in un articolo che analizzava la nascita ed evoluzione dei campi di studio riguardanti l'uso di "computer" (calcolatori) ed il "data processing" (trattamento dei dati) [@Fein1959, 7].
+
+Questo non implica che l'informatica sia una disciplina immatura,[^denaro-elettronico] ma piuttosto, che i suoi principi fondamentali non hanno ancora avuto il tempo di diventare parte dell'immaginario collettivo, della conoscenza che ci si aspetta dalla persona media.
+
+[^denaro-elettronico]: Altrimenti, il 97% del denaro in circolazione non esisterebbe solo in forma digitale, e tantomeno ci sarebbero proposte per abbandonare completamente banconote e monete, in favore di una valuta completamente digitale. V. *What If Central Banks Issued Digital Currency?* (A. S. Mokerjee, 2021, Harvard Business Review) <https://hbr.org/2021/10/what-if-central-banks-issued-digital-currency>.
+
+Per fare un paragone con la medicina, oggigiorno la *germ theory of disease* (teoria dei germi) è indiscussa, e non serve essere esperti in materia per sapere che un chirurgo deve disinfettarsi le mani prima di operare su un paziente, o altrimenti rischia di causare infezioni.
+
+Tuttavia, questa nozione è diventata evidente solo nel tempo, ed inizialmente, era stata ostacolata. Nella scuola di medicina di Vienna, gli studenti entravano in contatto sia con cadaveri, sia con donne partorienti, ed i casi di sepsi puerperale erano frequenti. Nel 1847, Semmelweis dimostrò che la *condicio sine qua non* dell'infezione era il contatto con tessuti organici in putrefazione, e che la disinfezione delle mani con una soluzione contenente cloro (non il semplice lavaggio con sapone) eliminava l'odore putrescente, e riduceva in maniera massiccia le infezioni [@Kadar2019, 30--32].
+
+Tuttavia, i medici si rifiutavano di dare ragione a Semmelweis, e continuavano a sostenere che la sepsi puerperale fosse dovuta ad altre cause. L'opposizione non era dovuta alla mancanza di sufficienti prove empiriche, ma ad un irragionevole attaccamento alle teorie dominanti del tempo. Solo dopo che passarono 15 anni dalla morte di Semmelweis (ossia, nel 1880, più di 30 anni dopo la dimostrazione iniziale) le vecchie concezioni furono definitivamente superate, e la sua teoria fu accolta [@Kadar2019, 35].
+
+Lo stesso fenomeno si sta ripetendo nell'ambito dell'informatica forense.
+I dati digitali ed i programmi informatici hanno una natura e delle caratteristiche estremamente particolari, radicalmente diverse rispetto alla realtà materiale ed i formati analogici.
+
+Il pubblico che deve essere convinto ad abbandonare il paradigma tradizionale per adottarne uno nuovo non è la comunità scientifica---data la natura tendenzialmente deduttiva dell'informatica, la natura ed il funzionamento di dati e programmi sono un dato di fatto, non devono essere "scoperti" come succede per i fenomeni naturali---sono il legislatore, e tutti coloro che prendono parte al processo--procedimento (giudice e suoi ausiliari, PM e PG, difensore &hellip;).
+
+Il loro ancoramento agli istituti tradizionali si spinge al punto di essere manifestamente irragionevole.
+I motivi di questo comportamento sono comprensibili, ma devono essere superati.
+
+### Inadeguatezza delle leggi
+
+Il primo motivo è il classico *argumentum ad antiquitatem* (appello alla tradizione).
+Quando è possibile trovare un'analogia fra il mondo digitale e quello tradizionale, il primo viene regolato per analogia, applicando le regole del secondo.
+Ad esempio:
+
+- *E-mail* significa letteralmente "posta elettronica". La PG poteva già sospendere l'inoltro di "lettere, pieghi, pacchi, valori, telegrammi o altri oggetti di corrispondenza". Pertanto, è stato sufficiente aggiungere "anche se in forma elettronica o se inoltrati per via telematica" per permettere la possibilità di sospendere l'inoltro di posta elettronica (art. 353 co. 3 c.p.p.).
+- La "D" in PDF significa "documento".[^acronimo-pdf] Il Codice dell'amministrazione digitale equipara espressamente i "documenti informatici" alle scritture private (art. 20).
+- Il reato di accesso abusivo ad un sistema informatico (art. 615-*ter* c.p.) è collocato a breve distanza dal reato di violazione di domicilio (art. 614 c.p.).
+
+[^acronimo-pdf]: PDF è un acronimo che significa *Portable Document Format* (formato per documenti interoperabile).
+
+Il problema è che l'utilità delle analogie è limitata.
+Sono utili per dimostare che la funzione di due oggetti è la stessa---e che quindi, casi simili devono ricevere tutele simili---ma non dicono nulla sulla diversa natura intrinseca dei beni protetti, e quindi, come i casi diversi devono essere trattati in maniera diversa.
+
+Un messaggio di posta elettronica o un file PDF hanno la natura di dato digitale,[^natura-email] ma dopo essere stati stampati, perdono la natura di dato digitale, e acquistano la natura di documento materiale.
+Questa trasformazione rappresenta una perdita di informazioni irreversibile.
+Per il diritto sono sostanzialmente la stessa cosa, ma per l'informatica, e conseguentemente, l'informatica forense, sono due cose completamente diverse---e situazioni diverse devono essere trattate in maniera diversa.
+
+[^natura-email]: Per quanto riguarda la posta elettronica, bisogna ulteriormente distinguere fra il messaggio conservato su un server remoto---solitamente il server del gestore del servizio di posta elettronica---e la copia del messaggio che viene salvata sul computer. Se l'utente non ha modo di accedere al server remoto, i protocolli per la trasmissione dei messaggi di posta elettronica permettono solo di leggere o eliminare un messaggio, ma non di modificarlo in parte o per intero. Naturalmente, una volta che il messaggio viene scaricato sul computer, può essere liberamente modificato, come qualsiasi altro file. Pertanto, è preferibile acquisire un messaggio dal server remoto, perché è meno probabile che sia stato soggetto a modificazioni---ma al tempo stesso, acquisire dati da internet richiede l'uso di tecniche particolari, per dimostrare nella maniera più convincente possibile che il processo di acquisizione ha realmente contattato il server remoto, ed i dati non sono stati manipolati durante o dopo l'acquisizione.
+
+Per comprendere meglio la differenza tra dato digitale e riproduzione analogica, si pensi alle norme sull'ispezione nel codice di procedura civile:
+
+- "All'ispezione procede personalmente il giudice istruttore \Omissis{}" (art. 259 c.p.c.).
+- "Il giudice istruttore può disporre che siano eseguiti \Omissis{} riproduzioni anche fotografiche di oggetti, documenti e luoghi \Omissis{}" (art. 261 c.p.c.).
+
+Sulla base di queste definizioni, è chiaro che c'è una differenza fondamentale fra il luogo in cui si svolge l'ispezione---che deve essere percepito "personalmente" dal giudice---e la riproduzione fotografica del luogo, che "può" essere disposta, se il giudice lo ritiene utile, ma chiaramente serve solo come promemoria, e non come sostituto per l'osservazione in prima persona del luogo.
+
+Adesso, si consideri il seguente potere certificatorio, attribuito al notaio:
+
+> Il notaio può attestare la conformità all'originale di copie, eseguite su supporto informatico o cartaceo, di documenti formati su qualsiasi supporto ed a lui esibiti in originale o copia conforme.^[L. 89/1913, art. 73.]
+
+In altre parole, un notaio può certificare che la stampa cartacea di un documento digitale è "conforme" all'originale digitale.
+Tuttavia, il valore di questa certificazione non va sopravvalutato, come invece è pratica comune fare [@Gammarota2016, 23].
+
+Quello che il notaio sta certificando è che il "documento digitale"---inteso come "quanto appare sullo schermo del computer", e non come "file salvato su disco"---sia stato riprodotto correttamente su carta.[^copia-conforme-file]
+
+[^copia-conforme-file]: In realtà, è perfettamente possibile rappresentare dati digitali su carta. Basta usare un sistema che permetta di convertire una sequenza di valori binari in una sequenza di caratteri che possono essere facilmente scritti con una tastiera, e viceversa (ad esempio, la codifica Base64 o Ascii85). Da un punto di vista teorico, la copia cartacea è realmente conforme all'originale digitale, perché il contenuto è lo stesso, bit per bit, è solo conservato in maniera diversa. Da un punto di vista pratico, è un sistema estremamente inefficiente di creare copie di file, ed inefficace, perché la codifica rende il contenuto del file non immediatamente percepibile.
+
+Così come l'ispezione non è riducibile alle fotografie che vengono fatte, il documento digitale non è riducibile a "quello che si vede sullo schermo".
+
+Il luogo oggetto di ispezione ed il documento digitale sono una cosa.
+Quanto il giudice ha effettivamente percepito durante l'ispezione, e quanto si vede a schermo sono un'altra.
+Quanto viene fotografato, e quanto viene stampato sono un'altra ancora.
+Infine, così come esistono modi per nascondere qualcosa all'interno di un luogo (ad esempio, nel controsoffitto, dentro un muro &hellip;), esistono modi per nascondere dati all'interno di un documento digitale.
+
+
 
 ### Rilevanza per le investigazioni penali
 
@@ -370,7 +424,7 @@ Le fonti dei cambiamenti sono numerose:
 
 Questo significa che tutte le **operazioni che toccano la fonte di prova "originale", che abbia la natura di sistema informatico** devono essere considerate **irripetibili** ai sensi dell'art. 117 disp. att. c.p.p. [@Gammarota2016, 148--151]. <!-- TODO: controllare questa citazione -->
 
-### Dimostrazione delle caratteristiche dei bit
+### Dimostrazione della fragilità dei bit
 
 Per poter **tenere traccia delle modificazioni** di un singolo bit, servirebbe:
 
@@ -512,6 +566,10 @@ L'uso di questo tipo di tecnologie può sicuramente integrare quest'ultimo requi
 In ogni caso, la distinzione fra reati contro, o per mezzo di, sistemi informatici è puramente teorica, e non ha rilevanza pratica.
 
 ## Prova informatica
+
+- "prova scientifica" non si riferisce ad un particolare tipo di prova, ma al fatto che vengono usate conoscenze tecniche
+- "prova informatica" e "dati digitali"
+- escludere l'uso della prova atipica, usare periti e consulenti
 
 ## Periti e consulenti tecnici
 
