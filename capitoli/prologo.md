@@ -24,3 +24,4 @@ header-includes: \pagestyle{plain}
 \newcommand{\Omissis}{[\dots\unkern]}
 \newcommand{\VediRef}[1]{\footnote{V. sez. \ref{#1}.}}
 \newcommand{\VediAdEsempioUrl}[1]{\footnote{V., ad es., \url{#1}.}}
+\newcommand{\VediUrl}[4]{V. {#1}, \emph{#2}, {#3}, \url{#4}}

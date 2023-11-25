@@ -156,7 +156,9 @@ Adesso, si pone il problema di definire che tipo di scienza sia l'informatica. D
 
 [^analyics]: Si pensi al settore della *data analytics*, che analizza enormi quantità di dati grezzi relativi ad utenti di siti internet per studiare---ed eventualmente, manipolare---fenomeni sociali (ad esempio, a quali temi gli utenti sono interessati, e come incentivarli ad acquistare determinati prodotti), e la relativa regolazione da parte del diritto, che cerca di regolare l'utilizzazione dei dati personali resi disponibili dagli utenti su internet, con strumenti come la GDPR.
 
-Da un altro, si può escludere anche che sia una scienza naturale. L'oggetto dello studio dell'informatica è l'elaborazione automatica delle informazioni,^[V. <https://www.treccani.it/enciclopedia/informatica/>.] e non l'informazione come fenomeno naturale.
+Da un altro, si può escludere anche che sia una scienza naturale. L'oggetto dello studio dell'informatica è l'elaborazione automatica delle informazioni,[^definizione-informatica] e non l'informazione come fenomeno naturale.
+
+[^definizione-informatica]: \VediUrl{Treccani.it}{Informatica}{n.d.}{https://www.treccani.it/enciclopedia/informatica/}.
 
 La fisica cerca di elaborare modelli teorici che spiegano come sia possibile parlare di "informazione".
 Ad esempio, si può dire che un libro stampato contenga informazioni perché gli atomi che lo compongono tendono a rimanere nella stessa posizione.
@@ -170,7 +172,7 @@ Il suo obiettivo non è tanto di spiegare "come" l'informazione esiste. Il "come
 
 Da questo punto di vista, è analoga alla matematica, che normalmente non viene descritta come una "scienza" in senso proprio, termine normalmente riservato per le scienze naturali, ma come una "scienza" in senso lato, ossia un insieme di conoscenze organizzate.[^matematica-scienze-naturali]
 
-[^matematica-scienze-naturali]: È l'opinione di @Bilaniuk1996 In ultima analisi, tutte le scienze naturali sono fondate sulla matematica. La sociologia si fonda sulla psicologia, che si fonda sulla biologia, che si fonda sulla chimica, che si fonda sulla fisica, che per ultima si fonda direttamente sulla matematica, che può essere definita la scienza più "pura", perché non studia né gli esseri umani, né la natura materiale, ma fenomeni completamente astratti. V. *Purity* (R. Munroe, n.d., xkcd) <https://xkcd.com/435/>.
+[^matematica-scienze-naturali]: È l'opinione di @Bilaniuk1996 In ultima analisi, tutte le scienze naturali sono fondate sulla matematica. La sociologia si fonda sulla psicologia, che si fonda sulla biologia, che si fonda sulla chimica, che si fonda sulla fisica, che per ultima si fonda direttamente sulla matematica, che può essere definita la scienza più "pura", perché non studia né gli esseri umani, né la natura materiale, ma fenomeni completamente astratti. \VediUrl{R. Munroe}{Purity}{n.d.}{https://xkcd.com/435/}.
 
 La matematica non si preoccupa di spiegare "come" esistano i concetti astratti di numeri, i punti, le rette&hellip;^[In verità, si può discutere da un punto di vista filosofico se la matematica sia "scoperta", come un qualsiasi altro fenomeno naturale, seppure estremamente astratto, e quindi se la realtà materiale ponga dei limiti invalicabili a quanto può essere scoperto nella matematica---oppure, se sia "inventata", e quindi qualsiasi assioma, per quanto a prima vista "innaturale", possa comunque essere studiato, anche solo a livello teorico.]
 Piuttosto, dà per scontato che questi concetti esistano, seppur in maniera astratta, e mediante ragionamenti deduttivi, queste verità assiomatiche producono "teoremi". Un teorema non è un'ipotesi che aspetta di essere confutata,[^congettura-di-goldbach] ma è una proposizione logica che aspetta di essere provata.[^teorema-di-euclide]
@@ -183,9 +185,12 @@ L'esempio meglio conosciuto delle potenzialità del ragionamento deduttivo sono 
 Allo stesso modo, l'informatica definisce una serie di concetti fondamentali. Ad esempio:
 
 - Il bit è l'unità minima di informazione---può assumere solo due valori, 0 o 1.
-- La memoria è un sequenza di bit---può essere immaginata come una linea dei numeri.
-- Le variabili sono una serie di bit all'interno della memoria---possono essere immaginati come un segmento all'interno della linea dei numeri.
-- Un puntatore è una variabile, il cui valore è un riferimento ad un indirizzo di memoria---può essere immaginato come un indirizzo di un edificio, un'informazione che permette di arrivare ad un certo luogo.
+- La memoria è un sequenza di bit---si può immaginare una linea dei numeri, il numero è la posizione di memoria in cui si trova il bit, e ad ogni numero è associato un bit.
+- Le variabili permettono di dare un nome agli indirizzi di memoria---la variabile è un modo più semplice di dire "la sequenza di *N* bit, a partire dall'indirizzo *A*".
+- Un puntatore è una variabile, il cui valore è un indirizzo di memoria---concettualmente, un puntatore ha la stessa funzione di un indirizzo, indica "dove si trova" un certo luogo, ma non "è" quel luogo.
+- Una variable speciale chiamata PC (*program counter*, contatore del programma) o IP (*instruction pointer*, puntatore della istruzione) è un puntatore, che indica l'indirizzo di memoria che contiene la prossima operazione da eseguire.
+- Alcune istruzioni particolari (*jump instructions*) permettono di manipolare il PC o IP, e quindi di far "saltare" l'esecuzione del programma ad un'altra posizione di memoria.
+  - I salti incondizionati permettono di creare una *subroutine*, una sequenza di istruzioni che può essere visitata più volte  
 - I bit possono essere confrontati e manipolati per mezzo degli operatori booleani.^[Gli operatori *and*, *or*, *not* &hellip; (e, o, non &hellip;)]
 - Le operazioni artimetiche possono essere effettuate combinando insieme vari operatori booleani.
 
@@ -222,44 +227,71 @@ Nei casi in cui l'informatica forense opera come l'equivalente digitale di una a
 
 Più in generale, si pone sempre il problema della corretta interpretazione dei dati. Studiare il funzionamento di un programma permette *a priori*, di determinare quali effetti produce sui dati digitali, e viceversa, *a posteriori*, determinare se lo stato dei digitali possa essere stato causato da quel programma. Tuttavia, come visto, un programma potrebbe contenere bug che causano comportamenti inaspettati ed imprevedibili, e viceversa, si potrebbero ipotizzare decorsi causali diversi, dove le modifiche che sono astrattamente riconducibili ad un certo programma o motivo, potrebbero essere dovute ad altri programmi o motivi.
 
-[^fallacia-affermare-conseguente]: È la fallacia logica di affermare il conseguente: "Se *A*, *B*; *B*; pertanto, *A*", ma questo ignora il fatto che *B* potrebbe avere altre cause oltre che *A*. Per fare un esempio pratico: "Se nei programmi ci sono bug, si arresteranno in maniera inaspettata. Windows si è arrestato inaspettatamente, pertanto Windows deve avere un bug". Tuttavia, se Windows si arresta anche quando esegue istruzioni estremamente semplici, come impostare un valore a 0, si inizano a sospettare altre cause per l'arresto inaspettato, tra cui l'instabilità dell'hardware dovuta ad *overclocking* (la sovralimentazione di un processore al fine di aumentare le prestazioni, al costo di sacrificare il suo corretto funzionamento). V. @Chen2005
+[^fallacia-affermare-conseguente]: È la fallacia logica di affermare il conseguente: "Se *A*, *B*; *B*; pertanto, *A*", ma questo ignora il fatto che *B* potrebbe avere altre cause oltre che *A*. Per fare un esempio pratico: "Se nei programmi ci sono bug, si arresteranno in maniera inaspettata. Windows si è arrestato inaspettatamente, pertanto Windows deve avere un bug". Tuttavia, se Windows si arresta anche quando esegue istruzioni estremamente semplici, come impostare un valore a 0, si inizano a sospettare altre cause per l'arresto inaspettato, tra cui l'instabilità dell'hardware dovuta ad *overclocking* (la sovralimentazione di un processore al fine di aumentare le prestazioni, al costo di sacrificare il suo corretto funzionamento). \VediUrl{R. Chen}{There's an awful lot of overclocking out there}{2005}{https://devblogs.microsoft.com/oldnewthing/20050412-47/?p=35923}.
 [^debugging]: Un bug viene rilevato (osservazione), si documentano le azioni che lo causano (documentazione), si formula un ipotesi riguardo a quali istruzioni nel codice possano causare quel bug (formulazione di ipotesi), si apportano le modifiche necessarie al codice per vedere se il bug continua a presentarsi (verifica dell'ipotesi), e si continuano a formulare e verificare altre ipotesi fino a quando il bug viene corretto. È buona pratica documentare, dove possibile e ragionevole, la causa del bug, in modo da evitare una *regression* (situazione dove lo stesso bug che era stato già risolto si ripresenta nel futuro), ed evitare di commettere lo stesso errore in futuro in altre parti del codice.
 
 In conclusione, anche se la sua natura astratta, deduttiva ed esatta rende l'informatica di per sé è una disciplina affine alla matematica,[^numeri-causali] quando si passa al mondo pratico, e si devono analizzare dei dati digitali a fini processuali, l'informatica forense può essere considerata a pieno titolo una scienza naturale. Le sue valutazioni, pur essendo ispirate da una "scienza esatta", non possono che essere espresse in termini di probabilità, data la presenza di margini di incertezza ineliminabili nell'oggetto della materia.
 
 [^numeri-causali]: Basta pensare al fatto che i computer sono incapaci di generare valori casuali. Nell'informatica si parla di *PRNG* (*pseudo-random number generator*, generatore di numeri pseudo-casuali). Il *Mersenne Twister* è il PRNG di default nelle librerie di molti linguaggi di programmazione, e permette di ricombinare una sequenza di bit iniziale chiamata *seed* (seme) in modo da generare (metaforicamente, far germogliare il seme in) una nuova serie di bit, che ad un osservatore umano sembrano casuali. Tuttavia, se si ottiene un sufficiente numero di output, diventa possibile calcolare lo stato interno del PRNG, e quindi prevedere i valori che saranno generati nel futuro. Il nome "pseudo-causale" deriva dal fatto che i risultati sono potenzialmente prevedibili. Un *CSPRNG* (*cryptographically-secure PRNG*, PRNG crittograficamente sicuro) presentano maggiori garanzie di robustezza (si deve dimostrare che anche conoscendo gli output precedenti, il prossimo output sia statisticamente imprevedibile, e che in ogni caso, sia impossibile risalire al *seed*). Il miglior *seed* per un (CS)PRNG è un singolo valore "realmente casuale", che può essere ottenuto soltanto facendo riferimento ad un elemento che si trovi all'esterno (ad esempio, misurando la temperatura della stanza, il movimento del mouse dell'utente, ecc &hellip;).
 
-## Dati digitali
+## Ostacoli all'informatica forense
+
+È opportuno evidenziare le particolarità e difficoltà che l'informatica forense incontra e presenta, al fine di garantire un suo uso consapevole.
+
 ### Novità della disciplina
 
-È opportuno evidenziare le ulteriori particolarità che l'informatica forense presenta rispetto alle altre discipline forensi, al fine di garantire un suo uso consapevole.
-
-In primo luogo, l'informatica è una scienza particolarmente giovane. Il termine stesso "informatica" viene coniato come neologismo per la prima volta in Germania, tra il 1955 ed il 1957, come *Informatik-System*, nella registrazione di un brevetto per un sistema automatizzato per l'amministrazione aziendale, e successivamente, nel 1962 in Francia (*informatique*), e nel 1966 in Russia (*informatika*) [@Bolognesi1999, 915--917].
+L'informatica è una scienza particolarmente giovane. Il termine stesso "informatica" viene coniato come neologismo per la prima volta in Germania, tra il 1955 ed il 1957, come *Informatik-System*, nella registrazione di un brevetto per un sistema automatizzato per l'amministrazione aziendale, e successivamente, nel 1962 in Francia (*informatique*), e nel 1966 in Russia (*informatika*) [@Bolognesi1999, 915--917].
 
 La prima menzione di "computer sciences" (al plurale) risale al 1959, in un articolo che analizzava la nascita ed evoluzione dei campi di studio riguardanti l'uso di "computer" (calcolatori) ed il "data processing" (trattamento dei dati) [@Fein1959, 7].
 
-Questo non implica che l'informatica sia una disciplina immatura,[^denaro-elettronico] ma piuttosto, che i suoi principi fondamentali non hanno ancora avuto il tempo di diventare parte dell'immaginario collettivo, della conoscenza che ci si aspetta dalla persona media.
+Questo non implica che l'informatica sia una disciplina immatura.[^denaro-elettronico]
+Piuttosto, si può argomentare che i suoi principi fondamentali non hanno ancora avuto il tempo di diventare parte delle "nozioni di fatto che rientrano nella comune esperienza" (art. 115 c.p.p.).
 
-[^denaro-elettronico]: Altrimenti, il 97% del denaro in circolazione non esisterebbe solo in forma digitale, e tantomeno ci sarebbero proposte per abbandonare completamente banconote e monete, in favore di una valuta completamente digitale. V. *What If Central Banks Issued Digital Currency?* (A. S. Mokerjee, 2021, Harvard Business Review) <https://hbr.org/2021/10/what-if-central-banks-issued-digital-currency>.
+[^denaro-elettronico]: Altrimenti, il 97% del denaro in circolazione non esisterebbe solo in forma digitale---e tantomeno ci sarebbero proposte per abbandonare completamente banconote e monete, in favore di una valuta completamente digitale. \VediUrl{A. S. Mokerjee}{What If Central Banks Issued Digital Currency?}{2021}{https://hbr.org/2021/10/what-if-central-banks-issued-digital-currency}.
 
-Per fare un paragone con la medicina, oggigiorno la *germ theory of disease* (teoria dei germi) è indiscussa, e non serve essere esperti in materia per sapere che un chirurgo deve disinfettarsi le mani prima di operare su un paziente, o altrimenti rischia di causare infezioni.
+Per fare un paragone con la medicina, non serve essere specialisti nella materia per sapere che un chirurgo rischia di causare infezioni, se non si disinfetta le mani prima di operare su un paziente.
 
-Tuttavia, questa nozione è diventata evidente solo nel tempo, ed inizialmente, era stata ostacolata. Nella scuola di medicina di Vienna, gli studenti entravano in contatto sia con cadaveri, sia con donne partorienti, ed i casi di sepsi puerperale erano frequenti. Nel 1847, Semmelweis dimostrò che la *condicio sine qua non* dell'infezione era il contatto con tessuti organici in putrefazione, e che la disinfezione delle mani con una soluzione contenente cloro (non il semplice lavaggio con sapone) eliminava l'odore putrescente, e riduceva in maniera massiccia le infezioni [@Kadar2019, 30--32].
+Tuttavia, questa nozione è diventata evidente solo nel tempo. Inizialmente, era stata addirittura ostacolata. Nella scuola di medicina di Vienna, gli studenti entravano in contatto sia con cadaveri, sia con donne partorienti, ed i casi di sepsi puerperale erano frequenti. Nel 1847, Ignaz Semmelweis dimostrò il nesso causale fra il contatto con tessuti organici in putrefazione e la malattia.
 
-Tuttavia, i medici si rifiutavano di dare ragione a Semmelweis, e continuavano a sostenere che la sepsi puerperale fosse dovuta ad altre cause. L'opposizione non era dovuta alla mancanza di sufficienti prove empiriche, ma ad un irragionevole attaccamento alle teorie dominanti del tempo. Solo dopo che passarono 15 anni dalla morte di Semmelweis (ossia, nel 1880, più di 30 anni dopo la dimostrazione iniziale) le vecchie concezioni furono definitivamente superate, e la sua teoria fu accolta [@Kadar2019, 35].
+Dopo aver dissezionato i cadaveri, gli studenti si lavavano soltanto con acqua e sapone, ma l'odore putrescente rimaneva sulle loro mani.
+Semmelweis chiese che gli studenti si disinfettassero le mani con una soluzione contenente cloro.
+Nei due mesi precedenti, il 15.4% delle morti fra i pazienti era dovuta alla malattia.
+Nei tre mesi successivi all'introduzione della prassi di disinfettarsi le mani, questa percentuale diminuì al 1.4% [@Kadar2019, 30--32].
 
-Lo stesso fenomeno si sta ripetendo nell'ambito dell'informatica forense.
-I dati digitali ed i programmi informatici hanno una natura e delle caratteristiche estremamente particolari, radicalmente diverse rispetto alla realtà materiale ed i formati analogici.
+Tuttavia, i medici si rifiutavano di dare ragione a Semmelweis. Nel 1855, Carl Braun pubblicò un resoconto sulla malattia, indicando trenta possibili cause---incluso lo stress del parto, disturbi emotivi, carenze alimentari &hellip;---e per ultimo, l'infezione dovuta a materia putrescente da cadaveri [@Carter1985, 35].
 
-Il pubblico che deve essere convinto ad abbandonare il paradigma tradizionale per adottarne uno nuovo non è la comunità scientifica---data la natura tendenzialmente deduttiva dell'informatica, la natura ed il funzionamento di dati e programmi sono un dato di fatto, non devono essere "scoperti" come succede per i fenomeni naturali---sono il legislatore, e tutti coloro che prendono parte al processo--procedimento (giudice e suoi ausiliari, PM e PG, difensore &hellip;).
+L'opposizione non era dovuta alla mancanza di sufficienti prove empiriche, ma ad un irragionevole attaccamento alle teorie tradizionali del tempo. Solo dopo che passarono 15 anni dalla morte di Semmelweis---ossia, nel 1880, più di 30 anni dopo la dimostrazione iniziale---le vecchie concezioni furono definitivamente superate, e la sua teoria fu accolta [@Kadar2019, 35].
 
-Il loro ancoramento agli istituti tradizionali si spinge al punto di essere manifestamente irragionevole.
-I motivi di questo comportamento sono comprensibili, ma devono essere superati.
+Una situazione simile si sta ripetendo nell'ambito dell'informatica forense.
+I "Semmelweis" della disciplina hanno empiricamente dimostrato che anche le operazioni di investigazione che sono apparentemente poco invasive---perché di "sola lettura"[^esempi-operazioni-sola-lettura]---in realtà comportano un gran numero di modifiche "in scrittura"--ossia, la modificazione delle informazioni e del contenuto di file esistenti, e la creazione di nuovi file [@Cinti2011, 93--95].
+
+[^esempi-operazioni-sola-lettura]: Ad esempio, eseguire una ricerca fra i file, avviare un il browser internet per visualizzare la cronologia, aprire un documento con Word o OpenOffice, anche solo spegnere il computer invece di staccare la spina.
+
+Ancora, è stato dimostrato che cambiare un singolo bit può modificare il senso dei dati digitali.
+Ad esempio, basta invertire un singolo bit per passare dal testo "26.07.1966" al testo "26.07.1976", e viceversa, con ovvie ricadute ai fini delle indagini [@Gammarota2016, 61--62].
+
+Per continuare l'analogia con la medicina legale, sarebbe come dire che anche toccare il cadavere con i guanti provoca dei cambiamenti al suo interno, e basta cambiare in minima misura una singola molecola all'interno di un cadavere, per cambiare la data della morte di 10 anni.
+
+Tuttavia, queste nozioni fondamentali riguardo la natura dei programmi informatici e dei dati digitali sono ancora nozioni specialistiche, conosciute solo dai tecnici.
+Quando il legislatore richiede l'uso di "misure tecniche dirette ad assicurare la conservazione dei dati originali e ad impedirne l'alterazione" nelle perquisizioni su sistemi informatici (art. 352 co. 1-*bis* c.p.p.), accenna al problema, ma l'accenno rimane lettera morta, se coloro che prendono parte al processo/procedimento (giudice e suoi ausiliari, PM e PG, difensore &hellip;) non hanno ben presente la natura dei dati digitali, le possibili cause di alterazione, le modalità adeguate di conservazione&hellip;
+
+Riprendendo la storia di Semmelweis, richiedere l'uso di "misure tecniche" è come dire che i medici devono lavarsi le mani prima di toccare una partoriente.
+Il problema è che se i medici non sanno che acqua e sapone non bastano, ma serve l'uso di un detergente specifico per evitare di infettare i pazienti---fino a quando questa idea viene accettata, e diventa di conoscenza comune---i pazienti continueranno a morire---e specularmente, i dati digitali continueranno ad essere contaminati, e quindi diventare meno affidabili ai fini processuali.
+
+### Complessità tecnica
+
+dell'informatica è una materia complessa, ed in continua evoluzione.
+
+- software sempre più complesso
+- architetture distribuite e difficili
+- nuovi dispositivi
 
 ### Inadeguatezza delle leggi
 
-Il primo motivo è il classico *argumentum ad antiquitatem* (appello alla tradizione).
-Quando è possibile trovare un'analogia fra il mondo digitale e quello tradizionale, il primo viene regolato per analogia, applicando le regole del secondo.
+- incertezze lessicali
+
+Spesso le leggi che regolano l'uso di sistemi informatici e dati digitali commettono gli errori della falsa equivalenza, o dell'*argumentum ad antiquitatem* (appello alla tradizione)---se è possibile trovare un'analogia fra il mondo tradizionale e quello digitale, il secondo viene regolato per analogia applicando le regole del primo.
+
 Ad esempio:
 
 - *E-mail* significa letteralmente "posta elettronica". La PG poteva già sospendere l'inoltro di "lettere, pieghi, pacchi, valori, telegrammi o altri oggetti di corrispondenza". Pertanto, è stato sufficiente aggiungere "anche se in forma elettronica o se inoltrati per via telematica" per permettere la possibilità di sospendere l'inoltro di posta elettronica (art. 353 co. 3 c.p.p.).
@@ -280,7 +312,7 @@ Per il diritto sono sostanzialmente la stessa cosa, ma per l'informatica, e cons
 Per comprendere meglio la differenza tra dato digitale e riproduzione analogica, si pensi alle norme sull'ispezione nel codice di procedura civile:
 
 - "All'ispezione procede personalmente il giudice istruttore \Omissis{}" (art. 259 c.p.c.).
-- "Il giudice istruttore può disporre che siano eseguiti \Omissis{} riproduzioni anche fotografiche di oggetti, documenti e luoghi \Omissis{}" (art. 261 c.p.c.).
+- "Il giudice istruttore può disporre che siano eseguit[e] \Omissis{} riproduzioni anche fotografiche di oggetti, documenti e luoghi \Omissis{}" (art. 261 c.p.c.).
 
 Sulla base di queste definizioni, è chiaro che c'è una differenza fondamentale fra il luogo in cui si svolge l'ispezione---che deve essere percepito "personalmente" dal giudice---e la riproduzione fotografica del luogo, che "può" essere disposta, se il giudice lo ritiene utile, ma chiaramente serve solo come promemoria, e non come sostituto per l'osservazione in prima persona del luogo.
 
@@ -302,7 +334,7 @@ Quanto il giudice ha effettivamente percepito durante l'ispezione, e quanto si v
 Quanto viene fotografato, e quanto viene stampato sono un'altra ancora.
 Infine, così come esistono modi per nascondere qualcosa all'interno di un luogo (ad esempio, nel controsoffitto, dentro un muro &hellip;), esistono modi per nascondere dati all'interno di un documento digitale.
 
-
+## Dati digitali
 
 ### Rilevanza per le investigazioni penali
 
@@ -486,11 +518,11 @@ Riassumendo, i **bit**, e quindi i **dati digitali** in generale, sono **estrema
 Questo **non** significa che i dati digitali siano **intrinsecamente inaffidabili**, e quindi non possano mai fornire informazioni utili all'interno di un processo.
 Piuttosto, significa che se devono essere utilizzati per prendere una decisione, bisogna **valutare** non solo i dati, ma anche -- e forse soprattutto -- il **rispetto delle tecniche** che sono state utilizzate per il loro trattamento.
 
-## Reati informatici
+### Reati informatici
 
 Prima di definire cosa sia l'informatica forense, è utile introdurre brevemente il fenomeno che ha **richiesto ed incentivato il suo sviluppo**, i reati informatici.
 
-### Pericolosità dei sistemi informatici
+#### Pericolosità dei sistemi informatici
 
 A partire dalla seconda metà del ventesimo secolo, le tecnologie informatiche si sono sviluppate e sono diventate una parte essenziale della società moderna.
 Tuttavia, la diffusione della tecnologia comportava anche il suo abuso ed uso da parte dei criminali [@Gammarota2016, 11].
@@ -503,7 +535,7 @@ Nel campo della protezione dei diritti d'autore, basta che un singolo soggetto r
 
 Ancora, l'uso di tecnologie *peer-to-peer* permette a chiunque non solo di acquisire materiale pedo-pornografico, ma anche di ridistribuirlo automaticamente ad un numero potenzialmente illimitato di persone [@Ferrazzano2014, 99 ss.]
 
-### Reati informatici negli Stati Uniti
+#### Reati informatici negli Stati Uniti
 
 Date queste premesse, l'intervento del diritto penale era inevitabile.
 
@@ -520,7 +552,7 @@ Un'interpretazione estensiva delle leggi penali avrebbe violato il principio del
 Per superare questi problemi, gli Stati iniziarono a dotarsi di leggi sui reati informatici.
 La prima fu approvata in Florida nel 1978, e nel corso di poco più di un decennio, quasi tutti gli altri Stati si dotarono di proprie leggi [@Nugent1991, 2--4].
 
-### Reati informatici in Italia
+#### Reati informatici in Italia
 
 In Italia, la prima disciplina riguardo i reati informatici viene introdotta con la L. n. 547/1993.
 Estende una serie di reati tradizionali, introducendo riferimenti ai sistemi informatici e telematici, i programmi informatici ed i dati digitali [@Gammarota2016, 71].
@@ -534,7 +566,7 @@ A titolo esemplificativo:
 - La sottrazione o violazione di corrispondenza e l'intercettazione di comunicazioni includono anche le comunicazioni telematiche (artt. 5 e 6).
 - La frode informatica (art. 10) è analoga alla truffa.
 
-### Reati informatici propri ed impropri
+#### Reati informatici propri ed impropri
 
 L'espressione "reato informatico" può essere intesa in due modi [@Gammarota2016, 29].
 
@@ -565,7 +597,7 @@ L'uso di questo tipo di tecnologie può sicuramente integrare quest'ultimo requi
 
 In ogni caso, la distinzione fra reati contro, o per mezzo di, sistemi informatici è puramente teorica, e non ha rilevanza pratica.
 
-## Prova informatica
+### Prova informatica
 
 - "prova scientifica" non si riferisce ad un particolare tipo di prova, ma al fatto che vengono usate conoscenze tecniche
 - "prova informatica" e "dati digitali"
