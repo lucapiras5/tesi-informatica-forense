@@ -1,11 +1,11 @@
 # Informatica forense e prova scientifica
 
-## Prime definizioni della computer forensics
+## Definizione dell'informatica forense
+
+### Prime definizioni della computer forensics
 
 Nel tempo, sono state date più definizioni della *computer forensics* (informatica forense).
-
 Il modello tipico di definizione inizia con "l'informatica forense riguarda la &hellip;", e segue con un elenco di elementi nella forma "[operazione tipica] di [oggetto]".
-
 Vari autori hanno dato vari elenchi dei due componenti [@Gammarota2016, 16]:
 
 - Le operazioni tipiche includono la ricerca, protezione, identificazione, estrazione, documentazione, analisi, esibizione, conservazione, interpretazione &hellip;
@@ -30,7 +30,7 @@ Tuttavia, l'omissione potrebbe essere non voluta, per vari motivi:
 
 Piuttosto di cercare di definire minuziosamente ed induttivamente "cosa faccia" l'informatica forense, sarebbe più opportuno definire "cosa sia" l'informatica forense, usando una definizione che rinvii non ad attività concrete, ma a concetti generali ed astratti.
 
-## Digital evidence secondo Casey
+### Digital evidence secondo Casey
 
 @Casey2011 [7] dà una definizione non della *computer forensics*, ma della *digital evidence* (prova informatica), evidenziando la sua funzione processuale:
 
@@ -69,7 +69,7 @@ Tuttavia, anche se si acquisisce una copia della memoria, che così diventa un d
 Ritornando all'analisi della definizione, il problema è la completa mancanza di riferimenti alle operazioni "tipiche"---tecniche e scientifiche---dell'informatica forense.
 In altre parole, si indica a cosa serve la prova informatica, ma non c'è il minimo accenno alla disciplina scientifica che detta le regole relative alla sua trattazione.
 
-## Informatica forense secondo Gammarota
+### Informatica forense secondo Gammarota
 
 @Gammarota2016 [26--27] ha dato una definizione concisa ed astratta dell'informatica forense:
 
@@ -199,7 +199,7 @@ E così via, fino alla definizione di costruzioni teoriche sempre più complesse
 Ancora, laddove le scienze naturali producono teorie che cercano di spiegare un fenomeno, l'informatica produce algoritmi---sequenze di istruzioni che non hanno un contenuto definitorio o conoscitivo, ma solamente imperativo.
 L'informatica può sicuramente essere usata per svolgere l'attività di ricerca nelle scienze naturali, ma ha sostanzialmente la stessa funzione della matematica: aiuta nella ricerca, formalizza i risultati, ma non è propriamente una "scienza".
 
-### Informatica forense e dati digitali come fenomeni naturali
+### Affinità fra dati digitali e fenomeni naturali
 
 Tuttavia, quanto detto finora non esclude la possibilità di affermare che l'informatica---in particolare l'informatica forense, come forma applicata dell'informatica---possa avere la natura di una "scienza naturale".
 
@@ -234,128 +234,135 @@ In conclusione, anche se la sua natura astratta, deduttiva ed esatta rende l'inf
 
 [^numeri-causali]: Basta pensare al fatto che i computer sono incapaci di generare valori casuali. Nell'informatica si parla di *PRNG* (*pseudo-random number generator*, generatore di numeri pseudo-casuali). Il *Mersenne Twister* è il PRNG di default nelle librerie di molti linguaggi di programmazione, e permette di ricombinare una sequenza di bit iniziale chiamata *seed* (seme) in modo da generare (metaforicamente, far germogliare il seme in) una nuova serie di bit, che ad un osservatore umano sembrano casuali. Tuttavia, se si ottiene un sufficiente numero di output, diventa possibile calcolare lo stato interno del PRNG, e quindi prevedere i valori che saranno generati nel futuro. Il nome "pseudo-causale" deriva dal fatto che i risultati sono potenzialmente prevedibili. Un *CSPRNG* (*cryptographically-secure PRNG*, PRNG crittograficamente sicuro) presentano maggiori garanzie di robustezza (si deve dimostrare che anche conoscendo gli output precedenti, il prossimo output sia statisticamente imprevedibile, e che in ogni caso, sia impossibile risalire al *seed*). Il miglior *seed* per un (CS)PRNG è un singolo valore "realmente casuale", che può essere ottenuto soltanto facendo riferimento ad un elemento che si trovi all'esterno (ad esempio, misurando la temperatura della stanza, il movimento del mouse dell'utente, ecc &hellip;).
 
-## Ostacoli all'informatica forense
+## Reati informatici
 
-È opportuno evidenziare le particolarità e difficoltà che l'informatica forense incontra e presenta, al fine di garantire un suo uso consapevole.
+### Potenziale criminale dei sistemi informatici
 
-### Novità della disciplina
+Il fenomeno che ha richiesto ed incentivato lo sviluppo dell'informatica forense sono i reati informatici.
 
-L'informatica è una scienza particolarmente giovane. Il termine stesso "informatica" viene coniato come neologismo per la prima volta in Germania, tra il 1955 ed il 1957, come *Informatik-System*, nella registrazione di un brevetto per un sistema automatizzato per l'amministrazione aziendale, e successivamente, nel 1962 in Francia (*informatique*), e nel 1966 in Russia (*informatika*) [@Bolognesi1999, 915--917].
+A partire dalla seconda metà del ventesimo secolo, le tecnologie informatiche si sono sviluppate e sono diventate una parte essenziale della società moderna.
+Tuttavia, la diffusione della tecnologia comportava anche il suo abuso ed uso da parte dei criminali [@Gammarota2016, 11].
 
-La prima menzione di "computer sciences" (al plurale) risale al 1959, in un articolo che analizzava la nascita ed evoluzione dei campi di studio riguardanti l'uso di "computer" (calcolatori) ed il "data processing" (trattamento dei dati) [@Fein1959, 7].
+I sistemi informatici permettono alla condotta di singolo individuo -- purché dotato delle conoscenze tecniche necessarie -- di causare danni enormi.
 
-Questo non implica che l'informatica sia una disciplina immatura.[^denaro-elettronico]
-Piuttosto, si può argomentare che i suoi principi fondamentali non hanno ancora avuto il tempo di diventare parte delle "nozioni di fatto che rientrano nella comune esperienza" (art. 115 c.p.p.).
+Ad esempio, nel 1988, il *Morris worm* riuscì a disturbare ed interrompere il funzionamento di un numero significativo[^morris-worm] dei sistemi informatici allora collegati su internet [@Nugent1991, 1].
 
-[^denaro-elettronico]: Altrimenti, il 97% del denaro in circolazione non esisterebbe solo in forma digitale---e tantomeno ci sarebbero proposte per abbandonare completamente banconote e monete, in favore di una valuta completamente digitale. \VediUrl{A. S. Mokerjee}{What If Central Banks Issued Digital Currency?}{2021}{https://hbr.org/2021/10/what-if-central-banks-issued-digital-currency}.
+[^morris-worm]: Si stima che in 24 ore riuscì a diffondersi sul 10% dei 60.000 computer connessi ad internet.
+L'obiettivo del *worm* non era di distruggere dati, ma di causare quello che oggi sarebbe chiamato un *denial of service attack* (attacco per l'interruzione del servizio). \VediUrl{Federal Bureau of Investigation}{The Morris Worm}{2018}{https://www.fbi.gov/news/stories/morris-worm-30-years-since-first-major-attack-on-internet-110218}.
 
-Per fare un paragone con la medicina, non serve essere specialisti nella materia per sapere che un chirurgo rischia di causare infezioni, se non si disinfetta le mani prima di operare su un paziente.
+Nel campo della protezione dei diritti d'autore, basta che un singolo soggetto riesca ad aggirare le misure di protezione di un programma, in modo che possa essere eseguito anche senza acquistare una licenza, e distribuisca questa versione modificata al pubblico, per generare un numero potenzialmente illimitato di vendite perse.^[La rimozione delle misure di sicurezza viene colloquialmente chiamata *cracking*, o "craccare" in italiano. Esistono siti che elencano quale gruppo pirata ha craccato quale software, e quali software sono in attesa di essere craccati. Ad esempio, <https://crackwatcher.com>.]
 
-Tuttavia, questa nozione è diventata evidente solo nel tempo. Inizialmente, era stata addirittura ostacolata. Nella scuola di medicina di Vienna, gli studenti entravano in contatto sia con cadaveri, sia con donne partorienti, ed i casi di sepsi puerperale erano frequenti. Nel 1847, Ignaz Semmelweis dimostrò il nesso causale fra il contatto con tessuti organici in putrefazione e la malattia.
+Ancora, l'uso di tecnologie *peer-to-peer* permette a chiunque non solo di acquisire materiale pedo-pornografico, ma anche di ridistribuirlo automaticamente ad un numero potenzialmente illimitato di persone [@Ferrazzano2014, 99 ss.]
 
-Dopo aver dissezionato i cadaveri, gli studenti si lavavano soltanto con acqua e sapone, ma l'odore putrescente rimaneva sulle loro mani.
-Semmelweis chiese che gli studenti si disinfettassero le mani con una soluzione contenente cloro.
-Nei due mesi precedenti, il 15.4% delle morti fra i pazienti era dovuta alla malattia.
-Nei tre mesi successivi all'introduzione della prassi di disinfettarsi le mani, questa percentuale diminuì al 1.4% [@Kadar2019, 30--32].
+### Disciplina sostanziale e procedurale dei reati informatici
 
-Tuttavia, i medici si rifiutavano di dare ragione a Semmelweis. Nel 1855, Carl Braun pubblicò un resoconto sulla malattia, indicando trenta possibili cause---incluso lo stress del parto, disturbi emotivi, carenze alimentari &hellip;---e per ultimo, l'infezione dovuta a materia putrescente da cadaveri [@Carter1985, 35].
+Date queste premesse, l'intervento del diritto penale era inevitabile.
 
-L'opposizione non era dovuta alla mancanza di sufficienti prove empiriche, ma ad un irragionevole attaccamento alle teorie tradizionali del tempo. Solo dopo che passarono 15 anni dalla morte di Semmelweis---ossia, nel 1880, più di 30 anni dopo la dimostrazione iniziale---le vecchie concezioni furono definitivamente superate, e la sua teoria fu accolta [@Kadar2019, 35].
+Negli Stati Uniti, la mancanza di leggi che punissero in maniera specifica i reati informatici, e la natura immateriale dei dati digitali inizialmente non furono di ostacolo per il sistema giudizario.
 
-Una situazione simile si sta ripetendo nell'ambito dell'informatica forense.
-I "Semmelweis" della disciplina hanno empiricamente dimostrato che anche le operazioni di investigazione che sono apparentemente poco invasive---perché di "sola lettura"[^esempi-operazioni-sola-lettura]---in realtà comportano un gran numero di modifiche "in scrittura"--ossia, la modificazione delle informazioni e del contenuto di file esistenti, e la creazione di nuovi file [@Cinti2011, 93--95].
+I *prosecutors* (pubblici ministeri) potevano qualificare il fatto commesso mediante un sistema informatico all'interno dei reati tradizionali, come *fraud* (truffa telematica), *larceny* (furto), o *embezzlement* (appropriazione indebita o peculato).
 
-[^esempi-operazioni-sola-lettura]: Ad esempio, eseguire una ricerca fra i file, avviare un il browser internet per visualizzare la cronologia, aprire un documento con Word o OpenOffice, anche solo spegnere il computer invece di staccare la spina.
+Le corti affermavano che nonostante i dati digitali avessero natura intangibile ed immateriale, avevano comunque un valore economico, e quindi si legittimava l'intervento del diritto penale [@Nugent1991, 2].
 
-Ancora, è stato dimostrato che cambiare un singolo bit può modificare il senso dei dati digitali.
-Ad esempio, basta invertire un singolo bit per passare dal testo "26.07.1966" al testo "26.07.1976", e viceversa, con ovvie ricadute ai fini delle indagini [@Gammarota2016, 61--62].
+Tuttavia, in alcuni casi, le corti argomentarono che se il legislatore voleva proteggere i sistemi informatici ed i dati digitali, avrebbe dovuto farlo in maniera espressa.
+Un'interpretazione estensiva delle leggi penali avrebbe violato:
 
-Per continuare l'analogia con la medicina legale, sarebbe come dire che anche toccare il cadavere con i guanti provoca dei cambiamenti al suo interno, e basta cambiare in minima misura una singola molecola all'interno di un cadavere, per cambiare la data della morte di 10 anni.
+- Il principio del *due process of law* (giusto processo), perché l'imputato non avrebbe potuto sapere in anticipo che il fatto sarebbe stato considerato un reato dalle corti.
+- Il principio della separazione dei poteri, perché i giudici avrebero creato una nuova ipotesi di incriminazione, non espressamente prevista dal legislatore.
 
-Tuttavia, queste nozioni fondamentali riguardo la natura dei programmi informatici e dei dati digitali sono ancora nozioni specialistiche, conosciute solo dai tecnici.
-Quando il legislatore richiede l'uso di "misure tecniche dirette ad assicurare la conservazione dei dati originali e ad impedirne l'alterazione" nelle perquisizioni su sistemi informatici (art. 352 co. 1-*bis* c.p.p.), accenna al problema, ma l'accenno rimane lettera morta, se coloro che prendono parte al processo/procedimento (giudice e suoi ausiliari, PM e PG, difensore &hellip;) non hanno ben presente la natura dei dati digitali, le possibili cause di alterazione, le modalità adeguate di conservazione&hellip;
+Gli Stati iniziarono a dotarsi di leggi sui reati informatici per superare questi problemi.
+La prima fu approvata in Florida nel 1978, e nel corso di poco più di un decennio, quasi tutti gli altri Stati si dotarono di proprie leggi [@Nugent1991, 2--4].
 
-Riprendendo la storia di Semmelweis, richiedere l'uso di "misure tecniche" è come dire che i medici devono lavarsi le mani prima di toccare una partoriente.
-Il problema è che se i medici non sanno che acqua e sapone non bastano, ma serve l'uso di un detergente specifico per evitare di infettare i pazienti---fino a quando questa idea viene accettata, e diventa di conoscenza comune---i pazienti continueranno a morire---e specularmente, i dati digitali continueranno ad essere contaminati, e quindi diventare meno affidabili ai fini processuali.
+In Italia, la prima disciplina riguardo i reati informatici viene introdotta nel 1993.[^legge-reati-informatici]
+Il codice penale viene aggiornato, introducendo riferimenti ai sistemi informatici e telematici, ai programmi informatici e ai dati digitali [@Gammarota2016, 71].
 
-### Complessità tecnica
+[^legge-reati-informatici]: V. L. 547/1993.
 
-dell'informatica è una materia complessa, ed in continua evoluzione.
+Ad esempio, si prevede espressamente---in modo da evitare qualsiasi dubbio:
 
-- software sempre più complesso
-- architetture distribuite e difficili
-- nuovi dispositivi
+- Che il danneggiamento può riguardare anche sistemi informatici o telematici, e dati o programmi informatici (artt. 635-*bis*--*quinquies* c.p.).
+- Il nuovo reato di accesso abusivo a sistema informatico (art. 615-*ter*).
+- Che la "corrispondenza" che può essere violata, sottratta o soppressa è anche quella "informatica o telematica" (art. 616 co. 4 c.p.).
+- Il nuovo reato di intercettazione, impedimento ed interruzione di "comunicazioni relative ad un sistema informatico o telematico" (art. 617-*quater* c.p.).
+- Il reato di frode informatica, che si fonda sull'alterazione non autorizzata di un sistema informatico o dei suoi dati (art. 640-*ter* c.p.).
 
-### Inadeguatezza delle leggi
+Tuttavia, istituire nuove figure di reato è relativamente semplice.
+Il vero problema è l'accertamento dei nuovi reati all'interno del processo.
 
-- incertezze lessicali
+Negli Stati Uniti, la cultura processuale è stata sempre aperta alla formazione della prova in contraddittorio, e la discussione dei principi, strumenti e metodologie scientifiche usate per ricostruire il fatto [@Gammarota2016, 11--12].
+Pertanto, la valutazione della attendibilità della prova costituisce una parte naturale del processo.
 
-Spesso le leggi che regolano l'uso di sistemi informatici e dati digitali commettono gli errori della falsa equivalenza, o dell'*argumentum ad antiquitatem* (appello alla tradizione)---se è possibile trovare un'analogia fra il mondo tradizionale e quello digitale, il secondo viene regolato per analogia applicando le regole del primo.
+Viceversa, in Italia la cultura processuale preferisce l'uso di prove precostituite (che devono essere semplicemente presentate), e non le prove costituitende (che invece si formano esclusivamente nel dibattimento fra le parti) [@Gammarota2016, 22--23].
 
-Ad esempio:
+È l'impostazione opposta rispetto alla cultura statunitense, e nel caso specifico della prova informatica, causa gravi problemi.
+Le prove informatiche potrebbero benissimo essere considerate dei documenti (art. 234 c.p.p.), possono essere acquisite perché sono il corpo del reato (art. 235 c.p.p.), o perché provengono dall'imputato (art. 237 c.p.p.), e possono essere valutate dal giudice senza il contributo di un perito o dei consulenti tecnici delle parti, perché in fondo, non sono troppo diversi da una fotografia.
 
-- *E-mail* significa letteralmente "posta elettronica". La PG poteva già sospendere l'inoltro di "lettere, pieghi, pacchi, valori, telegrammi o altri oggetti di corrispondenza". Pertanto, è stato sufficiente aggiungere "anche se in forma elettronica o se inoltrati per via telematica" per permettere la possibilità di sospendere l'inoltro di posta elettronica (art. 353 co. 3 c.p.p.).
-- La "D" in PDF significa "documento".[^acronimo-pdf] Il Codice dell'amministrazione digitale equipara espressamente i "documenti informatici" alle scritture private (art. 20).
-- Il reato di accesso abusivo ad un sistema informatico (art. 615-*ter* c.p.) è collocato a breve distanza dal reato di violazione di domicilio (art. 614 c.p.).
+Tuttavia, questa impostazione ignora completamente gli aspetti tecnici e scientifici dell'acquisizione e valutazione delle prove informatiche che sono oggetto dell'informatica forense.
 
-[^acronimo-pdf]: PDF è un acronimo che significa *Portable Document Format* (formato per documenti interoperabile).
+Il legislatore è pienamente capace di considerare la caratteristiche particolari di un mezzo di prova, e prevedere cautele apposite.
 
-Il problema è che l'utilità delle analogie è limitata.
-Sono utili per dimostare che la funzione di due oggetti è la stessa---e che quindi, casi simili devono ricevere tutele simili---ma non dicono nulla sulla diversa natura intrinseca dei beni protetti, e quindi, come i casi diversi devono essere trattati in maniera diversa.
+Ad esempio, si consideri la disciplina minuziosa prevista per la ricognizione di persone---un intero articolo è dedicato agli atti preliminari, si prevede l'esecuzione e la menzione di questi adempimenti nel verbale a pena di nullità, e gli articoli successivi regolano lo svolgimento, e altri tipi di ricognizione (artt. 213--216 c.p.c.).
 
-Un messaggio di posta elettronica o un file PDF hanno la natura di dato digitale,[^natura-email] ma dopo essere stati stampati, perdono la natura di dato digitale, e acquistano la natura di documento materiale.
-Questa trasformazione rappresenta una perdita di informazioni irreversibile.
-Per il diritto sono sostanzialmente la stessa cosa, ma per l'informatica, e conseguentemente, l'informatica forense, sono due cose completamente diverse---e situazioni diverse devono essere trattate in maniera diversa.
+Il legislatore sa che la memoria umana è labile, e quindi---a ragione---istituisce una disciplina articolata per una prova che si fonda interamente sul ricoonoscere qualcuno o qualcosa.
 
-[^natura-email]: Per quanto riguarda la posta elettronica, bisogna ulteriormente distinguere fra il messaggio conservato su un server remoto---solitamente il server del gestore del servizio di posta elettronica---e la copia del messaggio che viene salvata sul computer. Se l'utente non ha modo di accedere al server remoto, i protocolli per la trasmissione dei messaggi di posta elettronica permettono solo di leggere o eliminare un messaggio, ma non di modificarlo in parte o per intero. Naturalmente, una volta che il messaggio viene scaricato sul computer, può essere liberamente modificato, come qualsiasi altro file. Pertanto, è preferibile acquisire un messaggio dal server remoto, perché è meno probabile che sia stato soggetto a modificazioni---ma al tempo stesso, acquisire dati da internet richiede l'uso di tecniche particolari, per dimostrare nella maniera più convincente possibile che il processo di acquisizione ha realmente contattato il server remoto, ed i dati non sono stati manipolati durante o dopo l'acquisizione.
+Anche i dati digitali ed i sistemi informatici presentano numerose particolarità, che non possono essere ignorate per una loro corretta acquisizione e valutazione a fini processuali. 
+La prima disciplina di diritto processuale relativa ai dati digitali sarà introdotta solo nel 2008, con la ratifica della Convezione di Budapest del 2001,[^legge-ratifica-convenzione-budapest] ma il suo contenuto si limita ad affermazioni di principio, e non ad una disciplina più dettagliata e accompagnata da gravi sanzioni processuali in caso di violazione, come nel caso delle ricognizioni.
 
-Per comprendere meglio la differenza tra dato digitale e riproduzione analogica, si pensi alle norme sull'ispezione nel codice di procedura civile:
+[^legge-ratifica-convenzione-budapest]: V. L. 48/2008.
 
-- "All'ispezione procede personalmente il giudice istruttore \Omissis{}" (art. 259 c.p.c.).
-- "Il giudice istruttore può disporre che siano eseguit[e] \Omissis{} riproduzioni anche fotografiche di oggetti, documenti e luoghi \Omissis{}" (art. 261 c.p.c.).
+### Rilevanza procedurale dei dati digitali
 
-Sulla base di queste definizioni, è chiaro che c'è una differenza fondamentale fra il luogo in cui si svolge l'ispezione---che deve essere percepito "personalmente" dal giudice---e la riproduzione fotografica del luogo, che "può" essere disposta, se il giudice lo ritiene utile, ma chiaramente serve solo come promemoria, e non come sostituto per l'osservazione in prima persona del luogo.
+L'espressione "reato informatico" può essere intesa in due modi [@Gammarota2016, 29]. Nel caso dei reati informatici "propri", il sistema informatico è l'oggetto ed il bene giuridico protetto dal reato, ed è impossibile prescindere dalla sua presenza.
 
-Adesso, si consideri il seguente potere certificatorio, attribuito al notaio:
+Si può distinguere fra due casi:
 
-> Il notaio può attestare la conformità all'originale di copie, eseguite su supporto informatico o cartaceo, di documenti formati su qualsiasi supporto ed a lui esibiti in originale o copia conforme.^[L. 89/1913, art. 73.]
+- Il sistema informatico può essere l'unico bene rilevante per il reato. Ad esempio, nella serie di reati dedicati al danneggiamento di dati, programmi e sistemi informatici pubblici e privati,[^reati-danneggiamento]
+rileva il solo fatto che siano stati danneggiati dei dati digitali.
+- In altri casi, l'offesa al sistema informatico si unisce all'offesa di altri beni giuridici. Ad esempio, il *ransomware* è un tipo di *malware* che cripta i file dell'utente, rendendoli inaccessibili, e chiede il pagamento di un riscatto per decrittarli. Questa condotta può essere qualificata come una frode informatica (art. 640-*ter* c.p.), una fattispecie che richiede l'alterazione del funzionamento di un sistema informatico con lo scopo di procurare un profitto. Il danno al patrimonio della persona si aggiunge al danno causato al corretto funzionamento del sistema informatico [@Bartoli2021, 335].
 
-In altre parole, un notaio può certificare che la stampa cartacea di un documento digitale è "conforme" all'originale digitale.
-Tuttavia, il valore di questa certificazione non va sopravvalutato, come invece è pratica comune fare [@Gammarota2016, 23].
+[^reati-danneggiamento]: Artt. 635-*bis*--*quinquies* c.p.
 
-Quello che il notaio sta certificando è che il "documento digitale"---inteso come "quanto appare sullo schermo del computer", e non come "file salvato su disco"---sia stato riprodotto correttamente su carta.[^copia-conforme-file]
+In questi casi è impossibile prescindere dal dato digitale, perché l'unico modo per dimostare l'evento---il danno causato al sistema informatico---è considerare i dati in esso contenuti.
 
-[^copia-conforme-file]: In realtà, è perfettamente possibile rappresentare dati digitali su carta. Basta usare un sistema che permetta di convertire una sequenza di valori binari in una sequenza di caratteri che possono essere facilmente scritti con una tastiera, e viceversa (ad esempio, la codifica Base64 o Ascii85). Da un punto di vista teorico, la copia cartacea è realmente conforme all'originale digitale, perché il contenuto è lo stesso, bit per bit, è solo conservato in maniera diversa. Da un punto di vista pratico, è un sistema estremamente inefficiente di creare copie di file, ed inefficace, perché la codifica rende il contenuto del file non immediatamente percepibile.
+Nel caso dei reati informatici "impropri", il sistema informatico è soltanto lo strumento usato per compiere il reato, ed il bene -- o beni -- giuridici protetti dalla fattispecie non includono il sistema informatico.
 
-Così come l'ispezione non è riducibile alle fotografie che vengono fatte, il documento digitale non è riducibile a "quello che si vede sullo schermo".
+Ad esempio, gli sviluppi più recenti nelle intelligenze artificiali permette di generare dei *deepfake* vocali estraendo il timbro vocale di una persona, ed applicandolo ad un'altra registrazione, mediante un processo chiamato *voice conversion* [@Feffer2023].
+Su internet si può trovare il software necessario, guide su come utilizzarlo,\VediAdEsempioUrl{https://github.com/SociallyIneptWeeb/AICoverGen}
+raccolte di modelli del timbro vocale di cantanti,\VediAdEsempioUrl{https://huggingface.co/QuickWick/Music-AI-Voices}
+servizi a pagamento che offrono un'interfaccia facile da usare.[^ai-voice-cloning]
 
-Il luogo oggetto di ispezione ed il documento digitale sono una cosa.
-Quanto il giudice ha effettivamente percepito durante l'ispezione, e quanto si vede a schermo sono un'altra.
-Quanto viene fotografato, e quanto viene stampato sono un'altra ancora.
-Infine, così come esistono modi per nascondere qualcosa all'interno di un luogo (ad esempio, nel controsoffitto, dentro un muro &hellip;), esistono modi per nascondere dati all'interno di un documento digitale.
+[^ai-voice-cloning]: Basta cercare termini come "AI services voice cloning from recording" per trovare numerosi risultati.
+
+La truffa (art. 640 c.p.) protegge il patrimonio della vittima e la sua libertà di autodeterminazione [@Bartoli2021, 296], e fra i vari requisiti, richiede l'uso di "artifizi o raggiri".
+L'uso di questo tipo di tecnologie può sicuramente integrare quest'ultimo requisito, e casi di truffe telefoniche sono già successi negli Stati Uniti [@Kohli2023].
+
+Nei casi di reato informatico improprio è difficile e controproducente---ma almeno in linea teorica, non impossibile---ignorare il dato digitale ai fini della prova del fatto, e concentrarsi su elmenti diversi.
+
+Infine, in qualiasi altro caso di reato, i dati digitali possono essere una fonte utile di informazioni.
+Possono servire sia solo per indirizzare le indagini, oppure come elementi di prova.
+
+Tuttavia, questa distinzione di fini è puramente teoria.
+Nella pratica, bisogna considerare che in entrambi i casi è necessario accedere ai dati---non è possibile sapere *a priori* che utilità possono avere senza prenderne visione---e ogni accesso ai dati informatici---quando questi si trovano sul supporto originale---può causare dei cambiamenti irreversibili.
+
+Pertanto, è irragionevole pensare di fare un accesso "informale" ai dati, perché saranno usati solo per continuare le indagini.
+
+Si può applicare una logica analoga a quella prevista nell'art 350 c.p.p.:
+
+> Sul luogo o nell'immediatezza del fatto, gli ufficiali di polizia giudiziaria possono, anche senza la presenza del difensore, assumere dalla persona nei cui confronti vengono svolte le indagini, anche se arrestata in flagranza o fermata a norma dell'articolo 384, notizie e indicazioni utili ai fini della immediata prosecuzione delle indagini.
+
+> Delle notizie e delle indicazioni assunte senza l'assistenza del difensore sul luogo o nell'immediatezza del fatto a norma del comma 5 è vietata ogni documentazione e utilizzazione.
+
+- "senza l'assistenza del difensore" e divieto di utilizzazione, collegamento fra modalità meno garantite e divieto di uso nel dibattimento
 
 ## Dati digitali
 
-### Rilevanza per le investigazioni penali
+### Definizione di dati digitali
 
-Il problema più importante non è tanto la qualificazione dei reati.
-È sicuramente utile che i reati informatici siano previsti in maniera specifica dal legislatore, per escludere ogni dubbio in merito alla loro esistenza, e cercare di delimitare l'area del penalmente rilevante.
+La Convenzione di Budapest definisce i dati digitali come (art. 1 lett. *b*):
 
-Tuttavia, la questione più importante è l'**uso dei dati digitali all'interno di un procedimento** [@Gammarota2016, 29].
+> [A]ny representation of facts, information or concepts in a form suitable for processing in a computer system, including a program suitable to cause a computer system to perform a function.[^definizione-dati-digitali]
 
-Nei casi di **reato informatico proprio**, è **impossibile** prescindere dal dato digitale, poiché l'oggetto materiale è un sistema informatico.
-L'unico modo per dimostare la sua alterazione è considerare i dati in esso contenuti.
-
-Nei casi di **reato informatico improprio**, è **difficile**, ma non impossibile, prescindere dal dato digitale.
-Sicuramente sarebbe utile poter esaminare lo strumento con cui è stato compiuto il reato, ma in linea teorica, il fatto può essere provato o contestato anche in altri modi.
-
-In **tutti gli altri casi di reato**, può essere **utile, ma non necessario**, utilizzare i dati digitali contenuti in sistemi informatici.
-Se si decide di acquisirli, bisogna tenere a mente la **fragilità** dei dati digitali.
-
-Il tema sarà oggetto di analisi più approfondita in un capitolo successivo, ma al momento, è necessario e sufficiente anticipare che tendenzialmente, **qualsiasi operazione** si possa compiere su un sistema informatico porta alla **modificazione dei contenuti** del sistema stesso, anche se potrebbe sembrare a prima vista non invasiva.
-
-Si può fare un'analogia con la disciplina dell'esame e della testimonianza.
-Così come il giudice è tenuto a valutare con rigore l'affidabilità delle deposizioni dell'**imputato** (nel caso dei reati informatici propri e non, il sistema informatico ha partecipato alla realizzazione del fatto), e del **testimone** (negli altri casi, il sistema informato può riferire dati utili), perché la memoria delle persone è labile, così deve applicare lo stesso rigore quando valuta una **prova informatica**, perché i dati informatici sono fragili.
+[^definizione-dati-digitali]: *Qualsiasi rappresentazione di fatti, informazioni o concetti in una forma che sia adatta ad essere elaborata da un sistema informatico, comprendendo anche un programma che porta un sistema informatico a svolgere una funzione.*
 
 ### Bit
 
@@ -518,102 +525,123 @@ Riassumendo, i **bit**, e quindi i **dati digitali** in generale, sono **estrema
 Questo **non** significa che i dati digitali siano **intrinsecamente inaffidabili**, e quindi non possano mai fornire informazioni utili all'interno di un processo.
 Piuttosto, significa che se devono essere utilizzati per prendere una decisione, bisogna **valutare** non solo i dati, ma anche -- e forse soprattutto -- il **rispetto delle tecniche** che sono state utilizzate per il loro trattamento.
 
-### Reati informatici
+## Ostacoli all'informatica forense
 
-Prima di definire cosa sia l'informatica forense, è utile introdurre brevemente il fenomeno che ha **richiesto ed incentivato il suo sviluppo**, i reati informatici.
+È opportuno evidenziare le particolarità e difficoltà che l'informatica forense incontra e presenta, al fine di garantire un suo uso consapevole.
 
-#### Pericolosità dei sistemi informatici
+### Novità della disciplina
 
-A partire dalla seconda metà del ventesimo secolo, le tecnologie informatiche si sono sviluppate e sono diventate una parte essenziale della società moderna.
-Tuttavia, la diffusione della tecnologia comportava anche il suo abuso ed uso da parte dei criminali [@Gammarota2016, 11].
+L'informatica è una scienza particolarmente giovane. Il termine stesso "informatica" viene coniato come neologismo per la prima volta in Germania, tra il 1955 ed il 1957, come *Informatik-System*, nella registrazione di un brevetto per un sistema automatizzato per l'amministrazione aziendale, e successivamente, nel 1962 in Francia (*informatique*), e nel 1966 in Russia (*informatika*) [@Bolognesi1999, 915--917].
 
-I **sistemi informatici** permettono alla condotta di singolo individuo -- purché dotato delle conoscenze tecniche necessarie -- di **causare danni enormi**.
+La prima menzione di "computer sciences" (al plurale) risale al 1959, in un articolo che analizzava la nascita ed evoluzione dei campi di studio riguardanti l'uso di "computer" (calcolatori) ed il "data processing" (trattamento dei dati) [@Fein1959, 7].
 
-Ad esempio, nel 1988, il *Morris worm* riuscì a disturbare ed interrompere il funzionamento dei sistemi informatici allora collegati su internet [@Nugent1991, 1].
+Questo non implica che l'informatica sia una disciplina immatura.[^denaro-elettronico]
+Piuttosto, si può argomentare che i suoi principi fondamentali non hanno ancora avuto il tempo di diventare parte delle "nozioni di fatto che rientrano nella comune esperienza" (art. 115 c.p.p.).
 
-Nel campo della protezione dei diritti d'autore, basta che un singolo soggetto riesca ad aggirare le misure di protezione di un programma, in modo che possa essere eseguito anche senza acquistare una licenza, e distribuisca questa versione modificata al pubblico, per generare un numero potenzialmente illimitato di vendite perse.^[La rimozione delle misure di sicurezza viene colloquialmente chiamata *cracking*, o "craccare" in italiano. Esistono siti che elencano quale gruppo pirata ha craccato quale software, e quali software sono in attesa di essere craccati. Ad esempio, <https://crackwatcher.com>.]
+[^denaro-elettronico]: Altrimenti, il 97% del denaro in circolazione non esisterebbe solo in forma digitale---e tantomeno ci sarebbero proposte per abbandonare completamente banconote e monete, in favore di una valuta completamente digitale. \VediUrl{A. S. Mokerjee}{What If Central Banks Issued Digital Currency?}{2021}{https://hbr.org/2021/10/what-if-central-banks-issued-digital-currency}.
 
-Ancora, l'uso di tecnologie *peer-to-peer* permette a chiunque non solo di acquisire materiale pedo-pornografico, ma anche di ridistribuirlo automaticamente ad un numero potenzialmente illimitato di persone [@Ferrazzano2014, 99 ss.]
+Per fare un paragone con la medicina, non serve essere specialisti nella materia per sapere che un chirurgo rischia di causare infezioni, se non si disinfetta le mani prima di operare su un paziente.
 
-#### Reati informatici negli Stati Uniti
+Tuttavia, questa nozione è diventata evidente solo nel tempo. Inizialmente, era stata addirittura ostacolata. Nella scuola di medicina di Vienna, gli studenti entravano in contatto sia con cadaveri, sia con donne partorienti, ed i casi di sepsi puerperale erano frequenti. Nel 1847, Ignaz Semmelweis dimostrò il nesso causale fra il contatto con tessuti organici in putrefazione e la malattia.
 
-Date queste premesse, l'intervento del diritto penale era inevitabile.
+Dopo aver dissezionato i cadaveri, gli studenti si lavavano soltanto con acqua e sapone, ma l'odore putrescente rimaneva sulle loro mani.
+Semmelweis chiese che gli studenti si disinfettassero le mani con una soluzione contenente cloro.
+Nei due mesi precedenti, il 15.4% delle morti fra i pazienti era dovuta alla malattia.
+Nei tre mesi successivi all'introduzione della prassi di disinfettarsi le mani, questa percentuale diminuì al 1.4% [@Kadar2019, 30--32].
 
-Negli Stati Uniti, la mancanza di leggi che punissero in maniera specifica i reati informatici, e la natura immateriale dei dati digitali inizialmente non furono di ostacolo per il sistema giudizario.
+Tuttavia, i medici si rifiutavano di dare ragione a Semmelweis. Nel 1855, Carl Braun pubblicò un resoconto sulla malattia, indicando trenta possibili cause---incluso lo stress del parto, disturbi emotivi, carenze alimentari &hellip;---e per ultimo, l'infezione dovuta a materia putrescente da cadaveri [@Carter1985, 35].
 
-I *prosecutors* (pubblici ministeri) potevano qualificare il fatto commesso mediante un sistema informatico all'interno dei reati tradizionali, come *fraud* (truffa telematica), *larceny* (furto), o *embezzlement* (appropriazione indebita o peculato).
+L'opposizione non era dovuta alla mancanza di sufficienti prove empiriche, ma ad un irragionevole attaccamento alle teorie tradizionali del tempo. Solo dopo che passarono 15 anni dalla morte di Semmelweis---ossia, nel 1880, più di 30 anni dopo la dimostrazione iniziale---le vecchie concezioni furono definitivamente superate, e la sua teoria fu accolta [@Kadar2019, 35].
 
-Le corti affermavano che nonostante i dati digitali avessero natura intangibile ed immateriale, avevano comunque un valore economico, e quindi si legittimava l'intervento del diritto penale [@Nugent1991, 2].
+Una situazione simile si sta ripetendo nell'ambito dell'informatica forense.
+I "Semmelweis" della disciplina hanno empiricamente dimostrato che anche le operazioni di investigazione che sono apparentemente poco invasive---perché di "sola lettura"[^esempi-operazioni-sola-lettura]---in realtà comportano un gran numero di modifiche "in scrittura"--ossia, la modificazione delle informazioni e del contenuto di file esistenti, e la creazione di nuovi file [@Cinti2011, 93--95].
 
-Tuttavia, in alcuni casi, le corti argomentarono che se il legislatore voleva proteggere i sistemi informatici ed i dati digitali, avrebbe dovuto farlo in maniera espressa.
+[^esempi-operazioni-sola-lettura]: Ad esempio, eseguire una ricerca fra i file, avviare un il browser internet per visualizzare la cronologia, aprire un documento con Word o OpenOffice, anche solo spegnere il computer invece di staccare la spina.
 
-Un'interpretazione estensiva delle leggi penali avrebbe violato il principio del *due process of law* (giusto processo), perché l'imputato non avrebbe potuto sapere in anticipo che il fatto sarebbe stato considerato un reato, e/o il principio della separazione dei poteri, perché i giudici avrebero creato una nuova ipotesi di incriminazione, non espressamente prevista dal legislatore.
+Ancora, è stato dimostrato che cambiare un singolo bit può modificare il senso dei dati digitali.
+Ad esempio, basta invertire un singolo bit per passare dal testo "26.07.1966" al testo "26.07.1976", e viceversa, con ovvie ricadute ai fini delle indagini [@Gammarota2016, 61--62].
 
-Per superare questi problemi, gli Stati iniziarono a dotarsi di leggi sui reati informatici.
-La prima fu approvata in Florida nel 1978, e nel corso di poco più di un decennio, quasi tutti gli altri Stati si dotarono di proprie leggi [@Nugent1991, 2--4].
+Per continuare l'analogia con la medicina legale, sarebbe come dire che anche toccare il cadavere con i guanti provoca dei cambiamenti al suo interno, e basta cambiare in minima misura una singola molecola all'interno di un cadavere, per cambiare la data della morte di 10 anni.
 
-#### Reati informatici in Italia
+Tuttavia, queste nozioni fondamentali riguardo la natura dei programmi informatici e dei dati digitali sono ancora nozioni specialistiche, conosciute solo dai tecnici.
+Quando il legislatore richiede l'uso di "misure tecniche dirette ad assicurare la conservazione dei dati originali e ad impedirne l'alterazione" nelle perquisizioni su sistemi informatici (art. 352 co. 1-*bis* c.p.p.), accenna al problema, ma l'accenno rimane lettera morta, se coloro che prendono parte al processo/procedimento (giudice e suoi ausiliari, PM e PG, difensore &hellip;) non hanno ben presente la natura dei dati digitali, le possibili cause di alterazione, le modalità adeguate di conservazione&hellip;
 
-In Italia, la prima disciplina riguardo i reati informatici viene introdotta con la L. n. 547/1993.
-Estende una serie di reati tradizionali, introducendo riferimenti ai sistemi informatici e telematici, i programmi informatici ed i dati digitali [@Gammarota2016, 71].
+Riprendendo la storia di Semmelweis, richiedere l'uso di "misure tecniche" è come dire che i medici devono lavarsi le mani prima di toccare una partoriente.
+Il problema è che se i medici non sanno che acqua e sapone non bastano, ma serve l'uso di un detergente specifico per evitare di infettare i pazienti---fino a quando questa idea viene accettata, e diventa di conoscenza comune---i pazienti continueranno a morire---e specularmente, i dati digitali continueranno ad essere contaminati, e quindi diventare meno affidabili ai fini processuali.
 
-A titolo esemplificativo:
+### Complessità tecnica
 
-- La violenza sulle cose (art. 1) ed il danneggiamento (art. 9) possono riguardare anche sistemi informatici, o i dati in essi contenuti.
-- Gli impianti di pbublica utilità includono anche sistemi informaticie telematici (art. 2).
-- In tema di falsità, i documenti digitali devono essere trattati allo stesso modo degli atti pubblici e scritti privati (art. 3).
-- L'accesso abusivo a sistema informatico è analogo alla violazione di domicilio (art. 4).
-- La sottrazione o violazione di corrispondenza e l'intercettazione di comunicazioni includono anche le comunicazioni telematiche (artt. 5 e 6).
-- La frode informatica (art. 10) è analoga alla truffa.
+dell'informatica è una materia complessa, ed in continua evoluzione.
 
-#### Reati informatici propri ed impropri
+- software sempre più complesso
+- architetture distribuite e difficili
+- nuovi dispositivi
 
-L'espressione "reato informatico" può essere intesa in due modi [@Gammarota2016, 29].
+### Inadeguatezza delle leggi
 
-Nel caso dei **reati informatici "propri"**, il sistema informatico è l'oggetto ed il bene giuridico protetto dal reato, ed è impossibile prescindere dalla sua presenza.
+- incertezze lessicali
 
-Il sistema informatico può essere l'**unico bene rilevante per il reato**.
+Spesso le leggi che regolano l'uso di sistemi informatici e dati digitali commettono gli errori della falsa equivalenza, o dell'*argumentum ad antiquitatem* (appello alla tradizione)---se è possibile trovare un'analogia fra il mondo tradizionale e quello digitale, il secondo viene regolato per analogia applicando le regole del primo.
 
-Ad esempio, nella serie di reati dedicati al danneggiamento di dati, programmi e sistemi informatici pubblici e privati,^[
-Artt. 635-*bis* a 635-*quinquies* c.p.]
-rileva il solo fatto che siano stati danneggiati dei dati digitali.
+Ad esempio:
 
-In altri casi, l'offesa al sistema informatico si unisce all'**offesa di altri beni giuridici**.
+- *E-mail* significa letteralmente "posta elettronica". La PG poteva già sospendere l'inoltro di "lettere, pieghi, pacchi, valori, telegrammi o altri oggetti di corrispondenza". Pertanto, è stato sufficiente aggiungere "anche se in forma elettronica o se inoltrati per via telematica" per permettere la possibilità di sospendere l'inoltro di posta elettronica (art. 353 co. 3 c.p.p.).
+- La "D" in PDF significa "documento".[^acronimo-pdf] Il Codice dell'amministrazione digitale equipara espressamente i "documenti informatici" alle scritture private (art. 20).
+- Il reato di accesso abusivo ad un sistema informatico (art. 615-*ter* c.p.) è collocato a breve distanza dal reato di violazione di domicilio (art. 614 c.p.).
 
-Ad esempio, il *ransomware* è un tipo di *malware* che cripta i file dell'utente, rendendoli inaccessibili, e chiede il pagamento di un riscatto per decrittarli.
-Questa condotta può essere qualificata come una frode informatica,^[Art. 640-*ter* c.p.] fattispecie che richiede l'alterazione del funzionamento di un sistema informatico con lo scopo di procurare un profitto.
-Il danno al patrimonio della persona si aggiunge al danno causato al corretto funzionamento del sistema informatico [@Bartoli2021, 335].
+[^acronimo-pdf]: PDF è un acronimo che significa *Portable Document Format* (formato per documenti interoperabile).
 
-Nel caso dei **reati informatici "impropri"**, il sistema informatico è soltanto lo strumento usato per compiere il reato, ed il bene -- o beni -- giuridici protetti dalla fattispecie non includono il sistema informatico.
+Il problema è che l'utilità delle analogie è limitata.
+Sono utili per dimostare che la funzione di due oggetti è la stessa---e che quindi, casi simili devono ricevere tutele simili---ma non dicono nulla sulla diversa natura intrinseca dei beni protetti, e quindi, come i casi diversi devono essere trattati in maniera diversa.
 
-Ad esempio, gli sviluppi più recenti nelle intelligenze artificiali permette di generare dei *deepfake* vocali estraendo il timbro vocale di una persona, ed applicandolo ad un'altra registrazione, mediante un processo chiamato *voice conversion* [@Feffer2023].
+Un messaggio di posta elettronica o un file PDF hanno la natura di dato digitale,[^natura-email] ma dopo essere stati stampati, perdono la natura di dato digitale, e acquistano la natura di documento materiale.
+Questa trasformazione rappresenta una perdita di informazioni irreversibile.
+Per il diritto sono sostanzialmente la stessa cosa, ma per l'informatica, e conseguentemente, l'informatica forense, sono due cose completamente diverse---e situazioni diverse devono essere trattate in maniera diversa.
 
-Su internet si può trovare il software necessario, guide su come utilizzarlo,\VediAdEsempioUrl{https://github.com/SociallyIneptWeeb/AICoverGen}
-raccolte di modelli del timbro vocale di cantanti,\VediAdEsempioUrl{https://huggingface.co/QuickWick/Music-AI-Voices}
-servizi a pagamento che offrono un'interfaccia facile da usare.^[Basta cercare termini come "AI services voice cloning from recording" per trovare numerosi risultati]
+[^natura-email]: Per quanto riguarda la posta elettronica, bisogna ulteriormente distinguere fra il messaggio conservato su un server remoto---solitamente il server del gestore del servizio di posta elettronica---e la copia del messaggio che viene salvata sul computer. Se l'utente non ha modo di accedere al server remoto, i protocolli per la trasmissione dei messaggi di posta elettronica permettono solo di leggere o eliminare un messaggio, ma non di modificarlo in parte o per intero. Naturalmente, una volta che il messaggio viene scaricato sul computer, può essere liberamente modificato, come qualsiasi altro file. Pertanto, è preferibile acquisire un messaggio dal server remoto, perché è meno probabile che sia stato soggetto a modificazioni---ma al tempo stesso, acquisire dati da internet richiede l'uso di tecniche particolari, per dimostrare nella maniera più convincente possibile che il processo di acquisizione ha realmente contattato il server remoto, ed i dati non sono stati manipolati durante o dopo l'acquisizione.
 
-La truffa (art. 640 c.p.) protegge il patrimonio della vittima e la sua libertà di autodeterminazione [@Bartoli2021, 296], e fra i vari requisiti, richiede l'uso di "artifizi o raggiri".
-L'uso di questo tipo di tecnologie può sicuramente integrare quest'ultimo requisito, e casi di truffe telefoniche sono già successi negli Stati Uniti [@Kohli2023].
+Per comprendere meglio la differenza tra dato digitale e riproduzione analogica, si pensi alle norme sull'ispezione nel codice di procedura civile:
 
-In ogni caso, la distinzione fra reati contro, o per mezzo di, sistemi informatici è puramente teorica, e non ha rilevanza pratica.
+- "All'ispezione procede personalmente il giudice istruttore \Omissis{}" (art. 259 c.p.c.).
+- "Il giudice istruttore può disporre che siano eseguit[e] \Omissis{} riproduzioni anche fotografiche di oggetti, documenti e luoghi \Omissis{}" (art. 261 c.p.c.).
 
-### Prova informatica
+Sulla base di queste definizioni, è chiaro che c'è una differenza fondamentale fra il luogo in cui si svolge l'ispezione---che deve essere percepito "personalmente" dal giudice---e la riproduzione fotografica del luogo, che "può" essere disposta, se il giudice lo ritiene utile, ma chiaramente serve solo come promemoria, e non come sostituto per l'osservazione in prima persona del luogo.
+
+Adesso, si consideri il seguente potere certificatorio, attribuito al notaio:
+
+> Il notaio può attestare la conformità all'originale di copie, eseguite su supporto informatico o cartaceo, di documenti formati su qualsiasi supporto ed a lui esibiti in originale o copia conforme.^[L. 89/1913, art. 73.]
+
+In altre parole, un notaio può certificare che la stampa cartacea di un documento digitale è "conforme" all'originale digitale.
+Tuttavia, il valore di questa certificazione non va sopravvalutato, come invece è pratica comune fare [@Gammarota2016, 23].
+
+Quello che il notaio sta certificando è che il "documento digitale"---inteso come "quanto appare sullo schermo del computer", e non come "file salvato su disco"---sia stato riprodotto correttamente su carta.[^copia-conforme-file]
+
+[^copia-conforme-file]: In realtà, è perfettamente possibile rappresentare dati digitali su carta. Basta usare un sistema che permetta di convertire una sequenza di valori binari in una sequenza di caratteri che possono essere facilmente scritti con una tastiera, e viceversa (ad esempio, la codifica Base64 o Ascii85). Da un punto di vista teorico, la copia cartacea è realmente conforme all'originale digitale, perché il contenuto è lo stesso, bit per bit, è solo conservato in maniera diversa. Da un punto di vista pratico, è un sistema estremamente inefficiente di creare copie di file, ed inefficace, perché la codifica rende il contenuto del file non immediatamente percepibile.
+
+Così come l'ispezione non è riducibile alle fotografie che vengono fatte, il documento digitale non è riducibile a "quello che si vede sullo schermo".
+
+Il luogo oggetto di ispezione ed il documento digitale sono una cosa.
+Quanto il giudice ha effettivamente percepito durante l'ispezione, e quanto si vede a schermo sono un'altra.
+Quanto viene fotografato, e quanto viene stampato sono un'altra ancora.
+Infine, così come esistono modi per nascondere qualcosa all'interno di un luogo (ad esempio, nel controsoffitto, dentro un muro &hellip;), esistono modi per nascondere dati all'interno di un documento digitale.
+
+## Prova informatica come prova scientifica
 
 - "prova scientifica" non si riferisce ad un particolare tipo di prova, ma al fatto che vengono usate conoscenze tecniche
 - "prova informatica" e "dati digitali"
 - escludere l'uso della prova atipica, usare periti e consulenti
 
-## Periti e consulenti tecnici
+### Periti e consulenti tecnici
 
 - fatto tecnico: il giudice può o usare la sua intuizione, o richiedere l'aiuto di personale specializzato
 - Leggi scientifiche [@Marinucci2020, 242].
 
-## Valutazione della prova tecnica
+### Valutazione della prova tecnica
 
 - Sentenza Daubert
 - Sentenze della Cassazione
 
-## Importanza delle definizioni
+### Importanza delle definizioni
 
 Spesso le leggi si aprono con un articolo in cui si cerca di dare la migliore definizione possibile dei termini che saranno usati nel resto del testo.
 

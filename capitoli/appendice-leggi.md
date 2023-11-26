@@ -9,12 +9,17 @@ Ripristina manualmente il numero delle note a piè di pagina in LaTeX: https://t
 
 ## Leggi {-}
 
-- L. 89/1913 --- [Legge 16 febbraio 1913, n. 89, sull'ordinamento del notariato e degli archivi notarili.](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1913-02-16;89)
-- L. 747/1994 --- [*Ratifica ed esecuzione degli atti concernenti i risultati dei negoziati dell'Uruguay Round, adottati a Marrakech il 15 aprile 1994.*](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1994-12-29;747)
+L. 89/1913 --- [Legge 16 febbraio 1913, n. 89, in materia di "Ordinamento del notariato e degli archivi notarili."](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1913-02-16;89)\par
+
+L. 547/1993 --- [Legge 23 dicembre 1993, n. 547, in materia di "Modificazioni ed integrazioni alle norme del codice penale e del codice di procedura penale in tema di criminalità informatica."](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1993-12-23;547)
+
+L. 747/1994 --- [*Ratifica ed esecuzione degli atti concernenti i risultati dei negoziati dell'Uruguay Round, adottati a Marrakech il 15 aprile 1994.*](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1994-12-29;747)
+
+L. 48/2008 --- [Legge 18 marzo 2008, n. 48, in materia di "Ratifica ed esecuzione della Convenzione del Consiglio d'Europa sulla criminalità informatica, fatta a Budapest il 23 novembre 2001, e norme di adeguamento dell'ordinamento interno."](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2008-03-18;48)
 
 ## Trattati internazionali {-}
 
-- Convenzione di Budapest --- [*ETS 185 -- Cybercrime (Convention).*](https://rm.coe.int/1680081561)
+Convenzione di Budapest --- [Convention on Cybercrime (ETS No. 185)](https://rm.coe.int/1680081561)
 
 ## Direttive europee {-}
 

@@ -18,7 +18,9 @@ indent: true
 linestretch: 1.5
 papersize: a4
 fontsize: 12pt
-header-includes: \pagestyle{plain}
+header-includes:
+- \usepackage{indentfirst}
+- \pagestyle{plain}
 ...
 
 \newcommand{\Omissis}{[\dots\unkern]}
