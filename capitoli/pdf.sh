@@ -2,7 +2,7 @@ inputs="prologo.md \
 	note-legali.md \
 	ringraziamenti.md \
 	introduzione.md \
-	prova-scientifica.md \
+	prova-scientifica-v2.md \
 	software-libero.md \
 	buone-pratiche-sviluppo-software.md \
 	sistema-operativo-libero.md \
