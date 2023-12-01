@@ -11,6 +11,12 @@ inputs="prologo.md \
 	appendice-leggi.md \
 	bibliografia.md"
 
-pandoc -s --citeproc --bibliography citations.bib --from markdown+inline_notes -o out.pdf $inputs
+PandocPDF() {
+	pandoc -s --citeproc --bibliography citations.bib --from markdown+inline_notes -o out.pdf $inputs
+}
 
-wc -w $inputs
+WCInputs() {
+	wc -w $inputs
+}
+
+PandocPDF && WCInputs

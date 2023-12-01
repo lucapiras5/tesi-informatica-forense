@@ -1,6 +1,6 @@
-# Dati informatici
+# Dati informatici e prova informatica
 
-## Dati, informazioni e decisioni
+## Dati, informazioni e decisioni {#dati-informazioni-decisioni}
 
 Una regola generale del diritto è che le decisioni devono essere motivate.
 Il soggetto che prende una decisione deve dare conto (anche sommariamente) degli elementi che ha considerato, di come li ha valutati, e quale percorso logico ha seguito per arrivare all determinazione finale.
@@ -8,7 +8,7 @@ Anche nei casi in cui non è necessario rendere conto della motivazione[^decreti
 
 [^decreti-non-motivati]: Ad esempio, i decreti del giudice devono essere motivati solo quando la legge lo richiede (art. 135 co. 4 c.p.c.; art. 125 co. 3 c.p.p.).
 
-Il processo inizia con la raccolta di dati (elementi oggettivi), che devono essere valutati ed interpretati per ottenere informazioni utili per il caso concreto (elementi soggettivi).
+Il processo inizia con la raccolta di "dati" (elementi oggettivi), che devono essere valutati ed interpretati dalle parti e dal giudice per ottenere "informazioni" utili a seconda dell'obiettivo da perseguire (elementi soggettivi) [@Gammarota2016, 46--47].
 La qualità della decisione è limitata dalla qualità dei dati "grezzi", e dalla loro corretta valutazione ed interpretazione:
 Se i dati sono insufficienti, inaffidabili, o contraddittori, ed in ogni caso, se i dati vengono interpretati erroneamente[^interpretazione-erronea-dati] la decisione sarà viziata.
 Il problema è riassunto in maniera efficace dalla massima inglese *garbage in, garbage out* (se entra spazzatura, esce spazzatura).
@@ -24,13 +24,12 @@ Ad esempio, possono rilevare come elementi di prova all'interno di un processo (
 
 [^dati-informatici-digitali]: La versione inglese della Convenzione sulla cibercriminalità (Budapest, 2001) usa l'espressione *digital data*, quella francese usa l'espressione *données informatiques*. Entrambe le versioni sono ufficiali, quindi le traduzioni letterali "dati digitali" o "dati informatici" sono intercambiabili. Anche se l'espressione "dati digitali" viene usato con maggiore frequenza di "dati informatici", nella presente trattazione si preferirà la seconda, per l'assonanza con il nome della disciplina "informatica forense".
 
-## Caratteristiche dei dati informatici
+## Caratteristiche dei dati informatici {#sez-caratteristiche-dati-informatici}
 
 I dati informatici presentano alcune caratteristiche distintive, che possono essere brevemente riassunte con i termini "malleabilità" e "riproducibilità".
 Esistono numerosi modi in cui i dati informatici possono essere modificati.
 Rilevare e analizzare queste modifiche non è una scienza esatta, ma è necessario per la loro corretta valutazione.
-Un elemento a favore dei dati digitali è la loro riproducibilità.
-Così come è facile modificarli, è facile anche riprodurli.
+La facilità con cui è possibile modificarli è controbilanciata dalla facilità con cui è possibile creare copie dei dati, e verificare la loro integrità.
 
 La prima caratteristica è che i dati informatici hanno natura "non immateriale", e necessitano di un supporto materiale per la loro conservazione e trasmissione.
 
@@ -61,7 +60,7 @@ Possono dipendere da:
 
 [^bit-flip-raggi-cosmici]: \VediUrl{T. Long}{This Week in Glean: What Flips Your Bit?}{2022}{https://blog.mozilla.org/data/2022/04/13/this-week-in-glean-what-flips-your-bit/}.
 
-[^unrecoverable-read-errors]: \VediUrl{T. Pott, I. Thomson}{Flash banishes the spectre of the unrecoverable data error}{2022}{https://www.theregister.com/2015/05/07/flash_banishes_the_spectre_of_the_unrecoverable_data_error}.
+[^unrecoverable-read-errors]: \VediUrl{T. Pott, I. Thomson}{Flash banishes the spectre of the unrecoverable data error}{2015}{https://www.theregister.com/2015/05/07/flash_banishes_the_spectre_of_the_unrecoverable_data_error}.
 
 Un secondo corollario è che i dati informatici possono essere modificati in maniera anonima, senza lasciare tracce.
 Se si ha accesso fisico al supporto materiale, ed è possibile collegarlo ad un altro computer, in linea teorica, è sempre possibile modificare i suoi contenuti.
@@ -77,7 +76,7 @@ Se il sistema è spento, il software che controlla l'applicazione delle *ACL* (*
 L'unica misura di sicurezza a livello di software utile per prevenire gli accessi anche quando il sistema non è in esecuzione è l'uso della *encryption at-rest* (crittografia "a riposo").[^CrittografiaRiposo]
 È sempre possibile leggere i contenuti di un file cifrato, ma se non si dispone della chiave di cifratura, è impossibile decifrarli ed esaminarli.
 
-[^CrittografiaRipso]: La *encryption at-rest* non usa tecniche diverse rispetto alla normale crittografia, ma serve solo ad evidenziare che i dati cifrati sono conservati in maniera stabile sul supporto materiale. Fino dai suoi albori (si pensi al cifrario di Cesare) l'uso tipico della crittografia è stato principalmente di proteggere dati che venivano trasmessi attraverso canali di comunicazione non sicuri, piuttosto che di proteggere dati archiviati in maniera stabile.
+[^CrittografiaRiposo]: La *encryption at-rest* non usa tecniche diverse rispetto alla normale crittografia, ma serve solo ad evidenziare che i dati cifrati sono conservati in maniera stabile sul supporto materiale. Fino dai suoi albori (si pensi al cifrario di Cesare) l'uso tipico della crittografia è stato principalmente di proteggere dati che venivano trasmessi attraverso canali di comunicazione non sicuri, piuttosto che di proteggere dati archiviati in maniera stabile.
 
 La tecnica più semplice di modifica è la distruzione integrale di tutti i dati contenuti sul supporto.
 La semplice sovrascrittura dell'intero *hard disk* è considerata un processo irreversibile [@Feenberg2013].
@@ -116,12 +115,64 @@ Per verificare l'integrità della copia rispetto all'originale, sia subito dopo 
 [^DefinizioneHash]: In inglese, *to hash* significa "sminuzzare". Un algoritmo di hash "sminuzza" un file, nel senso che viene diviso in una serie di *blocks* ("blocchi", tranche), sequenze di bit a lunghezza costante (512 bit per gli algoritmi MD5 e SHA-1), ed i vari blocchi vengono ricombinati fra di loro in sequenza per generare un *digest* (riassunto) dei dati originali (128 bit per MD5, 160 bit per SHA-1). La prima proprietà degli hash è che gli stessi dati in entrata producono sempre lo stesso hash in uscita. Si può verificare che due sequenze di bit sono identiche calcolando e confrontando il loro hash. La seconda proprietà degli hash è che invertire anche un singolo bit nei dati in entrata invertirà in media la metà dei bit in uscita. Pertanto, anche la minima differenza fra due sequenze di bit produrrà hash completamente diversi.
 [^TipiHash]: Esistono molti tipi di hash: alcuni sono sviluppati per essere il più veloci possibile, altri per essere il più sicuri (capaci di resistere a varie tecniche di manomissione dei dati) possibile. Per verificare l'integrità dei dati, è importare usare la famiglia degli hash crittografici.
 
-## TODO Dati informatici come fatti
+## Dati informatici come fatti
 
-- Reati informatici: propri, impropri
-- Dati digitali per le investigazioni
-- Intercettazioni
-- Esperimenti giudiziali
+I dati informatici possono essere utilizzati per la prova di fatti.
+
+Nel diritto penale, i reati informatici sono stati regolati per la prima volta nel 1993.[^LeggeReatiInformatici]
+L'espressione "reato informatico" può essere intesa in due modi [@Gammarota2016, 29]. Nel caso dei reati informatici "propri", il sistema informatico è l'oggetto ed il bene giuridico protetto dal reato, ed è impossibile prescindere dalla sua presenza.
+
+[^LeggeReatiInformatici]: L. 547/1993.
+
+Si può distinguere fra due casi:
+
+- Il sistema informatico può essere l'unico bene rilevante per il reato. Ad esempio, nella serie di reati dedicati al danneggiamento di dati, programmi e sistemi informatici pubblici e privati,[^reati-danneggiamento]
+rileva il solo fatto che siano stati danneggiati dei dati digitali.
+- In altri casi, l'offesa al sistema informatico si unisce all'offesa di altri beni giuridici. Ad esempio, il *ransomware* è un tipo di *malware* che cripta i file dell'utente, rendendoli inaccessibili, e chiede il pagamento di un riscatto per decrittarli. Questa condotta può essere qualificata come una frode informatica (art. 640-*ter* c.p.), una fattispecie che richiede l'alterazione del funzionamento di un sistema informatico con lo scopo di procurare un profitto. Il danno al patrimonio della persona si aggiunge al danno causato al corretto funzionamento del sistema informatico [@Bartoli2021, 335].
+
+[^reati-danneggiamento]: Artt. 635-*bis*--*quinquies* c.p.
+
+In questi casi è impossibile prescindere dal dato digitale, perché l'unico modo per dimostare l'evento---il danno causato al sistema informatico---è considerare i dati in esso contenuti.
+
+Nel caso dei reati informatici "impropri", il sistema informatico è soltanto lo strumento usato per compiere il reato, ed il bene -- o beni -- giuridici protetti dalla fattispecie non includono il sistema informatico.
+
+Ad esempio, gli sviluppi più recenti nelle intelligenze artificiali permette di generare dei *deepfake* vocali estraendo il timbro vocale di una persona, ed applicandolo ad un'altra registrazione, mediante un processo chiamato *voice conversion* [@Feffer2023].
+Su internet si può trovare il software necessario, guide su come utilizzarlo,\VediAdEsempioUrl{https://github.com/SociallyIneptWeeb/AICoverGen}
+raccolte di modelli del timbro vocale di cantanti,\VediAdEsempioUrl{https://huggingface.co/QuickWick/Music-AI-Voices}
+servizi a pagamento che offrono un'interfaccia facile da usare.[^ai-voice-cloning]
+
+[^ai-voice-cloning]: Basta cercare termini come "AI services voice cloning from recording" per trovare numerosi risultati.
+
+La truffa (art. 640 c.p.) protegge il patrimonio della vittima e la sua libertà di autodeterminazione [@Bartoli2021, 296], e fra i vari requisiti, richiede l'uso di "artifizi o raggiri".
+L'uso di questo tipo di tecnologie può sicuramente integrare quest'ultimo requisito, e casi di truffe telefoniche sono già successi negli Stati Uniti [@Kohli2023].
+
+Nei casi di reato informatico improprio è difficile e controproducente (ma almeno in linea teorica, non impossibile) ignorare il dato digitale ai fini della prova del fatto, e concentrarsi su elementi diversi.
+
+Più in generale, i dati informatici possono essere una fonte utile di informazioni utile durante la fase delle indagini in qualsiasi tipo di reato.
+Non saranno utilizzati per ricostruire il fatto, ma solo al fine di indirizzare le indagini.
+In entrambi i casi, è necessario accedere ai dati, e come discusso,\VediRef{sez-caratteristiche-dati-informatici} ogni accesso può causare una modifica dei dati.
+Pertanto, nell'impossibilità di determinare *a priori* per quale fine i dati digitali saranno usati, si può agire in due modi.
+
+La soluzione "garantista" è di applicare sempre le massime cautele, a prescindere dalla finalità.
+Ci sarà un maggiore dispendio di tempo e risorse, ma i dati saranno acquisiti con tecniche che garantiscono maggiormente la loro affidabilità.
+È la stessa logica della riserva di incidente probatorio nel contesto degli accertamenti irripetibili (art. 360 co. 4 e 5 c.p.p.):
+
+> 4\. Qualora \Omissis{} la persona sottoposta alle indagini formuli riserva di promuovere incidente probatorio, il pubblico ministero dispone che non si proceda agli accertamenti salvo che questi, se differiti, non possano più essere utilmente compiuti.
+>
+> 5\. \Omissis{} Se il pubblico ministero, malgrado l'espressa riserva formulata dalla persona sottoposta alle indagini e pur non sussistendo le condizioni indicate nell'ultima parte del comma 4, ha ugualmente disposto di procedere agli accertamenti, i relativi risultati non possono essere utilizzati nel dibattimento.
+
+L'unico caso in cui si può prescindere dalle maggiori garanzie dell'incidente probatorio è la necessità di dover acquisire i dati immediatamente, perché rischiano di deteriorarsi.
+Ad esempio, può essere il caso dell'acquisizione del contenuto di memorie volatili, di flussi di dati informatici in trasmissione, o di dati che si trovano su un sito internet e che presumibilmente saranno cancellati a breve &hellip;
+Se in seguito si dimostra che questa necessità non sussisteva, i dati diventeranno inutilizzabili, perché la loro minore affidabilità non è stata controbilanciata dall'urgenza di doverli acquisire.
+
+Una seconda soluzione, "più pragmatica", ma anche più rischiosa, è di applicare la stessa logica che viene usata per le informazioni ottenute da una persona soggetta ad arresto o fermo (art. 350 co. 5 e 6 c.p.p):
+
+> 5\. Sul luogo o nell'immediatezza del fatto, gli ufficiali di polizia giudiziaria possono, anche senza la presenza del difensore, assumere dalla persona nei cui confronti vengono svolte le indagini, anche se arrestata in flagranza o fermata a norma dell'articolo 384, notizie e indicazioni utili ai fini della immediata prosecuzione delle indagini.
+>
+> 6\. Delle notizie e delle indicazioni assunte senza l'assistenza del difensore sul luogo o nell'immediatezza del fatto a norma del comma 5 è vietata ogni documentazione e utilizzazione.
+
+Se le informazioni sono assunte "sul luogo" e "nell'immediatezza del fatto", ed in modalità poco garantiste ("anche senza la presenza del difensore"), possono essere usate solo per la "immediata prosecuzione delle indagini", ed è vietata la loro "utilizzazione" per qualsiasi altro fine.
+In altre parole, si può immediatamente prendere cognizione dei dati, ma al grave costo di non poterli usare successivamente per la prova del fatto.
 
 ## Dati informatici come atti
 
@@ -132,10 +183,10 @@ Ad esempio, il documento informatico è definito dal CAD[^codice-amministrazione
 
 Il processo consiste in una "serie di atti fra loro collegati, diretti ad un risultato finale." [@Ricci2017, 233]
 Pertanto, nel processo telematico, i dati informatici non rilevano solo ai fini della motivazione, ma costituiscono loro stessi l'esistenza del processo.
-A questo punto, è necessario considerare il problema della corretta acquisizione, valutazione, conservazione, e più in generale, trattazione dei dati informatici a fini procedurali e processuali.
 
 ## Informatica forense
 
+Il corretto trattamento dei dati digitali all'interno di un processo/procedimento è l'oggetto di studio dell'informatica forense.
 Secondo @Gammarota2016 [26--27] l'informatica forense "studia le norme giuridiche ed le tecniche informatiche per il trattamento dei dati digitali a fini processuali."
 L'autore evidenzia la necessità di interpretare la definizione nel senso più ampio possibile.
 
@@ -154,9 +205,9 @@ Se una norma giuridica riguarda l'uso di dati informatici all'interno di un proc
 Le "tecniche informatiche" fanno riferimento all'intera disciplina dell'informatica.
 Non ci si deve limitare al mondo accademico, che si muove molto più lentamente dell'innovazione tecnologica.
 Si deve considerare anche la libera attività di ricerca svolta dall'industria, da ricercatori indipendenti, dai pratici della disciplina [@Gammarota2016, 34], e la documentazione e formalizzazione delle *best practices* (migliori prassi) che viene svolta da enti governativi nazionali, e da organizzazioni internazionali e sovranazionali.
-Esistono una serie di standard ISO/IEC relativi alla gestione della prova informatica ed investigazione dei dati digitali [@Gammarota2016, 27--28].
+Ad esempio, esistono una serie di standard ISO/IEC relativi al trattamento della prova informatica\VediRef{fasi-trattamento-prova-informatica} ed investigazione dei dati digitali [@Gammarota2016, 27--28].
 
-## TODO Informatica come scienza
+## Prova informatica e prova scientifica
 
 Storicamente, l'informatica forense si è sviluppata all'interno del procedimento penale.
 La Costituzione definisce la libertà personale come "inviolabile" (art. 13), e pertanto, ogni sua limitazione deve essere eccezionale, e fondarsi su motivi gravi e precisi.
@@ -164,9 +215,13 @@ La Costituzione definisce la libertà personale come "inviolabile" (art. 13), e 
 La sentenza di condanna può essere pronunciata solo e soltanto "se l'imputato risulta colpevole del reato contestatogli al di là di ogni ragionevole dubbio" (art. 533 c.p.p.).
 Per quanto riguarda le misure cautelari, si richiede sempre la presenza di "gravi indizi di colpevolezza" (art. 273 co. 1 c.p.p.), e per quanto riguarda specificamente la custodia cautelare in carcere, si prevede che "può essere disposta soltanto quando le altre misure coercitive o interdittive, anche se applicate cumulativamente, risultino inadeguate" (art. 275 co. 3 c.p.p.).
 
-Queste premesse richiedono il maggiore rigore possibile nella trattazione del dato informatico.
+Queste premesse richiedono il maggiore rigore possibile nella trattazione dei dati che vengono utilizzati ai fini di una decisione.
+I dati devono essere acquisiti correttamente, ma soprattutto, devono essere valutati nel miglior modo possibile.\VediRef{dati-informazioni-decisioni}
+Quando il giudice deve valutare dei dati per trarne informazioni, deve considerare se sono sufficienti le "nozioni di fatto che rientrano nella comune esperienza" (art. 115 co. 2 c.p.c) della persona media, o se servono conoscenze specialistiche, e quindi il giudice deve richiedere e valutare il contributo di periti e consulenti tecnici [@Ricci2017, 147--150].
+<!-- TODO: inserire riferimento al fatto che le conoscenze specialistiche non sono ancora penetrate nella società -->
 
-- conoscenza scientifica come miglior modo di conoscere la realtà (Marinucci)
+
+<!--
 - informatica come scienza
 - informatica forense nel processo: prova scientifica
 
@@ -180,10 +235,18 @@ Queste premesse richiedono il maggiore rigore possibile nella trattazione del da
 
 # TODO
 
-## Fasi per il trattamento della prova informatica
+## Fasi per il trattamento della prova informatica {#fasi-trattamento-prova-informatica}
+
+Il trattamento della prova informatica viene diviso in sette fasi.
+
+1. L'identificazione consiste nella ricerca dei supporti materiali che possono contenere dati informatici utili. Si devono considerare le loro caratteristiche, in modo da stabilire come procedere in seguito.
+2. 
+
 
 ## Istituti processuali e programmi utilizzabili ...
 
 - istituti processuali in cui rileva la digital evidence
 - programmi open-source disponibili per le operazioni di informatica forense
 - risorse NIST: https://www.nist.gov/itl/ssd/software-quality-group/computer-forensics-tool-testing-program-cftt
+
+-->
