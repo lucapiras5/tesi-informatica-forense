@@ -53,8 +53,9 @@
 
 - tecniche usate dalle misure di protezione
 
-### TODO Codice macchina
+### Codice macchina
 
+<!--
 Prima di discutere gli aspetti legali del software, è necessario operare una distinzione tecnica, tra il software inteso come codice macchina, ed il software inteso come codice sorgente.
 
 Normalmente, quando si parla di software, in realtà si sta parlando di **codice macchina**, ossia istruzioni che possono essere direttamente eseguite da un calcolatore.
@@ -176,18 +177,22 @@ Il codice sorgente consiste in un compromesso
 
 Il codice sorgente interessa principalmente a chi sviluppa software, e non all'utilizzatore finale. Questi ultimi sono interessati ad 
 
-Nel linguaggio comune, quando si parla di software, generalmente ci si riferisce ad un programma che può essere eseguito su un computer. 
+Nel linguaggio comune, quando si parla di software, generalmente ci si riferisce ad un programma che può essere eseguito su un computer.
+-->
 
-### TODO Codice sorgente
+### Codice sorgente
 
+<!--
 Tradizionalmente, e fino agli anni '60, il software veniva venduto insieme all'hardware, e se ne incoraggiava la libera condivisione. È solo negli anni '70 che il software inizia ad essere venduto in maniera indipendente. [@gonzalez_barahona_2021, 75]
 
 Veniva fornito in aggiunta all'harwdare, ma non
 
 Per capire l'importanza del codice sorgente, 
+-->
 
-### TODO Software e copyright
+### Software e copyright
 
+<!--
 I "programmi per elaboratore" sono oggetto di tutela giuridica.
 
 L'art. 10 dell'Accordo TRIPs (ratificato in Italia con l. 747/1994) prevede che i programmi per elaboratore, sia come codice sorgente, sia come codice oggetto, sono protetti come opere letterarie, ai sensi della Convenzione di Berna.
@@ -250,9 +255,14 @@ I linguaggi di programmazione devono essere convertiti in codice macchina, e la 
 
 *Programmi interpretati.*  Nel caso dei programmi interpretati, solo un programma detto "interprete" è compilato, ed la sua funzione è di leggere il codice sorgente, e convertirlo in codice macchina sul momento, senza doverlo compilare.  In questo caso, non si perde nessuna informazione, ma il costo è che l'esecuzione del programma è molto più lenta rispetto ad un linguaggio compilato.
 
-### TODO Compilazione bytecode, JIT, minifier per offuscare.
+-->
+<!--
+
+### Compilazione bytecode, JIT, minifier per offuscare
 
 *Conversione in bytecode.*  I programmi convertiti in bytecode vengono prima "compilati" in un codice macchina particolare, creato ad-hoc per quel linguaggio, detto bytecode.  Successivamente, il bytecode viene interpretato da un secondo programma.  L'esecuzione del codice è più veloce rispetto ai programmi interpretati, e rispetto ai programmi compilati, è più facile recuperare informazioni come il nome delle variabili, funzioni, ecc.
+-->
+
 ## Introduzione
 
 - origine storica del software libero

@@ -6,10 +6,11 @@ inputs="prologo.md \
 	software-libero.md \
 	buone-pratiche-sviluppo-software.md \
 	sistema-operativo-libero.md \
-	buone-pratiche-procedimento-penale.md \
 	conclusioni.md \
 	appendice-leggi.md \
 	bibliografia.md"
+
+# buone-pratiche-procedimento-penale.md \
 
 PandocPDF() {
 	pandoc -s --citeproc --bibliography citations.bib --from markdown+inline_notes -o out.pdf $inputs

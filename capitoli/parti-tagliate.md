@@ -121,3 +121,18 @@ La Convenzione di Budapest definisce i *computer data* (dati informatici) come (
 
 ----
 
+// ## Prova informatica e prova scientifica
+
+Storicamente, l'informatica forense si è sviluppata all'interno del procedimento penale.
+La Costituzione definisce la libertà personale come "inviolabile" (art. 13), e pertanto, ogni sua limitazione deve essere eccezionale, e fondarsi su motivi gravi e precisi.
+
+La sentenza di condanna può essere pronunciata solo e soltanto "se l'imputato risulta colpevole del reato contestatogli al di là di ogni ragionevole dubbio" (art. 533 c.p.p.).
+Per quanto riguarda le misure cautelari, si richiede sempre la presenza di "gravi indizi di colpevolezza" (art. 273 co. 1 c.p.p.), e per quanto riguarda specificamente la custodia cautelare in carcere, si prevede che "può essere disposta soltanto quando le altre misure coercitive o interdittive, anche se applicate cumulativamente, risultino inadeguate" (art. 275 co. 3 c.p.p.).
+
+Queste premesse richiedono il maggiore rigore possibile nella trattazione dei dati che vengono utilizzati ai fini di una decisione.
+I dati devono essere acquisiti correttamente, ma soprattutto, devono essere valutati nel miglior modo possibile.\VediRef{dati-informazioni-decisioni}
+Quando il giudice deve valutare dei dati per trarne informazioni, deve considerare se sono sufficienti le "nozioni di fatto che rientrano nella comune esperienza" (art. 115 co. 2 c.p.c) della persona media, o se servono conoscenze specialistiche, e quindi il giudice deve richiedere e valutare il contributo di periti e consulenti tecnici [@Ricci2017, 147--150].
+<!-- TODO: inserire riferimento al fatto che le conoscenze specialistiche non sono ancora penetrate nella società -->
+
+- informatica come scienza
+- informatica forense nel processo: prova scientifica
