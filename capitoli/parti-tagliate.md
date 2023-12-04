@@ -136,3 +136,17 @@ Quando il giudice deve valutare dei dati per trarne informazioni, deve considera
 
 - informatica come scienza
 - informatica forense nel processo: prova scientifica
+
+----
+
+All'interno di questa valutazione, si devono considerare i decorsi causali alternativi, che possono escludere il nesso causale:
+
+- Altri programmi possono aver causato lo stesso risultato, e si ricercano tracce che dimostrano l'intervento di altri programmi. Ad esempio, un computer può lanciare un attacco informatico perché è stato infettato da un virus che lo ha reso parte di una *botnet*, e per escludere la colpevolezza dell'imputato, basta dimostrare la presenza del virus.
+- Lo stato è il prodotto di una manomissione dei dati, eseguita al di fuori del normale funzionamento del sistema. Si possono cercare incongruenze fra lo stato attuale, e:
+  - Lo stato che ci si aspetta dal normale funzionamento dei programmi. Ad esempio, trovare inaspettatamente lunghe sequenze di zeri o valori casuali possono suggerire che i dati che si trovavano in quella posizione non sono stati semplicemente eliminati, ma sono stati intenzionalmente e completamente sovrascritti, in modo da eliminare completamente delle tracce.
+  - Altre copie dei dati, se vengono rinvenute. Ad esempio, un certo file è stato trovato all'interno di una copia di backup, con una data di creazione o modifica diversa. Questo può suggerire che il file sia stato manipolato dopo la creazione del backup.
+- Il programma contiene bug. Questo può essere visto come una sorta di *deus ex machina* quando non è possibile trovare 
+
+Il programma potrebbe contenere bug (comportamenti inaspettati ed imprevedibili) di cui i ricercatori non erano a conoscenza.
+
+Tuttavia, come visto, un programma potrebbe contenere bug che causano comportamenti inaspettati ed imprevedibili, e viceversa, si potrebbero ipotizzare decorsi causali diversi, dove le modifiche che sono astrattamente riconducibili ad un certo programma o motivo, potrebbero essere dovute ad altri programmi o motivi.
