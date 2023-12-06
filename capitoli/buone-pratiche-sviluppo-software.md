@@ -1,4 +1,4 @@
-# Sviluppo di software scientifico
+# Sviluppo di software scientifico libero
 
 ## Introduzione
 
@@ -12,7 +12,7 @@
 
 - casi d'uso previsti dal linguaggo, o nicchia in cui il linguaggio è stato adottato
 - Ad es., Bash per lo shell scripting, Lua, Python
-- idealmente, si deve tendere verso un linguaggio che si avvicina al pozzo del successo <https://blog.codinghorror.com/falling-into-the-pit-of-success/>
+- idealmente, si deve tendere verso un linguaggio che si avvicina al "pozzo del successo" <https://blog.codinghorror.com/falling-into-the-pit-of-success/>
 
 ### Fattori sociali
 
@@ -99,33 +99,26 @@
 
 ## Gestione degli errori di runtime
 
-### Errore di runtime
+- Errore di runtime:
+    - Problemi che si verificano solo quando il codice viene eseguito
+    - Problema dell'*happy path*, di imprevisti, dell'errore umano, di attacchi voluti
+    - Filosofie del look before you leap e easier to ask for forgiveness
+    - Look before you leap è migliore da un punto di vista scientifico
+- Errori in-band:
+    - Valori-guardia
+- Errori come eccezioni:
+    - Praticamente un goto, Dijkstra
+- Errori out-of-band:
+    - Controllo automatico degli errori, possibilità di analisi statica
 
-- problemi che si verificano solo quando il codice viene eseguito
-- problema dell'*happy path*, di imprevisti, dell'errore umano, di attacchi voluti
-- filosofie del look before you leap e easier to ask for forgiveness
-- look before you leap è migliore da un punto di vista scientifico
-
-### Errori in-band
-
-- valori-guardia
-
-### Errori come eccezioni
-
-- praticamente un goto, Dijkstra
-
-### Errori out-of-band
-
-- controllo automatico degli errori, possibilità di analisi statica
-
-## Gestione degli errori di programmazione
+## Analisi statica e dinamica del codice
 ### Type-checking
 
-- problemi che possono essere individuati guardando solo il codice
+- Problemi che possono essere individuati guardando solo il codice
 
 ### Linting
 
-- linters
+- Linters
 
 ### Testing
 
@@ -139,3 +132,7 @@
 - evitare situazioni in cui il software 
 
 ## Build riproducibili
+## Sostenibilità economica del software libero
+
+- Privati che distribuiscono codice libero, o che rendono parte del loro codice libero
+- Sostenibilità economica
