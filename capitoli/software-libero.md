@@ -44,32 +44,140 @@ Sono eccezioni ad una regola generale, e quindi devono essere interpretate in ma
 
 Creare una copia del software, in modo da permettere alle altri processuali di svolgere un contraddittorio non solo sui metodi usati e sul risultato dell'analisi, ma anche sullo specifico strumento usato per svolgere l'analisi nel caso concreto, difficilmente può essere considerato un ostacolo allo sfruttamento economico del software, essenzialmente una "vendita persa", e tanto meno una "diffusione dell'opera nel pubblico".
 
-----
+L'ultima caratteristica da considerare, che sarà oggetto di trattazione nel resto del capitolo, è il formato in cui le istruzioni di cui il *software* è composto vengono espresse. Questo è forse il punto più cruciale. Fornire una copia dell'ambiente di analisi usato (inteso come la combinazione di sistema operativo, software e dati) beneficia il contraddittorio, perché permette alle controparti di interagire con gli strumenti e ripetere le operazioni svolte, ma si può andare ancora oltre.
 
-- La fragilità dei dati -- la "descrizione" con cui le istruzioni sono codificate è importante.
-- Copia dei dati e manutenzione del loro funzionamento: più facili con il software libero, che presenta ulteriori vantaggi (si può sapere come il software funziona).
-- Opportunità anche per il software di analisi di essere open-source.
+Il massimo grado di trasparenza e approfondimento nel contraddittorio viene raggiunto quando è possibile esaminare non solo il software in sé, ma anche come è stato sviluppato. Si distingue fra "codice macchina", le istruzioni che sono in un formato che può essere direttamente eseguito dal computer, e "codice sorgente", istruzioni in un formato che può essere convertito in codice macchina, ma è più facile da usare per i programmatori.
 
-Si può distinguere fra due tipi di software. Il software per la fase di ricerca dell'informatica forense, che è tenuto a rispondere soltanto alle esigenze scientifiche, ed il software per il software che sarà utilizzato concretamente nel corso del processo per il trattamento dei dati, che deve rispondere ad esigenze anche processuali.
+Il rapporto fra codice sorgente e codice macchina è simile al rapporto che esiste fra il processo di cognizione ed il processo di esecuzione. Il primo consiste nell'accertamento del fatto, e nel suo inquadramento all'interno del sistema giuridico, e affianca al dispositivo (il "cosa" deve essere fatto) una lunga motivazione, che spiega in dettaglio il "perché". Viceversa, il processo di esecuzione consiste principalmente di attività materiali. Il "perché" è stato già stabilito, adesso rimane soltanto eseguire concretamente il "cosa".
+
+Il punto fondamentale è che osservare il processo di esecuzione non permette di risalire alla esatta motivazione del processo di cognizione, perché ai fini dell'esecuzione rileva soltanto il dispositivo. Allo stesso modo, se non si ha accesso ad una copia del software come codice sorgente, ma soltanto ad una copia del software come codice macchina, già pronto per essere eseguito, l'unica valutazione possibile riguarda il funzionamento "a valle" del software, ma non è possibile valutare "a monte" quali tecniche di analisi sono state usate, se sono state implementate correttamente nel codice sorgente&hellip; in altre parole, è possibile solo una valutazione formale, e non sostanziale, del programma.
 
 ## Esigenze processuali
 
-L'acquisizione dei dati informatici è il primo momento in cui il software per l'informatica forense assume rilevanza.
+Il principio fondamentale nel processo penale è la formazione della prova nel contraddittorio. Tutte le operazioni precedenti, che riguardano anche solo indirettamente il contraddittorio, devono essere svolte con l'obiettivo di garantire la sua migliore realizzazione possibile.
 
-Il primo momento in cui il software per l'informatica forense ha rilevanza proce
-Le esigenze processuali che riguardano la prova scientifica sono l'attendibilità della teoria, il rispetto del contraddittorio.
+### Acquisizione
 
-Per essere ammissibile, la prova scientifica deve 
+Per quanto riguarda la prova informatica, la prima fase del suo trattamento in cui rileva l'uso di software è l'acquisizione di dati.
+La legge di ratifica ed esecuzione della Convenzione di Budapest[^LeggeRatificaEsecuzioneConvenzioneBudapest] ha modificato vari articoli del codice di procedura penale, prevedendo esplicitamente che l'acquisizione di dati informatici non modifichi i dati originali, e crei una copia uguale all'originale (art. 8).
 
-- Ammissibilità:
-  - Criteri della sentenza Daubert per valutare l'uso di conoscenze scientifiche nel processo
-  - Analogamente, uso degli stessi criteri per valutare l'uso di software sviluppato sulla base di ricerca scientifica
-- Contraddittorio sulla prova informatica:
-  - Diritto alla difesa implica la necessità di sapere come l'analisi è stata svolta
-  - L'analisi deve essere ripetibile (usare gli stessi strumenti) e riproducibile (ottenere gli stessi risultati) per la controparte, e nel futuro (giudizio di impugnazione, revisione&hellip;)
-- Acquisizione e conservazione della prova informatica:
-  - Si deve verificare che il software non deve modifica i dati originali, e deve creare una copia uguale all'originale
-  - Idealmente si deve verificare l'esatto funzionamento del software, ma se è impossibile visionare il codice sorgente o sapere quali algoritmi vengono utilizzati, ci si può affidare alle certificazioni attribuite da soggetti autorevoli
+[^LeggeRatificaEsecuzioneConvenzioneBudapest]: L. 48/2008.
+
+Da un punto di vista concettuale, soddisfare questi requisiti è apparentemente semplice. Basta garantire che il software esegua solo operazioni in lettura, e mai in scrittura, sul supporto originale, e che la copia sia identica all'originale, bit per bit. Tuttavia, quando si considerano i dettagli tecnici, le operazioni diventano più complicate.
+
+In primo luogo, il programma deve prendere ogni accortezza possibile per cercare di evitare i dati. Ad esempio, per aprire un file è possibile usare due funzioni, *fopen* e *open*. Normalmente, i programmatori preferiscono usare *fopen* invece di *open*, perché presenta solo le funzionalità più comuni con una sintassi semplice da ricordare. Per aprire un file in sola lettura, è sufficiente scrivere [@Man7_Fopen, sez. "DESCRIPTION"]:
+
+```c
+FILE *fp = fopen("file-da-acquisire", "r");
+```
+
+Tuttavia, nel caso dell'informatica forense, dove è necessario avere il maggior grado di controllo possibile sul funzionamento del programma, è preferibile usare la funzione di basso livello *open*, che richiede di indicare espressamente tutte le opzioni volute. In questo caso, non solo si richiede l'apertura in sola lettura (*O_RDONLY* significa "opzione: sola lettura"), ma si richiede anche di non modificare la data in cui il file è stato aperto per l'ultima volta (*O_NOATIME* significa "opzione: non cambiare la data di accesso") [@Man7_Open, sez. "DESCRIPTION"].
+
+```c
+FILE *fp = open("file-da-acquisire",
+    O_RDONLY | O_NOATIME);
+```
+
+Se non si vieta la modifica della data di accesso, una operazione che normalmente dovrebbe essere di sola lettura implica anche un'operazione in scrittura, che va a modificare delle informazioni relative al file su disco.
+
+In secondo luogo, si deve considerare anche il comportamento del sistema operativo. Ad esempio, se il software deve montare un supporto materiale per accedere ai dati che contiene come file, ai fini di una ispezione/perquisizione, è bene usare tutte le opzioni che permettono di evitare la modifica dei dati, come:
+
+```sh
+blockdev --setro ...
+mount -o ro,noatime ...
+```
+
+Il comando *blockdev* [@Man7_Blockdev, sez. "COMMANDS"] impedisce qualsiasi scrittura sul dispositivo materiale, ed il comando *mount* rende i contenuti del dispositivo visibili al sistema operativo. *ro* significa "sola lettura", e *noatime* ha la stessa funzione menzionata in precedenza. Se non si usa *blockdev*, in alcuni casi particolari il supporto materiale potrebbe subire modificazioni [@UtilLinux_Mount, sez. "COMMAND-LINE OPTIONS"].
+
+Per quanto riguarda la verifica della corretta copia dei dati, normalmente si eseguono due passaggi. Con il primo passaggio i dati vengono semplicemente copiati. Con il secondo passaggio, si verifica che la copia sia identica all'originale, calcolando almeno due hash crittografici per entrambi.
+
+Il primo problema da considerare è la corretta implementazione della funzione di hash. Fortunatamente, è altamente improbabile che la funzione di checksum sia implementata in maniera erronea, sia perché la specificazione tecnica è dettagliata [@NIST_FIPS_180-4], sia perché esistono esempi che permettono di verificare il corretto funzionamento di un'implementazione.[^TestVectorsSHA]
+
+[^TestVectorsSHA]: La sezione "Secure Hashing" contiene vari esempi. \VediUrl{National Institute of Standards and Technology}{Examples with Intermediate Values}{2023}{https://csrc.nist.gov/Projects/cryptographic-standards-and-guidelines/example-values}.
+
+Un problema più grave riguarda il fatto che le funzioni di hash potrebbero essere vulnerabili ad attacchi crittografici, e quindi restituire un risultato uguale per valori in input diversi, un fenomeno chiamato *collision* (collisione). Le funzioni di hash usate tradizionalmente, MD5 e SHA-1, sono state già compromesse individualmente con dei *chosen-prefix attacks* (attacchi con prefisso predeterminato) [@Stevens2012; @Leurent2020].
+
+Anche questo tipo di attacco ha una rilevanza pratica limitata. Il problema fondamentale è che il suo funzionamento richiede di aggiungere un "suffisso" creato ad arte, dopo i dati originali. Questo suffisso permette di "manipolare" la funzione di hash, in modo che produca in uscita il valore desiderato [@Leurent2020, 1839], ma presenta un problema significativo [@Stevens2012, 341]:
+
+> Given current methods, collisions require appendages consisting of unpredictable and mostly uncontrollable bitstrings. These must be hidden in the usually heavily formatted application data structure without raising suspicion.[^ProblemaChosenPrefix]
+
+[^ProblemaChosenPrefix]: "Dati i metodi attuali, le collisioni richiedono delle appendici che consistono di dati imprevedibili, e difficilmente controllabili. Questi dati devono essere nascosti nelle strutture di dati dell'applicazione, che solitamente accettano valori ristretti, senza sollevare sospetti."
+
+Pertanto, anche nel caso in cui questo attacco sia usato nella pratica, può essere rilevato grazie alla necessaria presenza di questi "suffissi". Ancora, il rischio può essere ridotto usando più funzioni di hash per gli stessi dati. È estremamente difficile trovare un suffisso che possa manipolare più funzioni contemporaneamente. La soluzione ancora migliore è di usare funzioni di hash più recenti, per cui non esistono ancora attacchi crittografici.[^NuoveFunzioniHash]
+
+[^NuoveFunzioniHash]: Ad esempio, il NIST prevede di abbandonare completamente l'uso di SHA-1 per qualsiasi uso entro il 2030. \VediUrl{National Institute of Standards and Technology}{NIST Transitioning Away from SHA-1 for All Applications}{2022}{https://csrc.nist.gov/news/2022/nist-transitioning-away-from-sha-1-for-all-apps}.
+
+Se la verifica dei dati dopo la copia non pone problemi particolari, la lettura dei dati dal supporto è un'operazione estremamente delicata.
+
+In primo luogo si deve considerare la quantità di dati che il software può acquisire, sulla base del supporto materiale. Si può immaginare una gradazione di casi possibili.
+
+Nel caso ideale, e forse non sempre realizzabile:
+
+- È possibile acquisire tutti i dati informatici memorizzati per qualsiasi motivo sul supporto materiale.
+- Questo include, oltre ai dati normalmente visibili, anche il *firmware* (software che controlla direttamente il funzionamento dell'*hardware*), informazioni diagnostiche, dati contenuti in settori nascosti, riservati o danneggiati&hellip;
+- È necessario smontare l'hardware per essere in grado di esaminare "tutti" i dati, anche quelli che normalmente sono nascosti. È un'operazione costosa, per sua natura irripetibile, e che rischia di danneggiare i dati durante l'acquisizione, se non eseguita correttamente.
+
+Nel caso di supporti materiali estraibili, come dischi rigidi e memorie *flash*:
+
+- È possibile acquisire tutti i dati che sono normalmente accessibili al sistema operativo, eventualmente anche usando comandi di basso livello (ossia, che permettono di interagire direttamente con l'hardware).
+- Questo permette di ottenere una copia esatta di quello che il sistema operativo può vedere, incluse le partizioni normalmente nascoste, e lo *slack space* (spazio libero).
+- È necessario implementare correttamente le specifiche tecniche relative al funzionamento dei supporti materiali. Questo aspetto viene gestito direttamente dal sistema operativo, e pertanto i programmi possono solo leggere quanto viene loro offerto.
+
+Nel caso di supporti materiali non estraibili o *embedded* (integrati), come smartphone, tablet, i computer più recenti della Apple, dispositivi creati *ad hoc* che non usano parti standard (ad esempio, apparecchiature mediche):
+
+- Più il dispositivo tende ad essere "monolitico" nel loro funzionamento, più è difficile aprirlo, estrarre i componenti in cui sono memorizzati i dati, e far funzionare questi componenti senza l'hardware originale, e meno è probabile che sia possibile leggere il loro intero contenuto.
+- Si potrà leggere solo quanto il supporto materiale espone all'utente. Pertanto, sarà al più possibile recuperare singoli file, o log, ma non sarà possible leggere l'intero supporto per cercare file cancellati.
+- È necessario sviluppare software *ad hoc*, che sia in grado di interfacciarsi con questi supporti.
+
+L'acquisizione di dati mediante le tecniche di *network forensics* tende a ricadere in quest'ultima categoria. Non si ha accesso diretto al supporto materiale, è possibile leggere solo quanto viene reso disponibile dal software eseguito sul *server* remoto.[^DatiEspostiServerRemoto] In particolare, nel caso di acquisizione di dati da servizi *cloud*, è necessario considerare quali dati vengono esposti dal servizio, in che modo è possibile richiederli, e sviluppare software di acquisizione *ad hoc*.
+
+[^DatiEspostiServerRemoto]: Ad esempio, il protocollo HTTP (RFC 9110) è largamente usato per trasferire singoli file. Tuttavia, il protocollo non richiede la comunicazione corretta degli elementi più basilari del file. Ad esempio, il campo *Last-Modified* ("modificato l'ultima volta") non deve coincidere con l'effettiva ultima modifica del file, è usato solo per non inviare il file una seconda volta se non è stato modificato. Ancora, il campo *Content-Disposition*, che permette di indicare se il file deve essere mostrato nel browser o scaricato, e nel secondo caso, con quale nome, non fa nemmeno parte dello standard HTTP di base, ma è un'estensione regolata da uno standard diverso (RFC 6266).
+\VediUrl{R. Fielding, M. Nottingham, J. Reschke}{RFC 9110: HTTP Semantics}{2022}{https://httpwg.org/specs/rfc9110.html}.
+\VediUrl{J. Reschke}{RFC 6266: Use of the Content-Disposition Header Field in the Hypertext Transfer Protocol (HTTP)}{2011}{https://httpwg.org/specs/rfc6266.html}
+
+Durante l'acquisizione potrebbero avvenire degli errori di lettura, o nel caso di acquisizione su internet, degli errori di trasmissione. In questo caso, è necessario che il software sia in grado di rilevarli, di segnalarli all'utente, e di indicare nella maniera più dettagliata possibile il loro impatto ai fini dell'acquisizione corretta dei dati.
+
+Il software deve dare una scelta all'utilizzatore riguardo come continuare a seguito dell'errore. Le opzioni ipotizzabili sono:
+
+- Se l'errore sembra accidentale o temporaneo (ad esempio, una disconnessione temporanea dal server), si può riprovare ad acquisire lo stesso dato immediatamente.
+- Se l'errore continua a ripresentarsi, e non sembra risolvibile (ad esempio, nel caso di un supporto con settori corrotti, o di file non più disponibili sul server), si può decidere di saltare l'acquisizione di quel particolare settore o file. In questo caso, è importante sapere come il software segnalerà all'interno dei dati acquisiti come non è stato possibile acquisire i dati, a causa di un errore.
+- Come soluzione estrema, in caso di errori irrisolvibili, dove non è possibile trovare un punto in cui è possibile continuare ad acquisire i dati, si può chiedere l'interruzione dell'acquisizione. Il software indicherà che l'acquisizione non è stata completata, ed i dati sono soltanto parziali.
+
+### Conservazione
+
+Dopo l'acquisizione dei dati, inizia la fase della conservazione. Il codice di procedura menziona brevemente la custodia di dati informatici (art. 259 c.p.p.):
+
+> Quando la custodia riguarda dati, informazioni o programmi informatici, il custode è altresì avvertito dell'obbligo di impedirne l'alterazione o l'accesso da parte di terzi, salva, in quest'ultimo caso, diversa disposizione dell’autorità giudiziaria.
+
+La soluzione più semplice e efficace per impedire l'accesso non autorizzato da parte di terzi non richiede nemmeno l'uso di software. Basta tenere i supporti materiali che contengono una copia dei dati sequestrati all'interno di una cassetta di sicurezza, scollegati da un sistema informatico.
+
+Per quanto riguarda l'alterazione, l'interpretazione letterale sembra suggerire che il custode non sia tenuto a prevenire l'alterazione "naturale" dei dati dovuta alla degradazione dei supporti materiali, ma solo l'alterazione "intenzionale" da parte di terzi. Questo problema è risolto dall'articolo successivo (art. 260 co. 2 c.p.p.):
+
+> L'autorità giudiziaria fa estrarre copia dei documenti e fa eseguire fotografie o altre riproduzioni delle cose sequestrate che possono alterarsi o che sono di difficile custodia \Omissis{} Quando si tratta di dati, di informazioni o di programmi informatici, la copia deve essere realizzata su adeguati supporti, mediante procedura che assicuri la conformità della copia all'originale e la sua immodificabilità; in tali casi, la custodia degli originali può essere disposta anche in luoghi diversi dalla cancelleria o dalla segreteria.
+
+Il modo più semplice di garantire l'immodificabilità è di usare i supporti ottici, ma questa soluzione è particolarmente scomoda, per vari motivi:
+
+- Per acquisire un disco rigido da 256 GB, servirebbero quasi 60 DVD.
+- La velocità di scrittura/lettura su un supporto ottico è inferiore rispetto alle velocità raggiungibili da un disco rigido o disco a stato solido moderno, ed in generale, è preferibile usare velocità più basse per evitare errori di scrittura/lettura.
+- Se il supporto ottico presenta anche un singolo errore di scrittura, non è possibile correggerlo, e deve essere buttato via e riscritto.
+- I supporti ottici sono una tecnologia che è in tendenziale disuso. Questo significa che i supporti ottici disponibili sul mercato saranno probabilmente di qualità inferiore, e non dureranno a lungo.
+
+Un'altra soluzione è di usare il formato *LTO* (*Linear-Tape Open*), che è sviluppato appositamente per l'archiviazione di grandi quantità di dati a lungo termine. In particolare, permette l'uso della crittografia autenticata, e permette di memorizzare dati in sola lettura. Il problema principale è che la tecnologia richiede hardware specializzato per essere usata.
+
+È possibile raggiungere un compromesso utilizzando hardware generico, e software specializzato. In particolare, il software deve garantire l'integrità dei dati.
+
+----
+
+- Sistemi operativi potrebbero nascondere dati proprietari, è meglio un sistema operativo *super partes* che non abbia nulla da nascondere.
+
+- (considerazioni analoghe anche per conservazione dei dati)
+
+Idealmente si deve verificare l'esatto funzionamento del software, ma se è impossibile visionare il codice sorgente o sapere quali algoritmi vengono utilizzati, ci si può affidare alle certificazioni attribuite da soggetti autorevoli
+
+----
+
+La conservazione della prova informatica ...
+
 - Analisi della prova informatica:
   - Software deve essere sufficientemente flessibile, in modo da poter essere utilizzato nei vari casi concreti che si possono presentare
   - Risultati devono essere corretti, stesse considerazioni fatte per l'acquisizione
@@ -77,6 +185,12 @@ Per essere ammissibile, la prova scientifica deve
   - Perito e consulenti devono spiegare perché il metodo di analisi è affidabile, *argumentum ab auctoritate* del software non è sufficiente
   - Più è possibile fare riferimento al concreto funzionamento del software, e meglio è
   - Meno è possibile sapere come il software ha svolto l'acquisizione ed analisi, e più il giudice deve essere critico (un conto è il principio di conservazione della prova, un conto è sopravvalutare il valore e la validità epistemologica di una prova)
+- Ammissibilità:
+  - Criteri della sentenza Daubert per valutare l'uso di conoscenze scientifiche nel processo
+  - Analogamente, uso degli stessi criteri per valutare l'uso di software sviluppato sulla base di ricerca scientifica
+- Contraddittorio sulla prova informatica:
+  - Diritto alla difesa implica la necessità di sapere come l'analisi è stata svolta
+  - L'analisi deve essere ripetibile (usare gli stessi strumenti) e riproducibile (ottenere gli stessi risultati) per la controparte, e nel futuro (giudizio di impugnazione, revisione&hellip;)
 
 ## Esigenze scientifiche
 
@@ -98,6 +212,12 @@ Per essere ammissibile, la prova scientifica deve
   - Robustezza dei metodi di analisi: il software deve sempre comportarsi in maniera prevedibile, specie se incontra un formato invalido o inaspettato (analogia con inammissibilità ed improcedibilità)
 
 ## Codice macchina e codice sorgente
+
+Un'altra caratteristica dei dati informatici è che sono facilmente modificabili senza lasciare tracce. Se il perito o consulente conosce il formato in cui i dati sono codificati, è possibile cercare irregolarità (valori invalidi, irragionevoli, incongruenze&hellip;) all'interno del file, o all'interno del sistema.
+
+Il problema del "formato" in cui i dati sono codificati è estremamente importante per il software. Il software deve essere eseguito dall'hardware, da un processore, e l'hardware, per definizione, non è facilmente modificabile o riprogrammabile.[^HardwareRiprogrammabile] L'hardware si aspetta un formato ben preciso per le istruzioni che riceverà, e se questo formato non è rispettato, il processore non eseguirà il codice, o produrrà risultati incorretti.
+
+[^HardwareRiprogrammabile]: Processori riprogrammabili esistono. Ad esempio, i FPGA sono circuiti integrati che possono essere riprogrammati, ma sono meno efficienti di una soluzione hardware specializzata.
 
 Il termine *software* (programma informatico) può essere inteso in due modi.
 Nel linguaggio comune, indica un programma eseguibile da un computer.
@@ -123,6 +243,9 @@ si parla di software, in realtà ci si riferisce al **codice macchina**.
     - Possono contenere commenti
     - Linguaggi di programmazione di basso livello: assembler, C, ecc, gestione della memoria manuale, paradigma imperativo
     - Linguaggi di alto livello: gestione automatica della memoria, paradigma descrittivo (al massimo livello con SQL)
+
+- Copia dei dati e manutenzione del loro funzionamento: più facili con il software libero, che presenta ulteriori vantaggi (si può sapere come il software funziona).
+- Opportunità anche per il software di analisi di essere open-source.
 
 ## Compilazione
 
