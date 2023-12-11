@@ -164,19 +164,126 @@ Il modo più semplice di garantire l'immodificabilità è di usare i supporti ot
 
 Un'altra soluzione è di usare il formato *LTO* (*Linear-Tape Open*), che è sviluppato appositamente per l'archiviazione di grandi quantità di dati a lungo termine. In particolare, permette l'uso della crittografia autenticata, e permette di memorizzare dati in sola lettura. Il problema principale è che la tecnologia richiede hardware specializzato per essere usata.
 
-È possibile raggiungere un compromesso utilizzando hardware generico, e software specializzato. In particolare, il software deve garantire l'integrità dei dati.
+È possibile raggiungere un compromesso utilizzando hardware generico, e software specializzato, che sia sviluppato in maniera da garantire l'integrità dei dati, cercare di riparare i dati automaticamente in caso di corruzione, ed evitare la sovrascrittura o aggiornamento dei dati già esistenti.
 
-----
+Essenzialmente, si tratta di programmi per la creazione di copie di *backup*, sviluppati dando priorità alle esigenze dell'informatica forense, e quindi preoccupandosi di garantire la correttezza e completezza dell'acquisizione, anche a scapito dell'efficienza dell'acquisizione (in termini di velocità, quantità di spazio usata) o altre funzionalità (come compressione dei dati, crittografia&hellip;). Più funzionalità si aggiungono, più il software diventa complesso, e più è difficile dimostrare che funziona correttamente.
 
-- Sistemi operativi potrebbero nascondere dati proprietari, è meglio un sistema operativo *super partes* che non abbia nulla da nascondere.
+### Catena di custodia
 
-- (considerazioni analoghe anche per conservazione dei dati)
+L'unica formalità per le cose sequestrate prevista dal codice di procedura è l'apposizione e rimozione di sigilli dell'ufficio giudiziario (artt. 260 e 261 c.p.p.), non si prevede la redazione di una catena di custodia. Tuttavia, è possibile prendere come riferimento il codice di procedura penale colombiano,[^CodiceProceduraPenaleColombiano] che regola espressamente la catena di custodia (art. 254 ss.).
 
-Idealmente si deve verificare l'esatto funzionamento del software, ma se è impossibile visionare il codice sorgente o sapere quali algoritmi vengono utilizzati, ci si può affidare alle certificazioni attribuite da soggetti autorevoli
+[^CodiceProceduraPenaleColombiano]: \VediUrl{Congreso de la República de Colombia}{Ley 906 de 2004, Por la cual se expide el Código de Procedimiento Penal. (Corregida de conformidad con el Decreto 2770 de 2004)}{2004}{https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=14787}.
 
-----
+L'art. 254 indica la finalità e gli elementi che devono essere considerati:
 
-La conservazione della prova informatica ...
+> *Con el fin de demostrar la autenticidad de los elementos materiales probatorios y evidencia física, la cadena de custodia se aplicará teniendo en cuenta los siguientes factores: identidad, estado original, condiciones de recolección, preservación, embalaje y envío; lugares y fechas de permanencia y los cambios que cada custodio haya realizado. Igualmente se registrará el nombre y la identificación de todas las personas que hayan estado en contacto con esos elementos.*
+
+Per quanto riguarda la prova informatica, è importante indicare tutti gli elementi indicati dall'articolo sia per i supporti materiali, sia per i dati informatici, considerando le rispettive peculiarità.
+
+L'identificazione:
+
+- Di un supporto materiale avverrà con l'indicazione del numero seriale.
+- Dei dati informatici avverrà riferendosi al loro hash.
+
+Lo stato originale:
+
+- Per il supporto materiale è la condizione in cui viene rinvenuto. Ad esempio, "inserito in un computer trovato acceso", oppure "disco rigido esterno, non collegato ad un computer". Queste informazioni possono essere utili ai fini dell'analisi, perché rappresentano le ultime cause di modificazione che sono intervenute subito prima dell'acquisizione.
+- Per i dati è il log dell'acquisizione, che indicherà informazioni come quando l'operazione è stata compiuta, su quale supporto, quanti dati sono stati copiati, se sono avvenuti errori di lettura o verificazione, l'hash dei dati&hellip;
+
+La modalità di acquisizione, conservazione, imballaggio e trasporto:
+
+- Per i supporti materiali si indicano le operazioni che sono state svolte per la loro estrazione, e come sono stati conservati per proteggerli da danni.
+- Per i dati informatici si indicano le modalità usate per acquisire e archiviare i dati, indicando la loro idoneità a conservare i dati originali, creare una copia conforme, e assicurare l'integrità dei dati nel tempo, ed indicando anche le circostanze pratiche e concrete ostative a queste finalità.
+
+Ancora, si devono indicare i luoghi e date in cui i supporti e dati sono stati conservati, i cambiamenti che ogni custode ha apportato, il nome ed identificazione di tutte le persone che sono entrate in contatto con questi elementi.
+
+La redazione della catena di custodia è di responsabilità dei pubblici ufficiali (art. 255):
+
+> *La aplicación de la cadena de custodia es responsabilidad de los servidores públicos que entren en contacto con los elementos materiales probatorios y evidencia física.*
+
+Per identificare il custode e le persone che entrano in contatto con i dati informatici, si possono usare le firme digitali. Ogni atto che entra a fare parte della catena di custodia viene firmato congiuntamente dal PU responsabile e da tutti gli altri partecipanti. Data la presenza del PU, si tratterà di firma digitale autenticata (art. 25 c.a.d.).
+
+Pertanto, sarà possibile acquisire anche una firma autografa con modalità digitali, oltre che la firma digitale eseguita con un certificato elettronico con chiave privata. La seconda modalità è preferibile, dato che falsificare la firma con certificato elettronico è praticamente impossibile.
+
+La catena di custodia inizia ad essere redatta dal primo pubblico ufficiale che entra in contatto con il supporto o i dati durante le indagini (art. 257):
+
+> *El servidor público que, en actuación de indagación o investigación policial, hubiere embalado y rotulado el elemento material probatorio y evidencia física, lo custodiará.*
+
+Le norme successive regolano il trasferimento del "materiale probatorio", in modo che arrivi il prima possibile al perito, che dovrà controllare l'integrità degli elementi, e procedere all'analisi (artt. 258 a 261):
+
+> [Art. 258] *El funcionario de policía judicial o el servidor público que hubiere recogido, embalado y rotulado el elemento material probatorio y evidencia física, lo trasladará al laboratorio correspondiente* \Omissis{}
+>
+> [Art. 259] *El servidor público de la oficina de correspondencia o la que haga sus veces, sin pérdida de tiempo* \Omissis{} *entregará el contenedor al perito que corresponda según la especialidad.*
+>
+> [Art. 260] *El perito que reciba el contenedor dejará constancia del estado en que se encuentra y procederá a las investigaciones y análisis del elemento material probatorio y evidencia física, a la menor brevedad posible* \Omissis{}
+
+Si prevede che tutti i pubblici ufficiali sono responsabili per la conservazione degli elementi, mentre ne sono in possesso (art. 261). Per quanto riguarda i dati informatici, questo significa che i soggetti devono ricalcolare l'hash della copia, per verificare che non sia cambiato rispetto all'hash iniziale. Viceversa, i supporti informatici non devono essere verificati, si deve solo garantire la loro migliore conservazione dal punto di vista puramente materiale.
+
+> *Cada servidor público de los mencionados en los artículos anteriores, será responsable de la custodia del contenedor y del elemento material durante el tiempo que esté en su poder, de modo que no pueda ser destruido, suplantado, alterado o deteriorado.*
+
+Questi articoli sembrano tutti ispirati da un *favor*, una preferenza per il trattamento scientifico di quanto trovato durante le investigazioni da parte del perito. La PG ha il solo compito di assicurare le fonti di prova, la PG ed i soggetti intermedi hanno il compito di garantire la corretta conservazione degli elementi raccolti, e la perizia rappresenta la regola generale. Questa impostazione è particolarmente adeguata ai dati digitali, dato che possono essere modificati con facilità ad ogni passaggio di mani, e rilevare queste modifiche non è assolutamente una scienza certa.
+
+Si dispone la conservazione degli elementi dopo la loro analisi, in modo che possano essere recuperati in qualsiasi altro momento per analisi successive, o eventualmente, la loro distruzione (art. 262):
+
+> *Los remanentes del elemento material analizado, serán guardados en el almacén que en el laboratorio está destinado para ese fin. Al almacenarlo será previamente identificado de tal forma que, en cualquier otro momento, pueda ser recuperado para nuevas investigaciones o análisis o para su destrucción, cuando así lo disponga la autoridad judicial competente.*
+
+Se i dati devono essere conservati a lungo termine, è opportuno proteggerli con uno schema di crittografia autenticata, e di conservare le password per decrittarli su carta, in un luogo diverso rispetto ai dati. Questo presenta vari vantaggi:
+
+- Se i dati venissero sottratti per qualsiasi motivo, non potrebbero essere letti senza la password.
+- Viceversa, per distruggere i dati in maniera irreversibile è sufficiente distruggere la password.
+- L'unica persona che potrebbe modificare i dati è chi possiede la password. Tuttavia, basterebbe ricalcolare gli hash dei dati prima di una nuova analisi, e confrontarli con i primi hash memorizzati nella catena di custodia per rilevare una qualsiasi manipolazione.
+- Si può procedere periodicamente ad una verifica dell'integrità dei dati, provando a decrittarli. Se la copia criptata dei dati è cambiata per qualsiasi motivo (deterioramento del supporto su cui sono memorizzati, o manipolazione intenzionale), la decrittazione fallirà.
+
+Si prevede che ad ogni passaggio, la persona dia un rendiconto dello stato degli elementi, e si identifichi personalmente (artt. 263 e 264):
+
+> [Art. 263] *Toda persona que deba recibir un elemento material probatorio y evidencia física, antes de hacerlo, revisará el recipiente que lo contiene y dejará constancia del estado en que se encuentre.*
+>
+> [Art. 264] *Toda persona que aparezca como embalador y rotulador, o que entrega o recibe el contenedor de elemento material probatorio y evidencia física, deberá identificarse con su nombre completo y apellidos, el número de su cédula de ciudadanía y el cargo que desempeña. Así constará en el formato de cadena de custodia.*
+
+Come già discusso, la prima disposizione consiste nella verifica dell'integrità del supporto e dei dati, la seconda può essere integrata con l'apposizione di una firma digitale, che sia legata all'identità fisica della persona.
+
+La catena di custodia deve essere certificata (art. 265):
+
+> *La policía judicial y los peritos certificarán la cadena de custodia.*
+>
+> *La certificación es la afirmación de que el elemento hallado en el lugar, fecha y hora indicados en el rótulo, es el que fue recogido por la policía judicial y que ha llegado al laboratorio y ha sido examinado por el perito o peritos. Además, que en todo momento ha estado custodiado.*
+
+Le attività descritte dal codice consistono in una verifica formale della veridicità di quanto scritto nella catena, ma se la catena di custodia è redatta in forma elettronica, e si usano le firme digitali, si può andare oltre, ed usare una versione semplificata dell'algoritmo di *blockchain*. L'essenza della blockchain è di essere un registro immutabile di valori, condiviso fra più persone. Nel caso dei Bitcoin, viene usato per tenere traccia delle transazioni effettuate fra vari indirizzi. Ma la stessa tecnologia può essere usata per tenere traccia delle operazioni compiute dai vari soggetti.
+
+Il vantaggio principale della blockchain è la sua immutabilità. La catena è distribuita fra più soggetti, e quando si decide di aggiungere un nuovo blocco, tutti devono essere d'accordo riguardo al suo contenuto. Si calcola il nuovo blocco, facendo riferimento all'ultimo blocco nella catena, e tutti aggiorneranno la loro copia di conseguenza. Tuttavia, se qualcuno decidesse di modificare un blocco intermedio nella sua copia della catena, questa modifica potrebbe essere rilevata con facilità:
+
+- In primo luogo, dovrebbe modificare tutti i blocchi successivi a quello modificato, altrimenti sarebbe facile dimostrare che la sua catena è invalida, perché ad un certo punto il blocco successivo non fa più riferimento a quello precedente.
+- Tuttavia, se modifica tutti i blocchi successivi, dovrà necessariamente modificare anche l'ultimo blocco. Se proverà ad aggiungere un nuovo blocco, sarà facile verificare che il blocco a cui si sta riferendo non coincide con l'ultimo blocco nelle altre copie.
+
+In altre parole, si immagini che tutti siano inizialmente d'accordo su questa catena:
+
+\begin{center}
+Buona fede: A, B, C, D, E
+\end{center}
+
+Analogamente, tutti saranno d'accordo che il prossimo blocco *F* farà riferimento a *E*. Tuttavia, se qualcuno decide di modificare il blocco *D* nella sua copia, ottenendo *D1*, dovrà modificare anche il valore successivo in *E1*, e si avranno due catene divergenti:
+
+\begin{center}
+Buona fede: A, B, C, D, E
+\par
+Mala fede: A, B, C, D1, E1
+\end{center}
+
+Si possono immaginare tre possibili scenari a questo punto:
+
+- Se *E1* viene sostituito con *E*, si può dimostrare che *E* non può essere ottenuto da *D1*.
+- Se *E1* viene usato per suggerire il blocco successivo, gli altri contesterebbero che *F1* non fa riferimento ad *E*, e quindi non potrebbe essere il "vero" *F*.
+- Se *F* viene aggiunto dopo *E1*, si può sempre dimostrare che *F* non può derivare da *E1*.
+
+In ogni caso, la modifica alla catena può essere dimostrata confrontandola con le altre copie, e trovando una divergenza, o verificando la sua integrità, e trovando un'irregolarità.
+
+
+<!--
+La catena di custodia inizia ad essere redatta nel momento in cui i supporti o dati informatici utili a fine probatorio vengono scoperti.
+
+- in caso di modalità meno garantite, senza la presenza del CT o difensore è necessario documentare le operazioni nel modo più completo possibile, anche usando videoregistrazioni
+
+### Analisi e valutazione
 
 - Analisi della prova informatica:
   - Software deve essere sufficientemente flessibile, in modo da poter essere utilizzato nei vari casi concreti che si possono presentare
@@ -185,12 +292,19 @@ La conservazione della prova informatica ...
   - Perito e consulenti devono spiegare perché il metodo di analisi è affidabile, *argumentum ab auctoritate* del software non è sufficiente
   - Più è possibile fare riferimento al concreto funzionamento del software, e meglio è
   - Meno è possibile sapere come il software ha svolto l'acquisizione ed analisi, e più il giudice deve essere critico (un conto è il principio di conservazione della prova, un conto è sopravvalutare il valore e la validità epistemologica di una prova)
-- Ammissibilità:
-  - Criteri della sentenza Daubert per valutare l'uso di conoscenze scientifiche nel processo
-  - Analogamente, uso degli stessi criteri per valutare l'uso di software sviluppato sulla base di ricerca scientifica
 - Contraddittorio sulla prova informatica:
   - Diritto alla difesa implica la necessità di sapere come l'analisi è stata svolta
   - L'analisi deve essere ripetibile (usare gli stessi strumenti) e riproducibile (ottenere gli stessi risultati) per la controparte, e nel futuro (giudizio di impugnazione, revisione&hellip;)
+  - Criteri della sentenza Daubert per valutare l'uso di conoscenze scientifiche nel processo
+  - Analogamente, uso degli stessi criteri per valutare l'uso di software sviluppato sulla base di ricerca scientifica
+
+### Valutazione
+
+----
+
+- Sistemi operativi potrebbero nascondere dati proprietari, è meglio un sistema operativo *super partes* che non abbia nulla da nascondere.
+
+Idealmente si deve verificare l'esatto funzionamento del software, ma se è impossibile visionare il codice sorgente o sapere quali algoritmi vengono utilizzati, ci si può affidare alle certificazioni attribuite da soggetti autorevoli
 
 ## Esigenze scientifiche
 
@@ -288,4 +402,4 @@ si parla di software, in realtà ci si riferisce al **codice macchina**.
 
 - Per la ricerca scientifica e per la documentazione dei programmi
 - Licenze per le raccolte di dati
-
+-->

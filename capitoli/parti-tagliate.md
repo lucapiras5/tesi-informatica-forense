@@ -349,3 +349,9 @@ I linguaggi di programmazione devono essere convertiti in codice macchina, e la 
 Compilazione bytecode, JIT, minifier per offuscare
 
 *Conversione in bytecode.*  I programmi convertiti in bytecode vengono prima "compilati" in un codice macchina particolare, creato ad-hoc per quel linguaggio, detto bytecode.  Successivamente, il bytecode viene interpretato da un secondo programma.  L'esecuzione del codice è più veloce rispetto ai programmi interpretati, e rispetto ai programmi compilati, è più facile recuperare informazioni come il nome delle variabili, funzioni, ecc.
+
+----
+
+- Per quanto riguarda i supporti materiali, devono "assicurare le fonti di prova e raccogliere quant'altro possa servire per l'applicazione della legge penale" (art. 55 co. 1 c.p.p.).
+- Per quanto riguarda i dati informatici, se esiste il pericolo che "si alterino o si disperdano o comunque si modifichino", e ancora, solo se "il pubblico ministero non può intervenire tempestivamente, ovvero non ha ancora assunto la direzione delle indagini", allora si può procedere "alla loro immediata duplicazione su adeguati supporti, mediante una procedura che assicuri la conformità della copia all'originale e la sua immodificabilità. Se del caso, sequestrano il corpo del reato e le cose a questo pertinenti."
+
