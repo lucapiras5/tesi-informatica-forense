@@ -277,13 +277,34 @@ Si possono immaginare tre possibili scenari a questo punto:
 
 In ogni caso, la modifica alla catena può essere dimostrata confrontandola con le altre copie, e trovando una divergenza, o verificando la sua integrità, e trovando un'irregolarità.
 
-
-<!--
-La catena di custodia inizia ad essere redatta nel momento in cui i supporti o dati informatici utili a fine probatorio vengono scoperti.
-
-- in caso di modalità meno garantite, senza la presenza del CT o difensore è necessario documentare le operazioni nel modo più completo possibile, anche usando videoregistrazioni
-
 ### Analisi e valutazione
+
+Per quanto riguarda le fasi dell'analisi e valutazione da parte dei consulenti tecnici o perito, il software deve rispondere ad una serie di esigenze.
+
+In primo luogo, il software dovrebbe essere il più flessibile possibile. Naturalmente, ogni software si specializza per l'analisi di un certo tipo di dati informatici. Tuttavia, all'interno di quell'ambito è opportuno offrire una varietà di metodi di analisi. Questo presenta due vantaggi.
+
+Il primo vantaggio è che è difficile prevedere in anticipo i quesiti che potrebbero essere posti dal giudice all'interno di un caso concreto, pertanto è meglio avere quanti più strumenti possibile a disposizione. Il secondo vantaggio è che se più metodi di analisi hanno la stessa funzione, ma operano secondo tecniche diverse, e queste tecniche sono tutte valide, è possibile confrontare i vari risultati per giungere ad una valutazione più ponderata.[^VirusTotal]
+
+[^VirusTotal]: Ad esempio, VirusTotal permette di analizzare un file usando più di 70 programmi antivirus. Se un ristretto numero di programmi ritiene che il file sia un virus, ma gli altri non rilevano nulla, molto probabilmente si tratta di un falso positivo. Adesso, si immagini il caso in cui si usi solo un programma, e sia uno di quei programmi che rilevano erroneamente il file come un virus. Si giungerebbe ad una conclusione errata. \VediUrl{VirusTotal.com}{How it works}{2023}{https://docs.virustotal.com/docs/how-it-works}.
+
+Il massimo grado di flessibilità viene raggiunto se soggetti diversi dagli sviluppatori originali possono sviluppare dei *plug-in* (moduli aggiuntivi) per il software. A questo punto non si è più limitati dai metodi di analisi offerti dagli sviluppatori originali, ma tutti possono contribuire ad estenderlo.
+
+In ogni caso, indipendentemente se il software che svolge l'analisi è fornito dagli sviluppatori originali, o da sviluppatori di terze parti, è necessario dimostrare altre due caratteristiche.
+
+La prima è la conformità del metodo di analisi rispetto ai risultati prodotti dalla ricerca scientifica, e in generale, la dimostrazione della ragionevolezza dell'approccio usato. La ricerca scientifica presenta il vantaggio di essere stata comprovata empiricamente. Non è pura speculazione teorica, ma la sua efficacia è stata argomentata e verificata pubblicamente, con il processo imparziale di peer-review. Pertanto, rappresenta la migliore base da cui partire.
+
+Tuttavia, non è sempre possibile seguire la ricerca scientifica. Ad esempio, è il caso di metodi di analisi:
+
+- Nuovi, che non sono stati ancora sottoposti a peer-review.
+- Proprietari, per cui non si vuole rendere pubblico il loro funzionamento nei dettagli.
+- Basati su tecnologie che per loro natura sono opache, come le intelligenze artificiali che sono state addestrate per riconoscere determinati tipi di contenuti.
+
+In questi casi, non è possibile motivare la veridicità dello strumento di analisi sostenendo semplicemente che lo strumento di analisi è fondato sulla ricerca scientifica, ma piuttosto, è necessario dimostrare la ragionevolezza intrinseca dell'approccio seguito, facendo riferimento anche ai materiali preparatori per il software diversi dal codice. In verità, la ragionevolezza dell'approccio usato va sempre dimostrata, 
+
+La seconda è la correttezza.
+
+- Conforme alla ricerca scientifica, e in generale, in grado di dimostrare la ragionevolezza del suo approccio
+- Corretto, in modo che dia la risposta giusta
 
 - Analisi della prova informatica:
   - Software deve essere sufficientemente flessibile, in modo da poter essere utilizzato nei vari casi concreti che si possono presentare
@@ -297,6 +318,8 @@ La catena di custodia inizia ad essere redatta nel momento in cui i supporti o d
   - L'analisi deve essere ripetibile (usare gli stessi strumenti) e riproducibile (ottenere gli stessi risultati) per la controparte, e nel futuro (giudizio di impugnazione, revisione&hellip;)
   - Criteri della sentenza Daubert per valutare l'uso di conoscenze scientifiche nel processo
   - Analogamente, uso degli stessi criteri per valutare l'uso di software sviluppato sulla base di ricerca scientifica
+
+<!--
 
 ### Valutazione
 

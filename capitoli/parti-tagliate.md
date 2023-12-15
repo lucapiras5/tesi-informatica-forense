@@ -355,3 +355,7 @@ Compilazione bytecode, JIT, minifier per offuscare
 - Per quanto riguarda i supporti materiali, devono "assicurare le fonti di prova e raccogliere quant'altro possa servire per l'applicazione della legge penale" (art. 55 co. 1 c.p.p.).
 - Per quanto riguarda i dati informatici, se esiste il pericolo che "si alterino o si disperdano o comunque si modifichino", e ancora, solo se "il pubblico ministero non può intervenire tempestivamente, ovvero non ha ancora assunto la direzione delle indagini", allora si può procedere "alla loro immediata duplicazione su adeguati supporti, mediante una procedura che assicuri la conformità della copia all'originale e la sua immodificabilità. Se del caso, sequestrano il corpo del reato e le cose a questo pertinenti."
 
+----
+
+- La catena di custodia inizia ad essere redatta nel momento in cui i supporti o dati informatici utili a fine probatorio vengono scoperti.
+- in caso di modalità meno garantite, senza la presenza del CT o difensore è necessario documentare le operazioni nel modo più completo possibile, anche usando videoregistrazioni
