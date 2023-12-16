@@ -299,16 +299,14 @@ Tuttavia, non è sempre possibile seguire la ricerca scientifica. Ad esempio, è
 - Proprietari, per cui non si vuole rendere pubblico il loro funzionamento nei dettagli.
 - Basati su tecnologie che per loro natura sono opache, come le intelligenze artificiali che sono state addestrate per riconoscere determinati tipi di contenuti.
 
-In questi casi, non è possibile motivare la veridicità dello strumento di analisi sostenendo semplicemente che lo strumento di analisi è fondato sulla ricerca scientifica, ma piuttosto, è necessario dimostrare la ragionevolezza intrinseca dell'approccio seguito, facendo riferimento anche ai materiali preparatori per il software diversi dal codice. In verità, la ragionevolezza dell'approccio usato va sempre dimostrata, 
+Di conseguenza:
 
-La seconda è la correttezza.
+- Nel caso di approcci innovativi, si deve fornire l'accesso non solo al software, ma anche ai materiali preparatori (la ricerca scientifica "privata" e non soggetta a peer-review), in modo che si possa svolgere una quanto limitata peer-review nel contraddittorio.
+- Nel caso di approcci proprietari, esiste una tensione fra il rivelare come l'algoritmo funzioni, e mantenere il segreto industriale. In questo caso, più l'approccio è complesso, più la spiegazione è poco chiara, lacunosa o irragionevole, e più è difficile verificare anche solo sommariamente che il programma segue effettivamente l'approccio descritto, e più il giudice deve valutare con sfavore un approccio che è complesso e di cui non è dato conoscere il funzionamento.
+- Nel caso delle intelligenze artificiali, si deve valutare come sono state addestrate, ed il *training data* che è stato utilizzato, dato che entrambi influiscono sulla qualità del modello che viene generato.
 
-- Conforme alla ricerca scientifica, e in generale, in grado di dimostrare la ragionevolezza del suo approccio
-- Corretto, in modo che dia la risposta giusta
+La seconda è la corretta realizzazione del programma. Per fare un'analogia con la realtà materiale, si può pensare alla progettazione e realizzazione di un ponte. Il "progetto" sono i metodi di analisi sviluppati dalla ricerca scientifica, in astratto. Il "ponte" è la concretizzazione di questi metodi di analisi nel software. Se il ponte, o software, non corrispondono al progetto, ci saranno danni.
 
-- Analisi della prova informatica:
-  - Software deve essere sufficientemente flessibile, in modo da poter essere utilizzato nei vari casi concreti che si possono presentare
-  - Risultati devono essere corretti, stesse considerazioni fatte per l'acquisizione
 - Valutazione della prova informatica:
   - Perito e consulenti devono spiegare perché il metodo di analisi è affidabile, *argumentum ab auctoritate* del software non è sufficiente
   - Più è possibile fare riferimento al concreto funzionamento del software, e meglio è
