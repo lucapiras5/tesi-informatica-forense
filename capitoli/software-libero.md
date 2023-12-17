@@ -281,55 +281,60 @@ In ogni caso, la modifica alla catena può essere dimostrata confrontandola con 
 
 Per quanto riguarda le fasi dell'analisi e valutazione da parte dei consulenti tecnici o perito, il software deve rispondere ad una serie di esigenze.
 
-In primo luogo, il software dovrebbe essere il più flessibile possibile. Naturalmente, ogni software si specializza per l'analisi di un certo tipo di dati informatici. Tuttavia, all'interno di quell'ambito è opportuno offrire una varietà di metodi di analisi. Questo presenta due vantaggi.
-
-Il primo vantaggio è che è difficile prevedere in anticipo i quesiti che potrebbero essere posti dal giudice all'interno di un caso concreto, pertanto è meglio avere quanti più strumenti possibile a disposizione. Il secondo vantaggio è che se più metodi di analisi hanno la stessa funzione, ma operano secondo tecniche diverse, e queste tecniche sono tutte valide, è possibile confrontare i vari risultati per giungere ad una valutazione più ponderata.[^VirusTotal]
+In primo luogo, il software dovrebbe essere il più flessibile possibile. Naturalmente, ogni software si specializza per l'analisi di un certo tipo di dati informatici. Tuttavia, all'interno di quell'ambito è opportuno offrire una varietà di metodi di analisi. Questo presenta due vantaggi. Il primo è che è difficile prevedere in anticipo i quesiti che potrebbero essere posti dal giudice all'interno di un caso concreto, pertanto è meglio avere quanti più strumenti possibile a disposizione. Il secondo è che se più metodi di analisi hanno la stessa funzione, ma operano secondo tecniche diverse, e queste tecniche sono tutte valide, è possibile confrontare i vari risultati per giungere ad una valutazione più ponderata.[^VirusTotal]
 
 [^VirusTotal]: Ad esempio, VirusTotal permette di analizzare un file usando più di 70 programmi antivirus. Se un ristretto numero di programmi ritiene che il file sia un virus, ma gli altri non rilevano nulla, molto probabilmente si tratta di un falso positivo. Adesso, si immagini il caso in cui si usi solo un programma, e sia uno di quei programmi che rilevano erroneamente il file come un virus. Si giungerebbe ad una conclusione errata. \VediUrl{VirusTotal.com}{How it works}{2023}{https://docs.virustotal.com/docs/how-it-works}.
 
-Il massimo grado di flessibilità viene raggiunto se soggetti diversi dagli sviluppatori originali possono sviluppare dei *plug-in* (moduli aggiuntivi) per il software. A questo punto non si è più limitati dai metodi di analisi offerti dagli sviluppatori originali, ma tutti possono contribuire ad estenderlo.
+Il massimo grado di flessibilità viene raggiunto se soggetti diversi dagli sviluppatori originali (i c.d. sviluppatori di terze parti) possono sviluppare dei *plug-in* (moduli aggiuntivi) per il software. A questo punto non si è più limitati dai metodi di analisi offerti dagli sviluppatori originali, ma tutti possono contribuire ad estenderlo. Gli sviluppatori di terze parti non sono necessariamente meno affidabili degli sviluppatori originali, ed in alcuni casi, è proprio la loro opera a mantenere utile ed aggiornato un software che non è più sviluppato in maniera attiva.
 
-In ogni caso, indipendentemente se il software che svolge l'analisi è fornito dagli sviluppatori originali, o da sviluppatori di terze parti, è necessario dimostrare altre due caratteristiche.
-
-La prima è la conformità del metodo di analisi rispetto ai risultati prodotti dalla ricerca scientifica, e in generale, la dimostrazione della ragionevolezza dell'approccio usato. La ricerca scientifica presenta il vantaggio di essere stata comprovata empiricamente. Non è pura speculazione teorica, ma la sua efficacia è stata argomentata e verificata pubblicamente, con il processo imparziale di peer-review. Pertanto, rappresenta la migliore base da cui partire.
+Per ciascun metodo di analisi, è necessario dimostrare la loro conformità ai risultati prodotti dalla ricerca scientifica, e in generale, la ragionevolezza dell'approccio usato. La ricerca scientifica presenta il vantaggio di essere stata comprovata empiricamente. Non è pura speculazione teorica, ma la sua efficacia è stata argomentata e verificata pubblicamente, con il processo imparziale di peer-review. Pertanto, rappresenta la migliore base da cui partire.
 
 Tuttavia, non è sempre possibile seguire la ricerca scientifica. Ad esempio, è il caso di metodi di analisi:
 
-- Nuovi, che non sono stati ancora sottoposti a peer-review.
+- Nuovi o sperimentali, che non sono stati ancora sottoposti a peer-review.
 - Proprietari, per cui non si vuole rendere pubblico il loro funzionamento nei dettagli.
-- Basati su tecnologie che per loro natura sono opache, come le intelligenze artificiali che sono state addestrate per riconoscere determinati tipi di contenuti.
+- Basati su tecnologie che per loro natura sono opache, come le intelligenze artificiali che sono state sviluppate per riconoscere determinati tipi di contenuti.
 
-Di conseguenza:
+In questi casi, la ragionevolezza dell'approccio va dimostrata caso per caso, dato che non è possibile fare un rinvio alla scienza già affermata. Di conseguenza:
 
 - Nel caso di approcci innovativi, si deve fornire l'accesso non solo al software, ma anche ai materiali preparatori (la ricerca scientifica "privata" e non soggetta a peer-review), in modo che si possa svolgere una quanto limitata peer-review nel contraddittorio.
 - Nel caso di approcci proprietari, esiste una tensione fra il rivelare come l'algoritmo funzioni, e mantenere il segreto industriale. In questo caso, più l'approccio è complesso, più la spiegazione è poco chiara, lacunosa o irragionevole, e più è difficile verificare anche solo sommariamente che il programma segue effettivamente l'approccio descritto, e più il giudice deve valutare con sfavore un approccio che è complesso e di cui non è dato conoscere il funzionamento.
-- Nel caso delle intelligenze artificiali, si deve valutare come sono state addestrate, ed il *training data* che è stato utilizzato, dato che entrambi influiscono sulla qualità del modello che viene generato.
+- Nel caso delle intelligenze artificiali, i fattori che influiscono sulla loro qualità sono le modalità con cui sono state allenate, ed il *training/test set* (dati utilizzati per l'allenamento e la verifica del corretto funzionamento). Le modalità di allenamento potrebbero essere mantenute segrete per le già citate ragioni di segreto industriale. Per quanto riguarda il *training set*, potrebbero esistere ostacoli legali e/o etici alla sua pubblicazione. Ad esempio, si immagini il caso di un'intelligenza artificiale che è in grado di riconoscere immagini pedopornografiche. Per verificare il suo funzionamento, sarebbe necessario condividere immagini di vittime di reati sessuali.
 
-La seconda è la corretta realizzazione del programma. Per fare un'analogia con la realtà materiale, si può pensare alla progettazione e realizzazione di un ponte. Il "progetto" sono i metodi di analisi sviluppati dalla ricerca scientifica, in astratto. Il "ponte" è la concretizzazione di questi metodi di analisi nel software. Se il ponte, o software, non corrispondono al progetto, ci saranno danni.
+Infine, è necessario garantire il corretto funzionamento del programma. Un conto è dimostrare che il metodo di analisi è valido da un punto di vista conoscitivo, un altro è dimostrare che il metodo di analisi è stato trasfuso correttamente nel software. Qualsiasi software contiene bug, errori di programmazione che portano il programma a compiere operazioni inaspettate o indesiderate.
 
-- Valutazione della prova informatica:
-  - Perito e consulenti devono spiegare perché il metodo di analisi è affidabile, *argumentum ab auctoritate* del software non è sufficiente
-  - Più è possibile fare riferimento al concreto funzionamento del software, e meglio è
-  - Meno è possibile sapere come il software ha svolto l'acquisizione ed analisi, e più il giudice deve essere critico (un conto è il principio di conservazione della prova, un conto è sopravvalutare il valore e la validità epistemologica di una prova)
-- Contraddittorio sulla prova informatica:
-  - Diritto alla difesa implica la necessità di sapere come l'analisi è stata svolta
-  - L'analisi deve essere ripetibile (usare gli stessi strumenti) e riproducibile (ottenere gli stessi risultati) per la controparte, e nel futuro (giudizio di impugnazione, revisione&hellip;)
-  - Criteri della sentenza Daubert per valutare l'uso di conoscenze scientifiche nel processo
-  - Analogamente, uso degli stessi criteri per valutare l'uso di software sviluppato sulla base di ricerca scientifica
+Per quanto riguarda questo aspetto, si devono garantire due esigenze. La prima è che il programma contenga quanti meno bug possibile, in modo da garantire che produca risultati corretti, e anche davanti a situazioni inaspettate, si comporti in maniera prevedibile. La seconda è che i bug che sono presenti e conosciuti siano resi pubblici, in modo che ci si possa regolare di conseguenza ai fini dell'analisi. 
 
-<!--
+<!-- TODO -->
 
-### Valutazione
+### Presentazione e contraddittorio
 
-----
+La presentazione dei risultati da parte del perito e degli esperti riguarda tre aspetti:
 
-- Sistemi operativi potrebbero nascondere dati proprietari, è meglio un sistema operativo *super partes* che non abbia nulla da nascondere.
+- A quali conclusioni sono giunti.
+- Sulla base di quali conoscenze scientifiche o tecniche si fonda il loro giudizio.
+- Quali strumenti sono stati utilizzati nella loro valutazione.
 
-Idealmente si deve verificare l'esatto funzionamento del software, ma se è impossibile visionare il codice sorgente o sapere quali algoritmi vengono utilizzati, ci si può affidare alle certificazioni attribuite da soggetti autorevoli
+I primi due punti sono stati analizzati nel capitolo precedente, quando si è discusso della natura scientifica dell'informatica forense, e di come le conclusioni dei periti e consulenti devono essere valutati dal giudice.
+
+L'ultimo punto è il punto focale di questo capitolo e dei successivi.
+
+Le sezioni precedenti di questo capitolo si sono concentrate sull'ultimo punto, considerando l'impatto del software nelle varie fasi del trattamento della prova informatica. 
+
+Nella fase della presentazione delle conclusioni, non rileva tanto l'uso del software. Le esigenze tecniche o scientifiche sono state già esaurite nella fase di analisi e valutazione. Questa fase piuttosto è incentrata sulla "discussione" del software, come uno degli elementi che va ad influire sull'attendibilità delle conclusioni degli esperti (perito e consulenti). 
+
+Nel trattamento della prova informatica prova informatica, è impossibile prescindere dal software. Non è un'esagerazione dire che senza il software, i dati informatici sarebbero illeggibili, e pertanto, ai fini delle indagini, sarebbe come se fossero inesistenti. Anche le operazioni apparentemente più semplici, come la copia forense dei contenuti di un disco, richiedono comunque un minimo di software. Pertanto, è altrettanto importante che il perito ed i consulenti dimostrino o critichino l'adeguatezza del software rispetto allo scopo per cui viene utilizzato.
 
 ## Esigenze scientifiche
 
-- Tendono a sovrapporsi con le esigenze processuali, perché nel processo non può entrare *junk science*
+Le esigenze scientifiche a sovrapporsi con le esigenze processuali. In particolare, la sentenza
+
+In questa sede 
+
+- Sia il processo che la scienza sono interessati alla ricerca della verità
+- Nel processo non può entrare *junk science* per i criteri Daubert
+- 
+
 - Libero accesso a ricerca e codice:
   - La ricerca scientifica ed il software di analisi devono essere resi disponibili liberamente
   - È un prerequisito per le fasi successive
@@ -345,6 +350,10 @@ Idealmente si deve verificare l'esatto funzionamento del software, ma se è impo
   - Software deve implementare quando concluso dalla ricerca scientifica in maniera esatta
   - Conoscenza dei bug: i bug vanno documentati e risolti in maniera trasparente, metodi per evitare che i bug si ripresentino
   - Robustezza dei metodi di analisi: il software deve sempre comportarsi in maniera prevedibile, specie se incontra un formato invalido o inaspettato (analogia con inammissibilità ed improcedibilità)
+
+## Software libero
+
+<!--
 
 ## Codice macchina e codice sorgente
 

@@ -359,3 +359,20 @@ Compilazione bytecode, JIT, minifier per offuscare
 
 - La catena di custodia inizia ad essere redatta nel momento in cui i supporti o dati informatici utili a fine probatorio vengono scoperti.
 - in caso di modalità meno garantite, senza la presenza del CT o difensore è necessario documentare le operazioni nel modo più completo possibile, anche usando videoregistrazioni
+
+----
+
+- Valutazione della prova informatica:
+  - Perito e consulenti devono spiegare perché il metodo di analisi è affidabile, *argumentum ab auctoritate* del software non è sufficiente
+  - Più è possibile fare riferimento al concreto funzionamento del software, e meglio è
+  - Meno è possibile sapere come il software ha svolto l'acquisizione ed analisi, e più il giudice deve essere critico (un conto è il principio di conservazione della prova, un conto è sopravvalutare il valore e la validità epistemologica di una prova)
+- Contraddittorio sulla prova informatica:
+  - Diritto alla difesa implica la necessità di sapere come l'analisi è stata svolta
+  - L'analisi deve essere ripetibile (usare gli stessi strumenti) e riproducibile (ottenere gli stessi risultati) per la controparte, e nel futuro (giudizio di impugnazione, revisione&hellip;)
+  - Criteri della sentenza Daubert per valutare l'uso di conoscenze scientifiche nel processo
+  - Analogamente, uso degli stessi criteri per valutare l'uso di software sviluppato sulla base di ricerca scientifica
+
+- Sistemi operativi potrebbero nascondere dati proprietari, è meglio un sistema operativo *super partes* che non abbia nulla da nascondere.
+
+Idealmente si deve verificare l'esatto funzionamento del software, ma se è impossibile visionare il codice sorgente o sapere quali algoritmi vengono utilizzati, ci si può affidare alle certificazioni attribuite da soggetti autorevoli
+
