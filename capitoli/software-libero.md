@@ -74,7 +74,8 @@ FILE *fp = fopen("file-da-acquisire", "r");
 Tuttavia, nel caso dell'informatica forense, dove è necessario avere il maggior grado di controllo possibile sul funzionamento del programma, è preferibile usare la funzione di basso livello *open*, che richiede di indicare espressamente tutte le opzioni volute. In questo caso, non solo si richiede l'apertura in sola lettura (*O_RDONLY* significa "opzione: sola lettura"), ma si richiede anche di non modificare la data in cui il file è stato aperto per l'ultima volta (*O_NOATIME* significa "opzione: non cambiare la data di accesso") [@Man7_Open, sez. "DESCRIPTION"].
 
 ```c
-FILE *fp = open("file-da-acquisire",
+FILE *fp = open(
+    "file-da-acquisire",
     O_RDONLY | O_NOATIME);
 ```
 
@@ -382,7 +383,7 @@ In questo modo, si garantisce che l'informatica forense, il software sviluppato 
 
 ### Quattro libertà fondamentali
 
-Il modo migliore per garantire l'equivalente della peer-review per il software, e più in generale, soddisfare anche le altre esigenze processuali, è di usare il software libero, ossia, software che garantisce all'utente quattro libertà fondamentali [@FSF-What-is-free-software]:
+Il modo migliore per garantire tutte le esigenze che sono state elencate in precedenza è di usare il software libero, ossia, il software che viene distribuito al pubblico in maniera da garantire quattro libertà fondamentali [@FSF-What-is-free-software]:
 
 - Eseguire il programma a piacere, per qualsiasi finalità.
 - Studiare come il programma funzioni, ed effettuare cambiamenti in modo che funzioni a proprio piacimento.
@@ -393,17 +394,17 @@ In mancanza di anche solo una di queste libertà, si parla di software non-liber
 
 ### Libertà di eseguire il programma
 
-La prima libertà è la libertà più fondamentale di tutte, ed è importante che sia indicata espressamente. Viene spiegata in questo modo:
+La prima libertà è la libertà più fondamentale di tutte, ed è importante che sia indicata espressamente. Viene spiegata in questo modo [@FSF-What-is-free-software]:
 
 > *The freedom to run the program means the freedom for any kind of person or organization to use it on any kind of computer system, for any kind of overall job and purpose, without being required to communicate about it with the developer or any other specific entity.*[^FreedomRunProgram]
 
 [^FreedomRunProgram]: "La libertà di eseguire il programma indica la libertà per qualsiasi persona o organizzazione di usarlo su qualsiasi tipo di sistema informatico, per qualsiasi tipo di lavoro o scopo complessivi, senza richiedere che lo si comunichi allo sviluppatore, o altre entità."
 
-Un software che non può essere eseguito sembrerebbe un ossimoro, ma è una situazione che si presenta con regolarità con il software venduto commercialmente. Le licenze sono uno strumento con cui lo sviluppatore concede la possibilità di eseguire il programma. L'accordo che regola la licenza può liberamente indicare scopi per cui il software non può essere usato. Se questo accordo viene violato, lo sviluppatore può revocare o disattivare la licenza unilateralmente, e quindi rendere il programma inutilizzabile.
+Un software che non può essere eseguito sembrerebbe un ossimoro, ma è una situazione che si presenta con regolarità con il software venduto commercialmente. Le licenze sono uno strumento con cui lo sviluppatore concede la possibilità di eseguire il programma. L'accordo che regola la licenza può liberamente indicare scopi per cui il software non può essere usato. Se questo accordo viene violato, lo sviluppatore può liberamente e unilateralmente revocare o disattivare la licenza, e quindi rendere il programma inutilizzabile, non solo da un punto di vista legale, ma anche da un punto di vista tecnico.
 
 Il programma in sé può sempre essere copiato, è difficile creare misure tecniche che impediscano in maniera assoluta la copia dei dati. Per rimediare a questo problema, il software include misure di protezione che controllano la presenza di una licenza valida (ad esempio, controllando la presenza di *dongle* USB che contengono una licenza in formato digitale, e/o contattando i server dello sviluppatore per verificare che l'utente è registrato ed autorizzato ad usare il programma&hellip;) ed in caso contrario, fermano l'esecuzione del programma.
 
-L'art. 11 del WIPO Copyright Treaty regola l'uso di misure tecnologiche per regolare gli atti che è possibile compiere [@Blomqvist2014, 205]:
+L'art. 11 del WIPO Copyright Treaty regola l'uso di misure tecnologiche per questo scopo [@Blomqvist2014, 205]:
 
 > *Contracting Parties shall provide adequate legal protection and effective legal remedies against the circumvention of effective technological measures that are used by authors in connection with the exercise of their rights under this Treaty or the Berne Convention and that restrict acts, in respect of their works, which are not authorized by the authors concerned or permitted by law.*
 
@@ -417,66 +418,104 @@ A livello nazionale, l'uso di misure di protezione è definito e regolato dalla 
 
 La l.d.a. non indica un elenco di *exceptions and limitations* ("eccezioni e limitazioni") che rendono possibile rimuovere o aggirare le misure di sicurezza.  L'art. 102-*quater* co. 3 afferma solo che resta salva la disciplina in generale sui programmi per elaboratore.  Questa possibilità è stata prevista in alcuni stati, ma solo in casi limitati ed eccezionali (ad esempio, l'uso da parte dell'autorità giudiziaria, o per ragioni di sicurezza nazionale) [@Blomqvist2014, 208].
 
-In ogni caso, anche se la legge prevedesse esplicitamente questa possibilità, sarebbe meglio non cercare di rimuovere le misure di protezione al fine di creare copie liberamente eseguibili di software non-libero. Rimuovere le misure di protezione è analogo ad una chirurgia. Durante l'operazione si deve fare attenzione ad essere il meno invasivi possibile, e quindi modificare la minore quantità di dati possibile, e così come dopo l'operazione il paziente potrebbe avere complicazioni, così il software modificato potrebbe essere più instabile, o comportarsi in maniera imprevista. Questo margine di incertezza è inaccettabile per il software ad uso scientifico.
+In ogni caso, anche se la legge prevedesse esplicitamente questa possibilità, è preferibile evitare di rimuovere le misure di protezione al fine di creare copie liberamente eseguibili di software non-libero. Rimuovere le misure di protezione è analogo ad una chirurgia. Durante l'operazione si deve fare attenzione ad essere il meno invasivi possibile, e quindi modificare la minore quantità di dati possibile, e così come dopo l'operazione il paziente potrebbe avere complicazioni, così il software modificato potrebbe essere più instabile, o comportarsi in maniera imprevista.[^ProblemiRimozioneDRM] Questo margine di incertezza sarebbe inaccettabile per il software ad uso scientifico.
 
-<!--
+[^ProblemiRimozioneDRM]: Continuando la similitudine con la chirurgia, il DRM deve agire come un tumore, deve integrarsi con il "software ospite" in profondità, in modo che sia difficile separarli, e deve creare "metastasi", andando a coprire tutte le parti del software.
 
-## Codice macchina e codice sorgente
+Viceversa, il software libero evita tutti i problemi sopra indicati. Se si è in possesso di una copia del software, non ci sono ulteriori requisiti, restrizioni, né servono modifiche per poterlo eseguire.
 
-Un'altra caratteristica dei dati informatici è che sono facilmente modificabili senza lasciare tracce. Se il perito o consulente conosce il formato in cui i dati sono codificati, è possibile cercare irregolarità (valori invalidi, irragionevoli, incongruenze&hellip;) all'interno del file, o all'interno del sistema.
+### Libertà di studiare e modificare il programma
 
-Il problema del "formato" in cui i dati sono codificati è estremamente importante per il software. Il software deve essere eseguito dall'hardware, da un processore, e l'hardware, per definizione, non è facilmente modificabile o riprogrammabile.[^HardwareRiprogrammabile] L'hardware si aspetta un formato ben preciso per le istruzioni che riceverà, e se questo formato non è rispettato, il processore non eseguirà il codice, o produrrà risultati incorretti.
+Le due libertà sono strettamente legate, perché è difficile modificare il programma se non si ha accesso al codice sorgente. Il codice sorgente viene definito in maniera estremamente generica come [@FSF-What-is-free-software]:
 
-[^HardwareRiprogrammabile]: Processori riprogrammabili esistono. Ad esempio, i FPGA sono circuiti integrati che possono essere riprogrammati, ma sono meno efficienti di una soluzione hardware specializzata.
+> *[T]he preferred form of the program for making changes in. Thus, whatever form a developer changes to develop the program is the source code of that developer's version.*[^DefinizioneCodiceSorgente]
 
-Il termine *software* (programma informatico) può essere inteso in due modi.
-Nel linguaggio comune, indica un programma eseguibile da un computer.
-Nell'ambito specifico della programmazione, si distingue fra software inteso come *machine code* (codice macchina) e *source code* (codice sorgente).
+[^DefinizioneCodiceSorgente]: "La rappresentazione del programma preferita per apportare cambiamenti. Pertanto, qualsiasi rappresentazione lo sviluppatore cambi al fine di sviluppare il programma è il codice sorgente di quella versione del programma."
 
-Il codice macchina può essere 
+Di solito il codice sorgente consiste in file di testo che contengono codice scritto in un determinato linguaggio di programmazione, ma qualsiasi elemento che contribuisce allo sviluppo del programma, e che può essere alterato dallo sviluppatore per cambiare il funzionamento del programma è comunque codice sorgente.
 
-L'espressione "software" si riferisce ad un programma che può essere eseguito direttamente da un computer.
+Inoltre, si specifica che "*[o]bfuscated "source code" is not real source code and does not count as source code*" (il codice sorgente offuscato non è vero codice sorgente, e non rileva come codice sorgente). Affinché il codice sorgente possa essere modificato in maniera utile, deve essere espresso in una forma comprensibile allo sviluppatore. L'offuscamento è un processo con cui il codice sorgente viene trasformato in maniera che esegua le stesse operazioni, e rimanga leggibile, ma è espresso in una forma incomprensibile.[^EsempioOffuscamento]
 
-si parla di software, in realtà ci si riferisce al **codice macchina**.
+L'offuscamento è una cosa diversa dalla compilazione, il processo con cui il codice sorgente viene trasformato in modo che sia eseguibile dalla macchina. Anche il codice compilato è incomprensibile al programmatore, ma è comprensibile per il computer, ed è necessario compilare il codice sorgente per poterlo eseguire. L'offuscamento è opzionale.
 
-- Software come codice macchina o come codice sorgente
-- Anche il sistema operativo fa parte del software
+[^EsempioOffuscamento]: La trasformazione consiste in usare nomi per le variabili e funzioni generati in maniera casuale, aggiungere codice inutile che serve solo come distrazione, non svolgere le operazioni in maniera semplice e lineare, ma creare numerosi valori intermedi che vengono combinati fra di loro in maniera intricata&hellip; \VediUrl{T. Serafim, T. Kachalov}{JavaScript Obfuscator Tool}{n.d.}{https://obfuscator.io}. L'offuscamento può essere utilizzato anche quando si va a compilare il codice. \VediUrl{xoreaxeaxeax}{movfuscator}{2020}{https://github.com/xoreaxeaxeax/movfuscator/tree/ea37dae93fbcd93f642c71a53878da588bd7ddb4}.
 
-- Codice macchina:
-    - Istruzioni di basso livello, indicano direttamente alla macchina cosa fare
-    - Non leggibili da parte del programmatore (salvo *disassembly*)
-    - Natura puramente materiale, analogia con il giudizio di esecuzione
-    - Strettamente legato ad un processore, ogni processore ha un set di istruzioni particolare
-- Codice sorgente:
-    - File di testo
-    - Descrizione astratta del programma, il processore non può utilizzarla diversamente, analogia con il giudizio di cognizione
-    - Possono contenere commenti
-    - Linguaggi di programmazione di basso livello: assembler, C, ecc, gestione della memoria manuale, paradigma imperativo
-    - Linguaggi di alto livello: gestione automatica della memoria, paradigma descrittivo (al massimo livello con SQL)
+Se non si ha accesso al codice sorgente, si può solo studiare "cosa" fa il software. Se invece si ha accesso al codice sorgente, è possibile capire anche "perché" il software si comporta in un certo modo, andando a leggere le istruzioni di cui è composto. Ancora, è possibile modificare il software, aggiungendo, rimuovendo, o cambiando le istruzioni presenti a proprio piacere.
 
-- Copia dei dati e manutenzione del loro funzionamento: più facili con il software libero, che presenta ulteriori vantaggi (si può sapere come il software funziona).
-- Opportunità anche per il software di analisi di essere open-source.
+Se il codice sorgente viene fornito, ma si vieta la possibilità di modificarlo o ridistribuirlo, e in generale, se l'unica facoltà concessa è la possibilità di visionarlo, allora si parla di software non-libero, ma *source-available* (con codice sorgente disponibile). Ad esempio, il codice sorgente per il programma di backup *Tarsnap* è pubblicamente disponibile [@Github-Tarsnap], ed è possibile scaricare e compilare il codice sorgente, ma non è possibile compilare una versione modificata del software.[^TarsnapVersioneModificata]
 
-## Compilazione
+[^TarsnapVersioneModificata]: \VediUrl{Tarsnap.com}{Tarsnap Terms and Conditions}{n.d.}{https://www.tarsnap.com/legal.html}. Il motivo per cui le modifiche non sono permesse è per garantire che il servizio costi il meno possibile. \VediUrl{Tarsnap.com}{Whys of Tarsnap Terms and Conditions}{n.d.}{https://www.tarsnap.com/legal-why.html\#UNMODIFIEDCLIENT}.
 
-- Conversione permanente da codice sorgente a codice macchina, sempre necessario
-- Informazioni perse, possibilità di offuscamento
-- Utile per il software proprietario che vuole nascondere il suo funzionamento
-- Problema del software scientifico che non dà accesso al codice sorgente
+Normalmente il software non-libero non è distribuito con il codice sorgente, si riceve solo una copia del codice macchina, già compilato e pronto per essere eseguito. La l.d.a. afferma espressamente il diritto di poter studiare il funzionamento del software, anche se proprietario, e sanziona le clausole contrattuali che vietano questa possibilità con la nullità (art. 64-*ter*, co. 3):
 
-## Reverse-engineering
+> Chi ha il diritto di usare una copia del programma per elaboratore può, senza l'autorizzazione del titolare dei diritti, osservare, studiare o sottoporre a prova il funzionamento del programma, allo scopo di determinare le idee ed i principi su cui è basato ogni elemento del programma stesso \Omissis{} Le clausole contrattuali pattuite in violazione del presente comma e del comma 2 sono nulle.
 
-- Legata alla libertà di studiare il funzionamento del software
-- Interessa principalmente per la fase di ricerca dell'informatica forense, quando la semplice osservazione del funzionamento del programma non è sufficiente
-- Rappresenta il contrario della compilazione
-- Casi giuridici che affermano questa libertà
-- Ostacoli alla reverse-engineering di natura tecnica
+Inoltre, la l.d.a. ammette la possibilità di eseguire il *reverse-engineering* ("ingegneria a ritroso"). Laddove la *software engineering* (ingegneria informatica) costruisce il software, la reverse-engineering serve a capire come il software è stato costruito. Consiste nell'analisi del codice macchina, già compilato, per riprodurre le funzionalità del codice sorgente originale, di cui non si dispone. Tuttavia, questa facoltà è limitata al solo scopo dell'interoperabilità (art. 64-*quater*, co. 1):
 
-## Documentazione del software scientifico
+> L'autorizzazione del titolare dei diritti non è richiesta qualora la riproduzione del codice del programma di elaboratore e la traduzione della sua forma ai sensi dell'art. 64-bis, lettere a) e b), compiute al fine di modificare la forma del codice, siano indispensabili per ottenere le informazioni necessarie per conseguire l'interoperabilità, con altri programmi, di un programma per elaboratore creato autonomamente purché siano soddisfatte le seguenti condizioni:
+>
+> a) le predette attività siano eseguite dal licenziatario o da altri che abbia il diritto di usare una copia del programma oppure, per loro conto, da chi è autorizzato a tal fine;
+> 
+> b) le informazioni necessarie per conseguire l'interoperabilità non siano già facilmente e rapidamente accessibili ai soggetti indicati alla lettera a);
+> 
+> c) le predette attività siano limitate alle parti del programma originale necessarie per conseguire l'interoperabilità.
 
-- Tutto il software scientifico deve essere documentato, facendo riferimento alla ricerca scientifica, e spiegando come funziona il software, che tipo di input si aspetta, i limiti dell'analisi&hellip;
-- Software proprietario: tensione fra documentare il suo funzionamento, e non rivelare troppi dettagli per mantenere il *competitive advantage*, problema di verificare se il funzionamento corrisponde alla documentazione
-- Software libero: "code as documentation", tensione fra la possibilità di documentazione estensiva e la mancanza di risorse
+L'interoperabilità è definita come la "[c]apacità di due o più sistemi, reti, mezzi, applicazioni o componenti, di scambiare informazioni tra loro e di essere poi in grado di utilizzarle."[^DefinizioneInteroperabilità] Il software di analisi che viene usato nell'informatica forense rientra a pieno titolo all'interno di questa definizione, perché è interessato ad estrarre ed utilizzare informazioni da sistemi, reti, e altre applicazioni.
+
+[^DefinizioneInteroperabilità]: \VediUrl{Treccani.it}{Interoperabilità}{2008}{https://www.treccani.it/enciclopedia/interoperabilita_\%28Enciclopedia-della-Scienza-e-della-Tecnica\%29/}.
+
+Il limite fondamentale alla reverse-engineering è indicato nel co. 2 dello stesso articolo. Le informazioni ottenute non possono essere usate per "lo sviluppo, la produzione o la commercializzazione di un programma per elaboratore sostanzialmente simile nella sua forma espressiva, o per ogni altra attività che violi il diritto di autore".
+
+L'obiettivo della norma è di prevenire la concorrenza sleale (mediante la creazione di software essenzialmente identico a software già esistente), e la pirateria (la rimozione delle misure di protezione richiede l'uso di tecniche di reverse-engineering). È estremamente improbabile che il software di analisi sia "sostanzialmente simile nella sua forma espressiva" rispetto al software analizzato, perché hanno finalità radicalmente diverse. Il software di analisi non può essere usato per svolgere le stesse funzioni del programma analizzato, serve solo ad estrarre ed elaborare informazioni che possono essere utili all'interno di un processo.
+
+Infine, il co. 3 sanziona le clausole contrattuali che vietano il reverse-engineering (se eseguito con la specifica finalità dell'interoperabilità) con la nullità.
+
+### Ridistribuire copie del software
+
+Le ultime due libertà riguardano la possibilità di ridistribuire il software, "*either with or without modifications, either gratis or charging a fee for distribution, to anyone anywhere*" (con o senza modifiche, gratuitamente o addebitando il costo della distribuzione, a chiunque, e dovunque) [@FSF-What-is-free-software].
+
+In inglese, il "software libero" è chiamato *free software*, e *free* può significare sia libero da vincoli, sia gratuito. Il *free software* può essere oggetto di vendita (se così non fosse, questo rappresenterebbe una limitazione alla libertà di ridistribuzione), ma dopo che qualcuno ha una copia, è libero di ridistribuirla gratuitamente [@FSF-Selling-free-software].
+
+La ridistribuzione deve sempre includere una copia del codice sorgente, anche se non è stato modificato. Includere il codice macchina già compilato è una cortesia per la convenienza dell'utente, in modo che il programma possa essere eseguito subito, ma non un requisito.
+
+Il software non-libero invece generalmente nega la possibilità di ridistribuirlo, o esplicitamente, con i termini contrattuali con cui viene venduto o fornito, o implicitamente, perché i termini contrattuali non concedono questo diritto a chi ne ottiene una copia.
+
+### Vantaggi del software libero per l'informatica forense
+
+Riassumendo, il software libero è caratterizzato dalla possibilità di essere eseguito, studiato, modificato e ridistribuito. Tutte queste facoltà devono poter essere esercitate liberamente, senza vincoli o condizioni.
+
+Per quanto riguarda le esigenze processuali, la possibilità di studiare il funzionamento del software è la più importante, perché è strettamente funzionale al pieno svolgimento del diritto di difesa. Una difesa approfondita e specifica è possibile solo se è possibile sapere "perché" il software ha prodotto un certo risultato, se è possibile consultare le esatte istruzioni di cui è composto all'origine. In mancanza di queste informazioni, il contraddittorio fra le parti viene svuotato del suo significato, perché non ci sono molti punti su cui discutere. Viceversa, in presenza di queste informazioni è effettivamente possibile verificare se il software svolge l'analisi in maniera adeguata e conforme al suo scopo.
+
+Rileva anche la possibilità di modificare il software. Ad esempio, la risoluzione dei quesiti posti dal giudice potrebbe richiedere la modifica dei metodi di analisi esistenti, o la creazione di nuovi, oppure durante il contraddittorio tecnico si potrebbe scoprire la presenza di un bug, che potrebbe essere corretto.
+
+La possibilità di eseguire e distribuire il software rilevano ai fini del contraddittorio, in modo che tutte le parti possano avere la copia degli stessi esatti strumenti che sono stati usati, e possano studiare liberamente il codice sorgente. Inoltre, rileva anche ai fini della ripetibilità futura delle analisi, perché la copia del software usato può essere liberamente conservata insieme alla copia dei dati.
+
+Per quanto riguarda le esigenze scientifiche, la possibilità di eseguire e ridistribuire il codice permette di verificare che i risultati dello studio siano effettivamente riproducibili, mentre la possibilità di studiare il codice sorgente permette di verificare la ragionevolezza e correttezza degli strumenti o tecniche di analisi implementate. La possibilità di modificare il codice rileva nel momento successivo alla peer-review. Dopo che i ricercatori hanno mosso le loro critiche, possono anche pubblicare la loro versione corretta e migliorata del software.
+
+In generale, i principi che guidano il software libero sono in buona parte analoghi ai principi della trasparenza e del confronto fra più punti di vista, che sono alla base della ricerca scientifica e del contraddittorio nel processo. Il modello di software libero non è stato sviluppato per soddisfare queste esigenze, ma è innegabile che le sue caratteristiche lo rendono il miglior candidato per lo sviluppo di software scientifico ad uso processuale.
+
+Si possono svolgere due ulteriori osservazioni rispetto al software libero. La prima è che il suo sviluppo è solitamente (ma non necessariamente) trasparente e aperto al pubblico. Le discussioni che avvengono fra gli sviluppatori, e fra utenti del software e sviluppatori, sono solitamente pubbliche.[^SoftwareLiberoMailingList] I *bug* vengono raccolti, discussi e risolti pubblicamente.[^SoftwareLiberoBugTracker] Spesso gli sviluppatori incoraggiano gli utenti a contribuire *patch* ("pezze"), ossia i cambiamenti e miglioramenti che questi ultimi hanno apportato alla loro copia del codice sorgente, in modo che possano essere integrate nella copia del codice gestita degli sviluppatori originali, e tutti possano beneficiarne.[^SoftwareLiberoPatch]
+
+[^SoftwareLiberoMailingList]: La forma più tradizionale sono le *mailing lists* (liste di discussione). Ad esempio, il progetto GNU ha numerose *mailing lists*. Se il nome della lista contiene *bug*, la lista è per la segnalazione di bug, se contiene *devel* è usata dagli sviluppatori per coordinare le loro attività, se contiene *user* è usata dagli utenti per chiedere informazioni e dirigere richieste agli sviluppatori. \VediUrl{GNU.org}{Mail Archives}{n.d.}{https://lists.gnu.org/archive/html/}.
+[^SoftwareLiberoBugTracker]: Un *bug tracker* è un programma sviluppato in maniera specifica per la gestione dei bug. Ad esempio, per i bug di Chromium (il software libero alla base di Chrome), \vediUrl{Chromium.org}{Chromium Bugs}{n.d.}{https://bugs.chromium.org/p/chromium/issues/list}.
+[^SoftwareLiberoPatch]: Il nome *patch* deriva dal fatto che sono "cucite" all'interno del software per "chiudere un buco" (eliminare un bug), oppure per "ampliare l'area" coperta dal software (aggiungere nuove funzionalità). Le *patch* possono essere inviate e discusse via mail, ed alcuni progetti, come il kernel Linux, accettano esclusivamente contribuzioni inviate in questo modo (\vediUrl{Comunità degli sviluppatori del kernel Linux}{Submitting patches: the essential guide to getting your code into the kernel}{n.d.}{https://www.kernel.org/doc/html/v4.17/process/submitting-patches.html}), ma le piattaforme che ospitano codice sorgente più recenti come GitHub offrono agli sviluppatori modalità più agevoli per visionare ed integrare i cambiamenti, detta *pull request* (richiesta di inclusione dei cambiamenti, "pull" significa "tirare" i cambiamenti fatti da altri nella propria copia del codice).
+
+I *fork* (bivi) del software libero avvengono quando invece di integrare le modifiche nel progetto originale, gli sviluppatori che le hanno proposte continuano a sviluppare una copia del progetto originale, in parallelo con gli sviluppatori originali. Il nome deriva dal fatto che ad un certo punto il codice sorgente inizia a divergere in due versioni separate.
+
+I motivi che possono portare ad un fork possono essere disaccordi tecnici (su quali modifiche includere), "politici" (se un gruppo di sviluppatori non è contento con il modo in cui il software è sviluppato),[^ForkMotivi] o perché il progetto originale è stato abbandonato dai suoi sviluppatori. La possibilità di creare *fork* permette al software libero di sopravvivere nel tempo, ed evitare il *maintainer hit by a bus problem* (problema dello sviluppatore colpito da un autobus).
+
+Se le persone fisiche e legali che sviluppano il software non-libero vengono a mancare per qualsiasi motivo, il software non sarà più aggiornato, e sarà sempre più difficile continuare a farlo funzionare.[^BackwardsCompatibility] Viceversa, il software libero può sempre essere studiato e modificato dalla comunità di utilizzatori, in modo che continui a funzionare correttamente nel tempo, nonostante l'evoluzione tecnologica.
+
+[^BackwardsCompatibility]: Ad esempio, si immagini di dover provare a far funzionare del software sviluppato per Windows XP sulle versioni più moderne di Windows. Windows offre la possibilità di eseguire i programmi in modalità di compatibilità con le versioni precedenti, ma se non è dato sapere esattamente come questo meccanismo funziona, è rischioso ed inopportuno usarlo per il software scientifico, dato che è necessario dimostrare in modo rigoroso il suo corretto funzionamento.
+[^ForkMotivi]: Ad esempio, se un software è sviluppato esclusivamente da una sola persona, che ha una visione personale del software estremamente specifica, e questo limita la possibilità di contribuire cambiamenti, è possibile fare un *fork* di quel software, in modo che la partecipazione allo sviluppo del *fork* sia più democratica.
+
+Un ulteriore vantaggio del software libero è che si presta ad essere *super partes*. È impossibile far prevalere gli interessi di una parte sugli interessi di un'altra, perché entrambe sono libere di apportare le modifiche che vogliono, senza danneggiare l'altra. Pertanto, il software libero nel tempo tende naturalmente a soddisfare tutti gli interessi di tutte le parti, tende a supportare quanti più formati e funzionalità possibili, mentre il software non-libero soddisfa solo gli interessi degli sviluppatori originali.
+
+Quanto detto finora riguarda in maniera specifica il software libero per l'informatica forense. Tuttavia, per sviluppare software è necessario usare altro software. L'attività di ricerca scientifica richiede software, per fare il *debug* degli strumenti di analisi sviluppati serve software, per compilare il codice sorgente serve software, per eseguire il software serve un sistema operativo&hellip;
+
+Idealmente, tutti i vari componenti che partecipano alla creazione ed esecuzione del software libero ad uso scientifico devono essere a loro volta liberi, in modo che i vantaggi tecnici e scientifici del software libero valgano anche per loro. Ogni elemento non-libero nella filiera produttiva del software ad uso scientifico rappresenta un elemento di cui non è dato sapere l'esatto funzionamento, o che non è possibile modificare e migliorare, e questo va a danno del software finale.
+
+----
 
 ## Licenze d'uso del software
 
@@ -498,4 +537,3 @@ si parla di software, in realtà ci si riferisce al **codice macchina**.
 
 - Per la ricerca scientifica e per la documentazione dei programmi
 - Licenze per le raccolte di dati
--->

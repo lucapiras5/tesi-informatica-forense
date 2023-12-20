@@ -13,7 +13,8 @@ inputs="prologo.md \
 # buone-pratiche-procedimento-penale.md \
 
 PandocPDF() {
-	pandoc -s --citeproc --bibliography citations.bib --from markdown+inline_notes -o Piras_Luca_Tesi_Informatica_Forense.pdf $inputs
+	pandoc -s --citeproc --bibliography citations.bib --from markdown+inline_notes --pdf-engine=lualatex \
+		-o Piras_Luca_Tesi_Informatica_Forense.pdf $inputs
 }
 
 PandocODT() {
