@@ -6,6 +6,9 @@
 - capitolo più tecnico
 
 ## Scelta di una licenza libera
+
+V. <https://www.gnu.org/licenses/license-recommendations.html>
+
 ## Scelta del linguaggio di programmazione
 
 ### Linguaggi di programmazione

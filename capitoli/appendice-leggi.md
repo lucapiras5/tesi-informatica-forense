@@ -21,7 +21,11 @@ L. 48/2008 -- [Legge 18 marzo 2008, n. 48, "Ratifica ed esecuzione della Convenz
 
 ## Trattati internazionali {-}
 
+Convenzione di Berna -- [Berne Convention](https://www.wipo.int/wipolex/en/text/283698)
+
 Convenzione di Budapest -- [Convention on Cybercrime (ETS No. 185)](https://rm.coe.int/1680081561)
+
+Trattato OMPI sul diritto d'autore -- [WIPO Copyright Treaty](https://www.wipo.int/wipolex/en/text/295166)
 
 ## Direttive europee {-}
 

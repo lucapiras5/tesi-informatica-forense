@@ -13,7 +13,8 @@
 
 - Debian/Arch, Crostini, Termux
 
-- Linux Libertine
+- Libertinus Serif
+- Source Code Pro
 
 - Github, Linode, Hetzner
 

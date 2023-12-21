@@ -515,14 +515,51 @@ Quanto detto finora riguarda in maniera specifica il software libero per l'infor
 
 Idealmente, tutti i vari componenti che partecipano alla creazione ed esecuzione del software libero ad uso scientifico devono essere a loro volta liberi, in modo che i vantaggi tecnici e scientifici del software libero valgano anche per loro. Ogni elemento non-libero nella filiera produttiva del software ad uso scientifico rappresenta un elemento di cui non è dato sapere l'esatto funzionamento, o che non è possibile modificare e migliorare, e questo va a danno del software finale.
 
-----
+## Licenze d'uso del software nell'ordinamento italiano
 
-## Licenze d'uso del software
+Di per sé, il codice non è intrinsecamente "software libero". Le libertà che distinguono il software libero dal software non-libero non trovano il loro fondamento nel codice stesso, ma principalmente[^SoftwareLiberoLibertà] dai termini con cui il codice viene offerto al pubblico. Secondo il trattato dell'OMPI sul diritto d'autore, il software è considerato un'opera letteraria (ai sensi dell'art. 2 della Convenzione di Berna), indipendentemente dal modo in cui sia espresso (art. 4) [@Blomqvist2014, 87--88].
 
-- Software è soggetto al copyright, è considerato un'opera scritta
-- Software proprietario: solo compilato, *open-source* ma solo *source-available*
-- Software libero: usa licenze libere, libertà secondo la FSF, licenze approvate dalla FSF e OSI, meglio evitare licenze ad-hoc
-- Inquadramento delle licenze nel sistema giuridico italiano
+[^SoftwareLiberoLibertà]: In verità, il codice sorgente può contenere limitazioni alle libertà. La libertà di eseguire il codice può essere limitata artificialmente, includendo dei controlli che fanno terminare l'esecuzione del programma a determinate condizioni. La libertà di studiare il codice può essere limitata usando tecniche di offuscamento (ma a quel punto è difficile parlare di "codice sorgente"). La libertà di apportare modifiche può essere limitata se si includono delle funzioni per controllare l'integrità del software. La libertà di ridistribuire il software può essere parzialmente limitata allo stesso modo con cui viene limitata l'esecuzione (non è possibile impedire la copia dei dati informatici di cui è composto il software). Tuttavia, queste limitazioni che tendono a rendere il programma non-libero hanno senso solo se il software viene offerto come codice macchina. Se viene offerto come codice sorgente, può essere sempre modificato per rimuoverle (salvo il caso dell'offuscamento, dove il codice deve essere essenzialmente riscritto).
+
+Il godimento ed esercizio dei diritti previsti dalla Convenzione di Berna non sono condizionati dall'esercizio di nessuna formalità (art. 5(2)). Pertanto, se qualcuno sviluppa del software, ne detiene automaticamente il diritto d'autore, e se pubblica il codice sorgente su internet, i diritti rimangono riservati.
+
+L'unica libertà esercitabile dai soggetti terzi è la possibilità di studiare il codice sorgente. Le altre libertà (eseguire il software, fare modifiche, ridistribuirlo) implicano la riproduzione dell'opera, che è un diritto esclusivo dell'autore (art. 9(1)). Per questo motivo, è necessario distribuire il software al pubblico secondo dei termini che permettano l'esercizio di tutte le libertà.
+
+Questi termini sono contenuti nel contratto di licenza d'uso del software. È un modello di origine statunitense, in cui il licenziante (generalmente, chi sviluppa il software) concede al licenziatario (chi ne ottiene una copia) vari diritti, a titolo gratuito o oneroso. Il diritto più fondamentale è la possibilità di usare il software.
+
+Il termine "licenza" è un calco linguistico dall'inglese *license*, in italiano le "licenze" propriamente dette riguardano la possibilità di sfruttare economicamente il diritto di privativa industriale (marchi e brevetti) [@Geraci2015, 7--8]. Nel seguito della trattazione, i termini "contratto di licenza d'uso" e "licenza" saranno usati in maniera intercambiabile.
+
+Il software non-libero generalmente usa licenze scritte *ad hoc*, che negano, o non concedono espressamente le libertà fondamentali necessarie per il software libero. Per quanto riguarda il software libero, è preferibile usare le licenze che sono state approvate dalla FSF (Free Software Foundation)[^LicenzeApprovateFSF] e dalla OSI (Open Source Initiative).[^LicenzeApprovateOSI] Le licenze approvate dalla FSF sono licenze che garantiscono le libertà fondamentali elencate in precedenza.
+
+Le licenze approvate dalla OSI sono licenze che sono conformi alla loro definizione specifica di *open-source* (sorgente aperto), che non significa semplicemente l'accesso al codice, ma prevede anche altri requisiti.[^DefinizioneOpenSource] Per semplicità, in seguito si parlerà in maniera più generica di "licenze d'uso a codice disponibile" [@Geraci2015, 56].
+
+[^LicenzeApprovateFSF]: \VediUrl{Free Software Foundation}{Various Licenses and Comments about Them}{2023}{https://www.gnu.org/licenses/license-list.html}.
+[^LicenzeApprovateOSI]: \VediUrl{Open Source Initiative}{OSI Approved Licenses}{n.d.}{https://opensource.org/licenses/}.
+[^DefinizioneOpenSource]: \VediUrl{Open Source Initiative}{The Open Source Definition}{2023}{https://opensource.org/osd/}.
+
+È fortemente sconsigliato scrivere una licenza a codice disponibile *ad hoc*, per vari motivi. In primo luogo, una licenza è un contratto, e quindi deve essere redatta da un esperto in materie legali. 
+
+Le licenze a codice disponibili più famose sono state usate in procedimenti giudiziari, ed esistono precedenti che ne affermano la loro conformità all'ordinamento giuridico, e alla possibilità di farle valere in giudizio.[^PrecedentiLicenzeLibere] Una licenza inedita non avrebbe questo vantaggio.
+
+[^PrecedentiLicenzeLibere]: Per un riassunto di vari casi, \vediUrl{AA. VV.}{Have there been any lawsuits involving breach of open source licences?}{2021}{https://opensource.stackexchange.com/questions/11452/have-there-been-any-lawsuits-involving-breach-of-open-source-licences}.
+
+Ancora, uno dei vantaggi più importanti del software libero è la possibilità di condividere il codice sorgente fra più progetti, ed includere codice già esistente nel proprio progetto. A questo fine, è necessario verificare che le varie licenze con cui i vari componenti sono distribuiti siano compatibili fra di loro, ossia, che i termini delle varie licenze non si contraddicano fra di loro. Questa analisi è stata già svolta per le licenze a codice disponibile più utilizzate, ma andrebbe fatta caso per caso se ciascuno usasse una propria licenza [@Stallman-License-compatibility-and-relicensing].
+
+Il problema più importante è stabilire l'inquadramento delle licenze a codice disponibile all'interno dell'ordinamento giuridico italiano. La legge sul diritto d'autore permette la trasmissione dei vari diritti che spettano agli autori ad altri soggetti, all'art. 107:
+
+>  I diritti di utilizzazioni spettanti agli autori delle opere dell'ingegno, nonché i diritti connessi aventi carattere patrimoniale, possono essere acquistati, alienati o trasmessi in tutti i modi e forme consentiti dalla legge \Omissis{}
+
+Il contratto con cui i diritti vengono trasmessi può essere anche un contratto atipico (art. 1322 c.c.) [@Geraci2015, 16], e la trasmissione deve essere provata per iscritto (art. 110). Nel tempo sono stati dati vari inquadramenti del contratto di licenza d'uso come all'interno delle fattispecie di contratto tipiche e già regolate dal codice civile. Ad esempio, è stato qualificato come un contratto di locazione che ha ad oggetto l'uso del software [@Geraci2015, 21], oppure come un contratto di compravendita che ha per oggetto la trasmissione del diritto di usare il software [@Geraci2015, 23].
+
+Mentre è teoricamente possibile far rientrare l'uso del software all'interno dell'oggetto di quei contratti tipici, rimane il problema delle altre caratteristiche dei contratti, che non erano stati originariamente pensati per il software. Ancora, locazione e compravendita riguardano solo l'uso del software, mentre il software libero fornisce più diritti all'utente, e locazione e compravendita sono contratti a titolo oneroso, mentre il software libero di solito viene distribuito gratuitamente. Pertanto, è preferibile inquadrare i contratti di licenza d'uso a codice disponibile come contratti atipici.
+
+I rapporti giuridici che formano l'oggetto del contratto devono essere patrimoniali, ossia, devono poter avere una valutazione patrimoniale [@Galgano2013, 228]. I diritti che sono oggetto di trasmissione rientrano sicuramente in questa categoria. I contratti possono essere a titolo gratuito, ossia, la prestazione di una delle parti non richiede una controprestazione dall'altra parte [@Galgano2013, 248].
+
+In verità, le licenze possono richiedere delle controprestazioni a chi riceve il codice, ma generalmente si tratta di obblighi di non fare che hanno natura più morale che patrimoniale, come "non cancellare il nome degli autori", "non rimuovere la licenza", e nel caso delle licenze *copyleft*, "non distribuire le versioni modificate del codice con una licenza diversa".
+
+Infine, è possibile concludere contratti atipici, purché siano finalizzati a realizzare "interessi meritevoli di tutela secondo l'ordinamento giuridico" (art. 1322 co. 2 c.c.). Questo significa che gli interessi perseguiti devono essere leciti, ma anche avere una causa. Per gli atti che trasferiscono diritti senza corrispettivo, la *causa donandi* deve essere resa esplicita, a pena di nullità [@Galgano2013, 248--250]. 
+
+L'individuazione della causa dei contratti di licenza d'uso a codice disponibile che sono conclusi a titolo gratuito potrebbe essere l'unico problema per il loro riconoscimento. Tuttavia, è possibile ritenere che la loro causa sia la liberalità. La liberalità è caratterizzata dal fatto che soddisfa un interesse non patrimoniale, non viene fatta perché "conviene" dal punto di vista economico [@Galgano2013, 924--925]. Questo è sicuramente il caso del software libero, che è ispirato da un modello fortemente idealistico, e non interessato a fini di risparmio economico.
 
 ## Licenze copyleft (GPL)
 
