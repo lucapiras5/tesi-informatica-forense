@@ -480,7 +480,7 @@ La ridistribuzione deve sempre includere una copia del codice sorgente, anche se
 
 Il software non-libero invece generalmente nega la possibilità di ridistribuirlo, o esplicitamente, con i termini contrattuali con cui viene venduto o fornito, o implicitamente, perché i termini contrattuali non concedono questo diritto a chi ne ottiene una copia.
 
-### Vantaggi del software libero per l'informatica forense
+## Vantaggi del software libero per l'informatica forense
 
 Riassumendo, il software libero è caratterizzato dalla possibilità di essere eseguito, studiato, modificato e ridistribuito. Tutte queste facoltà devono poter essere esercitate liberamente, senza vincoli o condizioni.
 
@@ -514,6 +514,65 @@ Un ulteriore vantaggio del software libero è che si presta ad essere *super par
 Quanto detto finora riguarda in maniera specifica il software libero per l'informatica forense. Tuttavia, per sviluppare software è necessario usare altro software. L'attività di ricerca scientifica richiede software, per fare il *debug* degli strumenti di analisi sviluppati serve software, per compilare il codice sorgente serve software, per eseguire il software serve un sistema operativo&hellip;
 
 Idealmente, tutti i vari componenti che partecipano alla creazione ed esecuzione del software libero ad uso scientifico devono essere a loro volta liberi, in modo che i vantaggi tecnici e scientifici del software libero valgano anche per loro. Ogni elemento non-libero nella filiera produttiva del software ad uso scientifico rappresenta un elemento di cui non è dato sapere l'esatto funzionamento, o che non è possibile modificare e migliorare, e questo va a danno del software finale.
+
+## Limiti del software libero, e soluzioni
+
+### Finanziamenti
+
+Nonostante i vantaggi del software libero, il software non-libero mantiene comunque alcuni vantaggi.
+
+Il primo vantaggio è la quantità di capitale disponibile per lo sviluppo del software non-libero. Dato che viene offerto a pagamento, e dato che il software per l'analisi forense tende ad essere un mercato ristretto, con pochi sviluppatori, il costo per una singola licenza di un programma è nell'ordine delle centinaia o migliaia di euro. Questo permette di coprire i costi di sviluppo e reinvestire nel miglioramento del software, mentre il software libero è distribuito gratuitamente, e quindi non produce entrate.
+
+Tuttavia, il fatto che il software libero è offerto gratuitamente non significa che debba essere anche sviluppato gratuitamente. È possibile finanziare il suo sviluppo in vari modi:
+
+- Mediante donazioni occasionali o ricorrenti,^[Ad esempio, RPCS3, il progetto per l'emulazione della console PlayStation 3, ottiene circa 2.000 euro al mese da più di 500 donatori. V. <https://www.patreon.com/nekotekina/about>.] Gli sviluppatori possono incentivare le donazioni promettendo l'implementazione di certe funzionalità al raggiungimento di certe somme.
+- Offrendo agli sviluppatori una somma di denaro, per dare maggiore priorità allo sviluppo o aggiunta di una certa funzionalità. A differenza della donazione, questo è essenzialmente un contratto d'opera. Per garantire che il software rimanga libero, e i miglioramenti vadano a beneficio di tutti, è importante specificare che il codice scritto sarà fornito secondo gli stessi termini del programma principale.
+- Vendendo eccezioni alla licenza. Ad esempio, la licenza GPL richiede la pubblicazione del codice sorgente, e che le versioni modificate del software siano a loro volta rilasciate con la licenza GPL. Queste due condizioni garantiscono che il software rimanga sempre libero, ma ostacolano il suo uso all'interno di un software non-libero, per cui non si vuole rendere disponibile il codice sorgente. Tuttavia, è possibile vendere delle eccezioni alla GPL, nel senso di fornire lo stesso codice con una licenza diversa, dietro il pagamento di una somma di denaro [@Stallman-Selling-exceptions-to-the-GNU-GPL].
+- Mediante un contratto di sponsorizzazione. Spesso le grandi imprese usano il software libero per svolgere la loro attività. La sponsorizzazione è un modo per ripagare gli sviluppatori, e per gli sviluppatori, è un modo per dimostrare che il loro software è sufficientemente capace e affidabile per lo svolgimento di attività commerciali.^[Ad esempio, il programma *curl* e la libreria associata *libcurl* offrono funzioni per la trasmissione di dati su un enorme numero di protocolli internet, e sono utilizzati in software e dispositivi di ogni genere. V <https://curl.se/>, e per gli sponsor del progetto, v. <https://curl.se/sponsors.html>.]
+- Creando un'impresa che sviluppa e rende disponibile al pubblico software libero, ma copre i costi di sviluppo mediante attività di assistenza tecnica, formazione, *consulting*&hellip;[^EsempioMySQL]
+
+[^EsempioMySQL]: Ad esempio, MySQL è stato originariamente sviluppato da una società a responsabilità limitata (MySQL AB, successivamente la società è stata acquisita, e attualmente MySQL è sviluppato da Oracle), ma è sempre stato software libero, distribuito secondo i termini della licenza GPL. La compagnia guadagnava vendendo assistenza tecnica con il prodotto, oppure vendendo copie del codice con una licenza diversa rispetto alla GPL. \VediUrl{Oracle}{What is MySQL?}{2023}{https://dev.mysql.com/doc/refman/8.0/en/what-is-mysql.html}, sez. "MySQL software is Open Source."
+
+In generale, il software non-libero che viene sviluppato ricercando solo lo stretto profitto è anche soggetto a dei *perverse incentives*,[^DefinizionePerverseIncentives] degli incentivi "perversi" e controproducenti. Per massimizzare il profitto è necessario:
+
+- Ridurre i tempi e costi di sviluppo. Il software sviluppato velocemente accumula debito tecnico,[^DefinizioneDebitoTecnico] contiene più bug, e tende a privilegiare la quantità di funzioni, rispetto alla qualità dei risultati.
+- Massimizzare le vendite. Dato che il codice sorgente e lo sviluppo del software rimangono nascosti, e non c'è trasparenza, è facile nascondere o minimizzare i difetti del software, in modo da farlo sembrare migliore di quanto effettivamente sia.
+
+[^DefinizionePerverseIncentives]: Il migliore esempio di un *perverse incentive* è il *cobra effect* (effetto cobra). Si racconta che il governatore britannico in India iniziò ad offrire denaro a chiunque gli portasse i cadaveri di serpenti cobra, con l'intenzione di ridurre il loro numero. Invece di andare a caccia di cobra selvaggi, le persone iniziarono ad allevare i cobra in cattività, così da guadagnare più facilmente. Quando il governatore scoprì gli allevamenti di cobra, non offrì più denaro, e le persone rilasciarono i cobra in natura, poiché  ormai non valevano più nulla, aumentando ancora di più il loro numero.
+[^DefinizioneDebitoTecnico]: Il *technical debt* (debito tecnico) consiste nel costo (in termini di produttività persa) che si accumula quando si va al risparmio, e si fa il minimo indispensabile che funziona, senza pensare alla estensibilità e manutenzione futura del codice. Esistono numerose cause che portano al *technical debt*, come la duplicazione del codice, non scrivere commenti, eseguire pochi test di funzionamento, non semplificare le parti che contengono codice complesso, non usare una guida allo stile per il codice&hellip; \VediUrl{J.L. Letouzey, D. Whelan *et al.*}{Introduction to the Technical Debt Concept}{n.d.}{https://www.agilealliance.org/wp-content/uploads/2016/05/IntroductiontotheTechnicalDebtConcept-V-02.pdf}.
+
+La combinazione di questi due fattori è disastrosa per lo sviluppo di software scientifico, che invece dipende interamente dalla sua aderenza alla ricerca scientifica, e al suo corretto funzionamento. Il problema diventa insanabile, perché non è nemmeno possibile prendere visione del codice, e suggerire modifiche per migliorarlo. Viceversa, la creazione del software libero è generalmente slegata dalla ricerca del profitto, è ispirata alla creazione di software utile per sé e per gli altri. Inoltre, la possibilità di condividere e contribuire al codice permette il suo continuo miglioramento.
+
+### Segreto industriale e brevetti
+
+Un altro problema in cui il software libero può incorrere sono l'implementazione di algoritmi protetti dal segreto industriale o dai brevetti.
+
+Per quanto riguarda il segreto industriale, un esempio è dato dal *filesystem* NTFS, usato di default su Windows. La specifica tecnica del formato non è stata rilasciata al pubblico, ma è di grande interesse per l'informatica forense. Il *filesystem* è il formato con cui i file ed i relativi metadati (dati relativi ai file, come il nome, permessi per gli utenti, data di creazione, ultima data di modifica e accesso&hellip;) sono salvati su disco. Conoscere queste informazioni è estremamente utile, perché permette di determinare se i file sono stati manomessi, come i file cancellati vengono trattati&hellip;
+
+La Microsoft potrebbe condividere queste informazioni in maniera confidenziale con gli sviluppatori di software per l'analisi forense non-libero, ma non avrebbe nessun incentivo a condividerle con gli sviluppatori di software libero. In entrambi i casi, si avrebbe una trasposizione della specifica tecnica nel codice sorgente per il software. Nel caso del software libero, il codice sorgente sarebbe visibile al pubblico, e quindi, la specificazione tecnica sarebbe comunque resa pubblica.
+
+In ogni caso, la legge sul diritto d'autore ammette la possibilità di *reverse engineering*, purché il file sia l'interoperabilità. La possibilità di analizzare un certo formato a fini scientifici rientra sicuramente in questo fine.
+
+Il secondo problema è l'implementazione di algoritmi e procedure protette da brevetti. In questo caso, vari progetti non hanno avuto problemi distribuendo solamente il codice sorgente, e non la versione compilata. In fondo, il brevetto è "effettivamente" violato solo quando il software viene eseguito. Il codice può essere visto come una spiegazione estremamente dettagliata del brevetto, ma una semplice discussione del brevetto non rappresenta la sua applicazione.
+
+Ad esempio, la tecnica di compressione audio MP3 è stata protetta da un brevetto fino al 2017.[^ScadenzaBrevettoMP3] Il progetto *LAME* per la codifica e decodifica di file MP3 è sempre stato distribuito (e continua ad essere distribuito) esclusivamente come codice sorgente, e non come file binario.[^ProgettoLAME]
+
+[^ScadenzaBrevettoMP3]: \VediUrl{A. Orlowski}{MP3 'died' and nobody noticed: Key patents expire on golden oldie tech}{2017}{https://www.theregister.com/2017/05/16/mp3_dies_nobody_noticed/}.
+[^ProgettoLAME]: V. <https://lame.sourceforge.io/lame-faq.en.php>, sez. "Tell me the history of LAME."
+
+### Difficoltà d'uso
+
+Un ulteriore problema, tendenzialmente legato alla mancanza di fondi per lo sviluppo, è che il software libero tende ad essere "più difficile da utilizzare" rispetto al software non-libero, a causa di mancanza di documentazione, o mancanza di interfacce grafiche, e quindi c'è un ostacolo aggiuntivo al suo uso. Queste obiezioni possono essere superate.
+
+In primo luogo, tutto il software tecnico è difficile da utilizzare, ed è comunque necessario imparare ad usarlo. Anzi, si potrebbe argomentare che se un software è particolarmente intuitivo, molto probabilmente sta nascondendo molte opzioni e informazioni all'utilizzatore, che sono fondamentali per acquisire e valutare correttamente i dati. Pertanto, lo sforzo necessario per imparare ad usare il software libero è paragonabile, e non sproporzionato, rispetto a quello necessario per usare il software non-libero. Ancora, la mancanza di documentazione è generalmente controbilanciata dalla possibilità di interagire con la comunità di utenti del software, e la possibilità di consultare il codice sorgente.
+
+Anche la mancanza di interfacce grafiche non è uno svantaggio, è semplicemente un paradigma diverso, e non necessariamente inferiore. Anzi, l'uso di programmi a linea di comando permette di automatizzare le operazioni con facilità. L'analisi diventa completamente riproducibile, perché consiste semplicemente in una serie di comandi da eseguire, raccolti all'interno di un file di testo.
+
+### Casi in cui è impossibile usare il software libero
+
+L'unico caso in cui non è assolutamente possibile, ma anzi, sarebbe controproducente usare il software libero, è nell'ambito dei captatori. 
+
+----
 
 ## Licenze d'uso del software nell'ordinamento italiano
 
@@ -563,6 +622,7 @@ L'individuazione della causa dei contratti di licenza d'uso a codice disponibile
 
 ## Licenze copyleft (GPL)
 
+- Nome si riferisce al fatto che usa il copyright per garantire la massima distribuzione del codice
 - Opere derivate devono usare la stessa licenza, e distribuire il codice sorgente
 - Ideale per il software scientifico
 
