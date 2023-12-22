@@ -25,8 +25,4 @@ Convenzione di Berna -- [Berne Convention](https://www.wipo.int/wipolex/en/text/
 
 Convenzione di Budapest -- [Convention on Cybercrime (ETS No. 185)](https://rm.coe.int/1680081561)
 
-Trattato OMPI sul diritto d'autore -- [WIPO Copyright Treaty](https://www.wipo.int/wipolex/en/text/295166)
-
-## Direttive europee {-}
-
-- Direttiva 2009/24 --- [Direttiva 2009/24/CE del Parlamento europeo e del Consiglio, del 23 aprile 2009, relativa alla tutela giuridica dei programmi per elaboratore.](http://data.europa.eu/eli/dir/2009/24/oj/ita)
+*WIPO Copyright Treaty* -- [WIPO Copyright Treaty](https://www.wipo.int/wipolex/en/text/295166)

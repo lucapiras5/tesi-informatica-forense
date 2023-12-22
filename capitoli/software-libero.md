@@ -100,7 +100,7 @@ Un problema più grave riguarda il fatto che le funzioni di hash potrebbero esse
 
 Anche questo tipo di attacco ha una rilevanza pratica limitata. Il problema fondamentale è che il suo funzionamento richiede di aggiungere un "suffisso" creato ad arte, dopo i dati originali. Questo suffisso permette di "manipolare" la funzione di hash, in modo che produca in uscita il valore desiderato [@Leurent2020, 1839], ma presenta un problema significativo [@Stevens2012, 341]:
 
-> Given current methods, collisions require appendages consisting of unpredictable and mostly uncontrollable bitstrings. These must be hidden in the usually heavily formatted application data structure without raising suspicion.[^ProblemaChosenPrefix]
+> *Given current methods, collisions require appendages consisting of unpredictable and mostly uncontrollable bitstrings. These must be hidden in the usually heavily formatted application data structure without raising suspicion.*[^ProblemaChosenPrefix]
 
 [^ProblemaChosenPrefix]: "Dati i metodi attuali, le collisioni richiedono delle appendici che consistono di dati imprevedibili, e difficilmente controllabili. Questi dati devono essere nascosti nelle strutture di dati dell'applicazione, che solitamente accettano valori ristretti, senza sollevare sospetti."
 
@@ -337,7 +337,7 @@ Il software scientifico presenta anche delle esigenze di natura scientifica, nel
 Inoltre, nella sentenza Knox,[^SentenzaKnox] si prevede che la valutazione della ricerca scientifica deve seguire il principio del contraddittorio.[^CassPen-1801-2022-punto-4.1]
 
 [^SentenzaKnox]: Cass. pen., n. 36080/2015.
-[^CassPen-1801-2022-punto-4.1]: Cass. pen., n. 1801/2022, punto 4.1 contiene le citazioni delle sentenze Cozzini e Knox citate.
+[^CassPen-1801-2022-punto-4.1]: Cass. pen., n. 1801/2022, punto 4.1 contiene le citazioni delle sentenze Cozzini e Knox citate. \VediUrl{Cassazione Penale, Sez. V}{Sentenza n. 1801 del 2022}{2022}{https://www.italgiure.giustizia.it/xway/application/nif/clean/hc.dll?verbo=attach&db=snpen&id=./20220117/snpen@s50@a2022@n01801@tS.clean.pdf}.
 
 L'obiettivo dei criteri Daubert è di evitare che nel processo entri della *junk science* (pseudoscienza, o teorie scientifiche non adeguatamente comprovate). Pertanto, tutti i requisiti per la "buona scienza" sono requisiti che interessano anche da un punto di vista processuale.
 
@@ -402,7 +402,7 @@ Un software che non può essere eseguito sembrerebbe un ossimoro, ma è una situ
 
 Il programma in sé può sempre essere copiato, è difficile creare misure tecniche che impediscano in maniera assoluta la copia dei dati. Per rimediare a questo problema, il software include misure di protezione che controllano la presenza di una licenza valida (ad esempio, controllando la presenza di *dongle* USB che contengono una licenza in formato digitale, e/o contattando i server dello sviluppatore per verificare che l'utente è registrato ed autorizzato ad usare il programma&hellip;) ed in caso contrario, fermano l'esecuzione del programma.
 
-L'art. 11 del WIPO Copyright Treaty regola l'uso di misure tecnologiche per questo scopo [@Blomqvist2014, 205]:
+L'art. 11 del *WIPO Copyright Treaty* regola l'uso di misure tecnologiche per questo scopo [@Blomqvist2014, 205]:
 
 > *Contracting Parties shall provide adequate legal protection and effective legal remedies against the circumvention of effective technological measures that are used by authors in connection with the exercise of their rights under this Treaty or the Berne Convention and that restrict acts, in respect of their works, which are not authorized by the authors concerned or permitted by law.*
 
@@ -637,7 +637,7 @@ Il captatore si trova in una situazione paradossale. Può essere necessario usar
 
 ## Licenze d'uso del software nell'ordinamento italiano
 
-Di per sé, il codice non è intrinsecamente "software libero". Le libertà che distinguono il software libero dal software non-libero non trovano il loro fondamento nel codice stesso, ma principalmente[^SoftwareLiberoLibertà] dai termini con cui il codice viene offerto al pubblico. Secondo il trattato dell'OMPI sul diritto d'autore, il software è considerato un'opera letteraria (ai sensi dell'art. 2 della Convenzione di Berna), indipendentemente dal modo in cui sia espresso (art. 4) [@Blomqvist2014, 87--88].
+Di per sé, il codice non è intrinsecamente "software libero". Le libertà che distinguono il software libero dal software non-libero non trovano il loro fondamento nel codice stesso, ma principalmente[^SoftwareLiberoLibertà] dai termini con cui il codice viene offerto al pubblico. Secondo il *WIPO Copyright Treaty*, il software è considerato un'opera letteraria (ai sensi dell'art. 2 della Convenzione di Berna), indipendentemente dal modo in cui sia espresso (art. 4) [@Blomqvist2014, 87--88].
 
 [^SoftwareLiberoLibertà]: In verità, il codice sorgente può contenere limitazioni alle libertà. La libertà di eseguire il codice può essere limitata artificialmente, includendo dei controlli che fanno terminare l'esecuzione del programma a determinate condizioni. La libertà di studiare il codice può essere limitata usando tecniche di offuscamento (ma a quel punto è difficile parlare di "codice sorgente"). La libertà di apportare modifiche può essere limitata se si includono delle funzioni per controllare l'integrità del software. La libertà di ridistribuire il software può essere parzialmente limitata allo stesso modo con cui viene limitata l'esecuzione (non è possibile impedire la copia dei dati informatici di cui è composto il software). Tuttavia, queste limitazioni che tendono a rendere il programma non-libero hanno senso solo se il software viene offerto come codice macchina. Se viene offerto come codice sorgente, può essere sempre modificato per rimuoverle (salvo il caso dell'offuscamento, dove il codice deve essere essenzialmente riscritto).
 
