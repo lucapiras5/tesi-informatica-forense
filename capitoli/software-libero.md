@@ -379,9 +379,7 @@ In questo modo, si garantisce che l'informatica forense, il software sviluppato 
 
 [^ContraddittorioSensoLato]: Il principio del contraddittorio qui va inteso in senso lato e generico, e non nel senso tecnico e specifico che assume all'interno del processo penale.
 
-## Software libero
-
-### Quattro libertà fondamentali
+## Definizione di software libero
 
 Il modo migliore per garantire tutte le esigenze che sono state elencate in precedenza è di usare il software libero, ossia, il software che viene distribuito al pubblico in maniera da garantire quattro libertà fondamentali [@FSF-What-is-free-software]:
 
@@ -392,7 +390,7 @@ Il modo migliore per garantire tutte le esigenze che sono state elencate in prec
 
 In mancanza di anche solo una di queste libertà, si parla di software non-libero.
 
-### Libertà di eseguire il programma
+## Libertà di eseguire il programma
 
 La prima libertà è la libertà più fondamentale di tutte, ed è importante che sia indicata espressamente. Viene spiegata in questo modo [@FSF-What-is-free-software]:
 
@@ -424,7 +422,9 @@ In ogni caso, anche se la legge prevedesse esplicitamente questa possibilità, �
 
 Viceversa, il software libero evita tutti i problemi sopra indicati. Se si è in possesso di una copia del software, non ci sono ulteriori requisiti, restrizioni, né servono modifiche per poterlo eseguire.
 
-### Libertà di studiare e modificare il programma
+## Libertà di studiare e modificare il programma
+
+### Accesso al codice sorgente
 
 Le due libertà sono strettamente legate, perché è difficile modificare il programma se non si ha accesso al codice sorgente. Il codice sorgente viene definito in maniera estremamente generica come [@FSF-What-is-free-software]:
 
@@ -446,6 +446,8 @@ Se il codice sorgente viene fornito, ma si vieta la possibilità di modificarlo 
 
 [^TarsnapVersioneModificata]: \VediUrl{Tarsnap.com}{Tarsnap Terms and Conditions}{n.d.}{https://www.tarsnap.com/legal.html}. Il motivo per cui le modifiche non sono permesse è per garantire che il servizio costi il meno possibile. \VediUrl{Tarsnap.com}{Whys of Tarsnap Terms and Conditions}{n.d.}{https://www.tarsnap.com/legal-why.html\#UNMODIFIEDCLIENT}.
 
+### Reverse-engineering
+
 Normalmente il software non-libero non è distribuito con il codice sorgente, si riceve solo una copia del codice macchina, già compilato e pronto per essere eseguito. La l.d.a. afferma espressamente il diritto di poter studiare il funzionamento del software, anche se proprietario, e sanziona le clausole contrattuali che vietano questa possibilità con la nullità (art. 64-*ter*, co. 3):
 
 > Chi ha il diritto di usare una copia del programma per elaboratore può, senza l'autorizzazione del titolare dei diritti, osservare, studiare o sottoporre a prova il funzionamento del programma, allo scopo di determinare le idee ed i principi su cui è basato ogni elemento del programma stesso \Omissis{} Le clausole contrattuali pattuite in violazione del presente comma e del comma 2 sono nulle.
@@ -455,9 +457,7 @@ Inoltre, la l.d.a. ammette la possibilità di eseguire il *reverse-engineering* 
 > L'autorizzazione del titolare dei diritti non è richiesta qualora la riproduzione del codice del programma di elaboratore e la traduzione della sua forma ai sensi dell'art. 64-bis, lettere a) e b), compiute al fine di modificare la forma del codice, siano indispensabili per ottenere le informazioni necessarie per conseguire l'interoperabilità, con altri programmi, di un programma per elaboratore creato autonomamente purché siano soddisfatte le seguenti condizioni:
 >
 > a) le predette attività siano eseguite dal licenziatario o da altri che abbia il diritto di usare una copia del programma oppure, per loro conto, da chi è autorizzato a tal fine;
-> 
 > b) le informazioni necessarie per conseguire l'interoperabilità non siano già facilmente e rapidamente accessibili ai soggetti indicati alla lettera a);
-> 
 > c) le predette attività siano limitate alle parti del programma originale necessarie per conseguire l'interoperabilità.
 
 L'interoperabilità è definita come la "[c]apacità di due o più sistemi, reti, mezzi, applicazioni o componenti, di scambiare informazioni tra loro e di essere poi in grado di utilizzarle."[^DefinizioneInteroperabilità] Il software di analisi che viene usato nell'informatica forense rientra a pieno titolo all'interno di questa definizione, perché è interessato ad estrarre ed utilizzare informazioni da sistemi, reti, e altre applicazioni.
@@ -470,7 +470,37 @@ L'obiettivo della norma è di prevenire la concorrenza sleale (mediante la creaz
 
 Infine, il co. 3 sanziona le clausole contrattuali che vietano il reverse-engineering (se eseguito con la specifica finalità dell'interoperabilità) con la nullità.
 
-### Ridistribuire copie del software
+### Giurisprudenza amministrativa sulle decisioni algoritmiche
+
+L'importanza di conoscere il funzionamento del software e degli algoritmi che vengono usati per prendere una decisione sono stati evidenziati dalla giurisprudenza amministrativa,^[\VediUrl{TAR Campania, Napoli, Sez. III}{Sent. 14 novembre 2022, n. 7003}{2022}{https://portali.giustizia-amministrativa.it/portale/pages/istituzionale/visualizza?nodeRef=&schema=tar_na&nrg=202105119&nomeFile=202207003_01.html&subDir=Provvedimenti}.] ma i principi sono gli stessi per qualsiasi tipo di decisione:
+
+> Tra le indicate garanzie assume primaria importanza il rispetto del principio di trasparenza, che, com'è noto, trova un immediato corollario nell'obbligo di motivazione degli atti amministrativi ex art. 3 l. 241/90 e che non può essere soppresso né ridotto sol per la presenza di un algoritmo all'interno dell'iter procedimentale.
+>
+> Invero, il fatto che il provvedimento venga emanato sulla scorta di una complessa operazione di calcolo produce l'opposto effetto di rafforzare, per certi versi, l'obbligo motivazionale in capo all'Amministrazione, la quale dovrà rendere la propria decisione finale non solo conoscibile, ma anche comprensibile.
+>
+> Occorre spostare l'attenzione a monte, sulla costruzione dell'algoritmo; su come i parametri dell'algoritmo vengono scelti (operazione di per sé soggettiva), e come si combinano tra loro; e ancor prima su come i termini assunti quale parametro siano stati realizzati.
+>
+> La questione dell'individuazione dei termini da assumersi per la costruzione dell'algoritmo indica il momento in cui si opera la scelta caratterizzata da discrezionalità, sì che a queste fasi preliminari alla nascita dell'algoritmo devono essere anticipate le garanzie che devono accompagnare ogni scelta dell'amministrazione.
+> 
+> Fondamentale è a tal fine la garanzia di trasparenza, volte ad assicurare la conoscibilità della costruzione dell'algoritmo, anche, eventualmente, in funzione del sindacato sull'atto adottato sulla base dello stesso: "la decisione amministrativa automatizzata impone al giudice di valutare in primo luogo la correttezza del processo informatico in tutte le sue componenti: dalla sua costruzione, all'inserimento dei dati, alla loro validità, alla loro gestione" (cfr. Cons. St., sez. VI, n. 2270/2019).
+> 
+> In caso di decisione fondata su algoritmo, si richiede pertanto che sia assicurata una "declinazione rafforzata del principio di trasparenza", intesa come "piena conoscibilità della regola espressa in un linguaggio differente da quello giuridico" (Cons. St., sez. VI, n. 2270/2019).
+
+Il software libero è pienamente in grado di soddisfare il principio di trasparenza, il giudice può (e deve) spiegare come il software funziona, e perché l'algoritmo usato è utile ai fini della decisione. Viceversa, nel caso di software non-libero, per cui non è possibile conoscere il suo funzionamento, la decisione viene rimessa ad una "scatola nera", di cui non si conosce il funzionamento, con evidenti ricadute sul diritto alla difesa, ed il diritto ad un giusto processo [@Maldonato2019, 408--410].
+
+La sentenza evidenza inoltre due diritti di origine europea.
+
+Il principio di conoscibilità dà il diritto "sia a conoscere l'esistenza di processi decisionali automatizzati che lo riguardino, sia a ricevere informazioni significative sulla logica utilizzata, così come previsto dagli artt. 13 e 14 del GDPR (Regolamento 2016/679) che risultano formulati in maniera generale e, perciò, applicabili sia a decisioni prese da soggetti privati che da soggetti pubblici (cfr. Cons. St. s. 8472/2019)."
+
+Il principio di "non esclusività della decisione algoritmica (art. 22 GDPR) \Omissis{} attribuisce al destinatario degli effetti giuridici di una decisione automatizzata il diritto a che tale decisione non sia basata unicamente sul processo automatizzato, affidando al funzionario responsabile il compito di controllare, e quindi validare o, al contrario, smentire la decisione automatica."
+
+Ad analogo risultato è giunta la Corte Suprema del Winsconsin nel caso Loomis. Loomis aveva completato un questionario sul rischio di recidiva che usava un algoritmo proprietario e segreto, chiamato COMPAS, e sulla base del risultato di questo questionario, la corte "aveva condannato Loomis a sei anni di reclusione e cinque anni di *extended supervision*". Loomis impugnò questa sentenza, sostenendo che l'uso dell'algoritmo lo aveva privato del suo diritto ad avere una sentenza individualizzata, e nel 2016, la Corte Suprema affermò che l'algoritmo non può essere l'unico strumento usato per fondare una pronuncia di condanna [@Maldonato2019, 404].
+
+Per quanto riguarda il principio di conoscibilità, se si ha il diritto di conoscere in maniera dettagliata come funzionano i processi decisionali automatizzati che riguardano una persona, a maggior ragione si ha il diritto di conoscere il funzionamento dell'algoritmo usato per fondare o determinare una condanna, l'applicazione di misure di sicurezza, e altre norme processuali (art. 187 c.p.p.).
+
+Per quanto riguarda il principio di non-esclusività, il giudice non può accettare in maniera acritica il risultato prodotto dal software di analisi. Anzi, più la decisione si fonda su quel risultato, e più il giudice deve dimostrare l'affidabilità di quel risultato.
+
+## Libertà di ridistribuire copie modificate e non del software
 
 Le ultime due libertà riguardano la possibilità di ridistribuire il software, "*either with or without modifications, either gratis or charging a fee for distribution, to anyone anywhere*" (con o senza modifiche, gratuitamente o addebitando il costo della distribuzione, a chiunque, e dovunque) [@FSF-What-is-free-software].
 
@@ -539,7 +569,7 @@ In generale, il software non-libero che viene sviluppato ricercando solo lo stre
 - Massimizzare le vendite. Dato che il codice sorgente e lo sviluppo del software rimangono nascosti, e non c'è trasparenza, è facile nascondere o minimizzare i difetti del software, in modo da farlo sembrare migliore di quanto effettivamente sia.
 
 [^DefinizionePerverseIncentives]: Il migliore esempio di un *perverse incentive* è il *cobra effect* (effetto cobra). Si racconta che il governatore britannico in India iniziò ad offrire denaro a chiunque gli portasse i cadaveri di serpenti cobra, con l'intenzione di ridurre il loro numero. Invece di andare a caccia di cobra selvaggi, le persone iniziarono ad allevare i cobra in cattività, così da guadagnare più facilmente. Quando il governatore scoprì gli allevamenti di cobra, non offrì più denaro, e le persone rilasciarono i cobra in natura, poiché  ormai non valevano più nulla, aumentando ancora di più il loro numero.
-[^DefinizioneDebitoTecnico]: Il *technical debt* (debito tecnico) consiste nel costo (in termini di produttività persa) che si accumula quando si va al risparmio, e si fa il minimo indispensabile che funziona, senza pensare alla estensibilità e manutenzione futura del codice. Esistono numerose cause che portano al *technical debt*, come la duplicazione del codice, non scrivere commenti, eseguire pochi test di funzionamento, non semplificare le parti che contengono codice complesso, non usare una guida allo stile per il codice&hellip; \VediUrl{J.L. Letouzey, D. Whelan *et al.*}{Introduction to the Technical Debt Concept}{n.d.}{https://www.agilealliance.org/wp-content/uploads/2016/05/IntroductiontotheTechnicalDebtConcept-V-02.pdf}.
+[^DefinizioneDebitoTecnico]: Il *technical debt* (debito tecnico) consiste nel costo (in termini di produttività futura persa) che si accumula quando si va al risparmio, e si fa solo il minimo indispensabile che funziona, senza considerare quanto sarà difficile estendere e provvedere al mantenimento del codice nel futuro. Si può fare un'analogia con il comprare una macchina di seconda mano che costa poco: nel breve termine si risparmia, ma nel lungo termine lo stress mentale dovuto all'inaffidabilità del mezzo ed il costo delle riparazioni nullificheranno il risparmio iniziale. Esistono numerose cause che portano al *technical debt*, come la duplicazione del codice, non scrivere commenti, eseguire pochi test di funzionamento, non semplificare le parti che contengono codice complesso, non usare una guida allo stile per il codice&hellip; \VediUrl{J.L. Letouzey, D. Whelan \textit{et al.}}{Introduction to the Technical Debt Concept}{n.d.}{https://www.agilealliance.org/wp-content/uploads/2016/05/IntroductiontotheTechnicalDebtConcept-V-02.pdf}.
 
 La combinazione di questi due fattori è disastrosa per lo sviluppo di software scientifico, che invece dipende interamente dalla sua aderenza alla ricerca scientifica, e al suo corretto funzionamento. Il problema diventa insanabile, perché non è nemmeno possibile prendere visione del codice, e suggerire modifiche per migliorarlo. Viceversa, la creazione del software libero è generalmente slegata dalla ricerca del profitto, è ispirata alla creazione di software utile per sé e per gli altri. Inoltre, la possibilità di condividere e contribuire al codice permette il suo continuo miglioramento.
 
@@ -570,9 +600,40 @@ Anche la mancanza di interfacce grafiche non è uno svantaggio, è semplicemente
 
 ### Casi in cui è impossibile usare il software libero
 
-L'unico caso in cui non è assolutamente possibile, ma anzi, sarebbe controproducente usare il software libero, è nell'ambito dei captatori. 
+Un caso in cui non è assolutamente possibile, ma anzi, sarebbe controproducente usare il software libero nell'ambito della prova informatica, è per lo sviluppo di captatori. Un captatore è un virus informatico usato dall'autorità giudiziaria a fini investigativi, capace di compiere un enorme numero di operazioni, che incidono in maniera significativa sui diritti fondamentali della persona [@Caneschi2019, 418--420]:
 
-----
+- La libertà personale (art. 13 Cost.), intesa in senso estensivo come il libero sviluppo della persona umana.
+- Il domicilio (art. 14 Cost.), ormai inteso anche nel senso di "domicilio informatico".
+- La riservatezza delle comunicazioni (art. 15 Cost.), che per la formulazione ampia data dalla Costituzione include anche le comunicazioni in formato digitale.
+
+Questi diritti sono definiti come "inviolabili", e possono essere limitati solo nei casi e modi indicati dalla legge. Purtroppo, la legge non disciplina adeguatamente l'uso di questi strumenti. Il codice di procedura penale disciplina espressamente solo l'intercettazione di comunicazione fra presenti (art. 266 co. 2 e 2-*bis*), ponendo alcune limitazioni ai luoghi in cui può essere compiuta, e l'intercettazione di flussi di dati informatici fra più sistemi (art. 266-*bis*).
+
+I captatori permettono anche un'attività che viene chiamata "perquisizione on-line", ma che non può essere ricondotta alla perquisizione (anche informatica) propriamente detta (art. 247 c.p.p.), perché mancano le garanzie informative e difensive tipiche della perquisizione, e mentre la perquisizione riguarda solo la ricerca del corpo del reato, la perquisizione on-line può riguardare l'intero contenuto del dispositivo [@Caneschi2019, 421].
+
+Pertanto, per tutte le attività che è possibile svolgere mediante il captatore informatico, compresa la "perquisizione" on-line, che non sono riconducibili alle ipotesi già disciplinate, dovrebbero essere considerate delle prove atipiche (art. 189 c.p.p). Le prove atipiche devono essere idonee ad accertare i fatti, non devono pregiudicare la libertà morale della persona, ed il giudice deve sentire le parti sulla modalità di assunzione della prova [@Caneschi2019, 421--422].
+
+L'art. 89 disp. att. c.p.p. prevede che i captatori devono essere "programmi conformi ai requisiti tecnici stabiliti con decreto del Ministro della giustizia".^[\VediUrl{Ministero della Giustizia}{Decreto 20 aprile 2018 - Disposizioni di attuazione per le intercettazionii [sic] mediante inserimento di captatore informatico e per l'accesso all'archivio informatico a norma dell'articolo 7, commi 1 e 3, del d.lgs. 216/2017}{2018}{https://www.giustizia.it/giustizia/it/mg_1_8_1.page?contentId=SDC289658}.] I requisiti tecnici sono specificati all'art. 4 del decreto, che ha una formulazione piuttosto generica [@Caneschi2019, 425]:
+
+> 1\. I programmi informatici funzionali all'esecuzione delle intercettazioni mediante captatore informatico su dispositivo elettronico portatile sono elaborati in modo da assicurare integrità, sicurezza e autenticità dei dati captati su tutti i canali di trasmissione riferibili al captatore.
+>
+> 2\. I sistemi di sicurezza adottati a norma del comma 1 consentono che solo gli operatori autorizzati abbiano accesso agli strumenti di comando e funzionamento del captatore.
+>
+> 3\. I medesimi sistemi di sicurezza prevedono:
+>
+>   a) misure di offuscamento o evasione per impedire l'identificazione del captatore e dei dati captati, sia da parte di operatori umani, che per mezzo di specifico software;
+>   b) misure idonee ad assicurare la permanenza e l'efficacia del captatore sul dispositivo durante tutto il periodo di attività autorizzata e con i limiti previsti dal provvedimento autorizzativo, in modo da garantire il completo controllo da remoto.
+>
+> 4\. I programmi informatici funzionali all’esecuzione delle intercettazioni mediante captatore consentono la trasmissione di tutte le informazioni necessarie a definire il contesto dell’acquisizione.
+>
+> 5\. I programmi informatici sono periodicamente adeguati a standard di funzionalità ed operatività in linea con l’evoluzione tecnologica.
+
+L'uso del software libero è il miglior modo per dimostare il rispetto dei primi due, ed ultimi due commi, ed il rispetto dei requisiti della prova atipica (l'idoneità ad accertare i fatti, ed il contraddittorio sulle modalità di assunzione). È possibile verificare l'esatto funzionamento del software per dimostrare che è idoneo ad accertare i fatti, ed il contraddittorio sulle modalità di assunzione sarà più fruttuoso, perché non si avrà davanti un software opaco, di cui non si conosce il meccanismo di funzionamento. 
+
+Tuttavia, il problema è posto dal terzo comma. Se è possibile sapere come il captatore funziona, ossia, quali vulnerabilità presenti nel sistema operativo del dispositivo sfrutta per essere installato, per non essere rilevato, per acquisire dati&hellip; queste vulnerabilità sarebbero rimosse dal produttore del sistema operativo per ragioni di sicurezza, ed il captatore diventerebbe inutile.[^BugBounties] Pertanto, il captatore deve essere necessariamente software non-libero.
+
+[^BugBounties]: Ad esempio, la Apple offre ricompense (da qualche migliaio di dollari, fino a milioni di dollari, a seconda della gravità) a chiunque trovi delle vulnerabilità nel loro sistema operativo. \VediUrl{Apple.com}{Apple Security Bounty Categories}{2023}{https://security.apple.com/bounty/categories/}.
+
+Il captatore si trova in una situazione paradossale. Può essere necessario usarlo per la prova di determinati reati (ad esempio, i reati elencati all'art. 266 co. 1 lett. *f* c.p.p. sono difficili da provare senza l'uso di intercettazioni), ma allo stesso tempo, il suo uso produce risultati intrinsecamente poco affidabili, perché non è possibile determinare il suo esatto meccanismo di funzionamento.
 
 ## Licenze d'uso del software nell'ordinamento italiano
 
@@ -622,10 +683,70 @@ L'individuazione della causa dei contratti di licenza d'uso a codice disponibile
 
 ## Licenze copyleft (GPL)
 
-- Nome si riferisce al fatto che usa il copyright per garantire la massima distribuzione del codice
-- Opere derivate devono usare la stessa licenza, e distribuire il codice sorgente
-- Ideale per il software scientifico
+La licenza *GNU GPL* (*GNU General Public License*) è caratterizzata dalla presenza di una "clausola virale", la stipulazione per cui tutte le opere derivate da un'opera distribuita con la licenza GPL devono usare la stessa licenza [@Geraci2015, 71].
 
+L'aggettivo "copyleft" è un gioco di parole con il termine *copyright* (diritto d'autore), perché normalmente il diritto d'autore limita le libertà che il possessore di una copia dell'opera ha, mentre invece la GPL strumentalizza il diritto d'autore proprio al fine di garantire le libertà previste dal software libero.
+
+La GPL afferma esplicitamente la possibilità di creare copie del programma, purché le copie contengano l'indicazione degli autori e della licenza, l'indicazione della limitazione di responsabilità, e una copia della licenza. Inoltre, si permette la possibilità di richiedere un pagamento per la copia, e di offrire supporto o una garanzia a pagamento [@GPLv3, sez. "4. Conveying Verbatim Copies."]:
+
+> *You may convey verbatim copies of the Program's source code as you receive it, in any medium, provided that you conspicuously and appropriately publish on each copy an appropriate copyright notice; keep intact all notices stating that this License and any non-permissive terms added in accord with section 7 apply to the code; keep intact all notices of the absence of any warranty; and give all recipients a copy of this License along with the Program.*
+>
+> *You may charge any price or no price for each copy that you convey, and you may offer support or warranty protection for a fee.*
+
+La sezione successiva regola la creazione di opere derivate. Devono essere rilasciate come codice sorgente, si deve indicare l'autore e la data delle modificazioni (lett. *a*), e l'intera opera derivata deve essere rilasciata secondo i termini di questa licenza (lett. *c*) [@GPLv3,  sez. "5. Conveying Modified Source Versions."]:
+
+> *You may convey a work based on the Program, or the modifications to produce it from the Program, in the form of source code under the terms of section 4, provided that you also meet all of these conditions:*
+>
+> a) *The work must carry prominent notices stating that you modified it, and giving a relevant date.*
+> b) *The work must carry prominent notices stating that it is released under this License and any conditions added under section 7. This requirement modifies the requirement in section 4 to "keep intact all notices".*
+> c) *You must license the entire work, as a whole, under this License to anyone who comes into possession of a copy. \Omissis{} This License gives no permission to license the work in any other way, but it does not invalidate such permission if you have separately received it.*
+
+Inoltre, si regola il caso in cui un'opera protetta dalla GPL sia distribuita insieme ad altre opere. Se queste opere per loro natura non sono estensioni dell'opera protetta, e non vengono "combinate" con essa in nessun modo, allora la licenza non si applica alle altre opere.
+
+> *A compilation of a covered work with other separate and independent works, which are not by their nature extensions of the covered work, and which are not combined with it such as to form a larger program, in or on a volume of a storage or distribution medium, is called an "aggregate" if the compilation and its resulting copyright are not used to limit the access or legal rights of the compilation's users beyond what the individual works permit. Inclusion of a covered work in an aggregate does not cause this License to apply to the other parts of the aggregate.*
+
+È possibile ridistribuire il software in forma diversa dal codice sorgente, purché si includa una copia del codice sorgente, oppure un'offerta scritta che indica come richiedere una copia del codice sorgente [@GPLv3, sez. "6. Conveying Non-Source Forms."].
+
+La GPL privilegia la diffusione del software libero rispetto a qualsiasi altra priorità [@Geraci2015, 72]. In particolare, la discussione fra Stallman, uno dei creatori della GPL, e Haible, lo sviluppatore di un programma chiamato CLISP, chiarisce il campo di applicazione della GPL. Come visto, si deve distinguere fra due casi:
+
+- Se un programma rappresenta un'estensione del software GPL, deve usare la licenza GPL a sua volta.
+- Se il programma ed il software GPL sono indipendenti, e sono semplicemente distribuiti insieme, il programma non è tenuto ad usare la licenza GPL.
+
+CLISP^[V. <https://www.gnu.org/software/clisp/>.] non usava la licenza GPL, ma usava una libreria sviluppata da GNU, chiamata readline,^[V. <https://www.gnu.org/software/readline/>] che invece era distribuita con la licenza GPL.
+
+Secondo Haible, lo sviluppatore del software, il suo software e la libreria readline venivano distribuiti come due file separati ed indipendenti, e quindi non era tenuto ad usare la GPL:
+
+> *I don't agree. My lisp.a is not a "work based on libreadline.a". What I distribute is a "mere aggregation" of lisp.a and libreadline.a - the latter with source.* [@Why-CLISP-is-under-GPL, sez. "From haible Fri Oct 30 18:54:38 1992"].
+
+Viceversa, secondo Stallman, l'autore della GPL, era irrilevante che i programmi fossero separati su disco, perché readline era comunque un componente necessario per eseguire CLISP:
+
+> *If you don't change to using the GPL, then you'll have to stop using readline.  Readline's terms say that the whole program has to be under the GPL, and just having the user do the link doesn't change this.  If the program is designed to run with readline as a part, then readline is a part of it.* [@Why-CLISP-is-under-GPL, sez. "From rms@gnu.ai.mit.edu Mon Oct 19 00:06:25 1992"]
+
+Inoltre, i giudici molto probabilmente non avrebbero dato ragione ad Haible, e avrebbero considerato se effettivamente i vari componenti sono "davvero" un unico programma, indipendentemente da come siano chiamati od organizzati su disco:
+
+> *What the lawyer said surprised me; he said that judges would consider such schemes to be "subterfuges" and would be very harsh toward them.  He said a judge would ask whether it is "really" one program, rather than how it is labeled.* [@Why-CLISP-is-under-GPL, sez. "From rms@gnu.ai.mit.edu Fri Nov  6 21:31:33 1992"]
+
+In ogni caso, la preoccupazione di Stallman era di evitare che si trovasse un modo per aggirare la GPL:
+
+> *However, the sum total of what you are doing is still tantamount to distributing one program which contains readline but is not under the GPL.*
+>
+> *This is a problem I cannot ignore.  If you can get away with this then any company can get away with it.  The result would be to negate for practical purposes the GPL's requirement that improvements be free. And that would deprive GNU software of a major source of improvements.* [@Why-CLISP-is-under-GPL, sez. "From rms@gnu.ai.mit.edu Sat Oct 31 01:29:01 1992"] 
+
+Sulla base di queste considerazioni, la GPL può essere considerata la licenza migliore per lo sviluppo di software scientifico. Lo spirito della GPL è di garantire la libertà del codice ad ogni opportunità ed ad ogni costo. Se il codice deve sempre sempre rimanere libero, anche a seguito di modifiche, significa che gli algoritmi contenuti nel codice non solo possano essere sempre migliorati, ma il loro funzionamento rimanga sempre trasparente.
+
+Naturalmente, questo può dissuadere alcuni soggetti dallo sviluppare software GPL. Secondo l'interpretazione espansiva di Stallman, qualsiasi software che usi anche in minima misura un componente GPL deve diventare GPL a sua volta. Questo vincola la libertà di scelta della licenza. Tuttavia, questo è un costo che vale la pena pagare per alcuni tipi di applicazioni, come il software scientifico, dove gli interessi che il software deve soddisfare si allineano con l'ideologia della licenza stessa.
+
+Esistono altre licenze, chiamate *permissive* (permissive), che non danno le stese garanzie della GPL, e non hanno la stessa carica ideologica. Ad esempio, il tratto distintivo della licenza *BSD* (*Berkeley Software Distribution*) è che non richiede che le opere derivate siano rilasciate con la stessa licenza, né richiede la pubblicazione del codice sorgente. In altre parole, è perfettamente possibile usare del codice rilasciato con la licenza BSD per creare un prodotto non-libero, per cui non si fornisce il codice sorgente [@Geraci2015, 73].
+
+La licenza BSD è largamente usata per le librerie, per permettere la loro più larga adozione, dato che le librerie sono per loro natura codice destinato ad essere riutilizzato in altri progetti. In un software GPL è possibile usare componenti BSD [@Stallman-License-compatibility-and-relicensing]:
+
+> *In general, lax permissive licenses (modified BSD, X11, Expat, Apache, Python, etc.) are compatible with each other. That's because they have no requirements about other code that is added to the program. They even permit putting the entire program (perhaps with changes) into a proprietary software product;* \Omissis{}
+>
+> *By the same token, lax licenses are usually compatible with any copyleft license. In the combined program, the parts that came in under lax licenses still carry them, and the combined program as a whole carries the copyleft license.*
+
+Tuttavia, è preferibile usare la licenza GPL anche per lo sviluppo di librerie ad uso di software per il software scientifico, per le ragioni indicate da Stallman. Una libreria GPL costringe il software che la usa a diventare GPL a sua volta. Pertanto, progressivamente, tutti i componenti (software e librerie condivise) adotteranno la licenza GPL, e quindi saranno costretti ad essere liberi.
+
+<!--
 ## Licenze permissive (LGPL, MIT)
 
 - Opere derivate possono rimanere proprietarie
@@ -634,3 +755,4 @@ L'individuazione della causa dei contratti di licenza d'uso a codice disponibile
 
 - Per la ricerca scientifica e per la documentazione dei programmi
 - Licenze per le raccolte di dati
+-->

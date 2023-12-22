@@ -3,7 +3,8 @@ title: Uso del software libero per un trattamento scientifico della prova digita
 author: Luca Piras
 year: 2023
 #citation-style: universita-di-bologna-lettere.csl
-citation-style: g-giappichelli-editore.csl
+#citation-style: quaderni-materialisti.csl
+citation-style: mimesis-edizioni.csl
 links-as-notes: true
 documentclass: book
 lang: it
@@ -26,11 +27,12 @@ fontsize: 12pt
 header-includes:
 - \usepackage{indentfirst}
 - \pagestyle{plain}
+- \frenchspacing
 ...
 
 \newcommand{\Omissis}{[\dots\unkern]}
 \newcommand{\VediRef}[1]{\footnote{V. sez. \ref{#1}.}}
 \newcommand{\VediAdEsempioUrl}[1]{\footnote{V., ad es., \url{#1}.}}
-\newcommand{\AutoreTitoloAnnoUrl}[4]{\textsc{#1}, \emph{#2}, {#3}, \url{#4}}
+\newcommand{\AutoreTitoloAnnoUrl}[4]{{#1}, \emph{#2}, {#3}, \url{#4}}
 \newcommand{\VediUrl}[4]{V. \AutoreTitoloAnnoUrl{#1}{#2}{#3}{#4}}
 \newcommand{\vediUrl}[4]{v. \AutoreTitoloAnnoUrl{#1}{#2}{#3}{#4}}
