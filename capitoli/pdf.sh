@@ -25,4 +25,4 @@ WCInputs() {
 	wc -w $inputs
 }
 
-PandocPDF && WCInputs
+PandocPDF && PandocODT && WCInputs
