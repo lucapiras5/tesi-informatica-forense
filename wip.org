@@ -1,0 +1,70 @@
+#+TITLE: Fonti da leggere
+#+AUTHOR: Luca Piras
+
+* Da leggere
+
+- https://tldp.org/HOWTO/Secure-Programs-HOWTO/history.html
+- https://tldp.org/HOWTO/Secure-Programs-HOWTO/open-source-security.html
+- https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=e6cebe521f8d1e10deea138c8314a9945199262b
+
+- Unboxing the digital forensic investigation process: https://www.sciencedirect.com/science/article/pii/S1355030622000144
+- Reliability validation for file system interpretation: https://www.sciencedirect.com/science/article/pii/S2666281721000822
+- Towards reliable digital forensics investigations through measurement science: https://wires.onlinelibrary.wiley.com/doi/epdf/10.1002/wfs2.1367
+- A lightweight live memory forensic approach based on hardware virtualization: https://www.sciencedirect.com/science/article/abs/pii/S0020025516305011
+
+TDD:
+
+- A structured experiment of test-driven development: https://www.sciencedirect.com/science/article/abs/pii/S0950584903002040
+- A Survey on Unit Testing Practices and Problems: https://ieeexplore.ieee.org/abstract/document/6982627
+- Assessing test-driven development at IBM: https://ieeexplore.ieee.org/abstract/document/1201238
+- https://www.researchgate.net/profile/Michael-Olan/publication/255673967_Unit_testing_Test_early_test_often/links/5581783608aea3d7096ff00c/Unit-testing-Test-early-test-often.pdf
+
+- Copia forense dei dati digitali: le perquisizioni ed il sequestro informatico sono illegittimi se volti ad ottenere l'acquisizione indiscriminata dei dati contenuti nei supporti informatici da sottoporre a sequestro, senza alcun criterio selettivo degli stessi e senza l'indicazione del collegamento tra il reato contestato e i dati informatici che si intendono vincolare: https://www.avvocatopenalista.org/contenuto.php?id=19502&redirected=722fe25a4225f0ad865cc8b7ccbcce89
+- https://www.sistemapenale.it/it/scheda/cass-sez-vi-sent-22-settembre-2020-dep-2-dicembre-2020-n-34265-pres-di-stefano-rel-silvestri
+
+- WSL2 Forensics: Detection, Analysis & Revirtualization: https://dl.acm.org/doi/fullHtml/10.1145/3538969.3544439
+
+- On The Evolution of Digital Evidence: Novel Approaches for Cyber Investigation - http://elea.unisa.it/bitstream/handle/10556/1443/tesi%20G.%20De%20Maio.pdf?sequence=1&isAllowed=y
+
+- Live Forensics: http://www.di-srv.unisa.it/~ads/ads/Sicurezza_files/Tesina%20Live%20Forensics.pdf
+
+- RAMAS, analisi della RAM estensibile, prototipo esiste per Linux: https://www.sciencedirect.com/science/article/pii/S0167404818311313
+
+- Volatile Memory Based Forensic Artifacts & Analysis: http://cloud.politala.ac.id/politala/1.%20Jurusan/Teknik%20Informatika/19.%20e-journal/Jurnal%20Internasional%20TI/International%20Journal%20For%20Research%20in%20Applied%20Science%20and%20Engineering%20Technology%20(IJRASET)/2014/Volume%202,%20Issue%20I,%20January%202014/Volatile%20Memory%20Based%20Forensic%20Artifacts%20&.pdf
+
+- SOFTWARE LIBERO E "OPEN SOURCE" - http://www.dvara.net/hk/meo.pdf
+
+- Digital media triage with bulk data analysis and bulk_extractor: https://www.sciencedirect.com/science/article/pii/S0167404812001472
+- OpenLV: Empowering investigators and first-responders in the digital forensics process: https://www.sciencedirect.com/science/article/pii/S1742287614000115
+
+- Issues with imaging drives containing faulty sectors: https://www.sciencedirect.com/science/article/pii/S1742287607000370
+- NIST CFTT: Testing Disk Imaging Tools: https://www.utica.edu/academic/institutes/ecii/publications/articles/A04BC142-F4C3-EB2B-462CCC0C887B3CBE.pdf
+- Richiamati da Mercuri 2010:
+  - National Institute of Justice, Test Results for Digital Data Acquisition Tool: FTK Imager 2.5.3.14, NCJ 222982 (2008)
+  - National Institute of Justice, Test Results for Digital Data Acquisition Tool: EnCase 4.22a, NCJ 221168 (2008)
+  - National Institute of Justice, Test Results for Disk Imaging Tools: dd Provided with FreeBSD 4.4, NCJ 203095 (2004)
+- Case studies dell'analisi forense di sistemi Android, e della RAM
+- AN ANALYSIS OF LINUX RAM FORENSICS: https://apps.dtic.mil/sti/pdfs/ADA445300.pdf
+- Open Source Forensics for a Multi-Platform Drone System: https://eudl.eu/pdf/10.1007/978-3-319-73697-6_6
+- A Comparison Study of Android Mobile Forensics for Retrieving Files System: https://eprints.qut.edu.au/235268/1/115442572.pdf
+- A Formalization of Digital Forensics: https://people.cs.ksu.edu/~sathya/formalizing-df.pdf
+- Is Open Source Good For Security: https://dwheeler.com/secure-programs/Secure-Programs-HOWTO/open-source-security.html
+- Comparative Analysis of Android Mobile Forensics Tools: Lwin, Aung, Lin
+- Windows 10 hibernation file forensics: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=IMRYTBYAAAAJ&citation_for_view=IMRYTBYAAAAJ:u5HHmVD_uO8C
+
+* Da approfondire
+
+- Andrew Case: https://scholar.google.com/citations?user=WrFc7uAAAAAJ&hl=en
+
+- Coordinamento di più istanze Linux per aumentare l'efficienza di operazioni di analisi.
+- Possibilità di accesso remoto sicuro, controllo di operazioni a riga di comando.
+- Scripting che combina le operazioni a riga di comando, il software open-source si presta naturalmente ad essere esteso mediante plug-ins e scripting.
+- Windows è monolitico, Linux può essere adattato alle necessità del caso.
+- Installazione rapida, non viola la privacy come Windows, live images.
+- Possibilità di analisi di immagini senza preoccuparsi dei virus per Windows.
+- Creazione di sistemi personalizzati che permettono investigazioni perfettamente riproducibili: set-up (ad es., Ansible) e analisi automatica mediante scripts (Python?).
+
+- GUI Linux per l'acquisizione dell'immagine forense (Guymager).
+- Verifica del funzionamento del software forense: test driven development, fuzzy testing, SQLite TH3, American Fuzzy Lop.
+- Vantaggi dei sistemi closed-source: accesso alle specificazioni proprietarie, supporto tecnico da parte degli sviluppatori.
+- Linee guida della Cassazione sull'uso di prove tecniche ed in particolare delle prove forensi.

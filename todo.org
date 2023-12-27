@@ -1,0 +1,83 @@
+* Da leggere Mk. II
+
+** Generale
+
+https://www.semanticscholar.org offre suggerimenti per trovare altri articoli.
+
+https://proquest.com offre molte altre fonti, vedi Ayers 2015.
+
+** Storia di Unix
+
+(Ritchie) The Evolution of the Unix Time-sharing System -- https://www.bell-labs.com/usr/dmr/www/hist.pdf
+
+(Kernighan) UNIX: A History and a Memoir -- https://www.rulit.me/data/programs/resources/pdf/UNIX-A-History-and-a-Memoir_RuLit_Me_616356.pdf
+
+https://www.academia.edu/7674084/An_alternative_history_of_Unix
+
+https://spectrum.ieee.org/the-strange-birth-and-long-life-of-unix
+
+https://catalogimages.wiley.com/images/db/pdf/0471164836.01.pdf
+
+https://www.uobabylon.edu.iq/eprints/paper_3_8273_189.pdf
+
+** Articoli collegati ad Ayers 2015
+
+https://www.proquest.com/sharedreferencessidenav/MSTAR_1676462584/E6AD38CB4B144E5CPQ/1?accountid=9652
+
+- Serve accesso UniBo.
+
+Anche:
+
+- [[https://www.proquest.com/docview/1552128683/17C633CAA03D4A23PQ/2?accountid=9652][The Basics of Digital Forensics: The Primer for Getting Started in Digital Forensics]]
+- [[https://www.proquest.com/docview/1443838817/17C633CAA03D4A23PQ/3?accountid=9652][Using the presence of anti-reverse-engineering artifacts to detect malware]]
+
+** Digital Investigation vol. 31
+
+https://www.sciencedirect.com/journal/digital-investigation/vol/31/suppl/C
+
+** Reverse engineering of ReFS
+
+https://www.sciencedirect.com/science/article/pii/S1742287619301252
+
+** Identifying suspicious addresses in Bitcoin thefts
+
+https://www.sciencedirect.com/science/article/pii/S1742287619302233
+
+** Forensic analysis of multiple device BTRFS configurations using The Sleuth Kit
+
+https://www.sciencedirect.com/science/article/pii/S1742287618301993
+
+** Brian Carrier, e articoli collegati
+
+https://digital-evidence.org/papers/
+
+https://www.semanticscholar.org/paper/Open-Source-Digital-Forensics-Tools-The-Legal-1-Carrier/06871f0578f07462c45bb46d0a29cc91de10455d
+
+- Autore di altri articoli sulla DF.
+
+** Andrew S. Tanenbaum: The Impact of MINIX
+
+https://ieeexplore.ieee.org/abstract/document/6861925
+
+- Note storiche su Minix e Linux?
+
+** 2.1. History of Unix, Linux, and Open Source / Free Software
+
+https://tldp.org/HOWTO/Secure-Programs-HOWTO/history.html
+
+- http://web.archive.org/web/20010801155417/www.unix-vs-nt.org/kirch
+- Sezioni 2.1.x
+  
+** Presentazioni SANS
+
+https://www.sans.org/presentations/long-live-linux-forensics/
+
+2021 SANS Digital Forensics Survey: Digital Forensic Essentials and Why Foundations Matter -  https://www.sans.org/white-papers/40420/
+
+- Serve registrare un account
+
+** Distinzione fra Linux e Unix
+
+https://www.howtogeek.com/679989/what-are-the-differences-between-linux-and-unix/
+
+

@@ -1,0 +1,170 @@
+Copyright sul software:
+
+- https://mjg59.dreamwidth.org/10437.html?thread=307653#cmt307653, e altri commenti nello stesso link.
+- https://www.osnews.com/story/22618/busybox-author-bruce-perens-on-the-gpl-lawsuit/
+
+Busybox ed enforcement della GPL:
+
+- https://torquemag.io/2013/03/busybox/
+- https://www.lexology.com/library/detail.aspx?g=a3d48bb1-7298-4963-8b44-1d0ef16eb015
+- https://busybox.net/license
+- https://heathermeeker.com/2010/01/06/songbird-to-be-shipped-with-philips-mp3-players/
+  - Seguito da: https://heathermeeker.com/2010/01/11/bruce-perens-on-the-busybox-case/
+- https://grsecurity.net/setting_the_record_straight_on_oss_v_perens_part2
+
+Conversione del software da proprietario ad open-source:
+
+- https://en.wikipedia.org/wiki/UNIX_System_Laboratories,_Inc._v._Berkeley_Software_Design,_Inc.
+- https://web.archive.org/web/20110515142741/http://perens.com/blog/d/2009/12/15/23/
+- https://busybox.net/~landley/forensics.txt
+- https://grsecurity.net/setting_the_record_straight_on_oss_v_perens_part2
+
+
+Copyright con più persone che lavorano allo stesso codice:
+
+- https://heathermeeker.com/2010/01/11/bruce-perens-on-the-busybox-case/ -- /the question of whether open source programs are joint works or multiple works of authorship [...] FSF generally takes the position that GPL covers an entire program as a single copyrightable work/.
+- Contributor license agreement.
+- Importanza dell'uso di strumenti di version control (ad es., git blame) per determinare chi ha scritto cosa.
+- Copyright notices:
+  - https://www.gnu.org/prep/maintain/html_node/Copyright-Notices.html
+  - https://opensource.com/law/14/2/copyright-statements-source-files
+  - https://opensource.com/article/20/10/copyright-notices-open-source-software
+  - https://www.linuxfoundation.org/blog/blog/copyright-notices-in-open-source-software-projects
+
+Reproducible builds:
+
+- Golang/Rust, static builds by default
+- Hermetic builds: https://bazel.build/basics/hermeticity
+- https://medium.com/@tglawless/isolated-hermetic-and-reproducible-builds-dace1f46d793
+
+Vendoring:
+
+- https://www.activestate.com/blog/outsourced-dependency-vendoring/
+- https://codeengineered.com/blog/2015/go-should-i-vendor/
+- https://gist.github.com/datagrok/8577287
+
+/Our software dependency problem/: https://research.swtch.com/deps
+
+Licenze libere:
+
+- Restrizioni per uso commerciale:
+  - /Floodgap free software license/: https://legal.fedoraproject.narkive.com/PYuxMaoR/fedora-list-floodgap-free-software-license-ok-for-fedora
+  - CC-BY-NC: https://www.gnu.org/licenses/license-list.html#CC-BY-NC
+  - /Defining Noncommercial/: https://wiki.creativecommons.org/wiki/Defining_Noncommercial
+  - https://wiki.creativecommons.org/wiki/NC_ND_discussion
+  - https://creativecommons.org/2012/08/29/ongoing-discussions-noncommercial-and-noderivatives/
+  - https://creativecommons.org/2012/12/17/next-steps-noncommercial-and-noderivatives-discussion/
+- /Free Cultural Works/:
+  - https://freedomdefined.org/Definition
+  - https://freedomdefined.org/History
+- Licenze approvate da Debian:
+  - https://wiki.debian.org/DebianFreeSoftwareGuidelines
+  - https://wiki.debian.org/DFSGLicenses
+
+/Reflections on trusting trust/:
+
+- https://dl.acm.org/doi/10.1145/358198.358210
+- Ispezionabilità dei compilatori, supply chain attack
+- https://www.theregister.com/2023/02/05/supply_chain_security_efforts/
+- Se il software è proprietario, il giudice può solo fidarsi/non fidarsi in maniera assoluta del suo corretto funzionamento, è quasi una prova legale
+- Se il software è open source, diventa possibile valutare la probabilità che il software sia stato compromesso (ad es., valutare il compilatore/programma che interpreta lo script/VM, le dipendenze usate dal programma, ecc.), e quindi il giudice può valutare l'affidabilità in maniera più precisa
+
+GPL:
+
+- Strong/weak copyleft (linking)
+- Dual licensing e spirito della GPL
+- Advertising clause nella licenza BSD e incompatibilità con GPL: https://www.gnu.org/licenses/bsd.en.html
+- Debian che usa GnuTLS anche se è codice meno affidabile
+
+Manifesto GNU:
+
+- Cf. Emacs
+- Contiene chiarimenti su come funziona il software open source
+
+Direttiva database: https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=CELEX:31996L0009:EN:HTML#d1e626-20-1
+
+- AFL++
+- Virtualizzazione per usare strumenti di analisi già contenuti nel sistema, se il formato è proprietario o gli strumenti open-source sono incompleti (analisi live, ma ripetibile; problemi con la hardware detection anti-pirateria)
+- Uso di linguaggi dichiarativi/funzionali invece che imperativi, minore performance ma anche meno bug (off by one, ecc), affidabilità come invarianza (funzioni pure - stesso input, stesso output), affidabilità come robustezza (controlli automatici per i tipi) -- preferire linguaggi di scripting o linguaggi compilati moderni e con GC o garanzie di memory-safety (Go, Rust), usare i system programming languages solo se strettamente necessario (operazioni di basso livello che possono essere compiute solo da un linguaggio di basso livello)
+- Maggior parte dei bug deriva da bug di accesso alla memoria.
+
+- Citare tesi di dottorato (Gammarota, Ferrazzano, etc.)
+- Scrivere contribuzioni su temi utili
+- Aiuto ricerca: copyright (contatti), revenge porn, legalità scraping, modalità monetizzazione
+
+- Lorenzo Pescatore -- barra tool, servizi offerti
+- Roberto Arcella -- 
+- SLPCT
+- Programmi gestione firma digitale, marche temporali
+- Conservazione sostitutiva, certificazione sostitutiva PEC
+
+- Federici, firma digitale (FEA) con carta d'identità 
+
+- CAD, processi telematici
+
+---
+
+Linux come strumento per la misurazione più preciso, "all our bugs belong to us"
+
+QA:
+
+- Statica: code review manuale, code analysis
+- Dinamica: memory leaks (errori più comuni), fuzzying (programma si aspetta X, si ritrova Y: per errata nello standard, per modifiche accidentali, per modifiche intenzionali; comportamento imprevedibile, fuzzying serve a eliminare bug)
+
+- Tarsnap: open-source, ma non free
+
+---
+
+- Chiedere libri
+- Scrivere email a sviluppatori Linux 
+- Pubblicare considerazioni su certificazione ENISA
+
+Zanero, OS forensics
+
+Tsurugi: Massimiliano Dal Cero
+CAINE: Bassetti
+Deft: Fratepietro
+FIT: GitHub, López, Lazzarotto
+
+Perri: GPL
+Libro AIDA
+
+--------
+
+Con che mail contattare progetti
+
+Forensics: marca temporale, strumenti open source?
+
+Captatore, open source, certificazione
+
+Reverse engineering (scatole nere), strumenti open source (VCS, reproducible builds)
+
+Governance open-source, procedure, opportunità di approfondire
+
+Linux e pacchetti
+
+Opportunità in maniera più concreta, libri da fotocopiare
+
+Pubblicazioni o libri che potrei scrivere
+
+--------
+
+- Governance open-source, sistemi di controllo della versione
+- Licenze open-source
+- Parte sull'informatica forense
+
+- Se eliminare parte su cybersecurity
+
+- Glossario con elenco dei termini tecnici all'inizio
+- Mobile forensics: serve sbloccare telefono?
+
+Esempio di compilazione: struct con codice, n. articolo, comma
+
+---
+
+Questionnaire:
+
+- Licensing (CC-BY-SA, like Wikipedia/StackOverflow)
+- Why they created a distro, from scratch or using another distro?
+- What changes were made to the kernel? How (patches, compile-time configuration)? Were they contributed back (FOSS as a collaborative effort)? Are they adequately documented, even at a high level?
+- What software was included? How was it pre-installed? Was any custom software written?

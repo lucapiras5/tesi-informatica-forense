@@ -1,0 +1,6 @@
+* Questionnaire
+
+- Licensing (CC-BY-SA, like Wikipedia/StackOverflow)
+- Why they created a distro, from scratch or using another distro?
+- What changes were made to the kernel? How (patches, compile-time configuration)? Were they contributed back (FOSS as a collaborative effort)? Are they adequately documented, even at a high level?
+- What software was included? How was it pre-installed? Was any custom software written?

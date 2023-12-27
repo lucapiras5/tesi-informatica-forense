@@ -1,0 +1,256 @@
+#+TITLE: Scaletta della tesi -- Apologia per l'utilizzazione di distribuzioni GNU/Linux e software FOSS per la digital forensics
+#+AUTHOR: Luca Piras
+#+LANGUAGE: it
+
+#+html_head: <link rel="stylesheet" href="./org.css">
+
+:da-aggiungere:
+- Licenze che sono considerate libere
+- JSON non veniva considerato un prodotto libero
+- Come vendere prodotti open-source: assistenza
+- Kernel Linux: WSL1 e WSL2
+- Sistema pacchetti: sviluppatori, maintainers, utenti finali
+- Compilazione locale: deb-src, AUR, Gentoo
+- Problema del doversi fidare della compilazione fatta dai maintainer e delle patch introdotte per ogni distro (Debian e cdrtools, anche Arch usa molte patch), problema di compilare il software per conto proprio, specie di "incidente probatorio" per compilare il software, sempre meglio di doversi fidare della compilazione di software proprietario (scandalo Intel compiler e GenuineAMD), build riproducibili con firme digitali, build differiscono a seconda delle istruzioni del processore (problemi requisiti Windows 11)
+- Regressus in infinitum: fidarsi del compilatore (bug nel compilatore, specificazione poco chiara, undefined behavior, floating point errors), del processore (errata delle CPU), errori nella RAM (raggi cosmici, error-correcting memory)
+- https://reproducible-builds.org/docs/publications/
+- Git - timestamps, firme digitali, chain of custody
+- Differenza fra "open-source" e "free software", ambiguità di "free software", meglio dire "software libre" per evitare ogni ambiguità
+- Software libre risolve parzialmente il "maintainer hit by a bus problem", ma non è una soluzione completa, perché il mantainer ha una "conoscenza nascosta" di come funiona il programma, che va esplicitata in commenti e documentazione, forking (Neovim)
+- Software libre non è necessariamente gratuito
+- Limitazioni di responsabilità nelle licenze open-source, nei software proprietari: possono essere fatte valere?
+- JSON: esempio di licenza particolare, riprende la licenza MIT ma aggiunge /The Software shall be used for Good, not Evil./
+:end:
+
+* Introduzione alla tesi
+
+** Oggetto della tesi
+
+Le apologie[fn:1] erano discorsi pronunciati in difesa di una persona o una fede.[fn:2]
+
+La presente tesi vuole in primo luogo confutare l'opinione che le applicazioni libere e a sorgente aperta siano utili /solo/ ad amatori e dilettanti, mentre i professionisti /devono/ usare solo applicazioni proprietarie.
+
+Inoltre, vuole dimostrare che:
+
+- Nella ricostruzione dei fatti in un processo, le applicazioni proprietarie possano avere più funzionalità rispetto alle applicazioni libere e a sorgente aperta, ma al grave costo di essere intrinsecamente inaffidabili, e di creare risultati potenzialmente non riproducibili.
+- Le applicazioni libere e a sorgente aperta sono maggiormente affidabili, possono produrre risultati riproducibili, e che in molti casi le funzionalità sono equivalenti rispetto alle applicazioni proprietarie.
+
+La tesi è divsa in tre parti.
+
+La prima parte fornisce delle nozioni di base: spiega cosa siano esattamente /GNU/Linux/, le filosofia /free/libre and open-source/, e la /digital forensics/.
+
+La seconda parte è la vera e propria apologia: consiste in una serie di argomenti tecnici e giuridici che dimostrano la superiorità teorica del FLOSS rispetto al software proprietario.
+
+La terza parte entra nel concreto: si discutono quali applicazioni FLOSS vengono usate per la DF, e le relative potenzialità ed i limiti.
+
+** Anglicismi
+
+* Definizioni
+
+** Unix
+
+Tutto inizia da Unix.
+
+GNU vuole essere compatibile con i programmi di Unix, e migliorarlo (Stallman, /Initial Announcement/).
+
+Linux nasce come un clone di Minix (Torvalds, /Notes for linux/), che a sua volta era un clone di Unix (Tanenbaum, /Unix clone/, p. 21).
+
+Persino il tempo viene contato facendo riferimento alla /epoca Unix/.[fn:6]
+
+Unix nasce all'inizio degli anni '70.
+
+La prima versione era stata scritta in linguaggio assembly (Spinellis, /Unix history/, p. 1378) e pertanto era strettamente legato all'hardware.
+
+Le edizioni successive sono riscritte in C, e pertanto non sono più legate all'hardware originale (Wheeler, /Secure Programming/, p. 5).[fn:26]
+
+Unix e C si diffondono a vicenda. Il fatto che Unix fosse scritto in C ha permesso la sua diffusione (Gabriel, /Lisp/).
+
+    - Distinzione fra codice sorgente e codice compilato.
+  - Accenno ai linguaggi di scripting (non devono essere interpretati, Volatility è usato per l'analisi della RAM ed è scritto in Python) ed ai linguaggi che usano una rappresentazione intermedia ed una macchina virtuale (Python, Java, ELisp).
+
+- TODO: Come Unix diventa proprietario
+
+** FLOSS
+
+- Tradizionalmente il codice non valeva molto, veniva considerato parte integrante della macchina, il mercato del software proprietario si afferma solo dopo.[fn:8]
+- Il codice sorgente è soggetto a copyright.[fn:9]
+- Le licenze open-source riconoscono il copyright degli autori, ma permettono la ridistribuzione del codice.
+- Caso eccezionale: SQLite è nel pubblico dominio.[fn:10]
+- Distinzione: software proprietario, source-available, free/libre.
+- Libertà garantite dal software libre.[fn:11]
+- Esistono due modelli di licenze: copyleft e permissive.
+- Vantaggi e svantaggi dei modelli.
+- Licenze copyleft:
+  - Impone la sua perpetuazione.
+  - Varianti: GPL, LGPL, AGPL
+  - GPL v3 e Tivoization
+- Licenze permissive:
+  - Le modifiche possono rimanere proprietarie, ma è difficile continuare ad integrare modifiche proprietarie, è più semplice mandarle upstream.
+- Svantaggi delle licenze permissive:
+  - Stallman crea la GPL
+  - Android usa Linux,[fn:12] ma non GNU, non può essere considerata una distribuzione libre,[fn:13] ed usa una licenza permissiva per ragioni di convenienza.[fn:14]
+- Svantaggi delle licenze copyleft:
+  - https://www.gnu.org/licenses/why-not-lgpl.html
+  - CLISP usava readline, e l'autore è stato costretto a cambiare la licenza.[fn:15]
+  - editline[fn:16]
+  - rlwrap[fn:17]
+  - Debian non considera la GFDL abbastanza libera[fn:18]
+
+** GNU
+
+- GNU nasce prima di Linux
+- Fornisce una serie di programmi strettamente necessari per un sistema operativo, tra cui:
+  - Una shell: programma per lanciare altri programmi
+  - Un editor di testo: programma per modificare file di testo
+  - Un compilatore: programma che converte file di testo in programmi eseguibili
+- Il resto dei programmi sono stati sviluppati da altri:
+  - Ad es., l'interfaccia grafica X, GTK e Qt, i DE, etc.
+- GNU è generalmente compatibile con Unix, e segue lo standard POSIX, ma ci sono delle differenze (longopts, POSIXLY_CORRECT, Bash non rispetta POSIX, etc.)
+
+Le distribuzioni che /non/ usano GNU sono l'eccezione.
+
+Distribuzioni specificamente progettate per sistemi integrati, come OpenWRT,[fn:19] o comunque genericamente progettate per utilizzare la minore quantità di risorse possibili, come Alpine Linux,[fn:20] che sostituiscono tutti gli applicativi del sistema operativo GNU con un singolo applicativo, chiamato BusyBox.[fn:21]
+
+** Linux
+
+wheeleer-2015, p. 6, sez. 2.1.2 e 2.1.3
+
+Linux non è un discendente di Unix, ma lo imita intenzionalmente.[fn:28]
+
+Cf. https://www.polimata.eu/digital-life/kernel-spiegazione/
+
+Licenza del kernel: GPL v2, Tivoization
+
+Elementi proprietari nel kernel (binary blobs), versioni del kernel pienamente libre
+
+Tende ad avere maggiore supporto hardware rispetto ai vari  kernel *BSD
+
+** Distribuzioni GNU/Linux
+
+*** GNU/Linux è una famiglia di distribuzioni
+
+Così come non esiste "un" Unix, ma esistono più sistemi operativi derivati da Unix, non esiste "un" Linux, ma piuttosto, un numero di /distribuzioni Linux/.[fn:22]
+
+Linux in sé non è nemmeno un sistema operativo, ma soltanto un suo componente fondamentale.[fn:23]
+
+Ogni distro[fn:24] usa il /kernel Linux/, e la stragrande maggioranza usa il /sistema operativo GNU/.
+
+- È possibile creare una distribuzione partendo da zero, se si hanno le conoscenze tecniche necessarie
+- Esistono distribuzioni generiche e distribuzioni specifiche, e molte distribuzioni sono riconducibili ad altre
+
+*** Package manager (gestore dei pacchetti)
+
+L'elemento più centrale di una distro è il gestore di pacchetti, il software viene installato mediante pacchetti
+
+La politica di distribuzione dei pacchetti varia da distro a distro: cosa includere, ogni quanto rilasciare aggiornamenti, etc.
+
+Il software proprietario può installare repository di terze parti (ad es. Chrome)
+
+*** Arch
+
+Rolling e pragmatica
+
+Aggiornamenti costanti sono desiderabili solo per gli strumenti di analisi
+
+Manjaro: semi-stabile, BlackArch e Arch... distribuzioni orientate verso la sicurezza
+
+*** Debian
+
+Una delle distro più antiche ancora in uso
+
+Fixed-point[fn:25] e DFSG
+
+Aggiornamenti consistono solo di patch per la sicurezza, "stabile" significa che i bug sono conosciuti e "prevedibili"
+
+Ubuntu, Kali
+
+*** Nix
+
+Il meglio dei due mondi
+
+Build pienamente riproducibili (v. anche Guix), configurazione descrittiva
+
+** Digital forensics
+
+- Definizione di informatica forense
+- Definizione di informatica e di scienze forensi
+- Evoluzione verso la digital forensics
+- Problemi epistemologici nella ricerca della verità
+- Necessità di una formalizzazione e definizione di best practices
+- Crisi della riproducibilità negli studi scientifici
+- Standard ISO sulla digital evidence
+- Principi generali sul trattamento della prova informatica:
+  - Convenzione di Budapest
+  - Principi generali su come trattare i dati informatici nel codice di procedura penale italiano
+- Natura della prova informatica:
+  - Natura dei dati digitali e della prova informatica secondo la dottrina e la Cassazione
+- Aspetti pratici della prova informatica:
+  - Mezzi di ricerca della prova informatica
+    - Sequestro probatorio, ispezione e perquisizione, intercettazioni
+  - Modalità di assunzione della fonte di prova informatica
+    - Prova documentale, atipica, perizia/consulenza tecnica
+
+* Ragioni a favore di GNU/Linux ed il FOSS
+
+- Valutazione delle prove: ispezione del codice sorgente
+
+** Maggiore affidabilità
+
+GNU è più affidabile di Unix: Miller 1995, p. 2--3. https://www.researchgate.net/profile/Barton-Miller/publication/239340401_A_Re-examination_of_the_Reliability_of_UNIX_Utilities_and_Services/links/565dae3608aefe619b2679b5/A-Re-examination-of-the-Reliability-of-UNIX-Utilities-and-Services.pdf
+
+* Utilizzazione pratica di GNU/Linux
+
+* Bibliografia
+
+#+print_bibliography:
+
+* Footnotes
+[fn:28] Wheeler, /Secure Programming/, p. 7. 
+
+[fn:1] Vedi https://www.treccani.it/vocabolario/apologia.
+
+[fn:2] Tradizionalmente, il cristianesimo.  Tuttavia, nel mondo GNU/Linux gli utilizzatori più fedeli dell'editor di testo /Emacs/ hanno scherzosamente creato la /Chiesa di Emacs/, presieduta da /San IGNUzio/.  Vedi https://stallman.org/saint.html.
+
+# TODO: serve approfondire il tema dell'Unix epoch?
+
+[fn:6] Vedi https://unixtime.org/ e https://2038.wtf/.
+
+# TODO: articoli sul come il software originariamente non era portatile, ed era maggiormente legato ad una certa architettura.
+
+[fn:8] Gonzalez-Barahona, /Brief History/, p. 75.
+
+# TODO: articoli sul software come oggetto di diritto d'autore e come proprietà intellettuale.
+
+[fn:9] Serve una fonte sulla convenzione di Berna.
+
+[fn:10] SQLite, /SQLite/.
+
+[fn:11] Stallman, /Free Software/.
+
+[fn:12] Android Developers, /Platform Architecture/.
+
+[fn:13] Stallman, /Android/.
+
+[fn:14] Android Developers, /Licenses/.
+
+[fn:15] Stallman e Haible, /Why-CLISP-is-under-GPL/.
+
+[fn:16] Thrysoee, /Editline Library/.
+
+[fn:17] Lub, /rlwrap/.
+
+[fn:18] Debian, /General Resolution/.
+
+[fn:19] OpenWRT, /OpenWRT Project/.
+
+[fn:20] Alpine Linux, /About/.
+
+[fn:21] BusyBox, /BusyBox/.
+
+[fn:22] DistroWatch, /Major Distributions/.
+
+[fn:23] Stallman, /Linux/.
+
+[fn:24] /Distro/, pl. /distros/ è l'abbreviazione colloquiale di /distribution/.
+
+[fn:25] Cf. https://wiki.debian.org/it/DebianReleases

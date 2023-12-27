@@ -1,0 +1,91 @@
+#+TITLE: Bibliografia (bozza)
+#+AUTHOR: Luca Piras
+#+LANGUAGE: it
+#+html_head: <link rel="stylesheet" href="./org.css">
+
+* N.B.
+
+Questa è solo una bozza per la bibliografia della tesi, ed usa un formato semplificato (autore, anno, titolo come collegamento alla pagina web, tipo di fonte).
+
+Le fonti sono divise in due sezioni:
+
+- *Articoli accademici*, pubblicati su riviste accademiche.  Alcuni articoli richiedono l'accesso con le credenziali di ateneo per essere visualizzati.  Per facilità di consultazione anche personale, tutti gli articoli in PDF a cui ho fatto riferimento sono disponibili al seguente indirizzo: https://git.lucapiras.me/lucapiras5/tesi-fonti-pdf.
+- *Altre fonti*, diverse dagli articoli accademici, tra cui, ad es., pagine web di vari progetti, saggi pubblicati su siti personali o di una società, articoli di giornale, note di rilascio, ecc.  In questo caso, ogni fonte è accompagnata da una breve descrizione del suo tipo, contenuto, e rilevanza.
+
+* Articoli pubblicati su giornali accademici
+
+...
+
+* Articoli non pubblicati su giornali accademici
+* Pagine web
+** Android Developers, 2022, /Licenses/
+https://source.android.com/docs/setup/about/licenses
+
+Il sistema operativo Android è open-source, ma usa una licenza permissiva diversa dalla LGPL per ragioni di praticità (sez. /Why Apache Software License?/):
+
+- /LGPL requires the allowance of customer modification [...] Most device makers don't want to be bound by these terms./
+- /LGPL libraries have been the source of many compliance problems for downstream device makers and application developers./
+** Android Developers, 2023, /Platform Architecture/
+https://developer.android.com/guide/platform
+
+Android usa il kernel Linux, il che lo rende una distribuzione Linux.
+** Debian, 2006, /General Resolution: Why the GNU Free Documentation License is not suitable for Debian main/
+https://www.debian.org/vote/2006/vote_001
+
+La licenza GNU per la documentazione è stata considerata "illiberale" dagli sviluppatori Debian.
+** DistroWatch, 2023, /Major Distributions/
+https://distrowatch.com/dwres.php?resource=major
+
+Elenco delle distribuzioni Linux più importanti, data presa dall'avviso di copyright in fondo alla pagina.
+
+** Stallman, 1983, /Initial Announcement/
+https://www.gnu.org/gnu/initial-announcement.html
+
+Mail scritta da Stallman in cui annuncia la creazione del sistema operativo GNU, una reimplementazione libera di Unix.
+** Stallman, 2011, /Is Android really free software?/
+https://www.theguardian.com/technology/2011/sep/19/android-free-software-stallman
+
+Saggio pubblicato su The Guardian, in cui Stallman critica il fatto che Android è open-source, ma non free software.
+** Stallman, 2021, /Linux e il sistema GNU/
+https://www.gnu.org/gnu/linux-and-gnu.html
+
+Stallman spiega il rapporto fra Linux e GNU.
+** Stallman, 2021, /What is Free Software?/
+https://www.gnu.org/philosophy/free-sw.html
+
+Stallman definisce la nozione di "free software", e quali diritti devono essere garantiti all'utente.
+** Stallman e Haible, 2000, /Why-CLISP-is-under-GPL/
+https://gitlab.com/gnu-clisp/clisp/-/blob/master/doc/Why-CLISP-is-under-GPL
+
+CLISP si appoggiava alla libreria GNU readline (rilasciata sotto la GPL), ma non era stato rilasciato con la licenza GPL.  Stallman usa un'interpretazione estensiva della nozione di lavoro derivato, che include anche il solo fatto di usare una libreria.  Pertanto, chiunque usi readline dovrebbe usare anche la licenza GPL.  Le mail risalgono agli anni '90.  La data si riferisce al momento in cui il documento è stato aggiunto al repository.
+** Torvalds, 1991, /Notes for linux release 0.01/
+https://cdn.kernel.org/pub/linux/kernel/Historic/old-versions/RELNOTES-0.01
+
+Note di rilascio della prima versione di Linux, in cui Linus spiega le funzioni fondamentali del kernel.
+** Da leggere
+
+- Gabriel, 1991, /Lisp: Good News, Bad News, How to Win Big/, https://dreamsongs.com/Files/LispGoodNewsBadNews.pdf, saggio in cui si confrontano i linguaggi di programmazione Lisp e C, e l'autore spiega i motivi della rapida e larga adozione di C e Unix.
+- Gonzalez-Barahona, 2021, /A Brief History of Free, Open Source Software and Its Communities/, https://doi.org/10.1109/MC.2020.3041887.
+- Miller, 1995, /A Re-examination of the Reliability of UNIX Utilities and Services/, https://www.researchgate.net/publication/239340401_A_Re-examination_of_the_Reliability_of_UNIX_Utilities_and_Services.
+- Tanenbaum, 1987, /A Unix Clone with Source Code for Operating Systems Courses/, https://dl.acm.org/doi/pdf/10.1145/24592.24596.
+- Wheeler, 2015, /Secure Programming HOWTO/, https://dwheeler.com/secure-programs/3.71/Secure-Programs-HOWTO.pdf, TODO.
+
+* Progetti e repository
+** Alpine Linux, 2022, /About/
+https://www.alpinelinux.org/about/
+Pagina del progetto, data presa dall'avviso di copyright.
+** BusyBox, 2008, /BusyBox: The Swiss Army Knife of Embedded Linux/
+https://busybox.net/about.html
+Pagina del progetto, data presa dall'avviso di copyright.
+** Lub, 2022, /rlwrap/
+https://github.com/hanslub42/rlwrap
+Programma che permette a qualsiasi programma di utilizzare readline.
+** OpenWRT, 2022, /Welcome to the OpenWrt Project/
+https://openwrt.org/start
+Pagina del progetto.
+** SQLite, n.d., /SQLite Is Public Domain/
+https://www.sqlite.org/copyright.html
+Pagina del progetto relativa alla volontà di rilasciare il programma nel pubblico dominio.
+** Thrysoee, 2022, /Editline Library (libedit)/
+https://www.thrysoee.dk/editline/
+Reimplementazione di readline con una licenza permissiva.

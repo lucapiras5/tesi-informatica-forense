@@ -1,0 +1,112 @@
+* Da approfondire
+
+- *Origine informatica forense in Italia*.
+- *Informatica forense come disciplina scientifica:*
+  - Distinzione fra riproducibilità e ripetibilità degli esperimenti.
+- *Captatore:*
+  - Esempio tipico di software che deve essere closed-source.
+  - Cattura informazioni in tempo reale, rende impossibile verificare la correttezza del processo di cattura (acquisizione come fase dell'informatica forense che beneficia in maggiore misura dell'uso di software open-source).
+  - Dottrina contro l'uso del captatore, compromesso (si può usare il captatore, ma chiedere standard elevati di verifica del suo funzionamento).
+- Catene di custodia con Git (Merkle tree?): uso di firme digitali come pseudo-marche temporali, leggere il CAD per le specifiche tecniche.
+- *Software open-source:*
+  - Anche se gratuito, c'è comunque un elemento commerciale (i tecnici saranno comunque pagati per installarlo e mantenerlo).
+  - Presenta costi operativi minori rispetto al software commerciale, evita il /lock-in/.
+- *Computer come scatole nere:*
+  - Citazione di Gammarota.
+  - Anche se le specifiche tecniche dell'hardware sono pubbliche, c'è comunque il rischio di /errata/ non documentati.
+- *Natura del software open-source:*
+  - Licenza come contratto fra le parti, software come opera soggetta al diritto d'autore, concezione americana e europea/italiana.
+  - Qualificazione legale e conseguenze in caso di violazione della licenza.
+- *Diritto penale garantista.*
+
+* Nuove idee
+
+- Opportunità di abbandonare la cybersecurity, e ridurla ad un accenno
+- Giurisprudenza in cui l'oggetto del processo non è l'acquisizione di dati digitali, ma l'uso di strumenti informatici (ad es., per l'ingegneria civile, nel campo medico, ecc.), e si considera se gli algoritmi contenuti nello strumento sono conoscibili o meno
+- Esempi di reverse-engineering: Nouveau?
+- Github Copilot e le licenze open-source
+
+* (Da discutere all'incontro)
+
+- Protezione legale del software: diritto d'autore, brevetti, segreto industriale: opportuno approfondire?
+- Responsabilità da danno causato da software: opportuno approfondire?
+- Organizzazione nel FOSS: analogia con il diritto amministrativo, organi e procedimenti.
+- Accenno ai version control system.
+
+* Nuovo tema comune
+
+Elemento comune: riproducibilità (del codice, della certificazione, dell'analisi)
+
+* Packages
+
+Control what software is allowed (DFSG), harmonize software with system (init scripts, create users, etc., risk of breaking things with a manual install), signatures in packages (chain of trust?)
+
+* TUI
+
+Unix (text streams are the universal interface), GUI (usability guidelines for mouse, minimum size for items formula, keyboard navigation and autocompletion, historical TTYs and video of one printing on paper)
+
+* Documentazione
+
+- FOSS tradizionalmente includeva solo le /reference guides/, che sono utili solo se si sa già cosa si sta cercando, attualmente la comunità si è ampliata ed esistono molti più tutorial
+- Ad es., per quanto riguarda gli editor di testo:
+  - Vim include vimtutor, un /user manual/ ed un /reference manual/, ed anche aiuto su come usare i manuali stessi
+  - Emacs è detto /self-documenting/, permette di ispezionare il codice sorgente e modificarlo durante l'esecuzione del programma stesso, le funzioni e variabili sono documentate, il sistema di aiuto spiega come usarlo, e include i manuali anche per gli altri componenti del sistema
+
+* Curiosità
+
+Open source vs proprietary in LLMs: https://youtube.com/watch?v=9JEMNy4sgkY
+
+Printable compiled code: https://youtube.com/watch?v=LA_DrBwkiJA
+
+CI, Git open-source e self-hosted
+
+GitHub arctic vault
+
+* Nuovo ordine
+
+- Definizione oggetto informatica forense e sicurezza informatica (requisiti, limiti discipline, interazioni)
+- Discussione FOSS disponibile per le discipline (questioni giuridiche, tecniche)
+- Definizione FOSS, discussione vantaggi (difficile distinguere le due)
+- Sistemi a supporto del software FOSS (documentazione tecnica libera - tensione legale con segreti industriali, dati necessari per l'uso del software liberi - ad es., driver, etc., VCS, CI, compilatori FOSS e confronto con proprietari, etc...) - analogie con il diritto amministrativo (pubblicità dei dati, procedimento che serve a garantire un livello di qualità e figure responsabili per il raggiungimento degli obiettivi più critici)
+- Sistemi operativi FOSS (GNU/Linux, vantaggi)
+
+* Sicurezza informatica
+
+- Pacchetti: aggiornamenti per la sicurezza
+- Security audit di software (ad es., gocryptfs, restic), definizione del /threat model/
+
+- Crittografia: branca della sicurezza informatica che i governi regolano espressamente, perché ostacola le indagini (uso di comunicazioni private da parte di cyber-criminali e terroristi, ma errore umano, Silk Road, metadati su Twitter)
+
+* Evoluzione del software proprietario
+
+Perché i programmi erano open-source:
+
+- Le macchine erano programmate manualmente (come un abaco)
+- Le macchine servivano ad uno scopo specifico, o avevano una ROM limitata, non c'è grande margine di espressione creativa
+- I programmatori scrivevano direttamente in codice macchina (ad es NASA), non esistevano compilatori
+- I computer erano usati per progetti di ricerca, prima che per scopi commerciali (cf. il personal computer negli uffici di imprese, vs. ricercatori)
+
+* Considerazioni su RE
+
+RE, decompilazione, ricompilazione:
+
+- Caso peggiore: codice sorgente è violazione di copyright con un passo in più, basta solo ricompilare e si ottiene lo stesso hash
+- Caso meno peggiore: codice sorgente è presunto sostanzialmente identico all'originale, dato che compila nello stesso codice macchina, è improbabile che due implementazioni diverse producono lo stesso codice, salvo casi più semplici, c'è rischio di danni alla concorrenza (ad es., decompilazione SM64, Nintendo offre la versione HD, c'è ancora interesse e non si potrebbe neppure argomentare che è "abandonware")
+- Caso migliore: compilazione si considera violazione di copyright, codice è ridistribuibile ma solo per finalità educative, il rischio per la concorrenza esiste solo se compilato *e* distribuito al pubblico, si ammettono compilazioni "personali"
+- Problema della licenza per il codice decompilato (GPL vieta limiti all'uso, ma la giurisprudenza potrebbe includere dei limiti; sorta di dual-licensing clandestino e non volito dagli sviluppatori originali; prevarrebbe il diritto nazionale)
+
+RE di singole parti a fini di interoperabilità va ammesso, ma in maniera non restrittiva (eufemismo per "estensiva")
+
+* Considerazioni su copyright e database
+
+Utilità modelli di intelligenza artificiale se gli hashsets non bastano
+
+Hashsets/modelli: copyright? (Feist negli USA, diritto Europeo sui database in Italia)
+
+* Captatori e cybersecurity
+
+Captatori: tipico software closed-source, devono essere soggetti a test, i test dovrebbero essere aperti.
+
+Tentativo di cercare di certificare i captatori, non riuscito.
+
+Riferimento alla certificazione ENISA, o altre certificazioni adeguate per lo scopo.

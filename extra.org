@@ -1,0 +1,18 @@
+* Linguaggio macchina
+
+Può succedere che l'implementazione hardware non corrisponda esattamente a quanto previsto dalla ISA (ad es., [[https://en.wikipedia.org/wiki/Pentium_FDIV_bug][Pentium FDIV Bug]]).  Queste differenze vengono documentate con il nome di "errata", e si può cercare di correggerle a livello di software ([[https://www.kernel.org/doc/html/latest/arm64/silicon-errata.html][Silicon Errata and Software Workarounds]]).
+
+Le ISA attualmente più diffuse sono x86 e ARM.
+
+x86 è una ISA [[https://en.wikipedia.org/wiki/Complex_instruction_set_computer][CISC]] (con molte istruzioni complesse), sviluppata in collaborazione da Intel ([[https://en.wikipedia.org/wiki/X86][architettura x86 originale]]) e AMD ([[https://en.wikipedia.org/wiki/X86-64][estensioni a 64-bit]]), che viene usata principalmente da server, computer fissi e laptop.
+
+[[https://en.wikipedia.org/wiki/ARM_architecture_family][ARM]] è una ISA [[https://en.wikipedia.org/wiki/Reduced_instruction_set_computer][RISC]] (con poche istruzioni semplici), sviluppata dalla società omonima, che viene usata prevalentemente negli smartphone e tablet, ma anche nei computer della Apple più recenti ([[https://en.wikipedia.org/wiki/Mac_transition_to_Apple_silicon][Mac transition to Apple silicon]]).
+
+Le istruzioni indicate nella ISA possono essere scritte in due modi, che sono tra di loro intercambiabili: assembly, e codice macchina binario.
+
+Le ISA specificano le istruzioni disponibili ([[https://en.wikipedia.org/wiki/Opcode][opcode]]), quali operatori richiedono ([[https://en.wikipedia.org/wiki/Opcode#Operands][operands]]), quali effetti producono, e la loro codifica binaria affinché il processore le possa eseguire, e il loro  ([[https://en.wikipedia.org/wiki/Assembly_language#Opcode_mnemonics_and_extended_mnemonics][opcode mnemonics]]).
+
+Microcode.
+
+Macro assembler.
+

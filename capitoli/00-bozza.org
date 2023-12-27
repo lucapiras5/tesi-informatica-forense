@@ -1,0 +1,72 @@
+#+TITLE: Tesi di informatica forense
+
+* COMMENT Prova scientifica ed informatica forense
+
+** Informatica
+
+L'informatica è la scienza che studia il trattamento dell'/informazione/ mediante l'uso di procedure ed algoritmi.
+
+/Da un punto di vista teorico/, l'informazione va considerata nel senso più astratto possibile.  L'informatica è molto più strettamente collegata alla matematica, che alle altre scienze naturali o umanistiche.
+
+La Macchina di Turing è il modello tipico di calcolatore.  Viene descritta come una macchina che può leggere e scrivere "simboli" all'interno di celle, su un nastro di lunghezza infinita.
+
+Il contenuto o insieme dei simboli non è ulteriormente specificato o definito, perché non è rilevante: all'informatica interessa solo /come/ l'informazione viene manipolata, non /cosa/ si sta rappresentando.
+
+Ad es., le stesse tecniche di compressione e decompressione dei dati vengono usate per registrare un messaggio vocale, o un'intercettazione ambientale; per fare una foto od un video ad un paesaggio naturale, o creare materiale pedopornografico.
+
+L'implementazione pratica della Macchina di Turing sono i processori.  Per esigenze pratiche:
+
+- I processori usano solo due simboli per rappresentare l'informazione oggetto dell'informatica, i valori 0 e 1, da cui il nome "sistema binario".
+- Il nastro è 
+
+Il primo passo consiste nell'inquadrare il problema che il software per l'informatica forense, indipendentemente dal fatto che sia /free and open source/, o /non-free/ e proprietario, deve risolvere.
+
+Solo dopo aver definito quali sono gli obiettivi da raggiungere, si può valutare l'adeguatezza degli strumenti utilizzati.
+
+** Informatica
+
+
+
+** Prova scientifica
+- 
+** Informatica forense
+- Computer-generated e computer-derived evidence
+- 
+
+* Licenze libere
+
+** Premessa: la natura del software
+
+Prima di poter discutere del regime giuridico applicabile al software, è opportuno 
+
+Nel linguaggio comune, spesso si parla genericamente di /software/.  
+
+ma in realtà il termine è ambiguo, e può riferirsi a due categorie distinte, il codice sorgente ed il codice macchina.
+
+È estremamente importante distinguere i due formati, perché grande parte dei vantaggi del FOSS, e viceversa, degli svantaggi del software proprietario, derivano proprio dalla possibilità di leggere il codice sorgente.
+
+
+
+La prima categoria è il *codice sorgente*.  Il codice sorgente è un semplice file di testo, che contiene istruzioni scritte in un linguaggio di programmazione.  I programmatori possono facilmente leggere e modificare 
+
+
+
+Normalmente l'utilizzatore finale del software non è interessato ad 
+
+Il *codice macchina* è il software che può essere eseguito da un processore.  I processori possono eseguire solo istruzioni semplici e 
+
+Consiste in una serie di istruzioni specifiche per ogni processore, e viene derivato dal codice sorgente.
+
+La seconda è il software come *
+
+Quando si parla genericamente di /software/, la parola può riferirsi a due categorie, che sono ben distinte.
+
+
+
+Il fenomeno del /free, open-source sof
+
+** 
+
+
+
+** 

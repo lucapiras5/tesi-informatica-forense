@@ -1,0 +1,32 @@
+#+TITLE: Cybersecurity (estratto)
+#+AUTHOR: Luca Piras
+#+LANGUAGE: it
+#+OPTIONS: ':t
+
+* Motivi per l'inclusione/esclusione del tema
+
+*Il progetto iniziale* era di scrivere una tesi sull'uso dei sistemi GNU/Linux e software FOSS in generale per svolgere attività di informatica forense.  Il cuore della tesi era l'informatica forense, ed il FOSS aveva una rilevanza secondaria, più "strumentale" che "centrale".
+
+Successivamente, dato che a seguito di alcuni incontri era stata evidenziata l'opportunità di concentrarsi anche sul software open-source in generale, avevo pensato di dedicare un capitolo anche alla cybersicurezza, dato che:
+
+- *È collegata all'informatica forense.* La cybersicurezza cerca di prevenire le situazioni  che l'informatica forense va ad investigare (reati informatici), e dopo la conclusione delle investigazioni, cerca di evitare che le stesse situazioni si ripetano nel futuro.
+- *Beneficia dall'uso di FOSS.* La massima /security through obscurity is not security/ indica che gli schemi astratti e le implementazioni pratiche relativi alla cybersecurity devono essere sottoposti ad un controllo pubblico diffuso, in modo che si possano trovare le vulnerabilità presenti nello schema il più velocemente possibile; il FOSS è il miglior modo per raggiungere questo obiettivo.
+
+*In questo modo, avrei trattato tre argomenti,* strettamente collegati fra loro (FOSS, informatica forense, cybersicurezza), dando un maggiore rilievo al FOSS, che sarebbe diventato la pietra angolare del discorso.  In particolare, per quanto riguardava la cybersicurezza mi sarei concentrato sulle certificazioni di sicurezza (specie quella dell'ENISA), e sull'opportunità di usare il FOSS come strumento per verificare il livello di sicurezza di applicativi anche proprietari.
+
+Tuttavia, successivamente ho deciso che la nuova impostazione non era ideale, per vari motivi:
+
+- *La tesi rischia di diventare dispersiva.* Credo che sia meglio trattare due argomenti in maniera approfondita (FOSS e informatica forense), che aggiungerne un terzo, che penso non sarei in grado di trattare allo stesso modo degli altri due.
+- *Preferirei concentrarmi su argomenti con cui sono più familiare.*  Non ho esperienze dirette con la cybersicurezza, e non ho seguito in precedenza corsi sull'argomento.
+- *Il documento dell'ENISA non offre molti appigli.*
+  - Leggendo la proposta dello schema di certificazione dell'ENISA, il software open-source viene menzionato solo due volte, ed in entrambi i casi, non per il fine di incoraggiare l'adozione all'interno dei laboratori che svolgono le attività di certificazione.
+  - Naturalmente, potrei criticare il fatto che non viene menzionata la necessità di rendere pubblici gli strumenti e le modalità di verifica (sia per legittimare l'attività svolta, sia per permettere un controllo diffuso da parte dei ricercatori di cybersicurezza).  Le considerazioni che svolgo si muovono in quest'ultima direzione, ma molto probabilmente peccano di idealismo, dovuto al fatto che non ho avuto esperienze diretta con il mondo della cybersicurezza.
+- *La materia è ancora in evoluzione.* Il /Cybersecurity Act/ europeo risale solo al 2019, ed il /candidate scheme/ per la certificazione dell'ENISA risale al 2021; mentre il FOSS e l'informatica forense sono stati oggetto di casistica giurisprudenziale ed elaborazioni dottrinali da almeno 20 anni.
+
+*Per questi motivi:*
+
+- *Mi concentrerei esclusivamente sui temi del FOSS e dell'informatica forense,* in modo che la tesi non diventi dispersiva, e non ci sia una materia che è trattata in maniera meno approfondita rispetto alle altre due, o la cui inclusione rende meno nettamente definito l'esatto oggetto della tesi.
+- *Preferirei ridurre il tema della cybersecurity ad un breve accenno* all'interno del capitolo dedicato all'informatica forense.  Quando definisco l'oggetto di quest'ultima, darò anche una definizione di cybersecurity, in modo da distinguere chiaramente gli ambiti applicativi.
+- *Il tema della cybersecurity e della certificazione del funzionamento del software proprietario può essere sollevata anche nella critica contro l'uso del captatore* nelle indagini, come compromesso che non sostituisce, ma perlomeno si avvicina, alla soluzione più garantista -- il divieto espresso e generalizzato di usare il captatore, nello stesso spirito dell'art. 64 co. 2 c.p.p.: "Non possono essere utilizzati, neppure con il consenso della persona interrogata, metodi o tecniche idonei [...] alterare la capacità di ricordare e valutare [...]".
+
+#+INCLUDE: cybersecurity.org :minlevel 1
