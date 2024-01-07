@@ -22,37 +22,51 @@ La seconda è la nozione secondo cui per svolgere operazioni tecniche e scientif
 
 Il vantaggio principale del codice scritto da altri è che è stato messo alla prova nella pratica, ed è stato soggetto ad un controllo di qualità diffuso. Quanti più utenti usano il software, ognuno con le proprie configurazioni di hardware e software, tanti più *bug* possono essere scoperti e corretti. Quanti più sviluppatori contribuiscono a sviluppare il software, tanto più il codice sarà riorganizzato in maniera che sia leggibile e facilmente comprensibile anche da qualcuno che non è familiare con quel codice.
 
-Specularmente, lo svantaggio principale del codice nuovo è che è sviluppato ed utilizzato da un pubblico molto più ridotto, nel caso peggiore solo un singolo sviluppatore. La maggiore semplicità del codice è sicuramente un vantaggio, perché meno codice significa anche meno *bug*, ma allo stesso tempo, è anche uno svantaggio, perché meno codice significa anche meno codice che serve a prevenire, gestire o correggere i *bug*. Inoltre, un gruppo di sviluppatori ristretto e strettamente familiare con il codice avrà un incentivo minore a documentarlo ed organizzarlo, perché sanno già come funziona.
+Viceversa, lo svantaggio principale del codice nuovo scritto *ad hoc* è che non ha ricevuto la stessa attenzione dagli utilizzatori del software, e da altri programmatori:
 
-Per quanto riguarda la qualifica di "software per l'informatica forense", si deve valutare il software dal punto di vista sostanziale, non formale.
+- Funziona sul proprio sistema, ma potrebbe non funzionare su altri sistemi. Pertanto, non è riproducibile.
+- La minore quantità di codice significa anche una minore quantità di *bug*, ma allo stesso tempo, significa anche che c'è meno codice che serve a prevenire o correggere i *bug*. Pertanto, non è affidabile.
+- Un gruppo di sviluppatori ristretto e strettamente familiare con il codice avrà un incentivo minore a documentarlo ed riorganizzarlo, perché sanno già come funziona. Pertanto, è difficile da studiare e modificare.
 
-----
+Da un lato, è vero che l'informatica forense ha esigenze particolari e specializzate per quanto riguarda il funzionamento del software, che vanno oltre le aspettative per un programma non specializzato. Il software deve offrire garanzie di correttezza, ripetibilità, riproducibilità dell'analisi, e deve offrire la maggiore quantità possibile di informazioni utili durante il suo funzionamento.
 
-- quantità di bug per linea
-- svantaggi di fare un rewrite del software
+Tuttavia, è anche vero che il funzionamento corretto e prevedibile, e la capacità di fornire informazioni diagnostiche sono caratteristiche utili anche per i programmi non specializzati per l'informatica forense. In ultima analisi, tutti i programmi hanno l'interesse a funzionare correttamente, l'unica differenza è che questo maggiore rigore è la priorità fondamentale dell'informatica forense.
 
-- software "forense" a pagamento potrebbe essere di scarsa qualità
-- software non-forense ma libero può essere facilmente adattato alle esigenze dell'informatica forense
+Pertanto, si possono trarre due conclusioni. La prima è l'opportunità di cercare di riutilizzare e modificare il codice già esistente, quando possibile, in modo da elevarlo agli standard più stringenti dell'informatica forense. La seconda è che la distinzione fra software "forense" e "non-forense" deve essere valutata da un punto di vista sostanziale, non formale.
 
-In ogni caso, le due modalità non si escludono a vicenda, in ultima analisi si dipende sempre da software scritto da terze parti.
+In altre parole, il software che afferma di essere specializzato per l'informatica forense potrebbe essere di scarsa qualità. In particolare, nel caso del software non-libero, potrebbe essere impossibile ispezionare il codice sorgente per verificare il buon funzionamento del programma. Viceversa, il software libero che non è nato per essere utilizzato per scopi forensi può essere modificato e adattato alle esigenze dell'informatica forense.
 
-- firmware, sistema operativo, librerie standard sono componenti scritti da terzi
+In ogni caso, quanto detto finora non significa che si deve sempre evitare di sviluppare codice originale, innovativo, ed *ad hoc*, ma solo che "reinventare la ruota" non dovrebbe essere la prima scelta,[^RiscrivereCodiceDaZero] ma dovrebbe essere considerata una scelta eccezionale, da prendere solo in situazioni eccezionali. Ad esempio, perché non esistono altre soluzioni, o perché sarebbe più agevole iniziare da zero piuttosto che cercare di modificare le soluzioni già esistenti. Viceversa, se esistono soluzioni mature e largamente utilizzate, è necessario motivare perché non sia possibile utilizzarle.
 
-Questo punto sarà approfondito nel capitolo successivo, ma è opportuno anticipare che anche il sistema operativo è un software (meglio, una collezione di software), ed esistono sistemi operativi composti interamente, o quasi interamente[^SistemiOperativiQuasiInteramenteLiberi] di software libero. Dati i vantaggi del software libero è opportuno valutare la possibilità di usare questi sistemi operativi, e scegliere sistemi operativi non-liberi solo se strettamente necessario.
-
-[^SistemiOperativiQuasiInteramenteLiberi]: In alcuni casi, è necessario includere software non-libero per far funzionare alcuni componenti hardware, come la connessione Wi-Fi, o la scheda video. Ad esempio, il programma per installare la distribuzione GNU/Linux Debian tradizionalmente non includeva questo tipo di software, perché per motivi ideologici, voleva rimanere un sistema composto interamente da software libero. Debian permetteva l'installazione di questo software, ma doveva essere un processo manuale, in modo che l'utente fosse consapevole che il sistema contiene componenti non-liberi. Tuttavia, a partire da Debian 12 (rilasciata nel 2023), a seguito di una discussione nel progetto, il programma per l'installazione è stato modificato, in modo da includere anche i componenti non-liberi. \VediUrl{Autori di Debian Wiki}{Firmware}{2023}{https://web.archive.org/web/20230720195706/https://wiki.debian.org/Firmware}.
+[^RiscrivereCodiceDaZero]: Per una discussione sul perché riscrivere del codice partendo da zero è una cattiva idea, \VediUrl{J. Spolsky}{Things You Should Never Do, Part I}{2000}{https://web.archive.org/web/20170104073437/https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/}.
 
 ## Architettura del software
 
-- diversi gradi di complessità del software
-- non tutto il software deve arrivare al massimo grado
+Si possono distinguere vari gradi di complessità del software. È bene indicare fin da subito che non tutto il software deve ambire a scalare i vari gradi, e aumentare la sua complessità. I gradi più bassi e meno complessi tendono a coincidere con del software che viene sviluppato per risolvere problemi altamente specifici, mentre i gradi più alti rappresentano software più generico, e adatto a risolvere intere categorie di problemi.
 
-- glue code
-- software monolitico
-- software più libreria
-- framework
+Può capitare che un software nato per risolvere un problema specifico, mediante la collaborazione altrui, cresca fino a diventare un software generico, ma questa evoluzione non è necessaria. È La complessità non è una misura della qualità o utilità del software, ed è sempre preferibile ridurre la complessità di un sistema, piuttosto che aumentarla. La priorità principale è il corretto funzionamento del software, e più un sistema è complesso, e più diventa dispendioso garantire che tutti i componenti funzionano correttamente.
 
-<!-- note -->
+Il primo grado è il *glue code* ("codice-colla"), ossia, del codice che serve a collegare fra loro più programmi indipendenti. Il codice contenuto in questo tipo di programmi è generalmente breve e semplice. Il lavoro effettivo e complesso viene interamente delegato ad altri programmi, il *glue code* serve solo ad indicare la filiera che i dati devono seguire.
+
+Il caso d'uso tipico è per automatizzare operazioni meccaniche, che devono essere ripetute più volte. Invece di scrivere manualmente tutti i comandi, è molto più semplice scrivere del codice che eseguirà i comandi necessari in sequenza.
+
+Il secondo grado è il "software monolitico". In questo caso, non si scrive codice che collega vari programmi, ma si scrive un programma completo ed indipendente. L'aggettivo "monolitico" si riferisce al fatto che il codice responsabile per l'analisi e l'elaborazione dei dati, ed il codice responsabile per la presentazione dei dati non sono separati in maniera netta.
+
+Il caso d'uso tipico è quando la logica per l'elaborazione dei dati è diventata troppo complessa per il *glue code*, che generalmente può compiere solo trasformazioni semplici, ma il programma è comunque abbastanza semplice, e compie una funzione, o poche funzioni, altamente specifiche.
+
+Il terzo grado è il software abbinato ad una libreria. La differenza rispetto al grado precedente è che il codice viene diviso in due parti.
+
+La prima parte è chiamata libreria, e contiene la parte di codice più generica ed astratta, che non risolve un problema specifico, ma offre tutti gli strumenti che possono essere utilizzati per la soluzione di problemi specifici. Si tratta del codice che acquisisce, analizza, e/o trasforma i dati. Il tratto caratteristico della libreria è che non può essere utilizzata direttamente, ma deve essere richiamata da un programma.
+
+La seconda parte è il software che può essere direttamente eseguito. Questo codice ha la natura di *glue code*, ma invece di collegare vari programmi, collega le funzioni già definite nella libreria per risolvere un problema concreto, e presentare i dati in maniera utile.
+
+Il caso d'uso tipico di questo modello è quando un programma inizialmente nato per risolvere un singolo problema nel tempo si è arricchito di funzionalità, è diventato sempre più complesso, e per ragioni di organizzazione del codice, è più semplice dividere le parti che elaborano i dati, specie se possono essere riutilizzate da altri programmi, dalle parti che presentano i dati.
+
+La divisione fra programma e libreria presenta due vantaggi. Il primo è la possibilità di riutilizzare la libreria in altri programmi, in modo da beneficiare del lavoro già svolto da altri. Il secondo è la facilità con cui è possibile modificare le parti di codice che gestiscono il flusso dei dati fra i vari componenti della libreria, e la presentazione finale dei dati, in modo da poter adeguare il codice per risolvere un problema specifico.
+
+L'ultimo grado di complessità è dato dal *framework* ("intelaiatura"). Un *framework* raccoglie più librerie, combina le loro funzionalità, e offre ai programmatori un'interfaccia unificata per utilizzarle. I *frameworks* possono essere visti come delle "grandi librerie", che offrono funzionalità astratte. Il compito di chi scrive il *framework* è di implementare correttamente le funzioni più complesse e delicate, in modo che chi lo utilizza per risolvere un problema concreto debba scrivere la minore quantità di codice possibile.
+
+Data la loro complessità, esistono pochi *frameworks*. Questo è un vantaggio, perché gli sforzi della comunità di sviluppatori si può concentrare solo su uno (o pochi) progetti, e qualsiasi miglioramento al *framework* si riflette immediatamente su tutto il software che lo utilizza.
 
 ## Scelta di una licenza libera
 
