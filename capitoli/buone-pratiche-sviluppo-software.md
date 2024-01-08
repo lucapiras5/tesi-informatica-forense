@@ -70,41 +70,62 @@ Data la loro complessità, esistono pochi *frameworks*. Questo è un vantaggio, 
 
 ## Scelta di una licenza libera
 
-Il primo passo per lo sviluppo del software ad uso scientifico è di scegliere una licenza per il software. Come anticipato, la licenza ideale è la GNU GPL, per due motivi:
+Scegliere una licenza è fondamentale se si sta sviluppando del software originale. Anche nel caso in cui si voglia modificare del software già esistente, è opportuno considerare oltre ai vari fattori tecnici anche la licenza usata, e preferire le licenze che soddisfano in maniera più forte le esigenze del software scientifico.
+
+La Free Software Foundation offre alcune indicazioni per scegliere una licenza [@FSF-How-to-choose-a-license].
+
+Per programmi particolarmente semplici che servono a risolvere un problema specifico, è possibile usare una licenza non-*copyleft* (che non impone la ridistribuzione del codice sorgente a seguito di modifiche), come la Licenza Apache 2.0.[^LicenzaApache2.0]
+
+[^LicenzaApache2.0]: \VediUrl{Apache Software Foundation}{ Apache License, Version 2.0}{2004}{https://web.archive.org/web/20040202124049/http://www.apache.org:80/licenses/LICENSE-2.0}.
+
+In generale, è preferibile usare la licenza GPL, indicando la versione scelta, e aggiungendo "e versioni successive", in modo che il software sia sempre compatibile anche con le eventuali versioni successive della GPL [Per una spiegazione sul perché è importante specificare "e versioni successive", v. @Stallman-Identify-licenses-clearly].
+
+Come anticipato nel capitolo precedente, la licenza ideale per lo sviluppo del software scientifico è la GNU GPL, per due motivi:
 
 - La GPL impone la distribuzione del codice sorgente. Senza il codice sorgente, è impossibile continuare a sviluppare il programma, o studiare il suo esatto funzionamento.
-- La GPL impone che se del codice entra a "stretto contatto" con del codice GPL, nel senso che se del codice non può essere utilizzato in maniera indipendente dal codice GPL, ma devono necessariamente essere usati insieme, allora quel codice deve usare a sua volta la licenza GPL.
+- La GPL impone che se del codice entra a "stretto contatto" con del codice GPL,[^GPLStrettoContatto] allora quel codice deve usare a sua volta la licenza GPL. Questa condizione rende la GPL una clausola "infettiva", che obbliga quanto più software possibile ad essere rilasciato con la licenza GPL. 
 
-È opportuno usare la GPL anche per le librerie a supporto del software. Come visto nel caso di *readline*, questo limita 
-Una libreria consiste di codice sorgente o macchina che ha una natura generica ed astratta. Il nome stesso suggerisce una metafora. Una libreria contiene informazioni che hanno natura puramente teorica. È necessario che i libri siano letti, ed il loro contenuto sia messo in pratica, affinché queste informazioni abbiano un'utilità concreta.
+[^GPLStrettoContatto]: Come visto nel caso della libreria *readline*, se si ha un software che usa codice GPL, e questo software non potrebbe essere compilato o utilizzato in maniera indipendente, se non ci fosse il codice GPL, allora si ha una situazione di "stretto contatto".
 
-Il software in senso stretto consiste sempre di codice, sorgente o macchina. La differenza è che ha una funzione specifica e concreta, e fa riferimento alle funzionalità contenute nelle librerie per realizzare un risultato utile.
+Per le librerie (e conseguentemente, anche i *framework*, dato che hanno sostanzialmente la stessa funzione), è necessario distinguere fra due casi.
 
-Le specificazioni tecniche dei linguaggi di programmazione, oltre a definire la sintassi del linguaggio, il suo funzionamento&hellip; spesso includono anche la specificazione di una *standard library* (libreria standard), una libreria di base che contiene le funzionalità più importanti.
+Se la libreria ha una funzione particolare, specifica, ed unica, e non esistono altre librerie, e pertanto, se gli sviluppatori sarebbero obbligati ad usare questa libreria, è opportuno usare la licenza GPL. In questo modo, fino alla creazione di alternative, il monopolio della GPL porterà altri programmi ad adottare la GPL a loro volta, per poter beneficiare della libreria [@FSF-Why-not-LGPL].
 
-V. <https://www.gnu.org/licenses/license-recommendations.html>
+Altrimenti, se esistono già altre librerie che svolgono funzioni simili, rilasciare una libreria con la licenza GPL sarebbe controproducente. Se gli sviluppatori non sono già propensi ad usare la licenza GPL per il loro software, adotteranno le altre librerie. In questo caso, è possibile usare la licenza LGPL[^LGPLTesto] (*Lesser GPL*, "GPL minore"), che non include la clausola *copyleft*, per cui il software deve adottare la licenza GPL.
+
+[^LGPLTesto]: \VediUrl{Free Software Foundation}{GNU Lesser General Public License}{2007}{https://web.archive.org/web/20070701212426/http://www.gnu.org/licenses/lgpl-3.0.html}.
 
 ## Scelta del linguaggio di programmazione
 
-### Linguaggi di programmazione
+### Differenze fra i linguaggi di programmazione
 
-- casi d'uso previsti dal linguaggo, o nicchia in cui il linguaggio è stato adottato
-- Ad es., Bash per lo shell scripting, Lua, Python
-- idealmente, si deve tendere verso un linguaggio che si avvicina al "pozzo del successo" <https://blog.codinghorror.com/falling-into-the-pit-of-success/>
+Esistono numerosi linguaggi di programmazione, ognuno con caratteristiche diverse. L'obiettivo di questo capitolo è di evidenziare la rilevanza di queste caratteristiche ai fini dello sviluppo del software scientifico, e quindi di creare delle linee-guida per scegliere il linguaggio di programmazione (nei nuovi progetti), o di offrire un ulteriore parametro per il momento della valutazione del software usato.
+
+È bene precisare subito che l'intenzione non è di creare una graduatoria dei linguaggi di programmazione. Sarebbe assolutamente irragionevole fare delle valutazioni come "il software A è migliore del software B, perché usa un linguaggio di programmazione più semplice, più moderno, di più alto livello&hellip;"
+
+È vero che alcuni linguaggi di programmazione presentano dei vantaggi oggettivi se confrontati rispetto ad altri,[^PozzoDelSuccesso] ma la valutazione non può essere puramente formale. Un conto sono i vantaggi che il linguaggio ha in astratto, un conto è il codice che viene effettivamente scritto in quel linguaggio. È possibile scrivere del codice chiaro e comprensibile in un linguaggio "difficile", e scrivere del codice difficile da comprendere in un linguaggio "facile".
+
+[^PozzoDelSuccesso]: L'espressione "pozzo del successo" indica uno strumento (linguaggio di programmazione, interfaccia, sistema&hellip;) che rende facile fare le cose giuste, e difficile fare le cose sbagliate. \VediUrl{J. Atwood}{Falling Into The Pit of Success}{2007}{https://web.archive.org/web/20140402064217/https://blog.codinghorror.com/falling-into-the-pit-of-success/}.
+
+Il primo fattore da considerare nella scelta di un linguaggio di programmazione è l'uso per cui il linguaggio di programmazione è stato pensato. Si può distinguere[^DistinzioneSystemScripting] fra due grandi famiglie, i *system programming languages* (linguaggi di programmazione per i sistemi) e gli *scripting programming languages* (linguaggi per lo *scripting*).
+
+[^DistinzioneSystemScripting]: La distinzione non è sempre netta, ma è un punto di partenza utile. \VediUrl{W. Crichton}{What is Systems Programming, Really?}{2018}{https://web.archive.org/web/20180909231614/https://willcrichton.net/notes/systems-programming/}, sez. "2010s: Boundaries blur".
+
+V. @Ousterhout1998.
+
+- Systems programming
+- Scripting languages
+  - shell scripting (POSIX sh)
+  - embedded scripting (Lua)
+  - general purpose (Python)
 
 ### Fattori sociali
 
 - popolarità del linguaggio, più programmatori e librerie
 - manutenibilità nel tempo del linguaggio: ad es. C
 - complessità cognitiva del linguaggio: ad es. Perl
+- dipendenza del linguaggio da certe piattaforme (ad es., Dotnet, o Linux)
 
-### Fattori tecnici
-
-- sistema dei tipi
-- gestione della memoria
-- valori immutabili ("const" e binding in JS)
-- gestione degli errori
-- velocità di esecuzione
 
 ## Sistemi di controllo di versione
 
