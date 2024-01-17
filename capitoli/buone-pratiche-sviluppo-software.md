@@ -98,27 +98,48 @@ Altrimenti, se esistono già altre librerie che svolgono funzioni simili, rilasc
 
 ## Scelta del linguaggio di programmazione
 
-### Differenze fra i linguaggi di programmazione
+Esistono numerosi linguaggi di programmazione, ognuno con caratteristiche tecniche e "sociali" diverse. L'obiettivo è di evidenziare la rilevanza di queste caratteristiche ai fini dello sviluppo del software scientifico, e quindi di creare delle linee-guida per scegliere il linguaggio di programmazione (nei nuovi progetti), o di offrire un ulteriore parametro per il momento della valutazione del software usato.
 
-Esistono numerosi linguaggi di programmazione, ognuno con caratteristiche diverse. L'obiettivo di questo capitolo è di evidenziare la rilevanza di queste caratteristiche ai fini dello sviluppo del software scientifico, e quindi di creare delle linee-guida per scegliere il linguaggio di programmazione (nei nuovi progetti), o di offrire un ulteriore parametro per il momento della valutazione del software usato.
-
-È bene precisare subito che l'intenzione non è di creare una graduatoria dei linguaggi di programmazione. Sarebbe assolutamente irragionevole fare delle valutazioni come "il software A è migliore del software B, perché usa un linguaggio di programmazione più semplice, più moderno, di più alto livello&hellip;"
-
-È vero che alcuni linguaggi di programmazione presentano dei vantaggi oggettivi se confrontati rispetto ad altri,[^PozzoDelSuccesso] ma la valutazione non può essere puramente formale. Un conto sono i vantaggi che il linguaggio ha in astratto, un conto è il codice che viene effettivamente scritto in quel linguaggio. È possibile scrivere del codice chiaro e comprensibile in un linguaggio "difficile", e scrivere del codice difficile da comprendere in un linguaggio "facile".
+È bene precisare subito che l'intenzione non è di creare una graduatoria dei linguaggi di programmazione. Sarebbe assolutamente irragionevole fare delle valutazioni come "il software A è migliore del software B, perché usa un linguaggio di programmazione più semplice, più moderno, di più alto livello&hellip;[^PozzoDelSuccesso] e pertanto, e più facile scrivere del software di precisione scientifica con quel linguaggio."
 
 [^PozzoDelSuccesso]: L'espressione "pozzo del successo" indica uno strumento (linguaggio di programmazione, interfaccia, sistema&hellip;) che rende facile fare le cose giuste, e difficile fare le cose sbagliate. \VediUrl{J. Atwood}{Falling Into The Pit of Success}{2007}{https://web.archive.org/web/20140402064217/https://blog.codinghorror.com/falling-into-the-pit-of-success/}.
 
-Il primo fattore da considerare nella scelta di un linguaggio di programmazione è l'uso per cui il linguaggio di programmazione è stato pensato. Si può distinguere[^DistinzioneSystemScripting] fra due grandi famiglie, i *system programming languages* (linguaggi di programmazione per i sistemi) e gli *scripting programming languages* (linguaggi per lo *scripting*).
+Con le dovute accortezze, è possibile scrivere del codice chiaro, comprensibile, che funziona correttamente in un linguaggio "complesso" o "difficile" da usare [Ad esempio, per delle linee-guida generali su come scrivere del codice che sarà utilizzato in applicazioni critiche, come i sistemi aerospaziali, v. @Holzmann2006]. Viceversa, è sempre possibile scrivere del codice difficile da comprendere, e quindi, difficile da studiare e modificare in un linguaggio "semplice". Pertanto, la valutazione del linguaggio di programmazione non deve riguardare il linguaggio in sé, ma come il linguaggio è stato utilizzato. In particolare, se un certo linguaggio presenta delle caratteristiche che possono influire negativamente sul funzionamento corretto ed affidabile del software, si deve controllare se e quali rimedi sono stati adottati per mitigarle.
 
-[^DistinzioneSystemScripting]: La distinzione non è sempre netta, ma è un punto di partenza utile. \VediUrl{W. Crichton}{What is Systems Programming, Really?}{2018}{https://web.archive.org/web/20180909231614/https://willcrichton.net/notes/systems-programming/}, sez. "2010s: Boundaries blur".
+### Fattori tecnici
 
-V. @Ousterhout1998.
+Il primo aspetto da considerare è se il linguaggio di programmazione è *memory-unsafe* o *memory-safe* (insicuro o sicuro per la memoria), ossia, se dà al programmatore il potere, dovere e la responsabilità di gestire manualmente e correttamente la memoria, oppure se la gestione della memoria è completamente automatica.
 
-- Systems programming
-- Scripting languages
-  - shell scripting (POSIX sh)
-  - embedded scripting (Lua)
-  - general purpose (Python)
+La gestione manuale della memoria nei linguaggi *memory-unsafe* è alla base della grande maggioranza dei *bug* nel software[^BugGestioneManualeMemoria] perché costringe il programmatore a tenere traccia di tutte le operazioni che riguardano la memoria, e controllare che ogni operazione non vada accidentalmente a sovrascrivere altre zone di memoria (*buffer overflow*), e vada a corrompere la memoria.[^DefinizioneBufferOverflow]
+
+[^BugGestioneManualeMemoria]: V. A. Gaynor, *Introduction to Memory Unsafety for VPs of Engineering*, 2019, <https://web.archive.org/web/20190812151808/https://alexgaynor.net/2019/aug/12/introduction-to-memory-unsafety-for-vps-of-engineering/>, e P. Kehrer, *Memory Unsafety in Apple's Operating Systems*, 2019, <https://web.archive.org/web/20190725163137/https://langui.sh/2019/07/23/apple-memory-safety/>. 
+[^DefinizioneBufferOverflow]: V. OWASP Foundation, *Buffer Overflow*, 2022, <https://web.archive.org/web/20220521104033/https://owasp.org/www-community/vulnerabilities/Buffer_Overflow>.
+
+Viceversa, un linguaggio *memory-safe* prevede dei meccanismi che gestiscono in automatico la memoria, e rendono impossibile incorrere nei bug tipici dei linguaggi *memory-unsafe*. L'unico svantaggio è che il programma avrà una riduzione delle prestazioni, a causa dei controlli che devono essere eseguiti con ogni operazione che riguarda la memoria [@Pasini2019, 21].
+
+Per quanto riguarda il software ad uso scientifico, è preferibile usare solo ed esclusivamente un linguaggio *memory-safe*. È sempre meglio avere una risposta corretta in più tempo, che avere una risposta rapidamente, ma non poter essere certi se sia corretta o meno. Tuttavia, questa presunzione di inaffidabilità dei linguaggi *memory-unsafe* non deve essere assoluta, ma può essere superata.
+
+Esistono già molte applicazioni e librerie che sono scritte in linguaggi *memory-unsafe*, tipicamente C e C++. Come già discusso, è generalmente preferibile riutilizzare ed adattare il codice, che inventare una nuova soluzione da zero. Se il codice scritto in un linguaggio *memory-unsafe*, ma è robusto, maturo, largamente usato, è stato sottoposto a strumenti di analisi come Valgrind&hellip;[^ValgrindMemcheck] si può presumere che sia affidabile. I linguaggi *memory-safe* generalmente forniscono dei metodi per usare del codice scritto in un linguaggio *memory-unsafe*.[^PythonCFFI]
+
+[^ValgrindMemcheck]: V. Sviluppatori di Valgrind, *Valgrind User Manual*, sez. *Memcheck: a memory error detector*, 2023, <https://web.archive.org/web/20231113151236/http://valgrind.org/docs/manual/mc-manual.html>.
+[^PythonCFFI]: Ad esempio, Python (*memory-safe*) può usare la libreria CFFI per utilizzare del codice scritto nel linguaggio di programmazione C (*memory-unsafe*). V. A. Rigo, M. Fijalkowski, *CFFI documentation*, sez. *Overview*, 2018, <https://web.archive.org/web/20210918004604/https://cffi.readthedocs.io/en/stable/overview.html>.
+
+- valori immutabili
+- tipi per le variabili
+
+Infine, l'ultimo aspetto da considerare è la gestione degli errori.
+
+- Errore di runtime:
+    - Problemi che si verificano solo quando il codice viene eseguito
+    - Problema dell'*happy path*, di imprevisti, dell'errore umano, di attacchi voluti
+    - Filosofie del look before you leap e easier to ask for forgiveness
+    - Look before you leap è migliore da un punto di vista scientifico
+- Errori in-band:
+    - Valori-guardia
+- Errori come eccezioni:
+    - Praticamente un goto, Dijkstra
+- Errori out-of-band:
+    - Controllo automatico degli errori, possibilità di analisi statica
 
 ### Fattori sociali
 
@@ -126,7 +147,6 @@ V. @Ousterhout1998.
 - manutenibilità nel tempo del linguaggio: ad es. C
 - complessità cognitiva del linguaggio: ad es. Perl
 - dipendenza del linguaggio da certe piattaforme (ad es., Dotnet, o Linux)
-
 
 ## Sistemi di controllo di versione
 
@@ -197,24 +217,7 @@ V. @Ousterhout1998.
 
 ### Vendoring
 
-## Gestione degli errori di runtime
-
-- Errore di runtime:
-    - Problemi che si verificano solo quando il codice viene eseguito
-    - Problema dell'*happy path*, di imprevisti, dell'errore umano, di attacchi voluti
-    - Filosofie del look before you leap e easier to ask for forgiveness
-    - Look before you leap è migliore da un punto di vista scientifico
-- Errori in-band:
-    - Valori-guardia
-- Errori come eccezioni:
-    - Praticamente un goto, Dijkstra
-- Errori out-of-band:
-    - Controllo automatico degli errori, possibilità di analisi statica
-
 ## Analisi del codice
-### Type-checking
-
-- Problemi che possono essere individuati guardando solo il codice
 
 ### Linting
 

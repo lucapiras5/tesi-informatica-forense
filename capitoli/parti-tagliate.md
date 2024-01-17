@@ -381,3 +381,36 @@ Idealmente si deve verificare l'esatto funzionamento del software, ma se è impo
 - Tutto il software scientifico deve essere documentato, facendo riferimento alla ricerca scientifica, e spiegando come funziona il software, che tipo di input si aspetta, i limiti dell'analisi&hellip;
 - Software proprietario: tensione fra documentare il suo funzionamento, e non rivelare troppi dettagli per mantenere il *competitive advantage*, problema di verificare se il funzionamento corrisponde alla documentazione
 - Software libero: "code as documentation", tensione fra la possibilità di documentazione estensiva e la mancanza di risorse
+
+----
+
+Il primo fattore da considerare nella scelta di un linguaggio di programmazione è il suo livello di astrazione. Tradizionalmente si distingue[^DistinzioneSystemScripting] fra due grandi famiglie, i *system programming languages* (linguaggi di programmazione per i sistemi) e gli *scripting programming languages* (linguaggi per lo *scripting*).
+
+[^DistinzioneSystemScripting]: La distinzione non è sempre netta, ma è un punto di partenza utile. \VediUrl{W. Crichton}{What is Systems Programming, Really?}{2018}{https://web.archive.org/web/20180909231614/https://willcrichton.net/notes/systems-programming/}, sez. "2010s: Boundaries blur".
+
+I *system languages* forniscono i componenti fondamentali di un sistema, e tendono ad essere di "basso livello", ossia, ogni istruzione nel codice sorgente corrisponde a poche istruzioni nel codice macchina. Questo significa che sono veloci da eseguire, serve anche più codice, e quindi, più tempo, e una maggiore attenzione ai bug, per sviluppare un programma in questo tipo di linguaggi.
+
+Gli *scripting languages* non sono utilizzati per costruire i componenti fondamentali, ma per collegarli fra di loro. Sono definiti di "alto livello" perché una singola istruzione nel codice sorgente equivale a centinaia o migliaia di istruzioni. Sono più lenti da eseguire, ma più facili da scrivere.
+
+Il vantaggio degli *scripting languages* è che scaricano la maggior parte della complessità su componenti già esistenti, e quindi è più facile dimostrare che un programma scritto in uno *scripting language* funziona correttamente, perché c'è meno codice da studiare, e si può generalmente dare per scontato che i componenti esterni che il programma collega fra di loro funzionino correttamente.
+
+Tradizionalmente, gli *scripting languages* venivano usati solo per scrivere software di bassa complessità, ma una combinazione di hardware più potente (che compensava la lentezza degli *script*), e linguaggi più sofisticati ha permesso di creare anche software particolarmente complesso usando esclusivamente linguaggi di scripting.
+
+V. @Ousterhout1998.
+
+----
+
+Un linguaggio *memory-unsafe* lascia la gestione della memoria interamente al programmatore, che pertanto diventa personalmente responsabile di:
+
+- Richiedere al sistema operativo una certa quantità di memoria (*memory allocation*).
+- Controllare che la richiesta di memoria sia andata a buon termine.
+- Assicurarsi che le operazioni in lettura e scrittura non vadano al di fuori dei limiti della quantità di memoria che è stata richiesta (*bounds checking*).
+  - Nel caso "migliore", il programma proverà ad accedere ad un'area di memoria che appartiene ad un altro programma, e sarà terminato dal sistema operativo (*segmentation fault*).
+  - Nel caso "peggiore", il programma inizierà a sovrascrivere la propria memoria (*memory corruption*).
+- Dopo che la memoria è stata utilizzata e non è più necessaria, è necessario:
+  - Segnalare al sistema operativo che la memoria è stata "liberata" (*free*), ed il programma non ne ha più bisogno (altrimenti si ha una *memory leak*, una "perdita di memoria" perché non è più utilizzata dal programma, ma non essendo stata liberata, non può essere utilizzata da altri programmi).
+  - Assicurarsi che il programma non provi a fare riferimento ad un'area di memoria che è stata già liberata, come se fosse ancora in uso (*use-after-free*).
+
+----
+
+[^GoRustUnsafe]: Ad esempio, Go e Rust sono *memory-safe*, con la facoltà di svolgere operazioni *memory-unsafe*. V. S. Bondar, *An Introduction to Go's 'unsafe' Package: Unsafe Operations*, 2023, <https://web.archive.org/web/20240117002402/https://reintech.io/blog/introduction-to-gos-unsafe-package>, e S. Klabnik, C. Nichols, *The Rust Programming Language*, sez. *Unsafe Rust*, 2023, <https://web.archive.org/web/20230522050432/https://doc.rust-lang.org/stable/book/ch19-01-unsafe-rust.html>.
