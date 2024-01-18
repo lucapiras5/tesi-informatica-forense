@@ -414,3 +414,26 @@ Un linguaggio *memory-unsafe* lascia la gestione della memoria interamente al pr
 ----
 
 [^GoRustUnsafe]: Ad esempio, Go e Rust sono *memory-safe*, con la facoltà di svolgere operazioni *memory-unsafe*. V. S. Bondar, *An Introduction to Go's 'unsafe' Package: Unsafe Operations*, 2023, <https://web.archive.org/web/20240117002402/https://reintech.io/blog/introduction-to-gos-unsafe-package>, e S. Klabnik, C. Nichols, *The Rust Programming Language*, sez. *Unsafe Rust*, 2023, <https://web.archive.org/web/20230522050432/https://doc.rust-lang.org/stable/book/ch19-01-unsafe-rust.html>.
+
+----
+
+Nei linguaggi di programmazione, ogni valore in memoria ha un *type* (tipo), che indica come quel valore deve essere interpretato. Ad esempio, si consideri il seguente codice Python:
+
+```python
+int_a = 1
+str_a = "1"
+
+print(int_a + int_a)
+print(str_a + str_a)
+```
+*int_a* e *str_a* sono chiamate variabili (*variables*). Una variabile è un nome dato ad un certo valore in memoria, ed ha un certo tipo.
+
+- Nella prima riga con *print*, *1* e *2* sono valori espressi come numeri, sono sommati come numeri, ed il risultato è *3*.
+- Nella seconda riga, *"1"* e *"2"* sono valori espressi come stringhe (sequenze di caratteri), l'addizione fra stringhe è definita come unirle una dopo l'altra, ed il risultato sarà la stringa *"12"*.
+- Nella terza riga, la stringa *"12"* viene convertita in un numero intero con la funzione *int*, ed il risultato sarà *13*.
+
+Esistono vari paradigmi riguardo la gestione dei tipi nei linguaggi di programmazione:
+
+- Nei *dynamically-typed languages*, La distinzione principale è fra gli *statically-typed* e *dynamically-typed languages*. Nei primi, il tipo di una variabile 
+
+- tipi per le variabili

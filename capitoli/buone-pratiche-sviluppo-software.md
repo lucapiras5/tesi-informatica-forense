@@ -117,36 +117,98 @@ La gestione manuale della memoria nei linguaggi *memory-unsafe* è alla base del
 
 Viceversa, un linguaggio *memory-safe* prevede dei meccanismi che gestiscono in automatico la memoria, e rendono impossibile incorrere nei bug tipici dei linguaggi *memory-unsafe*. L'unico svantaggio è che il programma avrà una riduzione delle prestazioni, a causa dei controlli che devono essere eseguiti con ogni operazione che riguarda la memoria [@Pasini2019, 21].
 
-Per quanto riguarda il software ad uso scientifico, è preferibile usare solo ed esclusivamente un linguaggio *memory-safe*. È sempre meglio avere una risposta corretta in più tempo, che avere una risposta rapidamente, ma non poter essere certi se sia corretta o meno. Tuttavia, questa presunzione di inaffidabilità dei linguaggi *memory-unsafe* non deve essere assoluta, ma può essere superata.
+Per quanto riguarda il software ad uso scientifico:
 
-Esistono già molte applicazioni e librerie che sono scritte in linguaggi *memory-unsafe*, tipicamente C e C++. Come già discusso, è generalmente preferibile riutilizzare ed adattare il codice, che inventare una nuova soluzione da zero. Se il codice scritto in un linguaggio *memory-unsafe*, ma è robusto, maturo, largamente usato, è stato sottoposto a strumenti di analisi come Valgrind&hellip;[^ValgrindMemcheck] si può presumere che sia affidabile. I linguaggi *memory-safe* generalmente forniscono dei metodi per usare del codice scritto in un linguaggio *memory-unsafe*.[^PythonCFFI]
+- È generalmente preferibile usare un linguaggio *memory-safe*, in modo da evitare alla radice tutti i *bug* relativi alla memoria.
+- All'interno di un programma scritto in un linguaggio *memory-safe*, è possibile utilizzare del codice scritto in linguaggi *memory-unsafe* (tipicamente C e C++),[^PythonCFFI] purché quel codice sia robusto, maturo, largamente usato, sia stato sottoposto a strumenti di analisi come Electric Fence[^ElectricFence] e Valgrind&hellip;[^ValgrindMemcheck]
+- È sconsigliato scrivere l'intero programma in un linguaggio *memory-unsafe*, o di riscrivere il codice *memory-unsafe* nel linguaggio *memory-safe*, perché queste operazioni rischiano di introdurre bug. 
 
-[^ValgrindMemcheck]: V. Sviluppatori di Valgrind, *Valgrind User Manual*, sez. *Memcheck: a memory error detector*, 2023, <https://web.archive.org/web/20231113151236/http://valgrind.org/docs/manual/mc-manual.html>.
 [^PythonCFFI]: Ad esempio, Python (*memory-safe*) può usare la libreria CFFI per utilizzare del codice scritto nel linguaggio di programmazione C (*memory-unsafe*). V. A. Rigo, M. Fijalkowski, *CFFI documentation*, sez. *Overview*, 2018, <https://web.archive.org/web/20210918004604/https://cffi.readthedocs.io/en/stable/overview.html>.
+[^ElectricFence]: V. B. Perens, *efence(3) - Linux man page*, sez. *Description*, 1999, <https://web.archive.org/web/20070806045202/https://linux.die.net/man/3/efence>.
+[^ValgrindMemcheck]: V. Sviluppatori di Valgrind, *Valgrind User Manual*, sez. *Memcheck: a memory error detector*, 2023, <https://web.archive.org/web/20231113151236/http://valgrind.org/docs/manual/mc-manual.html>.
 
-- valori immutabili
-- tipi per le variabili
+Un altro aspetto da considerare è il *type system* (sistema dei tipi) supportato dal linguaggio. Per il software scientifico, è preferibile usare un linguaggio che sia *statically-typed* e *strongly-typed*, ossia, chieda al programmatore di indicare espressamente, all'interno del codice, sia che tipo di valori possono essere usati all'interno del programma, e sia come i valori devono essere trasformati.[^DefinizioneTipi]
 
-Infine, l'ultimo aspetto da considerare è la gestione degli errori.
+[^DefinizioneTipi]: Per una definizione dei termini usati, v. T. Hurd, *Introduction to Static, Dynamic, Strong and Weak Data Types*, 2021, <https://web.archive.org/web/20210603180908/https://www.sitepoint.com/typing-versus-dynamic-typing/>.
 
-- Errore di runtime:
-    - Problemi che si verificano solo quando il codice viene eseguito
-    - Problema dell'*happy path*, di imprevisti, dell'errore umano, di attacchi voluti
-    - Filosofie del look before you leap e easier to ask for forgiveness
-    - Look before you leap è migliore da un punto di vista scientifico
-- Errori in-band:
-    - Valori-guardia
-- Errori come eccezioni:
-    - Praticamente un goto, Dijkstra
-- Errori out-of-band:
-    - Controllo automatico degli errori, possibilità di analisi statica
+Indicare espressamente i tipi significa che se un programmatore usa accidentalmente un valore di tipo sbagliato all'intero del programma, questo problema potrà essere rilevato automaticamente, prima ancora che il programma si avvii [V. la sez. "Typing" in @Ousterhout1998, 24].
+
+Infine, l'ultimo aspetto da considerare è come il linguaggio di programmazione gestisce gli errori che si verificano durante l'esecuzione del programma.
+
+Il modo più semplice di segnalare che un'operazione non è andata a buon fine è usare un *in-band error*. La funzione restituisce un singolo valore, che può essere un valore normale, oppure un valore speciale, diverso dai valori "validi", che indica la presenza di un errore.[^DefinizioneInBandError] Lo svantaggio principale di questo approccio è che indica solo "se" un errore è avvenuto, ma non "perché", e quindi non permette di offrire all'utente informazioni diagnostiche specifiche.
+
+[^DefinizioneInBandError]: V. F. Long, W. Snavely, *ERR52-J. Avoid in-band error indicators*, 2017, <https://web.archive.org/web/20230329034143/https://wiki.sei.cmu.edu/confluence/display/java/ERR52-J.+Avoid+in-band+error+indicators>.
+
+Ad esempio, in C, *NULL* è il tipico valore speciale per indicare che un'operazione non è andata a buon termine:
+
+```c
+FILE *fp = fopen("file-da-aprire", "r");
+if (fp == NULL) {
+    // Non è stato possibile aprire il file.
+    // È necessario gestire l'errore.
+}
+// "fp" si riferisce al file.
+```
+
+Un approccio migliore rispetto agli *in-band error* è restituire un *out-of-band error* trattando l'errore come un qualsiasi valore. La funzione restituisce sempre almeno due valori: 
+
+- Il primo è vuoto in caso di errore, o contiene il valore richiesto se l'operazione è andata a buon fine.
+- Viceversa, il secondo è vuoto se non si sono verificati errori, o contiene informazioni utili in caso di errore.
+
+Il vantaggio di questo approccio è che permette di fornire più informazioni riguardo l'errore, ed è possibile usare strumenti di analisi per verificare che tutti i possibili errori vengono gestiti.[^Errcheck] Questo è l'approccio usato dal linguaggio Go:[^GestioneErroriGo]
+
+[^Errcheck]: Ad es., v. K. Kisiel, *Errcheck*, 2023, <https://github.com/kisielk/errcheck/tree/7f94c385d0116ccc421fbb4709e4a484d98325ee>.
+[^GestioneErroriGo]: V. A. Gerrand, *Error Handling and Go*, 2011, <https://web.archive.org/web/20210823191611/https://go.dev/blog/error-handling-and-go>.
+
+
+```go
+f, err := os.Open("file-da-aprire")
+if err != nil {
+    // L'errore non è vuoto, è necessario gestirlo.
+    // log.Fatal(err):
+    //   - Mostra la descrizione dell'errore "err";
+    //   - Interrompe l'esecuzione.
+    log.Fatal(err)
+}
+// "f" si riferisce al file.
+```
+
+Un altro approccio è usare un meccanismo chiamato "eccezioni". In questo caso, le funzioni non restituiscono un valore-errore, ma piuttosto, "sollevano un'eccezione". Quando viene sollevata un'eccezione, l'esecuzione del programma viene interrotta. Se esiste del codice che gestisce quell'eccezione, l'esecuzione riprenderà da quel punto, ma se l'eccezione non viene gestita, il programma arresta la sua esecuzione. Questo è l'approccio usato da Python:[^PythonEccezioni]
+
+```python
+try:
+    fp = open("file-da-aprire")
+    # Se il file non è trovato:
+    # - L'esecuzione salterà a "except ..."
+    # - Le righe sottostanti non saranno eseguite
+    contents = fp.read()
+except FileNotFoundError:
+    # File non trovato, è necessario gestire l'errore.
+```
+
+[^PythonEccezioni]: V. Python Software Foundation, *The Python Tutorial*, sez. *Errors and Exceptions*, 2024, <https://docs.python.org/3.12/tutorial/errors.html>.
+
+Il vantaggio è che in caso di errori non gestiti, il programma si arresta automaticamente, invece di continuare l'esecuzione con valori invalidi. Questo non avviene se gli errori sono trattati come semplici valori, come nelle modalità precedenti. Lo svantaggio è che è difficile sapere *a priori* se (e quali) eccezioni possono essere sollevate, ed è necessario consultare la documentazione o il codice sorgente.
+
+Per quanto riguarda il software scientifico, si possono svolgere le seguenti osservazioni:
+
+- La gestione degli errori *out-of-band* è generalmente preferibile, perché è più esplicita. Dato che le funzioni restituiscono sempre un valore-errore, il programmatore è automaticamente invogliato a gestire la presenza di quell'errore.
+- Nei linguaggi che usano le eccezioni, è importante documentare tutte le eccezioni che possono essere sollevate, data la loro natura "implicita".
+- È preferibile evitare gli errori *in-band*, ma se è assolutamente necessario usarli, è importante documentare i valori eccezionali che rappresentano errori.
 
 ### Fattori sociali
 
-- popolarità del linguaggio, più programmatori e librerie
-- manutenibilità nel tempo del linguaggio: ad es. C
-- complessità cognitiva del linguaggio: ad es. Perl
-- dipendenza del linguaggio da certe piattaforme (ad es., Dotnet, o Linux)
+Per fattori sociali si intendono fattori che possono influire positivamente o negativamente sullo sviluppo del software scientifico, ma che non riguardano le caratteristiche tecniche del linguaggio in sé, quanto piuttosto come il linguaggio viene utilizzato.
+
+Il primo fattore favorevole è la popolarità del linguaggio. Più un linguaggio è largamente utilizzato, e più è facile trovare risorse tecniche, codice da riutilizzare, programmatori che possono aiutare a migliorare il codice. Ad esempio, i linguaggi C e C++ sono rischiosi da utilizzare nel software scientifico perché *memory-unsafe*, ma allo stesso tempo, hanno larghissima utilizzazione nel mondo della programmazione, e quindi esiste un grande numero di risorse e strumenti che aiutano a sviluppare applicazioni robuste ed affidabili.
+
+Il secondo fattore è l'età del linguaggio. È preferibile evitare linguaggi nuovi, sperimentali, o che cambiano di frequente, e concentrarsi su linguaggi che esistono da tempo, maturi e stabili. Ad esempio, C/C++, Java e Python sono stati creati decenni fa, sono largamente usati dall'industria, e quindi, è presumibile che continueranno ad essere supportati ed utilizzati nel tempo, senza cambiamenti significativi. Il linguaggio Go è più recente, ma gli sviluppatori hanno promesso che si impegneranno a garantire la retro-compatibilità delle versioni successive del linguaggio con le versioni precedenti.[^GoCompatibilità]
+
+[^GoCompatibilità]: V. R. Cox, *Backward Compatibility, Go 1.21, and Go 2*, 2023, <https://web.archive.org/web/20230814162240/https://go.dev/blog/compat>.
+
+Un altro fattore da considerare è la filosofia che ispira il linguaggio, o che viene incoraggiata dai programmatori. Ad esempio, uno dei principi di Python è: "*There should be one-- and preferably only one --obvious way to do it.*" ("Ci dovrebbe essere un -- e preferibilmente, solo uno -- modo ovvio di fare le cose.")[^ZenOfPython] Viceversa, il motto del linguaggio Perl è "*There's more than one way to do it.*" ("C'è più di un modo per farlo.") L'esistenza di più modi per raggiungere lo stesso risultato contrasta con le esigenze di rigore del software scientifico, e complica lo sviluppo del software.
+
+[^ZenOfPython]: V. T. Peters, *PEP 20 -- The Zen of Python*, 2004, <https://web.archive.org/web/20220309222224/https://peps.python.org/pep-0020/>.
 
 ## Sistemi di controllo di versione
 
