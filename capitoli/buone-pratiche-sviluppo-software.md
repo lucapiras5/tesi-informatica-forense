@@ -185,58 +185,65 @@ try:
 except FileNotFoundError:
     # File non trovato, è necessario gestire l'errore.
 ```
-
-[^PythonEccezioni]: V. Python Software Foundation, *The Python Tutorial*, sez. *Errors and Exceptions*, 2024, <https://docs.python.org/3.12/tutorial/errors.html>.
-
-Il vantaggio è che in caso di errori non gestiti, il programma si arresta automaticamente, invece di continuare l'esecuzione con valori invalidi. Questo non avviene se gli errori sono trattati come semplici valori, come nelle modalità precedenti. Lo svantaggio è che è difficile sapere *a priori* se (e quali) eccezioni possono essere sollevate, ed è necessario consultare la documentazione o il codice sorgente.
-
-Per quanto riguarda il software scientifico, si possono svolgere le seguenti osservazioni:
-
-- La gestione degli errori *out-of-band* è generalmente preferibile, perché è più esplicita. Dato che le funzioni restituiscono sempre un valore-errore, il programmatore è automaticamente invogliato a gestire la presenza di quell'errore.
-- Nei linguaggi che usano le eccezioni, è importante documentare tutte le eccezioni che possono essere sollevate, data la loro natura "implicita".
-- È preferibile evitare gli errori *in-band*, ma se è assolutamente necessario usarli, è importante documentare i valori eccezionali che rappresentano errori.
-
-### Fattori sociali
-
-Per fattori sociali si intendono fattori che possono influire positivamente o negativamente sullo sviluppo del software scientifico, ma che non riguardano le caratteristiche tecniche del linguaggio in sé, quanto piuttosto come il linguaggio viene utilizzato.
-
-Il primo fattore favorevole è la popolarità del linguaggio. Più un linguaggio è largamente utilizzato, e più è facile trovare risorse tecniche, codice da riutilizzare, programmatori che possono aiutare a migliorare il codice. Ad esempio, i linguaggi C e C++ sono rischiosi da utilizzare nel software scientifico perché *memory-unsafe*, ma allo stesso tempo, hanno larghissima utilizzazione nel mondo della programmazione, e quindi esiste un grande numero di risorse e strumenti che aiutano a sviluppare applicazioni robuste ed affidabili.
-
-Il secondo fattore è l'età del linguaggio. È preferibile evitare linguaggi nuovi, sperimentali, o che cambiano di frequente, e concentrarsi su linguaggi che esistono da tempo, maturi e stabili. Ad esempio, C/C++, Java e Python sono stati creati decenni fa, sono largamente usati dall'industria, e quindi, è presumibile che continueranno ad essere supportati ed utilizzati nel tempo, senza cambiamenti significativi. Il linguaggio Go è più recente, ma gli sviluppatori hanno promesso che si impegneranno a garantire la retro-compatibilità delle versioni successive del linguaggio con le versioni precedenti.[^GoCompatibilità]
-
-[^GoCompatibilità]: V. R. Cox, *Backward Compatibility, Go 1.21, and Go 2*, 2023, <https://web.archive.org/web/20230814162240/https://go.dev/blog/compat>.
-
-Un altro fattore da considerare è la filosofia che ispira il linguaggio, o che viene incoraggiata dai programmatori. Ad esempio, uno dei principi di Python è: "*There should be one-- and preferably only one --obvious way to do it.*" ("Ci dovrebbe essere un -- e preferibilmente, solo uno -- modo ovvio di fare le cose.")[^ZenOfPython] Viceversa, il motto del linguaggio Perl è "*There's more than one way to do it.*" ("C'è più di un modo per farlo.") L'esistenza di più modi per raggiungere lo stesso risultato contrasta con le esigenze di rigore del software scientifico, e complica lo sviluppo del software.
-
-[^ZenOfPython]: V. T. Peters, *PEP 20 -- The Zen of Python*, 2004, <https://web.archive.org/web/20220309222224/https://peps.python.org/pep-0020/>.
-
-## Sistemi di controllo di versione
-
-- distribuzione del codice
-- controllo di integrità
-- estrazione di versioni particolari
-- possibilità di sperimentare con più funzionalità
-
 ## Documentazione del codice
 
-- diataxis.fr
-- non serve sapere come funziona un computer per poterlo utilizzare, ma cfr. Unix, con pagine del manuale scritte come bug report, UNIX haters handbook, 53 ss., "collect bug reports"), mancata documentazione del codice per proteggere i segreti industriali?
+Per il software ad uso scientifico, è estremamente importante documentare il codice. La documentazione del codice è analoga all'interpretazione autentica delle norme giuridiche, e consiste in spiegazioni scritte dagli stessi autori del codice riguardo a:
 
-### README
+- "Cosa" (che tipo di dati) il codice si aspetta di ricevere in *input*, o produce in *output*.
+- "Come" il codice opera su questi dati.
+- "Perché" il codice è strutturato in una certa maniera.
 
-- Equivalente ad un abstract
+Così come si parla di *bug* per il software, si parla di *bug* anche per la documentazione, quando [V. sez. "Reporting Bugs" in @GNU-C-Library, 1121]:
 
-### Commenti
+- Le spiegazioni relative al funzionamento del codice o programma non sono sufficientemente chiare o dettagliate, e quindi è difficile capire se il programma risponde alle proprie esigenze, o se si sta usando il programma correttamente.
+- Il codice si comporta in maniera diversa da quanto indicato dalla documentazione, e quindi è difficile determinare se il programma produce risultati incorretti, oppure la documentazione è incorretta.
 
-- Spiegano perché quel codice esiste, non cosa fa
-- Se spiegano cosa fa
+Nel caso del software libero, è importante che anche la relativa documentazione sia a sua volta libera. I criteri per determinare se la documentazione è libera sono la possibilità di ridistribuire copie della documentazione insieme alle copie del codice, e la possibilità di modificare la documentazione, in modo che rifletta le modifiche apportate al software libero [@GNU-C-Library, 1149].
 
-### Manuale di riferimento
+È possibile distinguere vari tipi di documentazione.
 
-- approccio teorico, spiega il perché
-- utile per i programmatori, indica a cosa serve ogni componente
+Il livello più concreto sono i commenti a fianco del codice.[^MiglioriPraticheCommenti]
+Idealmente, il codice dovrebbe essere auto-esplicativo: il flusso del programma, gli effetti prodotti dal codice, e l'intento del programmatore dovrebbero essere evidenti a prima vista.[^WriteCodeForHumans]
+I commenti devono essere usati solo per spiegare il codice il cui scopo non è evidente a prima vista,[^ChestertonsFence] o che non è possibile riscrivere in maniera più semplice.[^PSDIsNotAGoodFormat]
 
-#### Architettura in generale
+Viceversa, i commenti non possono essere usati per giustificare del codice complesso, che invece potrebbe esser riscritto in maniera più chiara. Più il codice è complesso e difficile da capire, più è probabile che contenga *bug*, e più diventa difficile correggerlo.[^LeggeDiKernighan]
+
+Per quanto riguarda il codice ad uso scientifico, la presenza di commenti utili è un fattore positivo, mentre la totale assenza di commenti, oppure la presenza di commenti che fanno sospettare che il codice sia di scarsa qualità è un fattore negativo.
+
+[^ChestertonsFence]: L'espressione *Chesterton's fence* (recinzione di Chesterton) si riferisce all'idea che prima di rimuovere una recinzione apparentemente inutile, è meglio pensare al motivo per cui è stata costruita nel passato, e cosa succederebbe se venisse tolta. V. J. Turner, *Chesteron's Fence*, <https://web.archive.org/web/20220214094128/https://thoughtbot.com/blog/chestertons-fence>.
+[^MiglioriPraticheCommenti]: Per una lista di buone pratiche relative ai commenti, v. E. Spertus, *Best practices for writing code comments*, 2021, <https://web.archive.org/web/20211223145454/https://stackoverflow.blog/2021/12/23/best-practices-for-writing-code-comments/>.
+[^PSDIsNotAGoodFormat]: Ad esempio, un formato potrebbe essere particolarmente complesso, e quindi richiedere una notevole quantità di codice per essere interpretato correttamente. Per un esempio, v. N. Muller, *XeePhotoshopLoader.m*, 2013, <https://github.com/zepouet/Xee-xCode-4.5/blob/83394493f51991748b9b4706e6d37a8ed874bc05/XeePhotoshopLoader.m>, linee 108 ss.
+[^WriteCodeForHumans]: Quando si scrive del codice, è più importante scrivere codice che sia facile da leggere per un programmatore umano, che veloce da eseguire per una macchina (ma difficile da capire per un umano). V. D. Orr, *Write code for humans. Design data for machines.*, 2020, <https://web.archive.org/web/20200402061509/https://douglasorr.github.io/2020-03-data-for-machines/article.html>.
+[^LeggeDiKernighan]: La legge di Kernighan recita "*Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.*" (Correggere del codice è due volte più difficile che scriverlo. Pertanto, se scrivi del codice nella maniera più ingegnosa possibile, sei, per definizione, non abbastanza ingegnoso per correggerlo).
+
+Il livello immediatamente successivo ai commenti nel codice è la documentazione dei singoli componenti del programma.[^DocumentazioneComponenti]
+
+[^DocumentazioneComponenti]: Ad esempio, le strutture di dati usate dal programma (e che tipi di valori contengono), le funzioni di cui è composto il programma, i nomi e tipi dei parametri che le funzioni accettano, all'interno di quali file questi componenti si trovano&hellip;
+
+Si tratta ancora di una documentazione più "concreta" che "astratta", perché strettamente legata alla struttura del codice.
+Questo tipo di documentazione può essere generato in maniera automatica sulla base del codice sorgente, utilizzando software specializzato.[^GenerazioneDocumentazione]
+
+[^GenerazioneDocumentazione]: Ad esempio, per Python esiste Sphinx (<https://www.sphinx-doc.org/>), per C++ esiste Doxygen (<https://www.doxygen.nl/>)&hellip;
+
+Il livello di astrazione successivo è il *reference manual* (manuale di riferimento). Consiste in una guida altamente tecnica e dettagliata, che ha comunque per oggetto i vari componenti del programma, ma redatta a mano, come una serie di documenti autonomi rispetto al codice. Pertanto, può seguire l'ordine espositivo ritenuto più utile dai programmatori, e può contenere anche elementi grafici come tabelle e diagrammi [Un esempio di *reference manual* è il manuale per la libreria C sviluppata da GNU, in cui si indica in dettaglio gli standard che vengono implementati, e le eventuali differenze rispetto agli standard. V. @GNU-C-Library].
+
+Il *reference manual* può essere accompagnato da una *design overview*, documenti tecnici che offrono uno sguardo d'insieme riguardo come il software è strutturato, e che motivano le scelte che sono state fatte durante lo sviluppo.[^DocumentazioneSQLite]
+
+[^DocumentazioneSQLite]: Ad esempio, la documentazione di SQLite (<https://www.sqlite.org/docs.html>) contiene sia un *reference manual* con diagrammi che spiegano la sintassi del linguaggio SQL, sia numerosi documenti che spiegano come varie funzionalità sono implementate in concreto, e quali considerazioni tecniche hanno portato a quelle scelte.
+
+I tipi di documentazione menzionati fino ad ora interessano principalmente agli sviluppatori, o ai tecnici che sono chiamati a valutare l'affidabilità del programma ad uso scientifico.
+
+L'utente finale è principalmente interessato ad un altro tipo di documentazione, di natura più pratica che teorica:
+
+- Le istruzioni su come installare, ed eventualmente compilare, il software.
+- Lo *user's manual* (manuale per l'utente) che spiega come utilizzare il software in concreto, e le limitazioni tecniche del programma.
+- I *known bugs*, un elenco di *bug* di cui gli sviluppatori sono a conoscenza, ma non hanno ancora risolto.
+- Il *changelog* (lista dei cambiamenti) o il file *NEWS* sono file che contengono una descrizione dei cambiamenti fra le varie versioni del programma. Per il software scientifico, è importante indicare tutti i cambiamenti che possono influire in maniera significativa sui risultati.^[Ad esempio, la risoluzione di un bug, o il cambiamento o eliminazione di un metodo di analisi&hellip;]
+- *Tutorial* e guide, che spiegano in maniera dettagliata come raggiungere un determinato risultato.
+
+Per il software scientifico, la finalità di questi documenti è di garantire che l'utilizzatore finale sia in grado di installare ed utilizzare il programma correttamente, e sia reso consapevole di eventuali *bug* e limitazioni già note agli sviluppatori.
+
+In particolare, è preferibile seguire uno stile discorsivo, ed evitare ad ogni costo lo stile lapidario tipico delle *manpages* (pagine di manuale), una forma tradizionale di documentazione del software. Le *manpages* seguono lo stile delle *reference guides*, indicando tutte le opzioni che un programma può utilizzare in ordine alfabetico, non secondo un ordine pedagogico, e presuppongono che l'utilizzatore sappia già come usare il programma [V. sezz. "For Programmers, Not Users" e "The Source Code Is the Documentation" in @Garfinkel1994, 53--55]. Questo tipo di presunzione è inaccettabile per il software ad uso scientifico.
 
 - sguardo d'insieme, spiega l'obiettivo da raggiungere, e come i vari componenti interagiscono fra di loro
 
