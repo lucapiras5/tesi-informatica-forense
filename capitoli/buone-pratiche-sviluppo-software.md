@@ -5,9 +5,11 @@
 Dopo aver dimostrato che da un punto di vista teorico il software libero è il modello migliore per soddisfare le esigenze dell'informatica forense, è altrettanto importante discutere come il software libero viene sviluppato nella pratica. Nonostante il contenuto tecnico, questo capitolo è rivolto ai giuristi, e ha due obiettivi.
 
 Il primo è di introdurre alcuni aspetti tecnici e *best practices* nello sviluppo del software, e spiegare come sono rilevanti per il software forense.^[L'intenzione è di fornire degli elementi di valutazione utili da menzionare nel contraddittorio, per sostenere l'affidabilità del software che è stato usato per l'analisi forense, o viceversa, per screditare il software usato dall'altra parte.]
-Il secondo è di dimostrare l'infondatezza di alcuni pregiudizi riguardo il software libero; ovvero, che sia di qualità inferiore perché il diritto di modificare e ridistribuire il codice sorgente è garantito a tutti,^[Pertanto, si corre il rischio che entrino in circolazione delle versioni modificate in peggio del software originale.] o perché viene solitamente distribuito gratuitamente.^[Una massima di esperienza è *ex nihilo nihil fit* (nulla viene dal nulla), e pertanto, un prodotto offerto gratuitamente deve essere di qualità scadente.]
+Il secondo è di dimostrare l'infondatezza di alcuni pregiudizi riguardo il software libero; ovvero, che sia di qualità inferiore perché il diritto di modificare e ridistribuire il codice sorgente è garantito a tutti,^[Pertanto, si corre il rischio che entrino in circolazione delle versioni modificate in peggio del software originale.] o perché viene solitamente distribuito gratuitamente.^[Una massima di esperienza è *ex nihilo nihil fit* (nulla viene dal nulla), e pertanto, se qualcosa non costa nulla, non vale nemmeno nulla.]
 
-## Fattori tecnici
+## Fattori di valutazione del software
+
+Questa sezione indica alcuni elementi che possono essere menzionati per dimostrare la qualità del software ad uso scientifico che è stato già sviluppato, ed è stato usato per le analisi.
 
 ### Linguaggio di programmazione
 
@@ -24,7 +26,7 @@ Il secondo tipo di caratteristiche impone l'uso di accortezze particolari nello 
 - Linguaggi che sono maturi^[È preferibile evitare linguaggi nuovi, sperimentali, o che cambiano di frequente, e concentrarsi su linguaggi che esistono da tempo, maturi e stabili. Ad esempio, C/C++, Java e Python sono stati creati decenni fa, sono largamente usati dall'industria, e quindi, è presumibile che continueranno ad essere supportati ed utilizzati nel tempo, senza cambiamenti significativi. Il linguaggio Go è più recente, ma gli sviluppatori hanno promesso che si impegneranno a garantire la retro-compatibilità delle versioni successive del linguaggio con le versioni precedenti. V. R. Cox, *Backward Compatibility, Go 1.21, and Go 2*, 2023, <https://web.archive.org/web/20230814162240/https://go.dev/blog/compat>.] e largamente utilizzati.^[Più un linguaggio è largamente utilizzato, e più è facile trovare risorse tecniche, codice da riutilizzare, programmatori che possono aiutare a migliorare il codice. Ad esempio, i linguaggi C e C++ sono rischiosi da utilizzare nel software scientifico perché *memory-unsafe*, ma allo stesso tempo, hanno larghissima utilizzazione nel mondo della programmazione, e quindi esiste un grande numero di risorse e strumenti che aiutano a sviluppare applicazioni robuste ed affidabili.]
 - Linguaggi che sono semplici e *opinionated* rispetto a linguaggi complessi o *unopinionated*.^[Se un linguaggio è flessibile, e offre più modi per risolvere lo stesso problema, programmatori diversi useranno modi diversi, andando a violare il *principle of least surprise* (principio della sorpresa minima), e complicando la comprensione e manutenzione del codice. Ad esempio, basta confrontare il motto del linguaggio Python, *There should be one -- and preferably only one -- obvious way to do it*, con il motto del linguaggio Perl, *There's more than one way to do it*. Per una discussione dei rischi che un linguaggio particolarmente flessibile pone, v. R. Winestock, *The Lisp Curse*, 2011, <https://web.archive.org/web/20110416211304/http://winestockwebdesign.com/Essays/Lisp_Curse.html>.]
 
-## Documentazione del codice
+### Documentazione del codice
 
 La documentazione è importante per qualsiasi tipo di software, ma è una necessità imprescindibile per il software ad uso scientifico. Il termine "documentazione" è un termine generico, ed esistono più forme di documentazione, che si differenziano per il loro livello di astrazione^[Ossia, quanto sono vicine alle singole istruzioni di cui il codice è composto.] e finalità.^[In linea generale, la documentazione può servire a spiegare il "perché" il programma è stato progettato in un certo modo, o il "come" funziona e trasforma i dati.]
 
@@ -84,8 +86,8 @@ Esistono vari strumenti che permettono di controllare la qualità del codice, e 
 I *linter* sono software che controllano se il codice rispetta una serie di regole:^[
 V. Fondazione OWASP, *Linting Code*, 2022, <https://web.archive.org/web/20230328005626/https://owasp.org/www-project-devsecops-guideline/latest/01b-Linting-Code>.]
 
-- Le regole stilistiche servono a garantire che il codice sia coerente dal punto di vista estetico.^[Ad esempio, esistono numerose opzioni ed opinioni su dove posizionare le parentesi graffe, su quanti e quali spazi e ritorni a capo usare, riguardo la lunghezza massima delle righe di codice&hellip; Per alcuni esempi, v. Contributori di Wikipedia, *Stile d'indentazione*, 2024, <https://it.wikipedia.org/w/index.php?title=Stile_d'indentazione&oldid=137258932>. Un *linter* può applicare queste regole in maniera automatica.] Queste regole possono essere sempre applicate in maniera automatica.
-- Le regole logiche servono a correggere del codice che presenta problemi diversi dai semplici errori di sintassi, e garantiscono il rispetto delle *best practices* relative a quel linguaggio di programmazione.^[Ad esempio, *shellcheck* contiene centinaia di regole su come scrivere degli *shell script* robusti. V. <https://www.shellcheck.net/wiki/>.] In alcuni casi le correzioni possono essere applicate automaticamente, perché esiste una sola soluzione. Altrimenti, è necessario l'intervento del programmatore.
+- Le regole stilistiche servono a garantire che il codice sia coerente dal punto di vista estetico.^[Ad esempio, esistono numerose opzioni ed opinioni su dove posizionare le parentesi graffe, se usare tabulazioni o spazi (e quanti spazi) per l'indentazione, dove inserire i ritorni a capo, la lunghezza massima delle righe di codice&hellip; Queste regole possono essere sempre applicate automaticamente.]
+- Le regole logiche servono a correggere del codice che presenta problemi diversi dai semplici errori di sintassi, e garantiscono il rispetto delle *best practices* relative a quel linguaggio di programmazione.^[Ad esempio, *shellcheck* contiene centinaia di regole su come scrivere degli *shell script* robusti, v. <https://www.shellcheck.net/wiki/>. In alcuni casi le correzioni possono essere applicate automaticamente, perché esiste una sola soluzione. Altrimenti, è necessario l'intervento del programmatore.]
 - Per i linguaggi *dynamically-typed*, i *linter* possono essere usati per controllare il corretto uso dei tipi all'interno del programma.^[Ad esempio, v. MyPy, <https://mypy-lang.org/>.]
 
 I *tests*^[
@@ -93,18 +95,18 @@ Esistono varie tipologie di test. Gli *unit tests* controllano il funzionamento 
 servono a controllare il corretto funzionamento del programma.
 Facendo un'analogia con il diritto, mentre i *linter* svolgono un controllo sugli atti (sul codice), di legittimità (puramente formale), e preventivo (prima dell'esecuzione del programma), i *tests* svolgono un controllo sull'attività (i risultati che vengono raggiunti), che per sua natura è sempre successivo [@Clarich2022, 276--277].
 
-Dal punto di vista concettuale, un *test* consiste in tre parti: il codice da eseguire, i dati forniti in *input* al codice, ed il risultato che ci si aspetta in *output*.
-Se il risultato prodotto dal codice non corrisponde al risultato aspettato, il test "fallisce" (*fail*), altrimenti è "superato" (*pass*).
+Un *test* consiste in tre parti: il codice oggetto di test, i dati forniti in *input* al codice, ed il risultato che ci si aspetta in *output*.
+Se il risultato prodotto dal codice non corrisponde al risultato aspettato, si dice che il test "fallisce" (*fail*), altrimenti è "superato" (*pass*).
 
-Per il software ad uso scientifico, è estremamente importante eseguire i test prima di usare un programma, per verificare che funzioni correttamente.^[
+Per il software ad uso scientifico, è estremamente importante eseguire i test^[I test non devono essere eseguiti manualmente, uno ad uno. Esistono programmi chiamati *test runner* che individuano i test, li eseguono, e offrono un resoconto dettagliato dei test non superati, in maniera automatica.] prima di usare un programma, per verificare che funzioni correttamente.^[
 È altrettanto importante controllare anche i *tests* stessi. La qualità dei test è molto più importante della loro quantità. Idealmente, i test devono verificare non solo che gli *input* validi siano elaborati correttamente, ma anche, e soprattutto, che gli *input* invalidi vengono correttamente identificati come tali, e rigettati dal programma.]
-Nella documentazione relativa all'uso del programma, è importante indicare come eseguire i *tests*, e dare informazioni sommarie riguardo al loro contenuto.^[Ad esempio, indicare che tipi di test sono inclusi (*unit*, *integration*, e *end-to-end*), come sono strutturati, quante casistiche coprono, se ci sono test che potrebbero fallire su/al di fuori di determinati sistemi, ma questo non incide sul corretto funzionamento del programma&hellip;]
+Nella documentazione relativa all'uso del programma, è importante indicare come eseguire i *tests*, e dare informazioni sommarie riguardo al loro contenuto.^[Ad esempio, indicare che tipi di test sono inclusi (*unit*, *integration*, e *end-to-end*), come sono strutturati, quante casistiche coprono, se ci sono test che potrebbero fallire su/al di fuori di casi particolari, ma questa situazione non incide sul corretto funzionamento del programma in generale&hellip;]
 
 Ancora, è utile adottare la metodologia *TDD* (*test-driven development*, sviluppo guidato dai test), dove i *tests* vengono scritti prima ancora di scrivere il codice.
 Questo approccio ha due vantaggi:
 
 - L'insieme dei *tests* diventa una specificazione formale di come il programma si deve comportare, e definiscono i limiti operativi del programma.^[In altre parole, se tutti i *tests* sono superati, e se i dati forniti al programma al momento dell'utilizzazione pratica rientrano nel tipo di dati che sono gestiti correttamente nei *tests*, la conclusione logica è che il risultato prodotto dal programma sarà corretto. Naturalmente, questa conclusione dipende interamente dalla qualità e quantità dei *tests*.]
-- Conseguentemente, i *tests* diventano una forma aggiuntiva di documentazione per il codice per gli sviluppatori.^[I *tests* sono usa serie di esempi pratici di come usare le funzioni offerte dal codice.]
+- Conseguentemente, i *tests* diventano una forma aggiuntiva di documentazione per il codice per gli sviluppatori.^[I *tests* sono una serie di esempi pratici di come usare le funzioni offerte dal codice.]
 
 Inoltre, i test possono essere usati anche dopo che il codice è stato scritto, per evitare le *regressions* (regressioni).
 Una regressione è la situazione che si verifica quando un *bug* corretto in precedenza si ripresenta di nuovo, a seguito di cambiamenti nel codice.
@@ -117,83 +119,45 @@ Il *crash* è la situazione in cui l'esecuzione del programma termina in maniera
 
 Idealmente, il programma deve analizzare i dati soltanto nel caso in cui siano invalidi, e terminare l'esecuzione in maniera "aggraziata"^[Spesso in inglese si usano l'aggettivo *graceful* e l'avverbio *gracefully* per indicare che davanti ad un problema, il sistema non si interrompe in maniera "brusca", ma cerca di continuare l'esecuzione, magari offrendo un risultato solo parziale, se l'errore è *recoverable* (può essere corretto), o interromperla offrendo informazioni diagnostiche utili anche ad utenti non-tecnici, se l'errore è *unrecoverable* (è impossible continuare l'esecuzione). In ogni caso, è importante indicare all'utente qualsiasi problema che potrebbe influire sulla qualità e quantità dei dati.] con un messaggio di errore che indica il problema in maniera specifica in tutti gli altri casi.
 
-Nel caso di un *crash*, il programma termina in maniera "brusca",^[Per un analogia con il diritto, si pensi all'applicazione della pena su richiesta delle parti. Il procedimento si conclude improvvisamente, prima di arrivare al dibattimento, e quindi all'accertamento dei fatti, con una sentenza che "non può essere utilizzata a fini di prova" in altri giudizi.] spesso senza dare all'utilizzatore finale indicazioni utili su quale sia il problema.^[I messaggi prodotti a seguito di un *crash* sono indispensabili per i programmatori, affinché possano identificare la loro causa, ma non sono particolarmente utili per gli utilizzatori del software.]
+Nel caso di un *crash*, il programma termina in maniera "brusca",^[Per un analogia con il diritto, si pensi al testimone che dichiara (in buona fede) di non ricordare i fatti oggetto della domanda. La sua non è propriamente una risposta, ma bensì l'assenza di una risposta, perché non dà nessuna informazione utile.] spesso senza dare all'utilizzatore finale indicazioni utili su quale sia il problema.^[I messaggi prodotti a seguito di un *crash* sono indispensabili per i programmatori, affinché possano identificare la loro causa, ma non sono particolarmente utili per gli utilizzatori del software.]
 Usare un *fuzzer* permette di rilevare tutti gli *input* che causano *crash*, e quindi di migliorare il codice in modo che sia in grado di gestire qualsiasi *input* in maniera "aggraziata".^[Più in generale, la presenza di *crash* può far dubitare della qualità del programma, da un punto di vista anche solo puramente psicologico, prima ancora che tecnico.]
+
+### Riproducibilità e distribuzione del codice
+
+È estremamente importante garantire che il software ad uso scientifico che è stato creato dagli sviluppatori, e che funziona correttamente sulle loro macchine, funzioni nella stessa maniera anche sulle macchine degli utilizzatori finali.^[Altrimenti, tutti gli sforzi per garantire la qualità del codice fatti fino a questo punto sarebbero inutili, e tutti i vantaggi del software libero diventerebbero lettera morta. Certamente, il codice potrebbe essere studiato, modificato, e ridistribuito, ma verrebbe meno la funzione principale, il poter essere eseguito (con risultati riproducibili).]
+
+Le tecniche di *reproducible builds*^[Nel gergo dell'informatica, *build* è il codice macchina che viene prodotto a seguito della compilazione.] interessano principalmente nell'ambio della sicurezza informatica, perché permettono di rilevare l'inclusione di codice dannoso al momento della compilazione del codice sorgente [In questo tipo di attacco, il codice sorgente è sicuro, ma nel momento in cui viene compilato dall'utente finale per poter essere eseguito, il compilatore aggiunge del codice dannoso. Per l'utente finale, è difficile rilevare la presenza del codice dannoso. Per maggiori dettagli, v. @Thompson1984].
+
+Gli utenti finali, invece di scaricare del codice già compilato da terzi,^[I terzi potrebbero modificare il codice sorgente subito prima della compilazione per aggiungere codice dannoso.] scaricano il codice sorgente, lo compilano di persona, e verificano che il loro risultato è lo stesso risultato che è stato ottenuto dagli sviluppatori originali [@Butler2022, 687--688]. Questo esclude l'inclusione di codice dannoso, ma più in generale, garantisce che il programma si comporterà nello stesso ed identico modo sia per gli sviluppatori originali, sia per gli utilizzatori.^[Questo è il punto che interessa all'informatica forense, la riproducibilità del software di analisi.]
+
+I *container* sono un altro strumento utile per garantire la riproducibilità. Un *container* è un ambiente isolato che viene creato all'interno di un sistema operativo già in esecuzione, e permette di installare ed eseguire applicazioni.^[Hanno una funzione analoga alle *virtual machines* (macchine virtuali). La differenza è che le macchine virtuali simulano l'esecuzione di un intero computer e sistema operativo, mentre i *container* servono soltanto a separare le applicazioni all'interno del container dalle applicazioni già presenti sul sistema. V. I. Buchanan, *Containers vs. virtual machines*, 2024, <https://web.archive.org/web/20240112012831/https://www.atlassian.com/microservices/cloud-computing/containers-vs-vms>.] I *container* offrono due vantaggi:
+
+- I *container* sono deterministici.^[Ossia, agli stessi input corrispondono gli stessi output. Questo permette di verificare l'integrità del *container*, e di garantire  Ad esempio, i container di Docker vengono definiti con un file di testo chiamato "Dockerfile" (v. <https://docs.docker.com/develop/develop-images/dockerfile_best-practices/>), e sono identificati in maniera univoca da un *hash* (v. sez. "Image digests" in <https://docs.docker.com/engine/reference/run/>).]
+- I *container* contengono solo le applicazioni, non dati.^[Questo significa che un container che contiene il software di analisi può essere distrutto e ricreato facilmente, in modo da partire sempre dallo stesso ambiente iniziale. Ad esempio, di default Docker conserva i dati generati dall'applicazione solo in maniera temporanea, e quando il *container* viene fermato, i dati vengono persi. V. <https://docs.docker.com/storage/>.]
+
+Anche i *container* sono una tecnologia che interessa maggiormente la sicurezza informatica,^[Il fatto che i *container* sono isolati dal resto del sistema serve a prevenire gli attacchi, ed il fatto che sono installabili in maniera automatica elimina eventuali errori umani o problemi di configurazione durante l'installazione.] ma le cui caratteristiche risultano comunque utili per le finalità dell'informatica forense.
 
 ## Buone pratiche di sviluppo
 
+Questa sezione indica alcune buone pratiche su come sviluppare il software scientifico, e cerca di dimostrare che il modello del software libero non è necessariamente disorganizzato o di scarsa qualità.
+
 ### Progettazione del software
 
-Il primo passo è individuare il problema da risolvere, e quindi il tipo di software da sviluppare.
-È possibile distinguere tre categorie:
+Nel tempo sono state elaborate varie linee-guida per la progettazione del software. Il principio generale, che può essere desunto da tutte le altre linee-guida [Le regole che vengono menzionate in seguito sono riprese da @Raymond2003, sez. "Basics of the Unix Philosophy".] è di scrivere meno software possibile, e di scrivere il software nella maniera più semplice possibile.
 
-- *Glue code*: codice che "incolla" insieme più programmi. Il codice contenuto in questo tipo di programmi è generalmente breve e semplice. Il lavoro effettivo e complesso viene interamente delegato ad altri programmi, il *glue code* serve solo ad indicare la filiera che i dati devono seguire.
+In altre parole, è meglio risolvere un problema complesso usando più programmi (relativamente) semplici e generici,^[Dato che i vari programmi devono comunicare fra di loro, è preferibile che lo facciano usando formati liberi e standardizzati. In ogni caso, è utile anche supportare i formati proprietari, ma i formati liberi dovrebbero essere la scelta principale.] che con un singolo programma complesso e specifico.^[Questa è la logica del *glue code*, il codice che "incolla" insieme più programmi, in modo da creare una sorta di "filiera" per i dati. Per automatizzare operazioni meccaniche, che devono essere ripetute più volte, invece di scrivere manualmente tutti i comandi ogni volta, è molto più semplice scrivere del codice che eseguirà i comandi necessari in sequenza.]
 
-Il caso d'uso tipico è per automatizzare operazioni meccaniche, che devono essere ripetute più volte. Invece di scrivere manualmente tutti i comandi, è molto più semplice scrivere del codice che eseguirà i comandi necessari in sequenza.
+Se non è possibile combinare insieme più programmi, oppure, se il problema non è stato risolto in precedenza, è necessario creare uno nuovo. In questo caso, è utile dividere il programma in due parti: il *front-end* gestisce la presentazione dei dati,^[*Front-end* significa "parte anteriore", l'interfaccia grafica o testuale con cui l'utente finale interagisce direttamente.] mentre il *back-end* gestisce la loro trasformazione.^[*Back-end* significa "parte posteriore", ed è il "motore" del programma, dove i dati vengono modificati prima di essere mostrati all'utente. Questa impostazione rende più facile modificare, estendere, e verificare il corretto funzionamento del singolo programma, dato che le varie parti sono *loosely-coupled* (accoppiate in maniera non rigida).]
 
-- Programmi: sono utilizzati direttamente dall'utente
-- Librerie e *framework*: contengono codice riutilizzabile da più programmi 
-
-
-e ridurlo agli elementi essenziali.
-È possibile individuare una serie di linee-guida per lo sviluppo del software scientifico [V. sez. "Basics of the Unix Philosophy" in @Raymond2003].
-
-L'esigenza principale è la semplicità.
-
-
-- Interoperabilità: il software deve usare formati standard, in modo da poter essere utilizzato insieme ad altri programmi.
-- Estensibilità: il s
-
-In generale, è sempre preferibile cercare di ridurre il problema ai suoi elementi più essenziali, in modo da sviluppare software che sia il più semplice possibile.
-
-Si possono distinguere vari gradi di complessità del software. È bene indicare fin da subito che non tutto il software deve ambire a scalare i vari gradi, e aumentare la sua complessità. I gradi più bassi e meno complessi tendono a coincidere con del software che viene sviluppato per risolvere problemi altamente specifici, mentre i gradi più alti rappresentano software più generico, e adatto a risolvere intere categorie di problemi.
-
-Può capitare che un software nato per risolvere un problema specifico, mediante la collaborazione altrui, cresca fino a diventare un software generico, ma questa evoluzione non è necessaria. La complessità non è una misura della qualità o utilità del software, ed è sempre preferibile ridurre la complessità di un sistema, piuttosto che aumentarla. La priorità principale è il corretto funzionamento del software, e più un sistema è complesso, e più diventa dispendioso garantire che tutti i componenti funzionano correttamente.
-
-Il secondo grado è il "software monolitico". In questo caso, non si scrive codice che collega vari programmi, ma si scrive un programma completo ed indipendente. L'aggettivo "monolitico" si riferisce al fatto che il codice responsabile per l'analisi e l'elaborazione dei dati, ed il codice responsabile per la presentazione dei dati non sono separati in maniera netta.
-
-Il caso d'uso tipico è quando la logica per l'elaborazione dei dati è diventata troppo complessa per il *glue code*, che generalmente può compiere solo trasformazioni semplici, ma il programma è comunque abbastanza semplice, e compie una funzione, o poche funzioni, altamente specifiche.
-
-Il terzo grado è il software abbinato ad una libreria. La differenza rispetto al grado precedente è che il codice viene diviso in due parti.
-
-La prima parte è chiamata libreria, e contiene la parte di codice più generica ed astratta, che non risolve un problema specifico, ma offre tutti gli strumenti che possono essere utilizzati per la soluzione di problemi specifici. Si tratta del codice che acquisisce, analizza, e/o trasforma i dati. Il tratto caratteristico della libreria è che non può essere utilizzata direttamente, ma deve essere richiamata da un programma.
-
-La seconda parte è il software che può essere direttamente eseguito. Questo codice ha la natura di *glue code*, ma invece di collegare vari programmi, collega le funzioni già definite nella libreria per risolvere un problema concreto, e presentare i dati in maniera utile.
-
-Il caso d'uso tipico di questo modello è quando un programma inizialmente nato per risolvere un singolo problema nel tempo si è arricchito di funzionalità, è diventato sempre più complesso, e per ragioni di organizzazione del codice, è più semplice dividere le parti che elaborano i dati, specie se possono essere riutilizzate da altri programmi, dalle parti che presentano i dati.
-
-La divisione fra programma e libreria presenta due vantaggi. Il primo è la possibilità di riutilizzare la libreria in altri programmi, in modo da beneficiare del lavoro già svolto da altri. Il secondo è la facilità con cui è possibile modificare le parti di codice che gestiscono il flusso dei dati fra i vari componenti della libreria, e la presentazione finale dei dati, in modo da poter adeguare il codice per risolvere un problema specifico.
-
-L'ultimo grado di complessità è dato dal *framework* ("intelaiatura"). Un *framework* raccoglie più librerie, combina le loro funzionalità, e offre ai programmatori un'interfaccia unificata per utilizzarle. I *frameworks* possono essere visti come delle "grandi librerie", che offrono funzionalità astratte. Il compito di chi scrive il *framework* è di implementare correttamente le funzioni più complesse e delicate, in modo che chi lo utilizza per risolvere un problema concreto debba scrivere la minore quantità di codice possibile.
-
-Data la loro complessità, esistono pochi *frameworks*. Questo è un vantaggio, perché gli sforzi della comunità di sviluppatori si può concentrare solo su uno (o pochi) progetti, e qualsiasi miglioramento al *framework* si riflette immediatamente su tutto il software che lo utilizza.
+Inoltre, dividere in programma in due permette di estrarre il *back-end* come un componente a sé, chiamato *library* (libreria), in modo che possa essere riutilizzato da altri programmi. Un *framework* raccoglie più librerie, combina le loro funzionalità, e offre ai programmatori un'interfaccia unificata per utilizzarle.^[L'obiettivo dei framework, così come anche delle librerie, è di far scrivere ai programmatori che li utilizzano quanto meno codice possibile, e viceversa, di riutilizzare quanto più codice che funziona correttamente possibile.]
 
 ### Scelta di una licenza libera
 
-Scegliere una licenza è fondamentale se si sta sviluppando del software originale. Anche nel caso in cui si voglia modificare del software già esistente, è opportuno considerare oltre ai vari fattori tecnici anche la licenza usata, e preferire le licenze che soddisfano in maniera più forte le esigenze del software scientifico.
+La Free Software Foundation offre alcune indicazioni per scegliere una licenza [@FSF-How-to-choose-a-license]:
 
-La Free Software Foundation offre alcune indicazioni per scegliere una licenza [@FSF-How-to-choose-a-license].
-
-Per programmi particolarmente semplici che servono a risolvere un problema specifico, è possibile usare una licenza non-*copyleft* (che non impone la ridistribuzione del codice sorgente a seguito di modifiche), come la Licenza Apache 2.0.[^LicenzaApache2.0]
-
-[^LicenzaApache2.0]: \VediUrl{Apache Software Foundation}{ Apache License, Version 2.0}{2004}{https://web.archive.org/web/20040202124049/http://www.apache.org:80/licenses/LICENSE-2.0}.
-
-In generale, è preferibile usare la licenza GPL, indicando la versione scelta, e aggiungendo "e versioni successive", in modo che il software sia sempre compatibile anche con le eventuali versioni successive della GPL [Per una spiegazione sul perché è importante specificare "e versioni successive", v. @Stallman-Identify-licenses-clearly].
-
-Come anticipato nel capitolo precedente, la licenza ideale per lo sviluppo del software scientifico è la GNU GPL, per due motivi:
-
-- La GPL impone la distribuzione del codice sorgente. Senza il codice sorgente, è impossibile continuare a sviluppare il programma, o studiare il suo esatto funzionamento.
-- La GPL impone che se del codice entra a "stretto contatto" con del codice GPL,[^GPLStrettoContatto] allora quel codice deve usare a sua volta la licenza GPL. Questa condizione rende la GPL una clausola "infettiva", che obbliga quanto più software possibile ad essere rilasciato con la licenza GPL. 
-
-[^GPLStrettoContatto]: Come visto nel caso della libreria *readline*, se si ha un software che usa codice GPL, e questo software non potrebbe essere compilato o utilizzato in maniera indipendente, se non ci fosse il codice GPL, allora si ha una situazione di "stretto contatto".
-
-Per le librerie (e conseguentemente, anche i *framework*, dato che hanno sostanzialmente la stessa funzione), è necessario distinguere fra due casi.
-
-Se la libreria ha una funzione particolare, specifica, ed unica, e non esistono altre librerie, e pertanto, se gli sviluppatori sarebbero obbligati ad usare questa libreria, è opportuno usare la licenza GPL. In questo modo, fino alla creazione di alternative, il monopolio della GPL porterà altri programmi ad adottare la GPL a loro volta, per poter beneficiare della libreria [@FSF-Why-not-LGPL].
-
-Altrimenti, se esistono già altre librerie che svolgono funzioni simili, rilasciare una libreria con la licenza GPL sarebbe controproducente. Se gli sviluppatori non sono già propensi ad usare la licenza GPL per il loro software, adotteranno le altre librerie. In questo caso, è possibile usare la licenza LGPL[^LGPLTesto] (*Lesser GPL*, "GPL minore"), che non include la clausola *copyleft*, per cui il software deve adottare la licenza GPL.
-
-[^LGPLTesto]: \VediUrl{Free Software Foundation}{GNU Lesser General Public License}{2007}{https://web.archive.org/web/20070701212426/http://www.gnu.org/licenses/lgpl-3.0.html}.
+- La Licenza Apache 2.0^[V. <https://web.archive.org/web/20040202124049/http://www.apache.org:80/licenses/LICENSE-2.0>.] è non-*copyleft*, e può essere utilizzata per programmi particolarmente semplici.^[Ad esempio, il *glue code* che viene utilizzato per l'estrazione o la presentazione di dati. In questo caso, le eventuali modifiche fatte dalla controparte dovrebbero essere comunque comunicate all'interno del contraddittorio.]
+- La GNU GPL [Dato che esistono più versioni della GPL, è importante aggiungere "e versioni successive", in modo che il software sia sempre compatibile anche con le eventuali versioni successive della GPL, v. @Stallman-Identify-licenses-clearly] viene consigliata come la scelta da preferire in generale.
+- La GPL è indicata anche per le librerie software che risolvono problemi nuovi, per cui non esistono altre librerie.^[Questo impone ai programmatori una scelta: scrivere il codice da zero, oppure usare la libreria con licenza GPL, e adottare la licenza GPL anche per il loro programma.] Altrimenti, se esistono già altre librerie che svolgono funzioni simili, è preferibile usare la licenza LGPL,^[V. <https://web.archive.org/web/20070701212426/http://www.gnu.org/licenses/lgpl-3.0.html>.] che invece non è copyleft.^[L'idea è di incentivare comunque l'uso del software libero (le altre librerie potrebbero essere non-libere), senza costringere i programmatori ad usare la licenza GPL per il loro programma.]
 
 ### Sistemi di controllo di versione
 
@@ -250,11 +214,3 @@ Ad esempio, c'è stato un esperimento in cui dei ricercatori hanno inviato delle
 
 Infine, è utile richiedere l'accettazione di un *CLA* (*contributor license agreement*, accordo sulla licenza per chi contribuisce) come condizione per includere il codice di terze parti, in modo da evitare dubbi riguardo a chi appartengano i diritti intellettuali relativi al codice.^[
 Ad esempio, la FSF richiede che i terzi, che contribuiscono codice a programmi di cui la FSF detiene il diritto d'autore, conferiscano alla FSF i diritti d'autore relativi alla loro contribuzione. V. E. Moglen, *Why the FSF Gets Copyright Assignments from Contributors*, 2022, <https://web.archive.org/web/20220102214048/https://www.gnu.org/licenses/why-assign.html>.]
-
-### Riproducibilità e distribuzione del codice
-
-L'ultimo passo è garantire che il software ad uso scientifico che è stato creato dagli sviluppatori, e che funziona correttamente sulle loro macchine, funzioni nella stessa maniera anche sulle macchine degli utilizzatori finali.^[Altrimenti, tutti gli sforzi per garantire la qualità del codice fatti fino a questo punto sarebbero inutili, e tutti i vantaggi del software libero sarebbero lettera morta. Certamente, il codice potrebbe essere studiato, modificato, e ridistribuito, ma verrebbe meno la funzione principale, essere eseguito.]
-
-Se il software contiene del codice sorgente che deve essere compilato, è opportuno utilizzare una serie di accorgimenti per creare una *reproducible build*.^[Nel gergo dell'informatica, *build* indica il software eseguibile che risulta della compilazione.]
-
-Il massimo grado di riproducibilità è raggiunto con la *containerization*. Un *container* è un 
