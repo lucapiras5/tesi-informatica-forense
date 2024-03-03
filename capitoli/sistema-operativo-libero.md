@@ -2,6 +2,11 @@
 
 ## Introduzione
 
+I capitoli precedenti hanno dimostrato le potenzialità del software libero per l'informatica forense da un punto di vista puramente teorico, e come il software libero fornisce la migliore risposta alle esigenze tecniche e legali dell'informatica forense.
+
+Fortunatamente, questi vantaggi non sono destinati a rimanere lettera morta, perché esiste software libero che può essere utilizzato per l'informatica forense.
+Questo capitolo darà un resoconto non esaustivo^[Cercare di individuare tutto il software esistente per ciascuna branca della *digital forensics* andrebbe fuori dall'ambito della trattazione. In ogni caso, il software è in continua evoluzione, e le considerazioni svolte potrebbero non valere nel futuro. Pertanto, ci si limiterà a svolgere considerazioni generiche.] del software libero esistente, incluso l'uso di sistemi operativi interamente liberi.
+
 Si potrebbe dire che l'informatica forense è una disciplina che studia e gestisce una serie di *black boxes*:^[Nel gergo dell'informatica, una *black box* (scatola nera) è uno strumento di cui si può osservare il comportamento esterno, ma non si conosce l'esatto meccanismo di funzionamento interno. Non si sta facendo riferimento alle "scatole nere" che vengono recuperate a seguito di incidenti di aeromobili o imbarcazioni (che comunque possono essere di interesse per l'informatica forense, se contengono dati digitali).] l'hardware e software oggetto di analisi, e l'hardware e software con cui viene condotta l'analisi, le reti e protocolli con cui le macchine comunicano fra di loro&hellip;
 
 Allo stesso tempo, si è dimostrato come l'informatica forense deve soddisfare le esigenze del contraddittorio nel processo, e quindi si deve essere in grado di spiegare nella maniera più completa e dettagliata possibile come si è giunti ad una certa conclusione. Per questo motivo, si è sostenuta l'utilità del software libero per le operazioni di analisi.
@@ -22,9 +27,7 @@ Distribuzioni diverse usano strategie diverse, ciascuna con i propri vantaggi e 
 
 Nel tempo, data la flessibilità offerta dalle distribuzioni GNU/Linux, sono state create delle distribuzioni specializzate per l'informatica forense:
 
-- CAINE
-
-@Zanero2010, 69 ss. -- distribuzioni live per l'analisi forense
+- @Zanero2010, 69 ss. -- distribuzioni live per l'analisi forense
 
 ## Zanero
 
@@ -35,18 +38,11 @@ Nel tempo, data la flessibilità offerta dalle distribuzioni GNU/Linux, sono sta
 - migliore qualità dd
 - paper su perché usare linux
 
-## Introduzione
+## Software libero per l'acquisizione di dati
 
-I capitoli precedenti hanno dimostrato le potenzialità del software libero per l'informatica forense da un punto di vista puramente teorico, e come il software libero fornisce la migliore risposta alle esigenze tecniche e legali dell'informatica forense.
+Il pre-requisito per analizzare i dati è la loro corretta acquisizione. L'acquisizione è generalmente un atto irripetibile^[Perché esiste sempre un rischio, anche minimo, che il supporto materiale subisca modifica durante l'acquisizione (art. 117 disp. att. c.p.p.). Inoltre, esiste il rischio che i dati si danneggino o siano cancellati, e quindi di irripetibilità sopravvenuta.] e pertanto è assolutamente necessario garantire la massima trasparenza e affidabilità dell'operazione usando software libero.^[L'accesso al codice sorgente e la possibilità di distribuire liberamente copie garantiscono la trasparenza, e permettono di valutare in maniera consapevole se il software sia affidabile o meno. Viceversa, nel caso di software proprietario ci si deve affidare ciecamente al prodotto che viene fornito, dato che non è possibile sapere in maniera altrettanto trasparente come è stato sviluppato.]
 
-Fortunatamente, questi vantaggi non sono destinati a rimanere lettera morta, perché esiste software libero che può essere utilizzato per l'informatica forense.
-Questo capitolo darà un resoconto non esaustivo^[Cercare di individuare tutto il software esistente per ciascuna branca della *digital forensics* andrebbe fuori dall'ambito della trattazione. In ogni caso, il software è in continua evoluzione, e le considerazioni svolte potrebbero non valere nel futuro. Pertanto, ci si limiterà a svolgere considerazioni generiche.] del software libero esistente, incluso l'uso di sistemi operativi interamente liberi.
-
-## Software libero
-
-### Acquisizione di supporti materiali
-
-Il primo passo è l'acquisizione dei dati che saranno oggetto di analisi.
+### Supporti materiali
 
 Se i dati risiedono su un supporto materiale che può essere collegato ad un computer^[Ad esempio, un *hard disk* interno o esterno, memorie flash USB o SD, supporti ottici&hellip;] esistono vari programmi.
 
