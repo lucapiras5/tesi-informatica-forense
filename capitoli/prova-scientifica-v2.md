@@ -268,24 +268,6 @@ Quando i dati sono trasmessi su, o acquisiti per mezzo di, reti informatiche, si
 - *Network forensics* (analisi forense di reti informatiche)
 - *Cloud forensics* (analisi forense di dati archiviati su dispositivi gestiti da terzi, a cui si può accedere solo per mezzo di reti informatiche).
 
-La *memory forensics* (analisi forense di memorie volatili, ossia la RAM) merita una menzione, perché sfugge a questa dicotomia.
-Non può essere ricondotta alla *network forensics*, perché i dati non stanno viaggiando su una rete informatica, si trovano all'interno del dispositivo.
-Tuttavia, allo stesso tempo, i dati in memoria non sono nemmeno "archiviati" in maniera stabile, perché si disperdono quando il sistema viene spento [@Ayers2015, 1].
-
-Tradizionalmente, la *memory forensics* veniva quasi completamente ignorata.
-Le istruzioni per il sequestro di dati informatici prevedevano lo spegnimento del computer, senza previa acquisizione della memoria [@Ayers2015, 7].
-
-Tuttavia, anche se si acquisisce una copia della memoria, che così diventa un dato propriamente "archiviato", non è possibile utilizzare gli strumenti già esistenti di *disk forensics*, perché i dati salvati in memoria usano un formato diverso rispetto ai dati salvati su disco.
-
-Il disco contiene una serie di file: dati archiviati, "statici",[^definizione-file] e nettamente divisi fra di loro.
-La memoria contiene una serie di processi: programmi in corso di esecuzione, che mescolano al loro interno codice e dati,[^architettura-von-neumann] "dinamici", ed in continuo cambiamento.[^definizione-allocazione-dinamica]
-
-[^definizione-file]: "File" significa letteralmente "archivio" in italiano, ma "archiviato" o "statico" non devono essere intesi nel senso di "immutabile", ma piuttosto come l'opposto di "dinamico" o "in esecuzione", attributi che descrivono meglio un programma.
-
-[^architettura-von-neumann]: È una conseguenza del fatto che i computer usano la *Von Neumann architecture*, dove il codice e dati sono salvati nella stessa memoria. La *Harvard architecture* invece prevede due memorie nettamente separate, una per il codice da eseguire, ed una per i dati su cui il codice opera.
-
-[^definizione-allocazione-dinamica]: È il fenomeno della allocazione dinamica di memoria. "Allocazione" significa che il sistema operativo riserva una certa quantità di memoria ad uso di un programma. "Dinamica" significa che dopo che il sistema operativo ha allocato la memoria necessaria per avviare il programma, quest'ultimo può richiedere l'allocazione di ulteriore memoria.
-
 Ritornando all'analisi della definizione di Casey, il problema è la completa mancanza di riferimenti alle operazioni "tipiche", tecniche e scientifiche, dell'informatica forense.
 In altre parole, si indica a cosa serve la prova informatica, ma non c'è il minimo accenno alla disciplina scientifica che detta le regole relative alla sua trattazione.
 
