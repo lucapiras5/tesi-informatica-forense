@@ -251,33 +251,6 @@ La catena di custodia deve essere certificata (art. 265):
 
 Le attività descritte dal codice consistono in una verifica formale della veridicità di quanto scritto nella catena, ma se la catena di custodia è redatta in forma elettronica, e si usano le firme digitali, si può andare oltre, ed usare una versione semplificata dell'algoritmo di *blockchain*. L'essenza della blockchain è di essere un registro immutabile di valori, condiviso fra più persone. Nel caso dei Bitcoin, viene usato per tenere traccia delle transazioni effettuate fra vari indirizzi. Ma la stessa tecnologia può essere usata per tenere traccia delle operazioni compiute dai vari soggetti.
 
-Il vantaggio principale della blockchain è la sua immutabilità. La catena è distribuita fra più soggetti, e quando si decide di aggiungere un nuovo blocco, tutti devono essere d'accordo riguardo al suo contenuto. Si calcola il nuovo blocco, facendo riferimento all'ultimo blocco nella catena, e tutti aggiorneranno la loro copia di conseguenza. Tuttavia, se qualcuno decidesse di modificare un blocco intermedio nella sua copia della catena, questa modifica potrebbe essere rilevata con facilità:
-
-- In primo luogo, dovrebbe modificare tutti i blocchi successivi a quello modificato, altrimenti sarebbe facile dimostrare che la sua catena è invalida, perché ad un certo punto il blocco successivo non fa più riferimento a quello precedente.
-- Tuttavia, se modifica tutti i blocchi successivi, dovrà necessariamente modificare anche l'ultimo blocco. Se proverà ad aggiungere un nuovo blocco, sarà facile verificare che il blocco a cui si sta riferendo non coincide con l'ultimo blocco nelle altre copie.
-
-In altre parole, si immagini che tutti siano inizialmente d'accordo su questa catena:
-
-\begin{center}
-Buona fede: A, B, C, D, E
-\end{center}
-
-Analogamente, tutti saranno d'accordo che il prossimo blocco *F* farà riferimento a *E*. Tuttavia, se qualcuno decide di modificare il blocco *D* nella sua copia, ottenendo *D1*, dovrà modificare anche il valore successivo in *E1*, e si avranno due catene divergenti:
-
-\begin{center}
-Buona fede: A, B, C, D, E
-\par
-Mala fede: A, B, C, D1, E1
-\end{center}
-
-Si possono immaginare tre possibili scenari a questo punto:
-
-- Se *E1* viene sostituito con *E*, si può dimostrare che *E* non può essere ottenuto da *D1*.
-- Se *E1* viene usato per suggerire il blocco successivo, gli altri contesterebbero che *F1* non fa riferimento ad *E*, e quindi non potrebbe essere il "vero" *F*.
-- Se *F* viene aggiunto dopo *E1*, si può sempre dimostrare che *F* non può derivare da *E1*.
-
-In ogni caso, la modifica alla catena può essere dimostrata confrontandola con le altre copie, e trovando una divergenza, o verificando la sua integrità, e trovando un'irregolarità.
-
 ### Analisi e valutazione
 
 Per quanto riguarda le fasi dell'analisi e valutazione da parte dei consulenti tecnici o perito, il software deve rispondere ad una serie di esigenze.

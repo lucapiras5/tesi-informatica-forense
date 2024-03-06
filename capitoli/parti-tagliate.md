@@ -437,3 +437,22 @@ Esistono vari paradigmi riguardo la gestione dei tipi nei linguaggi di programma
 - Nei *dynamically-typed languages*, La distinzione principale è fra gli *statically-typed* e *dynamically-typed languages*. Nei primi, il tipo di una variabile 
 
 - tipi per le variabili
+
+----
+
+@Zanero2010, 101 ss. -- architetture per raccogliere malware
+
+- migliore qualità dd
+- paper su perché usare linux
+
+----
+
+Prima di discutere dei programmi per analizzare i dati, è opportuno menzionare le due modalità che possono essere seguite per garantire nella maggiore misura possibile che l'analisi, oltre ad essere ripetibile^["Ripetibile" significa che è possibile svolgere l'analisi più volte, senza modificare o perdere i dati originali. La ripetibilità viene già soddisfatta con la corretta acquisizione, conservazione e creazione di copie dei dati, come discusso nelle sezioni precedenti.] sia anche riproducibile.^["Riproducibile" significa che se l'analisi viene ripetuta in momenti diversi, da persone diverse, e su sistemi diversi, produce comunque gli stessi risultati.] Si possono distinguere due approcci, con vantaggi e svantaggi diversi.
+
+Il primo è di svolgere tutte le operazioni di analisi all'interno di una macchina virtuale.^[Per una definizione dei vari tipi di macchina virtuale, e una lista del software libero disponibile, v. @Zanero2010, 26--28. In questa sede, la caratteristica che è più utile dell'uso di una macchina virtuale è la possibilità ...]
+
+Il secondo è di creare una lista delle esatte versioni dei programmi che sono stati usati per svolgere l'analisi:
+- componenti
+
+
+

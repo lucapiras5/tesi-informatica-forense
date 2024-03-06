@@ -25,7 +25,9 @@ Distribuzioni diverse usano strategie diverse, ciascuna con i propri vantaggi e 
 - Le distribuzioni *rolling*^[Distribuzioni che aggiornano i pacchetti in maniera "asincrona": ogni pacchetto può essere aggiornato appena viene rilasciata una nuova versione.] offrono il software più recente, al costo di una minore stabilità e riproducibilità.^[Data la frequenza degli aggiornamenti, non è possibile verificare il corretto funzionamento di ogni pacchetto, e installare o aggiornare il sistema in momenti diversi produce risultati diversi, perché non è possibile prevedere in anticipo quali pacchetti saranno installati.]
 - Nix è un *package manager* che usa un paradigma particolare [La descrizione di Nix è oggetto di una tesi di dottorato, v. @Dolstra2006], che garantisce la piena riproducibilità dell'installazione del sistema.^[Si può sempre installare la versione più recente del software, ma se causa problemi, è sempre possibile effettuare un *rollback* (tornare indietro) ad una versione precedente del sistema che funziona correttamente. Inoltre, è sempre possibile installare qualsiasi versione dello stesso software, o anche più versioni in parallelo, senza conflitti fra le varie installazioni.] NixOS è una distribuzione Linux che usa Nix come il suo *package manager* [@Dolstra2008, 1].
 
-Nel tempo, data la flessibilità offerta dalle distribuzioni GNU/Linux, sono state create delle distribuzioni specializzate per l'informatica forense, che raccolgono software libero: CAINE,^[V. <https://www.caine-live.net/>.] DEFT,^[Non più in sviluppo. Per un archivio della pagina principale del progetto, v. <https://web.archive.org/web/20190101021304/http://www.deftlinux.net/>.] SIFT Workstation,^[V. <https://www.sans.org/tools/sift-workstation/>.] Kali Linux,^[V. <https://www.kali.org/>.] BackBox Linux&hellip;^[V. <https://linux.backbox.org/>]
+- TODO: problema di doversi fidare del materiale scaricato da internet, tutte le distribuzioni usano tecniche come firme digitali per garantire l'integrità ed autenticità dei pacchetti, pacchetti con codice sorgente ed istruzioni per creare una reproducible build
+
+Nel tempo, data la flessibilità offerta dalle distribuzioni GNU/Linux, sono state create delle distribuzioni specializzate per l'informatica forense, che raccolgono software libero: CAINE,^[V. <https://www.caine-live.net/>.] DEFT,^[Non più in sviluppo. Per un archivio della pagina principale del progetto, v. <https://web.archive.org/web/20190101021304/http://www.deftlinux.net/>.] SIFT Workstation,^[V. <https://www.sans.org/tools/sift-workstation/>.] Kali Linux,^[V. <https://www.kali.org/>.] BackBox Linux^[V. <https://linux.backbox.org/>]&hellip;
 
 Le distribuzioni specializzate hanno varie caratteristiche in comune:
 
@@ -33,15 +35,6 @@ Le distribuzioni specializzate hanno varie caratteristiche in comune:
 - Prendono ogni precauzione per evitare operazioni in scrittura sui dispositivi che vengono collegati [@Zanero2010, 73].
 - Includono del software pre-installato, in modo da garantire la piena riproducibilità dell'ambiente di analisi, e quindi la ripetibilità delle analisi [@Zanero2010, 76--78].
 - Offrono delle interfacce grafiche e strumenti software *ad-hoc* per velocizzare le operazioni tipiche e la generazione del report finale [@Zanero2010, 74--76, 78--79].
-
-## Zanero
-
-@Zanero2010, 45 ss. -- architettura per processare grandi quantità di dati
-
-@Zanero2010, 101 ss. -- architetture per raccogliere malware
-
-- migliore qualità dd
-- paper su perché usare linux
 
 ## Software libero per l'acquisizione di dati
 
@@ -61,11 +54,16 @@ Se i dati sono su *embedded devices*^[Intesi come dispositivi per cui non è pos
 
 Purtroppo, entrambe le modalità presentano tre svantaggi, difficilmente superabili: la dipendenza da strumenti proprietari,^[In particolare, non si ha accesso al codice sorgente del sistema operativo del dispositivo oggetto di acquisizione, o dello strumento con cui si crea il backup del dispositivo.] la quantità di dati che è possibile estrarre,^[È molto probabile che esistano meccanismi di sicurezza che impediscono l'accesso a tutti i file.] e la loro irripetibilità intrinseca.^[Le operazioni di acquisizione vengono svolte mentre il dispositivo è acceso, e l'esecuzione dei comandi o del backup modifica lo stato del dispositivo.] 
 
-Per la *network forensics*, Wireshark^[V. <https://www.wireshark.org>.] è un software maturo, in sviluppo da più di 20 anni, e permette di acquisire ed analizzare il traffico di rete.
+Per la *network forensics*, Wireshark^[V. <https://www.wireshark.org>.] è un software maturo, in sviluppo da più di 20 anni, e permette di acquisire ed analizzare tutto il traffico di rete. In particolare, con alcuni accorgimenti, può essere usato per eseguire l'acquisizione forense di pagine web.^[In primo luogo, è necessario impostare Wireshark in modo che possa catturare il traffico generato dal *browser* (v. sez. "Using the (Pre)-Master-Secret" in <https://web.archive.org/web/20230724183942/https://wiki.wireshark.org/TLS>). Dopo che Wireshark ha iniziato ad acquisire i pacchetti, ma prima e dopo che le pagine da acquisire sono state visitate, è utile visitare il sito internet di una testata giornalistica, come modo per provare che la cattura è avvenuta in un determinato momento. Ancora, è utile registrare lo schermo durante lo svolgimento delle operazioni, ed è utile eseguirle all'interno di una macchina virtuale, in modo da lasciare quante più tracce possibili dello svolgimento dell'operazione.]
 
-In particolare, può essere usato per catturare le pagine ed i dati a cui si può accedere usando un browser (Firefox o Chrome). Con alcuni accorgimenti aggiuntivi, è possibile usare Wireshark per compiere un'acquisizione forense di pagine web, inclusi i contenuti sul *cloud*.^[Per impostare Wireshark in modo che possa catturare il traffico generato dal *browser*, v. sez. "Using the (Pre)-Master-Secret" in <https://web.archive.org/web/20230724183942/https://wiki.wireshark.org/TLS>. Successivamente, è utile visitare il sito internet di una testata giornalistica prima e dopo dell'acquisizione, in modo da dimostrare il momento in cui i dati sono stati catturati. Infine, è utile eseguire le operazioni all'interno di una macchina virtuale, e registrare lo schermo, in maniera da lasciare traccia delle operazioni svolte.]
+Esistono anche programmi che, pur non essendo stati sviluppati specificamente per l'informatica forense, permettono di acquisire quante più informazioni possibili da servizi proprietari disponibili su internet.^[In molti casi, è possibile acquisire questi contenuti usando un semplice web browser. Tuttavia, per acquisire i contenuti in blocco, è preferibile usare uno strumento specifico. Nell'usare questi strumenti, è importante controllare la documentazione, e attivare le opzioni che forniscono all'utente quante più informazioni diagnostiche possibile.] Ad esempio:
 
-Un'altra strada per copiare dati salvati sul cloud è usare *Rclone*^[V. <https://rclone.org/>.] che permette di copiare dati da un grande numero di servizi di *cloud storage*.^[Ad esempio, Dropbox, Google Drive, OneDrive&hellip; v. <https://rclone.org/overview/>.]
+- *Rclone*^[V. <https://rclone.org/>.] permette di acquisire dati da piattaforme cloud.^[Ad esempio, Dropbox, Google Drive, OneDrive&hellip; per una lista completa, v. <https://rclone.org/overview/>.]
+- *Yt-dlp*^[V. <https://github.com/yt-dlp/yt-dlp>.] può scaricare video da Youtube e numerose altre piattaforme.
+- *Instaloader*^[V. <https://github.com/instaloader/instaloader>.] può scaricare immagini e video da Instagram.
+- *DiscordChatExporter*^[V. <https://github.com/Tyrrrz/DiscordChatExporter>.] permette di estrarre un log dei messaggi su Discord.
+
+In alcuni casi, i servizi offrono già strumenti per esportare dati,^[Ad esempio, Google offre Google Takeout per scaricare i dati relativi al proprio account (v. <https://takeout.google.com/>), Apple permette di scaricare una copia dei dati collegati al proprio Apple ID (v. <https://web.archive.org/web/20230903043707/https://support.apple.com/en-us/102208>)&hellip;] ma questi servizi sono proprietari.^[In linea generale, ci si può fidare che i dati non vengano modificati dal gestore del servizio, perché non avrebbero nessun interesse a farlo. Il problema più rilevante è la quantità dei dati che è possibile ottenere in questo modo.] Tuttavia, in alcuni casi lo strumento per esportare dati potrebbe essere software libero. Ad esempio, il client di Telegram è software libero^[V. <https://github.com/telegramdesktop/tdesktop>.] e permette di scaricare una copia dei dati relativi all'account di un utente.^[V. <https://web.archive.org/web/20180827090156/https://telegram.org/blog/export-and-more>.]
 
 La *memory forensics*^[Analisi forense di memorie volatili, ossia, la RAM.] tradizionalmente veniva quasi completamente ignorata^[Le istruzioni per il sequestro di dati informatici prevedevano lo spegnimento del computer, senza previa acquisizione della memoria. V. @Ayers2015, 7.] perché presentava (e continua a presentare) varie difficoltà:
 
@@ -73,35 +71,57 @@ La *memory forensics*^[Analisi forense di memorie volatili, ossia, la RAM.] trad
 - L'acquisizione presenta numerose problematiche tecniche [@Case2017].
 - Il formato dei dati contenuto nelle memorie volatili non è documentato in maniera ufficiale, ed in ogni caso, cambia con frequenza.^[La documentazione è assente nel caso dei sistemi operativi proprietari, come Windows e macOS. Nei sistemi operativi che usano il kernel Linux, si può consultare il codice sorgente relativo alla gestione della memoria. Dato che la memoria è volatile, non è necessario "standardizzare" il suo formato, e assicurarsi che possa essere letto anche a distanza di tempo. V. @Sylve2017.]
 
-In ogni caso, è comunque utile almeno provare ad acquisire i dati: nel caso peggiore saranno inutilizzabili o irrilevanti, ma nel caso migliore si potrebbero trovare informazioni o tracce utili per l'investigazione.^[Come ad esempio, la chiave crittografica per decrittare informazioni protette. V. @Hargreaves2008.]
-
-Per acquisire la RAM si può usare WinPmem^[V. <https://github.com/Velocidex/WinPmem>.] su Windows, e LinPmem^[V. <https://github.com/Velocidex/Linpmem>.] su Linux.
+In ogni caso, è comunque utile almeno provare ad acquisire i dati: nel caso peggiore saranno inutilizzabili o irrilevanti, ma nel caso migliore si potrebbero trovare informazioni o tracce utili per l'investigazione.^[Come ad esempio, la chiave crittografica per decrittare informazioni protette. V. @Hargreaves2008.] Per acquisire la RAM si può usare WinPmem^[V. <https://github.com/Velocidex/WinPmem>.] su Windows, e LinPmem^[V. <https://github.com/Velocidex/Linpmem>.] su Linux.
 
 ## Software libero per conservare i dati
 
 Dopo che i dati sono stati acquisiti, è necessario garantire la loro corretta conservazione.
 
-Programmi come *BorgBackup* (licenza BSD)^[V. <https://www.borgbackup.org/>.] e *Restic* (licenza BSD)^[V. <https://restic.net/>.] permettono di creare copie di backup dei dati, di proteggere i backup con la crittografia,^[In modo da garantire la confidenzialità dei dati, anche nel caso di un *data breach*.] e di verificare la loro integrità.^[In modo che sia possibile verificare che i dati non siano variati per *bit rot* o modifiche intenzionali da parte di terzi, anche a distanza di tempo.]
+Programmi come *BorgBackup*^[V. <https://www.borgbackup.org/>.] e *Restic*^[V. <https://restic.net/>.] permettono di creare copie di backup dei dati, di proteggere i backup con la crittografia,^[In modo da garantire la confidenzialità dei dati, anche nel caso di un *data breach*.] e di verificare la loro integrità.^[In modo che sia possibile verificare che i dati non siano variati per *bit rot* o modifiche intenzionali da parte di terzi, anche a distanza di tempo.]
 
-I dati possono essere salvati su *filesystem* liberi e specializzati per l'archiviazione dei file, come *OpenZFS* (licenza CDDL), che controlla automaticamente l'integrità dei dati.^[Per una dimostrazione pratica di come ZFS rileva e corregge i dati danneggiati, v. <https://web.archive.org/web/20220516050411/https://ubuntu.com/tutorials/testing-the-self-healing-of-zfs-on-ubuntu>.]
+Le copie di backup possono essere conservate su *filesystem* specializzati per l'archiviazione dei file, come *OpenZFS*, che controlla automaticamente l'integrità dei dati.^[Per una dimostrazione pratica di come ZFS rileva e corregge i dati danneggiati, v. <https://web.archive.org/web/20220516050411/https://ubuntu.com/tutorials/testing-the-self-healing-of-zfs-on-ubuntu>.] La creazione di copie dei dati può essere effettuata con *Rsync*,^[V. <https://github.com/WayneD/rsync>.] un programma per la copia di dati che usa un algoritmo *ad-hoc* per assicurare che la copia sia identica all'originale.^[In particolare, questo algoritmo ha due proprietà utili: il trasferimento dei file può essere interrotto e ripreso in un secondo momento senza dover ricominciare dall'inizio, e calcola l'hash dei dati durante il trasferimento, per garantire che l'originale e la copia contengano gli stessi dati. V. sez. "Rolling checksum" in @Tridgell1998.]
 
-La catena di custodia può essere redatta con *Git*. Ogni operazione viene registrata in un *commit*, che viene firmato digitalmente.
+La catena di custodia può essere redatta con *Git*:
+
+- Il documento digitale che contiene la catena può essere redatto in qualsiasi formato.^[Git è in grado di gestire anche file binari (come un documento in formato .DOC, .DOCX, o .ODT), non soltanto file di testo.]
+- Ogni volta che si aggiorna la catena di custodia, si crea un nuovo *commit*, ed il commit o la catena vengono firmate digitalmente da tutti i partecipanti.^[Git supporta nativamente le firme GPG (GNU Privacy Guard) per i *commit*, ma è possibile usare qualsiasi metodo diverso di firma digitale, purché la firma sia contenuta in un file che possa essere conservato all'interno del repository.]
+- I partecipanti ottengono una copia^[La copia viene creata con *git clone*. Se i partecipanti hanno già una copia della catena, possono sincronizzare la loro copia con *git pull*.] della catena digitale.^[Distribuire copie dell'intera catena a più persone serve a garantire che esistano più copie di backup della catena in circolazione. Inoltre, se qualcuno prova ad alterare la catena, o se la catena viene danneggiata o persa per altri motivi, è possibile confrontare le copie in circolazione. Qualsiasi modifica risulterà in *repository* divergenti, pertanto è facile trovare le copie autentiche e non manipolate confrontando tutte le copie fra di loro: se almeno due o più copie sono uguali, salvo caso di collusione, quelle copie rappresentano la catena originale.]
 
 ## Software libero per analizzare i dati
 
-@Zanero2010, 117 ss. -- script per estrarre file
+Per analizzare i dati, si possono seguire due strade.
 
-- Autopsy
-- Data carving (anche per la memoria)
-- Volatility
+La prima è di usare programmi di analisi integrati, come Autopsy.^[V. <https://github.com/sleuthkit/autopsy>.] I vantaggi sono che:
 
-ricerca per parole chiave o per *file signatures*.^[Ad esempio, cercando nomi di persone o sequenze di caratteri che hanno il formato di indirizzi di posta elettronica, oppure cercando le sequenze che indicano l'inizio o fine di determinati tipi di file. Il vantaggio è che estremamente facile fare questo tipo di ricerche, lo svantaggio è che, salvo l'esistenza e l'uso di strumenti di analisi più sofisticati, è difficile essere certi del programma o contesto in cui si trovavano queste informazioni.]
+- Offrono un'interfaccia grafica unificata, che li rende più facili da usare, e permette di svolgere le operazioni tipiche in maniera efficiente.
+- Permettono di generare in maniera automatica un report finale delle operazioni svolte.
+- In termini di capacità, sono paragonabili ai prodotti non-liberi.^[Per un confronto tra Autopsy e altri prodotti commerciali, v. @Manson2007. In ogni caso, anche se mancassero delle funzionalità rispetto al software proprietario, ci si può fidare in misura maggiore delle funzionalità che sono presenti, dato che è possibile studiare il loro funzionamento.]
 
-- Timeline
+Lo svantaggio è che si è limitati dalle funzionalità del programma, e modificarlo potrebbe essere difficile.^[Più il software è integrato, e più diventa necessario conoscere il suo esatto funzionamento per essere in grado di modificarlo adeguatamente. Le uniche alternative sono studiare il codice (che comporta un dispendio di tempo), oppure chiedere agli sviluppatori originali di introdurre le modifiche (che potrebbe comportare un dispendio di denaro, per incentivare gli sviluppatori ad accettare o dare priorità alla richiesta).]
 
-## Software libero per presentare i risultati
+La seconda è di usare più programmi di analisi, separati e specializzati, per svolgere le analisi. Ad esempio, parte delle funzioni svolte da Autopsy può essere replicata usando altri programmi:
 
-- Redazione delle relazioni
-- macchine virtuali ed esperimento giudiziale
+- *mount* può essere usato per aprire l'immagine forense dei supporti.^[Più precisamente, *mount* permette di montare una singola partizione. Se il disco contiene più partizioni, è necessario prima identificarle con *mmls*, che fa parte di *The Sleuth Kit* (v. <https://github.com/sleuthkit/sleuthkit>). V. <https://superuser.com/a/562158>.]
+- *md5sum* e *sha1sum* per calcolare l'hash di file.^[Per calcolare l'hash di più file, è possibile usare i comandi *find* e *xargs*, v. <https://stackoverflow.com/a/545413>.]
+- *PhotoRec*^[V. @PhotoRec.] per cercare e recuperare file cancellati.
+- *file*^[V. <https://github.com/file/file>.] per determinare il formato del file in analisi.
+- *grep*,^[V. <https://www.gnu.org/software/grep/>.] *ripgrep*,^[V. <https://github.com/BurntSushi/ripgrep>.] *ripgrep-all*^[<https://github.com/phiresky/ripgrep-all>.] per eseguire ricerche di stringhe o espressioni regolari^[Le espressioni regolari permettono di cercare testo che corrisponde ad un certo modello. Per un'introduzione alle espressioni regolari, v. G. Moschitta, *Espressioni regolari: pattern, uso ed esempi*, 2006, <https://web.archive.org/web/20200919192017/https://www.html.it/articoli/espressioni-regolari/>.] all'interno di file e vari formati.
+- *xxd*^[*xxd* viene usato dall'editor di testo *vim*. V. <https://github.com/vim/vim/tree/master/src/xxd>.] per visualizzare i file in formato esadecimale.
+- *imagemagick*^[V. <https://imagemagick.org/>] ed *ffmpeg*^[V. <https://ffmpeg.org/>] possono essere usati per estrarre miniature e anteprime di immagini e video.
+- *stat* mostra la data di creazione, modifica e ultimo accesso per i file.
+- *Wireshark* permette anche di analizzare i pacchetti che ha acquisito.
+- *Volatility*^[V. <https://volatilityfoundation.org/the-volatility-framework/>.] offre strumenti per analizzare la copia della memoria che è stata acquisita.
 
-@Zanero2010, 25 ss. -- macchine virtuali
+Il vantaggio di questi programmi è che possono essere combinati fra di loro all'interno di uno *script*,^[Un file che contiene una sequenza di comandi da eseguire.] che può essere:
+
+- Generico, come nel caso di *OCFA*,^[I moduli di OCFA avviano altre applicazioni per elaborare i dati, v. @Zanero2010, 59.] *CAINE*,^[È un'interfaccia grafica intorno ad una serie di programmi, v. @Zanero2010, 75--78.] *sfdumper*.^[V. @Zanero2010, 117 ss., e <https://web.archive.org/web/20080303035227/https://sfdumper.sourceforge.net/>.]
+- Specifico per le operazioni da svolgere nel caso concreto.^[In questo caso, lo *script* serve come documentazione per l'elenco delle operazioni che sono state compiute, ma permette di ripetere l'intera analisi semplicemente eseguendolo di nuovo.]
+
+La maggiore flessibilità viene controbilanciata dalla maggiore difficoltà d'uso,^[È necessario saper usare ogni singolo programma, che spesso non offrono interfacce grafiche, e sapere come scrivere *script* per il trattamento dei dati.] ed il fatto che si sta creando una soluzione *ad-hoc*, invece di usarne una generica.^[Pertanto, è necessario dimostrare l'affidabilità dei singoli programmi usati, e la ragionevolezza dell'approccio seguito, mentre se si usa un programma integrato, basta solo dimostrare l'affidabilità del singolo programma.]
+
+Le macchine virtuali offrono la possibilità di eseguire un sistema operativo, chiamato *guest* (ospite) all'interno di un altro sistema operativo, detto *host*,^[Per maggiori dettagli sulla nozione di virtualizzazione, ed un elenco del software disponibile, v. Zanero2010, 26--28.] e possono trovare vari usi durante la fase dell'analisi.
+
+In alcuni casi, il loro uso potrebbe essere necessario per esaminare a pieno l'immagine forense.^[Ad esempio, si pensi al caso in cui all'interno del sistema esistono dati protetti da crittografia, e si conosce la password. La soluzione più semplice ed affidabile per accedere a quei dati è di avviare il sistema, e decrittarli come lo farebbe un normale utente. Il sistema che è stato acquisito viene avviato come un sistema operativo *guest* all'interno del sistema operativo *host* con cui si esegue l'analisi, i dati vengono decrittati, e infine sono copiati dal sistema *guest* al sistema *host*, in modo che possano essere analizzati.] In altri casi, il loro uso risulta utile:
+
+- È possibile usare contemporaneamente una distribuzione Linux (come *host*) e Windows (come *guest*).^[Questo permette di avere accesso agli strumenti di analisi disponibili su entrambi i sistemi operativi, v. @Zanero2010, 40.]
+- È possibile duplicare le macchine virtuali, e creare delle *snapshot* del loro stato.^[V. @Zanero2010, 36. Se le operazioni di analisi vengono compiute all'interno di una macchina virtuale, è possibile duplicare l'ambiente di analisi, e quindi garantire la più completa riproducibilità e ripetibilità dell'analisi. Chiunque ottenga una copia della macchina virtuale otterrà anche una copia del sistema operativo e di tutti i programmi installati, ed è possibile avviarla in qualsiasi momento. Creare una *snapshot* (instantanea) permette di annullare tutte le modifiche successive alla sua creazione, e ritornare allo stato del sistema nel momento in cui era stata creata. Pertanto, si è liberi di provare analisi o eseguire modifiche potenzialmente distruttive, perché è sempre possibile tornare ad uno stato precedente.]
