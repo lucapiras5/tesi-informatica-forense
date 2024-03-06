@@ -1,0 +1,2 @@
+- esperimenti giudiziali con VM
+- altri programmi indicati in Zanero nel capitolo di CAINE (steganografia, ricerca file criptati)
