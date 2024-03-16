@@ -454,5 +454,47 @@ Il primo è di svolgere tutte le operazioni di analisi all'interno di una macchi
 Il secondo è di creare una lista delle esatte versioni dei programmi che sono stati usati per svolgere l'analisi:
 - componenti
 
+----
 
+Più in generale, i dati informatici possono essere una fonte utile di informazioni utile durante la fase delle indagini in qualsiasi tipo di reato.
+Non saranno utilizzati nel dibattimento per ricostruire il fatto, ma soltanto per indirizzare le indagini.
+Tuttavia, indipendentemente dall'uso, è necessario accedere ai dati, e come discusso,\VediRef{sez-caratteristiche-dati-informatici} ogni accesso porta con sé il rischio intrinseco di modificare i dati.
+Pertanto, nell'impossibilità di determinare *a priori* per quale fine i dati digitali saranno usati, si può agire in due modi.
+
+La soluzione "garantista" è di applicare sempre le massime cautele, a prescindere dalla finalità.
+Ci sarà un maggiore dispendio di tempo e risorse, ma i dati saranno acquisiti con tecniche che garantiscono maggiormente la loro affidabilità.
+È la stessa logica della riserva di incidente probatorio nel contesto degli accertamenti irripetibili (art. 360 co. 4 e 5 c.p.p.):
+
+> 4\. Qualora \Omissis{} la persona sottoposta alle indagini formuli riserva di promuovere incidente probatorio, il pubblico ministero dispone che non si proceda agli accertamenti salvo che questi, se differiti, non possano più essere utilmente compiuti.
+>
+> 5\. \Omissis{} Se il pubblico ministero, malgrado l'espressa riserva formulata dalla persona sottoposta alle indagini e pur non sussistendo le condizioni indicate nell'ultima parte del comma 4, ha ugualmente disposto di procedere agli accertamenti, i relativi risultati non possono essere utilizzati nel dibattimento.
+
+L'unico caso in cui si può prescindere dalle maggiori garanzie dell'incidente probatorio è la necessità di dover acquisire i dati immediatamente, perché rischiano di deteriorarsi.
+Ad esempio, può essere il caso dell'acquisizione del contenuto di memorie volatili, di flussi di dati informatici in trasmissione, o di dati che si trovano su un sito internet e che presumibilmente saranno cancellati a breve&hellip;
+Se in seguito si dimostra che questa necessità non sussisteva, i dati diventeranno inutilizzabili, perché la loro minore affidabilità non è stata controbilanciata dall'urgenza di doverli acquisire.
+
+Una seconda soluzione, "più pragmatica", ma anche più rischiosa, è di applicare la stessa logica che viene usata per le informazioni ottenute da una persona soggetta ad arresto o fermo (art. 350 co. 5 e 6 c.p.p):
+
+> 5\. Sul luogo o nell'immediatezza del fatto, gli ufficiali di polizia giudiziaria possono, anche senza la presenza del difensore, assumere dalla persona nei cui confronti vengono svolte le indagini, anche se arrestata in flagranza o fermata a norma dell'articolo 384, notizie e indicazioni utili ai fini della immediata prosecuzione delle indagini.
+>
+> 6\. Delle notizie e delle indicazioni assunte senza l'assistenza del difensore sul luogo o nell'immediatezza del fatto a norma del comma 5 è vietata ogni documentazione e utilizzazione.
+
+Se le informazioni sono assunte "sul luogo" e "nell'immediatezza del fatto", ed in modalità poco garantiste ("anche senza la presenza del difensore"), possono essere usate solo per la "immediata prosecuzione delle indagini", ed è vietata la loro "utilizzazione" per qualsiasi altro fine.
+In altre parole, si può immediatamente prendere cognizione dei dati, ma al grave costo di non poterli usare successivamente in dibattimento per la prova del fatto.
+
+----
+
+Nel primo tipo, il sistema informatico può essere l'unico bene rilevante per il reato.
+Ad esempio, nella serie di reati dedicati al danneggiamento di dati, programmi e sistemi informatici pubblici e privati (artt. 635-*bis*--*quinquies* c.p.) rileva il solo fatto che siano stati danneggiati dei dati digitali.
+
+In altri casi, l'offesa al sistema informatico si unisce all'offesa di altri beni giuridici.
+
+Ad esempio, gli sviluppi più recenti nelle intelligenze artificiali permette di generare dei *deepfake* vocali estraendo il timbro vocale di una persona, ed applicandolo ad un'altra registrazione, mediante un processo chiamato *voice conversion* [@Feffer2023].
+Su internet si può trovare il software necessario, guide su come utilizzarlo [Ad esempio, v. @Github_AICoverGen], raccolte di modelli del timbro vocale di cantanti [Ad esempio, v. @HuggingFace_Music_AI_Voices], e servizi a pagamento che offrono un'interfaccia facile da usare.[^ai-voice-cloning]
+
+[^ai-voice-cloning]: Basta cercare termini come "AI services voice cloning from recording" per trovare numerosi risultati.
+
+L'uso di questo tipo di tecnologie può sicuramente integrare quest'ultimo requisito, e casi di truffe telefoniche sono già successi negli Stati Uniti [@Kohli2023].
+
+Nei casi di reato informatico improprio è difficile e controproducente (ma almeno in linea teorica, non impossibile) ignorare il dato digitale ai fini della prova del fatto, e concentrarsi su elementi diversi.
 

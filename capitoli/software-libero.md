@@ -52,6 +52,30 @@ Il rapporto fra codice sorgente e codice macchina è simile al rapporto che esis
 
 Il punto fondamentale è che osservare il processo di esecuzione non permette di risalire alla esatta motivazione del processo di cognizione, perché ai fini dell'esecuzione rileva soltanto il dispositivo. Allo stesso modo, se non si ha accesso ad una copia del software come codice sorgente, ma soltanto ad una copia del software come codice macchina, già pronto per essere eseguito, l'unica valutazione possibile riguarda il funzionamento "a valle" del software, ma non è possibile valutare "a monte" quali tecniche di analisi sono state usate, se sono state implementate correttamente nel codice sorgente&hellip; in altre parole, è possibile solo una valutazione formale, e non sostanziale, del programma.
 
+## Fasi per il trattamento della prova informatica {#fasi-trattamento-prova-informatica}
+
+<!-- le fasi per il trattamento sono riprese nel sottocapitolo successivo -->
+
+Il trattamento della prova informatica può essere diviso in sette fasi [@Ferrazzano2014, 29].
+
+L'identificazione (prima fase) consiste nella ricerca dei supporti materiali che possono contenere dati informatici utili. Si devono considerare le loro caratteristiche, in modo da stabilire le priorità e modalità di acquisizione [@Ferrazzano2014, 29--30].
+
+La raccolta (seconda fase) consiste nel rimuovere fisicamente i supporti materiali su cui i dati sono conservati, e qualsiasi altro oggetto che sia necessario per il loro funzionamento, o utile per le indagini. In alcuni casi (sistemi informatici che devono rimanere accesi perché erogano servizi essenziali, dati presenti su server di terze parti&hellip;), la raccolta non è possibile, e si può procedere solo all'acquisizione [@Ferrazzano2014, 30--34].
+
+L'acquisizione (terza fase) è la fase in cui si ottiene una copia dei dati informatici contenuti all'interno dei supporti. Le operazioni che vengono compiute devono essere documentate nella maniera più dettagliata possibile, in modo che i risultati possano essere valutati correttamente in seguito. Si devono prendere tutte le cautele necessarie affinché il supporto materiale originale non venga alterato, e si deve verificare la corrispondenza fra dati informatici originali e copiati mediante l'uso di almeno due[^AlmenoDueHash] *hash* crittografici [@Ferrazzano2014, 34--37].
+
+Il trasporto dei supporti materiali e la conservazione dei dati (quarta fase) richiede di usare le modalità necessarie per evitare il danneggiamento dei supporti prima della loro acquisizione (da urti, scariche elettrostatiche, polvere&hellip;), e la corretta conservazione dei dati (creazione di backup, verifica periodica degli *hash*) dopo che sono stati acquisiti. È particolarmente importante redigere un verbale anche per questa fase, che viene chiamato catena di custodia. Per ogni operazione che viene compiuta (trasporto dei supporti, acquisizione dei dati, verifica dell'integrità delle copie) si deve indicare il responsabile, dove e quanto è stata fatta, con quali modalità, e per quali motivi [@Ferrazzano2014, 37--38].
+
+L'analisi (quinta fase) è la fase in cui si va alla ricerca degli elementi utili a fine processuale. Il perito[^PeritoCTU] cerca gli elementi necessari per rispondere ai quesiti posti dal giudice (art. 226 co. 2 c.p.p.), mentre i consulenti tecnici[^ConsulentiTecniciCTP] cercheranno elementi a favore della parte processuale assistita (PM o difensore) [@Ferrazzano2014, 39--40].
+
+La valutazione (sesta fase) è strettamente legata all'analisi, ed è svolta dagli stessi soggetti. La perizia "è ammessa quando occorre svolgere indagini o acquisire dati o valutazioni che richiedono specifiche competenze tecniche, scientifiche e artistiche" (art. 220 co. 1 c.p.p.). I consulenti tecnici possono formulare "osservazioni e riserve, delle quali deve darsi atto nella relazione" del perito (art. 230 co. 2 c.p.p.), e se "non è stata disposta perizia \Omissis{} possono esporre al giudice il proprio parere, anche presentando memorie" (art. 233 co. 1 c.p.p.). L'analisi individua i dati informatici rilevanti, la valutazione è il momento in cui questi dati vengono interpretati in modo che risultino utili per il processo. Il perito, data la sua natura di ausiliario del giudice, fornisce un'interpretazione imparziale. I consulenti tecnici forniscono interpretazioni favorevoli alla parte assistita, e che contraddicono quanto affermato dall'altra parte, o perlomeno screditano l'attendibilità della loro posizione [@Ferrazzano2014, 41].
+
+La presentazione (settima fase) è la fase finale, dove le valutazioni svolte dal personale tecnico vengono concretamente acquisite all'interno del processo. Il perito e gli eventuali consulenti tecnici vengono inseriti nelle liste testimoniali (art. 468 c.p.p.). In ogni caso, il giudice acquisisce la relazione finale del perito (art. 227 c.p.p.) e le memorie scritte dai consulenti tecnici (art. 233 co. 1 c.p.p.) [@Ferrazzano2014, 41--42].
+
+[^AlmenoDueHash]: È preferibile usare più di una funzione di hash per vari motivi: si hanno più valori di riferimento per verificare se i dati sono identici, anche se le singole funzioni di hash diventano compromesse (si trova un metodo per far restituire lo stesso hash per input diversi) è praticamente impossibile che lo stesso metodo funzioni per tutte le funzioni di hash&hellip;
+[^PeritoCTU]: Nel processo penale si parla di perito, nel processo civile si parta di CTU (consulente tecnico d'ufficio).
+[^ConsulentiTecniciCTP]: Nel processo penale si parla di consulenti tecnici, nel processo civile si parla di CTP (consulenti tecnici di parte).
+
 ## Esigenze processuali
 
 Il principio fondamentale nel processo penale è la formazione della prova nel contraddittorio. Tutte le operazioni precedenti, che riguardano anche solo indirettamente il contraddittorio, devono essere svolte con l'obiettivo di garantire la sua migliore realizzazione possibile.

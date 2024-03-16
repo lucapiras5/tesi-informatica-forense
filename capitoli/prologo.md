@@ -4,7 +4,7 @@ author: Luca Piras
 year: 2023
 #citation-style: universita-di-bologna-lettere.csl
 #citation-style: quaderni-materialisti.csl
-citation-style: mimesis-edizioni.csl
+citation-style: universita-di-bologna-lettere.csl
 links-as-notes: true
 documentclass: book
 lang: it

@@ -1,5 +1,4 @@
 inputs="prologo.md \
-	note-legali.md \
 	ringraziamenti.md \
 	introduzione.md \
 	prova-scientifica-v2.md \
@@ -10,6 +9,7 @@ inputs="prologo.md \
 	appendice-leggi.md \
 	bibliografia.md"
 
+# note-legali.md \
 # buone-pratiche-procedimento-penale.md \
 
 PandocPDF() {
