@@ -1,5 +1,6 @@
 ---
-title: Uso del software libero per un trattamento scientifico della prova digitale nell'informatica forense 
+#title: Uso del software libero per un trattamento scientifico della prova digitale nell'informatica forense 
+title: false
 author: Luca Piras
 year: 2023
 #citation-style: universita-di-bologna-lettere.csl
