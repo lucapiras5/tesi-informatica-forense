@@ -1,4 +1,4 @@
-# Informatica forense
+# Informatica forense e prova scientifica
 
 ## TODO Introduzione
 
@@ -34,7 +34,9 @@ La definizione è breve, ma l'autore evidenzia la necessità di interpretarla ne
 - "Norme giuridiche": significa qualsiasi norma che, anche se solo indirettamente o in maniera condizionata, può riguardare l'uso di dati informatici.
 - "Tecniche informatiche": riguardano l'intera disciplina dell'informatica.^[Non solo il mondo accademico, ma anche l'attività di ricerca libera e non formalizzata svolta dall'industria, da ricercatori indipendenti, dai pratici della disciplina (v. @Gammarota2016, p. 34), e le *best practices* (migliori prassi) che vengono pubblicate da enti nazionali, e da organizzazioni internazionali e sovranazionali (ad esempio, esistono una serie di standard ISO/IEC relativi al trattamento della prova informatica ed investigazione dei dati digitali, v. @Gammarota2016, p. 27--28.]
 
-## Reati informatici
+## Ambiti di rilevanza dell'informatica forense
+
+### Diritto penale sostanziale
 
 L'impulso più forte allo sviluppo dell'informatica forense è stata la informatizzazione della società, e conseguentemente, l'uso di strumenti informatici per commettere reati. La particolarità degli strumenti informatici è che permettono anche un singolo individuo di causare danni enormi.^[Ad esempio, si pensi al *Morris worm*, che in 24 ore riuscì a diffondersi sul 10% dei 60.000 computer allora connessi ad internet. L'obiettivo del *worm* non era di distruggere dati, ma di causare quello che oggi sarebbe chiamato un *denial of service attack* (attacco per l'interruzione del servizio). V. Federal Bureau of Investigation, *The Morris Worm*, 2018, <https://www.fbi.gov/news/stories/morris-worm-30-years-since-first-major-attack-on-internet-110218>. Ancora, si pensi alla distribuzione di materiale protetto dal diritto d'autore o di materiale pedo-pornografico mediante tecnologie *peer-to-peer* (v. @Ferrazzano2014, p. 99 ss.), dove una singola persona può distribuire quel materiale ad un numero potenzialmente illimitato di altri utenti.]
 
@@ -49,9 +51,9 @@ Negli Stati Uniti, la prima legge fu approvata in Florida, nel 1978, e quasi tut
 
 Più in generale, i dati informatici possono essere utili per l'accertamento di qualsiasi altro reato.^[Ad esempio, si pensi al caso di un reato commesso da più persone, che usano gli strumenti informatici al solo fine di comunicare fra di loro. Il reato può essere sicuramente provato in altri modi, ma queste informazioni sono comunque utili per dimostrare la responsabilità dei vari soggetti.]
 
-L'introduzione di reati informatici getta le basi per lo sviluppo dell'informatica forense, perché per la loro prova può essere necessario, o comunque utile, trattare i dati informatici.^[È preferibile usare sempre la massima cautela nel trattamento dei dati, anche se si pensa di usarli solo come elementi per orientare le indagini, perché i dati informatici sono estremamente fragili, e possono essere modificati o cancellati con facilità.] Allo stesso tempo, l'informatica forense è utile per meglio definire ed interpretare i reati informatici, ed i beni giuridici protetti.^[L'informatica forense aiuta il legislatore a rispettare il principio di tassatività, per cui i reati devono essere descritti in maniera chiara e precisa, specie se fanno riferimento a nozioni tecniche, ed il principio di offensività, per cui i reati devono proteggere i beni giuridici solo dalle modalità di aggressione più gravi.]
+L'introduzione dei reati informatici getta le basi per lo sviluppo dell'informatica forense, perché per la loro prova può essere necessario, o comunque utile, trattare i dati informatici.^[È preferibile usare sempre la massima cautela nel trattamento dei dati, anche se si pensa di usarli solo come elementi per orientare le indagini, perché i dati informatici sono estremamente fragili, e possono essere modificati o cancellati con facilità.] Allo stesso tempo, l'informatica forense è utile per meglio definire ed interpretare i reati informatici, ed i beni giuridici protetti.^[L'informatica forense aiuta il legislatore a rispettare il principio di tassatività, per cui i reati devono essere descritti in maniera chiara e precisa, specie se fanno riferimento a nozioni tecniche, ed il principio di offensività, per cui i reati devono proteggere i beni giuridici solo dalle modalità di aggressione più gravi.]
 
-## Informatica forense nel procedimento penale
+### Diritto processuale penale
 
 Il diritto processuale disciplina le modalità di trattamento delle prove^[Le modalità con cui le prove devono essere assunte (che devono rispettare i diritti fondamentali della persona), e le sanzioni processuali nel caso in cui queste modalità vengano violate.] e dei mezzi di ricerca della prova.^[Chi può ricercare le prove, secondo quali modalità e limiti, le sanzioni nel caso di violazione della disciplina.] Dato che l'introduzione dei reati informatici è un fenomeno estremamente recente, la cultura processuale ha dovuto adattare gli istituti tradizionali, pensati per prove materiali, ai dati informatici, che invece hanno una natura e caratteristiche diverse.
 
@@ -61,36 +63,12 @@ La preferenza per le prove precostituite pone due rischi. Il legislatore non pu�
 
 La legge di ratifica della Convezione di Budapest del 2001^[V. L. 48/2008.] ha cercato di porre rimedio a questa situazione, introducendo dei principi per il trattamento dei dati informatici all'interno del codice di procedura. Tuttavia, questo intervento può essere criticato, perché è limitato solo ad alcuni istituti (principalmente i mezzi di ricerca della prova)^[Le modifiche riguardano le ispezioni (art. 244), perquisizioni (art. 247), il sequestro di corrispondenza (art. 254 e 254-bis), la custodia delle cose sequestrate (art. 259), le perquisizioni in caso di flagranza o evasione (art. 352) e gli accertamenti urgenti (art. 354). Il legislatore evidenzia la necessità di conservare i dati originali, impedire la loro modificazione, e copiarli con procedure che garantiscano che la copia dei dati sia identica all'originale. È importante disporre le massime garanzie nella fase iniziale, perché se i dati sono acquisiti incorrettamente, tutte le fasi successive saranno viziate a loro volta, e ancora peggio, potrebbe essere impossibile acquisire i dati di nuovo, perché sono stati modificati. Tuttavia, sarebbe stato opportuno prevedere dei principi anche per gli istituti relativi alle prove, come ad esempio, un divieto di acquisire documenti informatici, se non si dimostra che sono stati acquisiti secondo gli stessi principi previsti per il loro sequestro (art. 254-*bis* c.p.p.).] e non sono previste sanzioni processuali per la violazione di quei principi.^[Pertanto, si corre il rischio che la fase del dibattimento venga contaminata da prove assunte incorrettamente. Il giudice dovrebbe dichiarare quelle prove se non inammissibili (per mancanza di una sanzione espressa), almeno inaffidabili, ma la sua valutazione delle altre prove potrebbe essere comunque falsata dalla presenza delle prove informatiche.]
 
-## Dati informatici come atti
+### Altre branche del diritto
 
-I dati informatici possono rappresentare anche atti.
-Ad esempio, il documento informatico è definito dal c.a.d.[^codice-amministrazione-digitale] come "il documento elettronico che contiene la rappresentazione informatica di atti, fatti o dati giuridicamente rilevanti" (art. 1 lett. *p*).
+I principi, le tecniche, e le conoscenze dell'informatica forense possono trovare applicazione anche nelle altre branche del diritto, ogni volta che il trattamento dei dati informatici diventa rilevante per il compimento di una qualsiasi operazione che produce effetti giuridici.^[È irragionevole pensare che gli standard stringenti dell'informatica forense debbano trovare applicazione solo all'interno del diritto penale, perché è la branca del diritto che più di tutte va ad incidere sui diritti fondamentali della persona. L'informatica forense prevede quegli standard perché i dati informatici hanno delle caratteristiche intrinseche particolari che li necessitano, e pertanto, devono essere sempre trattati allo stesso modo, indipendentemente dal contesto in cui vengono usati.]
 
-Il processo consiste in una "serie di atti fra loro collegati, diretti ad un risultato finale." [@Ricci2017, 233]
-Nel processo telematico i dati informatici non rilevano solo per ricostruire i fatti, ma rappresentano loro stessi l'essenza ed esistenza del processo.
-In questo caso, è assolutamente necessario utilizzare le migliori tecniche disponibili per garantire la loro corretta acquisizione e conservazione.
+Pertanto, le modalità per il trattamento dei dati informatici^[Ossia, la loro acquisizione, conservazione, duplicazione, valutazione, ecc.] sviluppate all'interno del procedimento penale rilevano anche se questi dati:
 
-[^codice-amministrazione-digitale]: D.Lgs. 82/2005.
-
-Una regola generale del diritto è che le decisioni devono essere motivate.
-Il soggetto che prende una decisione deve dare conto (in alcuni casi, anche solo sommariamente) degli elementi che ha considerato, di come li ha valutati, e quale percorso logico ha seguito per arrivare all determinazione finale.
-Anche nei casi in cui non è necessario rendere conto della motivazione[^decreti-non-motivati] esiste sempre un processo decisionale.
-
-[^decreti-non-motivati]: Ad esempio, i decreti del giudice devono essere motivati solo quando la legge lo richiede (art. 135 co. 4 c.p.c., art. 125 co. 3 c.p.p.).
-
-Il processo inizia con la raccolta di "dati" (elementi oggettivi), che devono essere valutati ed interpretati dalle parti e dal giudice per ottenere "informazioni" utili a seconda dell'obiettivo da perseguire (elementi soggettivi) [La definizione di dato e informazione sono riprese da @Gammarota2016, 46--47].
-La qualità della decisione è limitata dalla qualità dei dati "grezzi", e dalla loro corretta valutazione ed interpretazione.
-Se i dati sono insufficienti, inaffidabili, o contraddittori, ed in ogni caso, se i dati vengono interpretati erroneamente[^interpretazione-erronea-dati] la decisione sarà viziata.
-Il problema è riassunto in maniera efficace dalla massima inglese *garbage in, garbage out* (se entra spazzatura, esce spazzatura).
-
-L'interpretazione è il momento più importante.
-Se, anche inconsapevolmente, delle informazioni sbagliate o poco affidabili sono considerate valide e veritiere, la decisione finale sarà intrinsecamente fallace.
-Dall'altro lato, una decisione che menziona espressamente l'incompletezza o inaffidabilità dei dati e ne tiene conto nella valutazione è intrinsecamente più valida.
-
-[^interpretazione-erronea-dati]: Ispirandosi ai motivi di impugnazione di una sentenza in Cassazione, si potrebbe parlare di errore di fatto (l'interpretazione si fonda su una rappresentazione erronea dei dati), errore di diritto (inteso come cattiva applicazione di norme del diritto, e più in generale, delle regole tecniche che sono richiamate anche indirettamente dal diritto), e vizi di motivazione (la valutazione è insufficiente, poco chiara, o manifestamente illogica).
-
-I dati informatici, più comunemente detti dati digitali,[^dati-informatici-digitali] possono essere usati per prendere decisioni.
-Ad esempio, possono rilevare come elementi di prova all'interno di un processo (civile, penale, amministrativo&hellip;), come oggetto delle indagini preliminari nel procedimento penale [@Conso2020, 419], ai fini dell'istruttoria per un procedimento amministrativo, nei processi di ADR (*alternative dispute resolution*, risoluzione alternativa delle controversie) come l'arbitrato, nei procedimenti disciplinari&hellip;
-
-[^dati-informatici-digitali]: La versione inglese della Convenzione sulla cibercriminalità (Budapest, 2001) usa l'espressione *digital data*, quella francese usa l'espressione *données informatiques*. Entrambe le versioni sono ufficiali, quindi le traduzioni letterali "dati digitali" o "dati informatici" sono intercambiabili. Anche se l'espressione "dati digitali" viene usato con maggiore frequenza di "dati informatici", nella presente trattazione si preferirà la seconda, per l'assonanza con il nome della disciplina "informatica forense".
-
+- Sono usati per dimostrare la responsabilità di una persona o motivare l'applicazione di sanzioni all'interno di altri tipi di procedimenti;^[Ad esempio, si immagini l'uso di dati informatici come prove in un giudizio civile, amministrativo, tributario, ecc.; oppure nelle procedure di *ADR* (*alternative dispute resolution*, risoluzione alternativa delle controversie) come l'arbitrato; oppure, nei procedimenti disciplinari nei confronti di dipendenti della PA, avvocati, sportivi, ecc.]
+- Non vengono usati come prove in un giudizio, ma comunque rilevano ai fini di una decisione che produce effetti giuridici;^[Ad esempio, si pensi all'istruttoria nel procedimento amministrativo, finalizzata all'emanazione di un atto. È importante garantire almeno la corretta acquisizione e conservazione dei dati informatici che saranno usati ai fini della decisione.]
+- Rilevano come atti giuridici.^[Ad esempio, nel processo telematico gli atti stessi del processo sono rappresentati come dati informatici, ed è estremamente importante dimostrare l'autenticità mediante l'uso di firme digitali, garantire la loro corretta conservazione, ed essere in grado di rilevare eventuali modificazioni. Lo stesso ragionamento vale anche per qualsiasi atto con valore giuridico che si forma e ha rilevanza all'esterno del processo, specie se quell'atto potrebbe formare in seguito oggetto di controversia (ad esempio, atti della PA, o contratti fra privati). Maggiori sono le cautele utilizzate, e maggiore è l'affidabilità di quell'atto.]
