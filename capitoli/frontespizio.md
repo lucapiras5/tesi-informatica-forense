@@ -17,7 +17,7 @@
 
 \par
 \noindent
-\begin{minipage}[t]{0.47\textwidth}
+\begin{minipage}[t]{0.47\textwidth}\raggedright
 {\large{Relatore:\\
 Chiar.mo Prof.\\
 Antonio Gammarota}}
@@ -25,7 +25,8 @@ Antonio Gammarota}}
 \hfill
 \begin{minipage}[t]{0.47\textwidth}\raggedleft
 {\large{Presentata da:\\
-Luca Piras}}
+Luca Piras\\
+Matricola 0000758395}}
 \end{minipage}
 \vspace{20mm}
 \begin{center}

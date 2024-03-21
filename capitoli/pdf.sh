@@ -14,7 +14,8 @@ inputs="prologo.md \
 
 PandocPDF() {
 	pandoc -s --citeproc --bibliography citations.bib --from markdown+inline_notes --pdf-engine=lualatex \
-		-o Piras_Luca_Tesi_Informatica_Forense.pdf $inputs
+		-o _tesi.pdf $inputs
+	gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=Piras_Luca_Tesi_Informatica_Forense.pdf -dBATCH _frontespizio.pdf _tesi.pdf
 }
 
 PandocODT() {

@@ -29,7 +29,7 @@
       <term name="ibid" form="short">ivi</term>
       <term name="ibid" form="long">ibidem</term>
       <term name="cited" form="short">cit.</term>
-      <term name="cited" form="long">op.cit.</term>
+      <term name="cited" form="long">op. cit.</term>
       <term name="issue" form="short">fasc.</term>
       <term name="season-01">primavera</term>
       <term name="season-02">estate</term>
@@ -237,7 +237,7 @@
             <text variable="title" form="short" quotes="true"/>
           </else>
         </choose>
-        <text term="cited" form="short"/>
+        <text term="cited" form="short" prefix=", "/>
       </if>
       <else>
         <text term="cited" form="long" font-style="italic"/>
@@ -570,7 +570,7 @@
     </group>
   </macro>
   <citation et-al-min="4" et-al-use-first="1">
-    <layout delimiter="; " suffix=". ">
+    <layout delimiter="; " suffix=".">
       <choose>
         <if position="ibid-with-locator">
           <group delimiter=", ">
@@ -579,7 +579,7 @@
           </group>
         </if>
         <else-if position="ibid">
-          <text term="ibid" form="short" text-case="capitalize-first" font-style="italic"/>
+          <text term="ibid" form="short" -text-case="capitalize-first" font-style="italic"/>
         </else-if>
         <else-if position="subsequent">
           <group delimiter=", ">
