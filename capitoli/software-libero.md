@@ -48,16 +48,6 @@ L'identificazione (prima fase) consiste nella ricerca dei supporti materiali che
 
 La raccolta (seconda fase) consiste nel rimuovere fisicamente i supporti materiali su cui i dati sono conservati, e qualsiasi altro oggetto che sia necessario per il loro funzionamento, o utile per le indagini. In alcuni casi (sistemi informatici che devono rimanere accesi perché erogano servizi essenziali, dati presenti su server di terze parti&hellip;), la raccolta non è possibile, e si può procedere solo all'acquisizione [@Ferrazzano2014, 30--34].
 
-L'analisi (quinta fase) è la fase in cui si va alla ricerca degli elementi utili a fine processuale. Il perito[^PeritoCTU] cerca gli elementi necessari per rispondere ai quesiti posti dal giudice (art. 226 co. 2 c.p.p.), mentre i consulenti tecnici[^ConsulentiTecniciCTP] cercheranno elementi a favore della parte processuale assistita (PM o difensore) [@Ferrazzano2014, 39--40].
-
-La valutazione (sesta fase) è strettamente legata all'analisi, ed è svolta dagli stessi soggetti. La perizia "è ammessa quando occorre svolgere indagini o acquisire dati o valutazioni che richiedono specifiche competenze tecniche, scientifiche e artistiche" (art. 220 co. 1 c.p.p.). I consulenti tecnici possono formulare "osservazioni e riserve, delle quali deve darsi atto nella relazione" del perito (art. 230 co. 2 c.p.p.), e se "non è stata disposta perizia \Omissis{} possono esporre al giudice il proprio parere, anche presentando memorie" (art. 233 co. 1 c.p.p.). L'analisi individua i dati informatici rilevanti, la valutazione è il momento in cui questi dati vengono interpretati in modo che risultino utili per il processo. Il perito, data la sua natura di ausiliario del giudice, fornisce un'interpretazione imparziale. I consulenti tecnici forniscono interpretazioni favorevoli alla parte assistita, e che contraddicono quanto affermato dall'altra parte, o perlomeno screditano l'attendibilità della loro posizione [@Ferrazzano2014, 41].
-
-La presentazione (settima fase) è la fase finale, dove le valutazioni svolte dal personale tecnico vengono concretamente acquisite all'interno del processo. Il perito e gli eventuali consulenti tecnici vengono inseriti nelle liste testimoniali (art. 468 c.p.p.). In ogni caso, il giudice acquisisce la relazione finale del perito (art. 227 c.p.p.) e le memorie scritte dai consulenti tecnici (art. 233 co. 1 c.p.p.) [@Ferrazzano2014, 41--42].
-
-[^AlmenoDueHash]: È preferibile usare più di una funzione di hash per vari motivi: si hanno più valori di riferimento per verificare se i dati sono identici, anche se le singole funzioni di hash diventano compromesse (si trova un metodo per far restituire lo stesso hash per input diversi) è praticamente impossibile che lo stesso metodo funzioni per tutte le funzioni di hash&hellip;
-[^PeritoCTU]: Nel processo penale si parla di perito, nel processo civile si parta di CTU (consulente tecnico d'ufficio).
-[^ConsulentiTecniciCTP]: Nel processo penale si parla di consulenti tecnici, nel processo civile si parla di CTP (consulenti tecnici di parte).
-
 ## Esigenze processuali
 
 Il principio fondamentale nel processo penale è la formazione della prova nel contraddittorio. Tutte le operazioni precedenti, che riguardano anche solo indirettamente il contraddittorio, devono essere svolte con l'obiettivo di garantire la sua migliore realizzazione possibile.
@@ -70,107 +60,6 @@ La legge di ratifica ed esecuzione della Convenzione di Budapest[^LeggeRatificaE
 [^LeggeRatificaEsecuzioneConvenzioneBudapest]: L. 48/2008.
 
 Da un punto di vista concettuale, soddisfare questi requisiti è apparentemente semplice. Basta garantire che il software esegua solo operazioni in lettura, e mai in scrittura, sul supporto originale, e che la copia sia identica all'originale, bit per bit. Tuttavia, quando si considerano i dettagli tecnici, le operazioni diventano più complicate.
-
-### Analisi e valutazione
-
-Per quanto riguarda le fasi dell'analisi e valutazione da parte dei consulenti tecnici o perito, il software deve rispondere ad una serie di esigenze.
-
-In primo luogo, il software dovrebbe essere il più flessibile possibile. Naturalmente, ogni software si specializza per l'analisi di un certo tipo di dati informatici. Tuttavia, all'interno di quell'ambito è opportuno offrire una varietà di metodi di analisi. Questo presenta due vantaggi. Il primo è che è difficile prevedere in anticipo i quesiti che potrebbero essere posti dal giudice all'interno di un caso concreto, pertanto è meglio avere quanti più strumenti possibile a disposizione. Il secondo è che se più metodi di analisi hanno la stessa funzione, ma operano secondo tecniche diverse, e queste tecniche sono tutte valide, è possibile confrontare i vari risultati per giungere ad una valutazione più ponderata.[^VirusTotal]
-
-[^VirusTotal]: Ad esempio, VirusTotal permette di analizzare un file usando più di 70 programmi antivirus. Se un ristretto numero di programmi ritiene che il file sia un virus, ma gli altri non rilevano nulla, molto probabilmente si tratta di un falso positivo. Adesso, si immagini il caso in cui si usi solo un programma, e sia uno di quei programmi che rilevano erroneamente il file come un virus. Si giungerebbe ad una conclusione errata. \VediUrl{VirusTotal.com}{How it works}{2023}{https://docs.virustotal.com/docs/how-it-works}.
-
-Il massimo grado di flessibilità viene raggiunto se soggetti diversi dagli sviluppatori originali (i c.d. sviluppatori di terze parti) possono sviluppare dei *plug-in* (moduli aggiuntivi) per il software. A questo punto non si è più limitati dai metodi di analisi offerti dagli sviluppatori originali, ma tutti possono contribuire ad estenderlo. Gli sviluppatori di terze parti non sono necessariamente meno affidabili degli sviluppatori originali, ed in alcuni casi, è proprio la loro opera a mantenere utile ed aggiornato un software che non è più sviluppato in maniera attiva.
-
-Per ciascun metodo di analisi, è necessario dimostrare la loro conformità ai risultati prodotti dalla ricerca scientifica, e in generale, la ragionevolezza dell'approccio usato. La ricerca scientifica presenta il vantaggio di essere stata comprovata empiricamente. Non è pura speculazione teorica, ma la sua efficacia è stata argomentata e verificata pubblicamente, con il processo imparziale di peer-review. Pertanto, rappresenta la migliore base da cui partire.
-
-Tuttavia, non è sempre possibile seguire la ricerca scientifica. Ad esempio, è il caso di metodi di analisi:
-
-- Nuovi o sperimentali, che non sono stati ancora sottoposti a peer-review.
-- Proprietari, per cui non si vuole rendere pubblico il loro funzionamento nei dettagli.
-- Basati su tecnologie che per loro natura sono opache, come le intelligenze artificiali che sono state sviluppate per riconoscere determinati tipi di contenuti.
-
-In questi casi, la ragionevolezza dell'approccio va dimostrata caso per caso, dato che non è possibile fare un rinvio alla scienza già affermata. Di conseguenza:
-
-- Nel caso di approcci innovativi, si deve fornire l'accesso non solo al software, ma anche ai materiali preparatori (la ricerca scientifica "privata" e non soggetta a peer-review), in modo che si possa svolgere una quanto limitata peer-review nel contraddittorio.
-- Nel caso di approcci proprietari, esiste una tensione fra il rivelare come l'algoritmo funzioni, e mantenere il segreto industriale. In questo caso, più l'approccio è complesso, più la spiegazione è poco chiara, lacunosa o irragionevole, e più è difficile verificare anche solo sommariamente che il programma segue effettivamente l'approccio descritto, e più il giudice deve valutare con sfavore un approccio che è complesso e di cui non è dato conoscere il funzionamento.
-- Nel caso delle intelligenze artificiali, i fattori che influiscono sulla loro qualità sono le modalità con cui sono state allenate, ed il *training/test set* (dati utilizzati per l'allenamento e la verifica del corretto funzionamento). Le modalità di allenamento potrebbero essere mantenute segrete per le già citate ragioni di segreto industriale. Per quanto riguarda il *training set*, potrebbero esistere ostacoli legali e/o etici alla sua pubblicazione. Ad esempio, si immagini il caso di un'intelligenza artificiale che è in grado di riconoscere immagini pedopornografiche. Per verificare il suo funzionamento, sarebbe necessario condividere immagini di vittime di reati sessuali.
-
-Infine, è necessario garantire il corretto funzionamento del programma. Un conto è dimostrare che il metodo di analisi è valido da un punto di vista conoscitivo, un altro è dimostrare che il metodo di analisi è stato trasfuso correttamente nel software. Qualsiasi software contiene bug, errori di programmazione che portano il programma a compiere operazioni inaspettate o indesiderate.
-
-Per quanto riguarda questo aspetto, si devono garantire due esigenze. La prima è che il programma contenga quanti meno bug possibile, in modo da garantire che produca risultati corretti, e anche davanti a situazioni inaspettate, si comporti in maniera prevedibile. La seconda è che i bug che sono presenti e conosciuti siano resi pubblici, in modo che ci si possa regolare di conseguenza ai fini dell'analisi. 
-
-<!-- TODO -->
-
-### Presentazione e contraddittorio
-
-La presentazione dei risultati da parte del perito e degli esperti riguarda tre aspetti:
-
-- A quali conclusioni sono giunti.
-- Sulla base di quali conoscenze scientifiche o tecniche si fonda il loro giudizio.
-- Quali strumenti sono stati utilizzati nella loro valutazione.
-
-I primi due punti sono stati analizzati nel capitolo precedente, quando si è discusso della natura scientifica dell'informatica forense, e di come le conclusioni dei periti e consulenti devono essere valutati dal giudice.
-
-L'ultimo punto è il punto focale di questo capitolo e dei successivi.
-
-Le sezioni precedenti di questo capitolo si sono concentrate sull'ultimo punto, considerando l'impatto del software nelle varie fasi del trattamento della prova informatica. 
-
-Nella fase della presentazione delle conclusioni, non rileva tanto l'uso del software. Le esigenze tecniche o scientifiche sono state già esaurite nella fase di analisi e valutazione. Questa fase piuttosto è incentrata sulla "discussione" del software, come uno degli elementi che va ad influire sull'attendibilità delle conclusioni degli esperti (perito e consulenti). 
-
-Nel trattamento della prova informatica, è impossibile prescindere dal software. Non è un'esagerazione dire che senza il software, i dati informatici sarebbero illeggibili, e pertanto, ai fini delle indagini, sarebbe come se fossero inesistenti. Anche le operazioni apparentemente più semplici, come la copia forense dei contenuti di un disco, richiedono comunque un minimo di software. Pertanto, è altrettanto importante che il perito ed i consulenti dimostrino o critichino l'adeguatezza del software rispetto allo scopo per cui viene utilizzato.
-
-## Esigenze scientifiche
-
-Il software scientifico presenta anche delle esigenze di natura scientifica, nel senso che sono legate alle modalità con cui la ricerca scientifica viene svolta. In verità, tutte le esigenze scientifiche tendono ad essere indirettamente anche delle esigenze processuali. La sentenza della corte suprema americana *Daubert v. Merrel Dow Pharmaceuticals* specificò i criteri da utilizzare per poter introdurre la scienza nel processo. Questi criteri furono accolti dalla Casszione per la prima volta nel 2010 nella sentenza Cozzini,[^SentenzaCozzini] ma continuano ad essere richiamati anche di recente:
-
-[^SentenzaCozzini]: Cass. pen., n. 43786/2010.
-
-> Per valutare l'attendibilità di una teoria occorre esaminare gli studi che la sorreggono. Le basi fattuali sui quali essi sono condotti. l'ampiezza, *[sic]* la rigorosità, l'oggettività della ricerca. Il grado di sostegno che i fatti accordano alla tesi. La discussione critica che ha accompagnato l'elaborazione dello studio, focalizzata sia sui fatti che mettono in discussione l'ipotesi sia sulle diverse opinioni che nel corso della discussione si sono formate. L'attitudine esplicativa dell'elaborazione teorica. Ancora, rileva il grado di consenso che la tesi raccoglie nella comunità scientifica.
-
-Inoltre, nella sentenza Knox,[^SentenzaKnox] si prevede che la valutazione della ricerca scientifica deve seguire il principio del contraddittorio.[^CassPen-1801-2022-punto-4.1]
-
-[^SentenzaKnox]: Cass. pen., n. 36080/2015.
-[^CassPen-1801-2022-punto-4.1]: Cass. pen., n. 1801/2022, punto 4.1 contiene le citazioni delle sentenze Cozzini e Knox citate. \VediUrl{Cassazione Penale, Sez. V}{Sentenza n. 1801 del 2022}{2022}{https://www.italgiure.giustizia.it/xway/application/nif/clean/hc.dll?verbo=attach&db=snpen&id=./20220117/snpen@s50@a2022@n01801@tS.clean.pdf}.
-
-L'obiettivo dei criteri Daubert è di evitare che nel processo entri della *junk science* (pseudoscienza, o teorie scientifiche non adeguatamente comprovate). Pertanto, tutti i requisiti per la "buona scienza" sono requisiti che interessano anche da un punto di vista processuale.
-
-La trasparenza è l'esigenza scientifica più importante. Gli "studi" e le "basi fattuali" su cui sono condotti devono essere liberamente consultabili. Se fossero mantenuti segreti, la "comunità scientifica" non potrebbe valutare il lavoro che è stato svolto, la peer-review sarebbe impossibile.
-
-La peer-review può essere vista come l'equivalente scientifico del contraddittorio processuale, dato che la metodologia è la stessa. Le varie parti che vi partecipano cercano di "falsificare" (nel senso scientifico di dimostrare l'infondatezza) la teoria oggetto di analisi, per valutare la sua robustezza. Tuttavia, si devono notare alcune differenze fondamentali:
-
-- Per quanto riguarda l'intento che muove le critiche dei soggetti, le parti processuali sono parziali, sono interessate ad una ricostruzione della verità processuale a loro favorevole. Viceversa, gli scienziati devono essere sempre imparziali, perché il loro obiettivo è raggiungere la verità oggettiva.
-- Il contraddittorio nel processo è "chiuso", è limitato alle parti processuali. La peer-review deve essere sempre "aperta" al pubblico, in modo che chiunque abbia le capacità tecniche necessarie possa partecipare alla discussione.
-
-Nell'ambito dell'informatica forense, laddove gli "studi" e le "basi fattuali" consistono di dati informatici, si ha la possibilità di duplicarli e ridistribuirli con facilità. In particolare, salvo sia assolutamente necessario usare hardware specializzato,[^NecessitàHardwareSpecializzato] tutti gli studi sono ripetibili. Il massimo grado di trasparenza viene raggiunto quando tutti gli elementi usati ai fini dello studio, incluso anche il software sviluppato *ad hoc* dai ricercatori, vengono resi liberamente disponibili al pubblico. Laddove non sia possibile ridistribuire un elemento, è necessario identificarlo nella maniera più precisa possibile, ed indicare come ottenerlo.  
-
-[^NecessitàHardwareSpecializzato]: Ad esempio, esistono componenti hardware specializzati per operazioni come il calcolo di hash, la compressione o decompressione dei video, l'uso di intelligenze artificiali&hellip; tuttavia, non è necessario usarli, è possibile eseguire le stesse operazioni su un normale processore, ed ottenere gli stessi risultati. L'unica differenza sarà l'efficienza, in termini di tempo ed energia consumata.
-
-Dopo che lo studio e le sue basi fattuali sono state pubblicate, è possibile svolgere la peer-review. Il grado minimo di peer-review è valutare lo studio da un punto di vista puramente formale, considerando elementi come gli strumenti usati, la metodologia seguita, la quantità e qualità della motivazione, la coerenza logica fra l'oggetto dello studio, la motivazione e le conclusioni&hellip;
-
-Il grado massimo invece richiede la ripetizione delle operazioni descritte nello studio, e la verifica della riproducibilità dei risultati. La *replication crisis* è la situazione per cui numerosi studi scientifici sono difficili o impossibili da riprodurre. L'informatica presenta delle caratteristiche particolari, che permettono di mitigare il problema:
-
-- Come già visto, l'oggetto di studio dell'informatica, i dati informatici, possono essere copiati con facilità un numero illimitato di volte.
-- È possibile copiare tutto l'ambiente virtuale (sistema operativo, programmi, dati) usato per eseguire lo studio su un altro dispositivo, salvo limitazioni dovute al diritto d'autore, o altre limitazioni tecniche.[^CopiaAmbienteStudioLimitazioniTecniche].
-- Dato che l'informatica studia il trattamento automatico dei dati, è possibile automatizzare le modalità con cui lo studio viene ripetuto mediante *script* ("copioni"), ed i risultati vengono verificati mediante *tests* (controlli).[^DefinizioneScriptTests]
-
-[^CopiaAmbienteStudioLimitazioniTecniche]: Ad esempio, le licenze digitali per l'uso di Windows 10 e 11 sono legate all'hardware contenuto nel proprio computer. Se l'hardware cambia in maniera significativa (ed è il caso in cui il sistema operativo viene copiato, per poi essere eseguito su un'altra macchina, per verificare la esatta riproducibilità dello studio), sarà necessario attivare di nuovo il sistema operativo, inserendo la licenza. \VediUrl{Microsoft}{Reactivating Windows after a hardware change}{2023}{https://support.microsoft.com/en-us/windows/reactivating-windows-after-a-hardware-change-2c0e962a-f04c-145b-6ead-fb3fc72b6665}.
-[^DefinizioneScriptTests]: Uno *script* è una serie di istruzioni scritte in un linguaggio di programmazione di alto livello, ossia, un linguaggio più facile da usare, che nasconde al programmatore i dettagli di basso livello come la gestione manuale della memoria. Gli *scripting languages* (linguaggi per scrivere script) spesso rientrano nella categoria dei *glue languages*, linguaggi che sono usati per scrivere programmi che "tengono incollati", o fanno funzionare insieme, i vari componenti di un sistema. Un *test* è una serie di istruzioni che verifica la presenza di determinate condizioni. Gli unici risultati possibili sono *pass* (la verifica è stata superata), o *fail* (alcune delle condizioni non sono state soddisfatte).
-
-Naturalmente, nell'ultimo punto è sempre necessario un controllo umano. È importante ispezionare i contenuti dello *script* che esegue le operazioni, per verificare che le operazioni necessarie siano effettivamente eseguite (ed il programma non restituisca risultati fittizi), ed i *test* siano adeguati per verificare il corretto funzionamento (devono essere sufficientemente specifici, e controllare che il programma faccia esattamente quanto ci si aspetta, senza falsi positivi o falsi negativi).
-
-L'uso di script presenta vari vantaggi:
-
-- Permette di automatizzare le faccende informatiche più ripetitive e meccaniche. Ad esempio, convertire i file in un determinato formato, preimpostare un programma, eliminare i file temporanei o intermedi generati dai programmi, ripristinare lo stato iniziale dell'ambiente di analisi&hellip;
-- L'operazione ripetitiva più importante è l'esecuzione di *test*. Invece di dover eseguire un comando, e controllare manualmente il risultato, è molto più efficiente specificare al computer gli esatti risultati desiderati, e per sicurezza, anche quelli indesiderati. È anche possibile configurare il programma che esegue i test in modo che generi un resoconto contenente i test che sono stati eseguiti, e per i test che non sono stati superati, la differenza tra il risultato che ci si aspettava, ed il risultato che è stato rilevato.
-- Infine, l'ultimo vantaggio è che dato che lo script deve eseguire il programma, funziona anche come una forma di documentazione estremamente pratica su come usare il programma. La sua utilità va oltre la stretta riproduzione dello studio, ed entra anche nell'uso concreto del programma.
-
-Idealmente, la peer-review deve essere solo aperta a tutti coloro che hanno le qualifiche tecniche per apportare contributi utili, ma deve svolgersi anche in maniera trasparente, in modo che il pubblico in generale possa prendere visione della discussione.
-
-Nel caso in cui lo studio scientifico preveda, ispiri o influenzi lo sviluppo di un software che implementa i risultati dello studio, è estremamente opportuno che anche lo sviluppo di quel software sia soggetto ad una processo analogo alla "peer-review", aperto e trasparente, con i dovuti adattamenti per il software.
-
-In questo modo, si garantisce che l'informatica forense, il software sviluppato sulla base della ricerca scientifica, ed il processo siano tutti accomunati dal principio del "contraddittorio",[^ContraddittorioSensoLato] del confronto fra vari punti di vista, e della loro sintesi, per arrivare ad un risultato finale che sia il più ponderato possibile.
-
-[^ContraddittorioSensoLato]: Il principio del contraddittorio qui va inteso in senso lato e generico, e non nel senso tecnico e specifico che assume all'interno del processo penale.
 
 ## Definizione di software libero
 
