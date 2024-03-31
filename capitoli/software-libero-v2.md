@@ -154,6 +154,23 @@ e che pertanto, il suo modello di sviluppo si avvicini al modello della *peer-re
 
 In altre parole, il software usato all'interno dell'informatica forense deve essere sviluppato in maniera trasparente, e deve essere reso disponibile al pubblico in una forma che permetta lo studio del suo funzionamento, in modo che persone diverse dagli sviluppatori originali possano verificare il suo corretto funzionamento, ed eventualmente migliorarlo.
 
+## Software libero
+
+### Definizione di software libero
+
+Si parla di software libero^[In inglese *free software*, dove *free* va inteso come "libero da vincoli", e non "gratuito", v. @FSFWhatIsFreeSoftware, sez. "Free software can be commercial".]
+quando il software è sviluppato e distribuito al pubblico in maniera da garantire quattro libertà fondamentali. Se anche solo una di queste libertà è limitata^[È irrilevante che la limitazione sia minima, ipotetica, difficile da far valere nella pratica, fondata su motivi etici, ecc. Ad esempio, la licenza di *jsmin*, scritto da Douglas Crockford, contiene la frase "*The Software shall be used for Good, not Evil.*" (il software dovrà essere usato per il bene, non per il male). Questa clausola è considerata una limitazione di una delle libertà fondamentali (v. @FSFWhatIsFreeSoftware, sez. "The freedom to run the program as you wish", e @FSFVariousLicensesAndCommentsAboutThem, sez. "The JSON License"), e pertanto rende il programma non-libero. V. R. Grove, *JSMin isn't welcome on Google Code*, 2009, <https://web.archive.org/web/20230114224625/https://wonko.com/post/jsmin-isnt-welcome-on-google-code/>.]
+si parla di software non-libero o proprietario [@FSFWhatIsFreeSoftware, sez. "The four essential freedoms"].
+
+- Eseguire il programma a piacere, per qualsiasi finalità.
+- Studiare come il programma funzioni, ed effettuare cambiamenti in modo che funzioni a proprio piacimento.
+- Ridistribuire copie del software (non modificato), così che tutti possano usare il software.
+- Ridistribuire copie modificate del software, insieme al codice sorgente, così che tutti possano beneficiare dei miglioramenti o cambiamenti apportati.
+
+- esecuzione programma, 73--74
+- accesso codice sorgente, 76
+- ridistribuzione copie, 82
+
 ## Definizione di software
 
 <!-- passa direttamente alla definizione del software libero, riassumi questo capitolo per spigare l'importanza del codice sorgente --> 
@@ -216,17 +233,6 @@ Il limite fondamentale alla reverse-engineering è indicato nel co. 2 dello stes
 L'obiettivo della norma è di prevenire la concorrenza sleale (mediante la creazione di software essenzialmente identico a software già esistente), e la pirateria (la rimozione delle misure di protezione richiede l'uso di tecniche di reverse-engineering). È estremamente improbabile che il software di analisi sia "sostanzialmente simile nella sua forma espressiva" rispetto al software analizzato, perché hanno finalità radicalmente diverse. Il software di analisi non può essere usato per svolgere le stesse funzioni del programma analizzato, serve solo ad estrarre ed elaborare informazioni che possono essere utili all'interno di un processo.
 
 Infine, il co. 3 sanziona le clausole contrattuali che vietano il reverse-engineering (se eseguito con la specifica finalità dell'interoperabilità) con la nullità.
-
-
-## Software libero
-
-### Definizione
-
-<!-- soltanto la definizione, l'importanza di ogni caratteristica è analizzata dopo -->
-
-- esecuzione programma, 73--74
-- accesso codice sorgente, 76
-- ridistribuzione copie, 82
 
 ### Licenze libere
 

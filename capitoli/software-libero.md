@@ -48,30 +48,6 @@ L'identificazione (prima fase) consiste nella ricerca dei supporti materiali che
 
 La raccolta (seconda fase) consiste nel rimuovere fisicamente i supporti materiali su cui i dati sono conservati, e qualsiasi altro oggetto che sia necessario per il loro funzionamento, o utile per le indagini. In alcuni casi (sistemi informatici che devono rimanere accesi perché erogano servizi essenziali, dati presenti su server di terze parti&hellip;), la raccolta non è possibile, e si può procedere solo all'acquisizione [@Ferrazzano2014, 30--34].
 
-## Esigenze processuali
-
-Il principio fondamentale nel processo penale è la formazione della prova nel contraddittorio. Tutte le operazioni precedenti, che riguardano anche solo indirettamente il contraddittorio, devono essere svolte con l'obiettivo di garantire la sua migliore realizzazione possibile.
-
-### Acquisizione
-
-Per quanto riguarda la prova informatica, la prima fase del suo trattamento in cui rileva l'uso di software è l'acquisizione di dati.
-La legge di ratifica ed esecuzione della Convenzione di Budapest[^LeggeRatificaEsecuzioneConvenzioneBudapest] ha modificato vari articoli del codice di procedura penale, prevedendo esplicitamente che l'acquisizione di dati informatici non modifichi i dati originali, e crei una copia uguale all'originale (art. 8).
-
-[^LeggeRatificaEsecuzioneConvenzioneBudapest]: L. 48/2008.
-
-Da un punto di vista concettuale, soddisfare questi requisiti è apparentemente semplice. Basta garantire che il software esegua solo operazioni in lettura, e mai in scrittura, sul supporto originale, e che la copia sia identica all'originale, bit per bit. Tuttavia, quando si considerano i dettagli tecnici, le operazioni diventano più complicate.
-
-## Definizione di software libero
-
-Il modo migliore per garantire tutte le esigenze che sono state elencate in precedenza è di usare il software libero, ossia, il software che viene distribuito al pubblico in maniera da garantire quattro libertà fondamentali [@FSF-What-is-free-software]:
-
-- Eseguire il programma a piacere, per qualsiasi finalità.
-- Studiare come il programma funzioni, ed effettuare cambiamenti in modo che funzioni a proprio piacimento.
-- Ridistribuire copie del software (non modificato), così che tutti possano usare il software.
-- Ridistribuire copie modificate del software, insieme al codice sorgente, così che tutti possano beneficiare dei miglioramenti o cambiamenti apportati.
-
-In mancanza di anche solo una di queste libertà, si parla di software non-libero.
-
 ## Libertà di eseguire il programma
 
 La prima libertà è la libertà più fondamentale di tutte, ed è importante che sia indicata espressamente. Viene spiegata in questo modo [@FSF-What-is-free-software]:
