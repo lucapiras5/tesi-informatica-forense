@@ -156,67 +156,62 @@ In altre parole, il software usato all'interno dell'informatica forense deve ess
 
 ## Software libero
 
-### Definizione di software libero
+Il modello ideale per soddisfare le esigenze precedenti è il software libero.^[In inglese *free software*, dove *free* va inteso come "libero da vincoli", e non "gratuito", v. @FSFWhatIsFreeSoftware, sez. "Free software can be commercial".]
+Il software può essere definito libero se sviluppato e distribuito al pubblico in maniera da garantire quattro libertà fondamentali:
 
-Si parla di software libero^[In inglese *free software*, dove *free* va inteso come "libero da vincoli", e non "gratuito", v. @FSFWhatIsFreeSoftware, sez. "Free software can be commercial".]
-quando il software è sviluppato e distribuito al pubblico in maniera da garantire quattro libertà fondamentali. Se anche solo una di queste libertà è limitata^[È irrilevante che la limitazione sia minima, ipotetica, difficile da far valere nella pratica, fondata su motivi etici, ecc. Ad esempio, la licenza di *jsmin*, scritto da Douglas Crockford, contiene la frase "*The Software shall be used for Good, not Evil.*" (il software dovrà essere usato per il bene, non per il male). Questa clausola è considerata una limitazione di una delle libertà fondamentali (v. @FSFWhatIsFreeSoftware, sez. "The freedom to run the program as you wish", e @FSFVariousLicensesAndCommentsAboutThem, sez. "The JSON License"), e pertanto rende il programma non-libero. V. R. Grove, *JSMin isn't welcome on Google Code*, 2009, <https://web.archive.org/web/20230114224625/https://wonko.com/post/jsmin-isnt-welcome-on-google-code/>.]
+> The freedom to run the program as you wish, for any purpose (freedom 0).
+>
+> The freedom to study how the program works, and change it so it does your computing as you wish (freedom 1). Access to the source code is a precondition for this.
+>
+> The freedom to redistribute copies so you can help others (freedom 2).
+>
+> The freedom to distribute copies of your modified versions to others (freedom 3). By doing this you can give the whole community a chance to benefit from your changes. Access to the source code is a precondition for this.^[La libertà di eseguire il programma come si desidera, per qualsiasi scopo (libertà 0). La libertà di studiare come il programma funziona, e modificarlo in modo che funzioni a proprio piacimento (libertà 1). L'accesso al codice sorgente è una condizione necessaria per questa libertà. La libertà di ridistribuire copie così da aiutare gli alti (libertà 2). La libertà di modificare copie della tua versione modificata ad altri (libertà 3). Così facendo, puoi offrire all'intera comunità la possibilità di beneficiare delle tue modifiche. L'accesso al codice sorgente è una condizione necessaria per questa libertà.]
+
+Se anche solo una di queste libertà è limitata^[È irrilevante che la limitazione sia minima, ipotetica, difficile da far valere nella pratica, fondata su motivi etici, ecc. Ad esempio, la licenza di *jsmin*, scritto da Douglas Crockford, contiene la frase "*The Software shall be used for Good, not Evil.*" (il software dovrà essere usato per il bene, non per il male). Questa clausola è considerata una limitazione di una delle libertà fondamentali (v. @FSFWhatIsFreeSoftware, sez. "The freedom to run the program as you wish", e @FSFVariousLicensesAndCommentsAboutThem, sez. "The JSON License"), e pertanto rende il programma non-libero. V. R. Grove, *JSMin isn't welcome on Google Code*, 2009, <https://web.archive.org/web/20230114224625/https://wonko.com/post/jsmin-isnt-welcome-on-google-code/>.]
 si parla di software non-libero o proprietario [@FSFWhatIsFreeSoftware, sez. "The four essential freedoms"].
 
-- Eseguire il programma a piacere, per qualsiasi finalità.
-- Studiare come il programma funzioni, ed effettuare cambiamenti in modo che funzioni a proprio piacimento.
-- Ridistribuire copie del software (non modificato), così che tutti possano usare il software.
-- Ridistribuire copie modificate del software, insieme al codice sorgente, così che tutti possano beneficiare dei miglioramenti o cambiamenti apportati.
-
-- esecuzione programma, 73--74
-- accesso codice sorgente, 76
-- ridistribuzione copie, 82
-
-## Definizione di software
-
-<!-- passa direttamente alla definizione del software libero, riassumi questo capitolo per spigare l'importanza del codice sorgente --> 
-
-I programmi informatici sono a loro volta dati informatici, ma con la particolarità che contengono istruzioni su come modificare altri dati informatici.^[In ultima analisi, sia i programmi che i dati sono sempre sequenze di bit. L'unica differenza è che i programmi possono essere anche eseguiti. Questo significa che all'interno dell'informatica forense, sia l'oggetto di studio, sia gli strumenti di analisi hanno la stessa natura, e l'unica differenza è la funzione che svolgono.] Queste istruzioni possono essere espresse come codice sorgente, o codice macchina. Il codice sorgente è definito come [@FSF-What-is-free-software]:
+Le libertà menzionano la possibilità di accedere al *source code* (codice sorgente). Il codice sorgente viene definito come [@FSFWhatIsFreeSoftware, sez. "The freedom to study the source code and make changes"]:
 
 > *[T]he preferred form of the program for making changes in. Thus, whatever form a developer changes to develop the program is the source code of that developer's version.*^[La rappresentazione del programma preferita per apportare cambiamenti. Pertanto, qualsiasi rappresentazione lo sviluppatore cambi al fine di sviluppare il programma è il codice sorgente di quella versione del programma.]
 
-È preferibile usare una definizione espansiva del codice sorgente, che includa sia il codice propriamente detto,^[File di testo che contengono istruzioni scritte in un determinato linguaggio di programmazione.] sia qualsiasi altro file che è necessario o utile per l'uso del programma.^[Ad esempio, file di configurazione, o file che contengono comandi per compilare ed installare il programma. Più in generale, qualsiasi file la cui presenza o contenuto altera il comportamento del programma in qualsiasi modo (ad esempio, incluso anche solo come i dati vengono presentati all'utente all'interno di un'interfaccia grafica) deve essere considerato parte del codice sorgente di quel programma.]
+È preferibile usare una definizione espansiva del codice sorgente, che includa sia il codice propriamente detto,^[File di testo che contengono istruzioni scritte in un determinato linguaggio di programmazione.]
+sia qualsiasi altro file che è necessario o utile per l'uso del programma.^[Ad esempio, file di configurazione, o file che contengono comandi per compilare ed installare il programma. Più in generale, qualsiasi file la cui presenza o contenuto altera il comportamento del programma in qualsiasi modo, anche se questo cambiamento riguarda solo come i dati vengono presentati all'utente, e non come vengono elaborati, deve essere considerato parte del codice sorgente di quel programma.]
 
-Il codice macchina consiste in file binari^[L'espressione "file binari" potrebbe sembrare ridondante, perché tutti i file sono espressi come una sequenza di valori binari. Viene normalmente usata per evidenziare la differenza fra "file di testo", che contengono solo le sequenze di bit che corrispondono a caratteri, e "file binari", che invece possono contenere qualsiasi sequenza di bit.] che contengono istruzioni che possono essere direttamente eseguite dalla macchina.^[Per "macchina" si intende più precisamente il processore, e le istruzioni che un processore può comprendere si chiama *instruction set* (insieme di istruzioni).] Un compilatore è un programma che trasforma il codice sorgente scritto in un certo linguaggio di programmazione in codice macchina.
+Il codice sorgente si contrappone al codice macchina, la forma del programma che può essere eseguita direttamente dalla macchina.^[Per "macchina" si intende più precisamente il processore, che è in grado di comprendere solo un insieme di istruzioni limitato, chiamato *instruction set*.]
+Il codice sorgente viene trasformato in codice macchina da un compilatore.^[Salvo bug nel compilatore, il codice sorgente ed il codice macchina rappresentano le stesse istruzioni, espresse in due linguaggi diversi. Il codice sorgente è scritto in un linguaggio più vicino ai linguaggi naturali, e quindi è più facile da leggere, scrivere e modificare per gli sviluppatori, ma non può essere eseguito. Viceversa, il codice macchina è un linguaggio che consiste solo in una lunga lista di istruzioni estremamente semplici, è difficile da modificare a mano, ma può essere eseguito dalla macchina.]
 
-Rispetto al codice sorgente, a seguito della compilazione il codice macchina perde la struttura originale,^[Ad esempio, il codice sorgente può essere diviso in numerosi file, ma la compilazione risulta in un singolo file; informazioni come il nome delle variabili, dei valori nelle strutture di dati, delle funzioni, ecc., sono sostituite da riferimenti ad indirizzi di memoria, perché è l'unico formato che il processore comprende; i commenti che spiegano come il codice funziona vengono eliminati; ecc. Il rapporto fra codice sorgente e codice macchina è simile al rapporto che esiste fra il processo di cognizione ed il processo di esecuzione. Il primo si conclude in una sentenza che indica i motivi di fatto e diritto (il "perché") per cui si deve eseguire il dispositivo (il "cosa"). Il secondo è solo interessato alla concreta esecuzione del dispositivo, e non è interessato a come si è arrivati a quella conclusione.]
-risulta "offuscato",^[La perdita della struttura originale è già una prima forma di "offuscamento" del codice sorgente. Inoltre, il compilatore può riscrivere le istruzioni del codice macchina in modo da raggiungere lo stesso risultato, ma in maniera più efficiente (*compiler optimizations*), che rende ancora più difficile capire il funzionamento del codice. Ad esempio, un'istruzione usata per calcolare gli indirizzi di memoria può essere anche usata per compiere calcoli aritmetici (v. B. Visness, *Using the LEA instruction for arbitrary arithmetic*, 2022, <https://web.archive.org/web/20220630160511/https://handmade.network/forums/articles/t/7111-using_the_lea_instruction_for_arbitrary_arithmetic>). Ancora, è possibile introdurre del vero e proprio offuscamento intenzionale, ricombinando il codice in maniera da rendere estremamente difficile capire il suo funzionamento (ad esempio, v. xoreaxeaxeax, *movfuscator*, 2020, <https://github.com/xoreaxeaxeax/movfuscator/tree/ea37dae93fbcd93f642c71a53878da588bd7ddb4>).]
-ed il codice macchina non è interoperabile.^[Il codice macchina consiste in un insieme di possibili istruzioni (*instruction set*), che vengono codificate in codice binario secondo un certo formato. L'*instruction set* ed il formato varia a seconda dell'architettura del processore (x86, AMD64, ARM, etc.), a seconda della generazione (i processori più nuovi supportano più istruzioni), ecc. Pertanto, mentre il codice sorgente può sempre essere ricompilato, e funzionare su più processori, il codice macchina è tendenzialmente legato all'architettura per cui è stato compilato.]
+Il codice macchina presenta una serie di svantaggi:^[È bene notare che questi svantaggi non significano che il codice macchina non vada utilizzato, perché altrimenti sarebbe impossibile eseguire qualsiasi programma. Piuttosto, devono essere interpretati come argomenti a favore dell'adozione del software libero, e quindi della distribuzione del codice sorgente.]
 
-Normalmente, gli utenti sono solo interessati ad eseguire i programmi, e quindi sono interessati solo ad ottenere il codice macchina. Tuttavia, se l'utilizzatore è anche interessato a studiare il funzionamento del programma, gli effetti della compilazione diventano ostacoli significativi, e non avere accesso al codice sorgente è un enorme svantaggio.^[È possibile cercare di ricostruire il funzionamento del programma usando il metodo di ragionamento induttivo, e procedendo a tentativi, ma le conclusioni sono incerte. Se si avesse a disposizione il codice sorgente, sarebbe possibile usare il metodo di ragionamento deduttivo, e giungere più rapidamente a conclusioni più solide.]
+- Il codice macchina non può essere sempre eseguito.^[Questo limita la libertà di eseguire il programma. Il codice macchina consiste in un insieme chiuso di possibili istruzioni (*instruction set*) che vengono codificate in codice binario secondo un formato preciso. Questi elementi variano a seconda dell'architettura del processore (x86, AMD64, ARM, etc.), a seconda del momento di produzione del processore (i processori più nuovi supportano più istruzioni), ecc. Pertanto, il codice macchina è tendenzialmente legato all'architettura per cui è stato compilato. Viceversa, il codice sorgente può sempre essere ricompilato e quindi funzionare su più processori.]
+perde la struttura originale,^[Questo limita la libertà di studiare e modificare il programma, perché diventa necessario ricostruire il suo funzionamento, e non è possibile fare riferimento al codice già esistente per apportare modifiche. Ad esempio, il codice sorgente può essere diviso in numerosi file, ma la compilazione risulta in un singolo file; informazioni come il nome delle variabili, dei valori nelle strutture di dati, delle funzioni, ecc., sono sostituite da riferimenti ad indirizzi di memoria, perché è l'unico formato che il processore comprende; i commenti che spiegano come il codice funziona vengono eliminati; ecc.]
+risulta "offuscato",^[Questo limita la libertà di studiare il programma, perché diventa difficile seguire il suo funzionamento. La perdita della struttura originale è già una prima forma di "offuscamento" del codice sorgente. Inoltre, il compilatore può riscrivere le istruzioni del codice macchina in modo da raggiungere lo stesso risultato, ma in maniera più efficiente (*compiler optimizations*), che rende ancora più difficile capire il funzionamento del codice. Ad esempio, un'istruzione usata per calcolare gli indirizzi di memoria può essere anche usata per compiere calcoli aritmetici (v. B. Visness, *Using the LEA instruction for arbitrary arithmetic*, 2022, <https://web.archive.org/web/20220630160511/https://handmade.network/forums/articles/t/7111-using_the_lea_instruction_for_arbitrary_arithmetic>). Ancora, è possibile introdurre del vero e proprio offuscamento intenzionale, ricombinando il codice in maniera da rendere estremamente difficile capire il suo funzionamento (ad esempio, v. xoreaxeaxeax, *movfuscator*, 2020, <https://github.com/xoreaxeaxeax/movfuscator/tree/ea37dae93fbcd93f642c71a53878da588bd7ddb4>).]
 
-## Inquadramento dei programmi nel sistema giuridico
+L'unica libertà che non è limitata dalla compilazione è la possibilità di ridistribuire copie, ma questa libertà può essere limitata per vie legali. Il diritto d'autore si applica anche ai programmi per elaboratore, perché vengono espressamente equiparati ad un'opera letteraria (art. 1 co. 2 l.d.a.),^[Legge 22 aprile 1941, n. 633, "Protezione del diritto d'autore e di altri diritti connessi al suo esercizio."]
+indipendentemente dal fatto che il software sia espresso come codice sorgente o codice macchina.^[Come indicato espressamente dall'art. 10(1) dell'accordo TRIPs (v. <https://web.archive.org/web/20230929163013/https://biblioteche.cultura.gov.it/it/documenti/Servizio_III/4_accordo_trips_1994_x1x.pdf>) e come desumibile dall'art. 4 del trattato OMPI sul diritto d'autore (v. <https://web.archive.org/web/20231230130759/https://biblioteche.cultura.gov.it/it/documenti/Servizio_III/5_trattato_ompi_sul_diritto_d_autore_wct_1996_x1x.pdf>).]
 
-Il diritto d'autore si applica anche ai programmi per elaboratore, perché vengono espressamente equiparati ad un'opera letteraria (art. 1 co. 2 l.d.a.),^[Legge 22 aprile 1941, n. 633, "Protezione del diritto d'autore e di altri diritti connessi al suo esercizio."] indipendentemente dal fatto che il software sia espresso come codice sorgente o codice macchina.^[Come indicato espressamente dall'art. 10(1) dell'accordo TRIPs (v. <https://web.archive.org/web/20230929163013/https://biblioteche.cultura.gov.it/it/documenti/Servizio_III/4_accordo_trips_1994_x1x.pdf>) e desumibile dall'art. 4 del trattato OMPI sul diritto d'autore (v. <https://web.archive.org/web/20231230130759/https://biblioteche.cultura.gov.it/it/documenti/Servizio_III/5_trattato_ompi_sul_diritto_d_autore_wct_1996_x1x.pdf>).]
+La conseguenza più immediata è il "diritto esclusivo" dell'autore di creare copie dell'opera (software), prevista in generale dall'art. 13 l.d.a., ed in maniera specifica per i "programmi per elaboratore" all'art. 64-*bis* lett. *a* l.d.a.^[Sono previste delle limitazioni ed eccezioni a questo diritto. Ad esempio, è possibile riprodurre opere "a fini di pubblica sicurezza, nelle procedure [&hellip;] giudiziarie" (art. 67 l.d.a.). Il processo penale potrebbe essere considerato una procedura penale con fini di sicurezza. Ancora, è possibile riprodurre le opere "per uso personale", purché non vengano distribuite al pubblico (art. 68 co. 1 e 6 l.d.a.).]
 
-Da questo inquadramento derivano varie implicazioni per il software in generale.
+Una seconda conseguenza è la possibilità di limitare l'uso delle copie^[Si parla di "uso" e non "creazione" delle copie, perché è sempre possibile copiare i dati informatici. L'unico modo per evitare la creazione di copie non autorizzate è applicare dei meccanismi che impediscono l'esecuzione del software copiato senza autorizzazione. Ad esempio, si può controllare la presenza di *dongle* USB che contengono una licenza per l'uso del software in formato digitale, oppure si possono contattare i server dello sviluppatore per verificare che l'utente sia autorizzato ad usare il programma, ecc. L'efficacia di queste misure di protezione si basa sulle caratteristiche del software compilato: sono difficili da rimuovere perché è difficile capire quali parti del codice macchina contengono le istruzioni necessarie al loro funzionamento.]
+mediante l'uso di misure tecnologiche.^[Spesso ci si riferisce all'uso di queste misure con l'acronimo *DRM* (*digital rights management*, gestione digitale dei diritti). Gli sviluppatori del software non sono tenuti ad usare questo tipo di misure (v. @Blomqvist2014, 207), ed in questo caso si parla di opere che sono *DRM-free* (libere da DRM).]
 
-La prima è il "diritto esclusivo" dell'autore di creare copie dell'opera, che è prevista in generale dall'art. 13 l.d.a., e con specifico riguardo per i "programmi per elaboratore" all'art. 64-*bis* lett. *a* l.d.a.^[Pertanto, anche se è tecnicamente sempre possibile duplicare i dati di cui è composto il software informatico, da un punto di vista legale questa operazione è vietata.]
+Questo tipo di misure sono regolate dall'art. 11 del trattato OMPI sul diritto d'autore [@Blomqvist2014, 205].
+A livello nazionale, l'uso di misure di protezione è definito e regolato dalla legge sul diritto d'autore all'art. 102-*quater*:
 
----
+> 1\. I titolari di diritti d'autore [&hellip;] possono apporre sulle opere o sui materiali protetti misure tecnologiche di protezione efficaci che comprendono tutte le tecnologie, i dispositivi o i componenti che, nel normale corso del loro funzionamento, sono destinati a impedire o limitare atti non autorizzati dai titolari dei diritti.
+>
+> 2\. Le misure tecnologiche di protezione sono considerate efficaci nel caso in cui l'uso dell'opera o del materiale protetto sia controllato dai titolari tramite l'applicazione di un dispositivo di accesso o di un procedimento di protezione, quale la cifratura, la distorsione o qualsiasi altra trasformazione dell'opera o del materiale protetto, ovvero sia limitato mediante un meccanismo di controllo delle copie che realizzi l'obiettivo di protezione.
 
-Anche se il divieto di creare copie del software non venisse menzionato espressamente nel contratto di licenza d'uso concluso fra lo sviluppatore e l'utilizzatore, questa possibilità sarebbe già esclusa dalla legge sul diritto d'autore, che prevede il 
-- divieto di copie, 49
-- misure di protezione, 74
-- reverse engineering, 
-- altre misure di protezione, 89
+La l.d.a. non indica un elenco di *exceptions and limitations* ("eccezioni e limitazioni") che permettono di rimuovere o aggirare le misure di sicurezza.^[L'art. 102-*quater* co. 3 afferma solo che resta salva la disciplina in generale sui programmi per elaboratore. Alcuni stati hanno ammesso la possibilità di rimuovere le misure di sicurezza, ma solo in casi limitati o eccezionali (ad esempio, per permettere l'uso da parte dell'autorità giudiziaria, o per ragioni di sicurezza nazionale). V. @Blomqvist2014, p. 208.]
+Tuttavia, anche se la legge prevedesse esplicitamente questa possibilità, sarebbe preferibile evitare di rimuovere le misure di protezione per ragioni tecniche.^[Per essere efficace, il DRM deve essere difficile da rimuovere, ma più il funzionamento del DRM è complesso, e quindi più è difficile sapere quali istruzioni nel codice macchina vanno rimosse, e maggiore è il rischio di andare a modificare anche il programma in maniera difficilmente imprevedibile. Questo margine di incertezza è inaccettabile nel software scientifico.]
 
 ----
 
-- necessità di studiare il funzionamento dei programmi
-- necessità di garantire la possibilità 
+Una terza conseguenza è la possibilità di eseguire il *reverse-engineering* ("ingegneria a ritroso").
 
-L'informatica forense è interessata allo studio del funzionamento di due categorie di programmi:
+- Laddove il software non può essere riprodotto o eseguito, è possibile studiare il suo funzionamento a fini di interoperabilità
+- Argomenti a favore della possibilità di reimplementare il software
 
-La l.d.a. afferma espressamente il diritto di poter studiare il funzionamento del software, anche se proprietario, e sanziona le clausole contrattuali che vietano questa possibilità con la nullità (art. 64-*ter*, co. 3):
-
-> Chi ha il diritto di usare una copia del programma per elaboratore può, senza l'autorizzazione del titolare dei diritti, osservare, studiare o sottoporre a prova il funzionamento del programma, allo scopo di determinare le idee ed i principi su cui è basato ogni elemento del programma stesso \Omissis{} Le clausole contrattuali pattuite in violazione del presente comma e del comma 2 sono nulle.
-
-Inoltre, la l.d.a. ammette la possibilità di eseguire il *reverse-engineering* ("ingegneria a ritroso"). Laddove la *software engineering* (ingegneria informatica) costruisce il software, la reverse-engineering serve a capire come il software è stato costruito. Consiste nell'analisi del codice macchina, già compilato, per riprodurre le funzionalità del codice sorgente originale, di cui non si dispone. Tuttavia, questa facoltà è limitata al solo scopo dell'interoperabilità (art. 64-*quater*, co. 1):
+Laddove la *software engineering* (ingegneria informatica) costruisce il software, la reverse-engineering serve a capire come il software è stato costruito. Consiste nell'analisi del codice macchina, già compilato, per riprodurre le funzionalità del codice sorgente originale, di cui non si dispone. Tuttavia, questa facoltà è limitata al solo scopo dell'interoperabilità (art. 64-*quater*, co. 1):
 
 > L'autorizzazione del titolare dei diritti non è richiesta qualora la riproduzione del codice del programma di elaboratore e la traduzione della sua forma ai sensi dell'art. 64-bis, lettere a) e b), compiute al fine di modificare la forma del codice, siano indispensabili per ottenere le informazioni necessarie per conseguire l'interoperabilità, con altri programmi, di un programma per elaboratore creato autonomamente purché siano soddisfatte le seguenti condizioni:
 >
@@ -234,6 +229,17 @@ L'obiettivo della norma è di prevenire la concorrenza sleale (mediante la creaz
 
 Infine, il co. 3 sanziona le clausole contrattuali che vietano il reverse-engineering (se eseguito con la specifica finalità dell'interoperabilità) con la nullità.
 
+- necessità di studiare il funzionamento dei programmi
+- necessità di garantire la possibilità 
+
+L'informatica forense è interessata allo studio del funzionamento di due categorie di programmi:
+
+La l.d.a. afferma espressamente il diritto di poter studiare il funzionamento del software, anche se proprietario, e sanziona le clausole contrattuali che vietano questa possibilità con la nullità (art. 64-*ter*, co. 3):
+
+> Chi ha il diritto di usare una copia del programma per elaboratore può, senza l'autorizzazione del titolare dei diritti, osservare, studiare o sottoporre a prova il funzionamento del programma, allo scopo di determinare le idee ed i principi su cui è basato ogni elemento del programma stesso \Omissis{} Le clausole contrattuali pattuite in violazione del presente comma e del comma 2 sono nulle.
+
+----
+
 ### Licenze libere
 
 - concessione dei diritti mediante diritto d'autore, 94
@@ -246,6 +252,16 @@ Infine, il co. 3 sanziona le clausole contrattuali che vietano il reverse-engine
 ## Confronto software proprietario e libero
 
 - libertà esecuzione programma, 74--76
+
+La prima libertà è la libertà di eseguire il programma a proprio piacimento [@FSFWhatIsFreeSoftware, sez. "The freedom to run the program as you wish"]:
+
+> *The freedom to run the program means the freedom for any kind of person or organization to use it on any kind of computer system, for any kind of overall job and purpose, without being required to communicate about it with the developer or any other specific entity. In this freedom, it is the user's purpose that matters, not the developer's purpose;* [&hellip;]^[La libertà di eseguire il programma significa la libertà per qualsiasi tipo di persona o organizzazione di usarlo su qualsiasi tipo di sistema informatico, per qualsiasi tipo di lavoro o finalità, senza essere costretti a doverlo comunicare allo sviluppatore o altre entità specifiche. In questa libertà, importa la finalità [voluta] dall'utente, non la finalità [prevista] dallo sviluppatore.]
+
+Questa libertà non riguarda le funzionalità che il programma ha, ma solo l'assenza di divieti od ostacoli alla sua esecuzione.^[Ad esempio, un programma potrebbe rifiutare input validi, o arrestarsi in maniera incondizionata senza produrre output utili, o semplicemente non funzionare correttamente su un certo sistema informatico, ma tutti questi fattori riguardano il corretto funzionamento del programma, non la sua esecuzione. V. @FSFWhatIsFreeSoftware, sez. "The freedom to run the program as you wish".]
+
+Un programma che non può essere eseguito potrebbe sembrare un ossimoro,^[Quello che contraddistingue i programmi rispetto agli altri tipi di dati digitali è proprio il fatto che possono essere eseguiti. Se un programma non può essere eseguito, è inutile. Le prime versioni della definizione di software libero non includevano questa libertà, che è stata aggiunta in seguito. V. @FSFWhatIsFreeSoftware, nota 1.]
+ma 
+
 - importanza accesso codice sorgente, 77
 - giurisprudenza amministrativa su decisioni algoritmiche, 80--82
 - ridistribuzione copie con modifiche, 82--83, 47--50

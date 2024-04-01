@@ -50,37 +50,9 @@ La raccolta (seconda fase) consiste nel rimuovere fisicamente i supporti materia
 
 ## Libertà di eseguire il programma
 
-La prima libertà è la libertà più fondamentale di tutte, ed è importante che sia indicata espressamente. Viene spiegata in questo modo [@FSF-What-is-free-software]:
-
-> *The freedom to run the program means the freedom for any kind of person or organization to use it on any kind of computer system, for any kind of overall job and purpose, without being required to communicate about it with the developer or any other specific entity.*[^FreedomRunProgram]
-
-[^FreedomRunProgram]: "La libertà di eseguire il programma indica la libertà per qualsiasi persona o organizzazione di usarlo su qualsiasi tipo di sistema informatico, per qualsiasi tipo di lavoro o scopo complessivi, senza richiedere che lo si comunichi allo sviluppatore, o altre entità."
-
 Un software che non può essere eseguito sembrerebbe un ossimoro, ma è una situazione che si presenta con regolarità con il software venduto commercialmente. Le licenze sono uno strumento con cui lo sviluppatore concede la possibilità di eseguire il programma. L'accordo che regola la licenza può liberamente indicare scopi per cui il software non può essere usato. Se questo accordo viene violato, lo sviluppatore può liberamente e unilateralmente revocare o disattivare la licenza, e quindi rendere il programma inutilizzabile, non solo da un punto di vista legale, ma anche da un punto di vista tecnico.
 
-Il programma in sé può sempre essere copiato, è difficile creare misure tecniche che impediscano in maniera assoluta la copia dei dati. Per rimediare a questo problema, il software include misure di protezione che controllano la presenza di una licenza valida (ad esempio, controllando la presenza di *dongle* USB che contengono una licenza in formato digitale, e/o contattando i server dello sviluppatore per verificare che l'utente è registrato ed autorizzato ad usare il programma&hellip;) ed in caso contrario, fermano l'esecuzione del programma.
-
-L'art. 11 del *WIPO Copyright Treaty* regola l'uso di misure tecnologiche per questo scopo [@Blomqvist2014, 205]:
-
-> *Contracting Parties shall provide adequate legal protection and effective legal remedies against the circumvention of effective technological measures that are used by authors in connection with the exercise of their rights under this Treaty or the Berne Convention and that restrict acts, in respect of their works, which are not authorized by the authors concerned or permitted by law.*
-
-Spesso ci si riferisce all'uso di queste misure con l'acronimo *DRM* (*digital rights management*, gestione digitale dei diritti). Gli sviluppatori del software non sono tenuti ad usare questo tipo di misure [@Blomqvist2014, 207], ed in questo caso si parla di opere che sono *DRM-free* (libere da DRM).
-
-A livello nazionale, l'uso di misure di protezione è definito e regolato dalla legge sul diritto d'autore all'art. 102-*quater*:
-
-> 1\. I titolari di diritti d'autore \Omissis{} possono apporre sulle opere o sui materiali protetti misure tecnologiche di protezione efficaci che comprendono tutte le tecnologie, i dispositivi o i componenti che, nel normale corso del loro funzionamento, sono destinati a impedire o limitare atti non autorizzati dai titolari dei diritti.
->
-> 2\. Le misure tecnologiche di protezione sono considerate efficaci nel caso in cui l'uso dell'opera o del materiale protetto sia controllato dai titolari tramite l'applicazione di un dispositivo di accesso o di un procedimento di protezione, quale la cifratura, la distorsione o qualsiasi altra trasformazione dell'opera o del materiale protetto, ovvero sia limitato mediante un meccanismo di controllo delle copie che realizzi l'obiettivo di protezione.
-
-La l.d.a. non indica un elenco di *exceptions and limitations* ("eccezioni e limitazioni") che rendono possibile rimuovere o aggirare le misure di sicurezza.  L'art. 102-*quater* co. 3 afferma solo che resta salva la disciplina in generale sui programmi per elaboratore.  Questa possibilità è stata prevista in alcuni stati, ma solo in casi limitati ed eccezionali (ad esempio, l'uso da parte dell'autorità giudiziaria, o per ragioni di sicurezza nazionale) [@Blomqvist2014, 208].
-
-In ogni caso, anche se la legge prevedesse esplicitamente questa possibilità, è preferibile evitare di rimuovere le misure di protezione al fine di creare copie liberamente eseguibili di software non-libero. Rimuovere le misure di protezione è analogo ad una chirurgia. Durante l'operazione si deve fare attenzione ad essere il meno invasivi possibile, e quindi modificare la minore quantità di dati possibile, e così come dopo l'operazione il paziente potrebbe avere complicazioni, così il software modificato potrebbe essere più instabile, o comportarsi in maniera imprevista.[^ProblemiRimozioneDRM] Questo margine di incertezza sarebbe inaccettabile per il software ad uso scientifico.
-
-[^ProblemiRimozioneDRM]: Continuando la similitudine con la chirurgia, il DRM deve agire come un tumore, deve integrarsi con il "software ospite" in profondità, in modo che sia difficile separarli, e deve creare "metastasi", andando a coprire tutte le parti del software.
-
 Viceversa, il software libero evita tutti i problemi sopra indicati. Se si è in possesso di una copia del software, non ci sono ulteriori requisiti, restrizioni, né servono modifiche per poterlo eseguire.
-
-## Libertà di studiare e modificare il programma
 
 ### Accesso al codice sorgente
 
