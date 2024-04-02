@@ -38,16 +38,6 @@ Creare una copia del software, in modo da permettere alle altri processuali di s
 
 L'ultima caratteristica da considerare, che sarà oggetto di trattazione nel resto del capitolo, è il formato in cui le istruzioni di cui il *software* è composto vengono espresse. Questo è forse il punto più cruciale. Fornire una copia dell'ambiente di analisi usato (inteso come la combinazione di sistema operativo, software e dati) beneficia il contraddittorio, perché permette alle controparti di interagire con gli strumenti e ripetere le operazioni svolte, ma si può andare ancora oltre.
 
-## Fasi per il trattamento della prova informatica {#fasi-trattamento-prova-informatica}
-
-<!-- le fasi per il trattamento sono riprese nel sottocapitolo successivo -->
-
-Il trattamento della prova informatica può essere diviso in sette fasi [@Ferrazzano2014, 29].
-
-L'identificazione (prima fase) consiste nella ricerca dei supporti materiali che possono contenere dati informatici utili. Si devono considerare le loro caratteristiche, in modo da stabilire le priorità e modalità di acquisizione [@Ferrazzano2014, 29--30].
-
-La raccolta (seconda fase) consiste nel rimuovere fisicamente i supporti materiali su cui i dati sono conservati, e qualsiasi altro oggetto che sia necessario per il loro funzionamento, o utile per le indagini. In alcuni casi (sistemi informatici che devono rimanere accesi perché erogano servizi essenziali, dati presenti su server di terze parti&hellip;), la raccolta non è possibile, e si può procedere solo all'acquisizione [@Ferrazzano2014, 30--34].
-
 ## Libertà di eseguire il programma
 
 Un software che non può essere eseguito sembrerebbe un ossimoro, ma è una situazione che si presenta con regolarità con il software venduto commercialmente. Le licenze sono uno strumento con cui lo sviluppatore concede la possibilità di eseguire il programma. L'accordo che regola la licenza può liberamente indicare scopi per cui il software non può essere usato. Se questo accordo viene violato, lo sviluppatore può liberamente e unilateralmente revocare o disattivare la licenza, e quindi rendere il programma inutilizzabile, non solo da un punto di vista legale, ma anche da un punto di vista tecnico.
@@ -223,124 +213,11 @@ Tuttavia, il problema è posto dal terzo comma. Se è possibile sapere come il c
 
 Il captatore si trova in una situazione paradossale. Può essere necessario usarlo per la prova di determinati reati (ad esempio, i reati elencati all'art. 266 co. 1 lett. *f* c.p.p. sono difficili da provare senza l'uso di intercettazioni), ma allo stesso tempo, il suo uso produce risultati intrinsecamente poco affidabili, perché non è possibile determinare il suo esatto meccanismo di funzionamento.
 
-## Licenze d'uso del software nell'ordinamento italiano
-
-Di per sé, il codice non è intrinsecamente "software libero". Le libertà che distinguono il software libero dal software non-libero non trovano il loro fondamento nel codice stesso, ma principalmente[^SoftwareLiberoLibertà] dai termini con cui il codice viene offerto al pubblico. Secondo il *WIPO Copyright Treaty*, il software è considerato un'opera letteraria (ai sensi dell'art. 2 della Convenzione di Berna), indipendentemente dal modo in cui sia espresso (art. 4) [@Blomqvist2014, 87--88].
-
-[^SoftwareLiberoLibertà]: In verità, il codice sorgente può contenere limitazioni alle libertà. La libertà di eseguire il codice può essere limitata artificialmente, includendo dei controlli che fanno terminare l'esecuzione del programma a determinate condizioni. La libertà di studiare il codice può essere limitata usando tecniche di offuscamento (ma a quel punto è difficile parlare di "codice sorgente"). La libertà di apportare modifiche può essere limitata se si includono delle funzioni per controllare l'integrità del software. La libertà di ridistribuire il software può essere parzialmente limitata allo stesso modo con cui viene limitata l'esecuzione (non è possibile impedire la copia dei dati informatici di cui è composto il software). Tuttavia, queste limitazioni che tendono a rendere il programma non-libero hanno senso solo se il software viene offerto come codice macchina. Se viene offerto come codice sorgente, può essere sempre modificato per rimuoverle (salvo il caso dell'offuscamento, dove il codice deve essere essenzialmente riscritto).
-
-Il godimento ed esercizio dei diritti previsti dalla Convenzione di Berna non sono condizionati dall'esercizio di nessuna formalità (art. 5(2)). Pertanto, se qualcuno sviluppa del software, ne detiene automaticamente il diritto d'autore, e se pubblica il codice sorgente su internet, i diritti rimangono riservati.
-
-L'unica libertà esercitabile dai soggetti terzi è la possibilità di studiare il codice sorgente. Le altre libertà (eseguire il software, fare modifiche, ridistribuirlo) implicano la riproduzione dell'opera, che è un diritto esclusivo dell'autore (art. 9(1)). Per questo motivo, è necessario distribuire il software al pubblico secondo dei termini che permettano l'esercizio di tutte le libertà.
-
-Questi termini sono contenuti nel contratto di licenza d'uso del software. È un modello di origine statunitense, in cui il licenziante (generalmente, chi sviluppa il software) concede al licenziatario (chi ne ottiene una copia) vari diritti, a titolo gratuito o oneroso. Il diritto più fondamentale è la possibilità di usare il software.
-
-Il termine "licenza" è un calco linguistico dall'inglese *license*, in italiano le "licenze" propriamente dette riguardano la possibilità di sfruttare economicamente il diritto di privativa industriale (marchi e brevetti) [@Geraci2015, 7--8]. Nel seguito della trattazione, i termini "contratto di licenza d'uso" e "licenza" saranno usati in maniera intercambiabile.
-
-Il software non-libero generalmente usa licenze scritte *ad hoc*, che negano, o non concedono espressamente le libertà fondamentali necessarie per il software libero. Per quanto riguarda il software libero, è preferibile usare le licenze che sono state approvate dalla FSF (Free Software Foundation)[^LicenzeApprovateFSF] e dalla OSI (Open Source Initiative).[^LicenzeApprovateOSI] Le licenze approvate dalla FSF sono licenze che garantiscono le libertà fondamentali elencate in precedenza.
-
-Le licenze approvate dalla OSI sono licenze che sono conformi alla loro definizione specifica di *open-source* (sorgente aperto), che non significa semplicemente l'accesso al codice, ma prevede anche altri requisiti.[^DefinizioneOpenSource] Per semplicità, in seguito si parlerà in maniera più generica di "licenze d'uso a codice disponibile" [@Geraci2015, 56].
-
-[^LicenzeApprovateFSF]: \VediUrl{Free Software Foundation}{Various Licenses and Comments about Them}{2023}{https://www.gnu.org/licenses/license-list.html}.
-[^LicenzeApprovateOSI]: \VediUrl{Open Source Initiative}{OSI Approved Licenses}{n.d.}{https://opensource.org/licenses/}.
-[^DefinizioneOpenSource]: \VediUrl{Open Source Initiative}{The Open Source Definition}{2023}{https://opensource.org/osd/}.
-
-È fortemente sconsigliato scrivere una licenza a codice disponibile *ad hoc*, per vari motivi. In primo luogo, una licenza è un contratto, e quindi deve essere redatta da un esperto in materie legali. 
-
-Le licenze a codice disponibili più famose sono state usate in procedimenti giudiziari, ed esistono precedenti che ne affermano la loro conformità all'ordinamento giuridico, e alla possibilità di farle valere in giudizio.[^PrecedentiLicenzeLibere] Una licenza inedita non avrebbe questo vantaggio.
-
-[^PrecedentiLicenzeLibere]: Per un riassunto di vari casi, \vediUrl{AA. VV.}{Have there been any lawsuits involving breach of open source licences?}{2021}{https://opensource.stackexchange.com/questions/11452/have-there-been-any-lawsuits-involving-breach-of-open-source-licences}.
-
-Ancora, uno dei vantaggi più importanti del software libero è la possibilità di condividere il codice sorgente fra più progetti, ed includere codice già esistente nel proprio progetto. A questo fine, è necessario verificare che le varie licenze con cui i vari componenti sono distribuiti siano compatibili fra di loro, ossia, che i termini delle varie licenze non si contraddicano fra di loro. Questa analisi è stata già svolta per le licenze a codice disponibile più utilizzate, ma andrebbe fatta caso per caso se ciascuno usasse una propria licenza [@Stallman-License-compatibility-and-relicensing].
-
-Il problema più importante è stabilire l'inquadramento delle licenze a codice disponibile all'interno dell'ordinamento giuridico italiano. La legge sul diritto d'autore permette la trasmissione dei vari diritti che spettano agli autori ad altri soggetti, all'art. 107:
-
->  I diritti di utilizzazioni spettanti agli autori delle opere dell'ingegno, nonché i diritti connessi aventi carattere patrimoniale, possono essere acquistati, alienati o trasmessi in tutti i modi e forme consentiti dalla legge \Omissis{}
-
-Il contratto con cui i diritti vengono trasmessi può essere anche un contratto atipico (art. 1322 c.c.) [@Geraci2015, 16], e la trasmissione deve essere provata per iscritto (art. 110). Nel tempo sono stati dati vari inquadramenti del contratto di licenza d'uso come all'interno delle fattispecie di contratto tipiche e già regolate dal codice civile. Ad esempio, è stato qualificato come un contratto di locazione che ha ad oggetto l'uso del software [@Geraci2015, 21], oppure come un contratto di compravendita che ha per oggetto la trasmissione del diritto di usare il software [@Geraci2015, 23].
-
-Mentre è teoricamente possibile far rientrare l'uso del software all'interno dell'oggetto di quei contratti tipici, rimane il problema delle altre caratteristiche dei contratti, che non erano stati originariamente pensati per il software. Ancora, locazione e compravendita riguardano solo l'uso del software, mentre il software libero fornisce più diritti all'utente, e locazione e compravendita sono contratti a titolo oneroso, mentre il software libero di solito viene distribuito gratuitamente. Pertanto, è preferibile inquadrare i contratti di licenza d'uso a codice disponibile come contratti atipici.
-
-I rapporti giuridici che formano l'oggetto del contratto devono essere patrimoniali, ossia, devono poter avere una valutazione patrimoniale [@Galgano2013, 228]. I diritti che sono oggetto di trasmissione rientrano sicuramente in questa categoria. I contratti possono essere a titolo gratuito, ossia, la prestazione di una delle parti non richiede una controprestazione dall'altra parte [@Galgano2013, 248].
-
-In verità, le licenze possono richiedere delle controprestazioni a chi riceve il codice, ma generalmente si tratta di obblighi di non fare che hanno natura più morale che patrimoniale, come "non cancellare il nome degli autori", "non rimuovere la licenza", e nel caso delle licenze *copyleft*, "non distribuire le versioni modificate del codice con una licenza diversa".
-
-Infine, è possibile concludere contratti atipici, purché siano finalizzati a realizzare "interessi meritevoli di tutela secondo l'ordinamento giuridico" (art. 1322 co. 2 c.c.). Questo significa che gli interessi perseguiti devono essere leciti, ma anche avere una causa. Per gli atti che trasferiscono diritti senza corrispettivo, la *causa donandi* deve essere resa esplicita, a pena di nullità [@Galgano2013, 248--250]. 
-
-L'individuazione della causa dei contratti di licenza d'uso a codice disponibile che sono conclusi a titolo gratuito potrebbe essere l'unico problema per il loro riconoscimento. Tuttavia, è possibile ritenere che la loro causa sia la liberalità. La liberalità è caratterizzata dal fatto che soddisfa un interesse non patrimoniale, non viene fatta perché "conviene" dal punto di vista economico [@Galgano2013, 924--925]. Questo è sicuramente il caso del software libero, che è ispirato da un modello fortemente idealistico, e non interessato a fini di risparmio economico.
-
-## Licenze copyleft (GPL)
-
-La licenza *GNU GPL* (*GNU General Public License*) è caratterizzata dalla presenza di una "clausola virale", la stipulazione per cui tutte le opere derivate da un'opera distribuita con la licenza GPL devono usare la stessa licenza [@Geraci2015, 71].
-
-L'aggettivo "copyleft" è un gioco di parole con il termine *copyright* (diritto d'autore), perché normalmente il diritto d'autore limita le libertà che il possessore di una copia dell'opera ha, mentre invece la GPL strumentalizza il diritto d'autore proprio al fine di garantire le libertà previste dal software libero.
-
-La GPL afferma esplicitamente la possibilità di creare copie del programma, purché le copie contengano l'indicazione degli autori e della licenza, l'indicazione della limitazione di responsabilità, e una copia della licenza. Inoltre, si permette la possibilità di richiedere un pagamento per la copia, e di offrire supporto o una garanzia a pagamento [@GPLv3, sez. "4. Conveying Verbatim Copies."]:
-
-> *You may convey verbatim copies of the Program's source code as you receive it, in any medium, provided that you conspicuously and appropriately publish on each copy an appropriate copyright notice; keep intact all notices stating that this License and any non-permissive terms added in accord with section 7 apply to the code; keep intact all notices of the absence of any warranty; and give all recipients a copy of this License along with the Program.*
->
-> *You may charge any price or no price for each copy that you convey, and you may offer support or warranty protection for a fee.*
-
-La sezione successiva regola la creazione di opere derivate. Devono essere rilasciate come codice sorgente, si deve indicare l'autore e la data delle modificazioni (lett. *a*), e l'intera opera derivata deve essere rilasciata secondo i termini di questa licenza (lett. *c*) [@GPLv3,  sez. "5. Conveying Modified Source Versions."]:
-
-> *You may convey a work based on the Program, or the modifications to produce it from the Program, in the form of source code under the terms of section 4, provided that you also meet all of these conditions:*
->
-> a) *The work must carry prominent notices stating that you modified it, and giving a relevant date.*
-> b) *The work must carry prominent notices stating that it is released under this License and any conditions added under section 7. This requirement modifies the requirement in section 4 to "keep intact all notices".*
-> c) *You must license the entire work, as a whole, under this License to anyone who comes into possession of a copy. \Omissis{} This License gives no permission to license the work in any other way, but it does not invalidate such permission if you have separately received it.*
-
-Inoltre, si regola il caso in cui un'opera protetta dalla GPL sia distribuita insieme ad altre opere. Se queste opere per loro natura non sono estensioni dell'opera protetta, e non vengono "combinate" con essa in nessun modo, allora la licenza non si applica alle altre opere.
-
-> *A compilation of a covered work with other separate and independent works, which are not by their nature extensions of the covered work, and which are not combined with it such as to form a larger program, in or on a volume of a storage or distribution medium, is called an "aggregate" if the compilation and its resulting copyright are not used to limit the access or legal rights of the compilation's users beyond what the individual works permit. Inclusion of a covered work in an aggregate does not cause this License to apply to the other parts of the aggregate.*
-
-È possibile ridistribuire il software in forma diversa dal codice sorgente, purché si includa una copia del codice sorgente, oppure un'offerta scritta che indica come richiedere una copia del codice sorgente [@GPLv3, sez. "6. Conveying Non-Source Forms."].
-
-La GPL privilegia la diffusione del software libero rispetto a qualsiasi altra priorità [@Geraci2015, 72]. In particolare, la discussione fra Stallman, uno dei creatori della GPL, e Haible, lo sviluppatore di un programma chiamato CLISP, chiarisce il campo di applicazione della GPL. Come visto, si deve distinguere fra due casi:
-
-- Se un programma rappresenta un'estensione del software GPL, deve usare la licenza GPL a sua volta.
-- Se il programma ed il software GPL sono indipendenti, e sono semplicemente distribuiti insieme, il programma non è tenuto ad usare la licenza GPL.
-
-CLISP^[V. <https://www.gnu.org/software/clisp/>.] non usava la licenza GPL, ma usava una libreria sviluppata da GNU, chiamata readline,^[V. <https://www.gnu.org/software/readline/>] che invece era distribuita con la licenza GPL.
-
-Secondo Haible, lo sviluppatore del software, il suo software e la libreria readline venivano distribuiti come due file separati ed indipendenti, e quindi non era tenuto ad usare la GPL:
-
-> *I don't agree. My lisp.a is not a "work based on libreadline.a". What I distribute is a "mere aggregation" of lisp.a and libreadline.a - the latter with source.* [@Why-CLISP-is-under-GPL, sez. "From haible Fri Oct 30 18:54:38 1992"].
-
-Viceversa, secondo Stallman, l'autore della GPL, era irrilevante che i programmi fossero separati su disco, perché readline era comunque un componente necessario per eseguire CLISP:
-
-> *If you don't change to using the GPL, then you'll have to stop using readline.  Readline's terms say that the whole program has to be under the GPL, and just having the user do the link doesn't change this.  If the program is designed to run with readline as a part, then readline is a part of it.* [@Why-CLISP-is-under-GPL, sez. "From rms@gnu.ai.mit.edu Mon Oct 19 00:06:25 1992"]
-
-Inoltre, i giudici molto probabilmente non avrebbero dato ragione ad Haible, e avrebbero considerato se effettivamente i vari componenti sono "davvero" un unico programma, indipendentemente da come siano chiamati od organizzati su disco:
-
-> *What the lawyer said surprised me; he said that judges would consider such schemes to be "subterfuges" and would be very harsh toward them.  He said a judge would ask whether it is "really" one program, rather than how it is labeled.* [@Why-CLISP-is-under-GPL, sez. "From rms@gnu.ai.mit.edu Fri Nov  6 21:31:33 1992"]
-
-In ogni caso, la preoccupazione di Stallman era di evitare che si trovasse un modo per aggirare la GPL:
-
-> *However, the sum total of what you are doing is still tantamount to distributing one program which contains readline but is not under the GPL.*
->
-> *This is a problem I cannot ignore.  If you can get away with this then any company can get away with it.  The result would be to negate for practical purposes the GPL's requirement that improvements be free. And that would deprive GNU software of a major source of improvements.* [@Why-CLISP-is-under-GPL, sez. "From rms@gnu.ai.mit.edu Sat Oct 31 01:29:01 1992"] 
+----
 
 Sulla base di queste considerazioni, la GPL può essere considerata la licenza migliore per lo sviluppo di software scientifico. Lo spirito della GPL è di garantire la libertà del codice ad ogni opportunità ed ad ogni costo. Se il codice deve sempre sempre rimanere libero, anche a seguito di modifiche, significa che gli algoritmi contenuti nel codice non solo possano essere sempre migliorati, ma il loro funzionamento rimanga sempre trasparente.
 
 Naturalmente, questo può dissuadere alcuni soggetti dallo sviluppare software GPL. Secondo l'interpretazione espansiva di Stallman, qualsiasi software che usi anche in minima misura un componente GPL deve diventare GPL a sua volta. Questo vincola la libertà di scelta della licenza. Tuttavia, questo è un costo che vale la pena pagare per alcuni tipi di applicazioni, come il software scientifico, dove gli interessi che il software deve soddisfare si allineano con l'ideologia della licenza stessa.
 
-Esistono altre licenze, chiamate *permissive* (permissive), che non danno le stese garanzie della GPL, e non hanno la stessa carica ideologica. Ad esempio, il tratto distintivo della licenza *BSD* (*Berkeley Software Distribution*) è che non richiede che le opere derivate siano rilasciate con la stessa licenza, né richiede la pubblicazione del codice sorgente. In altre parole, è perfettamente possibile usare del codice rilasciato con la licenza BSD per creare un prodotto non-libero, per cui non si fornisce il codice sorgente [@Geraci2015, 73].
-
-La licenza BSD è largamente usata per le librerie, per permettere la loro più larga adozione, dato che le librerie sono per loro natura codice destinato ad essere riutilizzato in altri progetti. In un software GPL è possibile usare componenti BSD [@Stallman-License-compatibility-and-relicensing]:
-
-> *In general, lax permissive licenses (modified BSD, X11, Expat, Apache, Python, etc.) are compatible with each other. That's because they have no requirements about other code that is added to the program. They even permit putting the entire program (perhaps with changes) into a proprietary software product;* \Omissis{}
->
-> *By the same token, lax licenses are usually compatible with any copyleft license. In the combined program, the parts that came in under lax licenses still carry them, and the combined program as a whole carries the copyleft license.*
 
 Tuttavia, è preferibile usare la licenza GPL anche per lo sviluppo di librerie ad uso di software per il software scientifico, per le ragioni indicate da Stallman. Una libreria GPL costringe il software che la usa a diventare GPL a sua volta. Pertanto, progressivamente, tutti i componenti (software e librerie condivise) adotteranno la licenza GPL, e quindi saranno costretti ad essere liberi.
-
-<!--
-## Licenze permissive (LGPL, MIT)
-
-- Opere derivate possono rimanere proprietarie
-
-## Licenze per la documentazione
-
-- Per la ricerca scientifica e per la documentazione dei programmi
-- Licenze per le raccolte di dati
--->

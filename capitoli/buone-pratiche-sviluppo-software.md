@@ -143,7 +143,7 @@ Inoltre, dividere in programma in due permette di estrarre il *back-end* come un
 
 ### Scelta di una licenza libera
 
-La Free Software Foundation offre alcune indicazioni per scegliere una licenza [@FSF-How-to-choose-a-license]:
+La Free Software Foundation offre alcune indicazioni per scegliere una licenza [@FSFHowToChooseALicense]:
 
 - La Licenza Apache 2.0^[V. <https://web.archive.org/web/20040202124049/http://www.apache.org:80/licenses/LICENSE-2.0>.] è non-*copyleft*, e può essere utilizzata per programmi particolarmente semplici;^[Ad esempio, il *glue code* che viene utilizzato per l'estrazione o la presentazione di dati. In questo caso, le eventuali modifiche fatte dalla controparte dovrebbero essere comunque comunicate all'interno del contraddittorio.]
 - La GNU GPL [Dato che esistono più versioni della GPL, è importante aggiungere "e versioni successive", in modo che il software sia sempre compatibile anche con le eventuali versioni successive della GPL, v. @Stallman-Identify-licenses-clearly] viene consigliata come la scelta da preferire in generale;
