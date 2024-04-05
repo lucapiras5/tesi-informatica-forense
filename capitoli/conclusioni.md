@@ -16,13 +16,13 @@ Se l'uso dei dati informatici a fini probatori richiede l'uso di conoscenze scie
 
 <!-- cap. 2 -->
 
-Il secondo capitolo dimostra come l'informatica forense è una disciplina che si presta ad essere regolata da più fonti. La struttura della prima parte del capitolo segue le fasi del trattamento della prova secondo gli standard ISO, ma il contenuto dei singoli capitoli richiama le norme contenute nel codice di procedure penale. Si è fatto riferimento ad un codice di procedura penale colombiano per analizzare una possibile disciplina della catena di custodia. Quanto richiesto dalla legge viene reinterpretato in base a quanto è possible fare con l'informatica.
+Il secondo capitolo dimostra come l'informatica forense è una disciplina che si presta ad essere regolata da più fonti. La struttura della prima parte del capitolo segue le fasi del trattamento della prova secondo gli standard ISO, ma il contenuto dei singoli capitoli richiama le norme contenute nel codice di procedura penale. Si è fatto riferimento al codice di procedura penale colombiano per analizzare una possibile disciplina della catena di custodia. Quanto richiesto dalla legge viene reinterpretato in base a quanto è possible fare con l'informatica.
 
 La conclusione della prima parte è che esiste uno stretto legame fra la scienza, il processo, ed il software. Dato che la scienza ed il processo sono ispirati da principi simili (*peer-review* e contraddittorio, motivazione degli atti e verificabilità degli esperimenti, limitazione del segreti e pubblicazione dei risultati) è opportuno che principi analoghi si applichino anche al software che viene usato dagli esperti all'interno del processo.
 
-Questo obiettivo è pienamente raggiunto con l'uso del software libero. In particolare, l'accesso al codice sorgente è necessario per soddisfare tutti e tre i principi, e la licenza GPL serve proprio a garantire non solo che il software già libero rimanga tale, ma anche che si diffonda, a causa della interpretazione data da Stallman per quanto riguarda l'uso di componenti GPL all'interno di altri programmi.
+Questo obiettivo è pienamente raggiunto con l'uso del software libero. In particolare, l'accesso al codice sorgente è necessario per soddisfare tutti e tre i principi, e la licenza GPL serve proprio a garantire non solo che il software già libero rimanga tale, ma anche che l'adozione della GPL si diffonda, a causa della interpretazione data da Stallman per quanto riguarda l'uso di componenti GPL all'interno di altri programmi.
 
-Ancora, si dimostra che in generale, è preferibile usare il software libero, al posto del software proprietario, e che in alcuni casi l'apparente superiorità del software proprietario in realtà porta a costi e svantaggi nascosti. L'unico caso in cui è impossible usare il software libero è per lo sviluppo di captatori, per il solo fatto che la loro modalità di funzionamento deve rimanere nascosta. Ma il fatto che sia impossible conoscere il funzionamento del captatore aggiunge ulteriori dubbi sulla sua utilità come mezzo di prova.
+Ancora, si dimostra che in generale, è preferibile usare il software libero, al posto del software proprietario, e che in alcuni casi l'apparente superiorità del software proprietario in realtà porta a costi e svantaggi nascosti. L'unico caso in cui è impossible usare il software libero è per lo sviluppo di captatori informatici, per il solo fatto che la loro modalità di funzionamento deve rimanere segreta. Ma il fatto che sia impossible conoscere il funzionamento del captatore aggiunge ulteriori dubbi sulla sua utilità come mezzo di prova.
 
 <!-- cap. 3 -->
 
@@ -34,13 +34,13 @@ L'accesso al codice sorgente, che viene garantito dalle licenze libere, ha numer
 - La documentazione relativa al codice stesso, e quindi di sapere come il programma funziona;
 - Se e come il codice di terze parti è stato integrato all'interno del software;
 - L'uso di strumenti automatizzati che permettono di analizzare e correggere problemi nel codice;
-- L'uso di *test* per garantire che il programma continua a funzionare correttamente, anche a seguito di modifiche del codice.
+- L'uso di *tests* per garantire che il programma continua a funzionare correttamente, anche a seguito di modifiche del codice.
 
 Nel caso di programmi proprietari, tutti questi elementi generalmente non vengono condivisi con il pubblico, perché sono strettamente legati allo sviluppo del software, e pertanto non possono essere nemmeno valutati dai tecnici.
 
 L'uso di tecniche come la *containerization* e le *reproducible builds* permettono di garantire che il software funzioni sempre allo stesso modo, e sono utili per garantire la ripetibilità e riproducibilità delle analisi.
 
-Il capitolo si conclude con le buone pratiche riguardo le modalità di sviluppo del software.
+Il capitolo si conclude con le buone pratiche relative alle modalità di sviluppo del software.
  
 Gli elementi fondamentali sono la definizione della funzione del programma, le linee-guida per la sua progettazione, e la scelta di una licenza libera.
 

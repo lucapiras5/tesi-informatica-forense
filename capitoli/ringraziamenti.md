@@ -1,8 +1,8 @@
 # Ringraziamenti {-}
 
-\vspace{26mm}
+\vspace{16mm}
 \rightline{\textit{A Tyler e Jo}}
-\vspace{26mm}
+\vspace{16mm}
 
 Desidero ringraziare i miei relatori, e tutti coloro che mi sono stati vicini durante la conclusione del mio percorso di studi, per il vostro supporto e la vostra pazienza.
 
