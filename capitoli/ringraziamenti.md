@@ -1,21 +1,19 @@
 # Ringraziamenti {-}
 
-...
+\vspace{26mm}
+\rightline{\textit{A Tyler e Jo}}
+\vspace{26mm}
 
-<!--
+Desidero ringraziare i miei relatori, e tutti coloro che mi sono stati vicini durante la conclusione del mio percorso di studi, per il vostro supporto e la vostra pazienza.
 
-- Emacs e Org mode
-- Vim e Neovim
-- Git
-- Pandoc
-- Okular
-- Borg, Restic e Rsync
+Desidero anche ringraziare gli sviluppatori dei seguenti software liberi, perché sono stati usati per redigere la tesi:
 
-- Debian/Arch, Crostini, Termux
+- Emacs, Vim e Neovim -- Per scrivere i file di testo.
+- Git -- Per la gestione dei file relativi alla tesi.
+- Pandoc e TeX Live -- Per la conversione della tesi in PDF.
+- Okular -- Per l'annotazione di file PDF.
+- Borg, Restic e Rsync -- Per la sincronizzazione di file, e creazione di copie di backup.
+- Debian e Arch Linux -- Sistemi operativi.
+- Termux, Crostini e WSL -- Possibilità di eseguire applicazioni Linux su Android, Chromebooks e Windows.
 
-- Libertinus Serif
-- Source Code Pro
-
-- Github, Linode, Hetzner
-
--->
+I font usati sono Libertinus Serif e Source Code Pro.

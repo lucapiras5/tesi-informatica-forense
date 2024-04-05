@@ -9,7 +9,7 @@ citation-style: universita-di-bologna-lettere.csl
 links-as-notes: true
 documentclass: book
 lang: it
-toc: true
+toc: false
 geometry:
 - top=4cm
 - bottom=4cm

@@ -1,37 +1,45 @@
 \begin{titlepage}
 
+\rightline{\large{Matricola n. 0000758395}}
+
+\vspace{13mm}
+
 \begin{center}
-\Large{Alma Mater Studiorum --- Università di Bologna}
 
-\vspace{20mm}
-\large{Corso di Laurea Magistrale in Giurisprudenza}
+\Large{\textsc{Alma Mater Studiorum\\Università Di Bologna}}
 
-\large{Tesi di Laurea in Informatica Forense}
+\vspace{13mm}
+
+\Large{\textsc{Dipartimento Scienze Giuridiche}}
+
+\Large{\textsc{Corso Di Laurea Magistrale In Giurisprudenza}}
+
+\vspace{13mm}
+
+\Large{Uso del software libero e open source per l'analisi scientifica della prova digitale nell'informatica forense}
+
+\vspace{13mm}
+
+\Large{\textsc{Tesi di laurea in Informatica Forense}}
+
 \end{center}
 
-\vspace{40mm}
-\begin{center}
-\Large{Uso del software libero per un trattamento scientifico della prova digitale nell'informatica forense }
-\end{center}
-\vspace{40mm}
+\vspace{13mm}
 
-\par
 \noindent
 \begin{minipage}[t]{0.47\textwidth}\raggedright
-{\large{Relatore:\\
-Chiar.mo Prof.\\
-Antonio Gammarota}}
+{\large{Relatrice:\\
+Prof.ssa Raffaella Brighi}}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.47\textwidth}\raggedleft
 {\large{Presentata da:\\
-Luca Piras\\
-Matricola 0000758395}}
+Luca Piras}}
 \end{minipage}
-\vspace{20mm}
+\vspace{15mm}
 \begin{center}
-{\large{Appello di maggio \\%inserire il numero della sessione in cui ci si laurea
-Sessione unica, A.A. 2023/2024}}%inserire l'anno accademico a cui si è iscritti
+{\large{Sessione unica\\
+Anno Accademico 2023/2024}}%inserire l'anno accademico a cui si è iscritti
 \end{center}
 
 \newpage 
@@ -41,3 +49,5 @@ Sessione unica, A.A. 2023/2024}}%inserire l'anno accademico a cui si è iscritti
 \thispagestyle{empty}
 \newpage
 \end{titlepage}
+
+\tableofcontents
