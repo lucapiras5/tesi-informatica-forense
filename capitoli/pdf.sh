@@ -1,13 +1,13 @@
-inputs="prologo.md \
-	frontespizio.md \
-	ringraziamenti.md \
-	introduzione.md \
-	prova-scientifica-v2.md \
-	software-libero-v2.md \
-	buone-pratiche-sviluppo-software.md \
-	sistema-operativo-libero.md \
-	conclusioni.md \
-	bibliografia.md"
+inputs="00a-prologo.md \
+	00b-frontespizio.md \
+	00c-ringraziamenti.md \
+	00d-introduzione.md \
+	01-prova-scientifica.md \
+	02-software-libero.md \
+	03-buone-pratiche-sviluppo-software.md \
+	04-sistema-operativo-libero.md \
+	99a-conclusioni.md \
+	99b-bibliografia.md"
 
 # note-legali.md \
 # buone-pratiche-procedimento-penale.md \
