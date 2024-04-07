@@ -1,11 +1,7 @@
-#+TITLE: Tesi di Informatica Forense
-#+AUTHOR: Luca Piras
-#+LANGUAGE: it
+# Tesi di informatica forense
 
-* Collegamenti utili
+Titolo: *Uso del software libero e open source per l'analisi scientifica della prova digitale nell'informatica forense*
 
-[[file:scaletta-v4.org][Scaletta]] (v4).
+Autore: Luca Piras
 
-[[https://lucapiras.me/fonti][Fonti]] (sul mio sito personale).
-
-[[file:cybersecurity.org][Capitolo su cybersicurezza]], [[file:cybersecurity-estratto.org][spiegazione]] relativa alla sua aggiunta/rimozione.
+Licenza: CC BY-SA 4.0 (vedi il file LICENSE)
