@@ -1,6 +1,6 @@
 # Capitoli
 
-`pdf.sh` genera la tesi in `_tesi.pdf`. Utilizza pandoc, citeproc e lualatex.
+`pdf.sh` genera la tesi in `_tesi.pdf`. Utilizza pandoc, citeproc e lualatex. Su Arch Linux, i pacchetti necessari sono `pandoc` e `texlive`.
 
 Versioni utilizzate:
 

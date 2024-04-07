@@ -4,4 +4,8 @@ Titolo: *Uso del software libero e open source per l'analisi scientifica della p
 
 Autore: Luca Piras
 
-Licenza: CC BY-SA 4.0 (vedi il file LICENSE)
+Abstract: [abstract.md](abstract.md)
+
+Licenza: [CC BY-SA 4.0](LICENSE)
+
+Istruzioni su come ottenere un file PDF: [capitoli/readme.md](capitoli/readme.md)
